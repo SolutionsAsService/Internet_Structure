@@ -56,28 +56,51 @@ network.clientHeight || 700;
 const nodes =
 data.nodes || [];
 
-let links = [];
+let links=[];
+
+const nodeIds = new Set(
+    nodes.map(n=>n.id)
+);
 
 
 nodes.forEach(node=>{
 
-    if(!node.connections) return;
+    if(!node.connections)
+        return;
 
 
     node.connections.forEach(target=>{
 
-        links.push({
 
-            source:node.id,
+        if(nodeIds.has(target)){
 
-            target:target
 
-        });
+            links.push({
+
+                source:node.id,
+
+                target:target
+
+            });
+
+
+        }
+        else{
+
+            console.warn(
+                "Missing node:",
+                target,
+                "referenced by",
+                node.id
+            );
+
+        }
+
 
     });
 
-});
 
+});
 
 
 
