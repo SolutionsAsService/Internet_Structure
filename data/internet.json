@@ -1,0 +1,75 @@
+{
+
+"nodes":[
+
+
+{
+"id":"aws",
+"name":"Amazon Web Services",
+"type":"Cloud Provider",
+"layer":"Hyperscaler",
+"description":
+"Global cloud computing infrastructure provider."
+},
+
+
+{
+"id":"cloudflare",
+"name":"Cloudflare",
+"type":"CDN",
+"layer":"Edge Network",
+"description":
+"Global CDN, DNS and security network."
+},
+
+
+{
+"id":"eqix",
+"name":"Equinix Ashburn",
+"type":"Internet Exchange",
+"layer":"IXP",
+"description":
+"Major interconnection facility."
+},
+
+
+{
+"id":"verizon",
+"name":"Verizon",
+"type":"Tier 1 Carrier",
+"layer":"Backbone",
+"description":
+"Global telecommunications backbone."
+}
+
+
+],
+
+
+"links":[
+
+
+{
+"source":"aws",
+"target":"eqix",
+"type":"peering"
+},
+
+
+{
+"source":"cloudflare",
+"target":"eqix",
+"type":"exchange"
+},
+
+
+{
+"source":"verizon",
+"target":"eqix",
+"type":"transport"
+}
+
+
+]
+
+}
