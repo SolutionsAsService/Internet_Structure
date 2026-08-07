@@ -56,6 +56,27 @@
 },
 
 {
+"id":"tower_infrastructure",
+"name":"Tower Infrastructure",
+"description":"Physical towers, rooftop sites, small cells, and other structures used by wireless networks",
+"color":"#84CC16"
+},
+
+{
+"id":"content_provider",
+"name":"Content Providers",
+"description":"Large Internet services generating and distributing substantial volumes of digital content and traffic",
+"color":"#EC4899"
+},
+
+{
+"id":"telecom_equipment",
+"name":"Telecommunications Equipment",
+"description":"Radio, core, optical, routing, and transport equipment used by telecommunications operators",
+"color":"#64748B"
+},
+
+{
 "id":"dns",
 "name":"DNS Infrastructure",
 "description":"Global domain resolution systems"
