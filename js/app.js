@@ -395,6 +395,7 @@ const layerColors = {
     physical_security: "#52525B",
     construction: "#71717A",
     fiber_construction: "#A1A1AA",
+    tower_infrastructure:"#84CC16",
 
     // ==============================
     // GOVERNMENT / CRITICAL INFRA
@@ -414,7 +415,13 @@ const layerColors = {
     // OPERATORS
     // ==============================
 
-    network_operator: "#10B981"
+    network_operator: "#10B981",
+
+
+    
+    content_provider:"#EC4899",
+    telecom_equipment:"#64748B"
+      
 };
 
 
