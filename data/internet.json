@@ -1143,50 +1143,94 @@
 },
 
 {
-"id":"hurricane_electric",
+  "id": "hurricane_electric",
+  "name": "Hurricane Electric",
+  "type": "Global Transit Provider",
+  "layer": "backbone",
+  "region": "Global",
+  "classification": [
+    "IPv6 Network",
+    "Transit Provider",
+    "Fiber Network"
+  ],
+  "network_role": "Highly connected global transit network serving ISPs, enterprises and data centers.",
+  "importance": 9,
+  "description": "Major independent Internet backbone with extensive global IPv6 and peering connectivity.",
+  "connections": [
+    "lumen",
+    "cogent",
+    "equinix",
+    "decix",
+    "linx",
+    "any2"
+  ]
+},
 
-"name":"Hurricane Electric",
+{
+  "id": "retn",
+  "name": "RETN",
+  "type": "International Network Provider",
+  "layer": "backbone",
+  "region": "Europe",
+  "classification": [
+    "Backbone",
+    "Enterprise Network",
+    "Transit Provider"
+  ],
+  "network_role": "Connects European and Asian markets through terrestrial and subsea infrastructure.",
+  "importance": 8,
+  "description": "International network operator connecting Europe, Asia and other major markets.",
+  "connections": [
+    "arelion",
+    "tata",
+    "decix",
+    "linx",
+    "ntt"
+  ]
+},
 
-"type":"Global Tier 2 Network",
+{
+  "id": "colt",
+  "name": "Colt Technology Services",
+  "type": "Regional Carrier",
+  "layer": "carrier",
+  "region": "Europe",
+  "classification": [
+    "Fiber Network",
+    "Enterprise Connectivity",
+    "Metro Network"
+  ],
+  "network_role": "Provides high-capacity metropolitan and international connectivity.",
+  "importance": 8,
+  "description": "European fiber and enterprise connectivity provider.",
+  "connections": [
+    "arelion",
+    "decix",
+    "linx",
+    "equinix"
+  ]
+},
 
-"layer":"isp",
-
-"region":"North America",
-
-"classification":[
-
-"IPv6 Backbone",
-
-"Transit Provider",
-
-"Regional ISP"
-
-],
-
-"network_role":
-
-"Large independent Internet backbone connecting regional networks and enterprises.",
-
-"importance":9,
-
-"description":
-
-"One of the largest IPv6 networks and a major independent Internet transit provider.",
-
-"connections":[
-
-"cogent",
-
-"lumen",
-
-"any2",
-
-"nyiiX",
-
-"decix"
-
-]
-
+{
+  "id": "eunetworks",
+  "name": "euNetworks",
+  "type": "Fiber Network Provider",
+  "layer": "backbone",
+  "region": "Europe",
+  "classification": [
+    "Fiber Network",
+    "Metro Fiber",
+    "Long Haul Fiber"
+  ],
+  "network_role": "Provides dense fiber connectivity across major European cities.",
+  "importance": 7,
+  "description": "European fiber infrastructure provider focused on metropolitan and long-haul networks.",
+  "connections": [
+    "colt",
+    "arelion",
+    "decix",
+    "linx"
+  ]
 },
 
 {
@@ -1356,6 +1400,242 @@
 ]
 
 },
+
+{
+  "id": "chunghwa",
+  "name": "Chunghwa Telecom",
+  "type": "National Carrier",
+  "layer": "carrier",
+  "region": "Asia",
+  "classification": [
+    "Telecom Operator",
+    "Fiber Network",
+    "Mobile Network"
+  ],
+  "network_role": "Major Taiwanese telecommunications and international connectivity provider.",
+  "importance": 8,
+  "description": "Taiwan's major telecommunications operator with international connectivity.",
+  "connections": [
+    "ntt",
+    "tata",
+    "sgix",
+    "kddi"
+  ]
+},
+
+{
+  "id": "starhub",
+  "name": "StarHub",
+  "type": "Regional Carrier",
+  "layer": "carrier",
+  "region": "Asia",
+  "classification": [
+    "Broadband",
+    "Mobile Network",
+    "Enterprise Network"
+  ],
+  "network_role": "Provides broadband, mobile and enterprise connectivity in Singapore.",
+  "importance": 7,
+  "description": "Major Singapore telecommunications provider.",
+  "connections": [
+    "singtel",
+    "sgix",
+    "tata"
+  ]
+},
+
+{
+  "id": "telekom_malaysia",
+  "name": "Telekom Malaysia",
+  "type": "National Carrier",
+  "layer": "carrier",
+  "region": "Asia",
+  "classification": [
+    "Fiber Network",
+    "International Carrier",
+    "Broadband"
+  ],
+  "network_role": "Major Malaysian telecommunications and international connectivity provider.",
+  "importance": 7,
+  "description": "National Malaysian telecommunications operator.",
+  "connections": [
+    "singtel",
+    "tata",
+    "sgix"
+  ]
+},
+
+{
+  "id": "telkomsel",
+  "name": "Telkomsel",
+  "type": "Mobile Network Operator",
+  "layer": "mobile",
+  "region": "Asia",
+  "classification": [
+    "Mobile Network",
+    "5G Network",
+    "Regional Carrier"
+  ],
+  "network_role": "Provides mobile connectivity across Indonesia.",
+  "importance": 8,
+  "description": "Major Indonesian wireless operator.",
+  "connections": [
+    "singtel",
+    "tata",
+    "sgix"
+  ]
+},
+
+{
+  "id": "kt_cloud",
+  "name": "KT Cloud",
+  "type": "Cloud Network",
+  "layer": "cloud",
+  "region": "Asia",
+  "classification": [
+    "Cloud",
+    "Data Center",
+    "Enterprise Network"
+  ],
+  "network_role": "Provides regional cloud infrastructure connected to Korean telecommunications networks.",
+  "importance": 6,
+  "description": "Cloud infrastructure operated within the Korean telecommunications ecosystem.",
+  "connections": [
+    "kt",
+    "sk_telecom",
+    "ntt"
+  ]
+},
+
+{
+  "id": "america_movil",
+  "name": "América Móvil",
+  "type": "International Carrier",
+  "layer": "carrier",
+  "region": "Latin America",
+  "classification": [
+    "Telecom Operator",
+    "Mobile Network",
+    "Fiber Network"
+  ],
+  "network_role": "Major telecommunications network spanning Latin America.",
+  "importance": 9,
+  "description": "One of the largest telecommunications operators in Latin America.",
+  "connections": [
+    "telefonica",
+    "tata",
+    "lumen",
+    "equinix"
+  ]
+},
+
+{
+  "id": "claro",
+  "name": "Claro",
+  "type": "Regional Carrier",
+  "layer": "carrier",
+  "region": "Latin America",
+  "classification": [
+    "Mobile Network",
+    "Broadband",
+    "Fiber Network"
+  ],
+  "network_role": "Provides broadband and mobile connectivity across Latin American markets.",
+  "importance": 8,
+  "description": "Major Latin American telecommunications network.",
+  "connections": [
+    "america_movil",
+    "telefonica",
+    "tata"
+  ]
+},
+
+{
+  "id": "internexa",
+  "name": "Internexa",
+  "type": "Regional Fiber Network",
+  "layer": "backbone",
+  "region": "Latin America",
+  "classification": [
+    "Fiber Backbone",
+    "Regional Carrier",
+    "Enterprise Network"
+  ],
+  "network_role": "Provides regional fiber connectivity across South America.",
+  "importance": 7,
+  "description": "Latin American fiber infrastructure and connectivity provider.",
+  "connections": [
+    "telefonica",
+    "tata",
+    "equinix"
+  ]
+},
+
+{
+  "id": "cirion",
+  "name": "Cirion Technologies",
+  "type": "Regional Backbone",
+  "layer": "backbone",
+  "region": "Latin America",
+  "classification": [
+    "Fiber Backbone",
+    "Enterprise Network",
+    "Data Center Connectivity"
+  ],
+  "network_role": "Provides enterprise and backbone connectivity throughout Latin America.",
+  "importance": 8,
+  "description": "Major Latin American telecommunications and digital infrastructure provider.",
+  "connections": [
+    "lumen",
+    "tata",
+    "telefonica",
+    "equinix"
+  ]
+},
+
+{
+  "id": "mainone",
+  "name": "MainOne",
+  "type": "Subsea and Data Center Network",
+  "layer": "backbone",
+  "region": "Africa",
+  "classification": [
+    "Submarine Cable",
+    "Data Center",
+    "Fiber Network"
+  ],
+  "network_role": "Provides West African connectivity through submarine and terrestrial infrastructure.",
+  "importance": 8,
+  "description": "Major West African digital infrastructure network.",
+  "connections": [
+    "wiocc",
+    "orange",
+    "napaafrica",
+    "liquid"
+  ]
+},
+
+{
+  "id": "telkom_sa",
+  "name": "Telkom South Africa",
+  "type": "National Carrier",
+  "layer": "carrier",
+  "region": "Africa",
+  "classification": [
+    "Fiber Network",
+    "Broadband",
+    "Enterprise Network"
+  ],
+  "network_role": "Major South African telecommunications and broadband provider.",
+  "importance": 7,
+  "description": "National telecommunications network serving South Africa.",
+  "connections": [
+    "liquid",
+    "mtn",
+    "napaafrica"
+  ]
+},
+  
 
 {
 "id":"deutsche_telekom",
@@ -3329,6 +3609,140 @@
 ]
 
 },
+
+{
+  "id": "cloudfront",
+  "name": "Amazon CloudFront",
+  "type": "Content Delivery Network",
+  "layer": "cloud",
+  "region": "Global",
+  "classification": [
+    "CDN",
+    "Edge Network",
+    "Cloud Infrastructure"
+  ],
+  "network_role": "Distributes AWS-hosted and external application content through global edge locations.",
+  "importance": 10,
+  "description": "Global content delivery network integrated with AWS infrastructure.",
+  "connections": [
+    "aws",
+    "equinix",
+    "lumen",
+    "decix"
+  ]
+},
+
+{
+  "id": "gcore",
+  "name": "Gcore",
+  "type": "Edge Network",
+  "layer": "cloud",
+  "region": "Global",
+  "classification": [
+    "CDN",
+    "Edge Compute",
+    "Cloud"
+  ],
+  "network_role": "Provides distributed edge and cloud infrastructure.",
+  "importance": 7,
+  "description": "Global edge infrastructure and content delivery provider.",
+  "connections": [
+    "equinix",
+    "decix",
+    "linx"
+  ]
+},
+
+
+{
+  "id": "cisco",
+  "name": "Cisco",
+  "type": "Network Equipment Provider",
+  "layer": "physical",
+  "region": "Global",
+  "classification": [
+    "Routers",
+    "Switches",
+    "Network Infrastructure"
+  ],
+  "network_role": "Supplies routing and switching infrastructure used throughout Internet networks.",
+  "importance": 10,
+  "description": "Major networking equipment manufacturer.",
+  "connections": [
+    "lumen",
+    "ntt",
+    "att",
+    "verizon",
+    "equinix"
+  ]
+},
+
+{
+  "id": "juniper",
+  "name": "Juniper Networks",
+  "type": "Network Equipment Provider",
+  "layer": "physical",
+  "region": "Global",
+  "classification": [
+    "Routers",
+    "Switches",
+    "Network Infrastructure"
+  ],
+  "network_role": "Provides high-performance routing and switching equipment for service providers and data centers.",
+  "importance": 9,
+  "description": "Major provider of carrier and data center networking equipment.",
+  "connections": [
+    "lumen",
+    "cogent",
+    "ntt",
+    "equinix"
+  ]
+},
+
+{
+  "id": "arista",
+  "name": "Arista Networks",
+  "type": "Data Center Network Equipment",
+  "layer": "physical",
+  "region": "Global",
+  "classification": [
+    "Data Center Switching",
+    "Ethernet",
+    "Cloud Networking"
+  ],
+  "network_role": "Provides high-speed switching infrastructure for cloud and data center networks.",
+  "importance": 9,
+  "description": "Major data center networking equipment provider.",
+  "connections": [
+    "aws",
+    "google",
+    "microsoft",
+    "equinix"
+  ]
+},
+
+{
+  "id": "ciena",
+  "name": "Ciena",
+  "type": "Optical Network Equipment Provider",
+  "layer": "physical",
+  "region": "Global",
+  "classification": [
+    "Optical Networking",
+    "DWDM",
+    "Fiber Infrastructure"
+  ],
+  "network_role": "Provides optical transport equipment used to move massive volumes of traffic across fiber networks.",
+  "importance": 9,
+  "description": "Major optical networking infrastructure provider.",
+  "connections": [
+    "lumen",
+    "zayo",
+    "tata",
+    "ntt"
+  ]
+},
+
 
 
 
