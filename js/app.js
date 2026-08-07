@@ -1,11 +1,14 @@
+console.log("Internet Infrastructure Map Starting");
+
+
 fetch("data/internet.json")
 
-.then(response => {
+.then(response=>{
 
     if(!response.ok){
 
         throw new Error(
-            "Could not load internet.json"
+            "internet.json failed loading"
         );
 
     }
@@ -19,8 +22,8 @@ fetch("data/internet.json")
 
 
 console.log(
-    "Loaded Infrastructure Database:",
-    data
+"Database Loaded",
+data
 );
 
 
@@ -29,119 +32,122 @@ const network =
 document.querySelector("#network");
 
 
+const details =
+document.querySelector("#details");
+
+
+
 if(!network){
 
-    throw new Error(
-        "Missing #network element"
-    );
+throw new Error(
+"#network missing"
+);
 
 }
 
 
 
-const width =
-network.clientWidth || 1000;
+let width =
+network.clientWidth;
 
 
-const height =
-network.clientHeight || 700;
+let height =
+network.clientHeight;
 
 
 
-// --------------------------------------
-// CLEAN DATA
-// --------------------------------------
+if(width < 500){
+
+width=1000;
+
+}
+
+
+if(height < 500){
+
+height=700;
+
+}
+
+
+
+// =================================
+// BUILD GRAPH
+// =================================
 
 
 const nodes =
 data.nodes || [];
 
-let links=[];
 
-const nodeIds = new Set(
-    nodes.map(n=>n.id)
-);
+
+const nodeMap =
+new Map();
 
 
 nodes.forEach(node=>{
 
-    if(!node.connections)
-        return;
-
-
-    node.connections.forEach(target=>{
-
-
-        if(nodeIds.has(target)){
-
-
-            links.push({
-
-                source:node.id,
-
-                target:target
-
-            });
-
-
-        }
-        else{
-
-            console.warn(
-                "Missing node:",
-                target,
-                "referenced by",
-                node.id
-            );
-
-        }
-
-
-    });
-
+nodeMap.set(
+node.id,
+node
+);
 
 });
 
 
 
+const links=[];
 
-const nodeMap =
-new Map(
-    nodes.map(
-        node=>[
-            node.id,
-            node
-        ]
-    )
+
+
+nodes.forEach(node=>{
+
+
+if(!node.connections)
+return;
+
+
+
+node.connections.forEach(connection=>{
+
+
+if(nodeMap.has(connection)){
+
+
+links.push({
+
+source:node.id,
+
+target:connection
+
+});
+
+
+}
+
+
+else{
+
+
+console.warn(
+
+"Missing connection:",
+
+node.id,
+
+"->",
+
+connection
+
 );
 
 
-
-// Remove broken links automatically
-
-links =
-links.filter(link=>{
+}
 
 
-    const sourceExists =
-    nodeMap.has(link.source);
 
+});
 
-    const targetExists =
-    nodeMap.has(link.target);
-
-
-    if(!sourceExists || !targetExists){
-
-        console.warn(
-            "Removing invalid link:",
-            link
-        );
-
-    }
-
-
-    return sourceExists && targetExists;
 
 
 });
@@ -149,79 +155,116 @@ links.filter(link=>{
 
 
 console.log(
-    "Nodes:",
-    nodes.length
+"Nodes",
+nodes.length
 );
 
 
 console.log(
-    "Valid Links:",
-    links.length
+"Links",
+links.length
 );
 
 
 
-// --------------------------------------
+
+
+// =================================
 // COLORS
-// --------------------------------------
+// =================================
 
 
-const colors={
+const layerColors={
 
-physical:"#777",
 
-colocation:"#00aaff",
+physical:"#707070",
 
-backbone:"#ff9900",
+colocation:"#00bfff",
 
-carrier:"#ff4444",
+backbone:"#ff8800",
+
+carrier:"#ff3333",
 
 isp:"#00dddd",
 
 mobile:"#00ff88",
 
-satellite:"#ffff00",
+satellite:"#ffee00",
 
 ixp:"#cc44ff",
 
-cloud:"#3399ff"
+cloud:"#3388ff"
+
 
 };
 
 
 
-// --------------------------------------
+
+
+// =================================
 // SVG
-// --------------------------------------
+// =================================
 
 
-const svg =
-d3.select("#network")
+const svg = d3.select(network)
+
 .append("svg")
-.attr("width",width)
-.attr("height",height);
+
+.attr(
+"width",
+"100%"
+)
+
+.attr(
+"height",
+"100%"
+);
 
 
 
-const container =
-svg.append("g");
 
+
+// THIS IS THE IMPORTANT FIX
+
+
+const viewport =
+
+svg.append("g")
+
+.attr(
+"class",
+"viewport"
+);
+
+
+
+
+
+// Zoom everything
 
 
 svg.call(
 
 d3.zoom()
 
-.scaleExtent([0.2,5])
+.scaleExtent(
+[
+0.1,
+8
+]
+)
 
 .on(
 "zoom",
+
 (event)=>{
 
-container.attr(
+viewport.attr(
 "transform",
 event.transform
 );
+
 
 }
 
@@ -229,29 +272,49 @@ event.transform
 
 );
 
-container.append("g")
 
-.attr(
-"width",
-width
-)
 
+
+
+// groups INSIDE viewport
+
+
+const linkLayer =
+
+viewport.append("g")
 .attr(
-"height",
-height
+"class",
+"links"
 );
 
 
 
+const nodeLayer =
 
-// --------------------------------------
-// SIMULATION
-// --------------------------------------
+viewport.append("g")
+.attr(
+"class",
+"nodes"
+);
 
 
-const simulation =
 
-d3.forceSimulation(nodes)
+const labelLayer =
+
+viewport.append("g")
+.attr(
+"class",
+"labels"
+);
+
+
+// =================================
+// FORCE SIMULATION
+// =================================
+
+
+const simulation = d3.forceSimulation(nodes)
+
 
 .force(
 
@@ -263,9 +326,18 @@ d3.forceLink(links)
 d=>d.id
 )
 
-.distance(150)
+.distance(
+
+d=>{
+
+return 120;
+
+}
 
 )
+
+)
+
 
 
 .force(
@@ -274,9 +346,10 @@ d=>d.id
 
 d3.forceManyBody()
 
-.strength(-500)
+.strength(-700)
 
 )
+
 
 
 .force(
@@ -284,8 +357,11 @@ d3.forceManyBody()
 "center",
 
 d3.forceCenter(
+
 width/2,
+
 height/2
+
 )
 
 )
@@ -298,27 +374,38 @@ height/2
 
 d3.forceCollide()
 
-.radius(35)
+.radius(
+
+d=>{
+
+return (
+
+(d.importance || 5)
+
+* 2
+
+)+20;
+
+
+}
+
+)
 
 );
 
 
 
 
-    
 
-// --------------------------------------
-// CONNECTION LINES
-// --------------------------------------
-
-
-const linkGroup =
-svg.append("g");
+// =================================
+// LINKS
+// =================================
 
 
 const linkElements =
 
-linkGroup
+
+linkLayer
 
 .selectAll("line")
 
@@ -329,32 +416,49 @@ linkGroup
 .append("line")
 
 .attr(
+
 "stroke",
-"#345"
+
+"#33495c"
+
 )
 
 .attr(
+
 "stroke-width",
-2
+
+d=>{
+
+return 1.5;
+
+}
+
+)
+
+.attr(
+
+"opacity",
+
+0.7
+
 );
 
 
 
 
 
-// --------------------------------------
+
+
+// =================================
 // NODES
-// --------------------------------------
-
-
-const nodeGroup =
-svg.append("g");
+// =================================
 
 
 
 const nodeElements =
 
-nodeGroup
+
+nodeLayer
 
 .selectAll("circle")
 
@@ -365,24 +469,167 @@ nodeGroup
 .append("circle")
 
 
+
+
+
 .attr(
+
 "r",
-20
+
+d=>{
+
+
+return (
+
+(d.importance || 5)
+
+*2
+
+)+8;
+
+
+}
+
 )
+
+
+
 
 
 .attr(
-"fill",
-d=>
 
-colors[d.layer]
+"fill",
+
+d=>{
+
+
+return (
+
+layerColors[d.layer]
+
 ||
-"#999"
+
+"#888"
+
+);
+
+
+}
 
 )
+
+
+
+
+
+.attr(
+
+"stroke",
+
+"#000"
+
+)
+
+
+
+.attr(
+
+"stroke-width",
+
+2
+
+
+
+
+
+)
+
+
+
+
+
+// glow effect
+
+.style(
+
+"filter",
+
+"drop-shadow(0px 0px 8px currentColor)"
+
+)
+
+
+
 
 
 .on(
+
+"mouseenter",
+
+function(){
+
+d3.select(this)
+
+.attr(
+
+"stroke",
+
+"#ffffff"
+
+)
+
+.attr(
+
+"stroke-width",
+
+4
+
+);
+
+
+}
+
+)
+
+
+
+
+
+.on(
+
+"mouseleave",
+
+function(){
+
+d3.select(this)
+
+.attr(
+
+"stroke",
+
+"#000"
+
+)
+
+.attr(
+
+"stroke-width",
+
+2
+
+);
+
+
+}
+
+)
+
+
+
+
+
+.on(
+
 "click",
 
 showDetails
@@ -390,39 +637,58 @@ showDetails
 )
 
 
+
+
+
 .call(
+
 
 d3.drag()
 
 .on(
+
 "start",
+
 dragStart
+
 )
 
 .on(
+
 "drag",
+
 dragMove
+
 )
 
 .on(
+
 "end",
+
 dragEnd
+
 )
+
+
 
 );
 
 
 
 
-// --------------------------------------
+
+
+
+// =================================
 // LABELS
-// --------------------------------------
+// =================================
 
 
-const labels =
+
+const labelElements =
 
 
-svg.append("g")
+labelLayer
 
 .selectAll("text")
 
@@ -432,125 +698,290 @@ svg.append("g")
 
 .append("text")
 
-
 .text(
+
 d=>d.name
+
 )
 
 
+
 .attr(
+
 "fill",
-"#ddd"
+
+"#d0d7de"
+
 )
 
 
+
 .attr(
+
 "font-size",
-12
+
+d=>{
+
+
+if((d.importance||0)>=9)
+
+return "14px";
+
+
+return "11px";
+
+
+}
+
 )
 
 
+
 .attr(
+
+"font-family",
+
+"monospace"
+
+)
+
+
+
+.attr(
+
 "text-anchor",
+
 "middle"
+
+)
+
+
+
+.style(
+
+"pointer-events",
+
+"none"
+
 );
 
 
 
 
 
-// --------------------------------------
-// UPDATE LOOP
-// --------------------------------------
+
+
+// =================================
+// SIMULATION UPDATE LOOP
+// =================================
 
 
 simulation.on(
+
 "tick",
 
 ()=>{
 
 
+
 linkElements
 
+
+
 .attr(
+
 "x1",
+
 d=>d.source.x
+
 )
 
+
+
 .attr(
+
 "y1",
+
 d=>d.source.y
+
 )
 
+
+
 .attr(
+
 "x2",
+
 d=>d.target.x
+
 )
 
+
+
 .attr(
+
 "y2",
+
 d=>d.target.y
+
 );
+
+
+
+
 
 
 
 nodeElements
 
+
+
 .attr(
+
 "cx",
+
 d=>d.x
+
 )
 
+
+
 .attr(
+
 "cy",
+
 d=>d.y
+
 );
 
 
 
-labels
+
+
+
+labelElements
+
+
 
 .attr(
+
 "x",
+
 d=>d.x
+
 )
 
+
+
 .attr(
+
 "y",
-d=>d.y-30
+
+d=>d.y-35
+
 );
+
 
 
 
 });
 
 
- 
 
 
 
-// --------------------------------------
-// SIDEBAR
-// --------------------------------------
+
+
+
+// =================================
+// DRAG FUNCTIONS
+// =================================
+
+
+function dragStart(event,d){
+
+
+
+if(!event.active)
+
+simulation.alphaTarget(
+0.3
+)
+.restart();
+
+
+
+d.fx=d.x;
+
+d.fy=d.y;
+
+
+}
+
+
+
+
+
+
+function dragMove(event,d){
+
+
+d.fx=event.x;
+
+d.fy=event.y;
+
+
+}
+
+
+
+
+
+
+
+function dragEnd(event,d){
+
+
+
+if(!event.active)
+
+simulation.alphaTarget(
+0
+);
+
+
+
+d.fx=null;
+
+d.fy=null;
+
+
+
+}
+
+// =================================
+// DETAILS PANEL
+// =================================
 
 
 function showDetails(event,d){
 
 
+const connected = links
 
-const connections = links
-
-.filter(
-
-link=>
-
-link.source.id===d.id ||
-
-link.target.id===d.id
-
-)
+.filter(link=>{
 
 
+return (
+
+link.source.id === d.id ||
+
+link.target.id === d.id
+
+);
+
+
+})
 
 .map(link=>{
 
@@ -558,36 +989,50 @@ link.target.id===d.id
 let other;
 
 
-if(link.source.id===d.id)
+if(link.source.id === d.id)
 
-other=link.target.name;
+{
+
+other = link.target;
+
+}
 
 else
 
-other=link.source.name;
+{
+
+other = link.source;
+
+}
 
 
 
 return `
 
-<li>
+<div class="connection">
 
-${other}
+<strong>
+
+${other.name}
+
+</strong>
 
 <br>
 
-<small>
+<span>
 
-${link.relationship || "connection"}
+${other.layer}
 
-</small>
+</span>
 
-</li>
+</div>
+
 
 `;
 
-})
 
+
+})
 
 .join("");
 
@@ -595,11 +1040,12 @@ ${link.relationship || "connection"}
 
 
 
-document.querySelector("#details")
 
-.innerHTML=`
+details.innerHTML = `
 
-<div class="card">
+
+<div class="intel-card">
+
 
 <h2>
 
@@ -608,31 +1054,67 @@ ${d.name}
 </h2>
 
 
+
+<div class="tag">
+
+${d.type}
+
+</div>
+
+
+
+<hr>
+
+
 <p>
 
-<b>Type:</b><br>
+<b>Layer</b>
 
-${d.type || ""}
-
-</p>
-
-
-<p>
-
-<b>Layer:</b><br>
+<br>
 
 ${d.layer}
 
 </p>
 
 
+
 <p>
 
-<b>Region:</b><br>
+<b>Region</b>
 
-${d.region || ""}
+<br>
+
+${d.region || "Global"}
 
 </p>
+
+
+
+<p>
+
+<b>Importance Score</b>
+
+<br>
+
+${d.importance || "Unknown"}
+
+</p>
+
+
+
+
+<p>
+
+<b>Network Role</b>
+
+<br>
+
+${d.network_role || ""}
+
+</p>
+
+
+
 
 
 <p>
@@ -642,102 +1124,515 @@ ${d.description || ""}
 </p>
 
 
+
+
+
 <h3>
 
-Connections
+Connected Infrastructure
 
 </h3>
 
 
-<ul>
+<div>
 
-${connections || "None"}
+${
 
-</ul>
+connected ||
 
+"No known connections"
+
+}
+
+</div>
+
+
+</div>
+
+
+`;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+// =================================
+// SEARCH SYSTEM
+// =================================
+
+
+const searchBox =
+document.querySelector("#search");
+
+
+
+if(searchBox){
+
+
+searchBox.addEventListener(
+
+"input",
+
+()=>{
+
+
+const value =
+
+searchBox.value
+
+.toLowerCase();
+
+
+
+
+nodeElements
+
+.attr(
+
+"opacity",
+
+d=>{
+
+
+if(
+
+d.name
+
+.toLowerCase()
+
+.includes(value)
+
+)
+
+return 1;
+
+
+
+return 0.15;
+
+
+
+}
+
+);
+
+
+
+labelElements
+
+.attr(
+
+"opacity",
+
+d=>{
+
+
+if(
+
+d.name
+
+.toLowerCase()
+
+.includes(value)
+
+)
+
+return 1;
+
+
+return 0.15;
+
+
+
+}
+
+);
+
+
+
+}
+
+
+
+);
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+// =================================
+// LAYER FILTERS
+// =================================
+
+
+window.filterLayer=function(layer){
+
+
+
+nodeElements.attr(
+
+"opacity",
+
+d=>{
+
+
+if(layer==="all")
+
+return 1;
+
+
+
+return d.layer===layer
+
+?1
+
+:0.1;
+
+
+
+}
+
+);
+
+
+
+
+labelElements.attr(
+
+"opacity",
+
+d=>{
+
+
+if(layer==="all")
+
+return 1;
+
+
+
+return d.layer===layer
+
+?1
+
+:0.1;
+
+
+
+}
+
+);
+
+
+
+
+linkElements.attr(
+
+"opacity",
+
+d=>{
+
+
+if(layer==="all")
+
+return .7;
+
+
+
+if(
+
+d.source.layer===layer ||
+
+d.target.layer===layer
+
+)
+
+return .8;
+
+
+
+return .05;
+
+
+
+}
+
+);
+
+
+
+}
+
+
+
+
+
+
+
+
+
+// =================================
+// RESET CAMERA
+// =================================
+
+
+window.resetView=function(){
+
+
+
+svg
+
+.transition()
+
+.duration(750)
+
+.call(
+
+d3.zoom()
+
+.transform,
+
+d3.zoomIdentity
+
+);
+
+
+
+}
+
+
+
+
+
+
+
+
+
+// =================================
+// DATABASE STATISTICS
+// =================================
+
+
+const stats = {
+
+
+nodes:nodes.length,
+
+
+links:links.length,
+
+
+regions:
+
+new Set(
+
+nodes.map(
+
+d=>d.region
+
+)
+
+)
+
+.size,
+
+
+
+critical:
+
+nodes.filter(
+
+d=>
+
+(d.importance||0)>=9
+
+)
+
+.length
+
+
+
+};
+
+
+
+
+console.log(
+
+"Network Statistics",
+
+stats
+
+);
+
+
+
+
+
+
+
+const statsBox =
+
+document.querySelector("#stats");
+
+
+
+if(statsBox){
+
+
+statsBox.innerHTML=`
+
+<div>
+
+NODES:
+
+${stats.nodes}
+
+</div>
+
+
+<div>
+
+CONNECTIONS:
+
+${stats.links}
+
+</div>
+
+
+<div>
+
+REGIONS:
+
+${stats.regions}
+
+</div>
+
+
+<div>
+
+CRITICAL NODES:
+
+${stats.critical}
 
 </div>
 
 `;
 
-}
-
-
-
-// --------------------------------------
-// DRAGGING
-// --------------------------------------
-
-
-function dragStart(event,d){
-
-if(!event.active)
-
-simulation.alphaTarget(.3).restart();
-
-
-d.fx=d.x;
-d.fy=d.y;
 
 }
 
 
 
-function dragMove(event,d){
-
-d.fx=event.x;
-d.fy=event.y;
-
-}
 
 
-
-function dragEnd(event,d){
-
-if(!event.active)
-
-simulation.alphaTarget(0);
+// =================================
+// INITIAL CAMERA POSITION
+// =================================
 
 
-d.fx=null;
-d.fy=null;
 
-}
+svg.call(
+
+d3.zoom()
+
+.transform,
+
+d3.zoomIdentity
+
+.translate(
+
+width/2,
+
+height/2
+
+)
+
+.scale(
+
+0.7
+
+)
+
+);
+
+
+
+
+
+console.log(
+
+"Internet Infrastructure Map Ready"
+
+);
 
 
 
 })
 
 
+
 .catch(error=>{
 
 
 console.error(
+
+"MAP FAILURE:",
+
 error
+
 );
 
 
 
-document.querySelector("#details")
+const details =
+document.querySelector("#details");
 
-.innerHTML=
 
-`
 
-<div class="card">
+if(details){
+
+
+details.innerHTML=`
+
+<div class="intel-card">
 
 <h2>
-SYSTEM ERROR
+
+SYSTEM FAILURE
+
 </h2>
 
 
 <p>
+
 ${error.message}
+
 </p>
+
 
 </div>
 
 `;
+
+}
+
 
 
 });
