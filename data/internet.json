@@ -1430,6 +1430,65 @@
 
 },
 
+{
+"id":"sba_communications",
+"name":"SBA Communications",
+"type":"Tower Infrastructure",
+"layer":"cell_tower",
+"region":"North America",
+
+"classification":[
+"Wireless Infrastructure",
+"Cell Towers",
+"Tower Leasing"
+],
+
+"network_role":
+"Owns and operates wireless communications infrastructure that carriers use to deploy cellular networks.",
+
+"importance":8,
+
+"description":
+"Major independent tower infrastructure provider supporting cellular and wireless network deployments.",
+
+"connections":[
+"att",
+"verizon",
+"tmobile"
+]
+},
+
+{
+"id":"american_tower",
+"name":"American Tower",
+"type":"Tower Infrastructure",
+"layer":"cell_tower",
+"region":"Global",
+
+"classification":[
+"Wireless Infrastructure",
+"Cell Towers",
+"Tower Leasing",
+"Distributed Communications"
+],
+
+"network_role":
+"Provides physical tower and communications infrastructure used by mobile operators and wireless networks.",
+
+"importance":9,
+
+"description":
+"One of the world's largest independent owners and operators of wireless communications infrastructure.",
+
+"connections":[
+"att",
+"verizon",
+"tmobile",
+"equinix"
+]
+},
+
+
 
 
 {
