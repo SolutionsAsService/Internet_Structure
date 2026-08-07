@@ -8,7 +8,7 @@
 },
 
 {
-"id":"subsea",
+"id":"submarine",
 "name":"Submarine Cable Infrastructure",
 "description":"Undersea fiber optic systems connecting continents"
 },
@@ -7362,7 +7362,7 @@
 
 "type":"Submarine Cable",
 
-"layer":"subsea",
+"layer":"submarine",
 
 "region":"Asia-Europe",
 
@@ -7394,7 +7394,7 @@
 "id":"curie",
 "name":"Curie Cable",
 "type":"Private Submarine Cable",
-"layer":"subsea",
+"layer":"submarine",
 "region":"North America-South America",
 
 "classification":[
@@ -7421,7 +7421,7 @@
 "id":"sea_me_we_5",
 "name":"SEA-ME-WE 5",
 "type":"Submarine Cable System",
-"layer":"subsea",
+"layer":"submarine",
 "region":"Europe-Asia",
 
 "classification":[
@@ -7450,7 +7450,7 @@
 "id":"aag",
 "name":"Asia America Gateway",
 "type":"Submarine Cable",
-"layer":"subsea",
+"layer":"submarine",
 "region":"Asia-Pacific",
 
 "classification":[
@@ -7484,7 +7484,7 @@
 
 "type":"Transatlantic Cable",
 
-"layer":"subsea",
+"layer":"submarine",
 
 "region":"North America-Europe",
 
@@ -7969,7 +7969,7 @@
 
 "type":"Submarine Cable",
 
-"layer":"subsea",
+"layer":"submarine",
 
 "region":"Africa",
 
