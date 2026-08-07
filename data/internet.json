@@ -4276,6 +4276,1573 @@
 ]
 },
 
+{
+    "id":"iana",
+    "name":"IANA",
+    "type":"Internet Governance",
+    "layer":"internet_coordination",
+    "region":"Global",
+    "classification":[
+      "DNS Root",
+      "IP Address Coordination",
+      "Protocol Registries",
+      "Internet Governance"
+    ],
+    "network_role":
+    "Coordinates globally unique Internet identifiers including DNS root zone assignments, IP address space, AS numbers, and protocol registries.",
+    "importance":10,
+    "description":
+    "Core coordination function underlying the globally unique addressing and naming systems used by the Internet.",
+    "connections":[
+      "icann",
+      "arin",
+      "ripe-ncc",
+      "apnic",
+      "lacnic"
+    ]
+  },
+
+  {
+    "id":"icann",
+    "name":"ICANN",
+    "type":"Internet Governance",
+    "layer":"internet_coordination",
+    "region":"Global",
+    "classification":[
+      "DNS Governance",
+      "Root Zone",
+      "Domain Names",
+      "Internet Governance"
+    ],
+    "network_role":
+    "Coordinates global DNS policy, domain-name systems, and operation of the DNS root zone.",
+    "importance":10,
+    "description":
+      "Central coordination organization for the global domain-name ecosystem.",
+    "connections":[
+      "iana",
+      "verisign",
+      "root-server-system",
+      "registries"
+    ]
+  },
+
+  {
+    "id":"arin",
+    "name":"ARIN",
+    "type":"Internet Registry",
+    "layer":"registry",
+    "region":"North America",
+    "classification":[
+      "Regional Internet Registry",
+      "IPv4",
+      "IPv6",
+      "ASN Allocation"
+    ],
+    "network_role":
+    "Allocates and administers Internet number resources for North America and parts of the Caribbean.",
+    "importance":10,
+    "description":
+      "Regional registry responsible for IP addresses and Autonomous System Numbers in its service region.",
+    "connections":[
+      "iana",
+      "icann",
+      "rpki",
+      "irr"
+    ]
+  },
+
+  {
+    "id":"nro",
+    "name":"Number Resource Organization",
+    "type":"Internet Governance",
+    "layer":"registry",
+    "region":"Global",
+    "classification":[
+      "RIR Coordination",
+      "IP Addressing",
+      "ASN Coordination",
+      "Internet Governance"
+    ],
+    "network_role":
+    "Coordinates the activities and policies of the world's Regional Internet Registries.",
+    "importance":9,
+    "description":
+    "Coordination layer connecting the five Regional Internet Registries.",
+    "connections":[
+      "arin",
+      "ripe-ncc",
+      "apnic",
+      "lacnic",
+      "afrinic"
+    ]
+  },
+
+  {
+    "id":"nro-number-council",
+    "name":"Address Supporting Organization Address Council",
+    "type":"Internet Governance",
+    "layer":"internet_coordination",
+    "region":"Global",
+    "classification":[
+      "IP Policy",
+      "RIR Coordination",
+      "Internet Governance"
+    ],
+    "network_role":
+    "Provides policy coordination and advice concerning Internet number resources.",
+    "importance":7,
+    "description":
+    "Part of the global policy machinery surrounding Internet address allocation.",
+    "connections":[
+      "nro",
+      "icann",
+      "arin",
+      "ripe-ncc"
+    ]
+  },
+
+  {
+    "id":"internet-society",
+    "name":"Internet Society",
+    "type":"Internet Organization",
+    "layer":"internet_coordination",
+    "region":"Global",
+    "classification":[
+      "Internet Development",
+      "IXP Development",
+      "Standards Support",
+      "Network Policy"
+    ],
+    "network_role":
+    "Supports development, resilience, and open standards-based operation of Internet infrastructure.",
+    "importance":9,
+    "description":
+      "Global organization supporting Internet development and technical infrastructure communities.",
+    "connections":[
+      "ietf",
+      "ixps",
+      "ripe-ncc",
+      "apnic"
+    ]
+  },
+
+  {
+    "id":"ietf",
+    "name":"Internet Engineering Task Force",
+    "type":"Standards Organization",
+    "layer":"standards",
+    "region":"Global",
+    "classification":[
+      "Internet Standards",
+      "RFCs",
+      "Protocols",
+      "Network Engineering"
+    ],
+    "network_role":
+    "Develops open technical standards underlying Internet protocols and interoperability.",
+    "importance":10,
+    "description":
+    "Major standards community responsible for specifications covering protocols such as BGP, DNS, TLS, QUIC, and IP.",
+    "connections":[
+      "internet-society",
+      "iana",
+      "ietf-trust",
+      "network-operators"
+    ]
+  },
+
+  {
+    "id":"ietf-trust",
+    "name":"IETF Trust",
+    "type":"Standards Infrastructure",
+    "layer":"standards",
+    "region":"Global",
+    "classification":[
+      "Standards Administration",
+      "RFC Infrastructure",
+      "Intellectual Property"
+    ],
+    "network_role":
+    "Administers intellectual property and organizational infrastructure supporting IETF standards publication.",
+    "importance":6,
+    "description":
+    "Administrative infrastructure supporting the publication ecosystem surrounding Internet standards.",
+    "connections":[
+      "ietf",
+      "rfc-editor"
+    ]
+  },
+
+  {
+    "id":"rfc-editor",
+    "name":"RFC Editor",
+    "type":"Internet Infrastructure",
+    "layer":"standards",
+    "region":"Global",
+    "classification":[
+      "RFC Publication",
+      "Standards Archive",
+      "Protocol Documentation"
+    ],
+    "network_role":
+    "Publishes and maintains the archival record of RFC documents defining Internet protocols and practices.",
+    "importance":8,
+    "description":
+    "Critical documentation infrastructure for the technical specifications underlying Internet interoperability.",
+    "connections":[
+      "ietf",
+      "iana"
+    ]
+  },
+
+  {
+    "id":"root-server-system",
+    "name":"DNS Root Server System",
+    "type":"DNS Infrastructure",
+    "layer":"dns",
+    "region":"Global",
+    "classification":[
+      "DNS Root",
+      "Root Zone",
+      "Authoritative DNS",
+      "Global Infrastructure"
+    ],
+    "network_role":
+    "Provides distributed authoritative service for the DNS root zone used to begin recursive domain-name resolution.",
+    "importance":10,
+    "description":
+    "Globally distributed infrastructure operated by independent root-server organizations.",
+    "connections":[
+      "iana",
+      "icann",
+      "verisign",
+      "netnod"
+    ]
+  },
+
+  {
+    "id":"isc",
+    "name":"Internet Systems Consortium",
+    "type":"Internet Infrastructure",
+    "layer":"dns",
+    "region":"North America",
+    "classification":[
+      "DNS",
+      "BIND",
+      "Root Server",
+      "Network Software"
+    ],
+    "network_role":
+    "Develops and operates foundational DNS software and Internet infrastructure including BIND.",
+    "importance":9,
+    "description":
+    "Important contributor to DNS software and global Internet infrastructure.",
+    "connections":[
+      "root-server-system",
+      "iana",
+      "dns-oarc",
+      "bind"
+    ]
+  },
+
+  {
+    "id":"nlnet-labs",
+    "name":"NLnet Labs",
+    "type":"Internet Software",
+    "layer":"dns_security",
+    "region":"Europe",
+    "classification":[
+      "DNS Software",
+      "RPKI",
+      "DNSSEC",
+      "Network Security"
+    ],
+    "network_role":
+    "Develops critical open-source DNS and routing-security software including authoritative DNS and RPKI tooling.",
+    "importance":9,
+    "description":
+    "Specialized nonprofit software organization contributing important DNS and routing-security infrastructure.",
+    "connections":[
+      "ripe-ncc",
+      "rpki",
+      "dns-oarc",
+      "internet-society"
+    ]
+  },
+
+  {
+    "id":"dns-oarc",
+    "name":"DNS-OARC",
+    "type":"DNS Organization",
+    "layer":"dns",
+    "region":"Global",
+    "classification":[
+      "DNS Operations",
+      "DNS Security",
+      "Measurement",
+      "Research"
+    ],
+    "network_role":
+    "Provides a collaborative environment for DNS operators and researchers to analyze operational and security issues.",
+    "importance":8,
+    "description":
+    "Specialized community focused on operational reliability and security of the DNS ecosystem.",
+    "connections":[
+      "nlnet-labs",
+      "isc",
+      "icann",
+      "root-server-system"
+    ]
+  },
+
+  {
+    "id":"knot-dns",
+    "name":"Knot DNS / CZ.NIC",
+    "type":"DNS Software",
+    "layer":"dns",
+    "region":"Europe",
+    "classification":[
+      "Authoritative DNS",
+      "DNSSEC",
+      "Open Source",
+      "Registry Infrastructure"
+    ],
+    "network_role":
+    "Provides high-performance authoritative DNS software used by DNS operators and registries.",
+    "importance":8,
+    "description":
+    "Czech Internet infrastructure project producing important authoritative DNS software.",
+    "connections":[
+      "cznic",
+      "nlnet-labs",
+      "dns-oarc",
+      "registries"
+    ]
+  },
+
+  {
+    "id":"cznic",
+    "name":"CZ.NIC",
+    "type":"Internet Registry",
+    "layer":"registry",
+    "region":"Europe",
+    "classification":[
+      "ccTLD Registry",
+      "DNS",
+      "Internet Exchange",
+      "Internet Infrastructure"
+    ],
+    "network_role":
+    "Operates Czech Internet registry infrastructure and develops network infrastructure software.",
+    "importance":7,
+    "description":
+      "National Internet registry and technical organization with significant contributions to DNS and networking.",
+    "connections":[
+      "knot-dns",
+      "nlnet-labs",
+      "nic-cz"
+    ]
+  },
+
+  {
+    "id":"powerdns",
+    "name":"PowerDNS",
+    "type":"DNS Software",
+    "layer":"dns",
+    "region":"Europe",
+    "classification":[
+      "Authoritative DNS",
+      "Recursive DNS",
+      "DNS Security",
+      "Open Source"
+    ],
+    "network_role":
+    "Provides authoritative and recursive DNS software deployed throughout service-provider and enterprise infrastructure.",
+    "importance":8,
+    "description":
+    "Major open-source DNS software ecosystem.",
+    "connections":[
+      "dns-oarc",
+      "nlnet-labs",
+      "registries",
+      "isp-networks"
+    ]
+  },
+
+  {
+    "id":"route-views",
+    "name":"Route Views",
+    "type":"Routing Measurement",
+    "layer":"routing",
+    "region":"Global",
+    "classification":[
+      "BGP Monitoring",
+      "Route Collection",
+      "Internet Measurement",
+      "Routing Research"
+    ],
+    "network_role":
+    "Collects and exposes BGP routing information used to observe global Internet routing behavior.",
+    "importance":9,
+    "description":
+      "Important public infrastructure for observing the global BGP routing table.",
+    "connections":[
+      "bgpstream",
+      "caida",
+      "ris",
+      "peeringdb"
+    ]
+  },
+
+  {
+    "id":"caida",
+    "name":"CAIDA",
+    "type":"Internet Research",
+    "layer":"measurement",
+    "region":"North America",
+    "classification":[
+      "Internet Measurement",
+      "Topology Research",
+      "BGP Research",
+      "Traffic Analysis"
+    ],
+    "network_role":
+      "Measures and studies Internet topology, routing, traffic, and network behavior.",
+    "importance":9,
+    "description":
+      "Major Internet measurement research organization producing datasets and tools used to understand global network structure.",
+    "connections":[
+      "route-views",
+      "bgpstream",
+      "ucsd",
+      "peeringdb"
+    ]
+  },
+
+  {
+    "id":"bgpstream",
+    "name":"BGPStream",
+    "type":"Routing Measurement",
+    "layer":"routing",
+    "region":"Global",
+    "classification":[
+      "BGP Monitoring",
+      "Routing Analytics",
+      "Internet Measurement",
+      "Route Analysis"
+    ],
+    "network_role":
+    "Provides tools and datasets for analyzing historical and real-time BGP routing information.",
+    "importance":8,
+    "description":
+    "Specialized infrastructure for studying Internet routing events and route propagation.",
+    "connections":[
+      "caida",
+      "route-views",
+      "ris"
+    ]
+  },
+
+  {
+    "id":"ris",
+    "name":"RIPE RIS",
+    "type":"Routing Measurement",
+    "layer":"routing",
+    "region":"Europe",
+    "classification":[
+      "BGP Monitoring",
+      "Route Collectors",
+      "Internet Measurement",
+      "Routing Research"
+    ],
+    "network_role":
+    "Collects BGP routing information from distributed route collectors around the Internet.",
+    "importance":9,
+    "description":
+    "Major public BGP measurement system operated as part of RIPE NCC infrastructure.",
+    "connections":[
+      "ripe-ncc",
+      "route-views",
+      "bgpstream",
+      "peeringdb"
+    ]
+  },
+
+  {
+    "id":"peeringdb",
+    "name":"PeeringDB",
+    "type":"Internet Infrastructure Database",
+    "layer":"peering",
+    "region":"Global",
+    "classification":[
+      "Peering Database",
+      "IXP Information",
+      "Network Discovery",
+      "Interconnection"
+    ],
+    "network_role":
+    "Provides structured information about networks, Internet exchanges, facilities, and interconnection opportunities.",
+    "importance":9,
+    "description":
+      "Widely used discovery database for Internet interconnection and peering.",
+    "connections":[
+      "equinix",
+      "de-cix",
+      "linx",
+      "ris",
+      "route-views"
+    ]
+  },
+
+  {
+    "id":"manrs",
+    "name":"MANRS",
+    "type":"Routing Security Initiative",
+    "layer":"routing_security",
+    "region":"Global",
+    "classification":[
+      "BGP Security",
+      "Routing Security",
+      "Network Operations",
+      "Best Practices"
+    ],
+    "network_role":
+    "Promotes operational practices that reduce routing incidents, leaks, and route hijacking.",
+    "importance":8,
+    "description":
+      "Global initiative focused on improving routing security across network operators and IXPs.",
+    "connections":[
+      "internet-society",
+      "ripe-ncc",
+      "rpki",
+      "ixps"
+    ]
+  },
+
+  {
+    "id":"rpkiproject",
+    "name":"RPKI Infrastructure",
+    "type":"Routing Security",
+    "layer":"routing_security",
+    "region":"Global",
+    "classification":[
+      "RPKI",
+      "Route Origin Validation",
+      "BGP Security",
+      "PKI"
+    ],
+    "network_role":
+    "Provides cryptographic validation infrastructure allowing network operators to verify authorized BGP route origins.",
+    "importance":10,
+    "description":
+    "Cryptographic trust infrastructure supporting secure Internet routing.",
+    "connections":[
+      "arin",
+      "ripe-ncc",
+      "apnic",
+      "lacnic",
+      "afrinic"
+    ]
+  },
+
+  {
+    "id":"routinator",
+    "name":"Routinator",
+    "type":"Routing Security Software",
+    "layer":"routing_security",
+    "region":"Europe",
+    "classification":[
+      "RPKI Validator",
+      "BGP Security",
+      "Open Source",
+      "Route Validation"
+    ],
+    "network_role":
+    "Validates RPKI certificates and route-origin authorization data for network operators.",
+    "importance":8,
+    "description":
+    "Important open-source component of the RPKI validation ecosystem.",
+    "connections":[
+      "nlnet-labs",
+      "rpkiproject",
+      "ripe-ncc",
+      "arin"
+    ]
+  },
+
+  {
+    "id":"irr",
+    "name":"Internet Routing Registries",
+    "type":"Routing Infrastructure",
+    "layer":"routing",
+    "region":"Global",
+    "classification":[
+      "Routing Policy",
+      "IRR",
+      "BGP Filtering",
+      "Network Security"
+    ],
+    "network_role":
+    "Stores routing policy information used by network operators to construct BGP filters.",
+    "importance":9,
+    "description":
+      "Distributed routing-policy database ecosystem used to reduce incorrect route announcements.",
+    "connections":[
+      "ripe-ncc",
+      "arin",
+      "apnic",
+      "rpkiproject"
+    ]
+  },
+
+  {
+    "id":"ntp-pool",
+    "name":"NTP Pool Project",
+    "type":"Time Infrastructure",
+    "layer":"time",
+    "region":"Global",
+    "classification":[
+      "NTP",
+      "Time Synchronization",
+      "Distributed Infrastructure",
+      "Open Source"
+    ],
+    "network_role":
+    "Provides a distributed pool of public Network Time Protocol servers used to synchronize computer clocks.",
+    "importance":8,
+    "description":
+    "Distributed timing infrastructure quietly supporting authentication, logging, distributed systems, and network operations.",
+    "connections":[
+      "ntp",
+      "gps",
+      "isp-networks",
+      "cloud-networks"
+    ]
+  },
+
+  {
+    "id":"pool-ntp",
+    "name":"pool.ntp.org",
+    "type":"Time Infrastructure",
+    "layer":"time",
+    "region":"Global",
+    "classification":[
+      "NTP",
+      "Distributed DNS",
+      "Time Synchronization",
+      "Public Infrastructure"
+    ],
+    "network_role":
+    "Uses DNS-based distribution to direct clients toward geographically appropriate public NTP servers.",
+    "importance":8,
+    "description":
+    "One of the most widely deployed public time synchronization services.",
+    "connections":[
+      "ntp-pool",
+      "dns",
+      "isp-networks",
+      "cloud-networks"
+    ]
+  },
+
+  {
+    "id":"isc-ke-root",
+    "name":"ISC Root Server",
+    "type":"DNS Root Infrastructure",
+    "layer":"dns_root",
+    "region":"Global",
+    "classification":[
+      "Root DNS",
+      "Authoritative DNS",
+      "Anycast",
+      "Global Infrastructure"
+    ],
+    "network_role":
+    "Provides globally distributed DNS root service through a large network of instances.",
+    "importance":9,
+    "description":
+    "One of the independent root-server infrastructures supporting global DNS resolution.",
+    "connections":[
+      "isc",
+      "iana",
+      "root-server-system",
+      "anycast"
+    ]
+  },
+
+  {
+    "id":"netnod-i-root",
+    "name":"Netnod I-Root",
+    "type":"DNS Root Infrastructure",
+    "layer":"dns_root",
+    "region":"Europe",
+    "classification":[
+      "Root DNS",
+      "Anycast",
+      "Authoritative DNS",
+      "Internet Exchange"
+    ],
+    "network_role":
+    "Operates distributed DNS root infrastructure using globally distributed instances.",
+    "importance":9,
+    "description":
+      "Root DNS infrastructure operated by the Nordic Internet infrastructure organization Netnod.",
+    "connections":[
+      "netnod",
+      "root-server-system",
+      "iana",
+      "de-cix"
+    ]
+  },
+
+  {
+    "id":"wide-project",
+    "name":"WIDE Project",
+    "type":"Research Network",
+    "layer":"research_network",
+    "region":"Asia-Pacific",
+    "classification":[
+      "Research Network",
+      "IPv6",
+      "Internet Research",
+      "DNS"
+    ],
+    "network_role":
+    "Conducts Internet research and operates important research networking and DNS infrastructure in Japan.",
+    "importance":8,
+    "description":
+      "Long-running Japanese Internet research organization contributing to core networking research.",
+    "connections":[
+      "jpix",
+      "jpnic",
+      "root-server-system",
+      "ntt"
+    ]
+  },
+
+  {
+    "id":"jpnic",
+    "name":"JPNIC",
+    "type":"Internet Registry",
+    "layer":"registry",
+    "region":"Asia-Pacific",
+    "classification":[
+      "National Internet Registry",
+      "IP Resources",
+      "Internet Governance",
+      "DNS"
+    ],
+    "network_role":
+      "Coordinates Internet number resources and Internet infrastructure activities in Japan.",
+    "importance":8,
+    "description":
+      "Japanese Internet registry and infrastructure organization.",
+    "connections":[
+      "apnic",
+      "wide-project",
+      "jpix",
+      "ntt"
+    ]
+  },
+
+  {
+    "id":"jpix",
+    "name":"JPIX",
+    "type":"Internet Exchange",
+    "layer":"ixp",
+    "region":"Asia-Pacific",
+    "classification":[
+      "Internet Exchange",
+      "Peering",
+      "Carrier Interconnection",
+      "Japan"
+    ],
+    "network_role":
+      "Provides Internet exchange infrastructure connecting Japanese carriers, ISPs, content networks, and enterprises.",
+    "importance":9,
+    "description":
+      "Major Japanese Internet exchange ecosystem.",
+    "connections":[
+      "jpnic",
+      "wide-project",
+      "ntt",
+      "singtel"
+    ]
+  },
+
+  {
+    "id":"bbix",
+    "name":"BBIX",
+    "type":"Internet Exchange",
+    "layer":"ixp",
+    "region":"Asia-Pacific",
+    "classification":[
+      "Internet Exchange",
+      "Peering",
+      "Private Interconnect",
+      "Asia-Pacific"
+    ],
+    "network_role":
+      "Operates Internet exchange and interconnection infrastructure across Asia-Pacific markets.",
+    "importance":8,
+    "description":
+      "Important regional peering platform associated with SoftBank's network ecosystem.",
+    "connections":[
+      "jpix",
+      "singtel",
+      "ntt",
+      "apnic"
+    ]
+  },
+
+  {
+    "id":"ixbr",
+    "name":"IX.br",
+    "type":"Internet Exchange",
+    "layer":"ixp",
+    "region":"South America",
+    "classification":[
+      "Internet Exchange",
+      "Peering",
+      "Brazil",
+      "Distributed IXP"
+    ],
+    "network_role":
+    "Provides distributed Internet exchange infrastructure connecting Brazilian networks and content providers.",
+    "importance":9,
+    "description":
+      "Major Brazilian Internet exchange ecosystem with multiple regional exchange locations.",
+    "connections":[
+      "lacnic",
+      "telefonica",
+      "de-cix",
+      "peeringdb"
+    ]
+  },
+
+  {
+    "id":"nap-africa",
+    "name":"NAP Africa",
+    "type":"Internet Exchange",
+    "layer":"ixp",
+    "region":"Africa",
+    "classification":[
+      "Internet Exchange",
+      "Peering",
+      "Africa",
+      "Carrier Interconnection"
+    ],
+    "network_role":
+    "Provides regional Internet exchange and interconnection facilities across African markets.",
+    "importance":8,
+    "description":
+      "Regional exchange infrastructure supporting African network interconnection.",
+    "connections":[
+      "afrinic",
+      "orange",
+      "telecom-italia",
+      "peeringdb"
+    ]
+  },
+
+  {
+    "id":"mix-it",
+    "name":"MIX-IT",
+    "type":"Internet Exchange",
+    "layer":"ixp",
+    "region":"Europe",
+    "classification":[
+      "Internet Exchange",
+      "Peering",
+      "Italy",
+      "Traffic Exchange"
+    ],
+    "network_role":
+      "Provides neutral peering infrastructure connecting Italian and international networks.",
+    "importance":8,
+    "description":
+      "Important Italian Internet exchange supporting domestic and international traffic exchange.",
+    "connections":[
+      "telecom-italia",
+      "de-cix",
+      "linx",
+      "peeringdb"
+    ]
+  },
+
+  {
+    "id":"ams-ix",
+    "name":"AMS-IX",
+    "type":"Internet Exchange",
+    "layer":"ixp",
+    "region":"Europe",
+    "classification":[
+      "Internet Exchange",
+      "Peering",
+      "Carrier Interconnection",
+      "Amsterdam"
+    ],
+    "network_role":
+      "Provides high-capacity neutral Internet exchange infrastructure in Amsterdam and other locations.",
+    "importance":10,
+    "description":
+      "Major European peering ecosystem connecting thousands of networks.",
+    "connections":[
+      "de-cix",
+      "linx",
+      "telia",
+      "equinix"
+    ]
+  },
+
+  {
+    "id":"ixp-manager",
+    "name":"IXP Manager",
+    "type":"Network Software",
+    "layer":"ixp_software",
+    "region":"Global",
+    "classification":[
+      "IXP Operations",
+      "Peering Automation",
+      "Open Source",
+      "Network Management"
+    ],
+    "network_role":
+      "Provides software used by Internet exchanges to manage members, ports, route servers, VLANs, and peering operations.",
+    "importance":7,
+    "description":
+      "Behind-the-scenes operational software used by Internet exchange operators.",
+    "connections":[
+      "ixps",
+      "de-cix",
+      "linx",
+      "ams-ix"
+    ]
+  },
+
+  {
+    "id":"netbox",
+    "name":"NetBox",
+    "type":"Network Infrastructure Software",
+    "layer":"network_operations",
+    "region":"Global",
+    "classification":[
+      "IPAM",
+      "DCIM",
+      "Network Automation",
+      "Infrastructure Inventory"
+    ],
+    "network_role":
+      "Provides authoritative inventory and IP address management for physical and logical network infrastructure.",
+    "importance":8,
+    "description":
+      "Widely used infrastructure source-of-truth platform for network operators and data centers.",
+    "connections":[
+      "ixp-manager",
+      "ansible",
+      "network-operators",
+      "datacenters"
+    ]
+  },
+
+  {
+    "id":"bird-routing",
+    "name":"BIRD Internet Routing Daemon",
+    "type":"Routing Software",
+    "layer":"routing",
+    "region":"Europe",
+    "classification":[
+      "BGP",
+      "Route Server",
+      "Routing Software",
+      "Open Source"
+    ],
+    "network_role":
+      "Provides routing software used in Internet exchanges, route collectors, and network infrastructure.",
+    "importance":8,
+    "description":
+      "Important open-source routing implementation frequently deployed in peering and route-server infrastructure.",
+    "connections":[
+      "ixp-manager",
+      "de-cix",
+      "linx",
+      "routinator"
+    ]
+  },
+
+  {
+    "id":"openbgpd",
+    "name":"OpenBGPD",
+    "type":"Routing Software",
+    "layer":"routing",
+    "region":"Global",
+    "classification":[
+      "BGP",
+      "Routing",
+      "Open Source",
+      "Internet Exchange"
+    ],
+    "network_role":
+      "Provides an open-source BGP implementation used in routing infrastructure and Internet exchange environments.",
+    "importance":7,
+    "description":
+      "Security-focused open-source implementation of the Border Gateway Protocol.",
+    "connections":[
+      "ixps",
+      "rpkiproject",
+      "bird-routing",
+      "openbsd"
+    ]
+  },
+
+  {
+    "id":"openbsd",
+    "name":"OpenBSD",
+    "type":"Operating System",
+    "layer":"network_software",
+    "region":"North America",
+    "classification":[
+      "Operating System",
+      "Network Security",
+      "Routing",
+      "Open Source"
+    ],
+    "network_role":
+      "Provides a security-focused operating system and networking software used in specialized infrastructure.",
+    "importance":7,
+    "description":
+      "Long-running open-source operating system project with significant networking and security components.",
+    "connections":[
+      "openbgpd",
+      "pf",
+      "network-operators"
+    ]
+  },
+
+  {
+    "id":"pf",
+    "name":"PF Packet Filter",
+    "type":"Network Security Software",
+    "layer":"network_security",
+    "region":"Global",
+    "classification":[
+      "Firewall",
+      "Packet Filtering",
+      "Network Security",
+      "Open Source"
+    ],
+    "network_role":
+      "Provides packet filtering and firewall functionality used to control network traffic.",
+    "importance":7,
+    "description":
+      "Foundational open-source firewall technology used in network infrastructure.",
+    "connections":[
+      "openbsd",
+      "network-operators",
+      "datacenters"
+    ]
+  },
+
+  {
+    "id":"sidn",
+    "name":"SIDN",
+    "type":"Domain Registry",
+    "layer":"dns",
+    "region":"Europe",
+    "classification":[
+      "ccTLD Registry",
+      "DNSSEC",
+      "Domain Names",
+      "Netherlands"
+    ],
+    "network_role":
+      "Operates the Dutch .nl domain registry and associated DNS infrastructure.",
+    "importance":8,
+    "description":
+      "National domain registry supporting one of the world's major country-code domains.",
+    "connections":[
+      "ams-ix",
+      "icann",
+      "iana",
+      "dns-oarc"
+    ]
+  },
+
+  {
+    "id":"nominet",
+    "name":"Nominet",
+    "type":"Domain Registry",
+    "layer":"dns",
+    "region":"Europe",
+    "classification":[
+      "ccTLD Registry",
+      "DNS",
+      "Domain Names",
+      "United Kingdom"
+    ],
+    "network_role":
+      "Operates UK domain registry infrastructure and supports DNS services for .uk domains.",
+    "importance":8,
+    "description":
+      "Major national domain registry underpinning UK Internet naming infrastructure.",
+    "connections":[
+      "linx",
+      "iana",
+      "icann",
+      "dns-oarc"
+    ]
+  },
+
+  {
+    "id":"denic",
+    "name":"DENIC",
+    "type":"Domain Registry",
+    "layer":"dns",
+    "region":"Europe",
+    "classification":[
+      "ccTLD Registry",
+      "DNS",
+      "Domain Names",
+      "Germany"
+    ],
+    "network_role":
+      "Operates Germany's .de domain registry and supporting DNS infrastructure.",
+    "importance":9,
+    "description":
+      "One of the largest country-code domain registries in the world.",
+    "connections":[
+      "de-cix",
+      "iana",
+      "icann",
+      "dns-oarc"
+    ]
+  },
+
+  {
+    "id":"nic-at",
+    "name":"nic.at",
+    "type":"Domain Registry",
+    "layer":"dns",
+    "region":"Europe",
+    "classification":[
+      "ccTLD Registry",
+      "DNS",
+      "Domain Names",
+      "Austria"
+    ],
+    "network_role":
+      "Operates Austria's .at domain registry and associated DNS infrastructure.",
+    "importance":7,
+    "description":
+      "National domain registry supporting Austrian Internet naming infrastructure.",
+    "connections":[
+      "de-cix",
+      "ripe-ncc",
+      "iana",
+      "dns-oarc"
+    ]
+  },
+
+  {
+    "id":"nic-ch",
+    "name":"nic.ch / SWITCH",
+    "type":"Domain Registry",
+    "layer":"dns",
+    "region":"Europe",
+    "classification":[
+      "ccTLD Registry",
+      "DNS",
+      "Domain Names",
+      "Switzerland"
+    ],
+    "network_role":
+      "Operates Swiss domain infrastructure and associated Internet services.",
+    "importance":7,
+    "description":
+      "Swiss Internet registry and infrastructure organization.",
+    "connections":[
+      "ripe-ncc",
+      "de-cix",
+      "iana",
+      "dns-oarc"
+    ]
+  },
+
+  {
+    "id":"internet2",
+    "name":"Internet2",
+    "type":"Research Network",
+    "layer":"research_network",
+    "region":"North America",
+    "classification":[
+      "Research Network",
+      "Education",
+      "High Performance Networking",
+      "Optical Network"
+    ],
+    "network_role":
+      "Operates advanced networking infrastructure connecting universities, research institutions, and scientific facilities.",
+    "importance":8,
+    "description":
+      "Major U.S. research and education networking ecosystem.",
+    "connections":[
+      "esnet",
+      "geant",
+      "internet-society",
+      "university-networks"
+    ]
+  },
+
+  {
+    "id":"esnet",
+    "name":"ESnet",
+    "type":"Research Network",
+    "layer":"research_network",
+    "region":"North America",
+    "classification":[
+      "Scientific Network",
+      "High Performance Networking",
+      "DOE",
+      "Optical Network"
+    ],
+    "network_role":
+      "Connects U.S. national laboratories and scientific facilities with high-capacity research networking.",
+    "importance":8,
+    "description":
+      "High-performance research network supporting scientific computing and data-intensive research.",
+    "connections":[
+      "internet2",
+      "geant",
+      "national-labs",
+      "supercomputing"
+    ]
+  },
+
+  {
+    "id":"geant",
+    "name":"GÉANT",
+    "type":"Research Network",
+    "layer":"research_network",
+    "region":"Europe",
+    "classification":[
+      "Research Network",
+      "Education",
+      "European Backbone",
+      "High Performance Networking"
+    ],
+    "network_role":
+      "Provides pan-European research and education networking infrastructure.",
+    "importance":8,
+    "description":
+      "Major European research network connecting national research and education networks.",
+    "connections":[
+      "internet2",
+      "esnet",
+      "ripe-ncc",
+      "de-cix"
+    ]
+  },
+
+  {
+    "id":"renater",
+    "name":"RENATER",
+    "type":"Research Network",
+    "layer":"research_network",
+    "region":"Europe",
+    "classification":[
+      "Research Network",
+      "Education",
+      "France",
+      "National Backbone"
+    ],
+    "network_role":
+      "Provides advanced network connectivity for French research and education institutions.",
+    "importance":7,
+    "description":
+      "French national research and education network.",
+    "connections":[
+      "geant",
+      "orange",
+      "de-cix",
+      "internet2"
+    ]
+  },
+
+  {
+    "id":"rediris",
+    "name":"RedIRIS",
+    "type":"Research Network",
+    "layer":"research_network",
+    "region":"Europe",
+    "classification":[
+      "Research Network",
+      "Education",
+      "Spain",
+      "National Backbone"
+    ],
+    "network_role":
+      "Provides advanced network connectivity to Spanish research and education institutions.",
+    "importance":7,
+    "description":
+      "Spanish national research and education network.",
+    "connections":[
+      "geant",
+      "telefonica",
+      "de-cix",
+      "internet2"
+    ]
+  },
+
+  {
+    "id":"janet",
+    "name":"Jisc / JANET",
+    "type":"Research Network",
+    "layer":"research_network",
+    "region":"Europe",
+    "classification":[
+      "Research Network",
+      "Education",
+      "United Kingdom",
+      "National Backbone"
+    ],
+    "network_role":
+      "Provides advanced network connectivity to UK universities and research institutions.",
+    "importance":8,
+    "description":
+      "UK national research and education network.",
+    "connections":[
+      "linx",
+      "geant",
+      "internet2",
+      "nominet"
+    ]
+  },
+
+  {
+    "id":"renater-pro",
+    "name":"RENATER International Peering",
+    "type":"Research Interconnection",
+    "layer":"peering",
+    "region":"Europe",
+    "classification":[
+      "Research Peering",
+      "Education",
+      "Network Interconnection"
+    ],
+    "network_role":
+      "Connects national research networks with broader European and international research infrastructure.",
+    "importance":6,
+    "description":
+      "Interconnection layer between research networks and the commercial Internet.",
+    "connections":[
+      "renater",
+      "geant",
+      "de-cix",
+      "orange"
+    ]
+  },
+
+  {
+    "id":"first",
+    "name":"FIRST",
+    "type":"Security Organization",
+    "layer":"security",
+    "region":"Global",
+    "classification":[
+      "Incident Response",
+      "CERT Coordination",
+      "Cybersecurity",
+      "Threat Response"
+    ],
+    "network_role":
+      "Coordinates collaboration between incident-response teams and security organizations worldwide.",
+    "importance":8,
+    "description":
+      "Global coordination network for computer security incident response teams.",
+    "connections":[
+      "cert-networks",
+      "internet-society",
+      "ietf",
+      "security-providers"
+    ]
+  },
+
+  {
+    "id":"cert-cc",
+    "name":"CERT Coordination Center",
+    "type":"Security Organization",
+    "layer":"security",
+    "region":"North America",
+    "classification":[
+      "CERT",
+      "Incident Response",
+      "Vulnerability Research",
+      "Cybersecurity"
+    ],
+    "network_role":
+      "Coordinates cybersecurity incident response and vulnerability information.",
+    "importance":8,
+    "description":
+      "Early and influential computer emergency response organization.",
+    "connections":[
+      "first",
+      "cisa",
+      "security-providers",
+      "internet-society"
+    ]
+  },
+
+  {
+    "id":"cisa",
+    "name":"CISA",
+    "type":"Government Cybersecurity",
+    "layer":"security",
+    "region":"North America",
+    "classification":[
+      "Critical Infrastructure",
+      "Cybersecurity",
+      "Incident Response",
+      "Government"
+    ],
+    "network_role":
+      "Supports cybersecurity and resilience of U.S. critical infrastructure and government networks.",
+    "importance":8,
+    "description":
+      "U.S. government cybersecurity organization with significant relevance to Internet and communications infrastructure.",
+    "connections":[
+      "cert-cc",
+      "first",
+      "government-networks",
+      "isp-networks"
+    ]
+  },
+
+  {
+    "id":"w3c",
+    "name":"W3C",
+    "type":"Standards Organization",
+    "layer":"web_standards",
+    "region":"Global",
+    "classification":[
+      "Web Standards",
+      "HTML",
+      "Web APIs",
+      "Browser Standards"
+    ],
+    "network_role":
+      "Develops and maintains standards governing the interoperable Web platform.",
+    "importance":9,
+    "description":
+      "Standards organization responsible for many of the technologies used by browsers and Web applications.",
+    "connections":[
+      "ietf",
+      "browser-vendors",
+      "web-platform",
+      "dns"
+    ]
+  },
+
+  {
+    "id":"whatwg",
+    "name":"WHATWG",
+    "type":"Web Standards Organization",
+    "layer":"web_standards",
+    "region":"Global",
+    "classification":[
+      "HTML",
+      "Web APIs",
+      "Browser Standards",
+      "Web Platform"
+    ],
+    "network_role":
+      "Maintains living standards defining major components of the modern Web platform.",
+    "importance":8,
+    "description":
+      "Important standards community behind continuously maintained Web platform specifications.",
+    "connections":[
+      "w3c",
+      "browser-vendors",
+      "web-platform"
+    ]
+  },
+
+  {
+    "id":"letsencrypt",
+    "name":"Let's Encrypt",
+    "type":"Certificate Authority",
+    "layer":"pki",
+    "region":"Global",
+    "classification":[
+      "TLS Certificates",
+      "PKI",
+      "ACME",
+      "Web Security"
+    ],
+    "network_role":
+      "Issues automated publicly trusted TLS certificates used to encrypt Internet connections.",
+    "importance":10,
+    "description":
+      "Major certificate authority underpinning HTTPS encryption across the public Web.",
+    "connections":[
+      "acme",
+      "browsers",
+      "root-cas",
+      "webservers"
+    ]
+  },
+
+  {
+    "id":"crt-sh",
+    "name":"crt.sh",
+    "type":"Certificate Transparency",
+    "layer":"pki",
+    "region":"Global",
+    "classification":[
+      "Certificate Transparency",
+      "TLS",
+      "Security Monitoring",
+      "Public Database"
+    ],
+    "network_role":
+      "Indexes publicly logged TLS certificates for certificate discovery and security monitoring.",
+    "importance":8,
+    "description":
+      "Important public certificate-transparency search infrastructure.",
+    "connections":[
+      "letsencrypt",
+      "certificate-transparency",
+      "root-cas",
+      "security-research"
+    ]
+  },
+
+  {
+    "id":"acme",
+    "name":"ACME Protocol",
+    "type":"Internet Protocol",
+    "layer":"pki",
+    "region":"Global",
+    "classification":[
+      "TLS Automation",
+      "PKI",
+      "Certificate Automation",
+      "Internet Standards"
+    ],
+    "network_role":
+      "Automates certificate issuance and renewal between certificate authorities and domain operators.",
+    "importance":9,
+    "description":
+      "Protocol infrastructure enabling automated HTTPS certificate management at Internet scale.",
+    "connections":[
+      "letsencrypt",
+      "ietf",
+      "webservers",
+      "dns"
+    ]
+  },
+  
+
 
 {
   "id": "arm",
