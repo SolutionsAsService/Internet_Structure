@@ -193,6 +193,12 @@ satellite:"#ffee00",
 
 ixp:"#cc44ff",
 
+dns:"#FFBF00",
+
+subsea:"#090088",
+
+hardware:"#B2BEB5",
+
 cloud:"#3388ff"
 
 
