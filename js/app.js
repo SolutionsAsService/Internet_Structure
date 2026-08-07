@@ -173,78 +173,249 @@ links.length
 // COLORS
 // =================================
 
+const layerColors = {
 
-const layerColors={
+    // ==============================
+    // PHYSICAL / FACILITIES
+    // ==============================
 
+    physical: "#6B7280",
+    power: "#F59E0B",
+    datacenter: "#8B5CF6",
+    colocation: "#A78BFA",
+    edge: "#7C3AED",
+    pop: "#8B5CF6",
 
-physical:"#707070",
+    // ==============================
+    // CONNECTIVITY
+    // ==============================
 
-colocation:"#00bfff",
+    isp: "#22C55E",
+    mobile: "#16A34A",
+    fixed_wireless: "#4ADE80",
+    enterprise_isp: "#15803D",
 
-backbone:"#ff8800",
+    carrier: "#10B981",
+    backbone: "#059669",
+    transit: "#047857",
+    tier1: "#065F46",
+    tier2: "#0F766E",
+    tier3: "#14B8A6",
 
-carrier:"#ff3333",
+    // ==============================
+    // INTERNET EXCHANGE
+    // ==============================
 
-isp:"#00dddd",
+    ixp: "#06B6D4",
+    route_server: "#0891B2",
+    peering: "#0E7490",
+    internet_exchange_fabric: "#155E75",
+    internet_exchange_operator: "#06B6D4",
 
-mobile:"#00ff88",
+    // ==============================
+    // ROUTING
+    // ==============================
 
-satellite:"#ffee00",
+    routing: "#3B82F6",
+    routing_security: "#2563EB",
+    routing_measurement: "#1D4ED8",
+    routing_software: "#2563EB",
+    network_operations: "#1E40AF",
+    network_automation: "#4F46E5",
 
-ixp:"#cc44ff",
+    // ==============================
+    // DNS
+    // ==============================
 
-dns:"#FFBF00",
+    dns: "#F97316",
+    dns_root: "#EA580C",
+    dns_authoritative: "#C2410C",
+    dns_recursive: "#9A3412",
+    dns_registry: "#7C2D12",
 
-subsea:"#090088",
+    // ==============================
+    // ADDRESSING / COORDINATION
+    // ==============================
 
-hardware:"#B2BEB5",
+    registry: "#14B8A6",
+    rir: "#0D9488",
+    rir_database: "#0F766E",
+    internet_coordination: "#14B8A6",
+    internet_governance: "#0D9488",
+    standards: "#0F766E",
+    web_standards: "#115E59",
 
-cloud:"#3388ff",
+    // ==============================
+    // CDN / EDGE
+    // ==============================
 
-server_odm:"#475569",
+    cdn: "#EC4899",
+    edge_compute: "#DB2777",
+    web_acceleration: "#BE185D",
+    anycast: "#F43F5E",
+    geodns: "#E11D48",
 
-storage_hardware:"#334155",
+    // ==============================
+    // CLOUD / COMPUTE
+    // ==============================
 
-memory:"#1E293B",
+    cloud: "#6366F1",
+    compute: "#4F46E5",
+    gpu_compute: "#4338CA",
+    server: "#3730A3",
+    storage: "#312E81",
 
-semiconductor:"#F43F5E",
- 
-semiconductor_design:"#E11D48",
+    // ==============================
+    // NETWORK HARDWARE
+    // ==============================
 
-semiconductor_fab:"#BE123C",
-    
-semiconductor_equipment:"#9F1239",
+    network_hardware: "#64748B",
+    router: "#475569",
+    switching: "#334155",
+    firewall: "#1E293B",
+    load_balancing: "#0F172A",
 
-peering:"#0E7490",
-  
-internet_exchange_fabric":"#155E75",
-routing:"#3B82F6",
-routing_security:"#2563EB",
-  
-routing_measurement:"#1D4ED8",
- 
-network_operations:"#1E40AF",
+    // ==============================
+    // OPTICAL / FIBER
+    // ==============================
 
-dns_root:"#EA580C",
-  
-dns_authoritative":"#C2410C",
-dns_recursive:"#9A3412",
-dns_registry:"#7C2D12",
+    optical: "#EAB308",
+    fiber: "#CA8A04",
+    longhaul: "#A16207",
+    metro: "#854D0E",
+    optical_transport: "#713F12",
 
-anycast:"#F43F5E",
-geodns:"#E11D48",
-cdn:"#EC4899",
-edge_compute:"#DB2777",
-web_acceleration:"#BE185D",
-compute:"#4F46E5",
-     
-gpu_compute:"#4338CA", 
-server:"#3730A3",
-storage:"#312E81"
- 
+    // ==============================
+    // SUBMARINE
+    // ==============================
 
+    submarine: "#0284C7",
+    subsea: "#0284C7",
+    cable_landing: "#0369A1",
+    submarine_operator: "#075985",
+
+    // ==============================
+    // SATELLITE
+    // ==============================
+
+    satellite: "#8B5CF6",
+    leo: "#7C3AED",
+    geo_satellite: "#6D28D9",
+    ground_station: "#5B21B6",
+    satellite_ground: "#7C3AED",
+
+    // ==============================
+    // MOBILE
+    // ==============================
+
+    mobile_core: "#84CC16",
+    radio_access: "#65A30D",
+    cell_tower: "#4D7C0F",
+    spectrum: "#9333EA",
+
+    // ==============================
+    // SECURITY
+    // ==============================
+
+    security: "#EF4444",
+    ddos: "#DC2626",
+    waf: "#B91C1C",
+    incident_response: "#991B1B",
+
+    // ==============================
+    // PKI
+    // ==============================
+
+    pki: "#EF4444",
+    certificate_authority: "#DC2626",
+    certificate_transparency: "#B91C1C",
+
+    // ==============================
+    // TIME
+    // ==============================
+
+    time: "#FACC15",
+    ntp: "#EAB308",
+    ptp: "#CA8A04",
+    gps_timing: "#A16207",
+
+    // ==============================
+    // RESEARCH / MEASUREMENT
+    // ==============================
+
+    research_network: "#A855F7",
+    national_research: "#9333EA",
+    measurement: "#D946EF",
+    topology: "#C026D3",
+    traffic_measurement: "#A21CAF",
+
+    // ==============================
+    // SOFTWARE
+    // ==============================
+
+    ixp_software: "#0891B2",
+    server_oem: "#64748B",
+    server_odm: "#475569",
+    storage_hardware: "#334155",
+
+    // ==============================
+    // SEMICONDUCTORS
+    // ==============================
+
+    semiconductor: "#F43F5E",
+    semiconductor_design: "#E11D48",
+    semiconductor_fab: "#BE123C",
+    semiconductor_equipment: "#9F1239",
+    semiconductor_materials: "#881337",
+    chip_packaging: "#701A75",
+
+    memory: "#1E293B",
+
+    // ==============================
+    // ELECTRONICS
+    // ==============================
+
+    pcb: "#78716C",
+    electronics_manufacturing: "#57534E",
+
+    // ==============================
+    // POWER / COOLING
+    // ==============================
+
+    cooling: "#06B6D4",
+    liquid_cooling: "#0891B2",
+    backup_power: "#F59E0B",
+    generator: "#D97706",
+    ups: "#B45309",
+
+    // ==============================
+    // PHYSICAL OPERATIONS
+    // ==============================
+
+    physical_security: "#52525B",
+    construction: "#71717A",
+    fiber_construction: "#A1A1AA",
+
+    // ==============================
+    // GOVERNMENT / CRITICAL INFRA
+    // ==============================
+
+    government_network: "#475569",
+    critical_infrastructure: "#334155",
+
+    // ==============================
+    // CONTENT
+    // ==============================
+
+    content_provider: "#EC4899",
+    application: "#F43F5E",
+
+    // ==============================
+    // OPERATORS
+    // ==============================
+
+    network_operator: "#10B981"
 };
-
 
 
 
