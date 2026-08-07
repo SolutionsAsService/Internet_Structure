@@ -4272,6 +4272,509 @@
 
 
 {
+  "id": "arm",
+  "name": "Arm",
+  "type": "CPU Architecture and IP",
+  "layer": "hardware",
+  "region": "Global",
+  "classification": [
+    "CPU Architecture",
+    "Semiconductor IP",
+    "Chip Design"
+  ],
+  "network_role": "Provides processor architectures used throughout servers, networking equipment and embedded infrastructure.",
+  "importance": 10,
+  "description": "Major semiconductor architecture and intellectual property provider.",
+  "connections": [
+    "aws",
+    "microsoft",
+    "nvidia"
+  ]
+},
+
+{
+  "id": "synopsys",
+  "name": "Synopsys",
+  "type": "Electronic Design Automation",
+  "layer": "hardware",
+  "region": "Global",
+  "classification": [
+    "EDA",
+    "Chip Design",
+    "Semiconductor IP"
+  ],
+  "network_role": "Provides software and intellectual property used to design advanced semiconductor devices.",
+  "importance": 9,
+  "description": "Major electronic design automation and semiconductor IP provider.",
+  "connections": [
+    "tsmc",
+    "intel_fab",
+    "samsung_semiconductor"
+  ]
+},
+
+{
+  "id": "cadence",
+  "name": "Cadence",
+  "type": "Electronic Design Automation",
+  "layer": "hardware",
+  "region": "Global",
+  "classification": [
+    "EDA",
+    "Chip Design",
+    "Verification"
+  ],
+  "network_role": "Provides tools used to design, simulate and verify semiconductor systems.",
+  "importance": 9,
+  "description": "Major semiconductor design software provider.",
+  "connections": [
+    "tsmc",
+    "samsung_semiconductor",
+    "intel_fab"
+  ]
+},
+
+{
+  "id": "tsmc",
+  "name": "TSMC",
+  "type": "Semiconductor Foundry",
+  "layer": "hardware",
+  "region": "Asia",
+  "classification": [
+    "Semiconductor Fab",
+    "Advanced Node Manufacturing",
+    "Foundry"
+  ],
+  "network_role": "Manufactures advanced processors and accelerators designed by semiconductor companies.",
+  "importance": 10,
+  "description": "One of the world's largest semiconductor foundries.",
+  "connections": [
+    "nvidia",
+    "amd",
+    "apple",
+    "arm",
+    "asml"
+  ]
+},
+
+{
+  "id": "samsung_semiconductor",
+  "name": "Samsung Semiconductor",
+  "type": "Semiconductor Manufacturer",
+  "layer": "hardware",
+  "region": "Asia",
+  "classification": [
+    "Semiconductor Fab",
+    "Memory",
+    "Logic Manufacturing"
+  ],
+  "network_role": "Manufactures logic and memory components used across computing infrastructure.",
+  "importance": 10,
+  "description": "Major semiconductor and memory manufacturer.",
+  "connections": [
+    "arm",
+    "asml",
+    "synopsys",
+    "cadence"
+  ]
+},
+
+{
+  "id": "intel_fab",
+  "name": "Intel Foundry",
+  "type": "Semiconductor Foundry",
+  "layer": "hardware",
+  "region": "North America",
+  "classification": [
+    "Semiconductor Fab",
+    "CPU Manufacturing",
+    "Foundry"
+  ],
+  "network_role": "Manufactures processors and semiconductor products for computing infrastructure.",
+  "importance": 10,
+  "description": "Major semiconductor manufacturing network headquartered in the United States.",
+  "connections": [
+    "synopsys",
+    "cadence",
+    "dell",
+    "supermicro"
+  ]
+},
+
+{
+  "id": "asml",
+  "name": "ASML",
+  "type": "Semiconductor Manufacturing Equipment",
+  "layer": "hardware",
+  "region": "Europe",
+  "classification": [
+    "Lithography",
+    "EUV",
+    "Semiconductor Equipment"
+  ],
+  "network_role": "Supplies advanced lithography systems required to manufacture leading-edge semiconductor devices.",
+  "importance": 10,
+  "description": "Critical semiconductor manufacturing equipment provider.",
+  "connections": [
+    "tsmc",
+    "intel_fab",
+    "samsung_semiconductor"
+  ]
+},
+
+{
+  "id": "applied_materials",
+  "name": "Applied Materials",
+  "type": "Semiconductor Equipment",
+  "layer": "hardware",
+  "region": "North America",
+  "classification": [
+    "Wafer Manufacturing",
+    "Semiconductor Equipment",
+    "Materials Engineering"
+  ],
+  "network_role": "Provides equipment used throughout semiconductor fabrication.",
+  "importance": 9,
+  "description": "Major semiconductor and display manufacturing equipment supplier.",
+  "connections": [
+    "tsmc",
+    "intel_fab",
+    "samsung_semiconductor"
+  ]
+},
+
+{
+  "id": "lam_research",
+  "name": "Lam Research",
+  "type": "Semiconductor Equipment",
+  "layer": "hardware",
+  "region": "North America",
+  "classification": [
+    "Etching",
+    "Deposition",
+    "Semiconductor Equipment"
+  ],
+  "network_role": "Provides fabrication equipment used to manufacture advanced semiconductor devices.",
+  "importance": 9,
+  "description": "Major semiconductor fabrication equipment manufacturer.",
+  "connections": [
+    "tsmc",
+    "intel_fab",
+    "samsung_semiconductor"
+  ]
+},
+
+{
+  "id": "nvidia",
+  "name": "NVIDIA",
+  "type": "Accelerator and Semiconductor Designer",
+  "layer": "hardware",
+  "region": "Global",
+  "classification": [
+    "GPU",
+    "AI Accelerator",
+    "Data Center Hardware"
+  ],
+  "network_role": "Designs GPUs and accelerators deployed throughout modern AI and cloud data centers.",
+  "importance": 10,
+  "description": "Major provider of GPUs and accelerated computing platforms.",
+  "connections": [
+    "tsmc",
+    "asml",
+    "aws",
+    "microsoft",
+    "google"
+  ]
+},
+
+{
+  "id": "amd",
+  "name": "AMD",
+  "type": "CPU and Accelerator Designer",
+  "layer": "hardware",
+  "region": "Global",
+  "classification": [
+    "CPU",
+    "GPU",
+    "AI Accelerator",
+    "Data Center Hardware"
+  ],
+  "network_role": "Designs CPUs, GPUs and accelerators deployed in servers and cloud infrastructure.",
+  "importance": 10,
+  "description": "Major processor and accelerator designer.",
+  "connections": [
+    "tsmc",
+    "aws",
+    "microsoft",
+    "dell"
+  ]
+},
+
+{
+  "id": "marvell",
+  "name": "Marvell",
+  "type": "Networking Semiconductor Designer",
+  "layer": "hardware",
+  "region": "Global",
+  "classification": [
+    "Networking Silicon",
+    "Data Processing",
+    "Storage Controllers"
+  ],
+  "network_role": "Provides networking and infrastructure semiconductor technologies.",
+  "importance": 9,
+  "description": "Major infrastructure semiconductor provider.",
+  "connections": [
+    "tsmc",
+    "cisco",
+    "arista"
+  ]
+},
+
+{
+  "id": "broadcom",
+  "name": "Broadcom",
+  "type": "Infrastructure Semiconductor Provider",
+  "layer": "hardware",
+  "region": "Global",
+  "classification": [
+    "Networking Silicon",
+    "Switching",
+    "Connectivity"
+  ],
+  "network_role": "Provides switching silicon and connectivity components used throughout data-center networks.",
+  "importance": 10,
+  "description": "Major infrastructure semiconductor and networking technology provider.",
+  "connections": [
+    "tsmc",
+    "cisco",
+    "arista",
+    "google"
+  ]
+},
+
+{
+  "id": "micron",
+  "name": "Micron",
+  "type": "Memory Manufacturer",
+  "layer": "hardware",
+  "region": "North America",
+  "classification": [
+    "DRAM",
+    "NAND",
+    "HBM",
+    "Memory"
+  ],
+  "network_role": "Supplies memory technologies used in servers, accelerators and storage systems.",
+  "importance": 9,
+  "description": "Major memory semiconductor manufacturer.",
+  "connections": [
+    "nvidia",
+    "dell",
+    "supermicro",
+    "aws"
+  ]
+},
+
+{
+  "id": "sk_hynix",
+  "name": "SK hynix",
+  "type": "Memory Manufacturer",
+  "layer": "hardware",
+  "region": "Asia",
+  "classification": [
+    "DRAM",
+    "HBM",
+    "NAND",
+    "Memory"
+  ],
+  "network_role": "Provides high-bandwidth and conventional memory used in advanced computing systems.",
+  "importance": 9,
+  "description": "Major global memory semiconductor manufacturer.",
+  "connections": [
+    "nvidia",
+    "tsmc",
+    "samsung_semiconductor"
+  ]
+},
+
+{
+  "id": "western_digital",
+  "name": "Western Digital",
+  "type": "Storage Manufacturer",
+  "layer": "hardware",
+  "region": "Global",
+  "classification": [
+    "Storage",
+    "HDD",
+    "Data Center Storage"
+  ],
+  "network_role": "Provides storage hardware used by enterprise and cloud infrastructure.",
+  "importance": 8,
+  "description": "Major data storage technology provider.",
+  "connections": [
+    "dell",
+    "supermicro",
+    "aws"
+  ]
+},
+
+{
+  "id": "dell",
+  "name": "Dell Technologies",
+  "type": "Server and Infrastructure OEM",
+  "layer": "hardware",
+  "region": "Global",
+  "classification": [
+    "Servers",
+    "Storage",
+    "Enterprise Infrastructure"
+  ],
+  "network_role": "Builds servers, storage and infrastructure systems deployed by enterprises and data centers.",
+  "importance": 10,
+  "description": "Major enterprise computing and infrastructure manufacturer.",
+  "connections": [
+    "intel_fab",
+    "amd",
+    "nvidia",
+    "micron",
+    "equnix"
+  ]
+},
+
+{
+  "id": "hpe",
+  "name": "HPE",
+  "type": "Server and Infrastructure OEM",
+  "layer": "hardware",
+  "region": "Global",
+  "classification": [
+    "Servers",
+    "Enterprise Hardware",
+    "Data Center Infrastructure"
+  ],
+  "network_role": "Provides enterprise servers and infrastructure systems.",
+  "importance": 9,
+  "description": "Major enterprise computing infrastructure provider.",
+  "connections": [
+    "intel_fab",
+    "amd",
+    "nvidia",
+    "equinix"
+  ]
+},
+
+{
+  "id": "supermicro",
+  "name": "Supermicro",
+  "type": "Server Manufacturer",
+  "layer": "hardware",
+  "region": "Global",
+  "classification": [
+    "Servers",
+    "AI Infrastructure",
+    "Rack Systems"
+  ],
+  "network_role": "Builds high-density servers and accelerated computing systems for data centers.",
+  "importance": 9,
+  "description": "Major server and accelerated computing system manufacturer.",
+  "connections": [
+    "nvidia",
+    "amd",
+    "micron",
+    "tsmc"
+  ]
+},
+
+{
+  "id": "lenovo_infrastructure",
+  "name": "Lenovo Infrastructure Solutions",
+  "type": "Server Manufacturer",
+  "layer": "hardware",
+  "region": "Global",
+  "classification": [
+    "Servers",
+    "Enterprise Hardware",
+    "Data Center Systems"
+  ],
+  "network_role": "Provides servers and infrastructure systems for enterprise and data center deployments.",
+  "importance": 8,
+  "description": "Global computing and infrastructure hardware provider.",
+  "connections": [
+    "intel_fab",
+    "amd",
+    "nvidia"
+  ]
+},
+
+{
+  "id": "vertiv",
+  "name": "Vertiv",
+  "type": "Data Center Infrastructure Provider",
+  "layer": "physical",
+  "region": "Global",
+  "classification": [
+    "Cooling",
+    "UPS",
+    "Power Systems",
+    "Data Centers"
+  ],
+  "network_role": "Provides power and thermal management systems required to operate data centers.",
+  "importance": 9,
+  "description": "Major critical infrastructure provider for data centers.",
+  "connections": [
+    "equinix",
+    "digital_realty",
+    "qts",
+    "cyrusone"
+  ]
+},
+
+{
+  "id": "schneider_electric",
+  "name": "Schneider Electric",
+  "type": "Data Center Power Infrastructure",
+  "layer": "physical",
+  "region": "Global",
+  "classification": [
+    "Power Distribution",
+    "UPS",
+    "Data Center Infrastructure"
+  ],
+  "network_role": "Provides electrical distribution and critical power systems for data centers.",
+  "importance": 9,
+  "description": "Global energy management and data-center infrastructure provider.",
+  "connections": [
+    "equinix",
+    "digital_realty",
+    "aws",
+    "microsoft"
+  ]
+},
+
+{
+  "id": "eaton",
+  "name": "Eaton",
+  "type": "Power Management Provider",
+  "layer": "physical",
+  "region": "Global",
+  "classification": [
+    "UPS",
+    "Power Distribution",
+    "Electrical Infrastructure"
+  ],
+  "network_role": "Provides electrical infrastructure and power-management systems for data centers.",
+  "importance": 8,
+  "description": "Major electrical infrastructure and power management company.",
+  "connections": [
+    "equinix",
+    "qts",
+    "digital_realty"
+  ]
+},
+
+
+{
 "id":"seamewe",
 
 "name":"SEA-ME-WE Cable System",
