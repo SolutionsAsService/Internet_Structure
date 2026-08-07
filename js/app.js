@@ -215,6 +215,8 @@ semiconductor_fab:"#BE123C",
     
 semiconductor_equipment:"#9F1239"
 
+};
+
 
 
 
