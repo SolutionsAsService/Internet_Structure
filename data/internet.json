@@ -2714,6 +2714,232 @@
 
 }
 
+  ,
+
+{
+"id":"starlink",
+
+"name":"Starlink",
+
+"type":"LEO Satellite Network",
+
+"layer":"satellite",
+
+"region":"Global",
+
+"classification":[
+
+"Low Earth Orbit",
+
+"Satellite Broadband",
+
+"Space Network"
+
+],
+
+"network_role":
+
+"Provides global broadband through thousands of low earth orbit satellites connected through gateway stations.",
+
+"importance":10,
+
+"description":
+
+"Space-based Internet network operated by SpaceX.",
+
+"connections":[
+
+"equinix",
+
+"lumen",
+
+"tata",
+
+"zayo"
+
+]
+
+},
+
+
+
+{
+"id":"oneweb",
+
+"name":"OneWeb",
+
+"type":"LEO Satellite Operator",
+
+"layer":"satellite",
+
+"region":"Global",
+
+"classification":[
+
+"Low Earth Orbit",
+
+"Enterprise Connectivity",
+
+"Government Connectivity"
+
+],
+
+"network_role":
+
+"Provides satellite connectivity primarily for enterprise, aviation and government users.",
+
+"importance":8,
+
+"description":
+
+"Global satellite broadband constellation.",
+
+"connections":[
+
+"equinix",
+
+"telehouse",
+
+"tata"
+
+]
+
+},
+
+
+
+{
+"id":"viasat",
+
+"name":"Viasat",
+
+"type":"Satellite Internet Provider",
+
+"layer":"satellite",
+
+"region":"Global",
+
+"classification":[
+
+"Satellite Broadband",
+
+"GEO Satellite",
+
+"Enterprise Connectivity"
+
+],
+
+"network_role":
+
+"Provides broadband through geostationary satellite systems.",
+
+"importance":7,
+
+"description":
+
+"Long-established satellite communications provider.",
+
+"connections":[
+
+"equinix",
+
+"lumen"
+
+]
+
+},
+
+
+
+{
+"id":"ses",
+
+"name":"SES",
+
+"type":"Global Satellite Operator",
+
+"layer":"satellite",
+
+"region":"Europe",
+
+"classification":[
+
+"Satellite Communications",
+
+"Enterprise Network",
+
+"Government Connectivity"
+
+],
+
+"network_role":
+
+"Provides satellite connectivity for governments, carriers and enterprises.",
+
+"importance":8,
+
+"description":
+
+"Major global satellite operator.",
+
+"connections":[
+
+"equinix",
+
+"tata",
+
+"telehouse"
+
+]
+
+},
+
+
+
+{
+"id":"eutelsat",
+
+"name":"Eutelsat",
+
+"type":"Satellite Communications Provider",
+
+"layer":"satellite",
+
+"region":"Europe",
+
+"classification":[
+
+"Satellite Network",
+
+"Broadcast Infrastructure",
+
+"Connectivity Provider"
+
+],
+
+"network_role":
+
+"Provides satellite communication services worldwide.",
+
+"importance":7,
+
+"description":
+
+"European satellite communications operator.",
+
+"connections":[
+
+"tata",
+
+"orange",
+
+"equinix"
+
+]
+
+}
+
+
 
 
 
