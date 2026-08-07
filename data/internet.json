@@ -56,6 +56,12 @@
 },
 
 {
+"id":"dns",
+"name":"DNS Infrastructure",
+"description":"Global domain resolution systems"
+},
+
+{
 "id":"cloud",
 "name":"Cloud & Content Networks",
 "description":"Cloud providers, CDNs and platforms"
@@ -455,6 +461,73 @@
 },
 
 
+{
+"id":"verisign",
+
+"name":"Verisign",
+
+"type":"Registry Operator",
+
+"layer":"cloud",
+
+"region":"Global",
+
+"classification":[
+"DNS",
+"Root Infrastructure"
+],
+
+"network_role":
+
+"Operates .com and .net domain infrastructure.",
+
+"importance":10,
+
+"description":
+
+"Critical Internet naming infrastructure.",
+
+"connections":[
+"cloudflare",
+"google",
+"aws"
+]
+
+},
+
+{
+"id":"route53",
+
+"name":"Amazon Route 53",
+
+"type":"DNS Platform",
+
+"layer":"cloud",
+
+"region":"Global",
+
+"classification":[
+"DNS",
+"Cloud Networking"
+],
+
+"network_role":
+
+"Cloud hosted DNS service.",
+
+"importance":9,
+
+"description":
+
+"AWS global DNS infrastructure.",
+
+"connections":[
+"aws",
+"cloudflare",
+"equinix"
+]
+
+},
 
 
 {
@@ -1008,6 +1081,444 @@
 ]
 
 },
+
+{
+"id":"hurricane_electric",
+
+"name":"Hurricane Electric",
+
+"type":"Global Tier 2 Network",
+
+"layer":"isp",
+
+"region":"North America",
+
+"classification":[
+
+"IPv6 Backbone",
+
+"Transit Provider",
+
+"Regional ISP"
+
+],
+
+"network_role":
+
+"Large independent Internet backbone connecting regional networks and enterprises.",
+
+"importance":9,
+
+"description":
+
+"One of the largest IPv6 networks and a major independent Internet transit provider.",
+
+"connections":[
+
+"cogent",
+
+"lumen",
+
+"any2",
+
+"nyiiX",
+
+"decix"
+
+]
+
+},
+
+{
+"id":"ziply",
+
+"name":"Ziply Fiber",
+
+"type":"Regional Fiber ISP",
+
+"layer":"isp",
+
+"region":"North America",
+
+"classification":[
+
+"Fiber ISP",
+
+"Regional Broadband",
+
+"Access Network"
+
+],
+
+"network_role":
+
+"Provides fiber broadband access in the Pacific Northwest.",
+
+"importance":6,
+
+"description":
+
+"Regional fiber Internet provider serving residential and enterprise customers.",
+
+"connections":[
+
+"hurricane_electric",
+
+"zayo",
+
+"six"
+
+]
+
+},
+
+{
+"id":"cox",
+
+"name":"Cox Communications",
+
+"type":"Cable ISP",
+
+"layer":"isp",
+
+"region":"North America",
+
+"classification":[
+
+"Cable Broadband",
+
+"Enterprise ISP"
+
+],
+
+"network_role":
+
+"Regional broadband provider connecting customers into national networks.",
+
+"importance":7,
+
+"description":
+
+"Major US cable broadband operator.",
+
+"connections":[
+
+"cogent",
+
+"lumen",
+
+"equinix",
+
+"any2"
+
+]
+
+},
+
+{
+"id":"windstream",
+
+"name":"Windstream",
+
+"type":"Regional Telecom Provider",
+
+"layer":"carrier",
+
+"region":"North America",
+
+"classification":[
+
+"Fiber Network",
+
+"Enterprise Connectivity",
+
+"Regional Carrier"
+
+],
+
+"network_role":
+
+"Provides fiber and communications services across rural and regional markets.",
+
+"importance":6,
+
+"description":
+
+"Regional telecommunications provider.",
+
+"connections":[
+
+"zayo",
+
+"lumen",
+
+"cogent"
+
+]
+
+},
+
+{
+"id":"wow",
+
+"name":"WOW! Internet",
+
+"type":"Regional ISP",
+
+"layer":"isp",
+
+"region":"North America",
+
+"classification":[
+
+"Cable Broadband",
+
+"Fiber Access"
+
+],
+
+"network_role":
+
+"Regional broadband access provider.",
+
+"importance":5,
+
+"description":
+
+"Regional US Internet service provider.",
+
+"connections":[
+
+"cogent",
+
+"lumen"
+
+]
+
+},
+
+{
+"id":"deutsche_telekom",
+
+"name":"Deutsche Telekom",
+
+"type":"National Carrier",
+
+"layer":"carrier",
+
+"region":"Europe",
+
+"classification":[
+
+"Telecom Operator",
+
+"Fiber Backbone",
+
+"Enterprise Network"
+
+],
+
+"network_role":
+
+"Major European telecommunications operator.",
+
+"importance":10,
+
+"description":
+
+"One of Europe's largest telecommunications companies.",
+
+"connections":[
+
+"decix",
+
+"arelion",
+
+"equinix",
+
+"ntt"
+
+]
+
+},
+
+{
+"id":"orange_europe",
+
+"name":"Orange",
+
+"type":"European Carrier",
+
+"layer":"carrier",
+
+"region":"Europe",
+
+"classification":[
+
+"Telecom Operator",
+
+"Mobile Network",
+
+"Enterprise Carrier"
+
+],
+
+"network_role":
+
+"Major European and African connectivity provider.",
+
+"importance":9,
+
+"description":
+
+"Large European telecommunications operator.",
+
+"connections":[
+
+"decix",
+
+"tata",
+
+"arelion",
+
+"equinix"
+
+]
+
+},
+
+{
+"id":"bt_group",
+
+"name":"BT Group",
+
+"type":"National Carrier",
+
+"layer":"carrier",
+
+"region":"Europe",
+
+"classification":[
+
+"Fiber Network",
+
+"Enterprise Connectivity",
+
+"Telecom"
+
+],
+
+"network_role":
+
+"Major UK telecommunications provider.",
+
+"importance":9,
+
+"description":
+
+"British telecommunications infrastructure operator.",
+
+"connections":[
+
+"linx",
+
+"arelion",
+
+"lumen",
+
+"equinix"
+
+]
+
+},
+
+{
+"id":"telia",
+
+"name":"Telia",
+
+"type":"Regional Carrier",
+
+"layer":"carrier",
+
+"region":"Europe",
+
+"classification":[
+
+"Nordic Carrier",
+
+"Fiber Network"
+
+],
+
+"network_role":
+
+"Major Nordic connectivity provider.",
+
+"importance":8,
+
+"description":
+
+"Provides Nordic broadband and enterprise connectivity.",
+
+"connections":[
+
+"arelion",
+
+"linx",
+
+"decix"
+
+]
+
+},
+
+{
+"id":"china_telecom",
+
+"name":"China Telecom",
+
+"type":"National Carrier",
+
+"layer":"carrier",
+
+"region":"Asia",
+
+"classification":[
+
+"Telecom Operator",
+
+"Global Backbone",
+
+"Data Network"
+
+],
+
+"network_role":
+
+"Major Chinese and international connectivity provider.",
+
+"importance":10,
+
+"description":
+
+"One of China's largest telecommunications operators.",
+
+"connections":[
+
+"ntt",
+
+"tata",
+
+"sgix",
+
+"equinix"
+
+]
+
+},
+
+
 
 {
 "id":"aws",
@@ -2554,22 +3065,15 @@
 ],
 
 "network_role":
-
 "Japanese telecommunications provider.",
-
 "importance":8,
-
 "description":
-
 "Major Japanese carrier.",
-
 "connections":[
-
 "ntt",
-
 "softbank",
-
-"sgix"
+"sgix",
+"equinix"
 
 ]
 
@@ -2592,7 +3096,8 @@
 
 "Mobile Network",
 
-"International Connectivity"
+"International Connectivity",
+  "Subsea Connectivity"
 
 ],
 
@@ -2718,30 +3223,21 @@
 "region":"Asia",
 
 "classification":[
-
 "5G Network",
-
-"Wireless Carrier"
-
+"Wireless Carrier",
+ "Enterprise Network"
 ],
 
-"network_role":
-
-"South Korean mobile infrastructure provider.",
-
+"network_role":"South Korean mobile infrastructure provider.",
 "importance":8,
 
-"description":
-
-"South Korea's largest wireless provider.",
+"description":"South Korea's largest wireless provider.",
 
 "connections":[
-
 "kt",
-
 "ntt",
-
-"kddi"
+"kddi",
+"sgix"
 
 ]
 
@@ -2783,6 +3279,142 @@
 "sk_telecom",
 
 "ntt"
+
+]
+
+},
+
+
+{
+"id":"liquid",
+
+"name":"Liquid Intelligent Technologies",
+
+"type":"African Backbone Provider",
+
+"layer":"carrier",
+
+"region":"Africa",
+
+"classification":[
+
+"Fiber Backbone",
+
+"Regional Carrier",
+
+"Enterprise Network"
+
+],
+
+"network_role":
+
+"Major African fiber network connecting countries and enterprises.",
+
+"importance":9,
+
+"description":
+
+"One of Africa's largest independent fiber networks.",
+
+"connections":[
+
+"mtn",
+
+"napaafrica",
+
+"tata",
+
+"wiocc"
+
+]
+
+},
+
+
+{
+"id":"wiocc",
+
+"name":"WIOCC",
+
+"type":"African Connectivity Provider",
+
+"layer":"carrier",
+
+"region":"Africa",
+
+"classification":[
+
+"Subsea Connectivity",
+
+"Fiber Network",
+
+"Wholesale Carrier"
+
+],
+
+"network_role":
+
+"Connects African networks to global Internet infrastructure.",
+
+"importance":8,
+
+"description":
+
+"Major African wholesale connectivity provider.",
+
+"connections":[
+
+"liquid",
+
+"mtn",
+
+"tata",
+
+"2africa"
+
+]
+
+},
+
+
+{
+"id":"orange_africa",
+
+"name":"Orange Africa",
+
+"type":"Regional Carrier",
+
+"layer":"carrier",
+
+"region":"Africa",
+
+"classification":[
+
+"Mobile Network",
+
+"Fiber Network"
+
+],
+
+"network_role":
+
+"Major African telecommunications operator.",
+
+"importance":8,
+
+"description":
+
+"Provides mobile and broadband connectivity across Africa.",
+
+"connections":[
+
+"orange",
+
+"mtn",
+
+"liquid",
+
+"napaafrica"
 
 ]
 
