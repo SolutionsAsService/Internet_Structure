@@ -71,7 +71,709 @@
 "id":"cloud",
 "name":"Cloud & Content Networks",
 "description":"Cloud providers, CDNs and platforms"
-}
+},
+
+  {
+    "id":"power",
+    "name":"Power Infrastructure",
+    "description":"Electrical generation, transmission, distribution, backup power, and energy systems supporting Internet infrastructure",
+    "color":"#F59E0B"
+  },
+  {
+    "id":"datacenter",
+    "name":"Data Centers",
+    "description":"Facilities providing space, power, cooling, physical security, and interconnection for computing infrastructure",
+    "color":"#8B5CF6"
+  },
+  {
+    "id":"colocation",
+    "name":"Colocation",
+    "description":"Neutral facilities where independent networks, carriers, enterprises, and cloud providers interconnect",
+    "color":"#A78BFA"
+  },
+  {
+    "id":"edge",
+    "name":"Edge Infrastructure",
+    "description":"Distributed compute and networking facilities positioned close to users and access networks",
+    "color":"#7C3AED"
+  },
+  {
+    "id":"pop",
+    "name":"Points of Presence",
+    "description":"Distributed network locations where providers place routers, servers, and connectivity equipment",
+    "color":"#8B5CF6"
+  },
+
+  {
+    "id":"isp",
+    "name":"Access ISPs",
+    "description":"Last mile Internet providers",
+    "color":"#22C55E"
+  },
+  {
+    "id":"mobile",
+    "name":"Mobile Networks",
+    "description":"Wireless operators providing cellular connectivity and mobile Internet access",
+    "color":"#16A34A"
+  },
+  {
+    "id":"fixed_wireless",
+    "name":"Fixed Wireless",
+    "description":"Wireless broadband networks providing last mile connectivity without physical cable to the customer",
+    "color":"#4ADE80"
+  },
+  {
+    "id":"enterprise_isp",
+    "name":"Enterprise ISPs",
+    "description":"Providers delivering dedicated Internet, WAN, and connectivity services to businesses and institutions",
+    "color":"#15803D"
+  },
+  {
+    "id":"carrier",
+    "name":"Telecom Carriers",
+    "description":"Large telecommunications operators providing regional, national, and international connectivity",
+    "color":"#10B981"
+  },
+  {
+    "id":"backbone",
+    "name":"Internet Backbones",
+    "description":"High-capacity networks transporting Internet traffic between regions, networks, and major hubs",
+    "color":"#059669"
+  },
+  {
+    "id":"transit",
+    "name":"IP Transit",
+    "description":"Providers selling access to routes and connectivity across the wider Internet",
+    "color":"#047857"
+  },
+  {
+    "id":"tier1",
+    "name":"Tier 1 Networks",
+    "description":"Global networks capable of reaching the entire Internet without purchasing IP transit",
+    "color":"#065F46"
+  },
+  {
+    "id":"tier2",
+    "name":"Tier 2 Networks",
+    "description":"Regional and national networks combining peering with purchased upstream transit",
+    "color":"#0F766E"
+  },
+  {
+    "id":"tier3",
+    "name":"Tier 3 Networks",
+    "description":"Smaller access and regional networks primarily dependent on upstream providers",
+    "color":"#14B8A6"
+  },
+
+  {
+    "id":"ixp",
+    "name":"Internet Exchanges",
+    "description":"Neutral exchange points where independent networks directly peer and exchange traffic",
+    "color":"#06B6D4"
+  },
+  {
+    "id":"route_server",
+    "name":"Route Servers",
+    "description":"Routing infrastructure at Internet exchanges that simplifies multilateral BGP peering",
+    "color":"#0891B2"
+  },
+  {
+    "id":"peering",
+    "name":"Peering Infrastructure",
+    "description":"Infrastructure and organizations enabling networks to exchange traffic directly",
+    "color":"#0E7490"
+  },
+  {
+    "id":"internet_exchange_fabric",
+    "name":"IXP Switching Fabric",
+    "description":"Ethernet switching infrastructure connecting participants inside Internet exchange facilities",
+    "color":"#155E75"
+  },
+
+  {
+    "id":"routing",
+    "name":"Internet Routing",
+    "description":"BGP and routing infrastructure determining how packets travel between autonomous systems",
+    "color":"#3B82F6"
+  },
+  {
+    "id":"routing_security",
+    "name":"Routing Security",
+    "description":"RPKI, IRR, route validation, filtering, and systems protecting global BGP routing",
+    "color":"#2563EB"
+  },
+  {
+    "id":"routing_measurement",
+    "name":"Routing Measurement",
+    "description":"Systems that observe, collect, and analyze global Internet routing information",
+    "color":"#1D4ED8"
+  },
+  {
+    "id":"network_operations",
+    "name":"Network Operations",
+    "description":"Infrastructure management, monitoring, inventory, automation, and network operations systems",
+    "color":"#1E40AF"
+  },
+
+  {
+    "id":"dns",
+    "name":"Domain Name System",
+    "description":"Distributed naming infrastructure translating domain names into Internet resources",
+    "color":"#F97316"
+  },
+  {
+    "id":"dns_root",
+    "name":"DNS Root",
+    "description":"Globally distributed authoritative infrastructure serving the DNS root zone",
+    "color":"#EA580C"
+  },
+  {
+    "id":"dns_authoritative",
+    "name":"Authoritative DNS",
+    "description":"DNS servers responsible for publishing authoritative records for domains and zones",
+    "color":"#C2410C"
+  },
+  {
+    "id":"dns_recursive",
+    "name":"Recursive DNS",
+    "description":"Resolvers that retrieve and cache DNS information on behalf of users and applications",
+    "color":"#9A3412"
+  },
+  {
+    "id":"dns_registry",
+    "name":"Domain Registries",
+    "description":"Organizations operating top-level and country-code domain registries",
+    "color":"#7C2D12"
+  },
+
+  {
+    "id":"anycast",
+    "name":"Anycast Networks",
+    "description":"Distributed addressing systems allowing the same IP service to operate from many geographic locations",
+    "color":"#F43F5E"
+  },
+  {
+    "id":"geodns",
+    "name":"GeoDNS",
+    "description":"DNS systems directing users toward geographically or network-appropriate service endpoints",
+    "color":"#E11D48"
+  },
+
+  {
+    "id":"cdn",
+    "name":"Content Delivery Networks",
+    "description":"Distributed networks caching and delivering Internet content close to end users",
+    "color":"#EC4899"
+  },
+  {
+    "id":"edge_compute",
+    "name":"Edge Compute",
+    "description":"Distributed computing infrastructure executing applications close to users and networks",
+    "color":"#DB2777"
+  },
+  {
+    "id":"web_acceleration",
+    "name":"Web Acceleration",
+    "description":"Caching, optimization, compression, connection management, and application acceleration services",
+    "color":"#BE185D"
+  },
+
+  {
+    "id":"cloud",
+    "name":"Cloud Platforms",
+    "description":"Large-scale distributed compute, storage, networking, and managed infrastructure platforms",
+    "color":"#6366F1"
+  },
+  {
+    "id":"compute",
+    "name":"Compute Infrastructure",
+    "description":"Physical and virtual machines providing general-purpose computational capacity",
+    "color":"#4F46E5"
+  },
+  {
+    "id":"gpu_compute",
+    "name":"Accelerated Compute",
+    "description":"GPU, TPU, FPGA, and other specialized infrastructure for high-performance workloads",
+    "color":"#4338CA"
+  },
+  {
+    "id":"server",
+    "name":"Server Infrastructure",
+    "description":"Physical server systems deployed inside data centers and distributed computing facilities",
+    "color":"#3730A3"
+  },
+  {
+    "id":"storage",
+    "name":"Storage Infrastructure",
+    "description":"Distributed disks, flash, object storage, block storage, and archival systems",
+    "color":"#312E81"
+  },
+
+  {
+    "id":"network_hardware",
+    "name":"Network Hardware",
+    "description":"Routers, switches, firewalls, load balancers, and other networking equipment",
+    "color":"#64748B"
+  },
+  {
+    "id":"router",
+    "name":"Routing Hardware",
+    "description":"High-performance routers responsible for forwarding traffic between networks",
+    "color":"#475569"
+  },
+  {
+    "id":"switching",
+    "name":"Switching Hardware",
+    "description":"Ethernet and optical switching equipment connecting servers and networks",
+    "color":"#334155"
+  },
+  {
+    "id":"firewall",
+    "name":"Network Security Hardware",
+    "description":"Firewalls, security appliances, filtering systems, and network protection equipment",
+    "color":"#1E293B"
+  },
+  {
+    "id":"load_balancing",
+    "name":"Load Balancing",
+    "description":"Systems distributing application and network traffic across multiple backend resources",
+    "color":"#0F172A"
+  },
+
+  {
+    "id":"optical",
+    "name":"Optical Networks",
+    "description":"Fiber-optic transport infrastructure carrying enormous volumes of Internet traffic",
+    "color":"#EAB308"
+  },
+  {
+    "id":"fiber",
+    "name":"Fiber Infrastructure",
+    "description":"Physical terrestrial fiber cables carrying Internet and telecommunications traffic",
+    "color":"#CA8A04"
+  },
+  {
+    "id":"longhaul",
+    "name":"Long-Haul Fiber",
+    "description":"High-capacity terrestrial fiber networks connecting distant cities, regions, and countries",
+    "color":"#A16207"
+  },
+  {
+    "id":"metro",
+    "name":"Metro Fiber",
+    "description":"Metropolitan fiber networks connecting data centers, businesses, carriers, and access networks",
+    "color":"#854D0E"
+  },
+  {
+    "id":"optical_transport",
+    "name":"Optical Transport",
+    "description":"DWDM, coherent optics, transponders, and transport systems moving traffic across fiber",
+    "color":"#713F12"
+  },
+
+  {
+    "id":"submarine",
+    "name":"Submarine Cables",
+    "description":"Undersea fiber-optic systems carrying intercontinental Internet traffic",
+    "color":"#0284C7"
+  },
+  {
+    "id":"cable_landing",
+    "name":"Cable Landing Stations",
+    "description":"Facilities connecting submarine cable systems to terrestrial networks",
+    "color":"#0369A1"
+  },
+  {
+    "id":"submarine_operator",
+    "name":"Submarine Cable Operators",
+    "description":"Organizations owning, operating, financing, and maintaining undersea cable systems",
+    "color":"#075985"
+  },
+
+  {
+    "id":"satellite",
+    "name":"Satellite Networks",
+    "description":"Space-based communications infrastructure providing connectivity across difficult-to-reach regions",
+    "color":"#8B5CF6"
+  },
+  {
+    "id":"leo",
+    "name":"LEO Networks",
+    "description":"Low Earth orbit satellite constellations providing low-latency broadband connectivity",
+    "color":"#7C3AED"
+  },
+  {
+    "id":"geo_satellite",
+    "name":"Geostationary Satellites",
+    "description":"High-altitude satellite systems providing wide-area telecommunications coverage",
+    "color":"#6D28D9"
+  },
+  {
+    "id":"ground_station",
+    "name":"Satellite Ground Stations",
+    "description":"Terrestrial facilities connecting satellite networks to fiber and Internet infrastructure",
+    "color":"#5B21B6"
+  },
+
+  {
+    "id":"mobile_core",
+    "name":"Mobile Core Networks",
+    "description":"Core packet, authentication, subscriber, and routing infrastructure behind cellular networks",
+    "color":"#84CC16"
+  },
+  {
+    "id":"radio_access",
+    "name":"Radio Access Networks",
+    "description":"Cell towers, base stations, antennas, and radio equipment connecting mobile devices to carrier networks",
+    "color":"#65A30D"
+  },
+  {
+    "id":"cell_tower",
+    "name":"Cell Sites",
+    "description":"Physical locations containing cellular radio and network equipment",
+    "color":"#4D7C0F"
+  },
+
+  {
+    "id":"registry",
+    "name":"Internet Registries",
+    "description":"Organizations administering IP addresses, Autonomous System Numbers, and related Internet resources",
+    "color":"#14B8A6"
+  },
+  {
+    "id":"rir",
+    "name":"Regional Internet Registries",
+    "description":"Regional organizations allocating Internet number resources and supporting network coordination",
+    "color":"#0D9488"
+  },
+  {
+    "id":"rir_database",
+    "name":"Internet Registry Databases",
+    "description":"Databases containing IP allocation, ASN, routing, and registration information",
+    "color":"#0F766E"
+  },
+
+  {
+    "id":"internet_coordination",
+    "name":"Internet Coordination",
+    "description":"Organizations coordinating globally unique identifiers, naming, numbering, and Internet resources",
+    "color":"#14B8A6"
+  },
+  {
+    "id":"internet_governance",
+    "name":"Internet Governance",
+    "description":"Institutions and communities coordinating global Internet policies and operational frameworks",
+    "color":"#0D9488"
+  },
+  {
+    "id":"standards",
+    "name":"Internet Standards",
+    "description":"Organizations and communities defining interoperable Internet protocols and technical standards",
+    "color":"#0F766E"
+  },
+  {
+    "id":"web_standards",
+    "name":"Web Standards",
+    "description":"Standards governing browsers, Web APIs, HTML, and application-layer Web technologies",
+    "color":"#115E59"
+  },
+
+  {
+    "id":"pki",
+    "name":"Public Key Infrastructure",
+    "description":"Certificate authorities, trust chains, certificate transparency, and cryptographic identity infrastructure",
+    "color":"#EF4444"
+  },
+  {
+    "id":"certificate_authority",
+    "name":"Certificate Authorities",
+    "description":"Trusted organizations issuing cryptographic certificates used to authenticate Internet services",
+    "color":"#DC2626"
+  },
+  {
+    "id":"certificate_transparency",
+    "name":"Certificate Transparency",
+    "description":"Public logging systems allowing Internet certificates to be monitored and audited",
+    "color":"#B91C1C"
+  },
+
+  {
+    "id":"security",
+    "name":"Internet Security",
+    "description":"Organizations and infrastructure protecting networks, applications, systems, and users",
+    "color":"#EF4444"
+  },
+  {
+    "id":"ddos",
+    "name":"DDoS Protection",
+    "description":"Distributed infrastructure designed to absorb, filter, and mitigate denial-of-service attacks",
+    "color":"#DC2626"
+  },
+  {
+    "id":"waf",
+    "name":"Web Application Security",
+    "description":"Infrastructure protecting Web applications and APIs from malicious traffic",
+    "color":"#B91C1C"
+  },
+  {
+    "id":"incident_response",
+    "name":"Incident Response",
+    "description":"Organizations coordinating detection, investigation, and response to Internet security incidents",
+    "color":"#991B1B"
+  },
+
+  {
+    "id":"time",
+    "name":"Network Time",
+    "description":"Distributed timing infrastructure synchronizing clocks across Internet-connected systems",
+    "color":"#FACC15"
+  },
+  {
+    "id":"ntp",
+    "name":"NTP Infrastructure",
+    "description":"Network Time Protocol servers and services providing Internet-wide clock synchronization",
+    "color":"#EAB308"
+  },
+  {
+    "id":"ptp",
+    "name":"Precision Time",
+    "description":"High-precision timing systems used by telecommunications, financial, industrial, and data center networks",
+    "color":"#CA8A04"
+  },
+  {
+    "id":"gps_timing",
+    "name":"GNSS Timing",
+    "description":"Satellite-derived timing used to synchronize telecommunications and critical infrastructure",
+    "color":"#A16207"
+  },
+
+  {
+    "id":"research_network",
+    "name":"Research Networks",
+    "description":"High-performance networks connecting universities, laboratories, scientific facilities, and research infrastructure",
+    "color":"#A855F7"
+  },
+  {
+    "id":"national_research",
+    "name":"National Research Networks",
+    "description":"Country-level advanced networks supporting research and education institutions",
+    "color":"#9333EA"
+  },
+
+  {
+    "id":"measurement",
+    "name":"Internet Measurement",
+    "description":"Systems collecting data about Internet topology, routing, latency, reachability, and performance",
+    "color":"#D946EF"
+  },
+  {
+    "id":"topology",
+    "name":"Internet Topology",
+    "description":"Datasets and systems mapping relationships between autonomous systems and physical network infrastructure",
+    "color":"#C026D3"
+  },
+  {
+    "id":"traffic_measurement",
+    "name":"Traffic Measurement",
+    "description":"Systems measuring Internet traffic patterns, flows, performance, and network behavior",
+    "color":"#A21CAF"
+  },
+
+  {
+    "id":"ixp_software",
+    "name":"IXP Software",
+    "description":"Software used to operate exchange points, route servers, peering, VLANs, and member infrastructure",
+    "color":"#0891B2"
+  },
+  {
+    "id":"routing_software",
+    "name":"Routing Software",
+    "description":"Software implementations of BGP and other routing protocols used by network operators",
+    "color":"#2563EB"
+  },
+  {
+    "id":"network_automation",
+    "name":"Network Automation",
+    "description":"Systems automating configuration, provisioning, monitoring, and operation of network infrastructure",
+    "color":"#4F46E5"
+  },
+
+  {
+    "id":"server_oem",
+    "name":"Server Manufacturers",
+    "description":"Companies manufacturing physical servers deployed throughout data centers and cloud infrastructure",
+    "color":"#64748B"
+  },
+  {
+    "id":"server_odm",
+    "name":"Server ODMs",
+    "description":"Original design manufacturers building large volumes of server hardware for cloud and infrastructure companies",
+    "color":"#475569"
+  },
+  {
+    "id":"storage_hardware",
+    "name":"Storage Hardware",
+    "description":"Manufacturers of HDD, SSD, flash, controllers, and storage systems used by data centers",
+    "color":"#334155"
+  },
+  {
+    "id":"memory",
+    "name":"Memory Infrastructure",
+    "description":"DRAM, NAND, HBM, and other semiconductor memory technologies supporting computing systems",
+    "color":"#1E293B"
+  },
+
+  {
+    "id":"semiconductor",
+    "name":"Semiconductors",
+    "description":"Chip designers and semiconductor technologies powering computing, networking, storage, and communications",
+    "color":"#F43F5E"
+  },
+  {
+    "id":"semiconductor_design",
+    "name":"Chip Design",
+    "description":"Organizations designing CPUs, GPUs, networking processors, controllers, and specialized silicon",
+    "color":"#E11D48"
+  },
+  {
+    "id":"semiconductor_fab",
+    "name":"Semiconductor Fabs",
+    "description":"Manufacturing facilities fabricating semiconductor wafers and integrated circuits",
+    "color":"#BE123C"
+  },
+  {
+    "id":"semiconductor_equipment",
+    "name":"Semiconductor Equipment",
+    "description":"Lithography, deposition, etching, inspection, and manufacturing equipment used to fabricate chips",
+    "color":"#9F1239"
+  },
+  {
+    "id":"semiconductor_materials",
+    "name":"Semiconductor Materials",
+    "description":"Specialized gases, chemicals, wafers, photoresists, metals, and materials required for chip manufacturing",
+    "color":"#881337"
+  },
+  {
+    "id":"chip_packaging",
+    "name":"Chip Packaging",
+    "description":"Assembly, packaging, interconnect, substrate, and advanced packaging infrastructure for semiconductor devices",
+    "color":"#701A75"
+  },
+
+  {
+    "id":"pcb",
+    "name":"PCB Manufacturing",
+    "description":"Printed circuit board fabrication and assembly supporting network, server, telecom, and computing equipment",
+    "color":"#78716C"
+  },
+  {
+    "id":"electronics_manufacturing",
+    "name":"Electronics Manufacturing",
+    "description":"Contract manufacturers and assembly facilities producing networking, computing, and telecommunications equipment",
+    "color":"#57534E"
+  },
+
+  {
+    "id":"cooling",
+    "name":"Data Center Cooling",
+    "description":"Cooling systems required to remove heat from servers, networking equipment, and power electronics",
+    "color":"#06B6D4"
+  },
+  {
+    "id":"liquid_cooling",
+    "name":"Liquid Cooling",
+    "description":"Direct-to-chip, immersion, and other liquid cooling systems for high-density computing",
+    "color":"#0891B2"
+  },
+
+  {
+    "id":"backup_power",
+    "name":"Backup Power",
+    "description":"UPS systems, batteries, generators, and other infrastructure maintaining operation during power failures",
+    "color":"#F59E0B"
+  },
+  {
+    "id":"generator",
+    "name":"Backup Generation",
+    "description":"Diesel, natural gas, battery, and alternative generation systems supporting critical facilities",
+    "color":"#D97706"
+  },
+  {
+    "id":"ups",
+    "name":"UPS Infrastructure",
+    "description":"Uninterruptible power systems protecting computing infrastructure from power interruptions",
+    "color":"#B45309"
+  },
+
+  {
+    "id":"physical_security",
+    "name":"Physical Security",
+    "description":"Access control, surveillance, security personnel, and physical protection of critical Internet facilities",
+    "color":"#52525B"
+  },
+  {
+    "id":"construction",
+    "name":"Infrastructure Construction",
+    "description":"Companies and contractors building data centers, fiber routes, towers, cable landing stations, and network facilities",
+    "color":"#71717A"
+  },
+  {
+    "id":"fiber_construction",
+    "name":"Fiber Construction",
+    "description":"Contractors installing, repairing, splicing, and maintaining terrestrial fiber infrastructure",
+    "color":"#A1A1AA"
+  },
+
+  {
+    "id":"satellite_ground",
+    "name":"Satellite Ground Infrastructure",
+    "description":"Ground stations, gateways, antennas, and terrestrial links connecting satellite systems to the Internet",
+    "color":"#7C3AED"
+  },
+  {
+    "id":"spectrum",
+    "name":"Radio Spectrum",
+    "description":"Licensed and unlicensed electromagnetic spectrum used by wireless, cellular, satellite, and fixed wireless networks",
+    "color":"#9333EA"
+  },
+
+  {
+    "id":"government_network",
+    "name":"Government Networks",
+    "description":"Government-operated communications and networking infrastructure supporting public services and critical systems",
+    "color":"#475569"
+  },
+  {
+    "id":"critical_infrastructure",
+    "name":"Critical Infrastructure",
+    "description":"Power, telecommunications, transportation, water, and other infrastructure interconnected with Internet systems",
+    "color":"#334155"
+  },
+
+  {
+    "id":"internet_exchange_operator",
+    "name":"IXP Operators",
+    "description":"Organizations operating neutral Internet exchange facilities and peering ecosystems",
+    "color":"#06B6D4"
+  },
+  {
+    "id":"network_operator",
+    "name":"Network Operators",
+    "description":"Organizations responsible for operating autonomous systems and Internet connectivity infrastructure",
+    "color":"#10B981"
+  },
+  {
+    "id":"content_provider",
+    "name":"Content Networks",
+    "description":"Large application, media, and content platforms generating and distributing substantial Internet traffic",
+    "color":"#EC4899"
+  },
+  {
+    "id":"application",
+    "name":"Internet Applications",
+    "description":"Websites, APIs, applications, and services ultimately consumed by Internet users",
+    "color":"#F43F5E"
+  }
 
 ],
 
