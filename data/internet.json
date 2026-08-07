@@ -61,6 +61,198 @@
 
 "nodes":[
 
+{
+"id":"comcast",
+"name":"Comcast",
+"type":"ISP",
+"layer":"isp",
+"region":"North America",
+
+"classification":[
+"Residential Broadband",
+"Enterprise ISP",
+"Cable Network"
+],
+
+"network_role":
+"Provides last mile broadband connectivity across the United States.",
+
+"importance":9,
+
+"description":
+"One of the largest broadband access networks in North America.",
+
+"connections":[
+"cogent",
+"lumen",
+"equinix",
+"nyiiX",
+"any2"
+]
+
+},
+
+{
+"id":"charter_spectrum",
+"name":"Charter Spectrum",
+"type":"ISP",
+"layer":"isp",
+"region":"North America",
+
+"classification":[
+"Cable Broadband",
+"Enterprise Connectivity"
+],
+
+"network_role":
+"Regional broadband access network.",
+
+"importance":8,
+
+"description":
+"Large American broadband provider.",
+
+"connections":[
+"lumen",
+"cogent",
+"equinix"
+]
+
+},
+
+{
+"id":"verizon_fios",
+"name":"Verizon Fios",
+"type":"Fiber ISP",
+"layer":"isp",
+"region":"North America",
+
+"classification":[
+"Fiber Access",
+"Residential Broadband"
+],
+
+"network_role":
+"Fiber last-mile connectivity.",
+
+"importance":7,
+
+"description":
+"Fiber broadband network operated by Verizon.",
+
+"connections":[
+"verizon",
+"zayo",
+"equinix"
+]
+
+},
+
+{
+"id":"akamai",
+
+"name":"Akamai",
+
+"type":"Global CDN",
+
+"layer":"cloud",
+
+"region":"Global",
+
+"classification":[
+"CDN",
+"Edge Computing",
+"Security"
+],
+
+"network_role":
+
+"Distributed edge delivery network operating thousands of points of presence.",
+
+"importance":10,
+
+"description":
+
+"One of the oldest and largest global content delivery networks.",
+
+"connections":[
+"equinix",
+"lumen",
+"cogent",
+"decix",
+"cloudflare"
+]
+
+},
+
+{
+"id":"fastly",
+
+"name":"Fastly",
+
+"type":"Edge Cloud Platform",
+
+"layer":"cloud",
+
+"region":"Global",
+
+"classification":[
+"CDN",
+"Edge Compute"
+],
+
+"network_role":
+
+"Developer focused edge computing network.",
+
+"importance":8,
+
+"description":
+
+"Modern programmable CDN and edge platform.",
+
+"connections":[
+"equinix",
+"cloudflare",
+"aws"
+]
+
+},
+
+{
+"id":"edgio",
+
+"name":"Edgio",
+
+"type":"CDN Platform",
+
+"layer":"cloud",
+
+"region":"Global",
+
+"classification":[
+"CDN",
+"Video Delivery"
+],
+
+"network_role":
+
+"Edge delivery infrastructure.",
+
+"importance":7,
+
+"description":
+
+"Global content delivery platform.",
+
+"connections":[
+"lumen",
+"aws",
+"equinix"
+]
+
+},
+
 
 
 {
