@@ -1441,5 +1441,535 @@
 ]
 
 }
+  ,
+
+{
+"id":"att",
+
+"name":"AT&T",
+
+"type":"National Carrier",
+
+"layer":"carrier",
+
+"region":"North America",
+
+"classification":[
+
+"Telecommunications",
+
+"Mobile Operator",
+
+"Fiber Provider",
+
+"Enterprise Network"
+
+],
+
+"network_role":
+
+"Major US carrier operating fiber, wireless and enterprise networks.",
+
+"importance":10,
+
+"description":
+
+"One of North America's largest telecommunications networks.",
+
+"connections":[
+
+"lumen",
+
+"zayo",
+
+"equinix",
+
+"any2",
+
+"nyiiX"
+
+]
+
+},
+
+
+{
+"id":"verizon",
+
+"name":"Verizon",
+
+"type":"National Carrier",
+
+"layer":"carrier",
+
+"region":"North America",
+
+"classification":[
+
+"Mobile Network",
+
+"Fiber Provider",
+
+"Enterprise Network"
+
+],
+
+"network_role":
+
+"Large US wireless and enterprise connectivity provider.",
+
+"importance":10,
+
+"description":
+
+"Operates major wireless, fiber and enterprise infrastructure.",
+
+"connections":[
+
+"lumen",
+
+"zayo",
+
+"crown_castle",
+
+"equinix",
+
+"any2"
+
+]
+
+},
+
+
+{
+"id":"comcast",
+
+"name":"Comcast",
+
+"type":"Cable Operator",
+
+"layer":"carrier",
+
+"region":"North America",
+
+"classification":[
+
+"ISP",
+
+"Cable Network",
+
+"Enterprise Connectivity"
+
+],
+
+"network_role":
+
+"Provides residential and business broadband access.",
+
+"importance":9,
+
+"description":
+
+"One of North America's largest broadband operators.",
+
+"connections":[
+
+"lumen",
+
+"cogent",
+
+"equinix"
+
+]
+
+},
+
+
+{
+"id":"charter",
+
+"name":"Charter Spectrum",
+
+"type":"Regional Carrier",
+
+"layer":"carrier",
+
+"region":"North America",
+
+"classification":[
+
+"Cable Network",
+
+"Broadband Provider"
+
+],
+
+"network_role":
+
+"Major US regional broadband provider.",
+
+"importance":8,
+
+"description":
+
+"Operates Spectrum broadband infrastructure.",
+
+"connections":[
+
+"lumen",
+
+"cogent",
+
+"equinix"
+
+]
+
+},
+
+
+{
+"id":"frontier",
+
+"name":"Frontier",
+
+"type":"Fiber ISP",
+
+"layer":"carrier",
+
+"region":"North America",
+
+"classification":[
+
+"Fiber Network",
+
+"Regional ISP"
+
+],
+
+"network_role":
+
+"Provides regional fiber broadband access.",
+
+"importance":7,
+
+"description":
+
+"Regional US fiber and broadband operator.",
+
+"connections":[
+
+"zayo",
+
+"lumen"
+
+]
+
+},
+
+
+
+{
+"id":"bt",
+
+"name":"BT Group",
+
+"type":"National Carrier",
+
+"layer":"carrier",
+
+"region":"Europe",
+
+"classification":[
+
+"Telecom Operator",
+
+"Enterprise Network",
+
+"Fiber Provider"
+
+],
+
+"network_role":
+
+"Major UK telecommunications network.",
+
+"importance":9,
+
+"description":
+
+"UK carrier operating broadband, enterprise and global services.",
+
+"connections":[
+
+"arelion",
+
+"linx",
+
+"lumen"
+
+]
+
+},
+
+
+
+{
+"id":"vodafone",
+
+"name":"Vodafone",
+
+"type":"International Carrier",
+
+"layer":"carrier",
+
+"region":"Europe",
+
+"classification":[
+
+"Mobile Operator",
+
+"Enterprise Network",
+
+"International Carrier"
+
+],
+
+"network_role":
+
+"Global telecommunications operator.",
+
+"importance":9,
+
+"description":
+
+"Major European and international mobile operator.",
+
+"connections":[
+
+"arelion",
+
+"decix",
+
+"ntt"
+
+]
+
+},
+
+
+
+{
+"id":"orange",
+
+"name":"Orange",
+
+"type":"International Carrier",
+
+"layer":"carrier",
+
+"region":"Europe",
+
+"classification":[
+
+"Telecom Operator",
+
+"Subsea Investor",
+
+"Mobile Network"
+
+],
+
+"network_role":
+
+"Major European and African connectivity provider.",
+
+"importance":9,
+
+"description":
+
+"Large telecom operator with European and African infrastructure.",
+
+"connections":[
+
+"decix",
+
+"arelion",
+
+"tata"
+
+]
+
+},
+
+
+
+{
+"id":"telefonica",
+
+"name":"Telefónica",
+
+"type":"International Carrier",
+
+"layer":"carrier",
+
+"region":"Europe",
+
+"classification":[
+
+"Telecom Operator",
+
+"Mobile Network"
+
+],
+
+"network_role":
+
+"Connects Europe and Latin America.",
+
+"importance":8,
+
+"description":
+
+"Owner of Movistar and O2 operations.",
+
+"connections":[
+
+"arelion",
+
+"tata",
+
+"decix"
+
+]
+
+},
+
+
+
+{
+"id":"deutsche_telekom",
+
+"name":"Deutsche Telekom",
+
+"type":"National Carrier",
+
+"layer":"carrier",
+
+"region":"Europe",
+
+"classification":[
+
+"Telecom Operator",
+
+"Mobile Network",
+
+"Enterprise Network"
+
+],
+
+"network_role":
+
+"Germany's largest telecommunications provider.",
+
+"importance":9,
+
+"description":
+
+"Major European telecom operator.",
+
+"connections":[
+
+"decix",
+
+"ntt",
+
+"equinix"
+
+]
+
+},
+
+
+
+{
+"id":"swisscom",
+
+"name":"Swisscom",
+
+"type":"National Carrier",
+
+"layer":"carrier",
+
+"region":"Europe",
+
+"classification":[
+
+"Telecom Operator",
+
+"Mobile Network"
+
+],
+
+"network_role":
+
+"Primary Swiss telecommunications provider.",
+
+"importance":7,
+
+"description":
+
+"Swiss national carrier.",
+
+"connections":[
+
+"arelion",
+
+"decix"
+
+]
+
+},
+
+
+
+{
+"id":"telia",
+
+"name":"Telia",
+
+"type":"Regional Carrier",
+
+"layer":"carrier",
+
+"region":"Europe",
+
+"classification":[
+
+"Nordic Carrier",
+
+"Enterprise Network"
+
+],
+
+"network_role":
+
+"Major Nordic telecommunications provider.",
+
+"importance":8,
+
+"description":
+
+"Regional European connectivity provider.",
+
+"connections":[
+
+"arelion",
+
+"linx"
+
+]
+
+}
+
 
 
