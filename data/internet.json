@@ -3777,7 +3777,7 @@
 
 "type":"Submarine Cable",
 
-"layer":"physical",
+"layer":"subsea",
 
 "region":"Asia-Europe",
 
@@ -3813,7 +3813,7 @@
 
 "type":"Transatlantic Cable",
 
-"layer":"physical",
+"layer":"subsea",
 
 "region":"North America-Europe",
 
@@ -3847,7 +3847,7 @@
 
 "type":"Submarine Cable",
 
-"layer":"physical",
+"layer":"subsea",
 
 "region":"Africa",
 
