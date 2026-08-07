@@ -1,102 +1,1430 @@
-*{
+/* =====================================================
+   GLOBAL INTERNET INFRASTRUCTURE ATLAS
+   Defense Operations Interface Theme
+===================================================== */
 
-box-sizing:border-box;
+
+/* -------------------------------
+   GLOBAL RESET
+-------------------------------- */
+
+
+*,
+*::before,
+*::after{
+
+    box-sizing:border-box;
 
 }
+
+
+
+html,
+body{
+
+    width:100%;
+    height:100%;
+    margin:0;
+
+}
+
+
+
 
 
 body{
 
-margin:0;
+    background:
+    #05090e;
 
-background:#05080c;
 
-color:#d7e3ea;
+    color:#d6e4ec;
 
-font-family:
-"Courier New",
-monospace;
 
-overflow:hidden;
+    font-family:
+    "Courier New",
+    "Roboto Mono",
+    monospace;
+
+
+    overflow:hidden;
+
 
 }
 
 
 
-header{
 
-height:90px;
 
-border-bottom:
-1px solid #1b3645;
 
-display:flex;
 
-justify-content:space-between;
+/* =====================================================
+   COLOR SYSTEM
+===================================================== */
 
-align-items:center;
 
-padding:20px 40px;
+:root{
 
-background:#08111a;
+
+    --bg-primary:#05090e;
+
+    --bg-secondary:#08131c;
+
+    --bg-panel:#0b1722;
+
+
+    --border:#203746;
+
+
+    --border-light:#315467;
+
+
+    --text:#d6e4ec;
+
+
+    --muted:#6c8795;
+
+
+    --blue:#4da3ff;
+
+
+    --cyan:#00d9ff;
+
+
+    --green:#00ff88;
+
+
+    --warning:#ffcc00;
+
+
+    --danger:#ff4444;
+
 
 }
 
 
 
-h1{
 
-margin:0;
 
-font-size:24px;
 
-letter-spacing:3px;
 
-color:#9cc4ff;
+
+/* =====================================================
+   HEADER COMMAND BAR
+===================================================== */
+
+
+.command-header{
+
+
+    height:95px;
+
+
+    width:100%;
+
+
+    display:flex;
+
+
+    justify-content:space-between;
+
+
+    align-items:center;
+
+
+    padding:
+
+    0 35px;
+
+
+
+    background:
+
+
+    linear-gradient(
+
+    180deg,
+
+    #0b1824,
+
+    #060b12
+
+    );
+
+
+
+    border-bottom:
+
+    1px solid var(--border);
+
+
+
+    box-shadow:
+
+    0 5px 20px rgba(0,0,0,.5);
+
+
 
 }
+
+
+
+
+
+
+
+
+/* BRAND */
+
+
+.brand h1{
+
+
+    margin:0;
+
+
+    font-size:26px;
+
+
+    letter-spacing:4px;
+
+
+    font-weight:700;
+
+
+    color:
+
+    var(--blue);
+
+
+
+    text-shadow:
+
+
+    0 0 12px rgba(77,163,255,.4);
+
+
+
+}
+
+
 
 
 
 .brand p{
 
-color:#607d8b;
+
+    margin-top:8px;
+
+
+    color:
+
+    var(--muted);
+
+
+    font-size:12px;
+
+
+    letter-spacing:2px;
+
+
 
 }
 
 
 
-.status{
 
-color:#00ff88;
 
-font-weight:bold;
+
+
+
+/* =====================================================
+   SYSTEM STATUS
+===================================================== */
+
+
+.system-status{
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    gap:12px;
+
+
+    padding:
+
+    10px 18px;
+
+
+
+    border:
+
+    1px solid #164f3b;
+
+
+
+    background:
+
+    rgba(0,255,136,.05);
+
+
+
+    color:
+
+    var(--green);
+
+
+
+    font-size:13px;
+
+
+    letter-spacing:2px;
+
 
 }
 
+
+
+
+
+
+
+.indicator{
+
+
+    width:12px;
+
+
+    height:12px;
+
+
+    border-radius:50%;
+
+
+
+    background:
+
+    var(--green);
+
+
+
+    box-shadow:
+
+
+    0 0 15px var(--green);
+
+
+
+    animation:
+
+    pulse 2s infinite;
+
+
+
+}
+
+
+
+
+
+@keyframes pulse{
+
+
+    0%{
+
+        opacity:.5;
+
+    }
+
+
+    50%{
+
+        opacity:1;
+
+    }
+
+
+    100%{
+
+        opacity:.5;
+
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+/* =====================================================
+   CONTROL PANEL
+===================================================== */
+
+
+.control-panel{
+
+
+    height:auto;
+
+
+    min-height:70px;
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    gap:20px;
+
+
+
+    padding:
+
+    15px 30px;
+
+
+
+    background:
+
+    #070f17;
+
+
+
+    border-bottom:
+
+    1px solid var(--border);
+
+
+
+}
+
+
+
+
+
+
+
+/* SEARCH BOX */
+
+
+.search-box{
+
+
+    flex:1;
+
+
+    max-width:450px;
+
+
+}
+
+
+
+
+
+
+#search{
+
+
+    width:100%;
+
+
+    padding:
+
+    14px 18px;
+
+
+
+    background:
+
+    #050a10;
+
+
+
+    border:
+
+    1px solid var(--border-light);
+
+
+
+    color:
+
+    white;
+
+
+
+    font-family:
+
+    inherit;
+
+
+
+    letter-spacing:
+
+    1px;
+
+
+
+    outline:none;
+
+
+
+    transition:
+
+    .25s;
+
+
+
+}
+
+
+
+
+
+#search::placeholder{
+
+
+    color:
+
+    #526b79;
+
+
+}
+
+
+
+
+
+
+
+#search:focus{
+
+
+    border-color:
+
+    var(--cyan);
+
+
+
+    box-shadow:
+
+
+    0 0 15px rgba(0,217,255,.25);
+
+
+
+}
+
+
+
+
+
+
+
+
+
+/* =====================================================
+   END PART 1
+===================================================== */
+
+
+
+/* =====================================================
+   FILTER BUTTON SYSTEM
+===================================================== */
+
+
+.filters{
+
+    display:flex;
+
+    gap:10px;
+
+    flex-wrap:wrap;
+
+}
+
+
+
+
+
+
+.filters button{
+
+
+    background:
+
+    linear-gradient(
+
+    180deg,
+
+    #122332,
+
+    #08121c
+
+    );
+
+
+
+    color:
+
+    #b9d8e8;
+
+
+
+    border:
+
+    1px solid var(--border-light);
+
+
+
+    padding:
+
+    10px 16px;
+
+
+
+    font-family:
+
+    inherit;
+
+
+
+    font-size:
+
+    12px;
+
+
+
+    letter-spacing:
+
+    1px;
+
+
+
+    cursor:pointer;
+
+
+
+    transition:
+
+    all .2s ease;
+
+
+
+}
+
+
+
+
+
+
+
+.filters button:hover{
+
+
+    color:white;
+
+
+    border-color:
+
+    var(--cyan);
+
+
+
+    background:
+
+    rgba(0,217,255,.08);
+
+
+
+    box-shadow:
+
+
+    0 0 12px rgba(0,217,255,.25);
+
+
+
+}
+
+
+
+
+
+
+.filters button:active{
+
+
+    transform:
+
+    translateY(1px);
+
+
+
+}
+
+
+
+
+
+
+
+/* =====================================================
+   MAIN OPERATIONS LAYOUT
+===================================================== */
 
 
 main{
 
-display:flex;
 
-height:calc(100vh - 90px);
+    display:flex;
+
+
+    height:
+
+    calc(
+
+    100vh - 165px
+
+    );
+
+
+
+    width:100%;
+
+
 
 }
 
 
 
+
+
+
+
+/* =====================================================
+   NETWORK DISPLAY
+===================================================== */
+
+
 #network{
 
-flex:1;
 
-background:
+    flex:
 
-radial-gradient(
-circle,
-#152431,
-#05080c
-);
+    1;
+
+
+
+    position:
+
+    relative;
+
+
+
+    overflow:
+
+    hidden;
+
+
+
+    background:
+
+
+    radial-gradient(
+
+    circle at center,
+
+    #162b3a 0%,
+
+    #09131c 40%,
+
+    #05090e 100%
+
+    );
+
+
+
+}
+
+
+
+
+
+
+
+/*
+ Tactical grid overlay
+*/
+
+
+#network::before{
+
+
+    content:"";
+
+    position:absolute;
+
+
+    inset:0;
+
+
+
+    background-image:
+
+
+    linear-gradient(
+
+    rgba(255,255,255,.03)
+
+    1px,
+
+    transparent 1px
+
+    ),
+
+
+
+    linear-gradient(
+
+    90deg,
+
+    rgba(255,255,255,.03)
+
+    1px,
+
+    transparent 1px
+
+    );
+
+
+
+    background-size:
+
+    50px 50px;
+
+
+
+    pointer-events:none;
+
+
+
+}
+
+
+
+
+
+
+
+/*
+ D3 SVG
+*/
+
+
+#network svg{
+
+
+    position:
+
+    relative;
+
+
+    z-index:
+
+    2;
+
+
+
+}
+
+
+
+
+
+
+
+
+/* =====================================================
+   INTELLIGENCE PANEL
+===================================================== */
+
+
+#panel{
+
+
+    width:
+
+    380px;
+
+
+
+    background:
+
+
+    linear-gradient(
+
+    180deg,
+
+    #0b1722,
+
+    #060c12
+
+    );
+
+
+
+    border-left:
+
+    1px solid var(--border);
+
+
+
+    display:
+
+    flex;
+
+
+
+    flex-direction:
+
+    column;
+
+
+
+    padding:
+
+    20px;
+
+
+
+    overflow-y:
+
+    auto;
+
+
+
+}
+
+
+
+
+
+
+
+#panel h2{
+
+
+    margin-top:
+
+    0;
+
+
+
+    color:
+
+    var(--green);
+
+
+
+    font-size:
+
+    15px;
+
+
+
+    letter-spacing:
+
+    2px;
+
+
+
+    border-bottom:
+
+    1px solid var(--border);
+
+
+
+    padding-bottom:
+
+    15px;
+
+
+
+}
+
+
+
+
+
+
+
+/* =====================================================
+   STATISTICS HUD
+===================================================== */
+
+
+#stats{
+
+
+    display:
+
+    grid;
+
+
+
+    grid-template-columns:
+
+    repeat(2,1fr);
+
+
+
+    gap:
+
+    10px;
+
+
+
+    margin-bottom:
+
+    20px;
+
+
+
+}
+
+
+
+
+
+
+
+#stats div{
+
+
+    background:
+
+    #08131c;
+
+
+
+    border:
+
+    1px solid var(--border);
+
+
+
+    padding:
+
+    12px;
+
+
+
+    color:
+
+    var(--cyan);
+
+
+
+    font-size:
+
+    12px;
+
+
+
+    text-align:
+
+    center;
+
+
+
+}
+
+
+
+
+
+
+
+
+/* =====================================================
+   NODE INFORMATION CARD
+===================================================== */
+
+
+#details{
+
+
+    flex:
+
+    1;
+
+
+
+}
+
+
+
+
+
+
+
+.intel-card{
+
+
+    background:
+
+
+    rgba(8,19,28,.85);
+
+
+
+    border:
+
+    1px solid var(--border-light);
+
+
+
+    padding:
+
+    18px;
+
+
+
+    box-shadow:
+
+
+    inset 0 0 20px rgba(0,0,0,.3);
+
+
+
+}
+
+
+
+
+
+
+
+.intel-card h2{
+
+
+    margin-top:
+
+    0;
+
+
+
+    color:
+
+    var(--blue);
+
+
+
+    font-size:
+
+    22px;
+
+
+
+}
+
+
+
+
+
+
+
+.intel-card h3{
+
+
+    color:
+
+    var(--green);
+
+
+
+    font-size:
+
+    13px;
+
+
+
+    letter-spacing:
+
+    2px;
+
+
+
+    margin-top:
+
+    25px;
+
+
+
+}
+
+
+
+
+
+
+
+.intel-card p{
+
+
+    color:
+
+    #b8cbd5;
+
+
+
+    line-height:
+
+    1.5;
+
+
+
+    font-size:
+
+    13px;
+
+
+
+}
+
+
+
+
+
+
+
+
+.tag{
+
+
+    display:
+
+    inline-block;
+
+
+
+    padding:
+
+    5px 10px;
+
+
+
+    border:
+
+    1px solid var(--cyan);
+
+
+
+    color:
+
+    var(--cyan);
+
+
+
+    font-size:
+
+    11px;
+
+
+
+    margin-bottom:
+
+    15px;
+
+
+
+}
+
+
+
+
+
+
+
+.connection{
+
+
+    margin-bottom:
+
+    10px;
+
+
+
+    padding:
+
+    10px;
+
+
+
+    background:
+
+    #071019;
+
+
+
+    border-left:
+
+    3px solid var(--green);
+
+
+
+    font-size:
+
+    12px;
+
+
+
+}
+
+
+
+
+
+
+
+.connection span{
+
+
+    color:
+
+    var(--muted);
+
+
+
+}
+
+
+
+
+
+
+
+
+
+/* =====================================================
+   FOOTER STATUS BAR
+===================================================== */
+
+
+footer{
+
+
+    height:
+
+    35px;
+
+
+
+    background:
+
+    #05090e;
+
+
+
+    border-top:
+
+    1px solid var(--border);
+
+
+
+    display:
+
+    flex;
+
+
+
+    justify-content:
+
+    space-around;
+
+
+
+    align-items:center;
+
+
+
+    color:
+
+    var(--muted);
+
+
+
+    font-size:
+
+    11px;
+
+
+
+    letter-spacing:
+
+    1px;
+
+
+
+}
+
+
+
+
+
+
+
+/* =====================================================
+   END PART 2
+===================================================== */
+
+
+/* =====================================================
+   RESPONSIVE OPERATIONS INTERFACE
+===================================================== */
+
+
+
+/* =====================================================
+   LARGE TABLETS / SMALL LAPTOPS
+===================================================== */
+
+
+@media (max-width:1200px){
+
+
+
+.command-header{
+
+
+    padding:
+
+    0 20px;
+
+
+}
+
+
+
+.brand h1{
+
+
+    font-size:
+
+    21px;
+
 
 }
 
@@ -104,73 +1432,1141 @@ circle,
 
 #panel{
 
-width:350px;
 
-background:#0b141d;
+    width:
 
-border-left:
+    320px;
 
-1px solid #1d3445;
-
-padding:25px;
 
 }
 
 
 
-#panel h2{
+.control-panel{
 
-color:#00ff88;
 
-font-size:16px;
+    flex-direction:
+
+    column;
+
+
+    align-items:
+
+    stretch;
+
 
 }
 
 
 
-.node-title{
+.search-box{
 
-font-size:22px;
 
-color:#9cc4ff;
+    max-width:
+
+    none;
+
 
 }
 
 
 
-.card{
+.filters{
 
-border:
 
-1px solid #28485c;
+    justify-content:
 
-padding:15px;
+    center;
 
-margin-top:15px;
-
-background:#09131c;
 
 }
 
 
-line{
-
-stroke:#356070;
-
-stroke-opacity:.6;
 
 }
 
+
+
+
+
+
+
+
+
+/* =====================================================
+   TABLET MODE
+===================================================== */
+
+
+@media (max-width:900px){
+
+
+
+body{
+
+
+    overflow:
+
+    auto;
+
+
+}
+
+
+
+
+
+.command-header{
+
+
+    height:
+
+    auto;
+
+
+    min-height:
+
+    90px;
+
+
+    flex-direction:
+
+    column;
+
+
+    align-items:
+
+    flex-start;
+
+
+    gap:
+
+    15px;
+
+
+    padding:
+
+    20px;
+
+
+}
+
+
+
+
+
+.system-status{
+
+
+    width:
+
+    100%;
+
+
+    justify-content:
+
+    center;
+
+
+}
+
+
+
+
+
+
+main{
+
+
+    height:
+
+    auto;
+
+
+    min-height:
+
+    calc(100vh - 220px);
+
+
+    flex-direction:
+
+    column;
+
+
+}
+
+
+
+
+
+#network{
+
+
+    height:
+
+    65vh;
+
+
+    width:
+
+    100%;
+
+
+}
+
+
+
+
+
+#panel{
+
+
+    width:
+
+    100%;
+
+
+    min-height:
+
+    400px;
+
+
+    border-left:
+
+    none;
+
+
+    border-top:
+
+    1px solid var(--border);
+
+
+}
+
+
+
+
+
+
+#stats{
+
+
+    grid-template-columns:
+
+    repeat(4,1fr);
+
+
+}
+
+
+
+}
+
+
+
+
+
+
+
+
+
+/* =====================================================
+   MOBILE PHONE MODE
+===================================================== */
+
+
+@media (max-width:600px){
+
+
+
+
+
+
+body{
+
+
+    font-size:
+
+    14px;
+
+
+}
+
+
+
+
+
+.command-header{
+
+
+    padding:
+
+    15px;
+
+
+}
+
+
+
+
+.brand h1{
+
+
+    font-size:
+
+    16px;
+
+
+
+    letter-spacing:
+
+    2px;
+
+
+}
+
+
+
+.brand p{
+
+
+    font-size:
+
+    10px;
+
+
+}
+
+
+
+
+
+
+
+.control-panel{
+
+
+    padding:
+
+    12px;
+
+
+}
+
+
+
+
+
+.filters{
+
+
+    display:
+
+    grid;
+
+
+
+    grid-template-columns:
+
+    repeat(2,1fr);
+
+
+
+    gap:
+
+    8px;
+
+
+
+}
+
+
+
+
+
+.filters button{
+
+
+    width:
+
+    100%;
+
+
+
+    padding:
+
+    12px 5px;
+
+
+
+    font-size:
+
+    11px;
+
+
+
+}
+
+
+
+
+
+
+
+#network{
+
+
+    height:
+
+    55vh;
+
+
+
+}
+
+
+
+
+
+
+#stats{
+
+
+    grid-template-columns:
+
+    repeat(2,1fr);
+
+
+
+}
+
+
+
+
+
+
+.intel-card{
+
+
+    padding:
+
+    12px;
+
+
+
+}
+
+
+
+
+
+
+
+.intel-card h2{
+
+
+    font-size:
+
+    18px;
+
+
+
+}
+
+
+
+
+
+footer{
+
+
+    display:
+
+    none;
+
+
+}
+
+
+
+}
+
+
+
+
+
+
+
+
+
+/* =====================================================
+   VERY SMALL DEVICES
+===================================================== */
+
+
+@media (max-width:380px){
+
+
+
+.brand h1{
+
+
+    font-size:
+
+    14px;
+
+
+
+}
+
+
+
+
+.filters{
+
+
+    grid-template-columns:
+
+    1fr;
+
+
+
+}
+
+
+
+
+
+#network{
+
+
+    height:
+
+    50vh;
+
+
+
+}
+
+
+
+
+}
+
+
+
+
+
+
+
+
+/* =====================================================
+   TOUCH OPTIMIZATION
+===================================================== */
+
+
+@media (hover:none){
+
+
+
+.filters button{
+
+
+    min-height:
+
+    44px;
+
+
+}
+
+
+
+#search{
+
+
+    min-height:
+
+    45px;
+
+
+}
+
+
+
+}
+
+
+/* =====================================================
+   FINAL DEFENSE OPERATIONS VISUAL POLISH
+===================================================== */
+
+
+/* =====================================================
+   GLOBAL CRT / SCAN EFFECT
+===================================================== */
+
+
+body::after{
+
+
+    content:"";
+
+
+    position:fixed;
+
+
+    inset:0;
+
+
+
+    pointer-events:none;
+
+
+
+    background:
+
+
+    repeating-linear-gradient(
+
+    0deg,
+
+    rgba(255,255,255,.015),
+
+    rgba(255,255,255,.015) 1px,
+
+    transparent 1px,
+
+    transparent 4px
+
+    );
+
+
+
+    opacity:.25;
+
+
+
+    z-index:999;
+
+
+
+}
+
+
+
+
+
+
+
+/* =====================================================
+   HUD CORNER EFFECTS
+===================================================== */
+
+
+#network::after{
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    inset:25px;
+
+
+
+    border:
+
+
+    1px solid rgba(0,217,255,.15);
+
+
+
+    pointer-events:none;
+
+
+
+}
+
+
+
+
+
+
+
+#panel::before{
+
+
+    content:"";
+
+
+    display:block;
+
+
+    position:absolute;
+
+
+
+    width:40px;
+
+
+    height:40px;
+
+
+
+}
+
+
+
+
+
+
+
+
+/* =====================================================
+   OPERATIONS LABEL STYLE
+===================================================== */
+
+
+.command-header::after{
+
+
+    content:
+
+
+    "CLASSIFICATION // GLOBAL NETWORK INFRASTRUCTURE MODEL";
+
+
+
+    position:absolute;
+
+
+
+    right:35px;
+
+
+    bottom:5px;
+
+
+
+    font-size:9px;
+
+
+
+    color:#496575;
+
+
+
+    letter-spacing:2px;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+/* =====================================================
+   NODE VISUALIZATION
+===================================================== */
 
 
 circle{
 
-cursor:pointer;
 
-stroke:#000;
+    transition:
 
-stroke-width:2px;
+    .25s ease;
+
+
 
 }
 
 
+
+
+
+
+circle:hover{
+
+
+    filter:
+
+
+    drop-shadow(
+
+    0 0 18px cyan
+
+    );
+
+
+
+}
+
+
+
+
+
+
+
+line{
+
+
+    animation:
+
+
+    networkFlow 4s linear infinite;
+
+
+
+}
+
+
+
+
+@keyframes networkFlow{
+
+
+    from{
+
+
+        stroke-dashoffset:
+
+        40;
+
+
+    }
+
+
+    to{
+
+
+        stroke-dashoffset:
+
+        0;
+
+
+    }
+
+
+}
+
+
+
+
+
+
+
+/* =====================================================
+   CONNECTION LINES
+===================================================== */
+
+
+svg line{
+
+
+    stroke-dasharray:
+
+    8 6;
+
+
+
+}
+
+
+
+
+
+
+
+
+/* =====================================================
+   IMPORTANT INFRASTRUCTURE HIGHLIGHT
+===================================================== */
+
+
+.critical-node{
+
+
+    animation:
+
+
+    criticalPulse 2s infinite;
+
+
+
+}
+
+
+
+
+@keyframes criticalPulse{
+
+
+    0%{
+
+
+        opacity:.8;
+
+
+    }
+
+
+
+    50%{
+
+
+        opacity:1;
+
+
+    }
+
+
+
+    100%{
+
+
+        opacity:.8;
+
+
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+/* =====================================================
+   PANEL SCROLLBAR
+===================================================== */
+
+
+#panel::-webkit-scrollbar{
+
+
+    width:
+
+    8px;
+
+
+}
+
+
+
+#panel::-webkit-scrollbar-track{
+
+
+    background:
+
+    #05090e;
+
+
+
+}
+
+
+
+#panel::-webkit-scrollbar-thumb{
+
+
+    background:
+
+    #294252;
+
+
+
+    border-radius:
+
+    5px;
+
+
+
+}
+
+
+
+#panel::-webkit-scrollbar-thumb:hover{
+
+
+    background:
+
+    var(--cyan);
+
+
+
+}
+
+
+
+
+
+
+
+
+
+/* =====================================================
+   SEARCH TERMINAL STYLE
+===================================================== */
+
+
+#search{
+
+
+    text-transform:
+
+    uppercase;
+
+
+
+}
+
+
+
+
+
+#search:hover{
+
+
+    background:
+
+    #07131d;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+/* =====================================================
+   FOOTER COMMAND STYLE
+===================================================== */
+
+
+footer div{
+
+
+    padding:
+
+    0 15px;
+
+
+
+}
+
+
+
+footer div:not(:last-child){
+
+
+    border-right:
+
+    1px solid var(--border);
+
+
+
+}
+
+
+
+
+
+
+
+
+
+/* =====================================================
+   DATA LOADING STATE
+===================================================== */
+
+
+.loading{
+
+
+    color:
+
+    var(--cyan);
+
+
+
+    animation:
+
+
+    pulse 1.5s infinite;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+/* =====================================================
+   MOBILE HUD FIXES
+===================================================== */
+
+
+@media(max-width:600px){
+
+
+
+.command-header::after{
+
+
+    display:none;
+
+
+
+}
+
+
+
+#network::after{
+
+
+    inset:
+
+    10px;
+
+
+
+}
+
+
+
+}
+
+
+
+
+
+
+
+
+/* =====================================================
+   END DEFENSE UI SYSTEM
+===================================================== */
