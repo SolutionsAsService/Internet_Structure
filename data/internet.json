@@ -1971,5 +1971,749 @@
 
 }
 
+  ,
+
+{
+"id":"tmobile",
+
+"name":"T-Mobile",
+
+"type":"Mobile Network Operator",
+
+"layer":"mobile",
+
+"region":"North America",
+
+"classification":[
+
+"5G Network",
+
+"Wireless Carrier",
+
+"Mobile Infrastructure"
+
+],
+
+"network_role":
+
+"Provides cellular access connecting users and devices to the Internet.",
+
+"importance":9,
+
+"description":
+
+"Major US wireless operator with extensive 5G infrastructure.",
+
+"connections":[
+
+"crown_castle",
+
+"zayo",
+
+"lumen",
+
+"att",
+
+"verizon",
+
+"equinix"
+
+]
+
+},
+
+
+
+{
+"id":"att_mobile",
+
+"name":"AT&T Mobility",
+
+"type":"Mobile Network Operator",
+
+"layer":"mobile",
+
+"region":"North America",
+
+"classification":[
+
+"Wireless Carrier",
+
+"5G Network",
+
+"Mobile Infrastructure"
+
+],
+
+"network_role":
+
+"Provides nationwide cellular connectivity.",
+
+"importance":10,
+
+"description":
+
+"AT&T wireless network serving millions of mobile devices.",
+
+"connections":[
+
+"att",
+
+"crown_castle",
+
+"zayo",
+
+"equinix"
+
+]
+
+},
+
+
+
+{
+"id":"verizon_wireless",
+
+"name":"Verizon Wireless",
+
+"type":"Mobile Network Operator",
+
+"layer":"mobile",
+
+"region":"North America",
+
+"classification":[
+
+"Wireless Carrier",
+
+"5G Network"
+
+],
+
+"network_role":
+
+"Large wireless access network connected into Verizon backbone.",
+
+"importance":10,
+
+"description":
+
+"One of the largest mobile networks globally.",
+
+"connections":[
+
+"verizon",
+
+"crown_castle",
+
+"lumen",
+
+"equinix"
+
+]
+
+},
+
+
+
+{
+"id":"us_cellular",
+
+"name":"US Cellular",
+
+"type":"Regional Mobile Operator",
+
+"layer":"mobile",
+
+"region":"North America",
+
+"classification":[
+
+"Wireless Carrier",
+
+"Regional Network"
+
+],
+
+"network_role":
+
+"Regional cellular provider serving smaller markets.",
+
+"importance":6,
+
+"description":
+
+"Independent US mobile network operator.",
+
+"connections":[
+
+"crown_castle",
+
+"zayo"
+
+]
+
+},
+
+
+
+{
+"id":"china_mobile",
+
+"name":"China Mobile",
+
+"type":"Global Mobile Operator",
+
+"layer":"mobile",
+
+"region":"Asia",
+
+"classification":[
+
+"Mobile Network",
+
+"National Carrier",
+
+"Global Backbone"
+
+],
+
+"network_role":
+
+"Largest mobile operator in the world.",
+
+"importance":10,
+
+"description":
+
+"Massive Chinese mobile and international network operator.",
+
+"connections":[
+
+"ntt",
+
+"tata",
+
+"sgix",
+
+"equinix"
+
+]
+
+},
+
+
+
+{
+"id":"china_telecom",
+
+"name":"China Telecom",
+
+"type":"International Carrier",
+
+"layer":"mobile",
+
+"region":"Asia",
+
+"classification":[
+
+"Mobile Network",
+
+"Backbone Provider",
+
+"International Carrier"
+
+],
+
+"network_role":
+
+"Chinese telecom network with global connectivity.",
+
+"importance":9,
+
+"description":
+
+"Major Chinese international telecommunications operator.",
+
+"connections":[
+
+"ntt",
+
+"tata",
+
+"decix"
+
+]
+
+},
+
+
+
+{
+"id":"china_unicom",
+
+"name":"China Unicom",
+
+"type":"Global Carrier",
+
+"layer":"mobile",
+
+"region":"Asia",
+
+"classification":[
+
+"Mobile Network",
+
+"International Carrier"
+
+],
+
+"network_role":
+
+"Chinese telecom provider with global presence.",
+
+"importance":9,
+
+"description":
+
+"One of China's largest telecommunications operators.",
+
+"connections":[
+
+"ntt",
+
+"pccw",
+
+"tata"
+
+]
+
+},
+
+
+
+{
+"id":"softbank",
+
+"name":"SoftBank",
+
+"type":"Mobile Operator",
+
+"layer":"mobile",
+
+"region":"Asia",
+
+"classification":[
+
+"Wireless Carrier",
+
+"Telecom Investor"
+
+],
+
+"network_role":
+
+"Japanese mobile network operator.",
+
+"importance":8,
+
+"description":
+
+"Major Japanese telecommunications company.",
+
+"connections":[
+
+"ntt",
+
+"kddi",
+
+"sgix"
+
+]
+
+},
+
+
+
+{
+"id":"kddi",
+
+"name":"KDDI",
+
+"type":"Telecom Operator",
+
+"layer":"mobile",
+
+"region":"Asia",
+
+"classification":[
+
+"Mobile Network",
+
+"International Carrier"
+
+],
+
+"network_role":
+
+"Japanese telecommunications provider.",
+
+"importance":8,
+
+"description":
+
+"Major Japanese carrier.",
+
+"connections":[
+
+"ntt",
+
+"softbank",
+
+"sgix"
+
+]
+
+},
+
+
+
+{
+"id":"singtel",
+
+"name":"Singtel",
+
+"type":"Regional Carrier",
+
+"layer":"mobile",
+
+"region":"Asia",
+
+"classification":[
+
+"Mobile Network",
+
+"International Connectivity"
+
+],
+
+"network_role":
+
+"Major Southeast Asian telecommunications provider.",
+
+"importance":9,
+
+"description":
+
+"Important Singapore connectivity hub.",
+
+"connections":[
+
+"sgix",
+
+"tata",
+
+"ntt"
+
+]
+
+},
+
+
+
+{
+"id":"jio",
+
+"name":"Reliance Jio",
+
+"type":"Mobile Network Operator",
+
+"layer":"mobile",
+
+"region":"Asia",
+
+"classification":[
+
+"Mobile Network",
+
+"Digital Platform"
+
+],
+
+"network_role":
+
+"India's largest mobile network.",
+
+"importance":9,
+
+"description":
+
+"Large Indian telecommunications platform.",
+
+"connections":[
+
+"tata",
+
+"ntt",
+
+"sgix"
+
+]
+
+},
+
+
+
+{
+"id":"airtel",
+
+"name":"Airtel",
+
+"type":"Mobile Operator",
+
+"layer":"mobile",
+
+"region":"Asia",
+
+"classification":[
+
+"Mobile Network",
+
+"Regional Carrier"
+
+],
+
+"network_role":
+
+"Major Indian and African telecommunications operator.",
+
+"importance":9,
+
+"description":
+
+"Large operator across India and Africa.",
+
+"connections":[
+
+"tata",
+
+"wiocc",
+
+"ntt"
+
+]
+
+},
+
+
+
+{
+"id":"sk_telecom",
+
+"name":"SK Telecom",
+
+"type":"Mobile Operator",
+
+"layer":"mobile",
+
+"region":"Asia",
+
+"classification":[
+
+"5G Network",
+
+"Wireless Carrier"
+
+],
+
+"network_role":
+
+"South Korean mobile infrastructure provider.",
+
+"importance":8,
+
+"description":
+
+"South Korea's largest wireless provider.",
+
+"connections":[
+
+"kt",
+
+"ntt",
+
+"kddi"
+
+]
+
+},
+
+
+
+{
+"id":"kt",
+
+"name":"KT Corporation",
+
+"type":"Telecom Operator",
+
+"layer":"mobile",
+
+"region":"Asia",
+
+"classification":[
+
+"Mobile Network",
+
+"Fiber Provider"
+
+],
+
+"network_role":
+
+"South Korean telecommunications provider.",
+
+"importance":8,
+
+"description":
+
+"Major Korean telecom operator.",
+
+"connections":[
+
+"sk_telecom",
+
+"ntt"
+
+]
+
+},
+
+
+
+{
+"id":"mtn",
+
+"name":"MTN Group",
+
+"type":"Mobile Operator",
+
+"layer":"mobile",
+
+"region":"Africa",
+
+"classification":[
+
+"Mobile Network",
+
+"Regional Carrier"
+
+],
+
+"network_role":
+
+"One of Africa's largest mobile networks.",
+
+"importance":9,
+
+"description":
+
+"Pan-African telecommunications operator.",
+
+"connections":[
+
+"wiocc",
+
+"liquid",
+
+"napaafrica"
+
+]
+
+},
+
+
+
+{
+"id":"vodacom",
+
+"name":"Vodacom",
+
+"type":"Mobile Operator",
+
+"layer":"mobile",
+
+"region":"Africa",
+
+"classification":[
+
+"Wireless Carrier",
+
+"Regional Network"
+
+],
+
+"network_role":
+
+"Southern African mobile provider.",
+
+"importance":8,
+
+"description":
+
+"Major African mobile operator.",
+
+"connections":[
+
+"mtn",
+
+"liquid"
+
+]
+
+},
+
+
+
+{
+"id":"safaricom",
+
+"name":"Safaricom",
+
+"type":"Mobile Operator",
+
+"layer":"mobile",
+
+"region":"Africa",
+
+"classification":[
+
+"Mobile Network",
+
+"Digital Services"
+
+],
+
+"network_role":
+
+"Kenya's dominant telecommunications operator.",
+
+"importance":8,
+
+"description":
+
+"Major East African carrier.",
+
+"connections":[
+
+"mtn",
+
+"wiocc"
+
+]
+
+}
+
+
 
 
