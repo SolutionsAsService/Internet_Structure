@@ -446,13 +446,372 @@
 
 "verizon",
 
-"att"
+"att"]
+
+}
+
+
 
 ]
 
 }
 
 
+,
+
+{
+"id":"lumen",
+
+"name":"Lumen",
+
+"type":"Tier 1 Backbone Network",
+
+"layer":"backbone",
+
+"region":"Global",
+
+"classification":[
+
+"Tier 1 Network",
+
+"Fiber Backbone",
+
+"Transit Provider"
+
+],
+
+"network_role":
+
+"Global Internet transport network.",
+
+"importance":10,
+
+"description":
+
+"One of the largest global backbone and fiber operators.",
+
+"connections":[
+
+"zayo",
+
+"equinix",
+
+"aws",
+
+"att",
+
+"verizon",
+
+"decix"
+
+]
+
+},
+
+
+
+{
+"id":"cogent",
+
+"name":"Cogent",
+
+"type":"Tier 1 Transit Provider",
+
+"layer":"backbone",
+
+"region":"Global",
+
+"classification":[
+
+"Tier 1 Network",
+
+"Internet Transit"
+
+],
+
+"network_role":
+
+"Moves massive volumes of global Internet traffic.",
+
+"importance":10,
+
+"description":
+
+"One of the largest Internet backbone providers.",
+
+"connections":[
+
+"lumen",
+
+"decix",
+
+"linx",
+
+"amsix"
+
+]
+
+},
+
+
+
+{
+"id":"arelion",
+
+"name":"Arelion",
+
+"type":"Global Backbone Provider",
+
+"layer":"backbone",
+
+"region":"Europe",
+
+"classification":[
+
+"Tier 1 Network",
+
+"Transit Carrier"
+
+],
+
+"network_role":
+
+"Major global backbone formerly Telia Carrier.",
+
+"importance":10,
+
+"description":
+
+"One of the world's most connected backbone networks.",
+
+"connections":[
+
+"decix",
+
+"linx",
+
+"amsix",
+
+"ntt"
+
+]
+
+},
+
+
+
+{
+"id":"ntt",
+
+"name":"NTT",
+
+"type":"Global Backbone Network",
+
+"layer":"backbone",
+
+"region":"Asia",
+
+"classification":[
+
+"Tier 1 Network",
+
+"Data Center Operator"
+
+],
+
+"network_role":
+
+"Major Asian and global Internet backbone.",
+
+"importance":10,
+
+"description":
+
+"One of the largest telecommunications networks globally.",
+
+"connections":[
+
+"amsix",
+
+"decix",
+
+"tata",
+
+"equinix"
+
+]
+
+},
+
+
+
+{
+"id":"tata",
+
+"name":"Tata Communications",
+
+"type":"Global Carrier",
+
+"layer":"backbone",
+
+"region":"Global",
+
+"classification":[
+
+"Backbone Provider",
+
+"Subsea Cable Operator"
+
+],
+
+"network_role":
+
+"Connects continents through terrestrial and submarine networks.",
+
+"importance":9,
+
+"description":
+
+"Major international carrier and subsea infrastructure operator.",
+
+"connections":[
+
+"ntt",
+
+"pccw",
+
+"decix",
+
+"equinix"
+
+]
+
+},
+
+
+
+{
+"id":"gtt",
+
+"name":"GTT",
+
+"type":"Global Transit Provider",
+
+"layer":"backbone",
+
+"region":"Global",
+
+"classification":[
+
+"Transit",
+
+"Enterprise Carrier"
+
+],
+
+"network_role":
+
+"Global IP transit provider.",
+
+"importance":8,
+
+"description":
+
+"Enterprise connectivity and backbone operator.",
+
+"connections":[
+
+"lumen",
+
+"cogent",
+
+"linx"
+
+]
+
+},
+
+
+
+{
+"id":"pccw",
+
+"name":"PCCW Global",
+
+"type":"International Carrier",
+
+"layer":"backbone",
+
+"region":"Asia",
+
+"classification":[
+
+"Asian Backbone",
+
+"Subsea Connectivity"
+
+],
+
+"network_role":
+
+"Major Asian international network.",
+
+"importance":8,
+
+"description":
+
+"Provides global connectivity services.",
+
+"connections":[
+
+"tata",
+
+"ntt",
+
+"amsix"
+
+]
+
+},
+
+
+
+{
+"id":"sparkle",
+
+"name":"Sparkle",
+
+"type":"International Carrier",
+
+"layer":"backbone",
+
+"region":"Europe",
+
+"classification":[
+
+"Subsea Network",
+
+"Global Carrier"
+
+],
+
+"network_role":
+
+"Telecom Italia international backbone.",
+
+"importance":8,
+
+"description":
+
+"Global carrier operating international routes.",
+
+"connections":[
+
+"tata",
+
+"arelion",
+
+"decix"
 
 ]
 
