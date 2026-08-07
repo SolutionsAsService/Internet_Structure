@@ -1,254 +1,314 @@
+fetch("data/internet.json")
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("Failed to load internet.json");
+        }
+        return response.json();
+    })
+    .then(data => {
 
-fetch(
-"data/internet.json"
-)
+        console.log("Infrastructure Loaded", data);
 
-.then(r=>r.json())
+        const network = document.querySelector("#network");
 
-.then(data=>{
+        const width = network.clientWidth;
+        const height = network.clientHeight;
 
+        const layerColors = {
 
-const width =
-document
-.querySelector("#network")
-.clientWidth;
+            physical: "#666666",
 
+            colocation: "#2ec4ff",
 
-const height =
-document
-.querySelector("#network")
-.clientHeight;
+            backbone: "#ff9800",
 
+            carrier: "#ff5555",
 
+            isp: "#55ddff",
 
-const svg =
-d3.select("#network")
-.append("svg")
-.attr("width",width)
-.attr("height",height);
+            mobile: "#3cff88",
 
+            satellite: "#ffe44d",
 
+            ixp: "#d34fff",
 
-const simulation =
-d3.forceSimulation(data.nodes)
+            cloud: "#3ea6ff"
 
-.force(
-"link",
-d3.forceLink(data.links)
-.id(d=>d.id)
-.distance(180)
-)
+        };
 
-.force(
-"charge",
-d3.forceManyBody()
-.strength(-500)
-)
+        //-------------------------------------------------
+        // SVG
+        //-------------------------------------------------
 
-.force(
-"center",
-d3.forceCenter(
-width/2,
-height/2
-)
-);
+        const svg = d3
+            .select("#network")
+            .append("svg")
+            .attr("width", width)
+            .attr("height", height);
 
+        //-------------------------------------------------
+        // FORCE SIMULATION
+        //-------------------------------------------------
 
+        const simulation = d3
+            .forceSimulation(data.nodes)
 
-const links =
-svg.selectAll("line")
+            .force(
+                "link",
+                d3.forceLink(data.links)
+                    .id(d => d.id)
+                    .distance(170)
+            )
 
-.data(data.links)
+            .force(
+                "charge",
+                d3.forceManyBody()
+                    .strength(-900)
+            )
 
-.enter()
+            .force(
+                "center",
+                d3.forceCenter(width / 2, height / 2)
+            )
 
-.append("line");
+            .force(
+                "collision",
+                d3.forceCollide()
+                    .radius(35)
+            );
 
+        //-------------------------------------------------
+        // LINKS
+        //-------------------------------------------------
 
+        const links = svg
 
+            .append("g")
 
-const nodes =
-svg.selectAll("circle")
+            .selectAll("line")
 
-.data(data.nodes)
+            .data(data.links)
 
-.enter()
+            .enter()
 
-.append("circle")
+            .append("line")
 
-.attr("r",18)
+            .attr("stroke", "#38556c")
 
-.attr(
-"fill",
-d=>{
+            .attr("stroke-width", 2)
 
-if(d.layer==="Cloud Provider")
-return "#ff9900";
+            .attr("opacity", 0.7);
 
-if(d.layer==="Edge Network")
-return "#00ff88";
+        //-------------------------------------------------
+        // NODES
+        //-------------------------------------------------
 
-if(d.layer==="IXP")
-return "#00aaff";
+        const nodes = svg
 
-return "#aaaaaa";
+            .append("g")
 
-}
+            .selectAll("circle")
 
-)
+            .data(data.nodes)
 
-.call(
+            .enter()
 
-d3.drag()
+            .append("circle")
 
-.on(
-"start",
-dragstarted
-)
+            .attr("r", 18)
 
-.on(
-"drag",
-dragged
-)
+            .attr("fill", d => layerColors[d.layer] || "#888")
 
-.on(
-"end",
-dragended
-)
+            .attr("stroke", "#111")
 
-);
+            .attr("stroke-width", 2)
 
+            .call(
 
+                d3.drag()
 
-nodes.on(
-"click",
+                    .on("start", dragStarted)
 
-(event,d)=>{
+                    .on("drag", dragged)
 
+                    .on("end", dragEnded)
 
-document
-.querySelector("#details")
-.innerHTML=
+            );
 
-`
+        //-------------------------------------------------
+        // LABELS
+        //-------------------------------------------------
 
-<div class="card">
+        const labels = svg
 
-<div class="node-title">
+            .append("g")
 
-${d.name}
+            .selectAll("text")
 
-</div>
+            .data(data.nodes)
 
+            .enter()
 
-<p>
-TYPE:
-${d.type}
-</p>
+            .append("text")
 
+            .text(d => d.name)
 
-<p>
-LAYER:
-${d.layer}
-</p>
+            .attr("font-size", 11)
 
+            .attr("fill", "#cfd8dc")
 
-<p>
-${d.description}
-</p>
+            .attr("text-anchor", "middle")
 
+            .attr("pointer-events", "none");
 
-</div>
+        //-------------------------------------------------
+        // CLICK EVENTS
+        //-------------------------------------------------
 
-`;
+        nodes.on("click", (event, d) => {
 
+            const connected = data.links
 
-}
+                .filter(link =>
 
-);
+                    link.source.id === d.id ||
 
+                    link.target.id === d.id ||
 
+                    link.source === d.id ||
 
-simulation.on(
-"tick",
+                    link.target === d.id
 
-()=>{
+                )
 
+                .map(link => {
 
-links
+                    const other =
 
-.attr(
-"x1",
-d=>d.source.x
-)
+                        (link.source.id || link.source) === d.id
 
-.attr(
-"y1",
-d=>d.source.y
-)
+                            ? (link.target.name || link.target)
 
-.attr(
-"x2",
-d=>d.target.x
-)
+                            : (link.source.name || link.source);
 
-.attr(
-"y2",
-d=>d.target.y
-);
+                    return `
+                        <li>
+                            ${other}
+                            <br>
+                            <small>${link.relationship || "Connected"}</small>
+                        </li>
+                    `;
 
+                })
 
+                .join("");
 
-nodes
+            document.querySelector("#details").innerHTML = `
 
-.attr(
-"cx",
-d=>d.x
-)
+                <div class="card">
 
-.attr(
-"cy",
-d=>d.y
-);
+                    <div class="node-title">
 
+                        ${d.name}
 
+                    </div>
 
-}
+                    <hr>
 
-);
+                    <p><strong>Type</strong><br>${d.type || "-"}</p>
 
+                    <p><strong>Layer</strong><br>${d.layer}</p>
 
+                    <p><strong>Region</strong><br>${d.region || "-"}</p>
 
-function dragstarted(event,d){
+                    <p>${d.description || ""}</p>
 
-if(!event.active)
-simulation.alphaTarget(.3).restart();
+                    <h3>Connections</h3>
 
-d.fx=d.x;
-d.fy=d.y;
+                    <ul>
 
-}
+                        ${connected || "<li>No known relationships.</li>"}
 
+                    </ul>
 
+                </div>
 
-function dragged(event,d){
+            `;
 
-d.fx=event.x;
-d.fy=event.y;
+        });
 
-}
+        //-------------------------------------------------
+        // TICK
+        //-------------------------------------------------
 
+        simulation.on("tick", () => {
 
+            links
 
-function dragended(event,d){
+                .attr("x1", d => d.source.x)
 
-if(!event.active)
-simulation.alphaTarget(0);
+                .attr("y1", d => d.source.y)
 
-d.fx=null;
-d.fy=null;
+                .attr("x2", d => d.target.x)
 
-}
+                .attr("y2", d => d.target.y);
 
+            nodes
 
-});
+                .attr("cx", d => d.x)
+
+                .attr("cy", d => d.y);
+
+            labels
+
+                .attr("x", d => d.x)
+
+                .attr("y", d => d.y - 24);
+
+        });
+
+        //-------------------------------------------------
+        // DRAG
+        //-------------------------------------------------
+
+        function dragStarted(event, d) {
+
+            if (!event.active)
+                simulation.alphaTarget(0.3).restart();
+
+            d.fx = d.x;
+            d.fy = d.y;
+
+        }
+
+        function dragged(event, d) {
+
+            d.fx = event.x;
+            d.fy = event.y;
+
+        }
+
+        function dragEnded(event, d) {
+
+            if (!event.active)
+                simulation.alphaTarget(0);
+
+            d.fx = null;
+            d.fy = null;
+
+        }
+
+    })
+
+    .catch(error => {
+
+        console.error(error);
+
+        document.querySelector("#details").innerHTML = `
+            <div class="card">
+                <h2>Error Loading Data</h2>
+                <p>${error.message}</p>
+            </div>
+        `;
+
+    });
