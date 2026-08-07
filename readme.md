@@ -1,3 +1,5 @@
+```text
+
 internet-atlas/
 │
 ├── index.html
@@ -15,3 +17,6 @@ internet-atlas/
 │
 └── assets/
     └── icons/
+
+
+```
