@@ -62,6 +62,12 @@
 },
 
 {
+  "id": "hardware",
+  "name": "Compute & Network Hardware",
+  "description": "Semiconductors, servers, accelerators, networking equipment and infrastructure systems"
+},
+
+{
 "id":"cloud",
 "name":"Cloud & Content Networks",
 "description":"Cloud providers, CDNs and platforms"
