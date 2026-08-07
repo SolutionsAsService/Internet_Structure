@@ -6550,7 +6550,7 @@
   "id": "arm",
   "name": "Arm",
   "type": "CPU Architecture and IP",
-  "layer": "hardware",
+  "layer": "semiconductor_design",
   "region": "Global",
   "classification": [
     "CPU Architecture",
@@ -6563,7 +6563,8 @@
   "connections": [
     "aws",
     "microsoft",
-    "nvidia"
+    "nvidia",
+    "tsmc"
   ]
 },
 
@@ -6571,7 +6572,7 @@
   "id": "synopsys",
   "name": "Synopsys",
   "type": "Electronic Design Automation",
-  "layer": "hardware",
+  "layer": "semiconductor_design",
   "region": "Global",
   "classification": [
     "EDA",
@@ -6592,7 +6593,7 @@
   "id": "cadence",
   "name": "Cadence",
   "type": "Electronic Design Automation",
-  "layer": "hardware",
+  "layer": "semiconductor_design",
   "region": "Global",
   "classification": [
     "EDA",
@@ -6613,7 +6614,7 @@
   "id": "tsmc",
   "name": "TSMC",
   "type": "Semiconductor Foundry",
-  "layer": "hardware",
+  "layer": "semiconductor_fab",
   "region": "Asia",
   "classification": [
     "Semiconductor Fab",
@@ -6636,7 +6637,7 @@
   "id": "samsung_semiconductor",
   "name": "Samsung Semiconductor",
   "type": "Semiconductor Manufacturer",
-  "layer": "hardware",
+  "layer": "semiconductor_fab",
   "region": "Asia",
   "classification": [
     "Semiconductor Fab",
@@ -6658,7 +6659,7 @@
   "id": "intel_fab",
   "name": "Intel Foundry",
   "type": "Semiconductor Foundry",
-  "layer": "hardware",
+  "layer": "semiconductor_fab",
   "region": "North America",
   "classification": [
     "Semiconductor Fab",
@@ -6680,7 +6681,7 @@
   "id": "asml",
   "name": "ASML",
   "type": "Semiconductor Manufacturing Equipment",
-  "layer": "hardware",
+  "layer": "semiconductor_equipment",
   "region": "Europe",
   "classification": [
     "Lithography",
@@ -6701,7 +6702,7 @@
   "id": "applied_materials",
   "name": "Applied Materials",
   "type": "Semiconductor Equipment",
-  "layer": "hardware",
+  "layer": "semiconductor_equipment",
   "region": "North America",
   "classification": [
     "Wafer Manufacturing",
@@ -6722,7 +6723,7 @@
   "id": "lam_research",
   "name": "Lam Research",
   "type": "Semiconductor Equipment",
-  "layer": "hardware",
+  "layer": "semiconductor_equipment",
   "region": "North America",
   "classification": [
     "Etching",
@@ -6743,7 +6744,7 @@
   "id": "nvidia",
   "name": "NVIDIA",
   "type": "Accelerator and Semiconductor Designer",
-  "layer": "hardware",
+  "layer": "semiconductor_design",
   "region": "Global",
   "classification": [
     "GPU",
@@ -6766,7 +6767,7 @@
   "id": "amd",
   "name": "AMD",
   "type": "CPU and Accelerator Designer",
-  "layer": "hardware",
+  "layer": "semiconductor_design",
   "region": "Global",
   "classification": [
     "CPU",
@@ -6789,7 +6790,7 @@
   "id": "marvell",
   "name": "Marvell",
   "type": "Networking Semiconductor Designer",
-  "layer": "hardware",
+  "layer": "semiconductor_design",
   "region": "Global",
   "classification": [
     "Networking Silicon",
@@ -6810,7 +6811,7 @@
   "id": "broadcom",
   "name": "Broadcom",
   "type": "Infrastructure Semiconductor Provider",
-  "layer": "hardware",
+  "layer": "semiconductor_design",
   "region": "Global",
   "classification": [
     "Networking Silicon",
@@ -6832,7 +6833,7 @@
   "id": "micron",
   "name": "Micron",
   "type": "Memory Manufacturer",
-  "layer": "hardware",
+  "layer": "storage_hardware",
   "region": "North America",
   "classification": [
     "DRAM",
@@ -6855,7 +6856,7 @@
   "id": "sk_hynix",
   "name": "SK hynix",
   "type": "Memory Manufacturer",
-  "layer": "hardware",
+  "layer": "storage_hardware",
   "region": "Asia",
   "classification": [
     "DRAM",
@@ -6877,7 +6878,7 @@
   "id": "western_digital",
   "name": "Western Digital",
   "type": "Storage Manufacturer",
-  "layer": "hardware",
+  "layer": "storage_hardware",
   "region": "Global",
   "classification": [
     "Storage",
@@ -6898,7 +6899,7 @@
   "id": "dell",
   "name": "Dell Technologies",
   "type": "Server and Infrastructure OEM",
-  "layer": "hardware",
+  "layer": "server_oem",
   "region": "Global",
   "classification": [
     "Servers",
@@ -6921,7 +6922,7 @@
   "id": "hpe",
   "name": "HPE",
   "type": "Server and Infrastructure OEM",
-  "layer": "hardware",
+  "layer": "server_oem",
   "region": "Global",
   "classification": [
     "Servers",
@@ -6943,7 +6944,7 @@
   "id": "supermicro",
   "name": "Supermicro",
   "type": "Server Manufacturer",
-  "layer": "hardware",
+  "layer": "server_oem",
   "region": "Global",
   "classification": [
     "Servers",
@@ -6965,7 +6966,7 @@
   "id": "lenovo_infrastructure",
   "name": "Lenovo Infrastructure Solutions",
   "type": "Server Manufacturer",
-  "layer": "hardware",
+  "layer": "server_oem",
   "region": "Global",
   "classification": [
     "Servers",
