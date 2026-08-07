@@ -174,8 +174,39 @@ cloud:"#3399ff"
 
 const svg =
 d3.select("#network")
-
 .append("svg")
+.attr("width",width)
+.attr("height",height);
+
+
+
+const container =
+svg.append("g");
+
+
+
+svg.call(
+
+d3.zoom()
+
+.scaleExtent([0.2,5])
+
+.on(
+"zoom",
+(event)=>{
+
+container.attr(
+"transform",
+event.transform
+);
+
+}
+
+)
+
+);
+
+container.append("g")
 
 .attr(
 "width",
@@ -250,6 +281,8 @@ d3.forceCollide()
 
 
 
+
+    
 
 // --------------------------------------
 // CONNECTION LINES
