@@ -809,5 +809,226 @@
 
 ]
 
+},
+
+{
+"id":"aws",
+
+"name":"Amazon Web Services",
+
+"type":"Hyperscale Cloud Provider",
+
+"layer":"cloud",
+
+"region":"Global",
+
+"classification":[
+
+"Cloud Computing",
+
+"Data Centers",
+
+"Global Network"
+
+],
+
+"network_role":
+
+"Provides global compute, storage and networking infrastructure.",
+
+"importance":10,
+
+"description":
+
+"One of the largest cloud infrastructure providers.",
+
+"connections":[
+
+"equinix",
+
+"lumen",
+
+"ntt",
+
+"decix"
+
+]
+
+},
+
+
+{
+"id":"azure",
+
+"name":"Microsoft Azure",
+
+"type":"Cloud Provider",
+
+"layer":"cloud",
+
+"region":"Global",
+
+"classification":[
+
+"Cloud Computing",
+
+"Enterprise Platform"
+
+],
+
+"network_role":
+
+"Enterprise cloud infrastructure.",
+
+"importance":10,
+
+"description":
+
+"Microsoft global cloud platform.",
+
+"connections":[
+
+"digital_realty",
+
+"equinix",
+
+"lumen"
+
+]
+
+},
+
+
+{
+"id":"google",
+
+"name":"Google",
+
+"type":"Cloud and Content Network",
+
+"layer":"cloud",
+
+"region":"Global",
+
+"classification":[
+
+"Cloud",
+
+"Search",
+
+"Global Network"
+
+],
+
+"network_role":
+
+"Runs one of the world's largest private networks.",
+
+"importance":10,
+
+"description":
+
+"Google Cloud and global Internet infrastructure.",
+
+"connections":[
+
+"equinix",
+
+"ntt",
+
+"decix"
+
+]
+
+},
+
+
+{
+"id":"cloudflare",
+
+"name":"Cloudflare",
+
+"type":"CDN and Edge Network",
+
+"layer":"cloud",
+
+"region":"Global",
+
+"classification":[
+
+"CDN",
+
+"DDoS Protection",
+
+"Edge Compute",
+
+"DNS"
+
+],
+
+"network_role":
+
+"Provides global edge delivery and security services.",
+
+"importance":10,
+
+"description":
+
+"One of the largest distributed edge networks.",
+
+"connections":[
+
+"equinix",
+
+"lumen",
+
+"decix",
+
+"linx"
+
+]
+
+},
+
+
+{
+"id":"meta",
+
+"name":"Meta",
+
+"type":"Content Network",
+
+"layer":"cloud",
+
+"region":"Global",
+
+"classification":[
+
+"Content Provider",
+
+"Private Backbone"
+
+],
+
+"network_role":
+
+"Operates massive private global infrastructure.",
+
+"importance":9,
+
+"description":
+
+"Global social media and content infrastructure.",
+
+"connections":[
+
+"equinix",
+
+"decix",
+
+"ntt"
+
+]
+
 }
 
