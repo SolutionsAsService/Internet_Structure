@@ -8,6 +8,12 @@
 },
 
 {
+"id":"subsea",
+"name":"Submarine Cable Infrastructure",
+"description":"Undersea fiber optic systems connecting continents"
+},
+
+{
 "id":"colocation",
 "name":"Colocation & Interconnection",
 "description":"Facilities where networks physically meet"
@@ -2525,6 +2531,7 @@
 
 },
 
+  
 
 
 {
@@ -3128,6 +3135,112 @@
 "equinix"
 
 ]
+},
+
+
+{
+"id":"seamewe",
+
+"name":"SEA-ME-WE Cable System",
+
+"type":"Submarine Cable",
+
+"layer":"physical",
+
+"region":"Asia-Europe",
+
+"classification":[
+"Submarine Fiber",
+"International Backbone"
+],
+
+"network_role":
+
+"Connects Southeast Asia, Middle East and Europe.",
+
+"importance":10,
+
+"description":
+
+"Major intercontinental fiber route.",
+
+"connections":[
+"tata",
+"ntt",
+"pccw",
+"singtel"
+]
+
+},
+
+
+{
+"id":"marea",
+
+"name":"MAREA",
+
+"type":"Transatlantic Cable",
+
+"layer":"physical",
+
+"region":"North America-Europe",
+
+"classification":[
+"Submarine Fiber",
+"Transatlantic"
+],
+
+"network_role":
+
+"High capacity Atlantic fiber route.",
+
+"importance":10,
+
+"description":
+
+"Connects Virginia USA to Spain.",
+
+"connections":[
+"microsoft",
+"meta",
+"telefónica"
+]
+
+},
+
+{
+"id":"2africa",
+
+"name":"2Africa",
+
+"type":"Submarine Cable",
+
+"layer":"physical",
+
+"region":"Africa",
+
+"classification":[
+"Submarine Fiber",
+"Regional Connectivity"
+],
+
+"network_role":
+
+"Large African connectivity project.",
+
+"importance":9,
+
+"description":
+
+"Connects Africa, Europe and Asia.",
+
+"connections":[
+"meta",
+"orange",
+"vodafone",
+"mtn"
+]
+
 }
 
 
