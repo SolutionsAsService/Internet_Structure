@@ -199,11 +199,21 @@ subsea:"#090088",
 
 hardware:"#B2BEB5",
 
-cloud:"#3388ff"
+cloud:"#3388ff",
 
+server_odm:"#475569",
 
-};
+storage_hardware:"#334155",
 
+memory:"#1E293B",
+
+semiconductor:"#F43F5E",
+ 
+semiconductor_design:"#E11D48",
+
+semiconductor_fab:"#BE123C",
+    
+semiconductor_equipment:"#9F1239"
 
 
 
