@@ -213,7 +213,35 @@ semiconductor_design:"#E11D48",
 
 semiconductor_fab:"#BE123C",
     
-semiconductor_equipment:"#9F1239"
+semiconductor_equipment:"#9F1239",
+
+peering:"#0E7490",
+  
+internet_exchange_fabric":"#155E75",
+routing:"#3B82F6",
+routing_security:"#2563EB",
+  
+routing_measurement:"#1D4ED8",
+ 
+network_operations:"#1E40AF",
+
+dns_root:"#EA580C",
+  
+dns_authoritative":"#C2410C",
+dns_recursive:"#9A3412",
+dns_registry:"#7C2D12",
+
+anycast:"#F43F5E",
+geodns:"#E11D48",
+cdn:"#EC4899",
+edge_compute:"#DB2777",
+web_acceleration:"#BE185D",
+compute:"#4F46E5",
+     
+gpu_compute:"#4338CA", 
+server:"#3730A3",
+storage:"#312E81"
+ 
 
 };
 
