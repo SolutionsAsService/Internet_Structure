@@ -1,15 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 
 <title>
 GLOBAL INTERNET INFRASTRUCTURE ATLAS
 </title>
 
+
 <link rel="stylesheet" href="css/style.css">
 
-<script src="https://d3js.org/d3.v7.min.js"></script>
+
+<script 
+src="https://d3js.org/d3.v7.min.js">
+</script>
+
 
 </head>
 
@@ -17,60 +27,241 @@ GLOBAL INTERNET INFRASTRUCTURE ATLAS
 <body>
 
 
-<header>
+
+<!-- =====================================
+     COMMAND HEADER
+===================================== -->
+
+
+<header class="command-header">
+
 
 <div class="brand">
+
 
 <h1>
 GLOBAL INTERNET INFRASTRUCTURE ATLAS
 </h1>
 
+
 <p>
-NETWORK OPERATIONS INTELLIGENCE PLATFORM
+GLOBAL NETWORK OPERATIONS INTELLIGENCE PLATFORM
 </p>
 
+
 </div>
 
 
-<div class="status">
+
+<div class="system-status">
+
+
+<div class="indicator"></div>
+
 
 <span>
-● SYSTEM ONLINE
+SYSTEM ONLINE
 </span>
 
+
 </div>
+
+
 
 </header>
 
 
 
-<main>
 
 
-<section id="network">
-
-</section>
-
-
-
-<section id="panel">
-
-<h2>
-NODE INFORMATION
-</h2>
+<!-- =====================================
+     CONTROL BAR
+===================================== -->
 
 
-<div id="details">
+<section class="control-panel">
 
-Select infrastructure node...
+
+<div class="search-box">
+
+
+<input 
+
+id="search"
+
+placeholder="SEARCH INFRASTRUCTURE ENTITY..."
+
+>
+
 
 </div>
 
 
+
+
+<div class="filters">
+
+
+<button onclick="filterLayer('all')">
+ALL
+</button>
+
+
+<button onclick="filterLayer('cloud')">
+CLOUD
+</button>
+
+
+<button onclick="filterLayer('backbone')">
+BACKBONE
+</button>
+
+
+<button onclick="filterLayer('carrier')">
+CARRIERS
+</button>
+
+
+<button onclick="filterLayer('ixp')">
+IXP
+</button>
+
+
+<button onclick="filterLayer('satellite')">
+SATELLITE
+</button>
+
+
+<button onclick="resetView()">
+RESET VIEW
+</button>
+
+
+
+</div>
+
+
+
 </section>
 
 
+
+
+
+
+
+
+<!-- =====================================
+     MAIN OPERATIONS AREA
+===================================== -->
+
+
+<main>
+
+
+
+<!-- NETWORK VISUALIZATION -->
+
+<section 
+id="network"
+>
+
+
+</section>
+
+
+
+
+
+
+<!-- =====================================
+     INTELLIGENCE PANEL
+===================================== -->
+
+
+<aside id="panel">
+
+
+<h2>
+INFRASTRUCTURE INTELLIGENCE
+</h2>
+
+
+
+<div id="stats">
+
+
+<div>
+LOADING DATABASE...
+</div>
+
+
+</div>
+
+
+
+
+
+<div id="details">
+
+
+SELECT NETWORK NODE
+
+
+</div>
+
+
+
+</aside>
+
+
+
+
 </main>
+
+
+
+
+
+
+<!-- =====================================
+     FOOTER STATUS
+===================================== -->
+
+
+<footer>
+
+
+<div>
+
+DATABASE:
+GLOBAL INTERNET INFRASTRUCTURE MODEL
+
+</div>
+
+
+
+<div>
+
+MODE:
+NETWORK GRAPH ANALYSIS
+
+</div>
+
+
+
+<div>
+
+VERSION:
+ATLAS-01
+
+</div>
+
+
+</footer>
+
+
+
 
 
 
