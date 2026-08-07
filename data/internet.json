@@ -4420,6 +4420,211 @@
   ]
 },
 
+{
+"id":"segra",
+"name":"Segra",
+"type":"Fiber Network",
+"layer":"metro",
+"region":"North America",
+
+"classification":[
+"Fiber",
+"Enterprise Networking",
+"Metro Networks",
+"Data Center Connectivity"
+],
+
+"network_role":
+"Operates regional fiber networks connecting businesses, data centers, carriers, and Internet infrastructure.",
+
+"importance":7,
+
+"description":
+"Regional fiber infrastructure provider with extensive network presence in the eastern United States.",
+
+"connections":[
+"equinix",
+"zayo"
+]
+},
+
+{
+"id":"bandwidth",
+"name":"Bandwidth",
+"type":"Communications Platform",
+"layer":"carrier",
+"region":"North America",
+
+"classification":[
+"Voice Network",
+"Messaging",
+"Communications APIs",
+"Telecommunications"
+],
+
+"network_role":
+"Provides carrier-grade communications infrastructure connecting applications to telephone and messaging networks.",
+
+"importance":7,
+
+"description":
+"Communications infrastructure provider operating network resources used by applications and communications platforms.",
+
+"connections":[
+"twilio",
+"att",
+"verizon"
+]
+},
+
+{
+"id":"nokia_networks",
+"name":"Nokia",
+"type":"Telecommunications Equipment",
+"layer":"network_hardware",
+"region":"Global",
+
+"classification":[
+"Telecom Equipment",
+"5G",
+"Optical Networking",
+"Routing"
+],
+
+"network_role":
+"Supplies mobile, routing, optical, and telecommunications infrastructure used by carriers worldwide.",
+
+"importance":10,
+
+"description":
+"Major telecommunications equipment manufacturer spanning mobile radio access, optical transport, routing, and core networking.",
+
+"connections":[
+"att",
+"verizon",
+"tmobile",
+"ciena"
+]
+},
+
+{
+"id":"ericsson",
+"name":"Ericsson",
+"type":"Telecommunications Equipment",
+"layer":"radio_access",
+"region":"Global",
+
+"classification":[
+"5G",
+"Radio Access Networks",
+"Mobile Core",
+"Telecom Infrastructure"
+],
+
+"network_role":
+"Supplies cellular radio and network infrastructure used by mobile operators worldwide.",
+
+"importance":10,
+
+"description":
+"One of the major global suppliers of cellular radio access and telecommunications infrastructure.",
+
+"connections":[
+"att",
+"verizon",
+"tmobile",
+"american_tower"
+]
+},
+
+{
+"id":"corning",
+"name":"Corning",
+"type":"Fiber Manufacturer",
+"layer":"fiber",
+"region":"Global",
+
+"classification":[
+"Optical Fiber",
+"Fiber Cable",
+"Telecommunications",
+"Optical Components"
+],
+
+"network_role":
+"Manufactures optical fiber and related technologies used to construct terrestrial, data center, and telecommunications networks.",
+
+"importance":9,
+
+"description":
+"Major optical-fiber manufacturer supplying foundational physical components for communications networks.",
+
+"connections":[
+"zayo",
+"ciena",
+"lumen",
+"submarine"
+]
+},
+
+{
+"id":"nexans",
+"name":"Nexans",
+"type":"Cable Manufacturer",
+"layer":"fiber",
+"region":"Global",
+
+"classification":[
+"Fiber Optic Cable",
+"Submarine Cable",
+"Power Cable",
+"Telecommunications"
+],
+
+"network_role":
+"Manufactures terrestrial and submarine cable systems used in telecommunications and critical infrastructure.",
+
+"importance":8,
+
+"description":
+"Global cable manufacturer supplying communications and energy infrastructure.",
+
+"connections":[
+"submarine",
+"cable_landing",
+"fiber"
+]
+},
+
+{
+"id":"prysmian",
+"name":"Prysmian",
+"type":"Cable Manufacturer",
+"layer":"fiber",
+"region":"Global",
+
+"classification":[
+"Fiber Optic Cable",
+"Submarine Cable",
+"Telecommunications",
+"Energy Infrastructure"
+],
+
+"network_role":
+"Manufactures fiber-optic and submarine cable infrastructure connecting telecommunications networks across regions.",
+
+"importance":9,
+
+"description":
+"One of the world's largest cable manufacturers with major telecommunications and submarine cable capabilities.",
+
+"connections":[
+"submarine",
+"cable_landing",
+"fiber"
+]
+},
+
 
 {
   "id": "cisco",
