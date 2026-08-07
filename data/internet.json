@@ -630,7 +630,75 @@
 "source":"google",
 "target":"equinix_ix",
 "relationship":"private peering"
+},
+
+
+{
+"id":"aws",
+
+"name":"Amazon Web Services",
+
+"type":"Cloud Provider",
+
+"layer":"cloud",
+
+"region":"Global",
+
+"description":"Global hyperscale cloud provider."
+},
+{
+"id":"google",
+
+"name":"Google",
+
+"type":"Cloud Provider",
+
+"layer":"cloud",
+
+"region":"Global",
+
+"description":"Google Cloud and global network."
+},
+{
+"id":"cloudflare",
+
+"name":"Cloudflare",
+
+"type":"CDN",
+
+"layer":"cloud",
+
+"region":"Global",
+
+"description":"Edge network, CDN and DNS provider."
+},
+{
+"id":"azure",
+
+"name":"Microsoft Azure",
+
+"type":"Cloud Provider",
+
+"layer":"cloud",
+
+"region":"Global",
+
+"description":"Microsoft cloud platform."
+},
+{
+"id":"meta",
+
+"name":"Meta",
+
+"type":"Content Network",
+
+"layer":"cloud",
+
+"region":"Global",
+
+"description":"Large global content and infrastructure provider."
 }
+  
 
 
 ]
