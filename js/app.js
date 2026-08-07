@@ -7,21 +7,30 @@ fetch("data/internet.json")
     })
     .then(data => {
 
-        const nodeIds = new Set(data.nodes.map(n => n.id));
+       const nodeIds = new Set(data.nodes.map(n => n.id));
 
-const invalidLinks = data.links.filter(link =>
-    !nodeIds.has(link.source) || !nodeIds.has(link.target)
-);
+const invalidLinks = [];
 
-if (invalidLinks.length) {
+for (const link of data.links) {
 
-    console.error("Invalid links found:");
+    if (!nodeIds.has(link.source) || !nodeIds.has(link.target)) {
 
-    console.table(invalidLinks);
+        invalidLinks.push({
+            source: link.source,
+            target: link.target,
+            missingSource: !nodeIds.has(link.source),
+            missingTarget: !nodeIds.has(link.target)
+        });
 
-    throw new Error(
-        `${invalidLinks.length} links reference missing nodes.`
-    );
+    }
+
+}
+
+console.table(invalidLinks);
+
+if (invalidLinks.length > 0) {
+
+    throw new Error(`${invalidLinks.length} invalid links found.`);
 
 }
 
