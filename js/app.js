@@ -289,8 +289,8 @@ const layerColors = {
     // SUBMARINE
     // ==============================
 
-    submarine: "#0284C7",
-    subsea: "#0284C7",
+    submarine: "#090088",
+    subsea: "#090088",
     cable_landing: "#0369A1",
     submarine_operator: "#075985",
 
