@@ -819,6 +819,66 @@
 },
 
 
+  {
+"id":"eqix_ashburn",
+"name":"Equinix Ashburn IX",
+"type":"Internet Exchange",
+"layer":"ixp",
+"region":"North America",
+
+"classification":[
+"Carrier Hub",
+"Cloud Interconnection"
+],
+
+"network_role":
+"Major East Coast Internet exchange ecosystem.",
+
+"importance":10,
+
+"description":
+"Located in the largest US Internet concentration region.",
+
+"connections":[
+"aws",
+"google",
+"cloudflare",
+"verizon",
+"att",
+"lumen"
+]
+},
+
+{
+"id":"any2_la",
+"name":"Any2 Los Angeles",
+"type":"Internet Exchange",
+"layer":"ixp",
+"region":"North America",
+
+"classification":[
+"Internet Exchange",
+"Pacific Gateway"
+],
+
+"network_role":
+"Major US West Coast peering exchange.",
+
+"importance":9,
+
+"description":
+"Important gateway between North America and Asia.",
+
+"connections":[
+"ntt",
+"zayo",
+"cogent",
+"cloudflare",
+"google"
+]
+},
+
+  
 
 {
 "id":"arelion",
@@ -2113,7 +2173,7 @@
 {
 "id":"sgix",
 
-"name":"SGIX",
+"name":"SGIX - Singapore Internet Exchange",
 
 "type":"Internet Exchange",
 
@@ -2140,17 +2200,44 @@
 "Important Asian connectivity hub.",
 
 "connections":[
-
 "singtel",
-
+"sea_me_we_5",
 "ntt",
-
+"kddi",
 "tata"
-
 ]
 
-}
-  ,
+},
+
+{
+"id":"johannesburg_ix",
+"name":"JINX",
+"type":"Internet Exchange",
+"layer":"ixp",
+"region":"Africa",
+
+"classification":[
+"Regional Exchange",
+"African Peering"
+],
+
+"network_role":
+"Major South African Internet exchange.",
+
+"importance":8,
+
+"description":
+"Important African Internet traffic exchange.",
+
+"connections":[
+"mtn",
+"liquid",
+"wiocc",
+"2africa"
+]
+},
+
+
 
 {
 "id":"att",
@@ -3804,6 +3891,92 @@
 ]
 
 },
+
+{
+"id":"curie",
+"name":"Curie Cable",
+"type":"Private Submarine Cable",
+"layer":"subsea",
+"region":"North America-South America",
+
+"classification":[
+"Google Infrastructure",
+"Submarine Fiber"
+],
+
+"network_role":
+"Google owned submarine cable connecting global regions.",
+
+"importance":9,
+
+"description":
+"Private cable used to expand Google's global network.",
+
+"connections":[
+"google",
+"equinix",
+"cloudflare"
+]
+},
+
+{
+"id":"sea_me_we_5",
+"name":"SEA-ME-WE 5",
+"type":"Submarine Cable System",
+"layer":"subsea",
+"region":"Europe-Asia",
+
+"classification":[
+"International Cable",
+"Carrier Infrastructure"
+],
+
+"network_role":
+"Connects Europe, Middle East and Southeast Asia.",
+
+"importance":10,
+
+"description":
+"Major intercontinental cable route.",
+
+"connections":[
+"tata",
+"ntt",
+"singtel",
+"sgix",
+"de-cix"
+]
+},
+
+{
+"id":"aag",
+"name":"Asia America Gateway",
+"type":"Submarine Cable",
+"layer":"subsea",
+"region":"Asia-Pacific",
+
+"classification":[
+"Transpacific Cable",
+"Fiber Backbone"
+],
+
+"network_role":
+"Connects Southeast Asia with North America.",
+
+"importance":9,
+
+"description":
+"Major Pacific Ocean fiber route.",
+
+"connections":[
+"ntt",
+"tata",
+"singtel",
+"equinix"
+]
+},
+
+
 
 
 {
