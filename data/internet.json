@@ -1030,5 +1030,416 @@
 
 ]
 
+},
+
+{
+"id":"decix",
+
+"name":"DE-CIX",
+
+"type":"Internet Exchange",
+
+"layer":"ixp",
+
+"region":"Europe",
+
+"classification":[
+
+"Internet Exchange",
+
+"Peering Platform",
+
+"Carrier Interconnection"
+
+],
+
+"network_role":
+
+"Major global traffic exchange point where networks peer directly.",
+
+"importance":10,
+
+"description":
+
+"One of the world's largest Internet exchange ecosystems.",
+
+"connections":[
+
+"equinix",
+
+"arelion",
+
+"ntt",
+
+"tata",
+
+"cloudflare",
+
+"google",
+
+"aws"
+
+]
+
+},
+
+
+
+{
+"id":"amsix",
+
+"name":"AMS-IX",
+
+"type":"Internet Exchange",
+
+"layer":"ixp",
+
+"region":"Europe",
+
+"classification":[
+
+"Internet Exchange",
+
+"Peering Platform"
+
+],
+
+"network_role":
+
+"Major European Internet traffic exchange.",
+
+"importance":10,
+
+"description":
+
+"One of the largest Internet exchanges in the world.",
+
+"connections":[
+
+"equinix",
+
+"arelion",
+
+"ntt",
+
+"cloudflare",
+
+"google"
+
+]
+
+},
+
+
+
+
+{
+"id":"linx",
+
+"name":"LINX",
+
+"type":"Internet Exchange",
+
+"layer":"ixp",
+
+"region":"Europe",
+
+"classification":[
+
+"Internet Exchange",
+
+"Peering Platform"
+
+],
+
+"network_role":
+
+"Major UK and global network exchange.",
+
+"importance":9,
+
+"description":
+
+"Provides neutral Internet peering infrastructure.",
+
+"connections":[
+
+"telehouse",
+
+"gtt",
+
+"cogent",
+
+"cloudflare"
+
+]
+
+},
+
+
+
+
+{
+"id":"equinix_ix",
+
+"name":"Equinix Internet Exchange",
+
+"type":"Internet Exchange",
+
+"layer":"ixp",
+
+"region":"Global",
+
+"classification":[
+
+"Private Peering",
+
+"Internet Exchange"
+
+],
+
+"network_role":
+
+"Exchange fabric operating inside Equinix facilities.",
+
+"importance":10,
+
+"description":
+
+"Connects thousands of networks inside Equinix data centers.",
+
+"connections":[
+
+"equinix",
+
+"aws",
+
+"google",
+
+"cloudflare",
+
+"meta"
+
+]
+
+},
+
+
+
+
+{
+"id":"nyiiX",
+
+"name":"NYIIX",
+
+"type":"Internet Exchange",
+
+"layer":"ixp",
+
+"region":"North America",
+
+"classification":[
+
+"Internet Exchange",
+
+"Regional Peering"
+
+],
+
+"network_role":
+
+"Major North American peering exchange.",
+
+"importance":7,
+
+"description":
+
+"New York based Internet exchange.",
+
+"connections":[
+
+"verizon",
+
+"att",
+
+"cogent",
+
+"cloudflare"
+
+]
+
+},
+
+
+
+
+{
+"id":"any2",
+
+"name":"Any2",
+
+"type":"Internet Exchange",
+
+"layer":"ixp",
+
+"region":"North America",
+
+"classification":[
+
+"Internet Exchange",
+
+"Carrier Peering"
+
+],
+
+"network_role":
+
+"Major US Internet exchange platform.",
+
+"importance":8,
+
+"description":
+
+"Large North American peering ecosystem.",
+
+"connections":[
+
+"lumen",
+
+"cogent",
+
+"cloudflare"
+
+]
+
+},
+
+
+
+
+{
+"id":"six",
+
+"name":"Seattle Internet Exchange",
+
+"type":"Internet Exchange",
+
+"layer":"ixp",
+
+"region":"North America",
+
+"classification":[
+
+"Regional Exchange"
+
+],
+
+"network_role":
+
+"Pacific Northwest Internet exchange.",
+
+"importance":6,
+
+"description":
+
+"Regional network peering point.",
+
+"connections":[
+
+"zayo",
+
+"cogent"
+
+]
+
+},
+
+
+
+
+{
+"id":"napaafrica",
+
+"name":"NAPAfrica",
+
+"type":"Internet Exchange",
+
+"layer":"ixp",
+
+"region":"Africa",
+
+"classification":[
+
+"Internet Exchange",
+
+"Regional Peering"
+
+],
+
+"network_role":
+
+"Major African Internet exchange.",
+
+"importance":8,
+
+"description":
+
+"Important African traffic exchange point.",
+
+"connections":[
+
+"liquid",
+
+"mtn",
+
+"orange_africa"
+
+]
+
+},
+
+
+
+
+{
+"id":"sgix",
+
+"name":"SGIX",
+
+"type":"Internet Exchange",
+
+"layer":"ixp",
+
+"region":"Asia",
+
+"classification":[
+
+"Internet Exchange",
+
+"Regional Peering"
+
+],
+
+"network_role":
+
+"Singapore regional Internet exchange.",
+
+"importance":8,
+
+"description":
+
+"Important Asian connectivity hub.",
+
+"connections":[
+
+"singtel",
+
+"ntt",
+
+"tata"
+
+]
+
 }
+
 
