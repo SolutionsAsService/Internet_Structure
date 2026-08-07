@@ -298,7 +298,7 @@ const layerColors = {
     // SATELLITE
     // ==============================
 
-    satellite: "#8B5CF6",
+    satellite: "#FFBF00",
     leo: "#7C3AED",
     geo_satellite: "#6D28D9",
     ground_station: "#5B21B6",
