@@ -1,49 +1,556 @@
 {
+"layers":[
+
+{
+"id":"physical",
+"name":"Physical Infrastructure",
+"description":"Fiber, towers, satellites, data centers"
+},
+
+{
+"id":"colocation",
+"name":"Colocation & Interconnection"
+},
+
+{
+"id":"backbone",
+"name":"Global Backbone Networks"
+},
+
+{
+"id":"carrier",
+"name":"National & Regional Carriers"
+},
+
+{
+"id":"isp",
+"name":"Access ISPs"
+},
+
+{
+"id":"mobile",
+"name":"Mobile Networks"
+},
+
+{
+"id":"satellite",
+"name":"Satellite Networks"
+},
+
+{
+"id":"ixp",
+"name":"Internet Exchanges"
+},
+
+{
+"id":"cloud",
+"name":"Cloud & Content Networks"
+}
+
+],
+
+
 
 "nodes":[
 
 
 {
-"id":"aws",
-"name":"Amazon Web Services",
-"type":"Cloud Provider",
-"layer":"Hyperscaler",
+"id":"equinix",
+
+"name":"Equinix",
+
+"type":"Colocation Provider",
+
+"layer":"colocation",
+
+"region":"Global",
+
 "description":
-"Global cloud computing infrastructure provider."
+"Global interconnection platform hosting cloud providers, carriers, CDNs and enterprises.",
+
+"connections":[
+"IXP",
+"Cloud",
+"Carrier"
+]
+
 },
+
 
 
 {
-"id":"cloudflare",
-"name":"Cloudflare",
-"type":"CDN",
-"layer":"Edge Network",
+"id":"digital_realty",
+
+"name":"Digital Realty",
+
+"type":"Data Center Operator",
+
+"layer":"colocation",
+
+"region":"Global",
+
 "description":
-"Global CDN, DNS and security network."
+"Global data center and digital infrastructure REIT."
+
 },
+
 
 
 {
-"id":"eqix",
-"name":"Equinix Ashburn",
-"type":"Internet Exchange",
-"layer":"IXP",
+"id":"coresite",
+
+"name":"CoreSite",
+
+"type":"Interconnection Provider",
+
+"layer":"colocation",
+
+"region":"North America",
+
 "description":
-"Major interconnection facility."
+"Carrier hotel and enterprise connectivity platform."
+
 },
+
+
+
+{
+"id":"telehouse",
+
+"name":"Telehouse",
+
+"type":"Carrier Hotel",
+
+"layer":"colocation",
+
+"region":"Global",
+
+"description":
+"Major interconnection facility operator."
+
+},
+
+
+
+{
+"id":"cyrusone",
+
+"name":"CyrusOne",
+
+"type":"Hyperscale Data Center",
+
+"layer":"colocation",
+
+"region":"North America",
+
+"description":
+"Large hyperscale data center operator."
+
+},
+
+
+
+{
+"id":"qts",
+
+"name":"QTS",
+
+"type":"Data Center Operator",
+
+"layer":"colocation",
+
+"region":"North America",
+
+"description":
+"Hyperscale and enterprise data center provider."
+
+},
+
+
+
+{
+"id":"zayo",
+
+"name":"Zayo",
+
+"type":"Fiber Infrastructure Provider",
+
+"layer":"physical",
+
+"region":"North America",
+
+"description":
+"Owns extensive metro and long-haul fiber networks."
+
+},
+
+
+
+{
+"id":"lumen",
+
+"name":"Lumen",
+
+"type":"Tier 1 Backbone",
+
+"layer":"backbone",
+
+"region":"Global",
+
+"description":
+"Global backbone carrier and fiber infrastructure operator."
+
+},
+
+
+
+{
+"id":"cogent",
+
+"name":"Cogent",
+
+"type":"Tier 1 Transit Provider",
+
+"layer":"backbone",
+
+"region":"Global",
+
+"description":
+"Large global Internet transit backbone."
+
+},
+
+
+
+{
+"id":"arelion",
+
+"name":"Arelion",
+
+"type":"Tier 1 Backbone",
+
+"layer":"backbone",
+
+"region":"Europe",
+
+"description":
+"Former Telia Carrier global backbone network."
+
+},
+
+
+
+{
+"id":"ntt",
+
+"name":"NTT",
+
+"type":"Global Backbone",
+
+"layer":"backbone",
+
+"region":"Asia",
+
+"description":
+"Major global carrier and data center operator."
+
+},
+
+
+
+{
+"id":"tata",
+
+"name":"Tata Communications",
+
+"type":"Global Carrier",
+
+"layer":"backbone",
+
+"region":"Global",
+
+"description":
+"International backbone, subsea cable and enterprise network operator."
+
+},
+
+
+
+{
+"id":"gtt",
+
+"name":"GTT",
+
+"type":"Transit Provider",
+
+"layer":"backbone",
+
+"region":"Global",
+
+"description":
+"Global IP transit and enterprise carrier."
+
+},
+
+
+
+{
+"id":"pccw",
+
+"name":"PCCW Global",
+
+"type":"International Carrier",
+
+"layer":"backbone",
+
+"region":"Asia",
+
+"description":
+"Asian backbone and subsea connectivity provider."
+
+},
+
+
+
+{
+"id":"sparkle",
+
+"name":"Sparkle",
+
+"type":"Global Carrier",
+
+"layer":"backbone",
+
+"region":"Europe",
+
+"description":
+"Telecom Italia international backbone operator."
+
+},
+
+
+
+
+{
+"id":"att",
+
+"name":"AT&T",
+
+"type":"National Carrier",
+
+"layer":"carrier",
+
+"region":"North America",
+
+"description":
+"Major US telecom operator with fiber, mobile and enterprise networks."
+
+},
+
 
 
 {
 "id":"verizon",
+
 "name":"Verizon",
-"type":"Tier 1 Carrier",
-"layer":"Backbone",
+
+"type":"Carrier",
+
+"layer":"carrier",
+
+"region":"North America",
+
 "description":
-"Global telecommunications backbone."
+"Major wireless, fiber and enterprise network provider."
+
+},
+
+
+
+{
+"id":"comcast",
+
+"name":"Comcast",
+
+"type":"Cable ISP",
+
+"layer":"isp",
+
+"region":"North America",
+
+"description":
+"Large residential broadband and enterprise provider."
+
+},
+
+
+
+{
+"id":"charter",
+
+"name":"Charter Spectrum",
+
+"type":"Cable ISP",
+
+"layer":"isp",
+
+"region":"North America",
+
+"description":
+"Major broadband access provider."
+
+},
+
+
+
+{
+"id":"tmobile",
+
+"name":"T-Mobile",
+
+"type":"Mobile Operator",
+
+"layer":"mobile",
+
+"region":"North America",
+
+"description":
+"National 5G wireless provider."
+
+},
+
+
+
+
+{
+"id":"starlink",
+
+"name":"Starlink",
+
+"type":"LEO Satellite Network",
+
+"layer":"satellite",
+
+"region":"Global",
+
+"description":
+"Satellite broadband network using low-earth orbit satellites."
+
+},
+
+
+
+{
+"id":"oneweb",
+
+"name":"OneWeb",
+
+"type":"LEO Satellite Operator",
+
+"layer":"satellite",
+
+"region":"Global",
+
+"description":
+"Enterprise satellite connectivity provider."
+
+},
+
+
+
+{
+"id":"viasat",
+
+"name":"Viasat",
+
+"type":"Satellite Internet",
+
+"layer":"satellite",
+
+"region":"Global",
+
+"description":
+"Satellite broadband provider."
+
+},
+
+
+
+
+{
+"id":"decix",
+
+"name":"DE-CIX",
+
+"type":"Internet Exchange",
+
+"layer":"ixp",
+
+"region":"Europe",
+
+"description":
+"One of the largest Internet exchange ecosystems."
+
+},
+
+
+
+{
+"id":"amsix",
+
+"name":"AMS-IX",
+
+"type":"Internet Exchange",
+
+"layer":"ixp",
+
+"region":"Europe",
+
+"description":
+"Major global peering exchange."
+
+},
+
+
+
+{
+"id":"linx",
+
+"name":"LINX",
+
+"type":"Internet Exchange",
+
+"layer":"ixp",
+
+"region":"Europe",
+
+"description":
+"Major European peering platform."
+
+},
+
+
+
+{
+"id":"equinix_ix",
+
+"name":"Equinix Internet Exchange",
+
+"type":"Internet Exchange",
+
+"layer":"ixp",
+
+"region":"Global",
+
+"description":
+"Private peering exchange fabric inside Equinix facilities."
+
 }
 
 
+
 ],
+
 
 
 "links":[
@@ -51,22 +558,78 @@
 
 {
 "source":"aws",
-"target":"eqix",
-"type":"peering"
+"target":"equinix",
+"relationship":"colocated"
 },
 
 
 {
 "source":"cloudflare",
-"target":"eqix",
-"type":"exchange"
+"target":"decix",
+"relationship":"peering"
+},
+
+
+{
+"source":"arelion",
+"target":"decix",
+"relationship":"exchange"
+},
+
+
+{
+"source":"lumen",
+"target":"zayo",
+"relationship":"fiber partnership"
+},
+
+
+{
+"source":"starlink",
+"target":"equinix",
+"relationship":"gateway connectivity"
+},
+
+
+{
+"source":"ntt",
+"target":"amsix",
+"relationship":"peering"
+},
+
+
+{
+"source":"tata",
+"target":"decix",
+"relationship":"peering"
 },
 
 
 {
 "source":"verizon",
-"target":"eqix",
-"type":"transport"
+"target":"zayo",
+"relationship":"fiber transport"
+},
+
+
+{
+"source":"tmobile",
+"target":"crown_castle",
+"relationship":"tower infrastructure"
+},
+
+
+{
+"source":"aws",
+"target":"lumen",
+"relationship":"network transit"
+},
+
+
+{
+"source":"google",
+"target":"equinix_ix",
+"relationship":"private peering"
 }
 
 
