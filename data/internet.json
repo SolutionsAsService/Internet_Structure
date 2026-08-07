@@ -7512,6 +7512,457 @@
 },
 
 {
+"id":"grace_hopper",
+"name":"Grace Hopper",
+"type":"Submarine Cable",
+"layer":"submarine",
+"region":"Atlantic",
+
+"classification":[
+"Transatlantic Cable",
+"Fiber Optic",
+"North America-Europe"
+],
+
+"network_role":
+"Provides high-capacity connectivity between the United States and Europe.",
+
+"importance":9,
+
+"description":
+"Major transatlantic cable connecting the United States with Spain and the United Kingdom.",
+
+"connections":[
+"google",
+"microsoft",
+"equinix"
+]
+},
+
+{
+"id":"dunant",
+"name":"Dunant",
+"type":"Submarine Cable",
+"layer":"submarine",
+"region":"Atlantic",
+
+"classification":[
+"Transatlantic Cable",
+"Fiber Optic",
+"Cloud Infrastructure"
+],
+
+"network_role":
+"Provides dedicated high-capacity transatlantic connectivity supporting Google's global network.",
+
+"importance":9,
+
+"description":
+"Google-owned transatlantic submarine cable connecting the United States and France.",
+
+"connections":[
+"google",
+"google_cloud",
+"equinix"
+]
+},
+
+{
+"id":"amitie",
+"name":"Amitié",
+"type":"Submarine Cable",
+"layer":"submarine",
+"region":"Atlantic",
+
+"classification":[
+"Transatlantic Cable",
+"Fiber Optic",
+"North America-Europe"
+],
+
+"network_role":
+"Provides high-capacity connectivity between North America and Europe.",
+
+"importance":9,
+
+"description":
+"Major transatlantic cable system connecting the United States, United Kingdom, and France.",
+
+"connections":[
+"google",
+"microsoft",
+"orange",
+"equinix"
+]
+},
+
+{
+"id":"havfrue",
+"name":"Havfrue",
+"type":"Submarine Cable",
+"layer":"submarine",
+"region":"North Atlantic",
+
+"classification":[
+"Transatlantic Cable",
+"Fiber Optic",
+"Nordic Connectivity"
+],
+
+"network_role":
+"Connects North America with Denmark and Ireland, providing additional North Atlantic capacity.",
+
+"importance":8,
+
+"description":
+"Submarine cable system linking the United States with northern European network infrastructure.",
+
+"connections":[
+"google",
+"meta",
+"equinix"
+]
+},
+
+{
+"id":"hawaiki",
+"name":"Hawaiki",
+"type":"Submarine Cable",
+"layer":"submarine",
+"region":"Pacific",
+
+"classification":[
+"Transpacific Cable",
+"Fiber Optic",
+"Pacific Connectivity"
+],
+
+"network_role":
+"Provides high-capacity connectivity between North America, Oceania, and Pacific island networks.",
+
+"importance":9,
+
+"description":
+"Major Pacific submarine cable connecting the United States, Australia, New Zealand, and Pacific regions.",
+
+"connections":[
+"equinix",
+"telstra",
+"nvidia"
+]
+},
+
+{
+"id":"southern_cross",
+"name":"Southern Cross Cable Network",
+"type":"Submarine Cable",
+"layer":"submarine",
+"region":"Pacific",
+
+"classification":[
+"Transpacific Cable",
+"Fiber Optic",
+"Australia-New Zealand"
+],
+
+"network_role":
+"Provides critical transpacific connectivity between North America, Australia, New Zealand, and Pacific islands.",
+
+"importance":9,
+
+"description":
+"Long-running transpacific cable network forming a major connectivity path between North America and Oceania.",
+
+"connections":[
+"telstra",
+"equinix",
+"lumen"
+]
+},
+
+{
+"id":"southern_cross_next",
+"name":"Southern Cross NEXT",
+"type":"Submarine Cable",
+"layer":"submarine",
+"region":"Pacific",
+
+"classification":[
+"Transpacific Cable",
+"Fiber Optic",
+"Australia-New Zealand",
+"Pacific Islands"
+],
+
+"network_role":
+"Adds additional high-capacity transpacific connectivity between the United States, Australia, New Zealand, and Pacific islands.",
+
+"importance":8,
+
+"description":
+"Next-generation Southern Cross submarine cable system expanding Pacific network capacity.",
+
+"connections":[
+"telstra",
+"equinix",
+"lumen"
+]
+},
+
+{
+"id":"aag",
+"name":"Asia-America Gateway",
+"type":"Submarine Cable",
+"layer":"submarine",
+"region":"Asia-Pacific",
+
+"classification":[
+"Transpacific Cable",
+"Fiber Optic",
+"Asia-North America"
+],
+
+"network_role":
+"Provides submarine connectivity between Southeast Asia and North America.",
+
+"importance":9,
+
+"description":
+"Major Asia-Pacific cable system connecting multiple Southeast Asian landing points with the United States.",
+
+"connections":[
+"equinix",
+"singtel",
+"ntt"
+]
+},
+
+{
+"id":"faster",
+"name":"FASTER",
+"type":"Submarine Cable",
+"layer":"submarine",
+"region":"Pacific",
+
+"classification":[
+"Transpacific Cable",
+"Fiber Optic",
+"Asia-North America"
+],
+
+"network_role":
+"Provides high-capacity connectivity across the Pacific between the United States and Japan/Taiwan.",
+
+"importance":9,
+
+"description":
+"High-capacity transpacific submarine cable system connecting the United States with East Asia.",
+
+"connections":[
+"google",
+"global_transit",
+"equinix"
+]
+},
+
+{
+"id":"echo",
+"name":"Echo",
+"type":"Submarine Cable",
+"layer":"submarine",
+"region":"Pacific",
+
+"classification":[
+"Transpacific Cable",
+"Fiber Optic",
+"United States-Asia"
+],
+
+"network_role":
+"Provides high-capacity Pacific connectivity between the United States and Southeast Asia.",
+
+"importance":9,
+
+"description":
+"Google and Meta-backed submarine cable connecting the United States with Indonesia and Singapore.",
+
+"connections":[
+"google",
+"meta",
+"equinix"
+]
+},
+
+{
+"id":"ncp",
+"name":"New Cross-Pacific",
+"type":"Submarine Cable",
+"layer":"submarine",
+"region":"Pacific",
+
+"classification":[
+"Transpacific Cable",
+"Fiber Optic",
+"Asia-North America"
+],
+
+"network_role":
+"Provides additional transpacific capacity connecting North America with major East Asian network hubs.",
+
+"importance":8,
+
+"description":
+"Major transpacific cable system with connectivity involving Japan, Taiwan, South Korea, China, and North America.",
+
+"connections":[
+"ntt",
+"telstra",
+"equinix"
+]
+},
+
+{
+"id":"sea_us",
+"name":"SEA-US",
+"type":"Submarine Cable",
+"layer":"submarine",
+"region":"Pacific",
+
+"classification":[
+"Transpacific Cable",
+"Fiber Optic",
+"Pacific Islands",
+"United States-Asia"
+],
+
+"network_role":
+"Provides connectivity between the United States, Hawaii, Guam, the Philippines, and Indonesia.",
+
+"importance":8,
+
+"description":
+"Transpacific submarine system creating an important Pacific route between North America and Southeast Asia.",
+
+"connections":[
+"equinix",
+"telstra"
+]
+},
+
+{
+"id":"peace_cable",
+"name":"PEACE Cable",
+"type":"Submarine Cable",
+"layer":"submarine",
+"region":"Asia-Europe",
+
+"classification":[
+"Asia-Europe Cable",
+"Fiber Optic",
+"International Backbone"
+],
+
+"network_role":
+"Provides high-capacity connectivity between Asia, Africa, the Middle East, and Europe.",
+
+"importance":8,
+
+"description":
+"Large international submarine system forming an alternative connectivity path between Asian and European networks.",
+
+"connections":[
+"equinix",
+"orange",
+"de-cix"
+]
+},
+
+{
+"id":"aae_1",
+"name":"Asia-Africa-Europe 1",
+"type":"Submarine Cable",
+"layer":"submarine",
+"region":"Asia-Africa-Europe",
+
+"classification":[
+"Asia-Europe Cable",
+"Africa Connectivity",
+"Middle East Connectivity"
+],
+
+"network_role":
+"Provides connectivity between Southeast Asia, South Asia, the Middle East, Africa, and Europe.",
+
+"importance":8,
+
+"description":
+"Major multi-region submarine cable system spanning Asia, Africa, the Middle East, and Europe.",
+
+"connections":[
+"orange",
+"equinix",
+"de-cix"
+]
+},
+
+{
+"id":"sea_me_we_5",
+"name":"SEA-ME-WE 5",
+"type":"Submarine Cable",
+"layer":"submarine",
+"region":"Asia-Europe",
+
+"classification":[
+"Asia-Europe Cable",
+"Fiber Optic",
+"South Asia",
+"Middle East"
+],
+
+"network_role":
+"Provides international connectivity between Southeast Asia, South Asia, the Middle East, and Europe.",
+
+"importance":9,
+
+"description":
+"Major submarine cable along the South East Asia–Middle East–Western Europe corridor.",
+
+"connections":[
+"singtel",
+"orange",
+"telecom_egypt"
+]
+},
+
+{
+"id":"unity",
+"name":"Unity Cable System",
+"type":"Submarine Cable",
+"layer":"submarine",
+"region":"Pacific",
+
+"classification":[
+"Transpacific Cable",
+"Fiber Optic",
+"Asia-North America"
+],
+
+"network_role":
+"Provides transpacific connectivity between Japan and the United States.",
+
+"importance":8,
+
+"description":
+"Major transpacific submarine cable system connecting Japanese and North American network infrastructure.",
+
+"connections":[
+"google",
+"equinix",
+"ntt"
+]
+},
+
+{
 "id":"2africa",
 
 "name":"2Africa",
