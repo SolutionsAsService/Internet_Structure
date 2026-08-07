@@ -56,9 +56,29 @@ network.clientHeight || 700;
 const nodes =
 data.nodes || [];
 
+let links = [];
 
-let links =
-data.links || [];
+
+nodes.forEach(node=>{
+
+    if(!node.connections) return;
+
+
+    node.connections.forEach(target=>{
+
+        links.push({
+
+            source:node.id,
+
+            target:target
+
+        });
+
+    });
+
+});
+
+
 
 
 
