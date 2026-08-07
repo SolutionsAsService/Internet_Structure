@@ -10,31 +10,31 @@
 {
 "id":"colocation",
 "name":"Colocation & Interconnection",
-"description":"Facilities where networks meet"
+"description":"Facilities where networks physically meet"
 },
 
 {
 "id":"backbone",
 "name":"Global Backbone Networks",
-"description":"Core Internet transport networks"
+"description":"Global Internet transport providers"
 },
 
 {
 "id":"carrier",
-"name":"National Carriers",
-"description":"Large telecom networks"
+"name":"National & Regional Carriers",
+"description":"Telecom operators connecting regions"
 },
 
 {
 "id":"isp",
 "name":"Access ISPs",
-"description":"Residential and enterprise access"
+"description":"Last mile Internet providers"
 },
 
 {
 "id":"mobile",
 "name":"Mobile Networks",
-"description":"Cellular operators"
+"description":"Wireless operators"
 },
 
 {
@@ -46,100 +46,414 @@
 {
 "id":"ixp",
 "name":"Internet Exchanges",
-"description":"Peering locations"
+"description":"Internet peering locations"
 },
 
 {
 "id":"cloud",
-"name":"Cloud and Content Networks",
-"description":"Cloud, CDN and application networks"
+"name":"Cloud & Content Networks",
+"description":"Cloud providers, CDNs and platforms"
 }
 
 ],
 
 
+
 "nodes":[
+
 
 
 {
 "id":"equinix",
+
 "name":"Equinix",
+
 "type":"Colocation Provider",
+
 "layer":"colocation",
+
 "region":"Global",
-"description":"Global interconnection platform hosting carriers, clouds and enterprises."
+
+"classification":[
+"Data Center",
+"Carrier Hotel",
+"Interconnection Platform",
+"IXP Host"
+],
+
+"network_role":
+"Physical meeting point for clouds, carriers, enterprises and CDNs.",
+
+
+"importance":10,
+
+
+"description":
+"One of the world's largest digital infrastructure and interconnection platforms.",
+
+
+"connections":[
+
+"digital_realty",
+
+"coresite",
+
+"aws",
+
+"google",
+
+"cloudflare",
+
+"decix",
+
+"amsix"
+
+]
+
 },
+
+
 
 
 {
 "id":"digital_realty",
+
 "name":"Digital Realty",
+
 "type":"Data Center Operator",
+
 "layer":"colocation",
+
 "region":"Global",
-"description":"Global data center infrastructure provider."
+
+"classification":[
+
+"Data Center",
+
+"Digital Infrastructure REIT"
+
+],
+
+
+"network_role":
+
+"Provides facilities where enterprises and networks deploy infrastructure.",
+
+
+"importance":9,
+
+
+"description":
+
+"Global data center operator connecting cloud, enterprise and network customers.",
+
+
+"connections":[
+
+"equinix",
+
+"aws",
+
+"azure"
+
+]
+
 },
+
+
 
 
 {
 "id":"coresite",
+
 "name":"CoreSite",
+
 "type":"Carrier Hotel",
+
 "layer":"colocation",
+
 "region":"North America",
-"description":"Interconnection and enterprise connectivity platform."
+
+"classification":[
+
+"Carrier Hotel",
+
+"Interconnection Hub"
+
+],
+
+
+"network_role":
+
+"Major US interconnection platform.",
+
+
+"importance":8,
+
+
+"description":
+
+"Provides carrier-neutral facilities for networks and enterprises.",
+
+
+"connections":[
+
+"equinix",
+
+"zayo",
+
+"lumen"
+
+]
+
 },
+
+
 
 
 {
 "id":"telehouse",
+
 "name":"Telehouse",
+
 "type":"Carrier Hotel",
+
 "layer":"colocation",
+
 "region":"Global",
-"description":"Global interconnection facilities."
+
+"classification":[
+
+"Carrier Hotel",
+
+"Internet Exchange Host"
+
+],
+
+
+"network_role":
+
+"Provides global network interconnection facilities.",
+
+
+"importance":8,
+
+
+"description":
+
+"Major global colocation and carrier interconnection provider.",
+
+
+"connections":[
+
+"equinix",
+
+"decix",
+
+"linx"
+
+]
+
 },
+
+
 
 
 {
 "id":"cyrusone",
+
 "name":"CyrusOne",
+
 "type":"Hyperscale Data Center",
+
 "layer":"colocation",
+
 "region":"North America",
-"description":"Large hyperscale data center operator."
+
+"classification":[
+
+"Hyperscale Data Center",
+
+"Enterprise Colocation"
+
+],
+
+
+"network_role":
+
+"Large scale cloud and enterprise infrastructure facilities.",
+
+
+"importance":7,
+
+
+"description":
+
+"Operates hyperscale data centers.",
+
+
+"connections":[
+
+"aws",
+
+"azure"
+
+]
+
 },
+
+
 
 
 {
 "id":"qts",
+
 "name":"QTS",
+
 "type":"Data Center Provider",
+
 "layer":"colocation",
+
 "region":"North America",
-"description":"Hyperscale and enterprise data center operator."
+
+"classification":[
+
+"Hyperscale Data Center",
+
+"Enterprise Colocation"
+
+],
+
+
+"network_role":
+
+"Large data center infrastructure provider.",
+
+
+"importance":7,
+
+
+"description":
+
+"Provides hyperscale and enterprise data centers.",
+
+
+"connections":[
+
+"aws",
+
+"google"
+
+]
+
 },
+
+
 
 
 {
 "id":"zayo",
+
 "name":"Zayo",
+
 "type":"Fiber Infrastructure Provider",
+
 "layer":"physical",
+
 "region":"North America",
-"description":"Large metro and long haul fiber network."
+
+"classification":[
+
+"Fiber Network",
+
+"Metro Fiber",
+
+"Long Haul Fiber"
+
+],
+
+
+"network_role":
+
+"Owns physical fiber routes connecting networks.",
+
+
+"importance":9,
+
+
+"description":
+
+"Major fiber infrastructure operator across North America and Europe.",
+
+
+"connections":[
+
+"coresite",
+
+"lumen",
+
+"verizon",
+
+"att",
+
+"tmobile"
+
+]
+
 },
+
+
 
 
 {
 "id":"crown_castle",
+
 "name":"Crown Castle",
+
 "type":"Fiber and Tower Infrastructure",
+
 "layer":"physical",
+
 "region":"North America",
-"description":"Wireless towers, fiber and small cell infrastructure."
+
+"classification":[
+
+"Cell Towers",
+
+"Fiber",
+
+"Small Cells"
+
+],
+
+
+"network_role":
+
+"Provides wireless infrastructure used by mobile operators.",
+
+
+"importance":9,
+
+
+"description":
+
+"Major wireless tower and fiber infrastructure company.",
+
+
+"connections":[
+
+"tmobile",
+
+"verizon",
+
+"att"
+
+]
+
 }
 
 
+
 ]
+
 }
