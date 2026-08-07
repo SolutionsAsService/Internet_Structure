@@ -7,6 +7,24 @@ fetch("data/internet.json")
     })
     .then(data => {
 
+        const nodeIds = new Set(data.nodes.map(n => n.id));
+
+const invalidLinks = data.links.filter(link =>
+    !nodeIds.has(link.source) || !nodeIds.has(link.target)
+);
+
+if (invalidLinks.length) {
+
+    console.error("Invalid links found:");
+
+    console.table(invalidLinks);
+
+    throw new Error(
+        `${invalidLinks.length} links reference missing nodes.`
+    );
+
+}
+
         console.log("Infrastructure Loaded", data);
 
         const network = document.querySelector("#network");
