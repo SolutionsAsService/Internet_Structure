@@ -33,7 +33,7 @@ const COLORS = {
   // PHYSICAL INFRASTRUCTURE
   // ============================================================
 
-  physical: {
+
     // General physical infrastructure
     default: "#737B84",
 
@@ -66,15 +66,15 @@ const COLORS = {
     // Construction / industrial
     industrial: "#70777E",
     manufacturing: "#7A8188",
-  },
+  
 
   // ============================================================
   // SUBMARINE INFRASTRUCTURE
   // ============================================================
 
-  submarine: {
+
     // Deep ocean / cable system
-    default: "#075985",
+    submarine: "#075985",
 
     cable: "#0369A1",
     cableBright: "#0284C7",
@@ -91,15 +91,15 @@ const COLORS = {
     // Ocean
     ocean: "#082F49",
     oceanDeep: "#041E32",
-  },
+  
 
   // ============================================================
   // INTERNET / NETWORK LAYERS
   // ============================================================
 
-  network: {
-    default: "#22C55E",
-
+  
+    network: "#22C55E",
+    
     // Backbone
     backbone: "#16A34A",
     backboneBright: "#22C55E",
@@ -122,14 +122,14 @@ const COLORS = {
     // Autonomous systems
     asn: "#22C55E",
     autonomousSystem: "#16A34A",
-  },
+  
 
   // ============================================================
   // ISP / TELECOM
   // ============================================================
 
-  isp: {
-    default: "#14B8A6",
+  
+    isp: "#14B8A6",
 
     tier1: "#0F766E",
     tier2: "#0D9488",
@@ -145,14 +145,14 @@ const COLORS = {
     wireless: "#22D3EE",
 
     satellite: "#38BDF8",
-  },
+  
 
   // ============================================================
   // INTERNET EXCHANGE POINTS
   // ============================================================
 
-  ixp: {
-    default: "#F59E0B",
+  
+    ixp: "#F59E0B",
 
     exchange: "#F59E0B",
     peering: "#D97706",
@@ -160,14 +160,12 @@ const COLORS = {
 
     facility: "#B45309",
     fabric: "#FCD34D",
-  },
-
+  
   // ============================================================
   // DATA CENTERS / CLOUD
   // ============================================================
 
-  cloud: {
-    default: "#8B5CF6",
+  
 
     datacenter: "#7C3AED",
     cloudRegion: "#8B5CF6",
@@ -182,14 +180,13 @@ const COLORS = {
     privateCloud: "#6D28D9",
     publicCloud: "#8B5CF6",
     hybridCloud: "#A78BFA",
-  },
+  
 
   // ============================================================
   // CDN / EDGE
   // ============================================================
 
-  cdn: {
-    default: "#EC4899",
+  
 
     cdn: "#DB2777",
     edge: "#F472B6",
@@ -201,14 +198,14 @@ const COLORS = {
 
     pointOfPresence: "#C026D3",
     pop: "#D946EF",
-  },
+  
 
   // ============================================================
   // DNS
   // ============================================================
 
-  dns: {
-    default: "#06B6D4",
+  
+    dns: "#06B6D4",
 
     dns: "#0891B2",
     resolver: "#0E7490",
@@ -221,14 +218,13 @@ const COLORS = {
     recursive: "#67E8F9",
 
     nameserver: "#06B6D4",
-  },
+  
 
   // ============================================================
   // BGP / ROUTING
   // ============================================================
 
-  bgp: {
-    default: "#84CC16",
+  
 
     bgp: "#65A30D",
     route: "#84CC16",
@@ -239,14 +235,13 @@ const COLORS = {
 
     anycast: "#BEF264",
     routeReflector: "#D9F99D",
-  },
+  
 
   // ============================================================
   // SATELLITE NETWORKS
   // ============================================================
 
-  satellite: {
-    default: "#38BDF8",
+ 
 
     satellite: "#0EA5E9",
     constellation: "#0284C7",
@@ -256,14 +251,14 @@ const COLORS = {
     downlink: "#7DD3FC",
 
     orbit: "#075985",
-  },
+  
 
   // ============================================================
   // CELLULAR NETWORKS
   // ============================================================
 
-  cellular: {
-    default: "#F43F5E",
+ 
+   cellular: "#F43F5E",
 
     tower: "#E11D48",
     cellSite: "#BE123C",
@@ -276,14 +271,14 @@ const COLORS = {
     fiveG: "#FB7185",
     fourG: "#F43F5E",
     threeG: "#E11D48",
-  },
+  
 
   // ============================================================
   // COMPUTE / SERVERS / HARDWARE
   // ============================================================
 
-  compute: {
-    default: "#A855F7",
+  
+    compute: "#A855F7",
 
     server: "#9333EA",
     rack: "#7E22CE",
@@ -297,14 +292,13 @@ const COLORS = {
     bareMetal: "#7C3AED",
     virtualMachine: "#8B5CF6",
     container: "#A78BFA",
-  },
+  
 
   // ============================================================
   // SEMICONDUCTOR SUPPLY CHAIN
   // ============================================================
 
-  semiconductor: {
-    default: "#F97316",
+    semiconductor: "#F97316",
 
     fab: "#EA580C",
     fabrication: "#C2410C",
@@ -320,14 +314,13 @@ const COLORS = {
 
     wafer: "#FFB86B",
     chip: "#FF8A3D",
-  },
+  
 
   // ============================================================
   // OPTICAL NETWORKS
   // ============================================================
 
-  optical: {
-    default: "#F472B6",
+    optical: "#F472B6",
 
     fiber: "#EC4899",
     fiberBackbone: "#DB2777",
@@ -339,13 +332,13 @@ const COLORS = {
     optic: "#C026D3",
 
     photonics: "#D946EF",
-  },
+  
 
   // ============================================================
   // CDN / DNS / EDGE FLOW
   // ============================================================
 
-  traffic: {
+  
     default: "#60A5FA",
 
     request: "#60A5FA",
@@ -361,13 +354,12 @@ const COLORS = {
     bgpRoute: "#84CC16",
 
     encrypted: "#8B5CF6",
-  },
+  
 
   // ============================================================
   // SECURITY
   // ============================================================
 
-  security: {
     default: "#EF4444",
 
     firewall: "#DC2626",
@@ -381,14 +373,12 @@ const COLORS = {
 
     zeroTrust: "#A855F7",
     secureTunnel: "#7C3AED",
-  },
+  
 
   // ============================================================
   // BLOCKCHAIN / DISTRIBUTED TRUST
   // ============================================================
 
-  blockchain: {
-    default: "#EAB308",
 
     blockchain: "#CA8A04",
     validator: "#FACC15",
@@ -400,14 +390,13 @@ const COLORS = {
     identity: "#FBBF24",
 
     zk: "#F97316",
-  },
+  
 
   // ============================================================
   // MESH NETWORKS
   // ============================================================
 
-  mesh: {
-    default: "#10B981",
+ mesh: "#10B981",
 
     node: "#34D399",
     router: "#10B981",
@@ -420,13 +409,13 @@ const COLORS = {
     relay: "#0D9488",
 
     meshLink: "#5EEAD4",
-  },
+  
 
   // ============================================================
   // ENDPOINTS / USERS
   // ============================================================
 
-  endpoint: {
+
     default: "#F8FAFC",
 
     user: "#E2E8F0",
@@ -438,14 +427,13 @@ const COLORS = {
 
     iot: "#64748B",
     sensor: "#94A3B8",
-  },
+  
 
   // ============================================================
   // ORGANIZATIONS / COMPANIES
   // ============================================================
 
-  organization: {
-    default: "#64748B",
+  organization: "#64748B",
 
     provider: "#475569",
     enterprise: "#334155",
@@ -456,14 +444,13 @@ const COLORS = {
     hyperscaler: "#8B5CF6",
     telecom: "#0891B2",
     cdn: "#DB2777",
-  },
+  
 
   // ============================================================
   // MAP LINK COLORS
   // ============================================================
 
-  links: {
-    default: "#3B4652",
+  links: "#3B4652",
 
     physical: "#68737E",
     terrestrial: "#59636D",
@@ -487,13 +474,13 @@ const COLORS = {
 
     inactive: "#27313B",
     disabled: "#1B232C",
-  },
+  
 
   // ============================================================
   // NODE STATES
   // ============================================================
 
-  state: {
+ 
     online: "#22C55E",
     active: "#34D399",
 
@@ -505,13 +492,13 @@ const COLORS = {
 
     selected: "#FFFFFF",
     highlighted: "#60A5FA",
-  },
+  
 
   // ============================================================
   // VISUAL EFFECTS
   // ============================================================
 
-  effects: {
+ 
     glow: "#60A5FA",
     glowPhysical: "#94A3B8",
     glowSubmarine: "#0284C7",
@@ -523,13 +510,13 @@ const COLORS = {
 
     selection: "#FFFFFF",
     hover: "#CBD5E1",
-  },
+  
 
   // ============================================================
   // LAYER COLORS
   // ============================================================
 
-  layers: {
+
     physical: "#737B84",
     submarine: "#075985",
 
@@ -556,7 +543,7 @@ const COLORS = {
     mesh: "#10B981",
 
     endpoint: "#CBD5E1",
-  },
+
 };
 
 
