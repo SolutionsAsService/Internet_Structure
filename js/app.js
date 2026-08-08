@@ -841,23 +841,8 @@ function initializeNodes() {
 
 
     nodeElements.call(
-
-        d3.drag()
-
-            .on(
-                "start",
-                dragStart
-            )
-
-            .on(
-                "drag",
-                dragMove
-            )
-
-            .on(
-                "end",
-                dragEnd
-            )
+    dragBehavior
+);
 
     );
 
