@@ -554,6 +554,49 @@ nodes.forEach((node, i) => {
 });
 
 
+// =================================
+// FORCE SIMULATION
+// =================================
+
+// ---------------------------------
+// INITIAL NODE POSITIONS
+// ---------------------------------
+
+const centerX = width / 2;
+const centerY = height / 2;
+
+// Start nodes in a large, controlled
+// circular distribution.
+//
+// This prevents the entire graph from
+// beginning as one giant pile.
+
+const initialRadius =
+    Math.min(width, height) * 0.32;
+
+nodes.forEach((node, i) => {
+
+    const angle =
+        (i / Math.max(nodes.length, 1)) *
+        Math.PI * 2;
+
+    // Slight variation prevents
+    // perfect symmetry.
+    const radius =
+        initialRadius *
+        (0.75 + Math.random() * 0.35);
+
+    node.x =
+        centerX +
+        Math.cos(angle) * radius;
+
+    node.y =
+        centerY +
+        Math.sin(angle) * radius;
+
+});
+
+
 // ---------------------------------
 // FORCE SIMULATION
 // ---------------------------------
@@ -561,76 +604,124 @@ nodes.forEach((node, i) => {
 const simulation =
     d3.forceSimulation(nodes)
 
-        // Keep connected infrastructure
-        // relatively close together.
+        // ---------------------------------
+        // CONNECTION DISTANCE
+        // ---------------------------------
+
         .force(
             "link",
+
             d3.forceLink(links)
+
                 .id(d => d.id)
-                .distance(100)
-                .strength(0.65)
+
+                // Give connected nodes room.
+                .distance(180)
+
+                // Strong enough to form
+                // meaningful clusters without
+                // pulling everything together.
+                .strength(0.45)
         )
 
-        // Moderate repulsion.
-        // The old -700 was unnecessarily aggressive
-        // for a large infrastructure graph.
+
+        // ---------------------------------
+        // NODE REPULSION
+        // ---------------------------------
+
         .force(
             "charge",
+
             d3.forceManyBody()
-                .strength(-180)
-                .distanceMin(20)
-                .distanceMax(500)
+
+                // More space between nodes.
+                .strength(-300)
+
+                // Prevent extremely close
+                // nodes from behaving violently.
+                .distanceMin(40)
+
+                // Don't allow distant nodes
+                // to influence each other.
+                .distanceMax(750)
         )
 
-        // Keep the entire graph centered.
+
+        // ---------------------------------
+        // CENTER
+        // ---------------------------------
+
         .force(
             "center",
+
             d3.forceCenter(
                 centerX,
                 centerY
             )
         )
 
-        // Prevent nodes from sitting directly
-        // on top of one another.
+
+        // ---------------------------------
+        // COLLISION
+        // ---------------------------------
+
         .force(
             "collision",
+
             d3.forceCollide()
+
+                // Physical space around each
+                // circle.
                 .radius(d => {
-                    return (
-                        10 +
-                        (d.importance || 5) * 1.4
-                    );
+
+                    const visualRadius =
+                        ((d.importance || 5) * 2) + 8;
+
+                    return visualRadius + 18;
+
                 })
-                .strength(0.8)
-                .iterations(2)
+
+                .strength(0.9)
+
+                .iterations(3)
         )
 
-        // Add gentle x/y positioning forces.
-        // These help prevent isolated nodes from
-        // drifting away from the main graph.
+
+        // ---------------------------------
+        // GENTLE CENTERING
+        // ---------------------------------
+
         .force(
             "x",
+
             d3.forceX(centerX)
-                .strength(0.035)
+
+                // Very gentle.
+                .strength(0.012)
         )
 
         .force(
             "y",
+
             d3.forceY(centerY)
-                .strength(0.035)
+
+                .strength(0.012)
         )
 
-        // Lower alpha makes startup much smoother.
-        .alpha(0.7)
 
-        // Slow the simulation down naturally.
-        .alphaDecay(0.025)
+        // ---------------------------------
+        // SIMULATION ENERGY
+        // ---------------------------------
 
-        // Prevent excessive movement.
-        .velocityDecay(0.45);
+        // Start with moderate energy.
+        .alpha(0.65)
 
+        // Let the graph settle slowly.
+        .alphaDecay(0.018)
 
+        // Heavy damping makes movement
+        // smooth rather than twitchy.
+        .velocityDecay(0.60);
 
 
 // =================================
