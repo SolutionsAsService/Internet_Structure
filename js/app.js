@@ -1,15 +1,37 @@
+/*
+============================================================
+INTERNET INFRASTRUCTURE MAP
+app.js
 
-// ============================================
-// INTERNET INFRASTRUCTURE MAP
-// app.js
-// ============================================
+Responsibilities:
+- Load internet.json
+- Validate database
+- Build node/link relationships
+- Create SVG graph
+- Render nodes, links and labels
+- Search
+- Layer filtering
+- Details panel
+- Statistics
+- Zoom
+- Drag interaction
+
+NOT responsible for:
+- Physics / force simulation
+- Layer color definitions
+
+Physics is handled by:
+    physics.js
+
+============================================================
+*/
 
 console.log("Internet Infrastructure Map Starting");
 
 
-// ============================================
-// APPLICATION STATE
-// ============================================
+// ============================================================
+// GLOBAL STATE
+// ============================================================
 
 let mapState = {
     data: null,
@@ -19,9 +41,6 @@ let mapState = {
 
     svg: null,
     viewport: null,
-    zoom: null,
-
-    simulation: null,
 
     linkLayer: null,
     nodeLayer: null,
@@ -31,421 +50,207 @@ let mapState = {
     nodeElements: null,
     labelElements: null,
 
-    width: 1000,
-    height: 700
+    zoom: null,
+    simulation: null,
+
+    width: 0,
+    height: 0
 };
 
 
-// ============================================
-// DOM
-// ============================================
+// ============================================================
+// START APPLICATION
+// ============================================================
 
-const network = document.querySelector("#network");
-const details = document.querySelector("#details");
-const statsBox = document.querySelector("#stats");
-const searchBox = document.querySelector("#search");
+document.addEventListener("DOMContentLoaded", () => {
 
+    initializeMap();
 
-if (!network) {
+});
 
-    console.error("#network missing");
 
-    throw new Error("#network missing");
-
-}
-
-
-// ============================================
-// LAYER COLORS
-// ============================================
-
-const layerColors = {
-
-    // Physical
-    physical: "#6B7280",
-    power: "#F59E0B",
-    datacenter: "#8B5CF6",
-    colocation: "#A78BFA",
-    edge: "#7C3AED",
-    pop: "#8B5CF6",
-
-    // Connectivity
-    isp: "#22C55E",
-    mobile: "#16A34A",
-    fixed_wireless: "#4ADE80",
-    enterprise_isp: "#15803D",
-
-    carrier: "#10B981",
-    backbone: "#059669",
-    transit: "#047857",
-    tier1: "#065F46",
-    tier2: "#0F766E",
-    tier3: "#14B8A6",
-
-    // Internet Exchange
-    ixp: "#06B6D4",
-    route_server: "#0891B2",
-    peering: "#0E7490",
-    internet_exchange_fabric: "#155E75",
-    internet_exchange_operator: "#06B6D4",
-
-    // Routing
-    routing: "#3B82F6",
-    routing_security: "#2563EB",
-    routing_measurement: "#1D4ED8",
-    routing_software: "#2563EB",
-    network_operations: "#1E40AF",
-    network_automation: "#4F46E5",
-
-    // DNS
-    dns: "#F97316",
-    dns_root: "#EA580C",
-    dns_authoritative: "#C2410C",
-    dns_recursive: "#9A3412",
-    dns_registry: "#7C2D12",
-
-    // Internet coordination
-    registry: "#14B8A6",
-    rir: "#0D9488",
-    rir_database: "#0F766E",
-    internet_coordination: "#14B8A6",
-    internet_governance: "#0D9488",
-    standards: "#0F766E",
-    web_standards: "#115E59",
-
-    // CDN / Edge
-    cdn: "#EC4899",
-    edge_compute: "#DB2777",
-    web_acceleration: "#BE185D",
-    anycast: "#F43F5E",
-    geodns: "#E11D48",
-
-    // Cloud
-    cloud: "#6366F1",
-    compute: "#4F46E5",
-    gpu_compute: "#4338CA",
-    server: "#3730A3",
-    storage: "#312E81",
-
-    // Network hardware
-    network_hardware: "#64748B",
-    router: "#475569",
-    switching: "#334155",
-    firewall: "#1E293B",
-    load_balancing: "#0F172A",
-
-    // Optical
-    optical: "#EAB308",
-    fiber: "#CA8A04",
-    longhaul: "#A16207",
-    metro: "#854D0E",
-    optical_transport: "#713F12",
-
-    // Submarine
-    submarine: "#090088",
-    subsea: "#090088",
-    cable_landing: "#0369A1",
-    submarine_operator: "#075985",
-
-    // Satellite
-    satellite: "#FFBF00",
-    leo: "#7C3AED",
-    geo_satellite: "#6D28D9",
-    ground_station: "#5B21B6",
-    satellite_ground: "#7C3AED",
-
-    // Mobile
-    mobile_core: "#84CC16",
-    radio_access: "#65A30D",
-    cell_tower: "#4D7C0F",
-    spectrum: "#9333EA",
-
-    // Security
-    security: "#EF4444",
-    ddos: "#DC2626",
-    waf: "#B91C1C",
-    incident_response: "#991B1B",
-
-    // PKI
-    pki: "#EF4444",
-    certificate_authority: "#DC2626",
-    certificate_transparency: "#B91B1B",
-
-    // Time
-    time: "#FACC15",
-    ntp: "#EAB308",
-    ptp: "#CA8A04",
-    gps_timing: "#A16207",
-
-    // Research
-    research_network: "#A855F7",
-    national_research: "#9333EA",
-    measurement: "#D946EF",
-    topology: "#C026D3",
-    traffic_measurement: "#A21CAF",
-
-    // Software
-    ixp_software: "#0891B2",
-    server_oem: "#64748B",
-    server_odm: "#475569",
-    storage_hardware: "#334155",
-
-    // Semiconductor
-    semiconductor: "#F43F5E",
-    semiconductor_design: "#E11D48",
-    semiconductor_fab: "#BE123C",
-    semiconductor_equipment: "#9F1239",
-    semiconductor_materials: "#881337",
-    chip_packaging: "#701A75",
-    memory: "#1E293B",
-
-    // Electronics
-    pcb: "#78716C",
-    electronics_manufacturing: "#57534E",
-
-    // Power / cooling
-    cooling: "#06B6D4",
-    liquid_cooling: "#0891B2",
-    backup_power: "#F59E0B",
-    generator: "#D97706",
-    ups: "#B45309",
-
-    // Physical operations
-    physical_security: "#52525B",
-    construction: "#71717A",
-    fiber_construction: "#A1A1AA",
-    tower_infrastructure: "#84CC16",
-
-    // Government
-    government_network: "#475569",
-    critical_infrastructure: "#334155",
-
-    // Content
-    content_provider: "#EC4899",
-    application: "#F43F5E",
-
-    // Operators
-    network_operator: "#10B981",
-
-    // Telecom
-    telecom_equipment: "#64748B"
-};
-
-
-// ============================================
-// LOAD DATABASE
-// ============================================
-
-async function loadDatabase() {
-
-    console.log("Loading internet.json...");
-
-    const response =
-        await fetch("data/internet.json");
-
-    if (!response.ok) {
-
-        throw new Error(
-            `internet.json failed loading (${response.status})`
-        );
-
-    }
-
-    const data =
-        await response.json();
-
-    if (!data || !Array.isArray(data.nodes)) {
-
-        throw new Error(
-            "internet.json does not contain a valid nodes array"
-        );
-
-    }
-
-    console.log(
-        "Database Loaded",
-        data
-    );
-
-    return data;
-
-}
-
-
-// ============================================
-// BUILD GRAPH DATA
-// ============================================
-
-function buildGraphData(data) {
-
-    const nodes =
-        data.nodes || [];
-
-    const nodeMap =
-        new Map();
-
-    nodes.forEach(node => {
-
-        if (!node.id) {
-
-            console.warn(
-                "Node missing ID:",
-                node
-            );
-
-            return;
-
-        }
-
-        nodeMap.set(
-            node.id,
-            node
-        );
-
-    });
-
-
-    const links = [];
-
-
-    nodes.forEach(node => {
-
-        if (!Array.isArray(node.connections)) {
-
-            return;
-
-        }
-
-
-        node.connections.forEach(connection => {
-
-            if (nodeMap.has(connection)) {
-
-                links.push({
-
-                    source: node.id,
-                    target: connection
-
-                });
-
-            }
-
-            else {
-
-                console.warn(
-                    "Missing connection:",
-                    node.id,
-                    "->",
-                    connection
-                );
-
-            }
-
-        });
-
-    });
-
-
-    return {
-        nodes,
-        links,
-        nodeMap
-    };
-
-}
-
-
-// ============================================
-// SIZE
-// ============================================
-
-function calculateDimensions() {
-
-    let width =
-        network.clientWidth;
-
-    let height =
-        network.clientHeight;
-
-
-    if (width < 500) {
-        width = 1000;
-    }
-
-    if (height < 500) {
-        height = 700;
-    }
-
-
-    return {
-        width,
-        height
-    };
-
-}
-
-
-// ============================================
-// INITIALIZE APPLICATION
-// ============================================
+// ============================================================
+// INITIALIZE
+// ============================================================
 
 async function initializeMap() {
 
     try {
 
+        console.log("Initializing map...");
+
+        const network =
+            document.querySelector("#network");
+
+        const details =
+            document.querySelector("#details");
+
+        if (!network) {
+
+            throw new Error(
+                "Map container #network was not found."
+            );
+
+        }
+
+        // ----------------------------------------------------
+        // LOAD DATABASE
+        // ----------------------------------------------------
+
+        const response =
+            await fetch("data/internet.json", {
+                cache: "no-store"
+            });
+
+        if (!response.ok) {
+
+            throw new Error(
+                `internet.json failed loading (${response.status})`
+            );
+
+        }
+
         const data =
-            await loadDatabase();
-
-
-        const graph =
-            buildGraphData(data);
-
-
-        const dimensions =
-            calculateDimensions();
-
-
-        mapState.data =
-            data;
-
-        mapState.nodes =
-            graph.nodes;
-
-        mapState.links =
-            graph.links;
-
-        mapState.nodeMap =
-            graph.nodeMap;
-
-        mapState.width =
-            dimensions.width;
-
-        mapState.height =
-            dimensions.height;
-
+            await response.json();
 
         console.log(
-            "Nodes:",
+            "Database Loaded",
+            data
+        );
+
+
+        // ----------------------------------------------------
+        // VALIDATE DATABASE
+        // ----------------------------------------------------
+
+        if (!data || typeof data !== "object") {
+
+            throw new Error(
+                "internet.json did not contain a valid JSON object."
+            );
+
+        }
+
+        if (!Array.isArray(data.nodes)) {
+
+            throw new Error(
+                "internet.json is missing the nodes array."
+            );
+
+        }
+
+
+        // ----------------------------------------------------
+        // STORE DATA
+        // ----------------------------------------------------
+
+        mapState.data = data;
+
+        mapState.nodes = data.nodes;
+
+        console.log(
+            "Database Nodes:",
             mapState.nodes.length
         );
 
-        console.log(
-            "Links:",
-            mapState.links.length
-        );
+
+        // ----------------------------------------------------
+        // GET DIMENSIONS
+        // ----------------------------------------------------
+
+        let width =
+            network.clientWidth;
+
+        let height =
+            network.clientHeight;
 
 
-        initializeSVG();
+        if (!width || width < 500) {
 
-        initializeSimulation();
+            width = 1200;
 
-        initializeNodes();
+        }
 
-        initializeLabels();
+        if (!height || height < 500) {
 
-        initializeInteractions();
+            height = 800;
 
-        initializeStatistics();
+        }
+
+
+        mapState.width = width;
+        mapState.height = height;
+
+
+        // ----------------------------------------------------
+        // BUILD NODE MAP
+        // ----------------------------------------------------
+
+        buildNodeMap();
+
+
+        // ----------------------------------------------------
+        // BUILD LINKS
+        // ----------------------------------------------------
+
+        buildLinks();
+
+
+        // ----------------------------------------------------
+        // CREATE SVG
+        // ----------------------------------------------------
+
+        createSVG(network);
+
+
+        // ----------------------------------------------------
+        // RENDER GRAPH
+        // ----------------------------------------------------
+
+        renderLinks();
+
+        renderNodes();
+
+        renderLabels();
+
+
+        // ----------------------------------------------------
+        // CREATE ZOOM
+        // ----------------------------------------------------
+
+        setupZoom();
+
+
+        // ----------------------------------------------------
+        // SETUP INTERACTION
+        // ----------------------------------------------------
+
+        setupSearch();
+
+        setupLayerFilters();
+
+        setupGlobalFunctions();
+
+
+        // ----------------------------------------------------
+        // CONNECT PHYSICS
+        // ----------------------------------------------------
+
+        initializePhysics();
+
+
+        // ----------------------------------------------------
+        // STATISTICS
+        // ----------------------------------------------------
+
+        updateStatistics();
+
+
+        // ----------------------------------------------------
+        // INITIAL VIEW
+        // ----------------------------------------------------
+
+        resetView();
 
 
         console.log(
@@ -456,130 +261,235 @@ async function initializeMap() {
 
     catch (error) {
 
-        console.error(
-            "MAP FAILURE:",
-            error
-        );
-
-
-        if (details) {
-
-            details.innerHTML = `
-                <strong>SYSTEM FAILURE</strong>
-                <br><br>
-                ${error.message}
-            `;
-
-        }
+        handleMapError(error);
 
     }
 
 }
 
 
-// =================================
-// PHYSICS ENGINE
-// =================================
+// ============================================================
+// NODE MAP
+// ============================================================
 
-const {
-    simulation,
-    centerX,
-    centerY
-} = createPhysics({
+function buildNodeMap() {
 
-    nodes,
-
-    links,
-
-    width,
-
-    height
-
-});
+    mapState.nodeMap =
+        new Map();
 
 
-// =================================
-// DRAG BEHAVIOR
-// =================================
+    mapState.nodes.forEach(node => {
 
-const dragBehavior =
-    createDragBehavior(simulation);
+        if (!node || !node.id) {
 
+            console.warn(
+                "Skipping invalid node:",
+                node
+            );
 
+            return;
 
-// ============================================
-// SVG
-// ============================================
-
-function initializeSVG() {
-
-    const {
-        width,
-        height
-    } = mapState;
+        }
 
 
-    const svg =
+        if (mapState.nodeMap.has(node.id)) {
+
+            console.warn(
+                "Duplicate node ID:",
+                node.id
+            );
+
+            return;
+
+        }
+
+
+        mapState.nodeMap.set(
+            node.id,
+            node
+        );
+
+    });
+
+
+    console.log(
+        "Node Map:",
+        mapState.nodeMap.size
+    );
+
+}
+
+
+// ============================================================
+// BUILD LINKS
+// ============================================================
+
+function buildLinks() {
+
+    const links = [];
+
+    const duplicateCheck =
+        new Set();
+
+
+    mapState.nodes.forEach(node => {
+
+        if (
+            !node ||
+            !node.id ||
+            !Array.isArray(node.connections)
+        ) {
+
+            return;
+
+        }
+
+
+        node.connections.forEach(connectionId => {
+
+            if (!connectionId) {
+
+                return;
+
+            }
+
+
+            // -----------------------------------------------
+            // VERIFY TARGET EXISTS
+            // -----------------------------------------------
+
+            if (!mapState.nodeMap.has(connectionId)) {
+
+                console.warn(
+                    "Missing connection:",
+                    node.id,
+                    "->",
+                    connectionId
+                );
+
+                return;
+
+            }
+
+
+            // -----------------------------------------------
+            // PREVENT SELF LINKS
+            // -----------------------------------------------
+
+            if (node.id === connectionId) {
+
+                console.warn(
+                    "Ignoring self connection:",
+                    node.id
+                );
+
+                return;
+
+            }
+
+
+            // -----------------------------------------------
+            // PREVENT DUPLICATE EDGES
+            // -----------------------------------------------
+
+            const key =
+                [node.id, connectionId]
+                    .sort()
+                    .join("::");
+
+
+            if (duplicateCheck.has(key)) {
+
+                return;
+
+            }
+
+
+            duplicateCheck.add(key);
+
+
+            links.push({
+
+                source: node.id,
+
+                target: connectionId
+
+            });
+
+        });
+
+    });
+
+
+    mapState.links = links;
+
+
+    console.log(
+        "Links:",
+        mapState.links.length
+    );
+
+}
+
+
+// ============================================================
+// CREATE SVG
+// ============================================================
+
+function createSVG(network) {
+
+    // Clear old SVG if application somehow initializes twice.
+
+    d3.select(network)
+        .selectAll("svg")
+        .remove();
+
+
+    mapState.svg =
         d3.select(network)
+
             .append("svg")
-            .attr("width", "100%")
-            .attr("height", "100%");
+
+            .attr(
+                "width",
+                "100%"
+            )
+
+            .attr(
+                "height",
+                "100%"
+            )
+
+            .attr(
+                "viewBox",
+                `0 0 ${mapState.width} ${mapState.height}`
+            );
 
 
-    const viewport =
-        svg.append("g")
+    // --------------------------------------------------------
+    // MAIN VIEWPORT
+    // --------------------------------------------------------
+
+    mapState.viewport =
+        mapState.svg
+
+            .append("g")
+
             .attr(
                 "class",
                 "viewport"
             );
 
 
-    const zoom =
-        d3.zoom()
-            .scaleExtent([
-                0.2,
-                4
-            ])
-            .on(
-                "zoom",
-                event => {
-
-                    viewport.attr(
-                        "transform",
-                        event.transform
-                    );
-
-                }
-            );
-
-
-    svg.call(zoom);
-
-
-    svg.call(
-        zoom.transform,
-        d3.zoomIdentity
-            .translate(
-                width / 2,
-                height / 2
-            )
-            .scale(0.7)
-    );
-
-
-    mapState.svg =
-        svg;
-
-    mapState.viewport =
-        viewport;
-
-    mapState.zoom =
-        zoom;
-
+    // --------------------------------------------------------
+    // LAYER ORDER
+    // --------------------------------------------------------
 
     mapState.linkLayer =
-        viewport
+        mapState.viewport
+
             .append("g")
+
             .attr(
                 "class",
                 "links"
@@ -587,8 +497,10 @@ function initializeSVG() {
 
 
     mapState.nodeLayer =
-        viewport
+        mapState.viewport
+
             .append("g")
+
             .attr(
                 "class",
                 "nodes"
@@ -596,8 +508,10 @@ function initializeSVG() {
 
 
     mapState.labelLayer =
-        viewport
+        mapState.viewport
+
             .append("g")
+
             .attr(
                 "class",
                 "labels"
@@ -606,227 +520,146 @@ function initializeSVG() {
 }
 
 
-// ============================================
-// SIMULATION
-// ============================================
+// ============================================================
+// LINKS
+// ============================================================
 
-function initializeSimulation() {
+function renderLinks() {
 
-    const {
-        nodes,
-        links,
-        width,
-        height
-    } = mapState;
+    mapState.linkElements =
 
+        mapState.linkLayer
 
-    const centerX =
-        width / 2;
-
-    const centerY =
-        height / 2;
-
-
-    const radius =
-        Math.min(
-            width,
-            height
-        ) * 0.32;
-
-
-    nodes.forEach((node, index) => {
-
-        const angle =
-            (
-                index /
-                Math.max(
-                    nodes.length,
-                    1
-                )
-            ) *
-            Math.PI *
-            2;
-
-
-        node.x =
-            centerX +
-            Math.cos(angle) *
-            radius;
-
-
-        node.y =
-            centerY +
-            Math.sin(angle) *
-            radius;
-
-    });
-
-
-    const simulation =
-        d3.forceSimulation(nodes)
-
-            .force(
-                "link",
-
-                d3.forceLink(links)
-                    .id(d => d.id)
-                    .distance(180)
-                    .strength(0.35)
-            )
-
-            .force(
-                "charge",
-
-                d3.forceManyBody()
-                    .strength(-300)
-                    .distanceMin(40)
-                    .distanceMax(800)
-            )
-
-            .force(
-                "center",
-
-                d3.forceCenter(
-                    centerX,
-                    centerY
-                )
-            )
-
-            .force(
-                "collision",
-
-                d3.forceCollide()
-                    .radius(d => {
-
-                        return (
-                            (d.importance || 5) *
-                            1.7
-                        ) + 24;
-
-                    })
-                    .strength(0.9)
-                    .iterations(3)
-            )
-
-            .force(
-                "x",
-
-                d3.forceX(centerX)
-                    .strength(0.01)
-            )
-
-            .force(
-                "y",
-
-                d3.forceY(centerY)
-                    .strength(0.01)
-            )
-
-            .alpha(0.7)
-            .alphaDecay(0.02)
-            .velocityDecay(0.6);
-
-
-    mapState.simulation =
-        simulation;
-
-}
-
-
-// ============================================
-// NODES
-// ============================================
-
-function initializeNodes() {
-
-    const {
-        nodes,
-        links,
-        nodeLayer,
-        linkLayer,
-        simulation
-    } = mapState;
-
-
-    const linkElements =
-        linkLayer
             .selectAll("line")
-            .data(links)
+
+            .data(
+                mapState.links,
+                d =>
+                    `${d.source}::${d.target}`
+            )
+
             .enter()
+
             .append("line")
+
+            .attr(
+                "class",
+                "network-link"
+            )
+
             .attr(
                 "stroke",
                 "#33495c"
             )
+
             .attr(
                 "stroke-width",
                 1.5
             )
+
             .attr(
                 "opacity",
-                0.7
+                0.65
             );
 
+}
 
-    const nodeElements =
-        nodeLayer
+
+// ============================================================
+// NODES
+// ============================================================
+
+function renderNodes() {
+
+    mapState.nodeElements =
+
+        mapState.nodeLayer
+
             .selectAll("circle")
-            .data(nodes)
+
+            .data(
+                mapState.nodes,
+                d => d.id
+            )
+
             .enter()
+
             .append("circle")
+
+            .attr(
+                "class",
+                "network-node"
+            )
+
             .attr(
                 "r",
-                d => (
-                    (d.importance || 5) *
-                    1.7
-                ) + 7
+                getNodeRadius
             )
+
+            /*
+             * Neutral fallback color.
+             *
+             * colors.js can replace this later.
+             */
+
             .attr(
                 "fill",
-                d =>
-                    layerColors[d.layer] ||
-                    "#888"
+                "#64748b"
             )
+
             .attr(
                 "stroke",
-                "#000"
+                "#000000"
             )
+
             .attr(
                 "stroke-width",
                 2
             )
+
             .style(
-                "filter",
-                "drop-shadow(0px 0px 8px currentColor)"
+                "cursor",
+                "pointer"
             );
 
 
-    nodeElements
+    // --------------------------------------------------------
+    // HOVER
+    // --------------------------------------------------------
+
+    mapState.nodeElements
+
         .on(
             "mouseenter",
-            function() {
+            function () {
 
                 d3.select(this)
+
                     .attr(
                         "stroke",
                         "#ffffff"
                     )
+
                     .attr(
                         "stroke-width",
-                        4
+                        3
                     );
 
             }
         )
+
+
         .on(
             "mouseleave",
-            function() {
+            function () {
 
                 d3.select(this)
+
                     .attr(
                         "stroke",
-                        "#000"
+                        "#000000"
                     )
+
                     .attr(
                         "stroke-width",
                         2
@@ -834,244 +667,375 @@ function initializeNodes() {
 
             }
         )
+
+
         .on(
             "click",
-            showDetails
+            function (event, node) {
+
+                showDetails(
+                    event,
+                    node
+                );
+
+            }
         );
 
-
-    nodeElements.call(
-    dragBehavior
-);
-
-    );
+}
 
 
-    mapState.linkElements =
-        linkElements;
+// ============================================================
+// NODE SIZE
+// ============================================================
 
-    mapState.nodeElements =
-        nodeElements;
+function getNodeRadius(node) {
+
+    const importance =
+        Number(node.importance) || 5;
 
 
-    simulation.on(
-        "tick",
-        updateGraph
+    /*
+     * Keep node sizes controlled.
+     *
+     * Importance 1-10 becomes approximately
+     * 10px-28px.
+     */
+
+    return Math.max(
+        9,
+        Math.min(
+            28,
+            8 + importance * 2
+        )
     );
 
 }
 
 
-// ============================================
+// ============================================================
 // LABELS
-// ============================================
+// ============================================================
 
-function initializeLabels() {
+function renderLabels() {
 
-    const {
-        nodes,
-        labelLayer
-    } = mapState;
+    mapState.labelElements =
 
+        mapState.labelLayer
 
-    const labelElements =
-        labelLayer
             .selectAll("text")
-            .data(nodes)
-            .enter()
-            .append("text")
-            .text(
-                d => d.name
+
+            .data(
+                mapState.nodes,
+                d => d.id
             )
+
+            .enter()
+
+            .append("text")
+
+            .text(
+                d =>
+                    d.name ||
+                    d.id
+            )
+
+            .attr(
+                "class",
+                "network-label"
+            )
+
             .attr(
                 "fill",
                 "#d0d7de"
             )
+
             .attr(
                 "font-size",
-                d =>
-                    (d.importance || 0) >= 9
+                d => {
+
+                    const importance =
+                        Number(d.importance) || 0;
+
+                    return importance >= 9
                         ? "14px"
-                        : "11px"
+                        : "11px";
+
+                }
             )
+
             .attr(
                 "font-family",
                 "monospace"
             )
+
             .attr(
                 "text-anchor",
                 "middle"
             )
+
             .style(
                 "pointer-events",
                 "none"
             );
 
+}
 
-    mapState.labelElements =
-        labelElements;
+
+// ============================================================
+// ZOOM
+// ============================================================
+
+function setupZoom() {
+
+    mapState.zoom =
+
+        d3.zoom()
+
+            .scaleExtent([
+                0.15,
+                5
+            ])
+
+            .on(
+                "zoom",
+                event => {
+
+                    mapState.viewport
+
+                        .attr(
+                            "transform",
+                            event.transform
+                        );
+
+                }
+            );
+
+
+    mapState.svg.call(
+        mapState.zoom
+    );
 
 }
 
 
-// ============================================
-// GRAPH UPDATE
-// ============================================
+// ============================================================
+// PHYSICS
+// ============================================================
 
-function updateGraph() {
+function initializePhysics() {
 
-    const {
-        linkElements,
-        nodeElements,
-        labelElements
-    } = mapState;
+    /*
+     * physics.js should expose:
 
+         window.createPhysicsSimulation({
+             nodes,
+             links,
+             width,
+             height,
+             onTick
+         });
 
-    linkElements
-        .attr(
-            "x1",
-            d => d.source.x
-        )
-        .attr(
-            "y1",
-            d => d.source.y
-        )
-        .attr(
-            "x2",
-            d => d.target.x
-        )
-        .attr(
-            "y2",
-            d => d.target.y
+     *
+     * If physics.js is not loaded yet,
+     * the map still renders instead of crashing.
+     */
+
+    if (
+        typeof window.createPhysicsSimulation !==
+        "function"
+    ) {
+
+        console.warn(
+            "physics.js was not loaded. Graph rendered without simulation."
         );
 
+        return;
 
-    nodeElements
+    }
+
+
+    mapState.simulation =
+
+        window.createPhysicsSimulation({
+
+            nodes:
+                mapState.nodes,
+
+            links:
+                mapState.links,
+
+            width:
+                mapState.width,
+
+            height:
+                mapState.height,
+
+            onTick:
+                updateGraphPositions
+
+        });
+
+
+    /*
+     * Connect dragging to physics.
+     */
+
+    if (
+        typeof window.attachPhysicsDrag ===
+        "function"
+    ) {
+
+        window.attachPhysicsDrag(
+            mapState.nodeElements,
+            mapState.simulation
+        );
+
+    }
+
+}
+
+
+// ============================================================
+// UPDATE GRAPH POSITIONS
+// ============================================================
+
+function updateGraphPositions() {
+
+    if (!mapState.nodeElements) {
+
+        return;
+
+    }
+
+
+    // --------------------------------------------------------
+    // LINKS
+    // --------------------------------------------------------
+
+    if (mapState.linkElements) {
+
+        mapState.linkElements
+
+            .attr(
+                "x1",
+                d =>
+                    getPosition(d.source, "x")
+            )
+
+            .attr(
+                "y1",
+                d =>
+                    getPosition(d.source, "y")
+            )
+
+            .attr(
+                "x2",
+                d =>
+                    getPosition(d.target, "x")
+            )
+
+            .attr(
+                "y2",
+                d =>
+                    getPosition(d.target, "y")
+            );
+
+    }
+
+
+    // --------------------------------------------------------
+    // NODES
+    // --------------------------------------------------------
+
+    mapState.nodeElements
+
         .attr(
             "cx",
-            d => d.x
+            d =>
+                Number.isFinite(d.x)
+                    ? d.x
+                    : mapState.width / 2
         )
+
         .attr(
             "cy",
-            d => d.y
+            d =>
+                Number.isFinite(d.y)
+                    ? d.y
+                    : mapState.height / 2
         );
 
 
-    labelElements
-        .attr(
-            "x",
-            d => d.x
-        )
-        .attr(
-            "y",
-            d => d.y - 35
-        );
+    // --------------------------------------------------------
+    // LABELS
+    // --------------------------------------------------------
+
+    if (mapState.labelElements) {
+
+        mapState.labelElements
+
+            .attr(
+                "x",
+                d =>
+                    Number.isFinite(d.x)
+                        ? d.x
+                        : mapState.width / 2
+            )
+
+            .attr(
+                "y",
+                d =>
+                    Number.isFinite(d.y)
+                        ? d.y - 32
+                        : mapState.height / 2 - 32
+            );
+
+    }
 
 }
 
 
+// ============================================================
+// SAFE POSITION
+// ============================================================
+
+function getPosition(object, axis) {
+
+    if (
+        object &&
+        Number.isFinite(object[axis])
+    ) {
+
+        return object[axis];
+
+    }
 
 
-// ============================================
-// DETAILS
-// ============================================
-
-function showDetails(event, node) {
-
-    const {
-        links
-    } = mapState;
-
-
-    const connected =
-        links
-
-            .filter(link => {
-
-                return (
-                    link.source.id === node.id ||
-                    link.target.id === node.id
-                );
-
-            })
-
-            .map(link => {
-
-                const other =
-                    link.source.id === node.id
-                        ? link.target
-                        : link.source;
-
-
-                return `
-                    <div>
-                        ${other.name}
-                        <small>
-                            ${other.layer || ""}
-                        </small>
-                    </div>
-                `;
-
-            })
-
-            .join("");
-
-
-    details.innerHTML = `
-
-        <h2>${node.name}</h2>
-
-        <p>
-            <strong>Type:</strong>
-            ${node.type || "Unknown"}
-        </p>
-
-        <p>
-            <strong>Layer:</strong>
-            ${node.layer || "Unknown"}
-        </p>
-
-        <p>
-            <strong>Region:</strong>
-            ${node.region || "Global"}
-        </p>
-
-        <p>
-            <strong>Importance:</strong>
-            ${node.importance || "Unknown"}
-        </p>
-
-        <p>
-            <strong>Network Role:</strong>
-            ${node.network_role || ""}
-        </p>
-
-        <p>
-            ${node.description || ""}
-        </p>
-
-        <h3>
-            Connected Infrastructure
-        </h3>
-
-        ${
-            connected ||
-            "No known connections"
-        }
-
-    `;
+    return axis === "x"
+        ? mapState.width / 2
+        : mapState.height / 2;
 
 }
 
 
-// ============================================
+// ============================================================
 // SEARCH
-// ============================================
+// ============================================================
 
-function initializeSearch() {
+function setupSearch() {
+
+    const searchBox =
+        document.querySelector("#search");
+
 
     if (!searchBox) {
+
+        console.warn(
+            "#search was not found."
+        );
+
         return;
+
     }
 
 
@@ -1081,36 +1045,84 @@ function initializeSearch() {
 
             const value =
                 searchBox.value
-                    .toLowerCase()
-                    .trim();
+                    .trim()
+                    .toLowerCase();
 
 
-            const {
-                nodeElements,
-                labelElements
-            } = mapState;
+            if (!value) {
+
+                showAllNodes();
+
+                return;
+
+            }
 
 
-            nodeElements.attr(
-                "opacity",
-                d =>
-                    d.name
-                        .toLowerCase()
-                        .includes(value)
-                        ? 1
-                        : 0.15
-            );
+            mapState.nodeElements
+
+                .attr(
+                    "opacity",
+                    node =>
+                        nodeMatchesSearch(
+                            node,
+                            value
+                        )
+                            ? 1
+                            : 0.12
+                );
 
 
-            labelElements.attr(
-                "opacity",
-                d =>
-                    d.name
-                        .toLowerCase()
-                        .includes(value)
-                        ? 1
-                        : 0.15
-            );
+            mapState.labelElements
+
+                .attr(
+                    "opacity",
+                    node =>
+                        nodeMatchesSearch(
+                            node,
+                            value
+                        )
+                            ? 1
+                            : 0.12
+                );
+
+
+            mapState.linkElements
+
+                .attr(
+                    "opacity",
+                    link => {
+
+                        const source =
+                            getNodeFromLink(
+                                link.source
+                            );
+
+                        const target =
+                            getNodeFromLink(
+                                link.target
+                            );
+
+
+                        if (
+                            nodeMatchesSearch(
+                                source,
+                                value
+                            ) ||
+                            nodeMatchesSearch(
+                                target,
+                                value
+                            )
+                        ) {
+
+                            return 0.65;
+
+                        }
+
+
+                        return 0.04;
+
+                    }
+                );
 
         }
     );
@@ -1118,190 +1130,703 @@ function initializeSearch() {
 }
 
 
-// ============================================
-// LAYER FILTER
-// ============================================
+// ============================================================
+// SEARCH MATCH
+// ============================================================
 
-function filterLayer(layer) {
+function nodeMatchesSearch(node, value) {
 
-    const {
-        nodeElements,
-        labelElements,
-        linkElements
-    } = mapState;
+    if (!node) {
 
+        return false;
 
-    nodeElements.attr(
-        "opacity",
-        d => {
-
-            if (layer === "all") {
-                return 1;
-            }
-
-            return d.layer === layer
-                ? 1
-                : 0.1;
-
-        }
-    );
+    }
 
 
-    labelElements.attr(
-        "opacity",
-        d => {
-
-            if (layer === "all") {
-                return 1;
-            }
-
-            return d.layer === layer
-                ? 1
-                : 0.1;
-
-        }
-    );
+    const name =
+        String(node.name || "")
+            .toLowerCase();
 
 
-    linkElements.attr(
-        "opacity",
-        d => {
+    const id =
+        String(node.id || "")
+            .toLowerCase();
 
-            if (layer === "all") {
-                return 0.7;
-            }
 
-            return (
-                d.source.layer === layer ||
-                d.target.layer === layer
-            )
-                ? 0.8
-                : 0.05;
+    const type =
+        String(node.type || "")
+            .toLowerCase();
 
-        }
+
+    const layer =
+        String(node.layer || "")
+            .toLowerCase();
+
+
+    return (
+        name.includes(value) ||
+        id.includes(value) ||
+        type.includes(value) ||
+        layer.includes(value)
     );
 
 }
 
 
-// Keep compatibility with
-// existing HTML onclick handlers.
-window.filterLayer =
-    filterLayer;
+// ============================================================
+// SHOW ALL
+// ============================================================
+
+function showAllNodes() {
+
+    mapState.nodeElements
+        .attr(
+            "opacity",
+            1
+        );
 
 
-// ============================================
-// RESET VIEW
-// ============================================
-
-function resetView() {
-
-    const {
-        svg,
-        zoom
-    } = mapState;
+    mapState.labelElements
+        .attr(
+            "opacity",
+            1
+        );
 
 
-    svg
-        .transition()
-        .duration(750)
-        .call(
-            zoom.transform,
-            d3.zoomIdentity
+    mapState.linkElements
+        .attr(
+            "opacity",
+            0.65
         );
 
 }
 
 
-window.resetView =
-    resetView;
+// ============================================================
+// LAYER FILTERS
+// ============================================================
+
+function setupLayerFilters() {
+
+    /*
+     * HTML buttons can continue using:
+
+         onclick="filterLayer('isp')"
+
+     * because filterLayer is exposed globally below.
+     */
+
+}
 
 
-// ============================================
-// STATISTICS
-// ============================================
+// ============================================================
+// GLOBAL FILTER FUNCTION
+// ============================================================
 
-function initializeStatistics() {
+window.filterLayer = function (layer) {
 
-    if (!statsBox) {
+    if (!mapState.nodeElements) {
+
         return;
+
     }
 
 
-    const {
-        nodes
-    } = mapState;
+    if (!layer || layer === "all") {
+
+        showAllNodes();
+
+        return;
+
+    }
 
 
-    const stats = {
+    const normalizedLayer =
+        String(layer)
+            .trim()
+            .toLowerCase();
 
-        nodes:
-            nodes.length,
 
-        links:
-            mapState.links.length,
+    // --------------------------------------------------------
+    // NODES
+    // --------------------------------------------------------
 
-        regions:
-            new Set(
-                nodes.map(
-                    d => d.region
+    mapState.nodeElements
+
+        .attr(
+            "opacity",
+            node => {
+
+                const nodeLayer =
+                    String(node.layer || "")
+                        .toLowerCase();
+
+
+                return nodeLayer === normalizedLayer
+                    ? 1
+                    : 0.10;
+
+            }
+        );
+
+
+    // --------------------------------------------------------
+    // LABELS
+    // --------------------------------------------------------
+
+    mapState.labelElements
+
+        .attr(
+            "opacity",
+            node => {
+
+                const nodeLayer =
+                    String(node.layer || "")
+                        .toLowerCase();
+
+
+                return nodeLayer === normalizedLayer
+                    ? 1
+                    : 0.10;
+
+            }
+        );
+
+
+    // --------------------------------------------------------
+    // LINKS
+    // --------------------------------------------------------
+
+    mapState.linkElements
+
+        .attr(
+            "opacity",
+            link => {
+
+                const source =
+                    getNodeFromLink(
+                        link.source
+                    );
+
+                const target =
+                    getNodeFromLink(
+                        link.target
+                    );
+
+
+                const sourceLayer =
+                    String(
+                        source?.layer || ""
+                    ).toLowerCase();
+
+
+                const targetLayer =
+                    String(
+                        target?.layer || ""
+                    ).toLowerCase();
+
+
+                if (
+                    sourceLayer === normalizedLayer ||
+                    targetLayer === normalizedLayer
+                ) {
+
+                    return 0.75;
+
+                }
+
+
+                return 0.04;
+
+            }
+        );
+
+};
+
+
+// ============================================================
+// LINK NODE RESOLUTION
+// ============================================================
+
+function getNodeFromLink(value) {
+
+    /*
+     * d3.forceLink converts source/target IDs
+     * into node objects.
+
+     * During early initialization they may
+     * still be strings.
+
+     * Handle BOTH cases safely.
+     */
+
+    if (!value) {
+
+        return null;
+
+    }
+
+
+    if (
+        typeof value === "object" &&
+        value.id
+    ) {
+
+        return value;
+
+    }
+
+
+    return mapState.nodeMap.get(
+        value
+    ) || null;
+
+}
+
+
+// ============================================================
+// DETAILS PANEL
+// ============================================================
+
+function showDetails(event, node) {
+
+    const details =
+        document.querySelector("#details");
+
+
+    if (!details || !node) {
+
+        return;
+
+    }
+
+
+    const connectedNodes =
+        getConnectedNodes(node);
+
+
+    const connectionsHTML =
+
+        connectedNodes.length
+
+            ? connectedNodes
+                .map(other => {
+
+                    return `
+                        <div class="connection">
+                            <strong>
+                                ${escapeHTML(
+                                    other.name ||
+                                    other.id
+                                )}
+                            </strong>
+                            <span>
+                                ${escapeHTML(
+                                    other.layer ||
+                                    "unknown"
+                                )}
+                            </span>
+                        </div>
+                    `;
+
+                })
+                .join("")
+
+            : `
+                <div class="connection">
+                    No known connections
+                </div>
+            `;
+
+
+    details.innerHTML = `
+
+        <div class="node-details">
+
+            <h2>
+                ${escapeHTML(
+                    node.name ||
+                    node.id
+                )}
+            </h2>
+
+            <div>
+                <strong>Type</strong>
+                <br>
+                ${escapeHTML(
+                    node.type ||
+                    "Unknown"
+                )}
+            </div>
+
+            <div>
+                <strong>Layer</strong>
+                <br>
+                ${escapeHTML(
+                    node.layer ||
+                    "Unknown"
+                )}
+            </div>
+
+            <div>
+                <strong>Region</strong>
+                <br>
+                ${escapeHTML(
+                    node.region ||
+                    "Global"
+                )}
+            </div>
+
+            <div>
+                <strong>Importance</strong>
+                <br>
+                ${escapeHTML(
+                    String(
+                        node.importance ??
+                        "Unknown"
+                    )
+                )}
+            </div>
+
+            <div>
+                <strong>Network Role</strong>
+                <br>
+                ${escapeHTML(
+                    node.network_role ||
+                    ""
+                )}
+            </div>
+
+            <div>
+                <strong>Description</strong>
+                <br>
+                ${escapeHTML(
+                    node.description ||
+                    ""
+                )}
+            </div>
+
+            <div>
+
+                <strong>
+                    Connected Infrastructure
+                </strong>
+
+                <div class="connections">
+
+                    ${connectionsHTML}
+
+                </div>
+
+            </div>
+
+        </div>
+
+    `;
+
+}
+
+
+// ============================================================
+// CONNECTED NODES
+// ============================================================
+
+function getConnectedNodes(node) {
+
+    if (!node) {
+
+        return [];
+
+    }
+
+
+    const results = [];
+
+    const seen = new Set();
+
+
+    mapState.links.forEach(link => {
+
+        const source =
+            getNodeFromLink(
+                link.source
+            );
+
+        const target =
+            getNodeFromLink(
+                link.target
+            );
+
+
+        let other = null;
+
+
+        if (
+            source &&
+            source.id === node.id
+        ) {
+
+            other = target;
+
+        }
+
+        else if (
+            target &&
+            target.id === node.id
+        ) {
+
+            other = source;
+
+        }
+
+
+        if (
+            other &&
+            !seen.has(other.id)
+        ) {
+
+            seen.add(
+                other.id
+            );
+
+            results.push(
+                other
+            );
+
+        }
+
+    });
+
+
+    return results;
+
+}
+
+
+// ============================================================
+// HTML ESCAPING
+// ============================================================
+
+function escapeHTML(value) {
+
+    return String(value)
+
+        .replace(
+            /&/g,
+            "&amp;"
+        )
+
+        .replace(
+            /</g,
+            "&lt;"
+        )
+
+        .replace(
+            />/g,
+            "&gt;"
+        )
+
+        .replace(
+            /"/g,
+            "&quot;"
+        )
+
+        .replace(
+            /'/g,
+            "&#039;"
+        );
+
+}
+
+
+// ============================================================
+// RESET VIEW
+// ============================================================
+
+window.resetView = function () {
+
+    if (
+        !mapState.svg ||
+        !mapState.zoom
+    ) {
+
+        return;
+
+    }
+
+
+    mapState.svg
+
+        .transition()
+
+        .duration(600)
+
+        .call(
+            mapState.zoom.transform,
+            d3.zoomIdentity
+        );
+
+};
+
+
+// ============================================================
+// GLOBAL FUNCTIONS
+// ============================================================
+
+function setupGlobalFunctions() {
+
+    /*
+     * These functions intentionally live on
+     * window because the existing HTML uses
+     * inline onclick handlers.
+     */
+
+    window.resetView =
+        window.resetView;
+
+    window.filterLayer =
+        window.filterLayer;
+
+}
+
+
+// ============================================================
+// STATISTICS
+// ============================================================
+
+function updateStatistics() {
+
+    const statsBox =
+        document.querySelector("#stats");
+
+
+    if (!statsBox) {
+
+        return;
+
+    }
+
+
+    const nodes =
+        mapState.nodes;
+
+
+    const links =
+        mapState.links;
+
+
+    const regions =
+        new Set(
+            nodes
+                .map(
+                    node =>
+                        node.region
                 )
-            ).size,
+                .filter(Boolean)
+        );
 
-        critical:
-            nodes.filter(
-                d =>
-                    (d.importance || 0) >= 9
-            ).length
 
-    };
+    const critical =
+        nodes.filter(
+            node =>
+                Number(
+                    node.importance
+                ) >= 9
+        )
+        .length;
 
 
     statsBox.innerHTML = `
 
-        NODES:
-        ${stats.nodes}
+        <div>
+            NODES:
+            ${nodes.length}
+        </div>
 
-        <br>
+        <div>
+            CONNECTIONS:
+            ${links.length}
+        </div>
 
-        CONNECTIONS:
-        ${stats.links}
+        <div>
+            REGIONS:
+            ${regions.size}
+        </div>
 
-        <br>
-
-        REGIONS:
-        ${stats.regions}
-
-        <br>
-
-        CRITICAL NODES:
-        ${stats.critical}
+        <div>
+            CRITICAL NODES:
+            ${critical}
+        </div>
 
     `;
 
 
     console.log(
         "Network Statistics",
-        stats
+        {
+            nodes:
+                nodes.length,
+
+            links:
+                links.length,
+
+            regions:
+                regions.size,
+
+            critical:
+                critical
+        }
     );
 
 }
 
 
-// ============================================
-// INTERACTIONS
-// ============================================
+// ============================================================
+// ERROR HANDLING
+// ============================================================
 
-function initializeInteractions() {
+function handleMapError(error) {
 
-    initializeSearch();
+    console.error(
+        "MAP FAILURE:",
+        error
+    );
+
+
+    const details =
+        document.querySelector("#details");
+
+
+    if (!details) {
+
+        return;
+
+    }
+
+
+    details.innerHTML = `
+
+        <div class="system-error">
+
+            <h2>
+                SYSTEM FAILURE
+            </h2>
+
+            <p>
+                ${escapeHTML(
+                    error.message ||
+                    String(error)
+                )}
+            </p>
+
+            <p>
+                Check the browser console
+                for additional information.
+            </p>
+
+        </div>
+
+    `;
 
 }
-
-
-// ============================================
-// START
-// ============================================
-
-initializeMap();
 
