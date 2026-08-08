@@ -462,42 +462,15 @@ svg.append("g")
 );
 
 
-
-
-
 // Zoom everything
 
 
 svg.call(
-
-d3.zoom()
-
-.scaleExtent(
-[
-0.1,
-8
-]
-)
-
-.on(
-"zoom",
-
-(event)=>{
-
-viewport.attr(
-"transform",
-event.transform
+    zoom.transform,
+    d3.zoomIdentity
+        .translate(0, 0)
+        .scale(0.7)
 );
-
-
-}
-
-)
-
-);
-
-
-
 
 
 // groups INSIDE viewport
@@ -1776,7 +1749,7 @@ d3.zoom()
 
 .transform,
 
-d3.zoomIdentity
+d3.Identity
 
 .translate(
 
