@@ -824,7 +824,7 @@ function renderLabels() {
 
             .attr(
                 "fill",
-                "#d0d7de"
+                "COLORS.text"
             )
 
             .attr(
