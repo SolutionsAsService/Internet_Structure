@@ -955,62 +955,6 @@ function updateGraph() {
 }
 
 
-// ============================================
-// DRAG
-// ============================================
-
-function dragStart(event, d) {
-
-    const {
-        simulation
-    } = mapState;
-
-
-    if (!event.active) {
-
-        simulation
-            .alphaTarget(0.08)
-            .restart();
-
-    }
-
-
-    d.fx = d.x;
-    d.fy = d.y;
-
-}
-
-
-function dragMove(event, d) {
-
-    d.fx =
-        event.x;
-
-    d.fy =
-        event.y;
-
-}
-
-
-function dragEnd(event, d) {
-
-    const {
-        simulation
-    } = mapState;
-
-
-    if (!event.active) {
-
-        simulation
-            .alphaTarget(0);
-
-    }
-
-
-    d.fx = null;
-    d.fy = null;
-
-}
 
 
 // ============================================
