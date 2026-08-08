@@ -464,6 +464,24 @@ svg.append("g")
 
 // Zoom everything
 
+// =================================
+// ZOOM
+// =================================
+
+const zoom =
+    d3.zoom()
+        .scaleExtent([0.2, 4])
+        .on("zoom", event => {
+
+            viewport.attr(
+                "transform",
+                event.transform
+            );
+
+        });
+
+svg.call(zoom);
+
 
 svg.call(
     zoom.transform,
@@ -1587,34 +1605,17 @@ return .05;
 // =================================
 
 
-window.resetView=function(){
+window.resetView = function() {
 
+    svg
+        .transition()
+        .duration(750)
+        .call(
+            zoom.transform,
+            d3.zoomIdentity
+        );
 
-
-svg
-
-.transition()
-
-.duration(750)
-
-.call(
-
-d3.zoom()
-
-.transform,
-
-d3.zoomIdentity
-
-);
-
-
-
-}
-
-
-
-
-
+};
 
 
 
