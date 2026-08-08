@@ -1,184 +1,67 @@
+```javascript
+// ============================================
+// INTERNET INFRASTRUCTURE MAP
+// app.js
+// ============================================
+
 console.log("Internet Infrastructure Map Starting");
 
 
-fetch("data/internet.json")
+// ============================================
+// APPLICATION STATE
+// ============================================
 
-.then(response=>{
+let mapState = {
+    data: null,
+    nodes: [],
+    links: [],
+    nodeMap: new Map(),
 
-    if(!response.ok){
+    svg: null,
+    viewport: null,
+    zoom: null,
 
-        throw new Error(
-            "internet.json failed loading"
-        );
+    simulation: null,
 
-    }
+    linkLayer: null,
+    nodeLayer: null,
+    labelLayer: null,
 
-    return response.json();
+    linkElements: null,
+    nodeElements: null,
+    labelElements: null,
 
-})
-
-
-.then(data=>{
-
-
-console.log(
-"Database Loaded",
-data
-);
-
-
-
-const network =
-document.querySelector("#network");
+    width: 1000,
+    height: 700
+};
 
 
-const details =
-document.querySelector("#details");
+// ============================================
+// DOM
+// ============================================
+
+const network = document.querySelector("#network");
+const details = document.querySelector("#details");
+const statsBox = document.querySelector("#stats");
+const searchBox = document.querySelector("#search");
 
 
+if (!network) {
 
-if(!network){
+    console.error("#network missing");
 
-throw new Error(
-"#network missing"
-);
-
-}
-
-
-
-let width =
-network.clientWidth;
-
-
-let height =
-network.clientHeight;
-
-
-
-if(width < 500){
-
-width=1000;
+    throw new Error("#network missing");
 
 }
 
 
-if(height < 500){
-
-height=700;
-
-}
-
-
-
-// =================================
-// BUILD GRAPH
-// =================================
-
-
-const nodes =
-data.nodes || [];
-
-
-
-const nodeMap =
-new Map();
-
-
-nodes.forEach(node=>{
-
-nodeMap.set(
-node.id,
-node
-);
-
-});
-
-
-
-const links=[];
-
-
-
-nodes.forEach(node=>{
-
-
-if(!node.connections)
-return;
-
-
-
-node.connections.forEach(connection=>{
-
-
-if(nodeMap.has(connection)){
-
-
-links.push({
-
-source:node.id,
-
-target:connection
-
-});
-
-
-}
-
-
-else{
-
-
-console.warn(
-
-"Missing connection:",
-
-node.id,
-
-"->",
-
-connection
-
-);
-
-
-}
-
-
-
-});
-
-
-
-});
-
-
-
-console.log(
-"Nodes",
-nodes.length
-);
-
-
-console.log(
-"Links",
-links.length
-);
-
-
-
-
-
-// =================================
-// COLORS
-// =================================
+// ============================================
+// LAYER COLORS
+// ============================================
 
 const layerColors = {
 
-    // ==============================
-    // PHYSICAL / FACILITIES
-    // ==============================
-
+    // Physical
     physical: "#6B7280",
     power: "#F59E0B",
     datacenter: "#8B5CF6",
@@ -186,10 +69,7 @@ const layerColors = {
     edge: "#7C3AED",
     pop: "#8B5CF6",
 
-    // ==============================
-    // CONNECTIVITY
-    // ==============================
-
+    // Connectivity
     isp: "#22C55E",
     mobile: "#16A34A",
     fixed_wireless: "#4ADE80",
@@ -202,20 +82,14 @@ const layerColors = {
     tier2: "#0F766E",
     tier3: "#14B8A6",
 
-    // ==============================
-    // INTERNET EXCHANGE
-    // ==============================
-
+    // Internet Exchange
     ixp: "#06B6D4",
     route_server: "#0891B2",
     peering: "#0E7490",
     internet_exchange_fabric: "#155E75",
     internet_exchange_operator: "#06B6D4",
 
-    // ==============================
-    // ROUTING
-    // ==============================
-
+    // Routing
     routing: "#3B82F6",
     routing_security: "#2563EB",
     routing_measurement: "#1D4ED8",
@@ -223,20 +97,14 @@ const layerColors = {
     network_operations: "#1E40AF",
     network_automation: "#4F46E5",
 
-    // ==============================
     // DNS
-    // ==============================
-
     dns: "#F97316",
     dns_root: "#EA580C",
     dns_authoritative: "#C2410C",
     dns_recursive: "#9A3412",
     dns_registry: "#7C2D12",
 
-    // ==============================
-    // ADDRESSING / COORDINATION
-    // ==============================
-
+    // Internet coordination
     registry: "#14B8A6",
     rir: "#0D9488",
     rir_database: "#0F766E",
@@ -245,994 +113,858 @@ const layerColors = {
     standards: "#0F766E",
     web_standards: "#115E59",
 
-    // ==============================
-    // CDN / EDGE
-    // ==============================
-
+    // CDN / Edge
     cdn: "#EC4899",
     edge_compute: "#DB2777",
     web_acceleration: "#BE185D",
     anycast: "#F43F5E",
     geodns: "#E11D48",
 
-    // ==============================
-    // CLOUD / COMPUTE
-    // ==============================
-
+    // Cloud
     cloud: "#6366F1",
     compute: "#4F46E5",
     gpu_compute: "#4338CA",
     server: "#3730A3",
     storage: "#312E81",
 
-    // ==============================
-    // NETWORK HARDWARE
-    // ==============================
-
+    // Network hardware
     network_hardware: "#64748B",
     router: "#475569",
     switching: "#334155",
     firewall: "#1E293B",
     load_balancing: "#0F172A",
 
-    // ==============================
-    // OPTICAL / FIBER
-    // ==============================
-
+    // Optical
     optical: "#EAB308",
     fiber: "#CA8A04",
     longhaul: "#A16207",
     metro: "#854D0E",
     optical_transport: "#713F12",
 
-    // ==============================
-    // SUBMARINE
-    // ==============================
-
+    // Submarine
     submarine: "#090088",
     subsea: "#090088",
     cable_landing: "#0369A1",
     submarine_operator: "#075985",
 
-    // ==============================
-    // SATELLITE
-    // ==============================
-
+    // Satellite
     satellite: "#FFBF00",
     leo: "#7C3AED",
     geo_satellite: "#6D28D9",
     ground_station: "#5B21B6",
     satellite_ground: "#7C3AED",
 
-    // ==============================
-    // MOBILE
-    // ==============================
-
+    // Mobile
     mobile_core: "#84CC16",
     radio_access: "#65A30D",
     cell_tower: "#4D7C0F",
     spectrum: "#9333EA",
 
-    // ==============================
-    // SECURITY
-    // ==============================
-
+    // Security
     security: "#EF4444",
     ddos: "#DC2626",
     waf: "#B91C1C",
     incident_response: "#991B1B",
 
-    // ==============================
     // PKI
-    // ==============================
-
     pki: "#EF4444",
     certificate_authority: "#DC2626",
-    certificate_transparency: "#B91C1C",
+    certificate_transparency: "#B91B1B",
 
-    // ==============================
-    // TIME
-    // ==============================
-
+    // Time
     time: "#FACC15",
     ntp: "#EAB308",
     ptp: "#CA8A04",
     gps_timing: "#A16207",
 
-    // ==============================
-    // RESEARCH / MEASUREMENT
-    // ==============================
-
+    // Research
     research_network: "#A855F7",
     national_research: "#9333EA",
     measurement: "#D946EF",
     topology: "#C026D3",
     traffic_measurement: "#A21CAF",
 
-    // ==============================
-    // SOFTWARE
-    // ==============================
-
+    // Software
     ixp_software: "#0891B2",
     server_oem: "#64748B",
     server_odm: "#475569",
     storage_hardware: "#334155",
 
-    // ==============================
-    // SEMICONDUCTORS
-    // ==============================
-
+    // Semiconductor
     semiconductor: "#F43F5E",
     semiconductor_design: "#E11D48",
     semiconductor_fab: "#BE123C",
     semiconductor_equipment: "#9F1239",
     semiconductor_materials: "#881337",
     chip_packaging: "#701A75",
-
     memory: "#1E293B",
 
-    // ==============================
-    // ELECTRONICS
-    // ==============================
-
+    // Electronics
     pcb: "#78716C",
     electronics_manufacturing: "#57534E",
 
-    // ==============================
-    // POWER / COOLING
-    // ==============================
-
+    // Power / cooling
     cooling: "#06B6D4",
     liquid_cooling: "#0891B2",
     backup_power: "#F59E0B",
     generator: "#D97706",
     ups: "#B45309",
 
-    // ==============================
-    // PHYSICAL OPERATIONS
-    // ==============================
-
+    // Physical operations
     physical_security: "#52525B",
     construction: "#71717A",
     fiber_construction: "#A1A1AA",
-    tower_infrastructure:"#84CC16",
+    tower_infrastructure: "#84CC16",
 
-    // ==============================
-    // GOVERNMENT / CRITICAL INFRA
-    // ==============================
-
+    // Government
     government_network: "#475569",
     critical_infrastructure: "#334155",
 
-    // ==============================
-    // CONTENT
-    // ==============================
-
+    // Content
     content_provider: "#EC4899",
     application: "#F43F5E",
 
-    // ==============================
-    // OPERATORS
-    // ==============================
-
+    // Operators
     network_operator: "#10B981",
 
-
-    
-    content_provider:"#EC4899",
-    telecom_equipment:"#64748B"
-      
+    // Telecom
+    telecom_equipment: "#64748B"
 };
 
 
+// ============================================
+// LOAD DATABASE
+// ============================================
 
-// =================================
-// SVG
-// =================================
+async function loadDatabase() {
+
+    console.log("Loading internet.json...");
+
+    const response =
+        await fetch("data/internet.json");
+
+    if (!response.ok) {
+
+        throw new Error(
+            `internet.json failed loading (${response.status})`
+        );
+
+    }
+
+    const data =
+        await response.json();
+
+    if (!data || !Array.isArray(data.nodes)) {
+
+        throw new Error(
+            "internet.json does not contain a valid nodes array"
+        );
+
+    }
+
+    console.log(
+        "Database Loaded",
+        data
+    );
+
+    return data;
+
+}
 
 
-const svg = d3.select(network)
+// ============================================
+// BUILD GRAPH DATA
+// ============================================
 
-.append("svg")
+function buildGraphData(data) {
 
-.attr(
-"width",
-"100%"
-)
+    const nodes =
+        data.nodes || [];
 
-.attr(
-"height",
-"100%"
-);
+    const nodeMap =
+        new Map();
 
+    nodes.forEach(node => {
 
+        if (!node.id) {
 
-
-
-// THIS IS THE IMPORTANT FIX
-
-
-const viewport =
-
-svg.append("g")
-
-.attr(
-"class",
-"viewport"
-);
-
-
-// Zoom everything
-
-// =================================
-// ZOOM
-// =================================
-
-const zoom =
-    d3.zoom()
-        .scaleExtent([0.2, 4])
-        .on("zoom", event => {
-
-            viewport.attr(
-                "transform",
-                event.transform
+            console.warn(
+                "Node missing ID:",
+                node
             );
+
+            return;
+
+        }
+
+        nodeMap.set(
+            node.id,
+            node
+        );
+
+    });
+
+
+    const links = [];
+
+
+    nodes.forEach(node => {
+
+        if (!Array.isArray(node.connections)) {
+
+            return;
+
+        }
+
+
+        node.connections.forEach(connection => {
+
+            if (nodeMap.has(connection)) {
+
+                links.push({
+
+                    source: node.id,
+                    target: connection
+
+                });
+
+            }
+
+            else {
+
+                console.warn(
+                    "Missing connection:",
+                    node.id,
+                    "->",
+                    connection
+                );
+
+            }
 
         });
 
-svg.call(zoom);
+    });
 
 
-svg.call(
-    zoom.transform,
-    d3.zoomIdentity
-        .translate(0, 0)
-        .scale(0.7)
-);
+    return {
+        nodes,
+        links,
+        nodeMap
+    };
+
+}
 
 
-// groups INSIDE viewport
+// ============================================
+// SIZE
+// ============================================
+
+function calculateDimensions() {
+
+    let width =
+        network.clientWidth;
+
+    let height =
+        network.clientHeight;
 
 
-const linkLayer =
+    if (width < 500) {
+        width = 1000;
+    }
 
-viewport.append("g")
-.attr(
-"class",
-"links"
-);
-
-
-
-const nodeLayer =
-
-viewport.append("g")
-.attr(
-"class",
-"nodes"
-);
+    if (height < 500) {
+        height = 700;
+    }
 
 
+    return {
+        width,
+        height
+    };
 
-const labelLayer =
-
-viewport.append("g")
-.attr(
-"class",
-"labels"
-);
+}
 
 
+// ============================================
+// INITIALIZE APPLICATION
+// ============================================
 
-// =================================
-// FORCE SIMULATION
-// =================================
+async function initializeMap() {
 
-const centerX = width / 2;
-const centerY = height / 2;
+    try {
+
+        const data =
+            await loadDatabase();
 
 
-// ---------------------------------
-// INITIAL NODE POSITIONS
-// ---------------------------------
+        const graph =
+            buildGraphData(data);
 
-const initialRadius =
-    Math.min(width, height) * 0.32;
 
-nodes.forEach((node, i) => {
+        const dimensions =
+            calculateDimensions();
 
-    const angle =
-        (i / Math.max(nodes.length, 1)) *
-        Math.PI * 2;
+
+        mapState.data =
+            data;
+
+        mapState.nodes =
+            graph.nodes;
+
+        mapState.links =
+            graph.links;
+
+        mapState.nodeMap =
+            graph.nodeMap;
+
+        mapState.width =
+            dimensions.width;
+
+        mapState.height =
+            dimensions.height;
+
+
+        console.log(
+            "Nodes:",
+            mapState.nodes.length
+        );
+
+        console.log(
+            "Links:",
+            mapState.links.length
+        );
+
+
+        initializeSVG();
+
+        initializeSimulation();
+
+        initializeNodes();
+
+        initializeLabels();
+
+        initializeInteractions();
+
+        initializeStatistics();
+
+
+        console.log(
+            "Internet Infrastructure Map Ready"
+        );
+
+    }
+
+    catch (error) {
+
+        console.error(
+            "MAP FAILURE:",
+            error
+        );
+
+
+        if (details) {
+
+            details.innerHTML = `
+                <strong>SYSTEM FAILURE</strong>
+                <br><br>
+                ${error.message}
+            `;
+
+        }
+
+    }
+
+}
+
+
+// ============================================
+// SVG
+// ============================================
+
+function initializeSVG() {
+
+    const {
+        width,
+        height
+    } = mapState;
+
+
+    const svg =
+        d3.select(network)
+            .append("svg")
+            .attr("width", "100%")
+            .attr("height", "100%");
+
+
+    const viewport =
+        svg.append("g")
+            .attr(
+                "class",
+                "viewport"
+            );
+
+
+    const zoom =
+        d3.zoom()
+            .scaleExtent([
+                0.2,
+                4
+            ])
+            .on(
+                "zoom",
+                event => {
+
+                    viewport.attr(
+                        "transform",
+                        event.transform
+                    );
+
+                }
+            );
+
+
+    svg.call(zoom);
+
+
+    svg.call(
+        zoom.transform,
+        d3.zoomIdentity
+            .translate(
+                width / 2,
+                height / 2
+            )
+            .scale(0.7)
+    );
+
+
+    mapState.svg =
+        svg;
+
+    mapState.viewport =
+        viewport;
+
+    mapState.zoom =
+        zoom;
+
+
+    mapState.linkLayer =
+        viewport
+            .append("g")
+            .attr(
+                "class",
+                "links"
+            );
+
+
+    mapState.nodeLayer =
+        viewport
+            .append("g")
+            .attr(
+                "class",
+                "nodes"
+            );
+
+
+    mapState.labelLayer =
+        viewport
+            .append("g")
+            .attr(
+                "class",
+                "labels"
+            );
+
+}
+
+
+// ============================================
+// SIMULATION
+// ============================================
+
+function initializeSimulation() {
+
+    const {
+        nodes,
+        links,
+        width,
+        height
+    } = mapState;
+
+
+    const centerX =
+        width / 2;
+
+    const centerY =
+        height / 2;
+
 
     const radius =
-        initialRadius *
-        (0.75 + Math.random() * 0.35);
-
-    node.x =
-        centerX +
-        Math.cos(angle) * radius;
-
-    node.y =
-        centerY +
-        Math.sin(angle) * radius;
-
-});
+        Math.min(
+            width,
+            height
+        ) * 0.32;
 
 
-// ---------------------------------
-// FORCE SIMULATION
-// ---------------------------------
+    nodes.forEach((node, index) => {
 
-const simulation =
-    d3.forceSimulation(nodes)
+        const angle =
+            (
+                index /
+                Math.max(
+                    nodes.length,
+                    1
+                )
+            ) *
+            Math.PI *
+            2;
 
-        .force(
-            "link",
 
-            d3.forceLink(links)
+        node.x =
+            centerX +
+            Math.cos(angle) *
+            radius;
 
-                .id(d => d.id)
 
-                .distance(180)
+        node.y =
+            centerY +
+            Math.sin(angle) *
+            radius;
 
-                .strength(0.45)
-        )
+    });
 
-        .force(
-            "charge",
 
-            d3.forceManyBody()
+    const simulation =
+        d3.forceSimulation(nodes)
 
-                .strength(-300)
+            .force(
+                "link",
 
-                .distanceMin(40)
-
-                .distanceMax(750)
-        )
-
-        .force(
-            "center",
-
-            d3.forceCenter(
-                centerX,
-                centerY
+                d3.forceLink(links)
+                    .id(d => d.id)
+                    .distance(180)
+                    .strength(0.35)
             )
-        )
 
-        .force(
-            "collision",
+            .force(
+                "charge",
 
-            d3.forceCollide()
-
-                .radius(d => {
-
-                    const visualRadius =
-                        ((d.importance || 5) * 2) + 8;
-
-                    return visualRadius + 18;
-
-                })
-
-                .strength(0.9)
-
-                .iterations(3)
-        )
-
-        .force(
-            "x",
-
-            d3.forceX(centerX)
-                .strength(0.012)
-        )
-
-        .force(
-            "y",
-
-            d3.forceY(centerY)
-                .strength(0.012)
-        )
-
-        .alpha(0.65)
-
-        .alphaDecay(0.018)
-
-        .velocityDecay(0.60);
-
-        // ---------------------------------
-        // NODE REPULSION
-        // ---------------------------------
-
-        .force(
-            "charge",
-
-            d3.forceManyBody()
-
-                // More space between nodes.
-                .strength(-300)
-
-                // Prevent extremely close
-                // nodes from behaving violently.
-                .distanceMin(40)
-
-                // Don't allow distant nodes
-                // to influence each other.
-                .distanceMax(750)
-        )
-
-
-        // ---------------------------------
-        // CENTER
-        // ---------------------------------
-
-        .force(
-            "center",
-
-            d3.forceCenter(
-                centerX,
-                centerY
+                d3.forceManyBody()
+                    .strength(-300)
+                    .distanceMin(40)
+                    .distanceMax(800)
             )
-        )
+
+            .force(
+                "center",
+
+                d3.forceCenter(
+                    centerX,
+                    centerY
+                )
+            )
+
+            .force(
+                "collision",
+
+                d3.forceCollide()
+                    .radius(d => {
+
+                        return (
+                            (d.importance || 5) *
+                            1.7
+                        ) + 24;
+
+                    })
+                    .strength(0.9)
+                    .iterations(3)
+            )
+
+            .force(
+                "x",
+
+                d3.forceX(centerX)
+                    .strength(0.01)
+            )
+
+            .force(
+                "y",
+
+                d3.forceY(centerY)
+                    .strength(0.01)
+            )
+
+            .alpha(0.7)
+            .alphaDecay(0.02)
+            .velocityDecay(0.6);
 
 
-        // ---------------------------------
-        // COLLISION
-        // ---------------------------------
-
-        .force(
-            "collision",
-
-            d3.forceCollide()
-
-                // Physical space around each
-                // circle.
-                .radius(d => {
-
-                    const visualRadius =
-                        ((d.importance || 5) * 2) + 8;
-
-                    return visualRadius + 18;
-
-                })
-
-                .strength(0.9)
-
-                .iterations(3)
-        )
-
-
-        // ---------------------------------
-        // GENTLE CENTERING
-        // ---------------------------------
-
-        .force(
-            "x",
-
-            d3.forceX(centerX)
-
-                // Very gentle.
-                .strength(0.012)
-        )
-
-        .force(
-            "y",
-
-            d3.forceY(centerY)
-
-                .strength(0.012)
-        )
-
-
-        // ---------------------------------
-        // SIMULATION ENERGY
-        // ---------------------------------
-
-        // Start with moderate energy.
-        .alpha(0.65)
-
-        // Let the graph settle slowly.
-        .alphaDecay(0.018)
-
-        // Heavy damping makes movement
-        // smooth rather than twitchy.
-        .velocityDecay(0.60);
-
-
-// =================================
-// LINKS
-// =================================
-
-
-const linkElements =
-
-
-linkLayer
-
-.selectAll("line")
-
-.data(links)
-
-.enter()
-
-.append("line")
-
-.attr(
-
-"stroke",
-
-"#33495c"
-
-)
-
-.attr(
-
-"stroke-width",
-
-d=>{
-
-return 1.5;
+    mapState.simulation =
+        simulation;
 
 }
 
-)
 
-.attr(
-
-"opacity",
-
-0.7
-
-);
-
-
-
-
-
-
-
-// =================================
+// ============================================
 // NODES
-// =================================
+// ============================================
+
+function initializeNodes() {
+
+    const {
+        nodes,
+        links,
+        nodeLayer,
+        linkLayer,
+        simulation
+    } = mapState;
 
 
-
-const nodeElements =
-
-
-nodeLayer
-
-.selectAll("circle")
-
-.data(nodes)
-
-.enter()
-
-.append("circle")
-
-
-
-
-
-.attr(
-
-"r",
-
-d=>{
+    const linkElements =
+        linkLayer
+            .selectAll("line")
+            .data(links)
+            .enter()
+            .append("line")
+            .attr(
+                "stroke",
+                "#33495c"
+            )
+            .attr(
+                "stroke-width",
+                1.5
+            )
+            .attr(
+                "opacity",
+                0.7
+            );
 
 
-return (
+    const nodeElements =
+        nodeLayer
+            .selectAll("circle")
+            .data(nodes)
+            .enter()
+            .append("circle")
+            .attr(
+                "r",
+                d => (
+                    (d.importance || 5) *
+                    1.7
+                ) + 7
+            )
+            .attr(
+                "fill",
+                d =>
+                    layerColors[d.layer] ||
+                    "#888"
+            )
+            .attr(
+                "stroke",
+                "#000"
+            )
+            .attr(
+                "stroke-width",
+                2
+            )
+            .style(
+                "filter",
+                "drop-shadow(0px 0px 8px currentColor)"
+            );
 
-(d.importance || 5)
 
-*2
+    nodeElements
+        .on(
+            "mouseenter",
+            function() {
 
-)+8;
+                d3.select(this)
+                    .attr(
+                        "stroke",
+                        "#ffffff"
+                    )
+                    .attr(
+                        "stroke-width",
+                        4
+                    );
 
+            }
+        )
+        .on(
+            "mouseleave",
+            function() {
+
+                d3.select(this)
+                    .attr(
+                        "stroke",
+                        "#000"
+                    )
+                    .attr(
+                        "stroke-width",
+                        2
+                    );
+
+            }
+        )
+        .on(
+            "click",
+            showDetails
+        );
+
+
+    nodeElements.call(
+
+        d3.drag()
+
+            .on(
+                "start",
+                dragStart
+            )
+
+            .on(
+                "drag",
+                dragMove
+            )
+
+            .on(
+                "end",
+                dragEnd
+            )
+
+    );
+
+
+    mapState.linkElements =
+        linkElements;
+
+    mapState.nodeElements =
+        nodeElements;
+
+
+    simulation.on(
+        "tick",
+        updateGraph
+    );
 
 }
 
-)
 
-
-
-
-
-.attr(
-
-"fill",
-
-d=>{
-
-
-return (
-
-layerColors[d.layer]
-
-||
-
-"#888"
-
-);
-
-
-}
-
-)
-
-
-
-
-
-.attr(
-
-"stroke",
-
-"#000"
-
-)
-
-
-
-.attr(
-
-"stroke-width",
-
-2
-
-
-
-
-
-)
-
-
-
-
-
-// glow effect
-
-.style(
-
-"filter",
-
-"drop-shadow(0px 0px 8px currentColor)"
-
-)
-
-
-
-
-
-.on(
-
-"mouseenter",
-
-function(){
-
-d3.select(this)
-
-.attr(
-
-"stroke",
-
-"#ffffff"
-
-)
-
-.attr(
-
-"stroke-width",
-
-4
-
-);
-
-
-}
-
-)
-
-
-
-
-
-.on(
-
-"mouseleave",
-
-function(){
-
-d3.select(this)
-
-.attr(
-
-"stroke",
-
-"#000"
-
-)
-
-.attr(
-
-"stroke-width",
-
-2
-
-);
-
-
-}
-
-)
-
-
-
-
-
-.on(
-
-"click",
-
-showDetails
-
-)
-
-
-
-
-
-.call(
-
-
-d3.drag()
-
-.on(
-
-"start",
-
-dragStart
-
-)
-
-.on(
-
-"drag",
-
-dragMove
-
-)
-
-.on(
-
-"end",
-
-dragEnd
-
-)
-
-
-
-);
-
-
-
-
-
-
-
-// =================================
+// ============================================
 // LABELS
-// =================================
+// ============================================
+
+function initializeLabels() {
+
+    const {
+        nodes,
+        labelLayer
+    } = mapState;
 
 
-
-const labelElements =
-
-
-labelLayer
-
-.selectAll("text")
-
-.data(nodes)
-
-.enter()
-
-.append("text")
-
-.text(
-
-d=>d.name
-
-)
-
-
-
-.attr(
-
-"fill",
-
-"#d0d7de"
-
-)
-
-
-
-.attr(
-
-"font-size",
-
-d=>{
+    const labelElements =
+        labelLayer
+            .selectAll("text")
+            .data(nodes)
+            .enter()
+            .append("text")
+            .text(
+                d => d.name
+            )
+            .attr(
+                "fill",
+                "#d0d7de"
+            )
+            .attr(
+                "font-size",
+                d =>
+                    (d.importance || 0) >= 9
+                        ? "14px"
+                        : "11px"
+            )
+            .attr(
+                "font-family",
+                "monospace"
+            )
+            .attr(
+                "text-anchor",
+                "middle"
+            )
+            .style(
+                "pointer-events",
+                "none"
+            );
 
 
-if((d.importance||0)>=9)
-
-return "14px";
-
-
-return "11px";
-
+    mapState.labelElements =
+        labelElements;
 
 }
 
-)
 
-
-
-.attr(
-
-"font-family",
-
-"monospace"
-
-)
-
-
-
-.attr(
-
-"text-anchor",
-
-"middle"
-
-)
-
-
-
-.style(
-
-"pointer-events",
-
-"none"
-
-);
-
-
-
-
-
-
-
-// =================================
-// SIMULATION UPDATE LOOP
-// =================================
-
-
-simulation.on(
-
-"tick",
-
-()=>{
-
-
-
-linkElements
-
-
-
-.attr(
-
-"x1",
-
-d=>d.source.x
-
-)
-
-
-
-.attr(
-
-"y1",
-
-d=>d.source.y
-
-)
-
-
-
-.attr(
-
-"x2",
-
-d=>d.target.x
-
-)
-
-
-
-.attr(
-
-"y2",
-
-d=>d.target.y
-
-);
-
-
-
-
-
-
-
-nodeElements
-
-
-
-.attr(
-
-"cx",
-
-d=>d.x
-
-)
-
-
-
-.attr(
-
-"cy",
-
-d=>d.y
-
-);
-
-
-
-
-
-
-labelElements
-
-
-
-.attr(
-
-"x",
-
-d=>d.x
-
-)
-
-
-
-.attr(
-
-"y",
-
-d=>d.y-35
-
-);
-
-
-});
-
-
-
-
-// =================================
-// DRAG FUNCTIONS
-// =================================
+// ============================================
+// GRAPH UPDATE
+// ============================================
+
+function updateGraph() {
+
+    const {
+        linkElements,
+        nodeElements,
+        labelElements
+    } = mapState;
+
+
+    linkElements
+        .attr(
+            "x1",
+            d => d.source.x
+        )
+        .attr(
+            "y1",
+            d => d.source.y
+        )
+        .attr(
+            "x2",
+            d => d.target.x
+        )
+        .attr(
+            "y2",
+            d => d.target.y
+        );
+
+
+    nodeElements
+        .attr(
+            "cx",
+            d => d.x
+        )
+        .attr(
+            "cy",
+            d => d.y
+        );
+
+
+    labelElements
+        .attr(
+            "x",
+            d => d.x
+        )
+        .attr(
+            "y",
+            d => d.y - 35
+        );
+
+}
+
+
+// ============================================
+// DRAG
+// ============================================
 
 function dragStart(event, d) {
+
+    const {
+        simulation
+    } = mapState;
+
 
     if (!event.active) {
 
@@ -1242,6 +974,7 @@ function dragStart(event, d) {
 
     }
 
+
     d.fx = d.x;
     d.fy = d.y;
 
@@ -1250,14 +983,21 @@ function dragStart(event, d) {
 
 function dragMove(event, d) {
 
-    // Smoothly follow the cursor.
-    d.fx = event.x;
-    d.fy = event.y;
+    d.fx =
+        event.x;
+
+    d.fy =
+        event.y;
 
 }
 
 
 function dragEnd(event, d) {
+
+    const {
+        simulation
+    } = mapState;
+
 
     if (!event.active) {
 
@@ -1266,437 +1006,242 @@ function dragEnd(event, d) {
 
     }
 
+
     d.fx = null;
     d.fy = null;
 
 }
 
-// =================================
-// DETAILS PANEL
-// =================================
 
+// ============================================
+// DETAILS
+// ============================================
 
-function showDetails(event,d){
+function showDetails(event, node) {
 
+    const {
+        links
+    } = mapState;
 
-const connected = links
 
-.filter(link=>{
+    const connected =
+        links
 
+            .filter(link => {
 
-return (
+                return (
+                    link.source.id === node.id ||
+                    link.target.id === node.id
+                );
 
-link.source.id === d.id ||
+            })
 
-link.target.id === d.id
+            .map(link => {
 
-);
+                const other =
+                    link.source.id === node.id
+                        ? link.target
+                        : link.source;
 
 
-})
+                return `
+                    <div>
+                        ${other.name}
+                        <small>
+                            ${other.layer || ""}
+                        </small>
+                    </div>
+                `;
 
-.map(link=>{
+            })
 
+            .join("");
 
-let other;
 
+    details.innerHTML = `
 
-if(link.source.id === d.id)
+        <h2>${node.name}</h2>
 
-{
+        <p>
+            <strong>Type:</strong>
+            ${node.type || "Unknown"}
+        </p>
 
-other = link.target;
+        <p>
+            <strong>Layer:</strong>
+            ${node.layer || "Unknown"}
+        </p>
 
-}
+        <p>
+            <strong>Region:</strong>
+            ${node.region || "Global"}
+        </p>
 
-else
+        <p>
+            <strong>Importance:</strong>
+            ${node.importance || "Unknown"}
+        </p>
 
-{
+        <p>
+            <strong>Network Role:</strong>
+            ${node.network_role || ""}
+        </p>
 
-other = link.source;
+        <p>
+            ${node.description || ""}
+        </p>
 
-}
+        <h3>
+            Connected Infrastructure
+        </h3>
 
+        ${
+            connected ||
+            "No known connections"
+        }
 
-
-return `
-
-<div class="connection">
-
-<strong>
-
-${other.name}
-
-</strong>
-
-<br>
-
-<span>
-
-${other.layer}
-
-</span>
-
-</div>
-
-
-`;
-
-
-
-})
-
-.join("");
-
-
-
-
-
-
-details.innerHTML = `
-
-
-<div class="intel-card">
-
-
-<h2>
-
-${d.name}
-
-</h2>
-
-
-
-<div class="tag">
-
-${d.type}
-
-</div>
-
-
-
-<hr>
-
-
-<p>
-
-<b>Layer</b>
-
-<br>
-
-${d.layer}
-
-</p>
-
-
-
-<p>
-
-<b>Region</b>
-
-<br>
-
-${d.region || "Global"}
-
-</p>
-
-
-
-<p>
-
-<b>Importance Score</b>
-
-<br>
-
-${d.importance || "Unknown"}
-
-</p>
-
-
-
-
-<p>
-
-<b>Network Role</b>
-
-<br>
-
-${d.network_role || ""}
-
-</p>
-
-
-
-
-
-<p>
-
-${d.description || ""}
-
-</p>
-
-
-
-
-
-<h3>
-
-Connected Infrastructure
-
-</h3>
-
-
-<div>
-
-${
-
-connected ||
-
-"No known connections"
-
-}
-
-</div>
-
-
-</div>
-
-
-`;
-
+    `;
 
 }
 
 
-// =================================
-// SEARCH SYSTEM
-// =================================
+// ============================================
+// SEARCH
+// ============================================
+
+function initializeSearch() {
+
+    if (!searchBox) {
+        return;
+    }
 
 
-const searchBox =
-document.querySelector("#search");
+    searchBox.addEventListener(
+        "input",
+        () => {
+
+            const value =
+                searchBox.value
+                    .toLowerCase()
+                    .trim();
 
 
-
-if(searchBox){
-
-
-searchBox.addEventListener(
-
-"input",
-
-()=>{
+            const {
+                nodeElements,
+                labelElements
+            } = mapState;
 
 
-const value =
-
-searchBox.value
-
-.toLowerCase();
-
-
-
-
-nodeElements
-
-.attr(
-
-"opacity",
-
-d=>{
+            nodeElements.attr(
+                "opacity",
+                d =>
+                    d.name
+                        .toLowerCase()
+                        .includes(value)
+                        ? 1
+                        : 0.15
+            );
 
 
-if(
+            labelElements.attr(
+                "opacity",
+                d =>
+                    d.name
+                        .toLowerCase()
+                        .includes(value)
+                        ? 1
+                        : 0.15
+            );
 
-d.name
-
-.toLowerCase()
-
-.includes(value)
-
-)
-
-return 1;
-
-
-
-return 0.15;
-
-
-
-}
-
-);
-
-
-
-labelElements
-
-.attr(
-
-"opacity",
-
-d=>{
-
-
-if(
-
-d.name
-
-.toLowerCase()
-
-.includes(value)
-
-)
-
-return 1;
-
-
-return 0.15;
-
-
-
-}
-
-);
-
-
+        }
+    );
 
 }
 
 
+// ============================================
+// LAYER FILTER
+// ============================================
 
-);
+function filterLayer(layer) {
 
-
-
-}
-
-
-
-
-
-
-
+    const {
+        nodeElements,
+        labelElements,
+        linkElements
+    } = mapState;
 
 
+    nodeElements.attr(
+        "opacity",
+        d => {
 
-// =================================
-// LAYER FILTERS
-// =================================
+            if (layer === "all") {
+                return 1;
+            }
 
+            return d.layer === layer
+                ? 1
+                : 0.1;
 
-window.filterLayer=function(layer){
-
-
-
-nodeElements.attr(
-
-"opacity",
-
-d=>{
-
-
-if(layer==="all")
-
-return 1;
+        }
+    );
 
 
+    labelElements.attr(
+        "opacity",
+        d => {
 
-return d.layer===layer
+            if (layer === "all") {
+                return 1;
+            }
 
-?1
+            return d.layer === layer
+                ? 1
+                : 0.1;
 
-:0.1;
-
-
-
-}
-
-);
-
-
-
-
-labelElements.attr(
-
-"opacity",
-
-d=>{
+        }
+    );
 
 
-if(layer==="all")
+    linkElements.attr(
+        "opacity",
+        d => {
 
-return 1;
+            if (layer === "all") {
+                return 0.7;
+            }
 
+            return (
+                d.source.layer === layer ||
+                d.target.layer === layer
+            )
+                ? 0.8
+                : 0.05;
 
-
-return d.layer===layer
-
-?1
-
-:0.1;
-
-
+        }
+    );
 
 }
 
-);
+
+// Keep compatibility with
+// existing HTML onclick handlers.
+window.filterLayer =
+    filterLayer;
 
 
+// ============================================
+// RESET VIEW
+// ============================================
 
+function resetView() {
 
-linkElements.attr(
+    const {
+        svg,
+        zoom
+    } = mapState;
 
-"opacity",
-
-d=>{
-
-
-if(layer==="all")
-
-return .7;
-
-
-
-if(
-
-d.source.layer===layer ||
-
-d.target.layer===layer
-
-)
-
-return .8;
-
-
-
-return .05;
-
-
-
-}
-
-);
-
-
-
-}
-
-
-
-
-
-
-
-
-
-// =================================
-// RESET CAMERA
-// =================================
-
-
-window.resetView = function() {
 
     svg
         .transition()
@@ -1706,199 +1251,98 @@ window.resetView = function() {
             d3.zoomIdentity
         );
 
-};
+}
 
 
+window.resetView =
+    resetView;
 
 
-// =================================
-// DATABASE STATISTICS
-// =================================
+// ============================================
+// STATISTICS
+// ============================================
 
+function initializeStatistics() {
 
-const stats = {
+    if (!statsBox) {
+        return;
+    }
 
 
-nodes:nodes.length,
+    const {
+        nodes
+    } = mapState;
 
 
-links:links.length,
+    const stats = {
 
+        nodes:
+            nodes.length,
 
-regions:
+        links:
+            mapState.links.length,
 
-new Set(
+        regions:
+            new Set(
+                nodes.map(
+                    d => d.region
+                )
+            ).size,
 
-nodes.map(
+        critical:
+            nodes.filter(
+                d =>
+                    (d.importance || 0) >= 9
+            ).length
 
-d=>d.region
+    };
 
-)
 
-)
+    statsBox.innerHTML = `
 
-.size,
+        NODES:
+        ${stats.nodes}
 
+        <br>
 
+        CONNECTIONS:
+        ${stats.links}
 
-critical:
+        <br>
 
-nodes.filter(
+        REGIONS:
+        ${stats.regions}
 
-d=>
+        <br>
 
-(d.importance||0)>=9
+        CRITICAL NODES:
+        ${stats.critical}
 
-)
+    `;
 
-.length
 
-
-
-};
-
-
-
-
-console.log(
-
-"Network Statistics",
-
-stats
-
-);
-
-
-
-
-
-
-
-const statsBox =
-
-document.querySelector("#stats");
-
-
-
-if(statsBox){
-
-
-statsBox.innerHTML=`
-
-<div>
-
-NODES:
-
-${stats.nodes}
-
-</div>
-
-
-<div>
-
-CONNECTIONS:
-
-${stats.links}
-
-</div>
-
-
-<div>
-
-REGIONS:
-
-${stats.regions}
-
-</div>
-
-
-<div>
-
-CRITICAL NODES:
-
-${stats.critical}
-
-</div>
-
-`;
-
+    console.log(
+        "Network Statistics",
+        stats
+    );
 
 }
 
 
+// ============================================
+// INTERACTIONS
+// ============================================
 
+function initializeInteractions() {
 
-
-// =================================
-// INITIAL CAMERA POSITION
-// =================================
-
-
-
-svg.call(
-    zoom.transform,
-    d3.zoomIdentity
-        .translate(0, 0)
-        .scale(0.7)
-);
-
-
-
-console.log(
-
-"Internet Infrastructure Map Ready"
-
-);
-
-})
-
-
-
-.catch(error=>{
-
-
-console.error(
-
-"MAP FAILURE:",
-
-error
-
-);
-
-
-
-const details =
-document.querySelector("#details");
-
-
-
-if(details){
-
-
-details.innerHTML=`
-
-<div class="intel-card">
-
-<h2>
-
-SYSTEM FAILURE
-
-</h2>
-
-
-<p>
-
-${error.message}
-
-</p>
-
-
-</div>
-
-`;
+    initializeSearch();
 
 }
 
 
+// ============================================
+// START
+// ============================================
 
-});
+initializeMap();
+```
