@@ -1224,17 +1224,14 @@ d=>d.y-35
 // DRAG FUNCTIONS
 // =================================
 
-
-// =================================
-// DRAG FUNCTIONS
-// =================================
-
 function dragStart(event, d) {
 
     if (!event.active) {
+
         simulation
-            .alphaTarget(0.15)
+            .alphaTarget(0.08)
             .restart();
+
     }
 
     d.fx = d.x;
@@ -1245,6 +1242,7 @@ function dragStart(event, d) {
 
 function dragMove(event, d) {
 
+    // Smoothly follow the cursor.
     d.fx = event.x;
     d.fy = event.y;
 
@@ -1254,8 +1252,10 @@ function dragMove(event, d) {
 function dragEnd(event, d) {
 
     if (!event.active) {
+
         simulation
             .alphaTarget(0);
+
     }
 
     d.fx = null;
