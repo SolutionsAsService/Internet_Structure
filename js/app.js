@@ -31,6 +31,11 @@ import {
     createDragBehavior
 } from "./physics.js";
 
+import {
+    COLORS,
+    colorForType
+} from "./colors.js";
+
 
 console.log("Internet Infrastructure Map Starting");
 
@@ -575,6 +580,7 @@ function renderLinks() {
 // NODES
 // ============================================================
 
+```js
 function renderNodes() {
 
     mapState.nodeElements =
@@ -602,31 +608,97 @@ function renderNodes() {
                 getNodeRadius
             )
 
-            /*
-             * Neutral fallback color.
-             *
-             * colors.js can replace this later.
-             */
+            // ------------------------------------
+            // SEMANTIC NODE COLOR
+            // ------------------------------------
 
             .attr(
                 "fill",
-                "#64748b"
+                d =>
+                    colorForType(
+                        d.type ||
+                        d.layer ||
+                        "physical"
+                    )
             )
 
             .attr(
                 "stroke",
-                "#000000"
+                COLORS.effects.selection
             )
 
             .attr(
                 "stroke-width",
-                2
+                1.5
             )
 
             .style(
                 "cursor",
                 "pointer"
             );
+
+
+    // ----------------------------------------
+    // HOVER
+    // ----------------------------------------
+
+    mapState.nodeElements
+
+        .on(
+            "mouseenter",
+            function (event, node) {
+
+                d3.select(this)
+
+                    .attr(
+                        "stroke",
+                        COLORS.state.selected
+                    )
+
+                    .attr(
+                        "stroke-width",
+                        3
+                    );
+
+            }
+        )
+
+
+        .on(
+            "mouseleave",
+            function (event, node) {
+
+                d3.select(this)
+
+                    .attr(
+                        "stroke",
+                        COLORS.effects.selection
+                    )
+
+                    .attr(
+                        "stroke-width",
+                        1.5
+                    );
+
+            }
+        )
+
+
+        .on(
+            "click",
+            function (event, node) {
+
+                showDetails(
+                    event,
+                    node
+                );
+
+            }
+        );
+
+}
+
+
 
 
     // --------------------------------------------------------
