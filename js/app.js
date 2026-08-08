@@ -26,6 +26,12 @@ Physics is handled by:
 ============================================================
 */
 
+import {
+    createPhysics,
+    createDragBehavior
+} from "./physics.js";
+
+
 console.log("Internet Infrastructure Map Starting");
 
 
@@ -824,76 +830,100 @@ function setupZoom() {
 
 function initializePhysics() {
 
-    /*
-     * physics.js should expose:
+    try {
 
-         window.createPhysicsSimulation({
-             nodes,
-             links,
-             width,
-             height,
-             onTick
-         });
-
-     *
-     * If physics.js is not loaded yet,
-     * the map still renders instead of crashing.
-     */
-
-    if (
-        typeof window.createPhysicsSimulation !==
-        "function"
-    ) {
-
-        console.warn(
-            "physics.js was not loaded. Graph rendered without simulation."
+        console.log(
+            "Initializing physics engine..."
         );
 
-        return;
+
+        // ----------------------------------------
+        // CREATE SIMULATION
+        // ----------------------------------------
+
+        const physics =
+            createPhysics({
+
+                nodes:
+                    mapState.nodes,
+
+                links:
+                    mapState.links,
+
+                width:
+                    mapState.width,
+
+                height:
+                    mapState.height
+
+            });
+
+
+        // Store simulation globally in map state.
+
+        mapState.simulation =
+            physics.simulation;
+
+
+        // ----------------------------------------
+        // UPDATE GRAPH EVERY TICK
+        // ----------------------------------------
+
+        mapState.simulation.on(
+            "tick",
+            updateGraphPositions
+        );
+
+
+        // ----------------------------------------
+        // DRAG BEHAVIOR
+        // ----------------------------------------
+
+        const dragBehavior =
+            createDragBehavior(
+                mapState.simulation
+            );
+
+
+        mapState.nodeElements.call(
+            dragBehavior
+        );
+
+
+        // ----------------------------------------
+        // FIRST POSITION UPDATE
+        // ----------------------------------------
+
+        updateGraphPositions();
+
+
+        console.log(
+            "Physics engine initialized:",
+            mapState.nodes.length,
+            "nodes /",
+            mapState.links.length,
+            "links"
+        );
 
     }
 
+    catch (error) {
 
-    mapState.simulation =
+        console.error(
+            "Physics initialization failed:",
+            error
+        );
 
-        window.createPhysicsSimulation({
-
-            nodes:
-                mapState.nodes,
-
-            links:
-                mapState.links,
-
-            width:
-                mapState.width,
-
-            height:
-                mapState.height,
-
-            onTick:
-                updateGraphPositions
-
-        });
-
-
-    /*
-     * Connect dragging to physics.
-     */
-
-    if (
-        typeof window.attachPhysicsDrag ===
-        "function"
-    ) {
-
-        window.attachPhysicsDrag(
-            mapState.nodeElements,
-            mapState.simulation
+        console.warn(
+            "Graph rendered without simulation."
         );
 
     }
 
 }
 
+
+   
 
 // ============================================================
 // UPDATE GRAPH POSITIONS
