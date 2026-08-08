@@ -7305,6 +7305,590 @@
 ]
 },
 
+
+{
+"id":"quanta_services",
+"name":"Quanta Services",
+"type":"Infrastructure Contractor",
+"layer":"fiber_construction",
+"region":"North America",
+
+"classification":[
+"Fiber Construction",
+"Telecommunications Infrastructure",
+"Utility Infrastructure",
+"Data Center Construction"
+],
+
+"network_role":
+"Builds and maintains physical infrastructure used by telecommunications, utilities, and large computing facilities.",
+
+"importance":8,
+
+"description":
+"Major infrastructure contractor involved in deploying and maintaining fiber, communications, power, and data-center infrastructure.",
+
+"connections":[
+"fiber",
+"datacenter",
+"power",
+"isp"
+]
+},
+
+{
+"id":"dycom",
+"name":"Dycom Industries",
+"type":"Telecommunications Contractor",
+"layer":"fiber_construction",
+"region":"North America",
+
+"classification":[
+"Fiber Construction",
+"Telecommunications Construction",
+"Network Deployment"
+],
+
+"network_role":
+"Builds and maintains broadband, fiber, wireless, and telecommunications infrastructure for network operators.",
+
+"importance":8,
+
+"description":
+"Major communications infrastructure contractor supporting deployment of broadband and fiber networks.",
+
+"connections":[
+"fiber",
+"isp",
+"cell_tower",
+"mobile"
+]
+},
+
+{
+"id":"mastec",
+"name":"MasTec",
+"type":"Infrastructure Contractor",
+"layer":"fiber_construction",
+"region":"North America",
+
+"classification":[
+"Fiber Construction",
+"Wireless Infrastructure",
+"Energy Infrastructure",
+"Telecommunications"
+],
+
+"network_role":
+"Constructs telecommunications, wireless, fiber, and energy infrastructure used by network operators.",
+
+"importance":8,
+
+"description":
+"Large infrastructure contractor involved in physical deployment of communications and utility networks.",
+
+"connections":[
+"fiber",
+"cell_tower",
+"mobile",
+"power"
+]
+},
+
+{
+"id":"cellnex",
+"name":"Cellnex Telecom",
+"type":"Tower Infrastructure",
+"layer":"tower_infrastructure",
+"region":"Europe",
+
+"classification":[
+"Cell Towers",
+"Wireless Infrastructure",
+"Small Cells",
+"Tower Leasing"
+],
+
+"network_role":
+"Owns and operates communications towers and wireless infrastructure used by mobile and broadcast operators.",
+
+"importance":9,
+
+"description":
+"One of Europe's largest independent telecommunications infrastructure operators.",
+
+"connections":[
+"ericsson",
+"nokia_networks",
+"mobile"
+]
+},
+
+{
+"id":"sectigo",
+"name":"Sectigo",
+"type":"Certificate Authority",
+"layer":"certificate_authority",
+"region":"Global",
+
+"classification":[
+"TLS Certificates",
+"PKI",
+"Certificate Authority"
+],
+
+"network_role":
+"Provides publicly trusted certificates and PKI services used to authenticate Internet services.",
+
+"importance":8,
+
+"description":
+"Major commercial certificate authority serving websites, enterprises, and Internet services.",
+
+"connections":[
+"pki",
+"certificate_transparency"
+]
+},
+
+{
+"id":"globalsign",
+"name":"GlobalSign",
+"type":"Certificate Authority",
+"layer":"certificate_authority",
+"region":"Global",
+
+"classification":[
+"TLS Certificates",
+"PKI",
+"Certificate Authority",
+"Identity"
+],
+
+"network_role":
+"Provides digital certificates and identity infrastructure supporting encrypted Internet communications.",
+
+"importance":8,
+
+"description":
+"Global certificate authority serving websites, enterprises, devices, and connected infrastructure.",
+
+"connections":[
+"pki",
+"certificate_transparency"
+]
+},
+
+{
+"id":"megaport",
+"name":"Megaport",
+"type":"Network Interconnection Provider",
+"layer":"cloud_interconnect",
+"region":"Global",
+
+"classification":[
+"Cloud Interconnect",
+"Data Center Interconnection",
+"Software Defined Networking",
+"IXP Connectivity"
+],
+
+"network_role":
+"Provides programmable private connectivity between data centers, cloud providers, carriers, and enterprises.",
+
+"importance":9,
+
+"description":
+"Major global network-as-a-service provider connecting enterprises and cloud infrastructure through data-center interconnection.",
+
+"connections":[
+"equinix",
+"aws",
+"microsoft_azure",
+"google_cloud"
+]
+},
+
+{
+"id":"packetfabric",
+"name":"PacketFabric",
+"type":"Network Interconnection Provider",
+"layer":"cloud_interconnect",
+"region":"Global",
+
+"classification":[
+"Cloud Connectivity",
+"Network Interconnection",
+"Data Center Connectivity"
+],
+
+"network_role":
+"Provides on-demand private network connectivity between cloud providers, data centers, carriers, and enterprises.",
+
+"importance":7,
+
+"description":
+"Network interconnection platform connecting distributed enterprise and cloud infrastructure.",
+
+"connections":[
+"equinix",
+"aws",
+"google_cloud",
+"microsoft_azure"
+]
+},
+
+{
+"id":"console_connect",
+"name":"Console Connect",
+"type":"Network Interconnection Provider",
+"layer":"cloud_interconnect",
+"region":"Global",
+
+"classification":[
+"Cloud Connectivity",
+"Data Center Interconnection",
+"Carrier Connectivity",
+"Network-as-a-Service"
+],
+
+"network_role":
+"Provides private network connections between cloud platforms, data centers, carriers, and enterprises.",
+
+"importance":8,
+
+"description":
+"Global interconnection platform operated through PCCW Global's network ecosystem.",
+
+"connections":[
+"pccw_global",
+"equinix",
+"aws",
+"microsoft_azure"
+]
+},
+
+{
+"id":"pccw_global",
+"name":"PCCW Global",
+"type":"Global Carrier",
+"layer":"transit",
+"region":"Global",
+
+"classification":[
+"IP Transit",
+"Global Backbone",
+"Enterprise Networking",
+"Cloud Connectivity"
+],
+
+"network_role":
+"Operates international telecommunications and IP infrastructure connecting carriers, enterprises, and cloud networks.",
+
+"importance":8,
+
+"description":
+"Global carrier and communications provider with extensive international network infrastructure.",
+
+"connections":[
+"console_connect",
+"equinix",
+"de-cix"
+]
+},
+
+{
+"id":"eunetworks",
+"name":"euNetworks",
+"type":"Fiber Network",
+"layer":"metro",
+"region":"Europe",
+
+"classification":[
+"Metro Fiber",
+"Long Haul Fiber",
+"Data Center Connectivity",
+"Cloud Connectivity"
+],
+
+"network_role":
+"Operates high-capacity fiber networks connecting European data centers, businesses, carriers, and Internet exchanges.",
+
+"importance":7,
+
+"description":
+"Specialized European fiber infrastructure provider focused on high-capacity metro and long-haul connectivity.",
+
+"connections":[
+"equinix",
+"de-cix",
+"colt_technology_services"
+]
+},
+
+{
+"id":"uniti",
+"name":"Uniti",
+"type":"Fiber Infrastructure",
+"layer":"fiber",
+"region":"North America",
+
+"classification":[
+"Fiber Infrastructure",
+"Dark Fiber",
+"Enterprise Connectivity",
+"Wholesale Fiber"
+],
+
+"network_role":
+"Owns and operates fiber infrastructure leased by telecommunications carriers, enterprises, and other network operators.",
+
+"importance":7,
+
+"description":
+"Wholesale fiber infrastructure provider supporting carrier and enterprise connectivity.",
+
+"connections":[
+"fiber",
+"isp",
+"carrier"
+]
+},
+
+{
+"id":"windstream",
+"name":"Windstream",
+"type":"Telecommunications Provider",
+"layer":"isp",
+"region":"North America",
+
+"classification":[
+"Fiber",
+"Enterprise Networking",
+"Broadband",
+"Wholesale Connectivity"
+],
+
+"network_role":
+"Provides broadband, fiber, and enterprise telecommunications services across regional markets.",
+
+"importance":7,
+
+"description":
+"Regional telecommunications operator with substantial fiber and enterprise network infrastructure.",
+
+"connections":[
+"fiber",
+"isp",
+"carrier"
+]
+},
+
+{
+"id":"lumen_technology_fiber",
+"name":"Lumen Fiber",
+"type":"Fiber Backbone",
+"layer":"longhaul",
+"region":"North America",
+
+"classification":[
+"Long Haul Fiber",
+"Metro Fiber",
+"Enterprise Networking",
+"Internet Backbone"
+],
+
+"network_role":
+"Provides long-haul and metropolitan fiber infrastructure underlying carrier, enterprise, and Internet connectivity.",
+
+"importance":9,
+
+"description":
+"Large-scale fiber infrastructure forming an important physical foundation for North American communications networks.",
+
+"connections":[
+"lumen",
+"zayo",
+"equinix",
+"fiber"
+]
+},
+
+{
+"id":"nokia_bell_labs",
+"name":"Nokia Bell Labs",
+"type":"Telecommunications Research",
+"layer":"research_network",
+"region":"Global",
+
+"classification":[
+"Telecommunications Research",
+"Network Research",
+"Optical Networking",
+"Wireless Research"
+],
+
+"network_role":
+"Conducts foundational research in networking, telecommunications, wireless, optical systems, and computing.",
+
+"importance":7,
+
+"description":
+"Research organization responsible for major historical and continuing advances in telecommunications technology.",
+
+"connections":[
+"nokia_networks",
+"optical",
+"radio_access"
+]
+},
+
+{
+"id":"lam_research",
+"name":"Lam Research",
+"type":"Semiconductor Equipment",
+"layer":"semiconductor_equipment",
+"region":"Global",
+
+"classification":[
+"Semiconductor Equipment",
+"Etch",
+"Deposition",
+"Wafer Processing"
+],
+
+"network_role":
+"Provides critical wafer fabrication equipment used during semiconductor manufacturing.",
+
+"importance":10,
+
+"description":
+"Major supplier of semiconductor fabrication equipment supporting advanced chip manufacturing.",
+
+"connections":[
+"tsmc",
+"intel",
+"semiconductor_fab"
+]
+},
+
+{
+"id":"kla",
+"name":"KLA",
+"type":"Semiconductor Equipment",
+"layer":"semiconductor_equipment",
+"region":"Global",
+
+"classification":[
+"Semiconductor Inspection",
+"Metrology",
+"Process Control",
+"Chip Manufacturing"
+],
+
+"network_role":
+"Provides inspection and metrology systems used to detect defects and control semiconductor manufacturing processes.",
+
+"importance":9,
+
+"description":
+"Critical semiconductor manufacturing equipment company supporting process control and yield improvement.",
+
+"connections":[
+"tsmc",
+"intel",
+"semiconductor_fab"
+]
+},
+
+{
+"id":"tokyo_electron",
+"name":"Tokyo Electron",
+"type":"Semiconductor Equipment",
+"layer":"semiconductor_equipment",
+"region":"Asia",
+
+"classification":[
+"Semiconductor Equipment",
+"Wafer Processing",
+"Chip Manufacturing"
+],
+
+"network_role":
+"Supplies semiconductor manufacturing equipment used throughout advanced wafer fabrication processes.",
+
+"importance":10,
+
+"description":
+"One of the world's largest semiconductor manufacturing equipment companies.",
+
+"connections":[
+"tsmc",
+"intel",
+"semiconductor_fab"
+]
+},
+
+{
+"id":"synopsys",
+"name":"Synopsys",
+"type":"Semiconductor Design Software",
+"layer":"semiconductor_design",
+"region":"Global",
+
+"classification":[
+"Electronic Design Automation",
+"Chip Design",
+"Verification",
+"IP"
+],
+
+"network_role":
+"Provides software and intellectual property used to design and verify modern semiconductor devices.",
+
+"importance":10,
+
+"description":
+"Major electronic design automation provider whose tools are used throughout the semiconductor design process.",
+
+"connections":[
+"nvidia",
+"amd",
+"intel",
+"semiconductor_design"
+]
+},
+
+{
+"id":"cadence",
+"name":"Cadence Design Systems",
+"type":"Semiconductor Design Software",
+"layer":"semiconductor_design",
+"region":"Global",
+
+"classification":[
+"Electronic Design Automation",
+"Chip Design",
+"Verification",
+"Semiconductor IP"
+],
+
+"network_role":
+"Provides electronic design automation software used to design, simulate, verify, and implement semiconductor devices.",
+
+"importance":10,
+
+"description":
+"Core semiconductor design infrastructure provider supporting advanced processor and system-on-chip development.",
+
+"connections":[
+"nvidia",
+"amd",
+"intel",
+"semiconductor_design"
+]
+},
+
 {
 "id":"vertiv",
 "name":"Vertiv",
