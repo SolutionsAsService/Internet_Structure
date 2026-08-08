@@ -477,6 +477,36 @@ async function initializeMap() {
 }
 
 
+// =================================
+// PHYSICS ENGINE
+// =================================
+
+const {
+    simulation,
+    centerX,
+    centerY
+} = createPhysics({
+
+    nodes,
+
+    links,
+
+    width,
+
+    height
+
+});
+
+
+// =================================
+// DRAG BEHAVIOR
+// =================================
+
+const dragBehavior =
+    createDragBehavior(simulation);
+
+
+
 // ============================================
 // SVG
 // ============================================
