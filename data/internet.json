@@ -6848,6 +6848,838 @@
       "dns"
     ]
   },
+
+
+  {
+"id":"arin",
+"name":"ARIN",
+"type":"Regional Internet Registry",
+"layer":"rir",
+"region":"North America",
+
+"classification":[
+"IP Address Registry",
+"ASN Registry",
+"Internet Number Resources"
+],
+
+"network_role":
+"Allocates and administers Internet number resources across North America and parts of the Caribbean.",
+
+"importance":9,
+
+"description":
+"Regional Internet Registry responsible for IP address and Autonomous System Number resources in its service region.",
+
+"connections":[
+"rir_database",
+"routing",
+"network_operator"
+]
+},
+
+{
+"id":"ripe_ncc",
+"name":"RIPE NCC",
+"type":"Regional Internet Registry",
+"layer":"rir",
+"region":"Europe",
+
+"classification":[
+"IP Address Registry",
+"ASN Registry",
+"Internet Number Resources"
+],
+
+"network_role":
+"Coordinates Internet number resources and network registration across Europe, the Middle East, and parts of Central Asia.",
+
+"importance":10,
+
+"description":
+"One of the world's major Regional Internet Registries and a major source of Internet routing and network measurement data.",
+
+"connections":[
+"rir_database",
+"routing",
+"network_operator"
+]
+},
+
+{
+"id":"apnic",
+"name":"APNIC",
+"type":"Regional Internet Registry",
+"layer":"rir",
+"region":"Asia-Pacific",
+
+"classification":[
+"IP Address Registry",
+"ASN Registry",
+"Internet Number Resources"
+],
+
+"network_role":
+"Administers IP address and Autonomous System Number resources across the Asia-Pacific region.",
+
+"importance":9,
+
+"description":
+"Regional Internet Registry supporting the rapidly expanding Asia-Pacific Internet ecosystem.",
+
+"connections":[
+"rir_database",
+"routing",
+"network_operator"
+]
+},
+
+{
+"id":"lacnic",
+"name":"LACNIC",
+"type":"Regional Internet Registry",
+"layer":"rir",
+"region":"Latin America",
+
+"classification":[
+"IP Address Registry",
+"ASN Registry",
+"Internet Number Resources"
+],
+
+"network_role":
+"Coordinates Internet number resources throughout Latin America and the Caribbean.",
+
+"importance":8,
+
+"description":
+"Regional Internet Registry supporting network operators and Internet infrastructure across Latin America and the Caribbean.",
+
+"connections":[
+"rir_database",
+"routing",
+"network_operator"
+]
+},
+
+{
+"id":"afrinic",
+"name":"AFRINIC",
+"type":"Regional Internet Registry",
+"layer":"rir",
+"region":"Africa",
+
+"classification":[
+"IP Address Registry",
+"ASN Registry",
+"Internet Number Resources"
+],
+
+"network_role":
+"Administers Internet number resources for the African Internet community.",
+
+"importance":8,
+
+"description":
+"Regional Internet Registry responsible for IP address and ASN allocation across Africa.",
+
+"connections":[
+"rir_database",
+"routing",
+"network_operator"
+]
+},
+
+{
+"id":"iana",
+"name":"IANA",
+"type":"Internet Coordination Organization",
+"layer":"internet_coordination",
+"region":"Global",
+
+"classification":[
+"IP Address Coordination",
+"DNS Root Coordination",
+"Protocol Registries"
+],
+
+"network_role":
+"Coordinates globally unique Internet identifiers including IP addressing, DNS root zone parameters, and protocol registries.",
+
+"importance":10,
+
+"description":
+"Core coordination function underlying the global Internet's naming, numbering, and protocol systems.",
+
+"connections":[
+"arin",
+"ripe_ncc",
+"apnic",
+"lacnic",
+"afrinic",
+"dns_root"
+]
+},
+
+{
+"id":"root_server_system",
+"name":"DNS Root Server System",
+"type":"DNS Infrastructure",
+"layer":"dns_root",
+"region":"Global",
+
+"classification":[
+"Root DNS",
+"Anycast",
+"Global Naming Infrastructure"
+],
+
+"network_role":
+"Provides the distributed root DNS infrastructure from which the global Domain Name System begins resolution.",
+
+"importance":10,
+
+"description":
+"Globally distributed system of root DNS services operated through numerous geographically dispersed instances.",
+
+"connections":[
+"iana",
+"dns",
+"anycast"
+]
+},
+
+{
+"id":"routeviews",
+"name":"RouteViews",
+"type":"Internet Measurement Platform",
+"layer":"routing_measurement",
+"region":"Global",
+
+"classification":[
+"BGP Monitoring",
+"Routing Data",
+"Internet Measurement"
+],
+
+"network_role":
+"Collects BGP routing information from networks around the world to provide visibility into Internet routing.",
+
+"importance":8,
+
+"description":
+"Long-running Internet routing measurement project providing publicly accessible BGP data.",
+
+"connections":[
+"routing",
+"routing_security",
+"topology"
+]
+},
+
+{
+"id":"ris",
+"name":"RIPE Routing Information Service",
+"type":"Internet Measurement Platform",
+"layer":"routing_measurement",
+"region":"Global",
+
+"classification":[
+"BGP Monitoring",
+"Routing Data",
+"Internet Measurement"
+],
+
+"network_role":
+"Collects and publishes routing information from distributed network measurement infrastructure.",
+
+"importance":9,
+
+"description":
+"Major source of historical and real-time BGP routing visibility used for Internet research and network analysis.",
+
+"connections":[
+"ripe_ncc",
+"routing",
+"topology"
+]
+},
+
+{
+"id":"caida",
+"name":"CAIDA",
+"type":"Internet Research Organization",
+"layer":"measurement",
+"region":"Global",
+
+"classification":[
+"Internet Measurement",
+"Network Topology",
+"Internet Research"
+],
+
+"network_role":
+"Researches and measures Internet topology, traffic, routing, performance, and infrastructure.",
+
+"importance":9,
+
+"description":
+"Major Internet measurement research organization providing datasets and analysis of global Internet infrastructure.",
+
+"connections":[
+"routeviews",
+"ris",
+"topology",
+"traffic_measurement"
+]
+},
+
+{
+"id":"manrs",
+"name":"MANRS",
+"type":"Internet Security Initiative",
+"layer":"routing_security",
+"region":"Global",
+
+"classification":[
+"Routing Security",
+"BGP Security",
+"Network Operations"
+],
+
+"network_role":
+"Promotes operational practices designed to reduce routing incidents and improve global Internet routing security.",
+
+"importance":7,
+
+"description":
+"Global initiative focused on improving routing security and operational practices among network operators.",
+
+"connections":[
+"routing",
+"routing_security",
+"network_operator"
+]
+},
+
+{
+"id":"rpki",
+"name":"RPKI",
+"type":"Routing Security Infrastructure",
+"layer":"routing_security",
+"region":"Global",
+
+"classification":[
+"Resource Public Key Infrastructure",
+"BGP Security",
+"Route Origin Validation"
+],
+
+"network_role":
+"Provides cryptographic authorization data allowing networks to validate whether an autonomous system is authorized to originate an IP prefix.",
+
+"importance":10,
+
+"description":
+"Critical security infrastructure used to protect BGP route announcements from accidental or malicious origin hijacking.",
+
+"connections":[
+"arin",
+"ripe_ncc",
+"apnic",
+"routing"
+]
+},
+
+{
+"id":"nro",
+"name":"Number Resource Organization",
+"type":"Internet Coordination Organization",
+"layer":"internet_coordination",
+"region":"Global",
+
+"classification":[
+"Internet Number Resources",
+"RIR Coordination",
+"Internet Governance"
+],
+
+"network_role":
+"Coordinates activities and policy issues across the world's Regional Internet Registries.",
+
+"importance":8,
+
+"description":
+"Coordination body representing the five Regional Internet Registries.",
+
+"connections":[
+"arin",
+"ripe_ncc",
+"apnic",
+"lacnic",
+"afrinic"
+]
+},
+
+{
+"id":"isc",
+"name":"Internet Systems Consortium",
+"type":"Internet Infrastructure Organization",
+"layer":"dns_software",
+"region":"Global",
+
+"classification":[
+"DNS",
+"BIND",
+"Internet Infrastructure Software"
+],
+
+"network_role":
+"Develops and operates widely used Internet infrastructure software and DNS services.",
+
+"importance":8,
+
+"description":
+"Major contributor to DNS infrastructure through BIND and operation of Internet services.",
+
+"connections":[
+"dns",
+"dns_recursive",
+"dns_root"
+]
+},
+
+{
+"id":"nlnetlabs",
+"name":"NLnet Labs",
+"type":"Internet Infrastructure Software",
+"layer":"dns_software",
+"region":"Europe",
+
+"classification":[
+"DNS",
+"DNSSEC",
+"RPKI"
+],
+
+"network_role":
+"Develops open-source DNS and Internet security software used by network operators and infrastructure providers.",
+
+"importance":7,
+
+"description":
+"Important open-source infrastructure organization behind software used throughout DNS and routing-security ecosystems.",
+
+"connections":[
+"dns",
+"rpki",
+"routing_security"
+]
+},
+
+{
+"id":"powerone",
+"name":"PowerOne",
+"type":"Data Center Power Infrastructure",
+"layer":"backup_power",
+"region":"Global",
+
+"classification":[
+"UPS",
+"Power Electronics",
+"Data Center Infrastructure"
+],
+
+"network_role":
+"Provides power conversion and protection systems used to maintain reliable operation of critical computing facilities.",
+
+"importance":7,
+
+"description":
+"Power infrastructure supplier supporting high-availability data centers and communications facilities.",
+
+"connections":[
+"datacenter",
+"ups",
+"backup_power"
+]
+},
+
+{
+"id":"vertiv",
+"name":"Vertiv",
+"type":"Data Center Infrastructure",
+"layer":"backup_power",
+"region":"Global",
+
+"classification":[
+"UPS",
+"Cooling",
+"Power Management",
+"Data Center Infrastructure"
+],
+
+"network_role":
+"Provides power, cooling, monitoring, and infrastructure systems supporting data centers and telecommunications facilities.",
+
+"importance":9,
+
+"description":
+"Major supplier of physical infrastructure systems required to keep data centers operating continuously.",
+
+"connections":[
+"datacenter",
+"cooling",
+"ups",
+"backup_power"
+]
+},
+
+{
+"id":"schneider_electric",
+"name":"Schneider Electric",
+"type":"Data Center Infrastructure",
+"layer":"power",
+"region":"Global",
+
+"classification":[
+"Power Distribution",
+"UPS",
+"Data Centers",
+"Energy Management"
+],
+
+"network_role":
+"Provides electrical distribution, UPS, monitoring, and data-center power infrastructure.",
+
+"importance":9,
+
+"description":
+"Major electrical infrastructure supplier whose equipment supports critical computing and telecommunications facilities.",
+
+"connections":[
+"datacenter",
+"power",
+"ups",
+"cooling"
+]
+},
+
+{
+"id":"eaton",
+"name":"Eaton",
+"type":"Power Infrastructure",
+"layer":"power",
+"region":"Global",
+
+"classification":[
+"Electrical Infrastructure",
+"UPS",
+"Power Distribution",
+"Data Centers"
+],
+
+"network_role":
+"Provides electrical distribution, backup power, UPS, and power-management infrastructure for critical facilities.",
+
+"importance":8,
+
+"description":
+"Major electrical equipment supplier supporting data centers, telecommunications facilities, and other critical infrastructure.",
+
+"connections":[
+"datacenter",
+"ups",
+"backup_power"
+]
+},
+
+{
+"id":"johnson_controls",
+"name":"Johnson Controls",
+"type":"Cooling Infrastructure",
+"layer":"cooling",
+"region":"Global",
+
+"classification":[
+"Data Center Cooling",
+"HVAC",
+"Building Infrastructure"
+],
+
+"network_role":
+"Provides cooling and building-management infrastructure used in large computing and telecommunications facilities.",
+
+"importance":7,
+
+"description":
+"Major building systems provider whose cooling and facility-management technologies support critical infrastructure.",
+
+"connections":[
+"datacenter",
+"cooling",
+"liquid_cooling"
+]
+},
+
+{
+"id":"nvent",
+"name":"nVent",
+"type":"Data Center Infrastructure",
+"layer":"physical",
+"region":"Global",
+
+"classification":[
+"Enclosures",
+"Power Distribution",
+"Data Center Infrastructure"
+],
+
+"network_role":
+"Provides physical infrastructure, enclosures, power distribution, and thermal-management systems used in data centers.",
+
+"importance":7,
+
+"description":
+"Physical infrastructure supplier supporting the deployment and protection of computing and networking equipment.",
+
+"connections":[
+"datacenter",
+"power",
+"cooling"
+]
+},
+
+{
+"id":"belden",
+"name":"Belden",
+"type":"Network Infrastructure Manufacturer",
+"layer":"network_hardware",
+"region":"Global",
+
+"classification":[
+"Structured Cabling",
+"Industrial Networking",
+"Data Center Connectivity"
+],
+
+"network_role":
+"Manufactures cabling, connectivity, and networking infrastructure used to connect equipment inside facilities.",
+
+"importance":7,
+
+"description":
+"Network infrastructure manufacturer supplying physical connectivity components for data centers and communications systems.",
+
+"connections":[
+"datacenter",
+"fiber",
+"switching"
+]
+},
+
+{
+"id":"panduit",
+"name":"Panduit",
+"type":"Network Infrastructure Manufacturer",
+"layer":"physical",
+"region":"Global",
+
+"classification":[
+"Structured Cabling",
+"Data Center Infrastructure",
+"Connectivity"
+],
+
+"network_role":
+"Provides structured cabling, physical connectivity, cable management, and data-center infrastructure products.",
+
+"importance":6,
+
+"description":
+"Physical-layer infrastructure supplier supporting enterprise and data-center network deployments.",
+
+"connections":[
+"datacenter",
+"fiber",
+"switching"
+]
+},
+
+{
+"id":"commScope",
+"name":"CommScope",
+"type":"Network Infrastructure Manufacturer",
+"layer":"fiber",
+"region":"Global",
+
+"classification":[
+"Fiber Optics",
+"Structured Cabling",
+"Broadband Infrastructure",
+"Wireless Infrastructure"
+],
+
+"network_role":
+"Supplies fiber, broadband, wireless, and physical connectivity infrastructure used by telecommunications and enterprise networks.",
+
+"importance":9,
+
+"description":
+"Major communications infrastructure manufacturer spanning fiber, broadband access, wireless, and structured connectivity.",
+
+"connections":[
+"fiber",
+"isp",
+"cell_tower",
+"network_hardware"
+]
+},
+
+{
+"id":"infinera",
+"name":"Infinera",
+"type":"Optical Networking",
+"layer":"optical_transport",
+"region":"Global",
+
+"classification":[
+"Optical Transport",
+"Coherent Optics",
+"DWDM",
+"Carrier Networking"
+],
+
+"network_role":
+"Provides optical transport technology used to move high-capacity traffic across terrestrial and subsea networks.",
+
+"importance":8,
+
+"description":
+"Major optical networking technology provider supporting high-capacity carrier and data-center interconnection.",
+
+"connections":[
+"ciena",
+"optical",
+"fiber",
+"submarine"
+]
+},
+
+{
+"id":"lumentum",
+"name":"Lumentum",
+"type":"Optical Components",
+"layer":"optical",
+"region":"Global",
+
+"classification":[
+"Lasers",
+"Optical Components",
+"Telecommunications",
+"Data Center Optics"
+],
+
+"network_role":
+"Manufactures optical components and laser technologies used throughout fiber-optic communications infrastructure.",
+
+"importance":8,
+
+"description":
+"Important supplier of optical components underlying telecommunications and data-center networking equipment.",
+
+"connections":[
+"ciena",
+"optical_transport",
+"fiber"
+]
+},
+
+{
+"id":"coherent",
+"name":"Coherent",
+"type":"Optical Technology",
+"layer":"optical",
+"region":"Global",
+
+"classification":[
+"Optical Components",
+"Lasers",
+"Data Center Optics",
+"Telecommunications"
+],
+
+"network_role":
+"Supplies lasers, optical components, and photonic technologies used in communications and computing infrastructure.",
+
+"importance":8,
+
+"description":
+"Major photonics supplier supporting optical communications and high-performance computing infrastructure.",
+
+"connections":[
+"optical",
+"optical_transport",
+"semiconductor"
+]
+},
+
+{
+"id":"telegeography",
+"name":"TeleGeography",
+"type":"Internet Infrastructure Research",
+"layer":"measurement",
+"region":"Global",
+
+"classification":[
+"Submarine Cable Data",
+"Internet Infrastructure Mapping",
+"Telecommunications Research"
+],
+
+"network_role":
+"Maps and analyzes submarine cables, Internet networks, telecommunications infrastructure, and connectivity markets.",
+
+"importance":7,
+
+"description":
+"Major source of commercial research and geographic data concerning global Internet and telecommunications infrastructure.",
+
+"connections":[
+"submarine",
+"cable_landing",
+"topology",
+"measurement"
+]
+},
+
+{
+"id":"submarine_networks",
+"name":"Submarine Networks",
+"type":"Infrastructure Information Platform",
+"layer":"submarine",
+"region":"Global",
+
+"classification":[
+"Submarine Cables",
+"Cable Landing Points",
+"Network Mapping"
+],
+
+"network_role":
+"Provides information and mapping of global submarine cable systems and landing infrastructure.",
+
+"importance":6,
+
+"description":
+"Specialized information source focused on the world's submarine telecommunications cable infrastructure.",
+
+"connections":[
+"submarine",
+"cable_landing",
+"measurement"
+]
+},
   
 
 
