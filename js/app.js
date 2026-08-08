@@ -532,91 +532,112 @@ viewport.append("g")
 );
 
 
+
 // =================================
 // FORCE SIMULATION
 // =================================
 
+// Give every node a controlled starting position
+// near the center instead of letting D3 initialize
+// everything randomly.
 
-const simulation = d3.forceSimulation(nodes)
+const centerX = width / 2;
+const centerY = height / 2;
 
+nodes.forEach((node, i) => {
 
-.force(
+    const angle =
+        (i / Math.max(nodes.length, 1)) * Math.PI * 2;
 
-"link",
+    const radius =
+        80 + Math.sqrt(i) * 12;
 
-d3.forceLink(links)
+    node.x =
+        centerX +
+        Math.cos(angle) * radius;
 
-.id(
-d=>d.id
-)
+    node.y =
+        centerY +
+        Math.sin(angle) * radius;
 
-.distance(
-
-d=>{
-
-return 120;
-
-}
-
-)
-
-)
-
+});
 
 
-.force(
+// ---------------------------------
+// FORCE SIMULATION
+// ---------------------------------
 
-"charge",
+const simulation =
+    d3.forceSimulation(nodes)
 
-d3.forceManyBody()
+        // Keep connected infrastructure
+        // relatively close together.
+        .force(
+            "link",
+            d3.forceLink(links)
+                .id(d => d.id)
+                .distance(100)
+                .strength(0.65)
+        )
 
-.strength(-700)
+        // Moderate repulsion.
+        // The old -700 was unnecessarily aggressive
+        // for a large infrastructure graph.
+        .force(
+            "charge",
+            d3.forceManyBody()
+                .strength(-180)
+                .distanceMin(20)
+                .distanceMax(500)
+        )
 
-)
+        // Keep the entire graph centered.
+        .force(
+            "center",
+            d3.forceCenter(
+                centerX,
+                centerY
+            )
+        )
 
+        // Prevent nodes from sitting directly
+        // on top of one another.
+        .force(
+            "collision",
+            d3.forceCollide()
+                .radius(d => {
+                    return (
+                        10 +
+                        (d.importance || 5) * 1.4
+                    );
+                })
+                .strength(0.8)
+                .iterations(2)
+        )
 
+        // Add gentle x/y positioning forces.
+        // These help prevent isolated nodes from
+        // drifting away from the main graph.
+        .force(
+            "x",
+            d3.forceX(centerX)
+                .strength(0.035)
+        )
 
-.force(
+        .force(
+            "y",
+            d3.forceY(centerY)
+                .strength(0.035)
+        )
 
-"center",
+        // Lower alpha makes startup much smoother.
+        .alpha(0.7)
 
-d3.forceCenter(
+        // Slow the simulation down naturally.
+        .alphaDecay(0.025)
 
-width/2,
-
-height/2
-
-)
-
-)
-
-
-
-.force(
-
-"collision",
-
-d3.forceCollide()
-
-.radius(
-
-d=>{
-
-return (
-
-(d.importance || 5)
-
-* 2
-
-)+20;
-
-
-}
-
-)
-
-);
-
+        // Prevent excessive movement.
+        .velocityDecay(0.45);
 
 
 
@@ -1122,64 +1143,41 @@ d=>d.y-35
 // =================================
 
 
-function dragStart(event,d){
+// =================================
+// DRAG FUNCTIONS
+// =================================
 
+function dragStart(event, d) {
 
+    if (!event.active) {
+        simulation
+            .alphaTarget(0.15)
+            .restart();
+    }
 
-if(!event.active)
-
-simulation.alphaTarget(
-0.3
-)
-.restart();
-
-
-
-d.fx=d.x;
-
-d.fy=d.y;
-
+    d.fx = d.x;
+    d.fy = d.y;
 
 }
 
 
+function dragMove(event, d) {
 
-
-
-
-function dragMove(event,d){
-
-
-d.fx=event.x;
-
-d.fy=event.y;
-
+    d.fx = event.x;
+    d.fy = event.y;
 
 }
 
 
+function dragEnd(event, d) {
 
+    if (!event.active) {
+        simulation
+            .alphaTarget(0);
+    }
 
-
-
-
-function dragEnd(event,d){
-
-
-
-if(!event.active)
-
-simulation.alphaTarget(
-0
-);
-
-
-
-d.fx=null;
-
-d.fy=null;
-
-
+    d.fx = null;
+    d.fy = null;
 
 }
 
