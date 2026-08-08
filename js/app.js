@@ -567,8 +567,6 @@ nodes.forEach((node, i) => {
 const simulation =
     d3.forceSimulation(nodes)
 
-        // Connected nodes stay reasonably close
-        // without creating a giant pile.
         .force(
             "link",
 
@@ -581,8 +579,6 @@ const simulation =
                 .strength(0.45)
         )
 
-
-        // Moderate node repulsion.
         .force(
             "charge",
 
@@ -595,8 +591,6 @@ const simulation =
                 .distanceMax(750)
         )
 
-
-        // Keep the graph centered.
         .force(
             "center",
 
@@ -606,8 +600,6 @@ const simulation =
             )
         )
 
-
-        // Give every circle physical space.
         .force(
             "collision",
 
@@ -627,8 +619,6 @@ const simulation =
                 .iterations(3)
         )
 
-
-        // Very gentle centering forces.
         .force(
             "x",
 
@@ -643,8 +633,6 @@ const simulation =
                 .strength(0.012)
         )
 
-
-        // Smooth startup.
         .alpha(0.65)
 
         .alphaDecay(0.018)
@@ -1848,30 +1836,11 @@ ${stats.critical}
 
 
 svg.call(
-
-d3.zoom()
-
-.transform,
-
-d3.Identity
-
-.translate(
-
-width/2,
-
-height/2
-
-)
-
-.scale(
-
-0.7
-
-)
-
+    zoom.transform,
+    d3.zoomIdentity
+        .translate(0, 0)
+        .scale(0.7)
 );
-
-
 
 
 
@@ -1880,8 +1849,6 @@ console.log(
 "Internet Infrastructure Map Ready"
 
 );
-
-
 
 })
 
