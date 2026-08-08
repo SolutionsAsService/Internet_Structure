@@ -528,48 +528,13 @@ viewport.append("g")
 // FORCE SIMULATION
 // =================================
 
-// Give every node a controlled starting position
-// near the center instead of letting D3 initialize
-// everything randomly.
-
 const centerX = width / 2;
 const centerY = height / 2;
 
-nodes.forEach((node, i) => {
-
-    const angle =
-        (i / Math.max(nodes.length, 1)) * Math.PI * 2;
-
-    const radius =
-        80 + Math.sqrt(i) * 12;
-
-    node.x =
-        centerX +
-        Math.cos(angle) * radius;
-
-    node.y =
-        centerY +
-        Math.sin(angle) * radius;
-
-});
-
-
-// =================================
-// FORCE SIMULATION
-// =================================
 
 // ---------------------------------
 // INITIAL NODE POSITIONS
 // ---------------------------------
-
-const centerX = width / 2;
-const centerY = height / 2;
-
-// Start nodes in a large, controlled
-// circular distribution.
-//
-// This prevents the entire graph from
-// beginning as one giant pile.
 
 const initialRadius =
     Math.min(width, height) * 0.32;
@@ -580,8 +545,6 @@ nodes.forEach((node, i) => {
         (i / Math.max(nodes.length, 1)) *
         Math.PI * 2;
 
-    // Slight variation prevents
-    // perfect symmetry.
     const radius =
         initialRadius *
         (0.75 + Math.random() * 0.35);
@@ -604,10 +567,8 @@ nodes.forEach((node, i) => {
 const simulation =
     d3.forceSimulation(nodes)
 
-        // ---------------------------------
-        // CONNECTION DISTANCE
-        // ---------------------------------
-
+        // Connected nodes stay reasonably close
+        // without creating a giant pile.
         .force(
             "link",
 
@@ -615,15 +576,80 @@ const simulation =
 
                 .id(d => d.id)
 
-                // Give connected nodes room.
                 .distance(180)
 
-                // Strong enough to form
-                // meaningful clusters without
-                // pulling everything together.
                 .strength(0.45)
         )
 
+
+        // Moderate node repulsion.
+        .force(
+            "charge",
+
+            d3.forceManyBody()
+
+                .strength(-300)
+
+                .distanceMin(40)
+
+                .distanceMax(750)
+        )
+
+
+        // Keep the graph centered.
+        .force(
+            "center",
+
+            d3.forceCenter(
+                centerX,
+                centerY
+            )
+        )
+
+
+        // Give every circle physical space.
+        .force(
+            "collision",
+
+            d3.forceCollide()
+
+                .radius(d => {
+
+                    const visualRadius =
+                        ((d.importance || 5) * 2) + 8;
+
+                    return visualRadius + 18;
+
+                })
+
+                .strength(0.9)
+
+                .iterations(3)
+        )
+
+
+        // Very gentle centering forces.
+        .force(
+            "x",
+
+            d3.forceX(centerX)
+                .strength(0.012)
+        )
+
+        .force(
+            "y",
+
+            d3.forceY(centerY)
+                .strength(0.012)
+        )
+
+
+        // Smooth startup.
+        .alpha(0.65)
+
+        .alphaDecay(0.018)
+
+        .velocityDecay(0.60);
 
         // ---------------------------------
         // NODE REPULSION
