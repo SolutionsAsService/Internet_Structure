@@ -1,4 +1,4 @@
-```javascript
+
 // ============================================
 // INTERNET INFRASTRUCTURE MAP
 // app.js
@@ -1345,4 +1345,4 @@ function initializeInteractions() {
 // ============================================
 
 initializeMap();
-```
+
