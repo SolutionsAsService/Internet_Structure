@@ -70,6 +70,9 @@ let mapState = {
     hasInitialized: false
 };
 
+const normalizedColorLookup =
+    buildNormalizedColorLookup();
+
 
 // ============================================================
 // START APPLICATION
@@ -837,25 +840,39 @@ function resolveColorToken(token) {
             .toLowerCase()
             .replace(/[\s_-]+/g, "");
 
+    return normalizedColorLookup.get(
+        normalized
+    ) || null;
 
-    for (const [key, value] of Object.entries(COLORS)) {
+}
 
-        if (
-            typeof value === "string" &&
-            key
-                .toLowerCase()
-                .replace(/[\s_-]+/g, "") ===
-                    normalized
-        ) {
+function buildNormalizedColorLookup() {
 
-            return value;
+    const lookup = new Map();
+
+
+    Object.entries(COLORS).forEach(
+        ([key, value]) => {
+
+            if (typeof value !== "string") {
+
+                return;
+
+            }
+
+
+            lookup.set(
+                key
+                    .toLowerCase()
+                    .replace(/[\s_-]+/g, ""),
+                value
+            );
 
         }
+    );
 
-    }
 
-
-    return null;
+    return lookup;
 
 }
 
