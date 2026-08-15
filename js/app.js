@@ -65,19 +65,61 @@ let mapState = {
     simulation: null,
 
     width: 0,
-    height: 0
+    height: 0,
+    isInitializing: false,
+    hasInitialized: false
 };
+
+const normalizedColorLookup =
+    buildNormalizedColorLookup();
 
 
 // ============================================================
 // START APPLICATION
 // ============================================================
 
-document.addEventListener("DOMContentLoaded", () => {
+if (document.readyState === "loading") {
 
-    initializeMap();
+    document.addEventListener(
+        "DOMContentLoaded",
+        startApplication,
+        { once: true }
+    );
 
-});
+}
+
+else {
+
+    startApplication();
+
+}
+
+function startApplication() {
+
+    if (
+        mapState.isInitializing ||
+        mapState.hasInitialized
+    ) {
+
+        console.warn(
+            "Map initialization skipped because it already ran."
+        );
+
+        return;
+
+    }
+
+
+    mapState.isInitializing = true;
+
+    initializeMap()
+        .finally(() => {
+
+            mapState.isInitializing = false;
+
+        });
+
+}
 
 
 // ============================================================
@@ -267,6 +309,8 @@ async function initializeMap() {
         console.log(
             "Internet Infrastructure Map Ready"
         );
+
+        mapState.hasInitialized = true;
 
     }
 
@@ -580,7 +624,6 @@ function renderLinks() {
 // NODES
 // ============================================================
 
-```js
 function renderNodes() {
 
     mapState.nodeElements =
@@ -614,17 +657,12 @@ function renderNodes() {
 
             .attr(
                 "fill",
-                d =>
-                    colorForType(
-                        d.type ||
-                        d.layer ||
-                        "physical"
-                    )
+                resolveNodeColor
             )
 
             .attr(
                 "stroke",
-                COLORS.effects.selection
+                getNodeStrokeColor()
             )
 
             .attr(
@@ -652,7 +690,7 @@ function renderNodes() {
 
                     .attr(
                         "stroke",
-                        COLORS.state.selected
+                        getNodeHoverStrokeColor()
                     )
 
                     .attr(
@@ -672,75 +710,12 @@ function renderNodes() {
 
                     .attr(
                         "stroke",
-                        COLORS.effects.selection
+                        getNodeStrokeColor()
                     )
 
                     .attr(
                         "stroke-width",
                         1.5
-                    );
-
-            }
-        )
-
-
-        .on(
-            "click",
-            function (event, node) {
-
-                showDetails(
-                    event,
-                    node
-                );
-
-            }
-        );
-
-}
-
-
-
-
-    // --------------------------------------------------------
-    // HOVER
-    // --------------------------------------------------------
-
-    mapState.nodeElements
-
-        .on(
-            "mouseenter",
-            function () {
-
-                d3.select(this)
-
-                    .attr(
-                        "stroke",
-                        "#ffffff"
-                    )
-
-                    .attr(
-                        "stroke-width",
-                        3
-                    );
-
-            }
-        )
-
-
-        .on(
-            "mouseleave",
-            function () {
-
-                d3.select(this)
-
-                    .attr(
-                        "stroke",
-                        "#000000"
-                    )
-
-                    .attr(
-                        "stroke-width",
-                        2
                     );
 
             }
@@ -789,6 +764,118 @@ function getNodeRadius(node) {
 
 }
 
+function resolveNodeColor(node) {
+
+    const importedColor =
+        colorForType(
+            node?.type ||
+            node?.layer ||
+            "physical"
+        );
+
+
+    if (importedColor) {
+
+        return importedColor;
+
+    }
+
+
+    return (
+        resolveColorToken(node?.type) ||
+        resolveColorToken(node?.layer) ||
+        resolveColorToken("default") ||
+        "#60A5FA"
+    );
+
+}
+
+function getNodeStrokeColor() {
+
+    return (
+        resolveColorToken("selection") ||
+        resolveColorToken("white") ||
+        "#FFFFFF"
+    );
+
+}
+
+function getNodeHoverStrokeColor() {
+
+    return (
+        resolveColorToken("selected") ||
+        getNodeStrokeColor()
+    );
+
+}
+
+function getLabelColor() {
+
+    return (
+        resolveColorToken("text") ||
+        resolveColorToken("white") ||
+        "#E6EDF3"
+    );
+
+}
+
+function resolveColorToken(token) {
+
+    if (!token || typeof token !== "string") {
+
+        return null;
+
+    }
+
+
+    if (typeof COLORS[token] === "string") {
+
+        return COLORS[token];
+
+    }
+
+
+    const normalized =
+        token
+            .toLowerCase()
+            .replace(/[\s_-]+/g, "");
+
+    return normalizedColorLookup.get(
+        normalized
+    ) || null;
+
+}
+
+function buildNormalizedColorLookup() {
+
+    const lookup = new Map();
+
+
+    Object.entries(COLORS).forEach(
+        ([key, value]) => {
+
+            if (typeof value !== "string") {
+
+                return;
+
+            }
+
+
+            lookup.set(
+                key
+                    .toLowerCase()
+                    .replace(/[\s_-]+/g, ""),
+                value
+            );
+
+        }
+    );
+
+
+    return lookup;
+
+}
+
 
 // ============================================================
 // LABELS
@@ -824,7 +911,7 @@ function renderLabels() {
 
             .attr(
                 "fill",
-                "COLORS.text"
+                getLabelColor()
             )
 
             .attr(
@@ -1325,7 +1412,7 @@ function setupLayerFilters() {
 // GLOBAL FILTER FUNCTION
 // ============================================================
 
-window.filterLayer = function (layer) {
+function filterLayer(layer) {
 
     if (!mapState.nodeElements) {
 
@@ -1443,7 +1530,7 @@ window.filterLayer = function (layer) {
             }
         );
 
-};
+}
 
 
 // ============================================================
@@ -1745,7 +1832,7 @@ function escapeHTML(value) {
 // RESET VIEW
 // ============================================================
 
-window.resetView = function () {
+function resetView() {
 
     if (
         !mapState.svg ||
@@ -1768,7 +1855,7 @@ window.resetView = function () {
             d3.zoomIdentity
         );
 
-};
+}
 
 
 // ============================================================
@@ -1784,10 +1871,10 @@ function setupGlobalFunctions() {
      */
 
     window.resetView =
-        window.resetView;
+        resetView;
 
     window.filterLayer =
-        window.filterLayer;
+        filterLayer;
 
 }
 
@@ -1931,4 +2018,3 @@ function handleMapError(error) {
     `;
 
 }
-
