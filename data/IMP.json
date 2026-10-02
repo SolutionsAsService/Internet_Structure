@@ -1,0 +1,1262 @@
+{
+  "Interface Message Processor": {
+    "record_metadata": {
+      "canonical_name": "Interface Message Processor",
+      "abbreviation": "IMP",
+      "entity_type": "networking_hardware_and_software_system",
+      "historical_role": "packet-switching node used to interconnect participant networks to the ARPANET",
+      "modern_equivalent": "router",
+      "operational_period": {
+        "start": "late 1960s",
+        "end": "1989"
+      },
+      "primary_network": "ARPANET",
+      "country_context": "United States",
+      "development_organization": "Bolt Beranek and Newman (BBN)",
+      "source_type": "Wikipedia-derived technical history",
+      "source_scope": "ARPANET packet-switching node, architecture, development team, hardware, software, deployment, protocols, and historical references",
+      "source_file": "Pasted text(20261002-220031).txt",
+      "source_line_count": 110,
+      "record_scope": "complete source-derived entity record"
+    },
+
+    "identity": {
+      "name": "Interface Message Processor",
+      "abbreviation": "IMP",
+      "historical_category": [
+        "packet-switching node",
+        "network gateway",
+        "early router",
+        "network interface computer",
+        "communications processor"
+      ],
+      "modern_classification": {
+        "closest_modern_equivalent": "router",
+        "architectural_role": "intermediate packet-switching node between host computers and transmission network",
+        "historical_significance": "first generation of gateways that evolved conceptually into modern routers"
+      },
+      "primary_function": "Interconnect participant computer networks and route messages across the ARPANET",
+      "network": "ARPANET",
+      "operational_lifecycle": {
+        "introduced": "1969",
+        "operational_until": "1989",
+        "deployment_status": "historical / retired"
+      }
+    },
+
+    "system_overview": {
+      "description": "The Interface Message Processor was the packet-switching node used to interconnect participant networks to the ARPANET.",
+      "historical_importance": [
+        "Served as the first-generation gateway architecture later represented by modern routers.",
+        "Separated host computers from the communications network.",
+        "Provided packet routing and network control functions.",
+        "Established a standardized host-to-network interface through BBN Report 1822.",
+        "Hosted the ARPANET communications software and network protocol implementation."
+      ],
+      "architecture": {
+        "basic_model": "host computer -> IMP -> transmission network -> IMP -> destination host",
+        "design_principle": "Place a dedicated small computer between each host computer and the network transmission lines.",
+        "host_network_separation": true,
+        "packet_switching": true,
+        "store_and_forward": true,
+        "distributed_network_node": true
+      },
+      "source_description": "BBN designed the IMP simply as a messenger that would store and forward messages.",
+      "source_citation": "The source identifies the IMP as the packet-switching node connecting participant networks to ARPANET and describes it as the first generation of gateways now known as routers. :chatgpt-content-reference{index="1"}"
+    },
+
+    "hardware": {
+      "primary_platform": {
+        "manufacturer": "Honeywell",
+        "model": "DDP-516",
+        "configuration": "ruggedized minicomputer",
+        "modifications": "special-purpose interfaces and software",
+        "role": "original IMP hardware platform"
+      },
+      "later_platform": {
+        "manufacturer": "Honeywell",
+        "model": "Honeywell 316",
+        "configuration": "non-ruggedized minicomputer",
+        "performance": {
+          "traffic_capacity_relative_to_DDP_516": "approximately two-thirds",
+          "relative_cost": "approximately one-half"
+        }
+      },
+      "later_alternatives": {
+        "BBN_Pluribus": {
+          "type": "multiprocessing IMP",
+          "role": "replacement for some Honeywell-based IMPs",
+          "manufacturer": "BBN"
+        },
+        "microprogrammed_Honeywell_clone": {
+          "developer": "BBN",
+          "description": "microprogrammed clone of the Honeywell machine",
+          "role": "later IMP implementation"
+        }
+      },
+      "host_interface": {
+        "type": "special bit-serial interface",
+        "standard": "BBN Report 1822",
+        "purpose": "connect host computer to IMP"
+      },
+      "hardware_design_characteristics": {
+        "ruggedized_original": true,
+        "special_network_interfaces": true,
+        "hardware_checksum_calculation": true,
+        "multi_host_capability": true
+      },
+      "checksum_hardware": {
+        "size": "24-bit",
+        "implementation": "hardware",
+        "reason": "faster than calculating the checksum in software"
+      }
+    },
+
+    "software": {
+      "development": {
+        "start": "February 1969",
+        "primary_language": "Honeywell 516 assembly language",
+        "approximate_code_size": "6000 words",
+        "development_environment": {
+          "development_machine": "PDP-1",
+          "purpose": [
+            "writing IMP code",
+            "editing IMP code"
+          ],
+          "execution_target": "Honeywell 516"
+        }
+      },
+      "functions": [
+        "packet/message processing",
+        "routing",
+        "flow control",
+        "error handling",
+        "network control",
+        "communications protocol implementation"
+      ],
+      "network_protocol": {
+        "name": "ARPA network communications protocol",
+        "location": "IMP software",
+        "standardization_reference": "RFC 1"
+      },
+      "software_architecture": {
+        "independent_development": true,
+        "technical_interchange_with_NPL": true,
+        "technical_interchange_with_RAND_Paul_Baran": true,
+        "BBN_developed_components": [
+          "routing",
+          "flow control",
+          "software design",
+          "network control"
+        ]
+      }
+    },
+
+    "conceptual_origins": {
+      "NPL_network": {
+        "country": "United Kingdom",
+        "researcher": "Donald Davies",
+        "proposal_year": 1966,
+        "implementation_period": "1968–1969",
+        "concept": "interface computer positioned between user equipment and packet network"
+      },
+      "ARPANET_development": {
+        "meeting_period": "early 1967",
+        "organization": "Advanced Research Projects Agency",
+        "purpose": "discuss interconnection of machines across the United States",
+        "larry_roberts_role": "led ARPANET implementation",
+        "initial_roberts_concept": "network of host computers",
+        "wes_clark_proposal": "place a small computer between each host computer and the network transmission lines",
+        "architectural_result": "separate IMP computer between host and network"
+      },
+      "relationship_to_packet_switching_research": {
+        "donald_davies": "developed the interface-computer concept for the NPL network",
+        "paul_baran": "RAND researcher whose distributed communications work influenced the broader packet-network environment",
+        "BBN": "independently developed major internal ARPANET mechanisms"
+      },
+      "source_caveat": "The source describes substantial technical interchange with the NPL team and Paul Baran while also emphasizing that BBN independently developed significant ARPANET internal mechanisms. :chatgpt-content-reference{index="2"}"
+    },
+
+    "development_history": {
+      "1966": {
+        "event": "Donald Davies proposed an interface computer for computer networking",
+        "organization": "National Physical Laboratory",
+        "country": "United Kingdom"
+      },
+      "1967": {
+        "event": "ARPANET principal investigators discussed interconnecting computers across the country",
+        "participants": [
+          "Larry Roberts",
+          "Wes Clark"
+        ],
+        "architectural_development": "separation of host computer and network using an intermediate computer"
+      },
+      "1969": {
+        "february": {
+          "event": "BBN began programming IMP software",
+          "hardware": "modified Honeywell DDP-516"
+        },
+        "contract": {
+          "organization": "Bolt Beranek and Newman",
+          "customer": "ARPA",
+          "scope": "build four IMPs",
+          "value": "approximately $1 million",
+          "delivery_plan": {
+            "first": "UCLA by Labor Day",
+            "remaining": "one-month intervals",
+            "network_completion_target": "12 months"
+          }
+        },
+        "august_30": {
+          "event": "first IMP delivered",
+          "location": "UCLA",
+          "host": "SDS Sigma 7",
+          "significance": "first operational ARPANET IMP deployment"
+        },
+        "october_1": {
+          "event": "second IMP delivered",
+          "location": "Stanford Research Institute",
+          "host": "SDS 940",
+          "associated_researcher": "Douglas Engelbart's group"
+        },
+        "november_1": {
+          "event": "third IMP installed",
+          "location": "University of California, Santa Barbara"
+        },
+        "december": {
+          "event": "fourth IMP installed",
+          "location": "University of Utah"
+        },
+        "october_29": {
+          "event": "first communication test between UCLA and SRI",
+          "activity": "attempted login to SRI computer",
+          "initial_result": "only first two characters transmitted",
+          "failure": "SRI machine crashed upon reception of the 'g' character",
+          "resolution": "bug fixed within minutes and login successfully completed"
+        }
+      },
+      "late_1969_testing": {
+        "organization": "BBN",
+        "test": "communication circuit performance",
+        "test_period": "27-hour period",
+        "route": "UCSB-SRI",
+        "initial_error_rate": "approximately one packet per 20,000 in error",
+        "later_observation": "subsequent tests showed approximately 100% variation",
+        "explanation": "long periods of hours with no detected errors"
+      },
+      "1970s": {
+        "development": [
+          "continued IMP deployment",
+          "Terminal IMP development",
+          "1822 protocol evolution",
+          "replacement of some Honeywell IMPs with BBN Pluribus systems"
+        ]
+      },
+      "1989": {
+        "event": "DARPA decommissioned ARPANET",
+        "effect_on_IMPs": [
+          "most dismantled",
+          "some discarded",
+          "some transferred to MILNET",
+          "some preserved by museums"
+        ]
+      }
+    },
+
+    "contract_and_program_management": {
+      "contractor": {
+        "name": "Bolt Beranek and Newman",
+        "abbreviation": "BBN",
+        "location": "Massachusetts",
+        "role": "IMP developer and manufacturer"
+      },
+      "customer": "Advanced Research Projects Agency",
+      "contract": {
+        "approximate_value": "$1 million",
+        "initial_quantity": 4,
+        "first_delivery_target": "UCLA by Labor Day 1969",
+        "subsequent_delivery_interval": "one month",
+        "planned_total_network_completion": "12 months"
+      },
+      "historical_anecdote": {
+        "individual": "Edward Kennedy",
+        "position": "Massachusetts Senator",
+        "event": "sent BBN a congratulatory telegram after learning of the contract",
+        "misstatement": "telegram reportedly referred to the system as the 'Interfaith Message Processor'",
+        "correct_name": "Interface Message Processor"
+      }
+    },
+
+    "imp_team": {
+      "informal_name": "IMP Guys",
+      "team_members": {
+        "team_lead": [
+          {
+            "name": "Frank Heart",
+            "role": "Team Leader"
+          }
+        ],
+        "software": [
+          {
+            "name": "Willy Crowther",
+            "role": "Software"
+          },
+          {
+            "name": "David Walden",
+            "role": "Software"
+          },
+          {
+            "name": "Bernie Cosell",
+            "role": "Software"
+          },
+          {
+            "name": "Paul Wexelblat",
+            "role": "Software"
+          }
+        ],
+        "hardware": [
+          {
+            "name": "Severo Ornstein",
+            "role": "Hardware"
+          },
+          {
+            "name": "Ben Barker",
+            "role": "Hardware"
+          }
+        ],
+        "system_theory_and_collaboration": [
+          {
+            "name": "Bob Kahn",
+            "role": "Theory and collaboration on overall system design"
+          }
+        ],
+        "other": [
+          {
+            "name": "Hawley Rising",
+            "role": "Other"
+          }
+        ],
+        "added_later": [
+          {
+            "name": "Marty Thrope",
+            "role": "Hardware"
+          },
+          {
+            "name": "Jim Geisman",
+            "role": "Additional IMP team member"
+          },
+          {
+            "name": "Truett Thach",
+            "role": "Installation"
+          },
+          {
+            "name": "Bill Bertell",
+            "role": "Honeywell"
+          }
+        ]
+      },
+      "historical_group_image_caption": {
+        "pictured_left_to_right": [
+          "Truett Thatch",
+          "Bill Bartell",
+          "Dave Walden",
+          "Jim Geisman",
+          "Robert Kahn",
+          "Frank Heart",
+          "Ben Barker",
+          "Marty Thorpe",
+          "Will Crowther",
+          "Severo Ornstein"
+        ],
+        "not_pictured": [
+          "Bernie Cosell"
+        ]
+      },
+      "name_variants_in_source": {
+        "team_member_spelling_difference": {
+          "source_team_list": "Bill Bertell",
+          "image_caption": "Bill Bartell",
+          "preservation_rule": "Both source spellings preserved rather than silently reconciled"
+        }
+      }
+    },
+
+    "network_architecture": {
+      "node_role": "intermediate packet-switching node",
+      "basic_topology": {
+        "host": "host computer",
+        "interface": "1822 host-to-IMP interface",
+        "node": "IMP",
+        "network": "ARPANET transmission network",
+        "destination": "destination IMP and destination host"
+      },
+      "routing": {
+        "implemented_by": "IMP",
+        "function": "route messages toward destination host",
+        "historical_significance": "early implementation of functionality later associated with Internet routers"
+      },
+      "store_and_forward": {
+        "enabled": true,
+        "description": "IMP temporarily stored messages and forwarded them through the network"
+      },
+      "host_multiplexing": {
+        "initial_design": "one host per site",
+        "final_design": "multiple host computers per IMP",
+        "reason_for_change": "insistence by researchers and students at host sites"
+      },
+      "network_control": {
+        "functions": [
+          "routing",
+          "flow control",
+          "error control",
+          "message forwarding",
+          "network management/control"
+        ]
+      }
+    },
+
+    "error_control": {
+      "basic_mechanism": {
+        "packet_error_handling": "discard erroneous packets without acknowledging receipt",
+        "source_behavior": "source IMP retransmitted when acknowledgement was not received",
+        "checksum": {
+          "size_bits": 24,
+          "calculated_by": "IMP hardware",
+          "reason": "hardware calculation was faster than software calculation"
+        }
+      },
+      "reliability_model": {
+        "1822": "messages were designed to be reliably delivered to the addressed destination",
+        "failure_reporting": "IMP sent originating host a message when delivery failed",
+        "known_edge_cases": [
+          "host could miss a message-loss report",
+          "IMP could report a message as lost even when it had actually been received"
+        ]
+      },
+      "protocol": {
+        "type": "alternating bit protocol",
+        "historical_origin": "type proposed by Donald Davies' NPL team in 1968"
+      }
+    },
+
+    "BBN_report_1822": {
+      "name": "Specifications for the Interconnection of a Host and an IMP",
+      "common_name": "BBN Report 1822",
+      "report_number": "1822",
+      "purpose": "define the method for connecting a host computer to an IMP",
+      "author_attribution": "Bob Kahn",
+      "historical_role": "standardized host-to-IMP interface",
+      "protocol_family": [
+        "1822",
+        "1822L"
+      ],
+      "message_structure": {
+        "maximum_message_length_bits": 8159,
+        "header_name": "leader",
+        "header_length_bits": 96,
+        "data_field": "remaining message field"
+      },
+      "addressing": {
+        "host_address": "numeric address of destination host",
+        "modern_analogy": "similar conceptually to an IP address"
+      },
+      "transmission_process": [
+        "host constructs message",
+        "message includes destination host numeric address",
+        "host sends message across 1822 interface",
+        "IMP receives message",
+        "IMP routes message through network",
+        "destination IMP delivers message to destination host"
+      ],
+      "reliability": {
+        "delivery_reporting": true,
+        "error_reporting": true,
+        "alternating_bit_protocol": true
+      },
+      "later_versions": {
+        "1822L": "later version of the protocol",
+        "documentation": "RFC 802 and successors"
+      }
+    },
+
+    "terminal_imp": {
+      "abbreviation": "TIP",
+      "full_name": "Terminal IMP",
+      "function": "connect terminals as well as computers to the ARPANET",
+      "hardware": {
+        "platform": "Honeywell 316",
+        "relationship": "later version of Honeywell 516"
+      },
+      "connected_devices": [
+        "teletypes",
+        "computer systems"
+      ],
+      "architectural_role": "extension of IMP architecture to direct terminal connectivity"
+    },
+
+    "deployment": {
+      "initial_four_nodes": [
+        {
+          "sequence": 1,
+          "date": "1969-08-30",
+          "location": "UCLA",
+          "host": "SDS Sigma 7",
+          "significance": "first IMP"
+        },
+        {
+          "sequence": 2,
+          "date": "1969-10-01",
+          "location": "Stanford Research Institute",
+          "host": "SDS 940",
+          "associated_group": "Douglas Engelbart's group"
+        },
+        {
+          "sequence": 3,
+          "date": "1969-11-01",
+          "location": "University of California, Santa Barbara"
+        },
+        {
+          "sequence": 4,
+          "date": "1969-12",
+          "location": "University of Utah"
+        }
+      ],
+      "first_network_connection": {
+        "date": "1969-10-29",
+        "endpoints": [
+          "UCLA",
+          "Stanford Research Institute"
+        ],
+        "operation": "login attempt",
+        "initial_failure": "SRI system crashed after receiving the 'g' character",
+        "resolution": "bug fixed within minutes",
+        "final_result": "login completed successfully"
+      },
+      "arpanet_lifecycle": {
+        "start": "1969",
+        "end": "1989",
+        "role": "core packet-switching infrastructure"
+      },
+      "end_of_service": {
+        "event": "DARPA decommissioned ARPANET",
+        "year": 1989,
+        "disposition": [
+          "dismantled",
+          "discarded",
+          "transferred to MILNET",
+          "preserved in museums"
+        ]
+      },
+      "preserved_artifacts": {
+        "IMP_number_one": {
+          "status": "preserved",
+          "location": "UCLA",
+          "display": "public view",
+          "associated_site": "Kleinrock Internet Heritage Site and Archive"
+        }
+      },
+      "last_ARPANET_IMP": {
+        "location": "University of Maryland"
+      }
+    },
+
+    "communications_testing": {
+      "organization": "BBN",
+      "purpose": "test performance of ARPANET communication circuits",
+      "late_1969_test": {
+        "duration": "27 hours",
+        "link": "UCSB-SRI",
+        "observed_error_rate": "approximately one packet per 20,000",
+        "subsequent_variation": "approximately 100%",
+        "observed_reason": "long periods of hours with no detected errors"
+      }
+    },
+
+    "relationships": {
+      "arpanet": {
+        "relationship": "core packet-switching node",
+        "period": "1969–1989"
+      },
+      "darpa": {
+        "relationship": "ARPANET sponsoring/operating organization context",
+        "end_of_network": "DARPA decommissioned ARPANET in 1989"
+      },
+      "ARPA": {
+        "relationship": "original program organization",
+        "role": "commissioned BBN to construct IMPs"
+      },
+      "BBN": {
+        "relationship": "developer and manufacturer",
+        "role": [
+          "hardware development",
+          "software development",
+          "network architecture",
+          "routing",
+          "flow control",
+          "network control"
+        ]
+      },
+      "Honeywell": {
+        "relationship": "primary hardware supplier",
+        "systems": [
+          "DDP-516",
+          "Honeywell 316"
+        ]
+      },
+      "NPL": {
+        "relationship": "parallel packet-switching research program",
+        "researcher": "Donald Davies",
+        "interaction": "technical interchange"
+      },
+      "RAND": {
+        "relationship": "parallel distributed communications research",
+        "researcher": "Paul Baran",
+        "interaction": "technical interchange"
+      },
+      "IETF": {
+        "relationship": "later standardization ecosystem",
+        "historical_link": "RFC 1 documented ARPA network communications protocol running on IMPs"
+      },
+      "MILNET": {
+        "relationship": "recipient of some former ARPANET IMPs after ARPANET decommissioning"
+      }
+    },
+
+    "key_people": {
+      "Donald_Davies": {
+        "organization": "National Physical Laboratory",
+        "role": "proposed interface computer concept",
+        "year": 1966
+      },
+      "Larry_Roberts": {
+        "role": "leader of ARPANET implementation",
+        "initial_architecture": "network of host computers"
+      },
+      "Wes_Clark": {
+        "role": "proposed separate small computer between host and network",
+        "architectural_contribution": "conceptual basis for IMP separation"
+      },
+      "Frank_Heart": {
+        "organization": "BBN",
+        "role": "IMP team leader"
+      },
+      "Robert_Kahn": {
+        "role": [
+          "overall system design theory and collaboration",
+          "author attribution for BBN Report 1822"
+        ]
+      },
+      "Severo_Ornstein": {
+        "role": "hardware"
+      },
+      "Ben_Barker": {
+        "role": "hardware"
+      },
+      "William_Will_Crowther": {
+        "role": "software"
+      },
+      "David_Walden": {
+        "role": "software"
+      },
+      "Bernie_Cosell": {
+        "role": "software"
+      },
+      "Paul_Wexelblat": {
+        "role": "software"
+      },
+      "Hawley_Rising": {
+        "role": "other IMP team member"
+      },
+      "Marty_Thorpe": {
+        "role": "later-added hardware team member"
+      },
+      "Jim_Geisman": {
+        "role": "later-added IMP team member"
+      },
+      "Truett_Thach": {
+        "role": "installation"
+      },
+      "Bill_Bertell": {
+        "role": "Honeywell representative/team member according to source team list"
+      }
+    },
+
+    "technical_characteristics": {
+      "node_type": "packet-switching computer",
+      "primary_hardware": "Honeywell DDP-516",
+      "later_hardware": "Honeywell 316",
+      "processing_model": "store-and-forward",
+      "host_interface": "bit-serial",
+      "interface_standard": "BBN Report 1822",
+      "addressing": "numeric destination host address",
+      "maximum_message_length_bits": 8159,
+      "header_length_bits": 96,
+      "checksum_bits": 24,
+      "routing": true,
+      "flow_control": true,
+      "error_control": true,
+      "network_control": true,
+      "multi_host_support": true,
+      "terminal_support": "via TIP",
+      "software_language": "Honeywell 516 assembly language"
+    },
+
+    "historical_significance": {
+      "internet_history": [
+        "One of the foundational hardware/software systems of the ARPANET.",
+        "Established the architectural separation between host systems and packet-switching infrastructure.",
+        "Provided an early practical implementation of packet routing.",
+        "Helped establish standardized host/network interfaces.",
+        "Provided an architectural precursor to modern routers."
+      ],
+      "networking_history": [
+        "Connected geographically distributed research computers.",
+        "Implemented store-and-forward packet switching.",
+        "Integrated routing, flow control, error handling, and network control into a dedicated network node.",
+        "Supported the transition from individual host-to-host connections toward an interconnected packet network."
+      ],
+      "standards_history": {
+        "RFC_1": {
+          "date": "1969-04-07",
+          "author": "Steve Crocker",
+          "subject": "Host Software",
+          "relationship": "first RFC and documentation of ARPA network communications protocol context"
+        },
+        "BBN_Report_1822": {
+          "role": "host-to-IMP interconnection specification"
+        },
+        "RFC_802": {
+          "role": "later documentation of 1822 protocol evolution"
+        }
+      }
+    },
+
+    "timeline": [
+      {
+        "year": "1966",
+        "event": "Donald Davies proposed the interface-computer concept for the NPL network."
+      },
+      {
+        "year": "1967",
+        "event": "ARPA researchers discussed nationwide interconnection and Wes Clark proposed a separate computer between hosts and network transmission lines."
+      },
+      {
+        "year": "1969-02",
+        "event": "BBN began programming modified Honeywell DDP-516 IMPs."
+      },
+      {
+        "year": "1969-08-30",
+        "event": "First IMP delivered to UCLA."
+      },
+      {
+        "year": "1969-10-01",
+        "event": "Second IMP delivered to Stanford Research Institute."
+      },
+      {
+        "year": "1969-10-29",
+        "event": "First UCLA-SRI communication attempt; initial login failed after SRI crashed on the 'g' character."
+      },
+      {
+        "year": "1969-10-29",
+        "event": "Bug was fixed and the login was successfully completed."
+      },
+      {
+        "year": "1969-11-01",
+        "event": "Third IMP installed at UCSB."
+      },
+      {
+        "year": "1969-12",
+        "event": "Fourth IMP installed at University of Utah."
+      },
+      {
+        "year": "late_1969",
+        "event": "BBN conducted communication-circuit performance testing."
+      },
+      {
+        "year": "1970",
+        "event": "Major technical description of IMP architecture published in AFIPS proceedings."
+      },
+      {
+        "year": "1971",
+        "event": "Terminal IMP architecture documented in AFIPS proceedings."
+      },
+      {
+        "year": "1970s",
+        "event": "TIP systems and alternative BBN Pluribus IMP hardware entered the architecture."
+      },
+      {
+        "year": "1976",
+        "event": "BBN Report 1822 specification published."
+      },
+      {
+        "year": "1989",
+        "event": "DARPA decommissioned ARPANET; most IMPs were dismantled, discarded, transferred, or preserved."
+      }
+    ],
+
+    "system_variants": {
+      "original_IMP": {
+        "hardware": "Honeywell DDP-516",
+        "configuration": "ruggedized",
+        "primary_role": "ARPANET packet switching"
+      },
+      "Honeywell_316_IMP": {
+        "hardware": "Honeywell 316",
+        "configuration": "non-ruggedized",
+        "relative_capacity": "approximately two-thirds of DDP-516 traffic",
+        "relative_cost": "approximately one-half"
+      },
+      "TIP": {
+        "full_name": "Terminal IMP",
+        "hardware": "Honeywell 316",
+        "function": "connect terminals and computers"
+      },
+      "Pluribus_IMP": {
+        "developer": "BBN",
+        "architecture": "multiprocessing",
+        "role": "replacement for some Honeywell-based IMPs"
+      },
+      "microprogrammed_clone": {
+        "developer": "BBN",
+        "description": "microprogrammed Honeywell-compatible IMP implementation"
+      }
+    },
+
+    "network_protocols": {
+      "ARPANET_network_protocol": {
+        "location": "IMP software",
+        "documentation": "RFC 1"
+      },
+      "1822": {
+        "purpose": "host-to-IMP communication",
+        "features": [
+          "numeric destination addressing",
+          "message transmission",
+          "delivery reporting",
+          "error reporting",
+          "alternating-bit reliability mechanism"
+        ]
+      },
+      "1822L": {
+        "classification": "later 1822 protocol version",
+        "documentation": "RFC 802 and successors"
+      },
+      "alternating_bit_protocol": {
+        "type": "reliability mechanism",
+        "related_origin": "NPL packet-switching work"
+      }
+    },
+
+    "source_reference_catalog": {
+      "count": 29,
+      "references": [
+        {
+          "id": 1,
+          "title": "IMP -- Interface Message Processor",
+          "publisher": "LivingInternet",
+          "retrieved": "2007-06-22"
+        },
+        {
+          "id": 2,
+          "author": "Dave Walden",
+          "title": "Looking back at the ARPANET effort, 34 years later",
+          "publisher": "LivingInternet",
+          "retrieved": "2007-06-22"
+        },
+        {
+          "id": 3,
+          "title": "A Technical History of the ARPANET - A Technical Tour",
+          "publisher": "THINK Protocols team",
+          "archived": "2012-09-10",
+          "retrieved": "2007-06-22"
+        },
+        {
+          "id": 4,
+          "authors": [
+            "F. E. Heart",
+            "R. E. Kahn",
+            "S. M. Ornstein",
+            "W. R. Crowther",
+            "D. C. Walden"
+          ],
+          "title": "The interface message processor for the ARPA computer network",
+          "publication": "AFIPS '70 Spring Joint Computer Conference",
+          "date": "1970",
+          "pages": "551-567",
+          "doi": "10.1145/1476936.1477021"
+        },
+        {
+          "id": 5,
+          "authors": [
+            "S. M. Ornstein",
+            "F. E. Heart",
+            "W. R. Crowther",
+            "H. K. Rising",
+            "S. B. Russell",
+            "A. Michel"
+          ],
+          "title": "The terminal IMP for the ARPA computer network",
+          "publication": "AFIPS '71 Fall Joint Computer Conference",
+          "date": "1971",
+          "pages": "243-254",
+          "doi": "10.1145/1478873.1478906"
+        },
+        {
+          "id": 6,
+          "author": "Steve Crocker",
+          "title": "Host Software",
+          "publisher": "IETF",
+          "date": "1969-04-07",
+          "document": "RFC 1",
+          "doi": "10.17487/RFC0001"
+        },
+        {
+          "id": 7,
+          "author": "Lawrence G. Roberts",
+          "title": "The ARPANET & Computer Networks",
+          "date": "1995-05",
+          "archived_original": "2016-03-24",
+          "retrieved": "2016-04-13"
+        },
+        {
+          "id": 8,
+          "author": "James Pelkey",
+          "title": "Donald Davies",
+          "work": "The History of Computer Communications",
+          "date": "1966 paper context"
+        },
+        {
+          "id": 9,
+          "authors": [
+            "John S. Quarterman",
+            "Josiah C. Hoskins"
+          ],
+          "title": "Notable computer networks",
+          "publication": "Communications of the ACM",
+          "volume": "29",
+          "issue": "10",
+          "year": "1986",
+          "pages": "932-971",
+          "doi": "10.1145/6617.6618"
+        },
+        {
+          "id": 10,
+          "author": "Christine Haughney Dare-Bryan",
+          "title": "Computer Freaks, Chapter Two: In the Air",
+          "publisher": "Inc. Magazine podcast",
+          "date": "2023-06-22"
+        },
+        {
+          "id": 11,
+          "authors": [
+            "Katie Hafner",
+            "Matthew Lyon"
+          ],
+          "title": "Where Wizards Stay Up Late: The Origins of the Internet",
+          "publisher": "Simon & Schuster",
+          "year": "1996",
+          "isbn": "978-0-684-81201-4"
+        },
+        {
+          "id": 12,
+          "author": "Katie Hafner",
+          "title": "Frank Heart, Who Linked Computers Before the Internet, Dies at 89",
+          "publisher": "The New York Times",
+          "date": "2018-06-25",
+          "retrieved": "2020-04-03"
+        },
+        {
+          "id": 13,
+          "title": "A History of the ARPANET: The First Decade",
+          "publisher": "Bolt, Beranek & Newman Inc.",
+          "date": "1981-04-01",
+          "pages_referenced": [
+            "13",
+            "53"
+          ]
+        },
+        {
+          "id": 14,
+          "author": "Lawrence G. Roberts",
+          "title": "The evolution of packet switching",
+          "publication": "Proceedings of the IEEE",
+          "volume": "66",
+          "issue": "11",
+          "date": "1978-11",
+          "pages": "1307-1313",
+          "doi": "10.1109/PROC.1978.11141"
+        },
+        {
+          "id": 15,
+          "author": "Janet Abbate",
+          "title": "Inventing the Internet",
+          "publisher": "MIT Press",
+          "year": 2000,
+          "pages": "38-39, 57-58",
+          "isbn": "978-0-2625-1115-5"
+        },
+        {
+          "id": 16,
+          "authors": [
+            "Frank Heart",
+            "Robert Kahn",
+            "Severo Ornstein",
+            "William Crowther",
+            "David Walden"
+          ],
+          "title": "The Interface Message Processor for the ARPA Computer Network",
+          "publication": "1970 Spring Joint Computer Conference",
+          "year": 1970,
+          "volume": "36",
+          "pages": "551-567"
+        },
+        {
+          "id": 17,
+          "authors": [
+            "F. E. Froehlich",
+            "A. Kent"
+          ],
+          "title": "The Froehlich/Kent Encyclopedia of Telecommunications: Volume 1",
+          "year": 1990,
+          "page": 344,
+          "isbn": "0824729005"
+        },
+        {
+          "id": 18,
+          "author": "Derek Barber",
+          "title": "The Origins of Packet Switching",
+          "publication": "The Bulletin of the Computer Conservation Society",
+          "issue": "5",
+          "date": "Spring 1993",
+          "issn": "0958-7403"
+        },
+        {
+          "id": 19,
+          "authors": [
+            "David Rayner",
+            "Derek Barber",
+            "Roger Scantlebury",
+            "Peter Wilkinson"
+          ],
+          "title": "NPL, Packet Switching and the Internet",
+          "event": "Symposium of the Institution of Analysts & Programmers",
+          "year": 2001,
+          "retrieved": "2024-06-13"
+        },
+        {
+          "id": 20,
+          "author": "David Hambling",
+          "title": "Weapons Grade",
+          "publisher": "Carroll & Graf",
+          "year": 2005,
+          "isbn": "0-7867-1769-6"
+        },
+        {
+          "id": 21,
+          "author": "Frank Heart",
+          "title": "Interface message processors for the ARPA computer network",
+          "publication": "Quarterly Technical Report No. 4",
+          "year": 1970,
+          "page": 7,
+          "retrieved": "2023-01-24"
+        },
+        {
+          "id": 22,
+          "title": "Specifications for the Interconnection of a Host and an IMP",
+          "publisher": "Bolt, Beranek, and Newman",
+          "document": "BBN Report 1822",
+          "date": "1976-01"
+        },
+        {
+          "id": 23,
+          "author": "Donald Watts Davies",
+          "title": "Computer Networks and Their Protocols",
+          "publisher": "Wiley",
+          "year": 1979,
+          "page": 206,
+          "isbn": "9780471997504"
+        },
+        {
+          "id": 24,
+          "author": "Martin Campbell-Kelly",
+          "title": "Data Communications at the National Physical Laboratory (1965-1975)",
+          "publication": "Annals of the History of Computing",
+          "volume": "9",
+          "issues": "3/4",
+          "year": 1987,
+          "pages": "221-247",
+          "doi": "10.1109/MAHC.1987.10023"
+        },
+        {
+          "id": 25,
+          "authors": [
+            "David Walden",
+            "IMP Software Guys"
+          ],
+          "title": "The Arpanet IMP Program: Retrospective and Resurrection",
+          "publication": "IEEE Annals of the History of Computing",
+          "volume": "36",
+          "issue": "2",
+          "date": "2014-04_to_2014-06",
+          "pages": "28-39",
+          "doi": "10.1109/MAHC.2014.30"
+        },
+        {
+          "id": 26,
+          "authors": [
+            "Frank Heart",
+            "Robert Kahn",
+            "Severo Ornstein",
+            "William Crowther",
+            "David Walden"
+          ],
+          "title": "The Interface Message Processor for the ARPA Computer Network",
+          "publication": "Proc. 1970 Spring Joint Computer Conference",
+          "volume": "36",
+          "pages": "551-567"
+        },
+        {
+          "id": 27,
+          "title": "Specifications for the Interconnection of a Host and an IMP",
+          "publisher": "Bolt, Beranek, and Newman",
+          "document": "BBN Report 1822"
+        },
+        {
+          "id": 28,
+          "author": "Hubert Zimmermann",
+          "title": "OSI Reference Model—The ISO Model of Architecture for Open Systems Interconnection",
+          "publication": "IEEE Transactions on Communications",
+          "volume": "28",
+          "issue": "4",
+          "date": "1980-04",
+          "pages": "425-432",
+          "doi": "10.1109/TCOM.1980.1094702"
+        }
+      ]
+    },
+
+    "reference_relationships": {
+      "RFC_1": {
+        "relationship": "first RFC associated with ARPA network host software",
+        "author": "Steve Crocker"
+      },
+      "BBN_Report_1822": {
+        "relationship": "defines host-to-IMP interface",
+        "author_attribution": "Bob Kahn"
+      },
+      "AFIPS_1970_IMP_paper": {
+        "relationship": "technical description of IMP architecture"
+      },
+      "AFIPS_1971_TERMINAL_IMP_paper": {
+        "relationship": "technical description of Terminal IMP"
+      },
+      "IEEE_2014_RETROSPECTIVE": {
+        "relationship": "historical retrospective and resurrection of IMP software"
+      }
+    },
+
+    "machine_readable_summary": {
+      "entity": "Interface Message Processor",
+      "type": "historical_packet_switch",
+      "abbreviation": "IMP",
+      "network": "ARPANET",
+      "developer": "BBN",
+      "primary_hardware": "Honeywell DDP-516",
+      "later_hardware": "Honeywell 316",
+      "first_deployment": "1969-08-30",
+      "last_arpanet_operation": "1989",
+      "protocol_interface": "BBN Report 1822",
+      "message_length_bits": 8159,
+      "header_bits": 96,
+      "checksum_bits": 24,
+      "routing": true,
+      "store_and_forward": true,
+      "flow_control": true,
+      "error_control": true,
+      "network_control": true,
+      "multi_host": true,
+      "terminal_variant": "TIP",
+      "modern_equivalent": "router",
+      "historical_significance": "foundational ARPANET packet-switching infrastructure"
+    },
+
+    "architectural_legacy": {
+      "host_to_network_separation": {
+        "principle": "dedicated intermediary computer separates host computing systems from network transmission infrastructure",
+        "modern_analogue": "network interface/router separation"
+      },
+      "packet_switching": {
+        "principle": "messages are forwarded through intermediate switching nodes",
+        "modern_analogue": "packet-switched Internet"
+      },
+      "routing": {
+        "principle": "intermediate nodes determine forwarding path",
+        "modern_analogue": "router forwarding/routing"
+      },
+      "standardized_interface": {
+        "principle": "host-to-network interaction defined independently of individual host implementation",
+        "standard": "1822"
+      },
+      "distributed_networking": {
+        "principle": "multiple independent hosts communicate through shared switching infrastructure",
+        "modern_analogue": "Internet architecture"
+      },
+      "reliability": {
+        "principle": "network nodes detect errors and provide delivery/error signaling",
+        "mechanisms": [
+          "checksums",
+          "acknowledgement",
+          "retransmission",
+          "alternating-bit protocol"
+        ]
+      }
+    },
+
+    "source_caveats": {
+      "historical_interpretation": [
+        "The source presents the IMP as the first generation of gateways now known as routers; this is a historical characterization rather than a claim that IMPs were identical to modern IP routers.",
+        "The source distinguishes between technical interchange with NPL and RAND researchers and independent BBN development of important ARPANET mechanisms."
+      ],
+      "hardware_performance": {
+        "Honeywell_316": "The source states that later non-ruggedized Honeywell 316 IMPs could handle approximately two-thirds of the communication traffic at approximately half the cost of the DDP-516."
+      },
+      "team_name_variation": {
+        "Bill_Bertell_vs_Bill_Bartell": "The textual team list and image caption use different spellings; both are preserved in this record."
+      },
+      "error_rate": {
+        "late_1969_test": "The source reports approximately one packet per 20,000 in error during a preliminary 27-hour test and later describes approximately 100% variation in this figure. This is preserved as reported rather than normalized into a single network-wide reliability metric."
+      },
+      "message_reliability": {
+        "1822": "The source describes reliable message delivery and delivery-failure reporting while explicitly noting rare conditions in which a host could miss a loss report or an IMP could report a message as lost even though it had actually been received."
+      },
+      "historical_scope": {
+        "end_of_life": "The source states that most IMPs were dismantled, junked, or transferred to MILNET after ARPANET decommissioning, while some were preserved."
+      },
+      "source_maintenance": {
+        "references": "The supplied source contains historical references with differing publication and retrieval dates; these are preserved rather than reconciled."
+      }
+    },
+
+    "record_integrity": {
+      "whole_entity_scope": true,
+      "includes_hardware": true,
+      "includes_software": true,
+      "includes_network_architecture": true,
+      "includes_development_history": true,
+      "includes_IMP_team": true,
+      "includes_initial_ARPANET_deployment": true,
+      "includes_TIP": true,
+      "includes_Pluribus": true,
+      "includes_1822": true,
+      "includes_protocol_details": true,
+      "includes_error_control": true,
+      "includes_reference_catalog": true,
+      "includes_historical_legacy": true,
+      "source_only_transformation": true,
+      "external_facts_added": false,
+      "unsupported_details_invented": false,
+      "conflicting_source_details_preserved": true,
+      "source_caveats_preserved": true
+    }
+  }
+}
