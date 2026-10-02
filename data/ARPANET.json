@@ -1,0 +1,1668 @@
+{
+  "ARPANET": {
+    "record_metadata": {
+      "canonical_name": "Advanced Research Projects Agency Network",
+      "abbreviation": "ARPANET",
+      "entity_type": "historical_wide_area_packet_switched_computer_network",
+      "classification": [
+        "wide-area network",
+        "packet-switched network",
+        "research network",
+        "military-funded research infrastructure",
+        "precursor to the Internet"
+      ],
+      "country_of_origin": "United States",
+      "international_presence": [
+        "United States",
+        "United Kingdom",
+        "Norway"
+      ],
+      "established": "1969",
+      "closed": "1990",
+      "operational_period": "1969–1990",
+      "funding_origin": "Advanced Research Projects Agency (ARPA)",
+      "later_operator": "Defense Communications Agency",
+      "source_type": "Wikipedia-derived historical and technical source",
+      "source_file": "Pasted text(20261002-221301).txt",
+      "source_line_count": 351,
+      "record_scope": "complete source-derived ARPANET record",
+      "historical_significance": "Technical foundation and direct predecessor of the modern Internet"
+    },
+
+    "identity": {
+      "official_name": "Advanced Research Projects Agency Network",
+      "short_name": "ARPANET",
+      "alternate_descriptions": [
+        "ARPA Network",
+        "Advanced Research Projects Agency Network",
+        "first wide-area packet-switched network with distributed control"
+      ],
+      "organization": {
+        "originating_agency": "Advanced Research Projects Agency",
+        "modern_name": "Defense Advanced Research Projects Agency",
+        "modern_abbreviation": "DARPA",
+        "department": "United States Department of Defense"
+      },
+      "network_type": "wide-area packet-switched network",
+      "control_model": "distributed control",
+      "commercial_status": false,
+      "historical_role": [
+        "research computer network",
+        "packet-switching testbed",
+        "internetworking research platform",
+        "early backbone for network research",
+        "precursor to the Internet"
+      ],
+      "technical_legacy": [
+        "packet switching",
+        "distributed networking",
+        "network routing",
+        "host/network separation",
+        "protocol layering",
+        "internetworking",
+        "TCP/IP deployment",
+        "electronic mail",
+        "remote login",
+        "file transfer"
+      ]
+    },
+
+    "network_profile": {
+      "geographic_scope": {
+        "initial": "United States",
+        "later": [
+          "United States",
+          "United Kingdom",
+          "Norway"
+        ]
+      },
+      "established": 1969,
+      "operational": true,
+      "declared_operational": 1971,
+      "operational_control_transfer": {
+        "year": 1975,
+        "new_operator": "Defense Communications Agency"
+      },
+      "decommissioned": {
+        "year": 1990,
+        "formal_status": "decommissioned"
+      },
+      "commercial_network": false,
+      "funding": {
+        "initial_agency": "ARPA",
+        "funding_start": 1966,
+        "purpose": "advanced research and resource sharing"
+      }
+    },
+
+    "architectural_model": {
+      "basic_architecture": {
+        "hosts": "independent computers connected to network nodes",
+        "nodes": "Interface Message Processors",
+        "node_abbreviation": "IMP",
+        "links": "leased telecommunications circuits",
+        "switching_method": "packet switching",
+        "forwarding_method": "store-and-forward"
+      },
+      "host_network_separation": {
+        "principle": "Host computers were connected to dedicated intermediary packet-switching computers rather than directly managing the network.",
+        "intermediary": "IMP",
+        "modern_analogy": "router/gateway"
+      },
+      "distributed_control": true,
+      "network_services": [
+        "packet forwarding",
+        "routing",
+        "flow control",
+        "error detection",
+        "retransmission",
+        "remote login",
+        "file transfer",
+        "electronic mail",
+        "terminal access",
+        "network management"
+      ]
+    },
+
+    "protocol_stack": {
+      "layers_1_to_3": {
+        "host_to_IMP": "1822 protocol",
+        "IMP_to_IMP": "internal and initially undocumented"
+      },
+      "layers_4_plus": {
+        "initial": "Network Control Program",
+        "later": "TCP/IP"
+      },
+      "major_protocols": {
+        "1822": {
+          "purpose": "host-to-IMP message transmission",
+          "role": "initial ARPANET host interface protocol"
+        },
+        "NCP": {
+          "full_name": "Network Control Program",
+          "role": "host-to-host communication"
+        },
+        "TCP": {
+          "full_name": "Transmission Control Program",
+          "role": "internetworking protocol development"
+        },
+        "TCP_IP": {
+          "role": "production ARPANET protocol suite from 1983"
+        },
+        "Telnet": {
+          "role": "remote login"
+        },
+        "FTP": {
+          "full_name": "File Transfer Protocol",
+          "role": "file transfer"
+        },
+        "NVP": {
+          "full_name": "Network Voice Protocol",
+          "role": "packet voice / network conferencing experimentation"
+        }
+      }
+    },
+
+    "intellectual_origins": {
+      "JCR_Licklider": {
+        "organization": "Bolt Beranek and Newman",
+        "date": "April 1963",
+        "concept": "Intergalactic Computer Network",
+        "contribution": [
+          "general communications among computer users",
+          "resource sharing",
+          "networked computing vision"
+        ],
+        "ARPA_role": {
+          "appointment": "October 1963",
+          "programs": [
+            "Behavioral Sciences",
+            "Command and Control"
+          ]
+        }
+      },
+      "Ivan_Sutherland": {
+        "role": "continued development interest in Licklider's network concept",
+        "relationship": "ARPA"
+      },
+      "Bob_Taylor": {
+        "role": "initiated ARPANET project",
+        "year": 1966,
+        "motivation": [
+          "resource sharing",
+          "interconnection of ARPA-funded computers",
+          "rapid software and research-result distribution"
+        ]
+      },
+      "Larry_Roberts": {
+        "role": "ARPANET program manager",
+        "appointment": "January 1967",
+        "organization": "ARPA Information Processing Techniques Office",
+        "contributions": [
+          "network architecture decisions",
+          "ARPANET implementation planning",
+          "IMP specification",
+          "packet-switching adoption",
+          "network scaling"
+        ]
+      },
+      "Wesley_Clark": {
+        "contribution": "proposed small interface computers between hosts and transmission network",
+        "result": "IMP architecture"
+      },
+      "Paul_Baran": {
+        "organization": "RAND Corporation",
+        "work": "distributed adaptive message block switching",
+        "contribution": "influence on packet-network and dynamic-routing concepts"
+      },
+      "Donald_Davies": {
+        "organization": "National Physical Laboratory",
+        "country": "United Kingdom",
+        "concept": "packet switching",
+        "proposal": 1965,
+        "term": "packet switching",
+        "NPL_network": {
+          "implementation": "1968",
+          "historical_status": "one of the first packet-switched networks"
+        }
+      }
+    },
+
+    "creation_history": {
+      "1966": {
+        "event": "Bob Taylor successfully lobbied ARPA Director Charles M. Herzfeld for network funding",
+        "funding": {
+          "amount": "$1 million",
+          "source": "ballistic missile defense program"
+        },
+        "project": "ARPANET"
+      },
+      "1967": {
+        "event": "Larry Roberts began work as ARPANET program manager",
+        "design_session": {
+          "month": "April",
+          "topics": [
+            "user identification",
+            "authentication",
+            "character transmission",
+            "error checking",
+            "retransmission"
+          ]
+        },
+        "initial_roberts_design": "mainframe computers directly connected to each other",
+        "clark_proposal": "small interface computers between hosts and network",
+        "result": "IMP-based architecture"
+      },
+      "1967_october": {
+        "event": "ARPANET design presented at Symposium on Operating Systems Principles",
+        "influences_presented": [
+          "Donald Davies packet switching",
+          "NPL network",
+          "Paul Baran distributed networking"
+        ],
+        "result": "packet switching adopted as ARPANET design basis"
+      },
+      "1968": {
+        "event": "final IMP specification developed",
+        "participants": [
+          "Larry Roberts",
+          "Barry Wessler",
+          "Stanford Research Institute"
+        ],
+        "rfq": {
+          "potential_bidders": 140,
+          "submitted_bids": 12,
+          "top_ranked_contractors": 4,
+          "final_candidates": 2
+        }
+      },
+      "1969": {
+        "event": "BBN awarded contract",
+        "month": "January",
+        "scope": "network and IMP construction"
+      }
+    },
+
+    "BBN_and_IMP_development": {
+      "contractor": "Bolt Beranek & Newman",
+      "abbreviation": "BBN",
+      "role": [
+        "network engineering",
+        "IMP hardware",
+        "IMP software",
+        "routing",
+        "flow control",
+        "network control"
+      ],
+      "IMP_team": {
+        "team_name": "IMP Guys",
+        "team_leader": "Frank Heart",
+        "network_theory": "Bob Kahn",
+        "members": [
+          "Frank Heart",
+          "Bob Kahn",
+          "Dave Walden",
+          "Severo Ornstein",
+          "William Crowther",
+          "Bernie Cosell",
+          "Paul Wexelblat",
+          "Hawley Rising",
+          "Ben Barker",
+          "Marty Thorp",
+          "Jim Geisman",
+          "Truett Thach",
+          "Bill Bertell"
+        ]
+      },
+      "development_speed": {
+        "hardware_and_software_design_period": "approximately nine months",
+        "significance": "rapid implementation from contract award to operational packet-switching system"
+      },
+      "network_architecture": {
+        "nodes": "IMPs",
+        "role": "gateways interconnecting local host resources",
+        "functions": [
+          "routing",
+          "flow control",
+          "packet switching",
+          "network control",
+          "remote monitoring"
+        ]
+      }
+    },
+
+    "IMP_hardware": {
+      "original_platform": {
+        "manufacturer": "Honeywell",
+        "model": "DDP-516",
+        "configuration": "ruggedized",
+        "memory": "24 KB expandable magnetic-core memory",
+        "DMA": {
+          "type": "Direct Multiplex Control",
+          "channels": 16,
+          "function": "direct memory access"
+        }
+      },
+      "interfaces": {
+        "host_connection": "custom serial communication interfaces",
+        "network_connection": "telecommunication data sets/modems",
+        "leased_lines": true
+      },
+      "capacity": {
+        "local_hosts": 4,
+        "remote_IMPs": 6
+      },
+      "initial_link_speed": "50 kbit/s",
+      "status_indicators": {
+        "front_panel": true,
+        "communication_channel_lamps": 24
+      },
+      "later_platform": {
+        "model": "Honeywell 316",
+        "introduced": 1971,
+        "configuration": "non-ruggedized",
+        "advantages": [
+          "lighter",
+          "lower cost",
+          "greater integration",
+          "easier maintenance"
+        ]
+      },
+      "Honeywell_316_memory": {
+        "TIP_configuration": "40 KB initially",
+        "later_IMP_memory": "32 KB",
+        "later_TIP_memory": "56 KB",
+        "year": 1973
+      },
+      "later_BBN_platforms": [
+        {
+          "name": "Pluribus",
+          "type": "multiprocessor"
+        },
+        {
+          "name": "C/30",
+          "type": "BBN processor product",
+          "year": 1981
+        }
+      ]
+    },
+
+    "initial_network_nodes": {
+      "count": 4,
+      "deployment": [
+        {
+          "sequence": 1,
+          "site": "University of California, Los Angeles",
+          "abbreviation": "UCLA",
+          "host": "SDS Sigma 7",
+          "researcher": "Leonard Kleinrock",
+          "role": "Network Measurement Center",
+          "first_node": true
+        },
+        {
+          "sequence": 2,
+          "site": "Stanford Research Institute",
+          "abbreviation": "SRI",
+          "modern_name": "SRI International",
+          "host": "SDS 940",
+          "system": "NLS",
+          "system_name": "Genie",
+          "researcher": "Douglas Engelbart",
+          "role": "Augmentation Research Center / Network Information Center"
+        },
+        {
+          "sequence": 3,
+          "site": "University of California, Santa Barbara",
+          "abbreviation": "UCSB",
+          "host": "IBM 360/75",
+          "operating_system": "OS/MVT",
+          "associated_center": "Culler-Fried Interactive Mathematics Center"
+        },
+        {
+          "sequence": 4,
+          "site": "University of Utah School of Computing",
+          "host": "DEC PDP-10",
+          "operating_system": "TENEX",
+          "associated_researcher": "Ivan Sutherland"
+        }
+      ],
+      "selection_criteria": [
+        "leased-line cost",
+        "network research expertise",
+        "software and systems expertise",
+        "resource-sharing potential"
+      ]
+    },
+
+    "first_ARPANET_message": {
+      "date": "1969-10-29",
+      "time": "10:30 pm PST",
+      "utc_time": "1969-10-30 06:30 UTC",
+      "source_site": "UCLA",
+      "destination_site": "Stanford Research Institute",
+      "source_host": "SDS Sigma 7",
+      "destination_host": "SDS 940",
+      "source_operator": "Charley Kline",
+      "destination_operator": "Bill Duvall",
+      "command": "login",
+      "initial_result": "SDS 940 crashed after receiving two characters",
+      "successful_result": "login completed approximately one hour later",
+      "first_successfully_transmitted_characters": "lo",
+      "historical_significance": "first successful host-to-host communication across ARPANET"
+    },
+
+    "network_establishment": {
+      "first_four_node_network": {
+        "completed": "1969-12-05"
+      },
+      "first_permanent_link": {
+        "date": "1969-11-21",
+        "endpoints": [
+          "UCLA IMP",
+          "SRI IMP"
+        ],
+        "citation_status": "citation-needed in source"
+      },
+      "operational_declaration": {
+        "year": 1971
+      }
+    },
+
+    "network_control_program": {
+      "abbreviation": "NCP",
+      "development_period": "1969–1970",
+      "implementation": 1970,
+      "lead": "Steve Crocker",
+      "organization": "UCLA",
+      "network_working_group": {
+        "abbreviation": "NWG",
+        "participants": [
+          "Steve Crocker",
+          "Jon Postel",
+          "graduate students",
+          "research laboratory personnel"
+        ]
+      },
+      "purpose": [
+        "host-to-host communication",
+        "reliable connections",
+        "flow-controlled connections",
+        "bidirectional process communication"
+      ],
+      "architectural_significance": "Early example of protocol layering",
+      "applications_enabled": [
+        "Telnet",
+        "FTP",
+        "email",
+        "remote resource access"
+      ]
+    },
+
+    "network_growth": {
+      "IMP_counts": [
+        {
+          "date": "1970-03",
+          "count": "East Coast connection established"
+        },
+        {
+          "date": "1970-06",
+          "count": 9
+        },
+        {
+          "date": "1970-12",
+          "count": 13
+        },
+        {
+          "date": "1971-09",
+          "count": 18,
+          "hosts": 23
+        },
+        {
+          "date": "1972-08",
+          "count": 29
+        },
+        {
+          "date": "1973-09",
+          "count": 40
+        },
+        {
+          "date": "1974-06",
+          "count": 46
+        },
+        {
+          "date": "1975-07",
+          "count": 57
+        }
+      ],
+      "1981": {
+        "host_computers": 213,
+        "growth_rate": "approximately one additional host every twenty days"
+      },
+      "link_speed": {
+        "initial": "50 kbit/s",
+        "230_4_kbit_s_support_added": 1970,
+        "higher_speed_usage": "limited by cost and IMP processing capability"
+      }
+    },
+
+    "international_expansion": {
+      "United_Kingdom": {
+        "research_group": "Peter Kirstein research group",
+        "institution": "University College London",
+        "abbreviation": "UCL",
+        "selection_year": 1971,
+        "role": "UK connection and internetworking research"
+      },
+      "Norway": {
+        "network": "Norwegian Seismic Array",
+        "abbreviation": "NORSAR",
+        "first_non_US_node": true
+      },
+      "transatlantic_link": {
+        "year": 1973,
+        "technology": "satellite link",
+        "route": [
+          "ARPANET",
+          "NORSAR",
+          "Tanum Earth Station, Sweden",
+          "University College London"
+        ],
+        "significance": [
+          "first international ARPANET connection",
+          "early international resource sharing",
+          "early internetworking research"
+        ]
+      },
+      "international_networks": [
+        "ARPANET",
+        "SATNET",
+        "British academic networks"
+      ]
+    },
+
+    "NORSAR": {
+      "full_name": "Norwegian Seismic Array",
+      "country": "Norway",
+      "role": "first non-US ARPANET node",
+      "connection": {
+        "method": "transatlantic satellite link",
+        "year": 1973
+      },
+      "importance": [
+        "internationalization of ARPANET",
+        "early satellite networking",
+        "internetworking experimentation"
+      ]
+    },
+
+    "SATNET": {
+      "relationship_to_ARPANET": "international packet-network extension",
+      "origin": "transatlantic ARPANET/NORSAR connectivity",
+      "later_connection": "UCL",
+      "role": "satellite packet network",
+      "1977_internetwork": [
+        "ARPANET",
+        "SATNET",
+        "PRNET"
+      ],
+      "1982_changes": [
+        "Norway left ARPANET and used TCP/IP over SATNET",
+        "UCL left ARPANET and became an Internet connection"
+      ]
+    },
+
+    "internetworking": {
+      "problem": "Different packet-switched networks required a common mechanism for interconnection.",
+      "contributors": [
+        "Bob Kahn",
+        "Vint Cerf",
+        "Louis Pouzin",
+        "Hubert Zimmermann",
+        "Steve Crocker",
+        "Bob Metcalfe",
+        "Peter Kirstein"
+      ],
+      "influences": {
+        "CYCLADES": {
+          "country": "France",
+          "leader": "Louis Pouzin",
+          "contribution": "simplified end-to-end networking/catenet architecture"
+        },
+        "Ethernet": {
+          "researcher": "Bob Metcalfe",
+          "organization": "Xerox PARC",
+          "contribution": "Ethernet and packet-network concepts"
+        }
+      },
+      "International_Network_Working_Group": {
+        "abbreviation": "INWG",
+        "participants": [
+          "Steve Crocker",
+          "Vint Cerf",
+          "British network researchers",
+          "French network researchers"
+        ]
+      }
+    },
+
+    "TCP_IP_transition": {
+      "origin": {
+        "researchers": [
+          "Bob Kahn",
+          "Vint Cerf"
+        ],
+        "institutional_context": [
+          "DARPA",
+          "Stanford University"
+        ]
+      },
+      "transmission_control_program": {
+        "initial_formulation": 1974,
+        "authors": [
+          "Vint Cerf",
+          "Yogen Dalal",
+          "Carl Sunshine"
+        ],
+        "document": "RFC 675",
+        "date": "1974-12"
+      },
+      "experimental_implementations": {
+        "locations": [
+          "Stanford University",
+          "BBN",
+          "University College London"
+        ],
+        "period": "mid-1970s"
+      },
+      "architectural_evolution": {
+        "initial": "monolithic Transmission Control Program",
+        "later": "modular protocol stack",
+        "version": 4,
+        "year": 1978,
+        "influences": [
+          "CYCLADES",
+          "Bob Metcalfe's Xerox PARC work"
+        ]
+      },
+      "ARPANET_production_deployment": {
+        "date": "1983-01-01",
+        "event": "TCP/IP replaced NCP",
+        "historical_name": "flag day"
+      },
+      "military_standardization": {
+        "year": 1980,
+        "organization": "Department of Defense",
+        "action": "made TCP/IP standard for military computer networking"
+      }
+    },
+
+    "MILNET_split": {
+      "year": 1984,
+      "purpose": "separate U.S. military sites from the research-oriented ARPANET",
+      "military_network": "MILNET",
+      "parent_network": "Defense Data Network",
+      "result": {
+        "ARPANET_nodes_before_split": 113,
+        "nodes_removed_to_MILNET": 68,
+        "remaining_ARPANET_nodes": 45
+      },
+      "gateway_model": {
+        "controlled_gateways": true,
+        "purpose": "connect networks while allowing separation during emergency"
+      },
+      "information_classification": "unclassified information",
+      "historical_effect": "ARPANET increasingly functioned as a research/internet backbone while military networking moved to MILNET"
+    },
+
+    "NSF_and_network_expansion": {
+      "CSNET": {
+        "full_name": "Computer Science Network",
+        "year": 1981,
+        "funder": "National Science Foundation",
+        "role": "expanded network access beyond original ARPANET community"
+      },
+      "NSFNET": {
+        "year": 1986,
+        "funder": "National Science Foundation",
+        "purpose": [
+          "national supercomputing center connectivity",
+          "network interconnection",
+          "expanded academic networking"
+        ],
+        "historical_role": "important successor/expansion path toward the commercial Internet"
+      }
+    },
+
+    "applications": {
+      "remote_login": {
+        "protocol": "Telnet",
+        "development": "1969 onward",
+        "documentation": [
+          "RFC 15",
+          "RFC 855"
+        ],
+        "purpose": "remote time-sharing access"
+      },
+      "file_transfer": {
+        "protocol": "FTP",
+        "initial_specification": {
+          "author": "Abhay Bhushan",
+          "document": "RFC 114",
+          "date": "1971-04-16"
+        },
+        "mature_specification": {
+          "document": "RFC 354",
+          "year": 1973
+        },
+        "purpose": "file transfer between network hosts"
+      },
+      "email": {
+        "first_network_email": {
+          "person": "Ray Tomlinson",
+          "organization": "BBN",
+          "year": 1971
+        },
+        "traffic_share": {
+          "year": 1973,
+          "reported_share": "approximately three-quarters of ARPANET traffic"
+        },
+        "historical_importance": "email became one of the dominant ARPANET applications"
+      },
+      "network_voice": {
+        "protocol": "Network Voice Protocol",
+        "abbreviation": "NVP",
+        "specification": 1977,
+        "document": "RFC 741",
+        "result": "implemented but conference calls did not work reliably",
+        "modern_successor_context": "packet voice later became practical as VoIP"
+      }
+    },
+
+    "resource_sharing": {
+      "original_motivation": [
+        "remote computer access",
+        "sharing expensive computing resources",
+        "sharing software",
+        "sharing research results",
+        "collaboration among geographically distributed researchers"
+      ],
+      "ARPA_research_environment": {
+        "participating_locations": [
+          "universities",
+          "research laboratories",
+          "corporate research sites",
+          "government organizations"
+        ]
+      },
+      "directory_system": {
+        "creator": "Elizabeth Feinler",
+        "year": 1969,
+        "product": "Resource Handbook / ARPANET directory",
+        "purpose": [
+          "resource discovery",
+          "network navigation",
+          "identification of network services"
+        ]
+      }
+    },
+
+    "network_performance": {
+      "researcher": "Leonard Kleinrock",
+      "contract_year": 1968,
+      "objectives": [
+        "measure network performance",
+        "analyze packet delay",
+        "identify improvement opportunities"
+      ],
+      "mathematical_methods": {
+        "basis": [
+          "queueing theory",
+          "network flow theory",
+          "optimization of message delay"
+        ],
+        "limitation": "analytic methods required simplifying assumptions"
+      },
+      "simulation": {
+        "used": true,
+        "organizations": [
+          "ARPA",
+          "NPL"
+        ],
+        "purpose": "model larger packet-switched networks and validate analytical assumptions"
+      }
+    },
+
+    "network_topology_and_routing": {
+      "topology_researcher": "Howard Frank",
+      "role": "consultant",
+      "recommendations": [
+        "increase throughput",
+        "reduce network cost",
+        "improve topology for network scaling"
+      ],
+      "routing": {
+        "implemented_by": "IMPs",
+        "type": "distributed network routing",
+        "functions": [
+          "forwarding",
+          "link-state routing",
+          "reliable message delivery",
+          "network monitoring"
+        ]
+      },
+      "IMP_addressing": {
+        "initial_IMP_identifier_bits": 6,
+        "initial_host_index_bits": 2,
+        "initial_hosts_per_IMP": 4,
+        "address_format": [
+          "port/IMP notation",
+          "single-byte representation"
+        ],
+        "example": {
+          "host": "MIT-DMG",
+          "notation": [
+            "1/6",
+            "70"
+          ]
+        },
+        "1976_upgrade": {
+          "host_number_bits": 8,
+          "IMP_number_bits": 16
+        }
+      }
+    },
+
+    "IMP_functions": {
+      "primary": [
+        "routing",
+        "packet forwarding",
+        "store-and-forward",
+        "link-state routing",
+        "reliable forwarding",
+        "remote monitoring",
+        "network management"
+      ],
+      "background_programs": [
+        {
+          "name": "TTY",
+          "function": "manual packet transmission through IMP teletype"
+        },
+        {
+          "name": "DEBUG",
+          "function": "debugging"
+        },
+        {
+          "name": "PARAMETER-CHANGE",
+          "function": "network parameter modification"
+        },
+        {
+          "name": "DISCARD",
+          "function": "packet/message discard"
+        },
+        {
+          "name": "TRACE",
+          "function": "network tracing"
+        },
+        {
+          "name": "STATISTICS",
+          "function": "network statistics"
+        }
+      ]
+    },
+
+    "1822_protocol": {
+      "name": "BBN 1822",
+      "purpose": "host-to-IMP communication",
+      "initial_role": "starting point for ARPANET host-to-host communication",
+      "message_structure": {
+        "message_type": true,
+        "numeric_host_address": true,
+        "data_field": true
+      },
+      "operation": [
+        "host constructs message",
+        "host specifies destination address",
+        "message transmitted through 1822 hardware interface",
+        "local IMP receives message",
+        "IMP delivers locally or forwards to another IMP",
+        "destination IMP delivers message to destination host",
+        "destination IMP returns RFNM acknowledgment"
+      ],
+      "acknowledgment": {
+        "name": "Ready for Next Message",
+        "abbreviation": "RFNM",
+        "purpose": "acknowledge message delivery"
+      },
+      "reliability": {
+        "delivery": "reliable",
+        "loss_notification": true
+      }
+    },
+
+    "NCP_vs_modern_IP": {
+      "ARPANET_1822": {
+        "reliability": "network attempted reliable message delivery",
+        "loss_notification": true
+      },
+      "modern_IP": {
+        "reliability": "unreliable datagram delivery",
+        "reliability_layer": "typically provided by TCP or another higher-level protocol"
+      },
+      "NCP": {
+        "role": "provided reliable flow-controlled bidirectional host-to-host process connections"
+      },
+      "historical_significance": "The distinction between lower-level packet delivery and higher-level reliable communication became foundational to later layered Internet architecture."
+    },
+
+    "network_security": {
+      "encryption": {
+        "deployment": "approximately 1975",
+        "purpose": "support classified traffic"
+      },
+      "password_protection": {
+        "algorithm": "Purdy Polynomial",
+        "year": 1971,
+        "purpose": "password protection",
+        "requestor": "Larry Roberts",
+        "mathematical_description": "Polynomial of degree 224 + 17 modulo the 64-bit prime p = 2^64 − 59",
+        "later_use": "Digital Equipment Corporation VMS password hashing"
+      },
+      "security_context": {
+        "classification": "government-funded research network",
+        "military_relationship": true,
+        "classified_traffic_support": true
+      }
+    },
+
+    "operation_and_governance": {
+      "original_operator": "ARPA",
+      "operational_control_change": {
+        "year": 1975,
+        "organization": "Defense Communications Agency"
+      },
+      "mission": "research and communications infrastructure",
+      "orientation": "communications-oriented rather than consumer/user-oriented",
+      "government_funding": true,
+      "commercial_operation": false
+    },
+
+    "1977_internetworking_demonstration": {
+      "networks": [
+        "ARPANET",
+        "PRNET",
+        "SATNET"
+      ],
+      "year": 1977,
+      "purpose": "demonstrate internetworking between different packet-switched networks",
+      "historical_importance": "demonstrated practical network-of-networks architecture"
+    },
+
+    "1983_flag_day": {
+      "date": "1983-01-01",
+      "event": "TCP/IP became the standard ARPANET protocol suite",
+      "previous_protocol": "NCP",
+      "replacement": "TCP/IP",
+      "significance": "major transition from ARPANET-specific host networking toward Internet internetworking architecture"
+    },
+
+    "decommissioning": {
+      "formal_decommissioning": 1990,
+      "context": [
+        "private-sector network expansion",
+        "telecommunications industry participation",
+        "computer industry participation",
+        "NSFNET expansion",
+        "TCP/IP adoption",
+        "emergence of commercial Internet"
+      ],
+      "historical_transition": "ARPANET infrastructure and research were superseded by an expanding interconnected Internet."
+    },
+
+    "historical_timeline": [
+      {
+        "year": 1963,
+        "event": "J. C. R. Licklider developed the Intergalactic Computer Network concept."
+      },
+      {
+        "year": 1965,
+        "event": "Donald Davies independently developed packet-switching concepts."
+      },
+      {
+        "year": 1966,
+        "event": "Bob Taylor initiated the ARPANET project and obtained approximately $1 million in redirected ARPA funding."
+      },
+      {
+        "year": 1967,
+        "event": "Larry Roberts appointed ARPANET program manager."
+      },
+      {
+        "year": 1967,
+        "event": "Wesley Clark proposed intermediary minicomputers, leading to IMP architecture."
+      },
+      {
+        "year": 1967,
+        "event": "Donald Davies' packet-switching work and Paul Baran's work influenced ARPANET design discussions."
+      },
+      {
+        "year": 1968,
+        "event": "Final IMP specification completed and RFQ issued."
+      },
+      {
+        "year": 1969,
+        "event": "BBN awarded ARPANET network/IMP contract."
+      },
+      {
+        "year": 1969,
+        "event": "First four ARPANET nodes deployed."
+      },
+      {
+        "date": "1969-10-29",
+        "event": "First successful host-to-host ARPANET communication."
+      },
+      {
+        "date": "1969-12-05",
+        "event": "Initial four-node network established."
+      },
+      {
+        "year": 1970,
+        "event": "Network Control Program implemented."
+      },
+      {
+        "year": 1970,
+        "event": "ARPANET expanded to the U.S. East Coast."
+      },
+      {
+        "year": 1971,
+        "event": "ARPANET declared operational."
+      },
+      {
+        "year": 1971,
+        "event": "Honeywell 316 introduced as lighter IMP platform."
+      },
+      {
+        "year": 1971,
+        "event": "Ray Tomlinson sent first network email."
+      },
+      {
+        "year": 1972,
+        "event": "ARPANET demonstrated publicly at ICCC."
+      },
+      {
+        "year": 1973,
+        "event": "Norwegian and British international connectivity established."
+      },
+      {
+        "year": 1973,
+        "event": "Email became a dominant category of ARPANET traffic."
+      },
+      {
+        "year": 1974,
+        "event": "TCP development formally described in RFC 675."
+      },
+      {
+        "year": 1975,
+        "event": "Operational control passed to Defense Communications Agency."
+      },
+      {
+        "year": 1975,
+        "event": "BBN introduced IMP software on Pluribus multiprocessor systems."
+      },
+      {
+        "year": 1977,
+        "event": "ARPANET, PRNET, and SATNET interconnected."
+      },
+      {
+        "year": 1977,
+        "event": "Network Voice Protocol specified."
+      },
+      {
+        "year": 1978,
+        "event": "TCP version 4 redesigned as modular protocol architecture."
+      },
+      {
+        "year": 1980,
+        "event": "Department of Defense standardized TCP/IP for military networking."
+      },
+      {
+        "year": 1981,
+        "event": "CSNET expanded access to network research."
+      },
+      {
+        "year": 1981,
+        "event": "BBN introduced IMP software on C/30 processors."
+      },
+      {
+        "year": 1983,
+        "event": "TCP/IP replaced NCP on ARPANET."
+      },
+      {
+        "year": 1984,
+        "event": "MILNET split military sites from research ARPANET."
+      },
+      {
+        "year": 1986,
+        "event": "NSFNET expanded national academic networking."
+      },
+      {
+        "year": 1989,
+        "event": "TCP/IP Internet protocol suite had matured into the foundation of the emerging Internet."
+      },
+      {
+        "year": 1990,
+        "event": "ARPANET formally decommissioned."
+      }
+    ],
+
+    "key_people": {
+      "JCR_Licklider": {
+        "organization": "BBN / ARPA",
+        "contribution": "Intergalactic Computer Network concept"
+      },
+      "Bob_Taylor": {
+        "organization": "ARPA",
+        "contribution": "initiated ARPANET project"
+      },
+      "Larry_Roberts": {
+        "organization": "ARPA",
+        "contribution": [
+          "program management",
+          "architecture",
+          "IMP specification",
+          "packet-switching implementation"
+        ]
+      },
+      "Wesley_Clark": {
+        "contribution": "IMP intermediary-computer architecture"
+      },
+      "Donald_Davies": {
+        "organization": "NPL",
+        "contribution": "packet switching"
+      },
+      "Paul_Baran": {
+        "organization": "RAND",
+        "contribution": "distributed adaptive message switching"
+      },
+      "Frank_Heart": {
+        "organization": "BBN",
+        "contribution": "IMP team leadership"
+      },
+      "Bob_Kahn": {
+        "organizations": [
+          "BBN",
+          "DARPA"
+        ],
+        "contributions": [
+          "ARPANET protocol design",
+          "internetworking",
+          "TCP development"
+        ]
+      },
+      "Leonard_Kleinrock": {
+        "organization": "UCLA",
+        "contributions": [
+          "packet-network mathematical analysis",
+          "network performance measurement",
+          "Network Measurement Center"
+        ]
+      },
+      "Steve_Crocker": {
+        "organization": "UCLA / DARPA",
+        "contribution": "NCP development and Network Working Group leadership"
+      },
+      "Jon_Postel": {
+        "organization": "UCLA",
+        "contribution": "ARPANET protocol/software development"
+      },
+      "Vint_Cerf": {
+        "organization": "Stanford / DARPA",
+        "contribution": "TCP/IP development"
+      },
+      "Louis_Pouzin": {
+        "organization": "IRIA",
+        "country": "France",
+        "contribution": "CYCLADES/catenet architecture"
+      },
+      "Hubert_Zimmermann": {
+        "organization": "IRIA",
+        "contribution": "CYCLADES and internetworking"
+      },
+      "Bob_Metcalfe": {
+        "organization": "Xerox PARC",
+        "contribution": "Ethernet and packet-network concepts"
+      },
+      "Peter_Kirstein": {
+        "organization": "University College London",
+        "contribution": "UK ARPANET connection and early internetworking"
+      },
+      "Elizabeth_Feinler": {
+        "organization": "SRI",
+        "contribution": "ARPANET Resource Handbook and directory"
+      },
+      "Ray_Tomlinson": {
+        "organization": "BBN",
+        "contribution": "first network email"
+      },
+      "Howard_Frank": {
+        "role": "network topology consultant",
+        "contribution": "scaling and topology recommendations"
+      },
+      "Charley_Kline": {
+        "organization": "UCLA",
+        "role": "operator of first successful host-to-host transmission"
+      },
+      "Bill_Duvall": {
+        "organization": "SRI",
+        "role": "operator of first successful host-to-host transmission"
+      }
+    },
+
+    "organizations_and_relationships": {
+      "ARPA": {
+        "relationship": "originating sponsor",
+        "role": "funding and program management"
+      },
+      "DARPA": {
+        "relationship": "successor agency to ARPA",
+        "role": "later program management and TCP/IP standardization context"
+      },
+      "BBN": {
+        "relationship": "network and IMP contractor",
+        "role": [
+          "IMP development",
+          "network architecture",
+          "software",
+          "routing",
+          "network control"
+        ]
+      },
+      "UCLA": {
+        "relationship": "first ARPANET node",
+        "roles": [
+          "Network Measurement Center",
+          "NCP development",
+          "first successful host-to-host transmission"
+        ]
+      },
+      "SRI": {
+        "relationship": "second ARPANET node",
+        "roles": [
+          "Augmentation Research Center",
+          "Network Information Center",
+          "NLS host"
+        ]
+      },
+      "UCSB": {
+        "relationship": "third initial node"
+      },
+      "University_of_Utah": {
+        "relationship": "fourth initial node"
+      },
+      "NPL": {
+        "relationship": "parallel packet-switching research network"
+      },
+      "RAND": {
+        "relationship": "distributed networking research influence"
+      },
+      "University_College_London": {
+        "relationship": "international ARPANET gateway/research node"
+      },
+      "NORSAR": {
+        "relationship": "first non-US ARPANET node"
+      },
+      "NSF": {
+        "relationship": "later expansion through CSNET and NSFNET"
+      },
+      "Defense_Communications_Agency": {
+        "relationship": "operational control from 1975"
+      },
+      "Department_of_Defense": {
+        "relationship": "funding and military networking standardization"
+      }
+    },
+
+    "military_relationship": {
+      "funding": "ARPA was a Department of Defense agency.",
+      "research_status": "research-oriented network",
+      "military_standardization": {
+        "year": 1980,
+        "protocol": "TCP/IP"
+      },
+      "classified_traffic": {
+        "supported": true,
+        "encryption_devices": "introduced around 1975"
+      },
+      "MILNET": {
+        "year": 1984,
+        "purpose": "separate military networking from research ARPANET"
+      },
+      "DDN": {
+        "full_name": "Defense Data Network",
+        "relationship": "MILNET became part of DDN"
+      },
+      "caveat": "The source characterizes ARPANET itself as a research project rather than simply a military operational network."
+    },
+
+    "historical_legacy": {
+      "technical_foundations": [
+        "packet switching",
+        "distributed routing",
+        "network gateways",
+        "host/network separation",
+        "protocol layering",
+        "internetworking",
+        "TCP/IP",
+        "network email",
+        "remote login",
+        "file transfer"
+      ],
+      "internet_transition": {
+        "ARPANET": "research packet network",
+        "CSNET": "expanded academic access",
+        "NSFNET": "national academic networking",
+        "MILNET": "military networking",
+        "Internet": "interconnected commercial/global network"
+      },
+      "architectural_principles": [
+        "independent host computers",
+        "intermediate packet-switching nodes",
+        "distributed routing",
+        "standardized interfaces",
+        "layered protocols",
+        "interconnection of heterogeneous networks"
+      ],
+      "historical_status": "direct technical ancestor of the Internet"
+    },
+
+    "source_caveats": {
+      "networking_section": {
+        "citation_warning": "The source marks the networking evolution section as needing additional citations.",
+        "implication": "Some detailed claims in that section should be treated as source-present but citation-incomplete."
+      },
+      "first_permanent_link": {
+        "status": "citation-needed in source"
+      },
+      "IMP_numbering": {
+        "status": "source marks later numbering details as citation-needed"
+      },
+      "IMP_background_programs": {
+        "status": "source marks details as citation-needed"
+      },
+      "application_history": {
+        "status": "some protocol/application details are explicitly marked citation-needed"
+      },
+      "security": {
+        "status": "Purdy Polynomial details are presented in the source with citation-needed notation"
+      },
+      "first_email": {
+        "status": "source attributes first network email to Ray Tomlinson at BBN"
+      },
+      "email_traffic": {
+        "status": "source cites approximately three-quarters of ARPANET traffic as email in 1973"
+      },
+      "historical_interpretation": {
+        "packet_switching": "The source credits independent work by Paul Baran and Donald Davies while describing Davies' work as directly influencing ARPANET developers.",
+        "internet_origins": "The source presents ARPANET as foundational to the Internet but also identifies contributions from NPL, CYCLADES, Xerox PARC, RAND, and other research programs."
+      },
+      "decommissioning": {
+        "year": "The source gives formal closure as 1990.",
+        "transition": "Private-sector expansion and NSFNET are presented as part of the transition to the broader Internet."
+      }
+    },
+
+    "reference_catalog": {
+      "major_reference_groups": {
+        "ARPANET_history": [
+          "A History of the ARPANET: The First Decade",
+          "ARPANET Completion Report",
+          "Inventing the Internet",
+          "Where Wizards Stay Up Late",
+          "A Brief History of the Internet"
+        ],
+        "technical_protocols": [
+          "BBN Report 1822",
+          "RFC 1",
+          "RFC 675",
+          "RFC 801",
+          "RFC 802",
+          "RFC 1122",
+          "RFC 1123"
+        ],
+        "academic_research": [
+          "AFIPS proceedings",
+          "IEEE Annals of the History of Computing",
+          "Proceedings of the IEEE",
+          "Technology and Culture"
+        ],
+        "institutional_sources": [
+          "UCLA",
+          "SRI International",
+          "NORSAR",
+          "Defense Communications Agency",
+          "National Science Foundation",
+          "Stanford University",
+          "BBN"
+        ]
+      },
+      "notable_references": [
+        {
+          "author": "Lawrence G. Roberts",
+          "title": "The ARPANET & Computer Networks",
+          "year": 1995
+        },
+        {
+          "authors": [
+            "Frank Heart",
+            "Robert Kahn",
+            "Severo Ornstein",
+            "William Crowther",
+            "David Walden"
+          ],
+          "title": "The Interface Message Processor for the ARPA Computer Network",
+          "publication_year": 1970
+        },
+        {
+          "author": "Steve Crocker",
+          "title": "Host Software",
+          "document": "RFC 1",
+          "date": "1969-04-07"
+        },
+        {
+          "authors": [
+            "Vint Cerf",
+            "Yogen Dalal",
+            "Carl Sunshine"
+          ],
+          "title": "Specification of Internet Transmission Control Program",
+          "document": "RFC 675",
+          "date": "1974-12"
+        },
+        {
+          "author": "Jon Postel",
+          "title": "NCP/TCP Transition Plan",
+          "document": "RFC 801",
+          "date": "1981-11"
+        },
+        {
+          "authors": [
+            "Barry M. Leiner",
+            "Vinton G. Cerf",
+            "David D. Clark",
+            "Robert E. Kahn",
+            "Leonard Kleinrock",
+            "Daniel C. Lynch",
+            "Jon Postel",
+            "Larry G. Roberts",
+            "Stephen Wolff"
+          ],
+          "title": "A Brief History of the Internet",
+          "year": 2009
+        },
+        {
+          "author": "Janet Abbate",
+          "title": "Inventing the Internet",
+          "publisher": "MIT Press",
+          "year": 2000
+        },
+        {
+          "author": "Katie Hafner",
+          "coauthor": "Matthew Lyon",
+          "title": "Where Wizards Stay Up Late: The Origins of the Internet",
+          "publisher": "Simon & Schuster",
+          "year": 1996
+        },
+        {
+          "author": "Donald Watts Davies",
+          "title": "Computer Networks and Their Protocols",
+          "publisher": "Wiley",
+          "year": 1979
+        },
+        {
+          "author": "Leonard Kleinrock",
+          "title": "Analytic and simulation methods in computer network design",
+          "publication": "AFIPS",
+          "year": 1970
+        },
+        {
+          "authors": [
+            "Alex McKenzie",
+            "Dave Walden"
+          ],
+          "title": "ARPANET, the Defense Data Network, and Internet",
+          "year": 1991
+        }
+      ]
+    },
+
+    "machine_readable_summary": {
+      "entity": "ARPANET",
+      "full_name": "Advanced Research Projects Agency Network",
+      "type": "wide_area_packet_switched_network",
+      "country": "United States",
+      "international_nodes": [
+        "United Kingdom",
+        "Norway"
+      ],
+      "founded": 1969,
+      "closed": 1990,
+      "funding_agency": "ARPA",
+      "later_operator": "Defense Communications Agency",
+      "initial_node_count": 4,
+      "first_node": "UCLA",
+      "packet_switching": true,
+      "distributed_control": true,
+      "IMP_based": true,
+      "initial_IMP": "Honeywell DDP-516",
+      "later_IMP": "Honeywell 316",
+      "host_protocol": "1822",
+      "initial_host_protocol": "NCP",
+      "production_protocol_from_1983": "TCP/IP",
+      "first_successful_connection": "1969-10-29",
+      "first_message": "lo",
+      "international_connection": 1973,
+      "MILNET_split": 1984,
+      "CSNET": 1981,
+      "NSFNET": 1986,
+      "formal_decommissioning": 1990,
+      "modern_legacy": "Internet"
+    },
+
+    "architectural_lineage": {
+      "phase_1": {
+        "period": "1963–1966",
+        "concept": "networked computer resource sharing",
+        "contributors": [
+          "J. C. R. Licklider",
+          "Bob Taylor"
+        ]
+      },
+      "phase_2": {
+        "period": "1965–1968",
+        "concept": "packet switching",
+        "contributors": [
+          "Paul Baran",
+          "Donald Davies"
+        ]
+      },
+      "phase_3": {
+        "period": "1967–1969",
+        "concept": "IMP-based ARPANET architecture",
+        "contributors": [
+          "Larry Roberts",
+          "Wesley Clark",
+          "Bob Kahn",
+          "BBN"
+        ]
+      },
+      "phase_4": {
+        "period": "1969–1970",
+        "concept": "operational packet-switched network",
+        "technologies": [
+          "IMP",
+          "1822",
+          "NCP"
+        ]
+      },
+      "phase_5": {
+        "period": "1972–1978",
+        "concept": "internetworking",
+        "contributors": [
+          "Bob Kahn",
+          "Vint Cerf",
+          "Louis Pouzin",
+          "Hubert Zimmermann",
+          "Peter Kirstein",
+          "Bob Metcalfe"
+        ]
+      },
+      "phase_6": {
+        "period": "1980–1983",
+        "concept": "TCP/IP transition",
+        "result": "ARPANET became a TCP/IP network"
+      },
+      "phase_7": {
+        "period": "1984–1990",
+        "concept": "separation, expansion, and transition",
+        "technologies": [
+          "MILNET",
+          "CSNET",
+          "NSFNET",
+          "commercial Internet"
+        ]
+      }
+    },
+
+    "record_integrity": {
+      "whole_network_scope": true,
+      "includes_origins": true,
+      "includes_funding": true,
+      "includes_ARPA": true,
+      "includes_DARPA": true,
+      "includes_BBN": true,
+      "includes_IMP_architecture": true,
+      "includes_initial_four_nodes": true,
+      "includes_first_message": true,
+      "includes_network_growth": true,
+      "includes_international_expansion": true,
+      "includes_NCP": true,
+      "includes_TCP_IP": true,
+      "includes_1822": true,
+      "includes_MILNET": true,
+      "includes_CSNET": true,
+      "includes_NSFNET": true,
+      "includes_applications": true,
+      "includes_email": true,
+      "includes_security": true,
+      "includes_network_management": true,
+      "includes_historical_timeline": true,
+      "includes_key_people": true,
+      "includes_organizations": true,
+      "includes_reference_catalog": true,
+      "includes_source_caveats": true,
+      "source_only_transformation": true,
+      "external_facts_added": false,
+      "unsupported_claims_invented": false,
+      "citation_needed_markers_preserved": true,
+      "historical_disputes_and_attributions_preserved": true
+    }
+  }
+}
