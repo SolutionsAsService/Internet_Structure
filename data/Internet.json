@@ -1,0 +1,2366 @@
+{
+  "How_the_Internet_Works": {
+    "record_metadata": {
+      "canonical_name": "How the Internet Works",
+      "alternate_names": [
+        "Internet Architecture",
+        "Internet Infrastructure",
+        "Global Internet",
+        "Internet Protocol Architecture",
+        "Network of Networks"
+      ],
+      "entity_type": "Technical architecture and explanatory model",
+      "domain": [
+        "Computer networking",
+        "Internet infrastructure",
+        "Distributed systems",
+        "Telecommunications",
+        "Network protocols"
+      ],
+      "scope": "End-to-end explanation of how information moves across the global Internet.",
+      "primary_question": "How does data move from one device or application to another across interconnected networks?",
+      "core_definition": "The Internet is a global system of interconnected networks that communicate using standardized protocols, especially the Internet Protocol suite.",
+      "central_concept": "The Internet is not one network owned or operated by one organization. It is a network of networks interconnected through routers, links, Internet service providers, peering relationships, transit providers, exchange points, data centers, and standardized protocols.",
+      "historical_foundation": [
+        "Packet switching",
+        "ARPANET",
+        "NPL network",
+        "CYCLADES",
+        "SATNET",
+        "PRNET",
+        "TCP/IP"
+      ],
+      "modern_foundation": [
+        "Ethernet",
+        "Wi-Fi",
+        "Fiber optics",
+        "Cellular networks",
+        "IP",
+        "TCP",
+        "UDP",
+        "QUIC",
+        "DNS",
+        "HTTP",
+        "TLS",
+        "BGP",
+        "Routing",
+        "Data centers",
+        "Content delivery networks"
+      ]
+    },
+
+    "executive_model": {
+      "one_sentence_explanation": "Your device creates data, protocols divide and encapsulate that data into packets, local networking delivers the packets to a router, routers forward them across interconnected networks toward the destination, and the destination system reconstructs and processes the data.",
+      "simple_flow": [
+        "Human or application requests information",
+        "Application identifies the destination",
+        "DNS may translate a domain name into an IP address",
+        "Transport protocol establishes or manages communication",
+        "Data is divided into transport segments or datagrams",
+        "IP adds source and destination addressing",
+        "Link-layer technology places packets into local frames",
+        "Wi-Fi, Ethernet, cellular, fiber, or another access technology carries the frame",
+        "Local router forwards traffic toward an upstream network",
+        "ISP carries the traffic",
+        "Interconnected ISP networks exchange or transit the traffic",
+        "BGP helps networks determine reachable paths",
+        "Routers forward packets hop by hop",
+        "Backbone fiber or other long-distance infrastructure carries the traffic",
+        "Destination network receives the packet",
+        "Destination router forwards it toward the destination device",
+        "Destination host removes protocol encapsulation",
+        "Application receives the data",
+        "Response travels back through the network"
+      ],
+      "key_principle": "No single router generally knows the entire physical journey of an individual packet. Each router primarily makes a forwarding decision based on its routing information and the packet's destination.",
+      "important_distinction": {
+        "internet": "The global network infrastructure and protocols.",
+        "web": "One major application/service running on the Internet.",
+        "website": "A collection of resources served through web protocols.",
+        "browser": "Client software that communicates with web servers.",
+        "server": "A computer or service providing resources or functions to clients."
+      }
+    },
+
+    "what_the_internet_is": {
+      "definition": "A global interconnected system of independent and cooperating networks.",
+      "network_of_networks": {
+        "meaning": "Individual networks are interconnected so that devices on one network can communicate with devices and services on other networks.",
+        "examples": [
+          "Home networks",
+          "Enterprise networks",
+          "University networks",
+          "Government networks",
+          "Cellular carrier networks",
+          "Cable ISP networks",
+          "Fiber ISP networks",
+          "Cloud provider networks",
+          "Content delivery networks",
+          "Regional networks",
+          "Research networks",
+          "Global backbone networks"
+        ]
+      },
+      "not_a_single_machine": true,
+      "not_a_single_company": true,
+      "not_a_single_protocol": true,
+      "not_a_single_physical_medium": true,
+      "heterogeneous_infrastructure": true,
+      "common_interoperability_layer": "Internet Protocol suite"
+    },
+
+    "end_to_end_example": {
+      "scenario": "A user opens a website in a browser.",
+      "step_01_user_action": {
+        "event": "User enters a domain name or selects a link.",
+        "example": "https://example.com/",
+        "result": "The browser must determine how to reach the destination."
+      },
+      "step_02_local_device": {
+        "components": [
+          "Browser",
+          "Operating system",
+          "Network stack",
+          "Network interface",
+          "Wi-Fi or Ethernet adapter"
+        ],
+        "responsibility": "Create and transmit network traffic."
+      },
+      "step_03_DNS_resolution": {
+        "question": "What IP address corresponds to the requested domain?",
+        "mechanism": "DNS lookup",
+        "result": "The browser or operating system obtains one or more destination IP addresses."
+      },
+      "step_04_transport": {
+        "possible_protocols": [
+          "TCP",
+          "UDP",
+          "QUIC"
+        ],
+        "purpose": "Provide application-to-application communication characteristics."
+      },
+      "step_05_security": {
+        "typical_web_protocol": "HTTPS",
+        "security_protocol": "TLS",
+        "purpose": [
+          "Encryption",
+          "Authentication of the server",
+          "Integrity protection"
+        ]
+      },
+      "step_06_application_protocol": {
+        "typical_protocol": "HTTP",
+        "purpose": "Request and retrieve web resources."
+      },
+      "step_07_IP": {
+        "purpose": "Address the destination and provide routing across interconnected networks.",
+        "addresses": [
+          "Source IP",
+          "Destination IP"
+        ]
+      },
+      "step_08_local_link": {
+        "possible_technologies": [
+          "Ethernet",
+          "Wi-Fi",
+          "Cellular",
+          "Other access technologies"
+        ]
+      },
+      "step_09_home_or_local_router": {
+        "role": "Forward traffic from the local network toward another network.",
+        "common_name": "Default gateway"
+      },
+      "step_10_ISP": {
+        "role": "Provide connectivity from the user's network to other networks."
+      },
+      "step_11_interprovider_routing": {
+        "protocol": "BGP",
+        "purpose": "Exchange reachability information between autonomous systems."
+      },
+      "step_12_backbone": {
+        "possible_media": [
+          "Long-haul fiber",
+          "Submarine fiber-optic cables",
+          "Terrestrial fiber",
+          "Other telecommunications links"
+        ]
+      },
+      "step_13_destination_network": {
+        "possible_location": [
+          "Data center",
+          "Cloud platform",
+          "Content delivery network",
+          "Enterprise network",
+          "University",
+          "Other hosting environment"
+        ]
+      },
+      "step_14_server": {
+        "role": "Process the request and produce a response."
+      },
+      "step_15_return_path": {
+        "description": "The response is transmitted back through the network using the applicable routing and transport mechanisms."
+      },
+      "step_16_browser": {
+        "role": "Receives the response and renders the resulting resources."
+      }
+    },
+
+    "physical_infrastructure": {
+      "definition": "The physical equipment and transmission systems carrying Internet traffic.",
+      "major_components": {
+        "end_devices": [
+          "Desktop computers",
+          "Laptops",
+          "Smartphones",
+          "Tablets",
+          "Servers",
+          "IoT devices",
+          "Industrial systems"
+        ],
+        "network_equipment": [
+          "Routers",
+          "Switches",
+          "Firewalls",
+          "Load balancers",
+          "Wireless access points",
+          "Optical networking equipment",
+          "Modems",
+          "Repeaters"
+        ],
+        "transmission_media": [
+          "Fiber-optic cable",
+          "Copper cable",
+          "Coaxial cable",
+          "Radio",
+          "Wi-Fi",
+          "Cellular radio",
+          "Satellite links"
+        ],
+        "facilities": [
+          "Data centers",
+          "Colocation facilities",
+          "Internet exchange points",
+          "Cable landing stations",
+          "Network operation facilities"
+        ]
+      },
+      "source_model": {
+        "description": "The Internet physically consists of routers and communications media such as cabling and radio links, while standardized protocols allow those heterogeneous systems to operate as an interconnected whole.",
+        "source_support": "The supplied Internet article describes routers, media, repeaters, modems, heterogeneous hardware, and IP routing as components of Internet infrastructure."
+      }
+    },
+
+    "physical_data_path": {
+      "layered_path": [
+        {
+          "stage": 1,
+          "name": "Device",
+          "examples": [
+            "Laptop",
+            "Phone",
+            "Server",
+            "IoT device"
+          ]
+        },
+        {
+          "stage": 2,
+          "name": "Local network",
+          "examples": [
+            "Wi-Fi",
+            "Ethernet"
+          ]
+        },
+        {
+          "stage": 3,
+          "name": "Access router",
+          "examples": [
+            "Home router",
+            "Enterprise router",
+            "Cellular gateway"
+          ]
+        },
+        {
+          "stage": 4,
+          "name": "Access ISP",
+          "examples": [
+            "Fiber ISP",
+            "Cable ISP",
+            "Mobile carrier"
+          ]
+        },
+        {
+          "stage": 5,
+          "name": "Regional network",
+          "examples": [
+            "Regional ISP",
+            "Metro network"
+          ]
+        },
+        {
+          "stage": 6,
+          "name": "Internet exchange or peering connection",
+          "examples": [
+            "IXP",
+            "Private peering"
+          ]
+        },
+        {
+          "stage": 7,
+          "name": "Transit or backbone network",
+          "examples": [
+            "Large carrier",
+            "Tier 1 network",
+            "Global backbone"
+          ]
+        },
+        {
+          "stage": 8,
+          "name": "Destination network",
+          "examples": [
+            "Cloud provider",
+            "CDN",
+            "Enterprise network",
+            "Data center"
+          ]
+        },
+        {
+          "stage": 9,
+          "name": "Destination router",
+          "examples": [
+            "Edge router",
+            "Data-center router"
+          ]
+        },
+        {
+          "stage": 10,
+          "name": "Server or service",
+          "examples": [
+            "Web server",
+            "API server",
+            "Database service",
+            "Streaming service"
+          ]
+        }
+      ]
+    },
+
+    "packet_switching": {
+      "definition": "Data is transmitted through networks as packets rather than requiring a dedicated end-to-end physical circuit.",
+      "historical_origin": [
+        "Paul Baran",
+        "Donald Davies",
+        "NPL",
+        "ARPANET"
+      ],
+      "basic_process": [
+        "Application generates data",
+        "Protocol stack encapsulates the data",
+        "Large data streams may be divided into smaller units",
+        "Packets are transmitted across network links",
+        "Routers examine destination information",
+        "Each router selects an available next hop",
+        "Packets traverse multiple networks",
+        "Destination reconstructs or processes the received information"
+      ],
+      "advantages": [
+        "Shared network infrastructure",
+        "Efficient utilization of links",
+        "Ability to communicate with many destinations",
+        "Dynamic routing",
+        "Resilience to individual link failures",
+        "Scalability"
+      ],
+      "historical_significance": "Packet switching was one of the foundational concepts behind ARPANET and the modern Internet.",
+      "important_property": "Different packets belonging to the same communication can potentially follow different paths."
+    },
+
+    "protocol_stack": {
+      "definition": "The Internet uses multiple protocol layers, each responsible for a different aspect of communication.",
+      "four_layer_conceptual_model": {
+        "layer_4_application": {
+          "name": "Application Layer",
+          "purpose": "Defines communication in terms appropriate to the application.",
+          "examples": [
+            "HTTP",
+            "HTTPS",
+            "DNS",
+            "SMTP",
+            "IMAP",
+            "FTP",
+            "SSH",
+            "NTP",
+            "DHCP",
+            "MQTT",
+            "SIP"
+          ],
+          "web_example": {
+            "protocol": "HTTP",
+            "data": [
+              "HTML",
+              "JSON",
+              "Images",
+              "Video",
+              "CSS",
+              "JavaScript"
+            ]
+          }
+        },
+        "layer_3_transport": {
+          "name": "Transport Layer",
+          "purpose": "Provides application-to-application communication between hosts.",
+          "protocols": {
+            "TCP": {
+              "properties": [
+                "Connection-oriented",
+                "Ordered delivery",
+                "Reliable delivery",
+                "Retransmission",
+                "Flow control",
+                "Congestion control"
+              ]
+            },
+            "UDP": {
+              "properties": [
+                "Datagram-based",
+                "Connectionless",
+                "Low protocol overhead",
+                "No built-in guarantee of delivery"
+              ]
+            },
+            "QUIC": {
+              "properties": [
+                "Runs over UDP",
+                "Encrypted transport",
+                "Stream multiplexing",
+                "Connection migration",
+                "Used by modern HTTP/3"
+              ]
+            }
+          }
+        },
+        "layer_2_internet": {
+          "name": "Internet Layer",
+          "purpose": "Provides addressing and routing between networks.",
+          "core_protocol": "IP",
+          "versions": [
+            "IPv4",
+            "IPv6"
+          ],
+          "supporting_protocols": [
+            "ICMP",
+            "ICMPv6",
+            "IGMP",
+            "Neighbor Discovery",
+            "IPsec"
+          ]
+        },
+        "layer_1_link": {
+          "name": "Link Layer",
+          "purpose": "Transfers frames across an individual local or physical network link.",
+          "examples": [
+            "Ethernet",
+            "Wi-Fi",
+            "PPP",
+            "MAC-based networks",
+            "ARP-related local resolution"
+          ]
+        }
+      },
+      "encapsulation_model": {
+        "application_data": "Application payload",
+        "transport_unit": "TCP segment / UDP datagram / QUIC packet",
+        "IP_unit": "IP packet",
+        "link_unit": "Ethernet/Wi-Fi/etc. frame",
+        "physical_transmission": "Bits/signals carried through the physical medium"
+      }
+    },
+
+    "encapsulation": {
+      "definition": "Each networking layer wraps the data from the layer above with information needed by the lower layer.",
+      "example": {
+        "application": {
+          "content": "HTTP request"
+        },
+        "transport": {
+          "adds": [
+            "Source port",
+            "Destination port",
+            "Transport-specific control information"
+          ]
+        },
+        "IP": {
+          "adds": [
+            "Source IP address",
+            "Destination IP address",
+            "IP control information"
+          ]
+        },
+        "link": {
+          "adds": [
+            "Source MAC or equivalent link address",
+            "Destination link address",
+            "Frame control information"
+          ]
+        },
+        "physical": {
+          "result": "Encoded electrical, optical, or radio signals"
+        }
+      },
+      "decapsulation": {
+        "description": "The destination removes the corresponding protocol layers and delivers the resulting payload to the appropriate application."
+      }
+    },
+
+    "IP_addressing": {
+      "purpose": "Identify network interfaces and provide globally interoperable addressing for packet routing.",
+      "versions": {
+        "IPv4": {
+          "address_length": "32 bits",
+          "notation": "Dotted decimal",
+          "example": "198.51.100.1",
+          "address_space": "Approximately 4.3 billion possible addresses before accounting for reserved and special-use ranges."
+        },
+        "IPv6": {
+          "address_length": "128 bits",
+          "notation": "Hexadecimal colon-separated notation",
+          "example": "2001:db8::1",
+          "purpose": "Provide a vastly larger address space and modernized IP capabilities."
+        }
+      },
+      "address_structure": {
+        "network_prefix": "Identifies the network or routing prefix.",
+        "host_identifier": "Identifies an interface or host within the applicable addressing structure."
+      },
+      "CIDR": {
+        "full_name": "Classless Inter-Domain Routing",
+        "notation": "Network address followed by slash and prefix length.",
+        "example": "198.51.100.0/24",
+        "meaning": "The first 24 bits represent the network prefix."
+      },
+      "private_vs_public": {
+        "private_addresses": "Used inside private networks and normally translated or otherwise mediated before reaching the public Internet.",
+        "public_addresses": "Globally routable address space used for Internet communication."
+      }
+    },
+
+    "routing": {
+      "definition": "Routing is the process of determining where packets should be forwarded to reach their destinations.",
+      "basic_mechanism": [
+        "Packet arrives at router",
+        "Router examines destination IP",
+        "Router consults forwarding/routing information",
+        "Router selects a next hop",
+        "Packet is transmitted through the selected interface",
+        "Next router repeats the process"
+      ],
+      "hop_by_hop_model": true,
+      "routing_table": {
+        "contains": [
+          "Destination prefixes",
+          "Next-hop information",
+          "Outgoing interfaces",
+          "Metrics or preferences"
+        ]
+      },
+      "default_route": {
+        "definition": "A route used when no more-specific matching route exists.",
+        "common_example": "Home device sends non-local traffic to its default gateway."
+      },
+      "routing_scope": {
+        "local": "Routing within a local network.",
+        "regional": "Routing among networks within a provider or geographic region.",
+        "global": "Routing among autonomous systems across the Internet."
+      }
+    },
+
+    "routers": {
+      "primary_role": "Forward packets between networks.",
+      "inputs": [
+        "Incoming packet",
+        "Destination IP address",
+        "Routing/forwarding table"
+      ],
+      "outputs": [
+        "Selected outgoing interface",
+        "Next-hop transmission"
+      ],
+      "typical_functions": [
+        "Packet forwarding",
+        "Route lookup",
+        "Traffic engineering",
+        "Policy enforcement",
+        "Access control",
+        "Quality-of-service handling",
+        "Network address translation in applicable environments",
+        "Packet filtering"
+      ],
+      "important_distinction": {
+        "router": "Connects different IP networks.",
+        "switch": "Primarily forwards frames within a local Layer 2 network.",
+        "modem": "Converts or terminates signals appropriate to an access technology.",
+        "firewall": "Enforces traffic-security policy."
+      }
+    },
+
+    "autonomous_systems": {
+      "definition": "A network or collection of networks under a common routing administration and policy.",
+      "abbreviation": "AS",
+      "global_role": "Autonomous systems form major administrative and routing units of the Internet.",
+      "examples": [
+        "Large ISPs",
+        "Cloud providers",
+        "Telecommunications carriers",
+        "Universities",
+        "Large enterprises",
+        "Content networks"
+      ],
+      "identifier": "Autonomous System Number (ASN)",
+      "importance": [
+        "Inter-domain routing",
+        "Routing policy",
+        "Peering",
+        "Transit",
+        "Internet topology"
+      ]
+    },
+
+    "BGP": {
+      "full_name": "Border Gateway Protocol",
+      "purpose": "Exchange routing and reachability information between autonomous systems.",
+      "scope": "Inter-domain routing",
+      "core_function": "Allows independently operated networks to advertise which IP prefixes they can reach and to select paths according to routing policy.",
+      "important_concept": "BGP is not simply a shortest-physical-distance algorithm. Routing decisions can reflect policy, commercial relationships, path attributes, redundancy, and other factors.",
+      "relationship_to_ISPs": "ISPs and other autonomous systems use BGP to exchange reachability information.",
+      "relationship_to_global_Internet": "BGP is a foundational protocol enabling the independently operated networks of the Internet to function as an interconnected global system."
+    },
+
+    "ISP_hierarchy": {
+      "definition": "Internet connectivity is provided through networks operating at different scales and through different commercial and technical relationships.",
+      "tier_1": {
+        "description": "Large backbone networks with extensive global reach that can exchange traffic directly with one another.",
+        "relationships": [
+          "Peering",
+          "Global backbone connectivity"
+        ],
+        "physical_infrastructure": [
+          "High-capacity fiber",
+          "Submarine cables",
+          "Major exchange facilities"
+        ]
+      },
+      "tier_2": {
+        "description": "Networks that may peer with some networks while purchasing transit to reach other portions of the Internet."
+      },
+      "lower_level_providers": {
+        "description": "Networks closer to end users that commonly purchase upstream transit and provide local access."
+      },
+      "end_users": {
+        "position": "Edge of the global routing hierarchy",
+        "examples": [
+          "Homes",
+          "Small businesses",
+          "Mobile users",
+          "Small organizations"
+        ]
+      },
+      "multihoming": {
+        "definition": "Connecting a network to more than one upstream provider.",
+        "purposes": [
+          "Redundancy",
+          "Resilience",
+          "Load balancing",
+          "Alternative connectivity"
+        ]
+      }
+    },
+
+    "peering_and_transit": {
+      "peering": {
+        "definition": "Two networks directly exchange traffic for their respective networks or customers.",
+        "common_location": [
+          "Internet exchange points",
+          "Private interconnection facilities",
+          "Colocation facilities"
+        ]
+      },
+      "transit": {
+        "definition": "One network pays another network to provide connectivity to destinations beyond its own directly connected networks.",
+        "purpose": "Reach portions of the global Internet that are not directly accessible through the customer's own network or peering relationships."
+      },
+      "relationship": {
+        "peering": "Direct exchange under an interconnection agreement.",
+        "transit": "Purchased reachability through an upstream provider."
+      }
+    },
+
+    "internet_exchange_points": {
+      "abbreviation": "IXP",
+      "purpose": "Physical facilities where multiple networks interconnect and exchange traffic.",
+      "participants": [
+        "ISPs",
+        "Telecommunications carriers",
+        "Cloud providers",
+        "Content providers",
+        "Enterprise networks",
+        "Research networks"
+      ],
+      "advantages": [
+        "Reduced latency",
+        "Reduced transit dependency",
+        "Lower transport costs",
+        "Direct network interconnection",
+        "Improved routing flexibility"
+      ],
+      "physical_components": [
+        "Switching infrastructure",
+        "Fiber connections",
+        "Colocation space",
+        "Cross-connects",
+        "Network routers"
+      ]
+    },
+
+    "DNS": {
+      "full_name": "Domain Name System",
+      "purpose": "Translate human-readable domain names into network information such as IP addresses.",
+      "problem_solved": "Humans generally use names while network protocols need addresses.",
+      "example": {
+        "human_identifier": "www.example.com",
+        "network_identifier": "IP address"
+      },
+      "hierarchical_structure": {
+        "root": {
+          "role": "Top of the DNS namespace."
+        },
+        "TLD": {
+          "name": "Top-Level Domain",
+          "examples": [
+            ".com",
+            ".org",
+            ".net",
+            "country-code TLDs"
+          ]
+        },
+        "authoritative_servers": {
+          "role": "Provide authoritative DNS records for domains."
+        },
+        "recursive_resolvers": {
+          "role": "Perform DNS lookups on behalf of clients and commonly cache results."
+        }
+      },
+      "common_records": {
+        "A": "IPv4 address",
+        "AAAA": "IPv6 address",
+        "CNAME": "Canonical name alias",
+        "MX": "Mail exchange",
+        "NS": "Name server",
+        "TXT": "Text or policy information",
+        "SOA": "Start of authority"
+      },
+      "important_point": "DNS does not carry the web page itself. It helps the client discover the network endpoint associated with a name."
+    },
+
+    "ports_and_sockets": {
+      "purpose": "Identify application-level communication endpoints on hosts.",
+      "IP_address": "Identifies the network endpoint at the host/interface level.",
+      "port": "Identifies a transport-layer service or endpoint.",
+      "socket_model": {
+        "concept": "IP address plus transport protocol plus port identifies a communication endpoint."
+      },
+      "common_ports": {
+        "HTTP": 80,
+        "HTTPS": 443,
+        "DNS": 53,
+        "SSH": 22,
+        "SMTP": 25
+      }
+    },
+
+    "TCP": {
+      "full_name": "Transmission Control Protocol",
+      "layer": "Transport",
+      "purpose": "Provide reliable ordered byte-stream communication between applications.",
+      "core_functions": [
+        "Connection establishment",
+        "Sequencing",
+        "Acknowledgment",
+        "Retransmission",
+        "Flow control",
+        "Congestion control",
+        "Connection termination"
+      ],
+      "three_way_handshake": {
+        "stage_1": "SYN",
+        "stage_2": "SYN-ACK",
+        "stage_3": "ACK"
+      },
+      "reliability_model": {
+        "lost_segment": "Retransmission may occur.",
+        "out_of_order_segment": "Sequence numbers allow reordering.",
+        "duplicate": "Sequence information allows duplicate detection."
+      },
+      "important_distinction": "TCP reliability exists above IP. IP itself provides packet delivery across networks but does not by itself guarantee ordered, reliable application delivery."
+    },
+
+    "UDP": {
+      "full_name": "User Datagram Protocol",
+      "layer": "Transport",
+      "purpose": "Provide lightweight datagram transport.",
+      "properties": [
+        "Connectionless",
+        "Low overhead",
+        "No built-in reliable delivery",
+        "No built-in ordering guarantee"
+      ],
+      "common_use_cases": [
+        "DNS",
+        "Real-time applications",
+        "Streaming-related protocols",
+        "QUIC transport"
+      ]
+    },
+
+    "QUIC": {
+      "layer": "Transport",
+      "underlying_protocol": "UDP",
+      "purpose": "Modern secure transport supporting features useful for Internet applications.",
+      "properties": [
+        "Encrypted connections",
+        "Multiplexed streams",
+        "Reduced connection establishment latency",
+        "Connection migration",
+        "Modern congestion control"
+      ],
+      "relationship_to_HTTP": {
+        "HTTP_3": "Uses QUIC as its transport."
+      }
+    },
+
+    "HTTP": {
+      "full_name": "HyperText Transfer Protocol",
+      "layer": "Application",
+      "purpose": "Transfer web resources and communicate between HTTP clients and servers.",
+      "client": "Browser or other HTTP client",
+      "server": "Web server or application server",
+      "basic_request_flow": [
+        "Client connects to server endpoint",
+        "Client sends HTTP request",
+        "Server processes request",
+        "Server returns HTTP response",
+        "Client interprets response"
+      ],
+      "common_methods": [
+        "GET",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "common_response_categories": {
+        "2xx": "Successful",
+        "3xx": "Redirection",
+        "4xx": "Client-side request errors",
+        "5xx": "Server-side errors"
+      },
+      "web_resources": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Images",
+        "Fonts",
+        "JSON",
+        "Video",
+        "Other application resources"
+      ]
+    },
+
+    "HTTPS": {
+      "full_name": "HTTP Secure",
+      "relationship": "HTTP carried through TLS-protected communication.",
+      "typical_port": 443,
+      "security_properties": [
+        "Confidentiality",
+        "Integrity",
+        "Server authentication"
+      ],
+      "components": [
+        "HTTP",
+        "TLS",
+        "TCP or QUIC depending on HTTP version"
+      ],
+      "modern_examples": {
+        "HTTP_1_1": "Typically HTTP over TLS over TCP.",
+        "HTTP_2": "Typically HTTP/2 over TLS over TCP.",
+        "HTTP_3": "HTTP/3 over QUIC."
+      }
+    },
+
+    "TLS": {
+      "full_name": "Transport Layer Security",
+      "purpose": "Secure communication between endpoints.",
+      "security_goals": [
+        "Encryption",
+        "Authentication",
+        "Integrity"
+      ],
+      "certificate_model": {
+        "server_certificate": "Provides cryptographic identity information for the server.",
+        "certificate_authority": "Trusted authority used to validate certificate chains."
+      },
+      "basic_handshake_concept": [
+        "Client and server negotiate supported cryptographic parameters",
+        "Server presents authentication material",
+        "Endpoints establish shared cryptographic keys",
+        "Application traffic becomes encrypted"
+      ],
+      "important_distinction": "TLS protects the communication between endpoints but does not make the entire physical Internet path invisible to all network infrastructure. Network metadata such as IP addresses and traffic characteristics can still exist."
+    },
+
+    "WiFi_and_Ethernet": {
+      "local_networking": {
+        "Ethernet": {
+          "role": "Wired local-area networking.",
+          "common_medium": [
+            "Copper",
+            "Fiber"
+          ]
+        },
+        "WiFi": {
+          "role": "Wireless local-area networking.",
+          "medium": "Radio"
+        }
+      },
+      "relationship_to_IP": "IP operates above these link technologies, allowing different local networking technologies to participate in the same global Internet."
+    },
+
+    "cellular_internet": {
+      "access_model": "Mobile device connects through a cellular radio network.",
+      "components": [
+        "Mobile device",
+        "Radio access network",
+        "Cellular core",
+        "Carrier IP network",
+        "Internet peering/transit"
+      ],
+      "relationship_to_global_internet": "The cellular carrier provides an access network that connects mobile devices into the broader Internet."
+    },
+
+    "fiber_optics": {
+      "role": "Major high-capacity physical medium for Internet backbone and access networks.",
+      "transmission_method": "Optical signals through fiber.",
+      "advantages": [
+        "High bandwidth",
+        "Low attenuation compared with many older media",
+        "Long-distance capability",
+        "Dense wavelength multiplexing capability"
+      ],
+      "locations": [
+        "Data centers",
+        "Metro networks",
+        "ISP backbones",
+        "Internet exchange facilities",
+        "Submarine cable systems",
+        "Enterprise networks"
+      ]
+    },
+
+    "submarine_cables": {
+      "role": "Carry large volumes of international Internet traffic across oceans.",
+      "physical_structure": {
+        "fiber": "Optical fiber carries data.",
+        "repeaters": "Optical/electrical amplification or regeneration systems are used along long routes as applicable.",
+        "landing_stations": "Connect submarine systems to terrestrial networks."
+      },
+      "importance": [
+        "Intercontinental connectivity",
+        "High-capacity international traffic",
+        "Low-latency global communications"
+      ],
+      "network_path_example": [
+        "Data center",
+        "Terrestrial fiber",
+        "Cable landing station",
+        "Submarine cable",
+        "Foreign landing station",
+        "Foreign terrestrial backbone",
+        "Destination network"
+      ],
+      "important_point": "The Internet is not primarily a collection of satellites. Modern international Internet traffic relies heavily on fiber-optic infrastructure, including submarine cables."
+    },
+
+    "satellite_internet": {
+      "role": "Provide Internet connectivity through radio links involving satellites.",
+      "use_cases": [
+        "Remote areas",
+        "Maritime connectivity",
+        "Aviation",
+        "Disaster recovery",
+        "Specialized communications"
+      ],
+      "relationship_to_historical_satnet": "Modern satellite Internet continues the concept that satellite links can participate in packet-switched internetworking, while modern systems use technologies substantially different from early SATNET."
+    },
+
+    "data_centers": {
+      "definition": "Facilities containing servers, storage systems, networking equipment, power systems, cooling systems, and physical security infrastructure.",
+      "functions": [
+        "Host websites",
+        "Run APIs",
+        "Store databases",
+        "Run cloud services",
+        "Host virtual machines",
+        "Run containers",
+        "Process media",
+        "Provide authentication",
+        "Provide storage",
+        "Run distributed applications"
+      ],
+      "network_components": [
+        "Leaf switches",
+        "Spine switches",
+        "Routers",
+        "Firewalls",
+        "Load balancers",
+        "Optical networking",
+        "Network security systems"
+      ],
+      "connectivity": [
+        "Internet transit",
+        "Private peering",
+        "Internet exchange points",
+        "Cloud interconnects",
+        "Other data centers"
+      ],
+      "source_context": "The supplied Internet article notes that most servers providing Internet services are hosted in data centers and that colocation facilities commonly host peering, transit, cloud, exchange-point, and submarine-cable connectivity."
+    },
+
+    "cloud_computing": {
+      "definition": "Large-scale distributed computing infrastructure exposed as services over networks.",
+      "components": [
+        "Compute",
+        "Storage",
+        "Databases",
+        "Networking",
+        "Load balancing",
+        "Identity",
+        "Observability",
+        "Content delivery"
+      ],
+      "relationship_to_internet": "Cloud infrastructure provides many of the servers and services users access through the Internet.",
+      "important_distinction": "Cloud computing is not synonymous with the Internet. Cloud services run on infrastructure that is connected to the Internet."
+    },
+
+    "content_delivery_networks": {
+      "abbreviation": "CDN",
+      "purpose": "Distribute content from geographically distributed edge locations closer to users.",
+      "goals": [
+        "Reduce latency",
+        "Reduce backbone traffic",
+        "Increase scalability",
+        "Improve availability"
+      ],
+      "typical_content": [
+        "Images",
+        "JavaScript",
+        "CSS",
+        "Video",
+        "Software downloads",
+        "Web pages",
+        "API responses"
+      ],
+      "request_path": [
+        "User",
+        "Local ISP",
+        "DNS or application routing",
+        "Nearest suitable CDN edge",
+        "Cached content or origin retrieval"
+      ]
+    },
+
+    "servers": {
+      "definition": "Systems that provide computational resources, data, or services to other systems.",
+      "types": [
+        "Web server",
+        "Application server",
+        "Database server",
+        "DNS server",
+        "Mail server",
+        "Authentication server",
+        "File server",
+        "Streaming server",
+        "Game server",
+        "API server",
+        "Proxy server"
+      ],
+      "physical_form": [
+        "Bare-metal server",
+        "Virtual machine",
+        "Containerized workload",
+        "Distributed service"
+      ],
+      "modern_architecture": {
+        "single_server": "Possible for simple systems.",
+        "distributed_system": "Common for large services.",
+        "microservices": "Application functionality divided into multiple services.",
+        "cloud": "Infrastructure dynamically provisioned across large facilities."
+      }
+    },
+
+    "load_balancing": {
+      "purpose": "Distribute requests or connections across multiple servers or service instances.",
+      "methods": [
+        "DNS-based distribution",
+        "Layer 4 load balancing",
+        "Layer 7 HTTP load balancing",
+        "Anycast-based architectures",
+        "Application-aware routing"
+      ],
+      "benefits": [
+        "Scalability",
+        "Redundancy",
+        "Fault tolerance",
+        "Capacity distribution"
+      ]
+    },
+
+    "anycast": {
+      "concept": "The same IP address or service prefix can be announced from multiple geographically distributed locations.",
+      "routing_behavior": "Network routing directs a client toward one of the available instances according to routing and policy.",
+      "common_uses": [
+        "DNS services",
+        "CDNs",
+        "Global edge services",
+        "DDoS mitigation"
+      ],
+      "benefit": "Provides geographic distribution and resilience without requiring clients to know the physical location of every service instance."
+    },
+
+    "NAT": {
+      "full_name": "Network Address Translation",
+      "purpose": "Translate between address spaces, commonly private internal addresses and public Internet addresses.",
+      "common_environment": "Home and enterprise networks.",
+      "typical_process": [
+        "Internal device sends traffic",
+        "NAT gateway changes source address and often source port",
+        "Internet receives traffic using the gateway's public address",
+        "Gateway tracks the connection",
+        "Response traffic is translated back toward the internal device"
+      ],
+      "important_point": "NAT is not the same thing as a firewall, although consumer gateways commonly implement both."
+    },
+
+    "DHCP": {
+      "full_name": "Dynamic Host Configuration Protocol",
+      "purpose": "Automatically provide network configuration to devices.",
+      "typical_information": [
+        "IP address",
+        "Subnet information",
+        "Default gateway",
+        "DNS resolver"
+      ],
+      "common_sequence": [
+        "Device joins local network",
+        "Device requests configuration",
+        "DHCP server provides a lease",
+        "Device configures its network interface"
+      ]
+    },
+
+    "ARP_and_neighbor_discovery": {
+      "IPv4": {
+        "protocol": "ARP",
+        "purpose": "Resolve an IPv4 address to a local link-layer address."
+      },
+      "IPv6": {
+        "protocol": "Neighbor Discovery",
+        "purpose": "Provide IPv6 neighbor and local-link discovery functions."
+      },
+      "importance": "These mechanisms connect IP-layer addressing to local-link delivery."
+    },
+
+    "firewalls_and_network_security": {
+      "firewall": {
+        "purpose": "Control traffic according to security policy.",
+        "locations": [
+          "Host",
+          "Home router",
+          "Enterprise edge",
+          "Data center",
+          "Cloud network",
+          "Service edge"
+        ]
+      },
+      "security_layers": [
+        "Physical security",
+        "Link-layer security",
+        "Network filtering",
+        "Transport security",
+        "TLS",
+        "Application authentication",
+        "Identity systems",
+        "Endpoint security"
+      ],
+      "important_point": "Internet security is not one mechanism. It is a layered system of controls."
+    },
+
+    "internet_governance_and_standards": {
+      "standards_model": {
+        "RFC": "Request for Comments documents define many Internet protocols, standards, experimental technologies, and informational documents."
+      },
+      "ICANN": {
+        "full_name": "Internet Corporation for Assigned Names and Numbers",
+        "role": [
+          "Coordinates global unique identifiers",
+          "Coordinates domain-name system functions",
+          "Coordinates IP addressing parameters through the broader Internet number-management system",
+          "Coordinates protocol parameter registries"
+        ]
+      },
+      "IANA": {
+        "full_name": "Internet Assigned Numbers Authority",
+        "role": [
+          "Protocol parameter coordination",
+          "DNS root-zone coordination",
+          "Internet number resources"
+        ]
+      },
+      "RIRs": {
+        "definition": "Regional Internet Registries",
+        "organizations": [
+          "AfriNIC",
+          "ARIN",
+          "APNIC",
+          "LACNIC",
+          "RIPE NCC"
+        ],
+        "purpose": "Regional allocation and management of Internet number resources."
+      },
+      "Internet_Society": {
+        "abbreviation": "ISOC",
+        "founded": 1992,
+        "role": "Supports the open development, evolution, and use of the Internet."
+      },
+      "IETF": {
+        "full_name": "Internet Engineering Task Force",
+        "role": "Develops and maintains many Internet standards and protocols."
+      },
+      "IAB": {
+        "full_name": "Internet Architecture Board",
+        "role": "Provides architectural oversight and guidance within the Internet standards ecosystem."
+      },
+      "IRTF": {
+        "full_name": "Internet Research Task Force",
+        "role": "Research-oriented Internet technology work."
+      },
+      "important_principle": "The Internet is decentralized operationally, while shared standards and registries provide the interoperability necessary for independent networks to communicate."
+    },
+
+    "internet_evolution": {
+      "1960s": {
+        "major_developments": [
+          "Time-sharing research",
+          "Packet-switching research",
+          "Licklider's universal-network concepts",
+          "Paul Baran's packet-switching work",
+          "Donald Davies' packet-switching work",
+          "ARPANET planning"
+        ]
+      },
+      "1969": {
+        "event": "First ARPANET nodes connected."
+      },
+      "1970s": {
+        "major_developments": [
+          "ARPANET expansion",
+          "NPL networking",
+          "International connectivity",
+          "NORSAR",
+          "UCL",
+          "SATNET",
+          "PRNET",
+          "TCP development",
+          "Internetworking research"
+        ]
+      },
+      "1974": {
+        "event": "Cerf and Kahn published their packet-network intercommunication proposal."
+      },
+      "1977": {
+        "event": "ARPANET, SATNET, and PRNET interconnected in a major internetworking demonstration."
+      },
+      "1980s": {
+        "major_developments": [
+          "TCP/IP standardization",
+          "NSFNET",
+          "Expansion of interconnected research networks",
+          "Commercial Internet development"
+        ]
+      },
+      "1983": {
+        "event": "TCP/IP became the production protocol architecture of ARPANET."
+      },
+      "1986": {
+        "event": "NSFNET expanded network access to supercomputing and research sites."
+      },
+      "1989": {
+        "event": "Commercial Internet service providers emerged in the United States and Australia."
+      },
+      "1990": {
+        "event": "ARPANET was decommissioned."
+      },
+      "1990s": {
+        "major_developments": [
+          "Commercial Internet expansion",
+          "World Wide Web",
+          "Commercial backbone networks",
+          "Rapid growth of public Internet access"
+        ]
+      },
+      "modern_era": {
+        "major_developments": [
+          "Broadband",
+          "Fiber",
+          "Wi-Fi",
+          "Mobile Internet",
+          "Cloud computing",
+          "CDNs",
+          "Large-scale data centers",
+          "IPv6",
+          "HTTP/2",
+          "HTTP/3",
+          "QUIC",
+          "Edge computing"
+        ]
+      }
+    },
+
+    "world_wide_web": {
+      "relationship_to_internet": "The Web is an application/service running on top of the Internet, not the Internet itself.",
+      "components": [
+        "Web browsers",
+        "Web servers",
+        "HTTP",
+        "HTTPS",
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "URLs/URIs",
+        "DNS",
+        "TLS"
+      ],
+      "basic_flow": [
+        "User enters URL",
+        "Browser parses URL",
+        "DNS resolves hostname",
+        "Browser establishes secure connection",
+        "Browser sends HTTP request",
+        "Server returns response",
+        "Browser parses response",
+        "Browser requests additional resources",
+        "Browser renders page"
+      ],
+      "resource_types": [
+        "Documents",
+        "Images",
+        "Video",
+        "Audio",
+        "Scripts",
+        "Stylesheets",
+        "APIs",
+        "Interactive applications"
+      ],
+      "historical_origin": {
+        "creator": "Tim Berners-Lee",
+        "organization": "CERN",
+        "early_components": [
+          "HTTP",
+          "HTML",
+          "First browser",
+          "First HTTP server",
+          "First web pages"
+        ]
+      }
+    },
+
+    "internet_services": {
+      "major_services": [
+        "World Wide Web",
+        "Email",
+        "Internet telephony",
+        "File transfer",
+        "Streaming media",
+        "Online gaming",
+        "Messaging",
+        "Cloud applications",
+        "Remote administration",
+        "APIs",
+        "Distributed applications"
+      ],
+      "principle": "The Internet provides the underlying connectivity; applications use protocols and services layered above it."
+    },
+
+    "email": {
+      "architecture": {
+        "sender": "Mail client or application",
+        "submission_server": "Accepts outgoing mail",
+        "SMTP": "Transfers mail between mail systems",
+        "mailbox": "Stores messages",
+        "IMAP_or_POP": "Allows clients to retrieve messages"
+      },
+      "important_point": "Email is an Internet application that uses multiple application and transport protocols."
+    },
+
+    "application_to_physical_mapping": {
+      "example": "Opening a secure website",
+      "layers": {
+        "application": [
+          "Browser",
+          "HTTP"
+        ],
+        "security": [
+          "TLS"
+        ],
+        "transport": [
+          "TCP or QUIC"
+        ],
+        "internet": [
+          "IPv4 or IPv6"
+        ],
+        "link": [
+          "Ethernet",
+          "Wi-Fi",
+          "Cellular"
+        ],
+        "physical": [
+          "Copper",
+          "Fiber",
+          "Radio"
+        ]
+      }
+    },
+
+    "packet_lifecycle": {
+      "creation": {
+        "description": "An application generates information that needs to be transmitted."
+      },
+      "encapsulation": {
+        "description": "Protocol layers add addressing, transport, and link information."
+      },
+      "local_transmission": {
+        "description": "The device sends a frame onto the local network."
+      },
+      "gateway": {
+        "description": "The local router receives the frame and forwards the IP packet toward another network."
+      },
+      "routing": {
+        "description": "Each router selects a next hop using forwarding information."
+      },
+      "backbone_transport": {
+        "description": "Packets cross one or more provider and backbone networks."
+      },
+      "destination_network": {
+        "description": "The packet reaches the network containing the destination service."
+      },
+      "final_delivery": {
+        "description": "Routers and local networking deliver the packet to the destination host."
+      },
+      "decapsulation": {
+        "description": "The destination protocol stack removes the network wrappers."
+      },
+      "application_processing": {
+        "description": "The application receives and processes the payload."
+      },
+      "response": {
+        "description": "A response follows the applicable reverse communication path."
+      }
+    },
+
+    "what_can_change_along_the_path": {
+      "possible_changes": [
+        "Link-layer framing",
+        "Physical transmission medium",
+        "Next-hop router",
+        "Network provider",
+        "Routing path",
+        "Packet timing",
+        "Packet ordering",
+        "Packet fragmentation or related handling",
+        "Traffic queueing",
+        "Congestion conditions"
+      ],
+      "generally_preserved_end_to_end": [
+        "Destination IP information",
+        "Transport/application semantics",
+        "Encrypted payload when protected by TLS"
+      ],
+      "important_point": "The Internet is layered specifically so that different underlying networks can carry the same higher-level communication."
+    },
+
+    "latency": {
+      "definition": "Time required for information to travel through the network and for processing to occur.",
+      "components": [
+        "Propagation delay",
+        "Transmission delay",
+        "Processing delay",
+        "Queueing delay",
+        "Server processing time"
+      ],
+      "major_factors": [
+        "Physical distance",
+        "Number of network hops",
+        "Link speed",
+        "Congestion",
+        "Routing",
+        "Server location",
+        "Server load"
+      ],
+      "important_point": "Higher bandwidth does not automatically mean lower latency."
+    },
+
+    "bandwidth": {
+      "definition": "The capacity of a link or network path to carry data.",
+      "units": [
+        "bits/second",
+        "kilobits/second",
+        "megabits/second",
+        "gigabits/second",
+        "terabits/second"
+      ],
+      "distinction": {
+        "bandwidth": "Potential data-carrying capacity.",
+        "throughput": "Actual achieved data transfer rate.",
+        "latency": "Time delay."
+      }
+    },
+
+    "congestion": {
+      "definition": "A condition in which offered traffic approaches or exceeds available network capacity.",
+      "effects": [
+        "Queue buildup",
+        "Increased latency",
+        "Packet loss",
+        "Reduced throughput"
+      ],
+      "control": {
+        "TCP": "Uses congestion-control algorithms.",
+        "network": "Routers and providers may use queue management and traffic engineering."
+      }
+    },
+
+    "redundancy_and_resilience": {
+      "principle": "The Internet can often route around failures because it consists of interconnected networks with multiple possible paths.",
+      "mechanisms": [
+        "Multiple links",
+        "Multiple routers",
+        "Multiple providers",
+        "BGP route alternatives",
+        "Multihoming",
+        "Distributed data centers",
+        "CDNs",
+        "Anycast",
+        "Redundant power and physical infrastructure"
+      ],
+      "historical_lineage": "Distributed routing and network survivability were important themes in the development of packet-switched networking.",
+      "important_distinction": "Resilience does not mean the Internet cannot fail. Large-scale outages can occur when multiple critical systems or paths fail simultaneously."
+    },
+
+    "security_model": {
+      "layers": {
+        "physical": [
+          "Facility security",
+          "Cable protection",
+          "Equipment security"
+        ],
+        "link": [
+          "Wi-Fi security",
+          "Link-layer authentication"
+        ],
+        "network": [
+          "Routing security",
+          "Firewalls",
+          "Filtering",
+          "IPsec where used"
+        ],
+        "transport": [
+          "TLS",
+          "Secure transport mechanisms"
+        ],
+        "application": [
+          "Authentication",
+          "Authorization",
+          "Session security",
+          "Input validation"
+        ],
+        "endpoint": [
+          "Operating-system security",
+          "Anti-malware",
+          "Device security",
+          "Patch management"
+        ]
+      },
+      "threats": [
+        "Malware",
+        "Phishing",
+        "Credential theft",
+        "Denial-of-service attacks",
+        "Routing attacks",
+        "Data interception",
+        "Application vulnerabilities",
+        "Unauthorized access"
+      ],
+      "important_principle": "The Internet protocol stack provides connectivity, but security must be implemented across multiple layers."
+    },
+
+    "network_failure_model": {
+      "possible_failures": [
+        "Local Wi-Fi failure",
+        "Router failure",
+        "Fiber cut",
+        "Power outage",
+        "Data-center outage",
+        "DNS failure",
+        "BGP routing problem",
+        "ISP outage",
+        "Submarine cable damage",
+        "Server failure",
+        "Application failure"
+      ],
+      "recovery_mechanisms": [
+        "Redundant links",
+        "Alternative routes",
+        "Dynamic routing",
+        "Failover",
+        "Load balancing",
+        "CDNs",
+        "Multiple DNS servers",
+        "Multiple data centers"
+      ]
+    },
+
+    "global_internet_topology": {
+      "conceptual_layers": [
+        {
+          "layer": 1,
+          "name": "End users and edge devices"
+        },
+        {
+          "layer": 2,
+          "name": "Access networks"
+        },
+        {
+          "layer": 3,
+          "name": "Regional networks"
+        },
+        {
+          "layer": 4,
+          "name": "Internet exchange and peering infrastructure"
+        },
+        {
+          "layer": 5,
+          "name": "Global backbone and transit networks"
+        },
+        {
+          "layer": 6,
+          "name": "Cloud and content networks"
+        },
+        {
+          "layer": 7,
+          "name": "Data centers and application infrastructure"
+        }
+      ],
+      "topology_principle": "The global Internet is a distributed graph of independently operated networks connected through many physical and logical relationships."
+    },
+
+    "internet_as_a_graph": {
+      "nodes": [
+        "Routers",
+        "Switches",
+        "Data centers",
+        "Autonomous systems",
+        "IXPs",
+        "Servers",
+        "End devices"
+      ],
+      "edges": [
+        "Fiber links",
+        "Copper links",
+        "Radio links",
+        "Submarine cables",
+        "Private peering",
+        "Transit relationships"
+      ],
+      "logical_graph": {
+        "IP": "Provides addressing and packet-level routing.",
+        "BGP": "Provides inter-domain reachability information and policy."
+      },
+      "physical_graph": {
+        "description": "Actual cables, radio links, routers, switches, facilities, and transmission equipment."
+      },
+      "application_graph": {
+        "description": "Applications create logical relationships between services and clients that may span many physical networks."
+      }
+    },
+
+    "internet_vs_web_vs_cloud": {
+      "internet": {
+        "definition": "Global interconnected network infrastructure and protocols."
+      },
+      "world_wide_web": {
+        "definition": "A distributed information and application system using Internet connectivity, primarily through HTTP/HTTPS."
+      },
+      "cloud": {
+        "definition": "Large-scale computing infrastructure and services delivered through networks."
+      },
+      "data_center": {
+        "definition": "Physical facility containing computing and networking infrastructure."
+      },
+      "website": {
+        "definition": "A collection of web resources delivered by one or more servers/services."
+      },
+      "browser": {
+        "definition": "Client application used to interact with web resources."
+      }
+    },
+
+    "full_end_to_end_architecture": {
+      "human": {
+        "action": "Requests information."
+      },
+      "application": {
+        "example": "Web browser",
+        "protocol": "HTTP/HTTPS"
+      },
+      "identity_and_name": {
+        "system": "DNS",
+        "function": "Resolve service name to network destination."
+      },
+      "security": {
+        "system": "TLS",
+        "function": "Protect application communication."
+      },
+      "transport": {
+        "systems": [
+          "TCP",
+          "UDP",
+          "QUIC"
+        ],
+        "function": "Application-to-application communication."
+      },
+      "network": {
+        "system": "IP",
+        "function": "Global addressing and packet forwarding."
+      },
+      "routing": {
+        "system": "BGP",
+        "function": "Inter-domain reachability and routing policy."
+      },
+      "local_access": {
+        "systems": [
+          "Wi-Fi",
+          "Ethernet",
+          "Fiber",
+          "Cable",
+          "Cellular"
+        ]
+      },
+      "provider": {
+        "systems": [
+          "Access ISP",
+          "Regional ISP",
+          "Transit provider"
+        ]
+      },
+      "interconnection": {
+        "systems": [
+          "IXP",
+          "Private peering",
+          "Transit"
+        ]
+      },
+      "global_transport": {
+        "systems": [
+          "Terrestrial fiber",
+          "Submarine cables",
+          "Long-haul optical networks"
+        ]
+      },
+      "destination": {
+        "systems": [
+          "CDN",
+          "Cloud provider",
+          "Data center",
+          "Enterprise network"
+        ]
+      },
+      "compute": {
+        "systems": [
+          "Load balancer",
+          "Application server",
+          "Database",
+          "Storage"
+        ]
+      },
+      "response": {
+        "path": "Destination back toward client through the applicable network stack."
+      }
+    },
+
+    "conceptual_stack_diagram": {
+      "top_to_bottom": [
+        "Human / User",
+        "Application",
+        "HTTP / DNS / SMTP / SSH / other application protocols",
+        "TLS / security",
+        "TCP / UDP / QUIC",
+        "IPv4 / IPv6",
+        "BGP and inter-domain routing infrastructure",
+        "Ethernet / Wi-Fi / Cellular / other link technologies",
+        "Fiber / Copper / Radio",
+        "ISP / Transit / Peering",
+        "IXP / Backbone",
+        "Submarine Cable / Long-haul Fiber",
+        "Destination ISP / Cloud / CDN",
+        "Data Center",
+        "Server",
+        "Application"
+      ]
+    },
+
+    "historical_lineage": {
+      "packet_switching": {
+        "contributors": [
+          "Paul Baran",
+          "Donald Davies"
+        ]
+      },
+      "ARPANET": {
+        "role": "Early wide-area packet-switched research network."
+      },
+      "SATNET": {
+        "role": "Early packet satellite network and heterogeneous internetworking platform."
+      },
+      "PRNET": {
+        "role": "Radio-based packet network used in early internetworking experiments."
+      },
+      "CYCLADES": {
+        "role": "Influenced internetworking protocol design."
+      },
+      "TCP_IP": {
+        "developers": [
+          "Vint Cerf",
+          "Bob Kahn"
+        ],
+        "role": "Provided the protocol foundation for interconnecting heterogeneous networks."
+      },
+      "NSFNET": {
+        "role": "Major research and academic network that helped expand Internet connectivity."
+      },
+      "World_Wide_Web": {
+        "creator": "Tim Berners-Lee",
+        "role": "Made Internet-based information access dramatically more accessible through linked documents and browsers."
+      }
+    },
+
+    "common_misconceptions": {
+      "internet_is_the_web": {
+        "incorrect": true,
+        "correction": "The Web is one service running on the Internet."
+      },
+      "internet_is_one_network": {
+        "incorrect": true,
+        "correction": "The Internet is a network of interconnected networks."
+      },
+      "DNS_carries_web_pages": {
+        "incorrect": true,
+        "correction": "DNS primarily provides name-resolution information; HTTP/HTTPS carries web application data."
+      },
+      "routers_store_the_whole_internet": {
+        "incorrect": true,
+        "correction": "Routers use routing and forwarding information appropriate to their scope; they do not need a complete map of every physical link."
+      },
+      "TCP_is_the_internet": {
+        "incorrect": true,
+        "correction": "TCP is one transport protocol within the larger Internet protocol suite."
+      },
+      "IP_guarantees_delivery": {
+        "incorrect": true,
+        "correction": "IP provides packet delivery and routing semantics but does not itself guarantee reliable ordered delivery."
+      },
+      "satellites_carry_most_international_internet": {
+        "incorrect": true,
+        "correction": "Modern international Internet connectivity relies heavily on fiber-optic infrastructure, especially submarine cables."
+      },
+      "cloud_is_the_internet": {
+        "incorrect": true,
+        "correction": "Cloud services run on computing infrastructure connected through networks, including the Internet."
+      },
+      "one_company_controls_the_internet": {
+        "incorrect": true,
+        "correction": "The Internet consists of independently operated networks using shared protocols, standards, registries, and interconnection arrangements."
+      }
+    },
+
+    "key_entities": {
+      "Internet": {
+        "type": "Global network of networks"
+      },
+      "ARPANET": {
+        "type": "Historical packet-switched network",
+        "role": "Major predecessor to the modern Internet"
+      },
+      "SATNET": {
+        "type": "Historical packet satellite network",
+        "role": "Early international internetworking infrastructure"
+      },
+      "PRNET": {
+        "type": "Historical packet radio network",
+        "role": "Early internetworking participant"
+      },
+      "NPL": {
+        "type": "Research network",
+        "role": "Early packet-switching network"
+      },
+      "CYCLADES": {
+        "type": "Research network",
+        "role": "Influence on Internet architecture"
+      },
+      "TCP_IP": {
+        "type": "Protocol suite",
+        "role": "Core Internet networking architecture"
+      },
+      "BGP": {
+        "type": "Routing protocol",
+        "role": "Inter-domain routing"
+      },
+      "DNS": {
+        "type": "Naming system",
+        "role": "Domain-to-network resolution"
+      },
+      "HTTP": {
+        "type": "Application protocol",
+        "role": "Web communication"
+      },
+      "TLS": {
+        "type": "Security protocol",
+        "role": "Secure communications"
+      },
+      "ISP": {
+        "type": "Network operator",
+        "role": "Internet access and transit"
+      },
+      "IXP": {
+        "type": "Interconnection facility",
+        "role": "Network peering"
+      },
+      "CDN": {
+        "type": "Distributed service infrastructure",
+        "role": "Content delivery"
+      },
+      "Data_Center": {
+        "type": "Physical infrastructure",
+        "role": "Hosts servers and network services"
+      }
+    },
+
+    "operational_roles": {
+      "end_user": "Generates or consumes network traffic.",
+      "device": "Runs applications and network protocols.",
+      "local_router": "Connects the local network to upstream networks.",
+      "ISP": "Provides Internet access and/or transit.",
+      "regional_network": "Aggregates and transports traffic across a geographic region.",
+      "transit_provider": "Provides reachability to other networks.",
+      "peer": "Directly exchanges traffic with another network.",
+      "IXP": "Provides physical interconnection among networks.",
+      "backbone": "Carries high volumes of long-distance traffic.",
+      "DNS_provider": "Provides name-resolution services.",
+      "CDN": "Caches and serves content from distributed locations.",
+      "data_center": "Hosts servers and applications.",
+      "server": "Processes application requests.",
+      "browser": "Consumes web resources and renders them for users."
+    },
+
+    "diagnostic_model": {
+      "when_a_website_does_not_load": {
+        "layer_1_physical": [
+          "Is the device connected?",
+          "Is Wi-Fi or Ethernet working?",
+          "Is the modem/link operational?"
+        ],
+        "layer_2_local_network": [
+          "Does the device have a local IP?",
+          "Is the default gateway reachable?"
+        ],
+        "layer_3_IP": [
+          "Can the destination IP be reached?",
+          "Is routing functioning?"
+        ],
+        "layer_4_transport": [
+          "Is the destination port reachable?",
+          "Is TCP or QUIC establishing correctly?"
+        ],
+        "layer_5_DNS": [
+          "Does the hostname resolve?",
+          "Is the DNS server reachable?"
+        ],
+        "layer_6_TLS": [
+          "Does the TLS handshake succeed?",
+          "Is certificate validation successful?"
+        ],
+        "layer_7_HTTP": [
+          "Does the server return a response?",
+          "Is the application returning an error?"
+        ],
+        "application": [
+          "Is the website/service itself functioning?"
+        ]
+      }
+    },
+
+    "mental_models": {
+      "mail_system": {
+        "analogy": "The Internet can be partially understood as a highly automated global mail system.",
+        "mapping": {
+          "IP_address": "Destination address",
+          "packet": "Individual parcel",
+          "router": "Sorting/forwarding center",
+          "routing_table": "Forwarding rules",
+          "ISP": "Transportation network",
+          "BGP": "Inter-network route exchange",
+          "DNS": "Directory translating names into addresses",
+          "TCP": "Reliable delivery mechanism",
+          "HTTP": "Application-level message format"
+        },
+        "limitation": "The analogy is useful for intuition but does not represent the actual technical implementation."
+      },
+      "road_network": {
+        "mapping": {
+          "roads": "Network links",
+          "intersections": "Routers",
+          "highways": "Backbone links",
+          "cities": "Networks/data centers",
+          "road signs": "Routing information",
+          "destination_address": "IP address"
+        }
+      }
+    },
+
+    "architectural_principles": {
+      "layering": "Different protocols handle different responsibilities.",
+      "encapsulation": "Each layer adds information needed for its operation.",
+      "interoperability": "Independent systems communicate through shared protocols.",
+      "decentralization": "No single machine carries all Internet traffic.",
+      "distributed_control": "Many independent organizations operate portions of the infrastructure.",
+      "packet_switching": "Network capacity is shared among many communications.",
+      "routing": "Traffic can be forwarded across multiple interconnected networks.",
+      "redundancy": "Multiple paths and systems can improve resilience.",
+      "end_to_end_communication": "Applications communicate across many intermediate networks without requiring every intermediate network to understand application semantics.",
+      "scalability": "Hierarchical addressing, routing, naming, and distributed infrastructure allow the system to grow."
+    },
+
+    "complete_request_trace": {
+      "request": "User requests https://example.com/",
+      "trace": [
+        {
+          "step": 1,
+          "system": "Browser",
+          "action": "Parse URL."
+        },
+        {
+          "step": 2,
+          "system": "DNS",
+          "action": "Resolve example.com to an IP address."
+        },
+        {
+          "step": 3,
+          "system": "Operating system",
+          "action": "Determine route and local interface."
+        },
+        {
+          "step": 4,
+          "system": "Local network",
+          "action": "Send traffic through Wi-Fi or Ethernet."
+        },
+        {
+          "step": 5,
+          "system": "Default gateway",
+          "action": "Forward packet outside the local network."
+        },
+        {
+          "step": 6,
+          "system": "Access ISP",
+          "action": "Carry traffic upstream."
+        },
+        {
+          "step": 7,
+          "system": "Provider routing",
+          "action": "Select next network based on routing information."
+        },
+        {
+          "step": 8,
+          "system": "BGP",
+          "action": "Provide inter-domain reachability information."
+        },
+        {
+          "step": 9,
+          "system": "Backbone",
+          "action": "Carry traffic over high-capacity links."
+        },
+        {
+          "step": 10,
+          "system": "Peering/transit",
+          "action": "Move traffic between independently operated networks."
+        },
+        {
+          "step": 11,
+          "system": "Destination network",
+          "action": "Receive traffic for the destination prefix."
+        },
+        {
+          "step": 12,
+          "system": "Data center/CDN",
+          "action": "Select the appropriate service instance."
+        },
+        {
+          "step": 13,
+          "system": "TLS",
+          "action": "Protect application communication."
+        },
+        {
+          "step": 14,
+          "system": "HTTP",
+          "action": "Deliver the web request."
+        },
+        {
+          "step": 15,
+          "system": "Application server",
+          "action": "Process the request."
+        },
+        {
+          "step": 16,
+          "system": "Server",
+          "action": "Return response data."
+        },
+        {
+          "step": 17,
+          "system": "Network",
+          "action": "Return response toward client."
+        },
+        {
+          "step": 18,
+          "system": "Browser",
+          "action": "Decrypt, parse, execute, and render the response."
+        }
+      ]
+    },
+
+    "architecture_summary": {
+      "physical_layer": [
+        "Fiber",
+        "Copper",
+        "Radio",
+        "Submarine cables",
+        "Data centers",
+        "Routers",
+        "Switches"
+      ],
+      "link_layer": [
+        "Ethernet",
+        "Wi-Fi",
+        "Cellular link technologies",
+        "Other local-link protocols"
+      ],
+      "internet_layer": [
+        "IPv4",
+        "IPv6",
+        "ICMP"
+      ],
+      "routing_layer": [
+        "BGP",
+        "OSPF",
+        "IS-IS",
+        "Other routing protocols"
+      ],
+      "transport_layer": [
+        "TCP",
+        "UDP",
+        "QUIC"
+      ],
+      "security_layer": [
+        "TLS",
+        "IPsec",
+        "Network security controls"
+      ],
+      "application_layer": [
+        "HTTP",
+        "DNS",
+        "SMTP",
+        "IMAP",
+        "SSH",
+        "FTP",
+        "NTP",
+        "MQTT",
+        "Other application protocols"
+      ],
+      "service_layer": [
+        "Web",
+        "Cloud",
+        "CDNs",
+        "Email",
+        "Streaming",
+        "Gaming",
+        "APIs",
+        "Distributed applications"
+      ]
+    },
+
+    "source_alignment": {
+      "supplied_source_topics": [
+        "Internet as a network of networks",
+        "Packet switching",
+        "ARPANET",
+        "NPL",
+        "CYCLADES",
+        "SATNET",
+        "PRNET",
+        "TCP/IP",
+        "Routing",
+        "BGP",
+        "ISPs",
+        "Internet exchange points",
+        "Data centers",
+        "Internet protocol suite",
+        "DNS and addressing infrastructure",
+        "Internet governance",
+        "World Wide Web",
+        "Internet infrastructure"
+      ],
+      "source_supported_concepts": {
+        "network_of_networks": true,
+        "packet_switching": true,
+        "IP_routing": true,
+        "BGP": true,
+        "ISP_hierarchy": true,
+        "IXP": true,
+        "data_centers": true,
+        "submarine_cables": true,
+        "TCP_IP": true,
+        "application_transport_internet_link_layers": true,
+        "DNS": true,
+        "World_Wide_Web": true
+      }
+    },
+
+    "source_caveats": {
+      "scope": "This schema expands the supplied Internet article into a technical explanatory model.",
+      "historical_vs_modern": "Historical networking technologies such as ARPANET, SATNET, NPL, and PRNET should not be interpreted as identical to modern Internet infrastructure.",
+      "layer_model": "The four-layer Internet protocol suite is a conceptual model. Real implementations can have additional sublayers and technologies.",
+      "routing": "Actual Internet routing is substantially more complex than the simplified hop-by-hop model presented here.",
+      "BGP": "BGP provides inter-domain reachability and policy mechanisms; it should not be reduced to a simple shortest-path algorithm.",
+      "DNS": "DNS can return more than a single IP address, and modern DNS deployments can include caching, load balancing, geographic steering, security extensions, and other mechanisms.",
+      "HTTP": "Modern web applications may use HTTP/1.1, HTTP/2, or HTTP/3, with HTTP/3 using QUIC.",
+      "security": "TLS, firewalls, authentication, endpoint security, routing security, and physical controls operate at different layers and solve different problems.",
+      "physical_infrastructure": "The schema describes the major infrastructure categories rather than an exhaustive inventory of global cables, routers, facilities, providers, or data centers.",
+      "cloud_and_CDN": "Cloud and CDN architectures vary substantially between providers and applications.",
+      "modern_operations": "Actual production networks may use SDN, network virtualization, service meshes, overlays, EVPN, MPLS, SR-MPLS, SRv6, programmable switches, distributed load balancing, and other technologies not exhaustively represented here."
+    },
+
+    "machine_readable_summary": {
+      "name": "How the Internet Works",
+      "definition": "Global interconnected network of independently operated networks using standardized protocols.",
+      "core_protocol_family": "TCP/IP",
+      "core_addressing": [
+        "IPv4",
+        "IPv6"
+      ],
+      "core_routing": [
+        "BGP",
+        "IGP protocols"
+      ],
+      "core_transport": [
+        "TCP",
+        "UDP",
+        "QUIC"
+      ],
+      "core_application_protocols": [
+        "HTTP",
+        "HTTPS",
+        "DNS",
+        "SMTP",
+        "IMAP",
+        "SSH",
+        "FTP"
+      ],
+      "major_physical_media": [
+        "Fiber",
+        "Copper",
+        "Radio",
+        "Submarine fiber-optic cables"
+      ],
+      "major_network_entities": [
+        "End devices",
+        "Routers",
+        "Switches",
+        "ISPs",
+        "Autonomous systems",
+        "IXPs",
+        "Transit providers",
+        "Cloud providers",
+        "CDNs",
+        "Data centers"
+      ],
+      "fundamental_process": [
+        "Name resolution",
+        "Connection establishment",
+        "Encapsulation",
+        "Local transmission",
+        "Routing",
+        "Inter-network transit",
+        "Destination delivery",
+        "Decapsulation",
+        "Application processing",
+        "Response transmission"
+      ],
+      "fundamental_principles": [
+        "Packet switching",
+        "Layering",
+        "Encapsulation",
+        "Addressing",
+        "Routing",
+        "Interoperability",
+        "Distributed control",
+        "Redundancy",
+        "End-to-end communication"
+      ]
+    },
+
+    "record_integrity": {
+      "record_type": "Technical explanatory architecture",
+      "whole_system_scope": true,
+      "historical_foundation_included": true,
+      "physical_infrastructure_included": true,
+      "protocol_stack_included": true,
+      "routing_included": true,
+      "BGP_included": true,
+      "DNS_included": true,
+      "ISP_hierarchy_included": true,
+      "peering_included": true,
+      "transit_included": true,
+      "IXP_included": true,
+      "data_centers_included": true,
+      "CDN_included": true,
+      "cloud_included": true,
+      "submarine_cables_included": true,
+      "security_included": true,
+      "web_included": true,
+      "end_to_end_request_trace_included": true,
+      "packet_lifecycle_included": true,
+      "troubleshooting_model_included": true,
+      "misconceptions_included": true,
+      "source_caveats_included": true,
+      "unsupported_claims_presented_as_facts": false
+    }
+  }
+}
