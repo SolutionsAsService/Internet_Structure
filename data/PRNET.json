@@ -1,0 +1,1079 @@
+{
+  "PRNET_Packet_Radio_Network": {
+    "record_metadata": {
+      "record_type": "historical_network_system",
+      "canonical_name": "Packet Radio Network",
+      "abbreviation": "PRNET",
+      "alternate_names": [
+        "Packet Radio Network",
+        "Packet Radio Networks"
+      ],
+      "domain": [
+        "computer networking",
+        "packet radio",
+        "mobile ad hoc networking",
+        "internetworking",
+        "military communications research",
+        "DARPA/ARPA research"
+      ],
+      "status": "historical_experimental_network_research",
+      "source_basis": "User-supplied Wikipedia article text",
+      "source_warning": {
+        "maintenance_template": true,
+        "warning": "The supplied source states that the article needs more citations and that unsourced material may be challenged or removed.",
+        "maintenance_template_date": "January 2021"
+      },
+      "primary_funding_agency": "Advanced Research Projects Agency (ARPA)",
+      "later_program_relationship": "Follow-on development through DARPA's SURAN project"
+    },
+
+    "identity": {
+      "full_name": "Packet Radio Network",
+      "short_name": "PRNET",
+      "system_type": "set of early experimental mobile ad hoc networks",
+      "core_characteristic": "packet-switched wireless networking between mobile nodes without requiring a central station",
+      "historical_significance": [
+        "Early experimental mobile ad hoc networking system",
+        "Demonstrated packet-switched store-and-forward radio communications in a mobile environment",
+        "Developed technologies for multi-hop communication among mobile vehicles",
+        "Participated in the first major three-way internetworking demonstration connecting packet radio, packet satellite, and terrestrial packet networks"
+      ],
+      "relationship_to_internet_history": {
+        "role": "experimental component of the early Internet internetworking research environment",
+        "direct_relationships": [
+          "ARPANET",
+          "SATNET",
+          "early TCP/internetworking research"
+        ],
+        "key_demonstration": "November 22, 1977 three-way internetworking demonstration"
+      }
+    },
+
+    "research_and_design_objectives": {
+      "initiating_agency": "ARPA",
+      "project_start": 1973,
+      "research_character": [
+        "theoretical research",
+        "experimental research",
+        "network architecture development",
+        "radio networking",
+        "routing research",
+        "internetworking"
+      ],
+      "primary_goal": "Investigate the feasibility of using packet-switched, store-and-forward radio communications to provide reliable computer communications in a mobile environment.",
+      "technical_problem_domain": {
+        "target_environment": "mobile environment",
+        "network_characteristics": [
+          "mobile nodes",
+          "wireless radio links",
+          "multi-hop communication",
+          "distributed routing",
+          "store-and-forward packet communication",
+          "absence of a central station"
+        ]
+      },
+      "design_challenge": "PRNET addressed a significantly harder networking problem than earlier systems such as ALOHAnet because it required multi-hop communications between mobile vehicles without a central station."
+    },
+
+    "historical_origins": {
+      "inspiration": {
+        "system": "ALOHAnet",
+        "significance": "The earlier ALOHAnet served as an inspiration for PRNET."
+      },
+      "distinguishing_problem": {
+        "ALOHAnet_context": "Earlier packet radio networking experience.",
+        "PRNET_problem": "Multi-hop communication between mobile vehicles without a central station."
+      },
+      "bob_kahn_initial_conception": {
+        "designer": "Robert E. Kahn",
+        "source_year": 1975,
+        "architectural_concept": "The overall system design was predicated upon an array of low-cost repeaters.",
+        "repeater_definition": "A particular kind of packet radio equipped to retransmit by radio some or all packets that it receives by radio.",
+        "modern_terminology_equivalent": [
+          "router",
+          "packet switch"
+        ],
+        "terminology_caveat": "The source uses the historical term 'repeater', but the described function corresponds more closely to a router or packet switch than to a conventional simple radio repeater."
+      }
+    },
+
+    "organizational_participants": {
+      "major_participants": [
+        {
+          "organization": "BBN Technologies",
+          "role": [
+            "network technology",
+            "software development and testing"
+          ]
+        },
+        {
+          "organization": "Hazeltine Corporation",
+          "role": [
+            "major project participant"
+          ]
+        },
+        {
+          "organization": "Rockwell International",
+          "division": "Collins division",
+          "role": [
+            "development of Experimental Packet Radios"
+          ]
+        },
+        {
+          "organization": "SRI International",
+          "historical_name": "Stanford Research Institute",
+          "role": [
+            "hosted first PRNET in San Francisco Bay Area",
+            "research participation",
+            "network experimentation"
+          ]
+        }
+      ],
+      "funding": {
+        "agency": "Advanced Research Projects Agency",
+        "abbreviation": "ARPA"
+      },
+      "follow_on_agency_context": {
+        "agency": "Defense Advanced Research Projects Agency",
+        "abbreviation": "DARPA",
+        "program": "SURAN"
+      }
+    },
+
+    "network_architecture": {
+      "network_class": "mobile ad hoc network",
+      "historical_form": "experimental packet radio network",
+      "communication_model": {
+        "packet_switching": true,
+        "store_and_forward": true,
+        "wireless_radio": true,
+        "multi_hop": true,
+        "central_station_required": false
+      },
+      "nodes": {
+        "primary_mobile_nodes": "Mobile vehicles and associated packet-radio terminals",
+        "radio_based_forwarding": true,
+        "distributed_routing": true
+      },
+      "routing_model": {
+        "character": "distributed",
+        "purpose": "Allow packets to traverse multiple radio nodes in a mobile network.",
+        "routing_control": "Radio network routing control software was present by 1977."
+      },
+      "gateway_capability": {
+        "present": true,
+        "description": "By 1977 the PRNET software included a gateway to other networks."
+      },
+      "network_measurement": {
+        "present": true,
+        "description": "By 1977 the software included network measurement functionality."
+      },
+      "debugging": {
+        "present": true,
+        "description": "By 1977 the software included debugging tools."
+      },
+      "configuration": {
+        "present": true,
+        "description": "By 1977 the software included configuration tools."
+      }
+    },
+
+    "radio_hardware": {
+      "initial_platform": "Experimental Packet Radios",
+      "abbreviation": "EPR",
+      "developer": "Rockwell International Collins division",
+      "first_delivery": "mid-1975",
+      "technical_characteristics": {
+        "frequency_band": "L-band",
+        "waveform": "spread-spectrum",
+        "duplex_mode": "half-duplex",
+        "supported_data_rates_kbps": [
+          100,
+          400
+        ]
+      },
+      "network_role": "Provided the radio communications hardware used to build the early PRNET experimental networks."
+    },
+
+    "network_development": {
+      "initial_project": {
+        "year": 1973,
+        "agency": "ARPA",
+        "activities": [
+          "theoretical research",
+          "experimental research"
+        ]
+      },
+      "first_packet_radios": {
+        "delivery": "mid-1975",
+        "purpose": "initial testing"
+      },
+      "quasi_operational_network": {
+        "date": "September 1976",
+        "status": "first quasi-operational network capability",
+        "prerequisite": "Prototype networking software had been developed shortly beforehand."
+      },
+      "software_by_1977": {
+        "features": [
+          "radio network routing control",
+          "gateway to other networks",
+          "network measurement",
+          "debugging tools",
+          "configuration tools"
+        ]
+      }
+    },
+
+    "geographic_deployments": {
+      "san_francisco_bay_area": {
+        "status": "first PRNET",
+        "host": "SRI",
+        "participants": [
+          "SRI International",
+          "BBN",
+          "Rockwell International Collins division"
+        ]
+      },
+      "bbn_test_network": {
+        "status": "smaller network",
+        "purpose": [
+          "software development",
+          "software testing"
+        ]
+      },
+      "fort_bragg": {
+        "location": "Fort Bragg, North Carolina",
+        "status_by_september_1979": "operational PRNET",
+        "terminals_reported": 8,
+        "tius": 2,
+        "planned_growth": 40,
+        "source_attribution": "Ron Kunzelman report quoted in Jon Postel's September 1979 Internet Meeting Notes"
+      },
+      "san_francisco_networks_by_1979": {
+        "count": 2,
+        "source_date": "September 1979",
+        "source_attribution": "Ron Kunzelman report quoted in IEN 121"
+      }
+    },
+
+    "internetworking": {
+      "importance": "PRNET became part of the experimental environment in which distinct packet networks were interconnected.",
+      "network_relationships": [
+        "ARPANET",
+        "SATNET",
+        "PRNET"
+      ],
+      "three_way_demonstration": {
+        "date": "November 22, 1977",
+        "networks": [
+          "ARPANET",
+          "PRNET",
+          "SATNET"
+        ],
+        "demonstration_description": "A mobile vehicle in PRNET was linked with nodes in the ARPANET and, through SATNET, with nodes in London operated by Peter Kirstein's research group at University College London.",
+        "historical_significance": "The demonstration represented an early practical demonstration of internetworking across heterogeneous packet networks and was the first three-way demonstration linking ARPANET, PRNET, and SATNET."
+      },
+      "post_demonstration_operation": {
+        "relationship_to_arpanet": "PRNET was usually attached to the ARPANET afterward.",
+        "purpose": "This allowed BBN software developers in Cambridge to access and update the PRNET."
+      }
+    },
+
+    "mobile_packet_radio_model": {
+      "core_problem": "Reliable computer communication among mobile vehicles using radio links.",
+      "characteristics": {
+        "mobility": true,
+        "wireless": true,
+        "multi_hop": true,
+        "distributed_forwarding": true,
+        "store_and_forward": true,
+        "central_station": false
+      },
+      "historical_importance": {
+        "technology_lineage": [
+          "packet radio",
+          "mobile ad hoc networking",
+          "distributed routing",
+          "wireless internetworking"
+        ],
+        "modern_conceptual_relationship": "The source characterizes PRNET as an early experimental mobile ad hoc networking system."
+      }
+    },
+
+    "network_scale_and_growth": {
+      "june_1978": {
+        "radio_nodes_available": 25,
+        "significance": "PRNET had developed sufficiently to support a network of approximately 25 radio nodes."
+      },
+      "september_1979": {
+        "san_francisco_bay_area_prnets": 2,
+        "fort_bragg_prnets": 1,
+        "fort_bragg_terminals": 8,
+        "fort_bragg_tius": 2,
+        "planned_fort_bragg_terminals": 40
+      },
+      "caveat": "The supplied source provides point-in-time counts rather than a complete longitudinal inventory of all PRNET nodes."
+    },
+
+    "hardware_evolution": {
+      "experimental_packet_radio": {
+        "name": "Experimental Packet Radio",
+        "abbreviation": "EPR",
+        "period": "initial PRNET generation",
+        "characteristics": [
+          "L-band",
+          "spread-spectrum waveforms",
+          "half-duplex",
+          "100 kbps or 400 kbps"
+        ]
+      },
+      "upgraded_packet_radio": {
+        "name": "Upgraded Packet Radio",
+        "abbreviation": "UPR",
+        "introduction": "circa 1978",
+        "relationship": "Replaced the Experimental Packet Radios."
+      },
+      "low_cost_packet_radio": {
+        "name": "Low-Cost Packet Radio",
+        "abbreviation": "LPR",
+        "introduction": "1986",
+        "program": "DARPA SURAN",
+        "relationship": "Replaced or followed the Upgraded Packet Radio generation as part of DARPA's follow-on SURAN project."
+      }
+    },
+
+    "software_and_protocol_research": {
+      "prototype_software": {
+        "development": "Before September 1976",
+        "purpose": "Enabled the first quasi-operational PRNET capability."
+      },
+      "routing_control": {
+        "present_by": 1977,
+        "purpose": "Control packet routing through the radio network."
+      },
+      "gateway": {
+        "present_by": 1977,
+        "purpose": "Connect PRNET to other networks."
+      },
+      "measurement": {
+        "present_by": 1977,
+        "purpose": "Measure network behavior and performance."
+      },
+      "debugging": {
+        "present_by": 1977,
+        "purpose": "Support troubleshooting and development."
+      },
+      "configuration": {
+        "present_by": 1977,
+        "purpose": "Configure the network and its components."
+      },
+      "later_protocol_research": {
+        "topics": [
+          "packet radio network protocols",
+          "distributed routing",
+          "broadcast-environment routing",
+          "internetwork experiments"
+        ],
+        "important_publications": [
+          "Current packet radio network protocols",
+          "A distributed routing design for a broadcast environment",
+          "The DARPA Packet Radio Network Protocols"
+        ]
+      }
+    },
+
+    "relationship_to_early_internet": {
+      "arpanet": {
+        "relationship": "PRNET was interconnected with ARPANET and was subsequently usually attached to ARPANET.",
+        "development_significance": "Provided a mobile wireless packet network for experiments involving internetworking."
+      },
+      "satnet": {
+        "relationship": "PRNET was connected through SATNET during the November 22, 1977 three-way demonstration.",
+        "significance": "Demonstrated communication across terrestrial packet, mobile packet-radio, and packet-satellite environments."
+      },
+      "internet_protocol_research": {
+        "relationship": "PRNET formed part of the heterogeneous networking environment used during early Internet internetworking research.",
+        "source_scope_caveat": "The supplied article does not provide a complete technical history of every protocol used by PRNET or identify every protocol version deployed at every stage."
+      }
+    },
+
+    "key_people": {
+      "Robert_E_Kahn": {
+        "name": "Robert E. Kahn",
+        "role": [
+          "major packet-radio researcher",
+          "initial PRNET conceptual architect",
+          "author of 1975 paper describing organization of computer resources into a packet radio network"
+        ],
+        "documented_contribution": "Outlined the goals and architectural concept for packet-switched store-and-forward radio communications in a mobile environment."
+      },
+      "Ronald_C_Kunzelman": {
+        "name": "Ronald C. Kunzelman",
+        "role": [
+          "packet-radio researcher",
+          "reported operational PRNET status in 1979"
+        ],
+        "source_context": "Quoted in Jon Postel's September 1979 Internet Meeting Notes."
+      },
+      "Peter_T_Kirstein": {
+        "name": "Peter T. Kirstein",
+        "role": [
+          "leader of the University College London research group",
+          "participant in the early internetworking demonstration"
+        ],
+        "relationship_to_prnet": "His UCL research group operated the London nodes reached during the 1977 ARPANET-PRNET-SATNET demonstration."
+      },
+      "John_Schoch": {
+        "name": "John Schoch",
+        "role": "author of work on internetwork experiments with the Bay Area Packet Radio Network"
+      },
+      "Larry_Stewart": {
+        "name": "Larry Stewart",
+        "role": "co-author of work on internetwork experiments with the Bay Area Packet Radio Network"
+      },
+      "John_Jubin": {
+        "name": "John Jubin",
+        "role": [
+          "packet-radio protocol researcher",
+          "author of work on packet radio network protocols",
+          "co-author of DARPA Packet Radio Network Protocols"
+        ]
+      },
+      "Janet_D_Tornow": {
+        "name": "Janet D. Tornow",
+        "role": "co-author of The DARPA Packet Radio Network Protocols"
+      },
+      "Jon_Postel": {
+        "name": "Jon Postel",
+        "role": [
+          "author/editor of Internet Engineering Notes material",
+          "author of September 1979 Internet Meeting Notes"
+        ],
+        "documented_source": "IEN 121"
+      }
+    },
+
+    "organizations": {
+      "ARPA": {
+        "full_name": "Advanced Research Projects Agency",
+        "role": "initiated and funded PRNET research in 1973"
+      },
+      "DARPA": {
+        "full_name": "Defense Advanced Research Projects Agency",
+        "role": "later follow-on research context through SURAN"
+      },
+      "BBN_Technologies": {
+        "role": [
+          "network technology",
+          "software development",
+          "software testing"
+        ]
+      },
+      "Hazeltine_Corporation": {
+        "role": "major PRNET project participant"
+      },
+      "Rockwell_International_Collins": {
+        "role": "created Experimental Packet Radios"
+      },
+      "SRI_International": {
+        "historical_name": "Stanford Research Institute",
+        "role": [
+          "hosted first PRNET in San Francisco Bay Area",
+          "major research participant"
+        ]
+      },
+      "University_College_London": {
+        "abbreviation": "UCL",
+        "role": "London endpoint in the 1977 internetworking demonstration"
+      },
+      "IETF": {
+        "full_name": "Internet Engineering Task Force",
+        "source_context": "Publisher/context for Internet Engineering Notes cited by the article."
+      }
+    },
+
+    "historical_timeline": {
+      "1973": {
+        "event": "ARPA initiated the PRNET project.",
+        "details": [
+          "Theoretical research funded",
+          "Experimental research funded",
+          "Objective was reliable computer communication using packet-switched store-and-forward radio in mobile environments"
+        ]
+      },
+      "1975": {
+        "event": "PRNET design goals publicly documented by Bob Kahn.",
+        "details": [
+          "Packet-switched radio communications",
+          "Store-and-forward communication",
+          "Mobile computing environment",
+          "Low-cost radio repeaters/packet switches"
+        ]
+      },
+      "mid_1975": {
+        "event": "First Experimental Packet Radios delivered.",
+        "details": [
+          "Developed by Rockwell International Collins division",
+          "Used for initial testing"
+        ]
+      },
+      "september_1976": {
+        "event": "First quasi-operational PRNET capability established.",
+        "details": [
+          "Prototype networking software had been developed",
+          "Network capability became operational enough for continued experimentation"
+        ]
+      },
+      "1977": {
+        "event": "PRNET software and internetworking capabilities matured.",
+        "details": [
+          "Radio network routing control",
+          "Gateway functionality",
+          "Network measurement",
+          "Debugging tools",
+          "Configuration tools"
+        ]
+      },
+      "november_22_1977": {
+        "event": "Three-way internetworking demonstration.",
+        "networks": [
+          "PRNET",
+          "ARPANET",
+          "SATNET"
+        ],
+        "significance": "Demonstrated internetworked communication involving a mobile packet-radio network."
+      },
+      "june_1978": {
+        "event": "Approximately 25 radio nodes were available."
+      },
+      "circa_1978": {
+        "event": "Upgraded Packet Radios replaced Experimental Packet Radios."
+      },
+      "september_1979": {
+        "event": "PRNET deployment expanded.",
+        "details": [
+          "Two PRNETs operating in the San Francisco Bay Area",
+          "One PRNET operating at Fort Bragg, North Carolina",
+          "Fort Bragg network had eight terminals on two TIUs",
+          "Planned expansion to forty terminals"
+        ]
+      },
+      "1985": {
+        "event": "Packet-radio protocol research continued.",
+        "reference": "J. Jubin, Current packet radio network protocols, INFOCOM '85."
+      },
+      "1986": {
+        "event": "Low-Cost Packet Radio introduced as part of DARPA's SURAN follow-on project."
+      },
+      "1987": {
+        "event": "DARPA Packet Radio Network Protocols documented in Proceedings of the IEEE.",
+        "reference": "John Jubin and Janet D. Tornow."
+      }
+    },
+
+    "technical_evolution": {
+      "phase_1": {
+        "period": "1973-1975",
+        "focus": [
+          "theoretical architecture",
+          "mobile packet-radio feasibility",
+          "store-and-forward radio networking",
+          "multi-hop networking"
+        ]
+      },
+      "phase_2": {
+        "period": "1975-1976",
+        "focus": [
+          "Experimental Packet Radio hardware",
+          "prototype network software",
+          "initial network testing",
+          "quasi-operational deployment"
+        ]
+      },
+      "phase_3": {
+        "period": "1977",
+        "focus": [
+          "routing control",
+          "network gateways",
+          "network measurement",
+          "debugging",
+          "configuration",
+          "internetworking"
+        ]
+      },
+      "phase_4": {
+        "period": "1978-1979",
+        "focus": [
+          "Upgraded Packet Radios",
+          "larger deployments",
+          "multiple geographically separated PRNETs",
+          "continued internetworking experimentation"
+        ]
+      },
+      "phase_5": {
+        "period": "1986 onward",
+        "focus": [
+          "Low-Cost Packet Radio",
+          "SURAN follow-on research",
+          "continued development of packet-radio networking protocols"
+        ]
+      }
+    },
+
+    "relationship_to_mobile_ad_hoc_networking": {
+      "historical_role": "PRNET is described by the source as a set of early experimental mobile ad hoc networks.",
+      "core_ad_hoc_properties": [
+        "mobile nodes",
+        "distributed routing",
+        "multi-hop wireless communication",
+        "no central station",
+        "radio-based packet forwarding",
+        "dynamic network topology"
+      ],
+      "conceptual_lineage": [
+        "ALOHAnet",
+        "PRNET",
+        "SURAN",
+        "later mobile ad hoc networking research"
+      ],
+      "scope_caveat": "The supplied article establishes PRNET as an early mobile ad hoc networking system but does not provide a comprehensive genealogy of all later MANET protocols."
+    },
+
+    "relationship_to_military_research": {
+      "funding_context": "ARPA/DARPA",
+      "operational_research_context": [
+        "mobile communications",
+        "packet radio",
+        "distributed networking",
+        "networking among mobile vehicles"
+      ],
+      "fort_bragg_deployment": {
+        "location": "Fort Bragg, North Carolina",
+        "significance": "Demonstrates that PRNET technology was being deployed/tested in a military-associated environment by 1979."
+      },
+      "caveat": "The supplied article does not characterize PRNET as a deployed operational military communications network; it describes it as experimental network research."
+    },
+
+    "follow_on_research": {
+      "SURAN": {
+        "full_name": "Survivable Adaptive Radio Networks",
+        "relationship": "DARPA follow-on project",
+        "hardware_relationship": "Low-Cost Packet Radio was developed as part of the SURAN project in 1986.",
+        "significance": "Continuation of research into packet-radio networking after the earlier PRNET hardware generations."
+      },
+      "protocol_research": [
+        {
+          "title": "Current packet radio network protocols",
+          "author": "J. Jubin",
+          "year": 1985,
+          "venue": "INFOCOM '85 Proceedings"
+        },
+        {
+          "title": "A distributed routing design for a broadcast environment",
+          "authors": [
+            "J. Westcott",
+            "J. Jubin"
+          ],
+          "year": 1982,
+          "venue": "MILCOM '82 Proceedings"
+        },
+        {
+          "title": "The DARPA Packet Radio Network Protocols",
+          "authors": [
+            "John Jubin",
+            "Janet D. Tornow"
+          ],
+          "year": 1987,
+          "venue": "Proceedings of the IEEE",
+          "volume": 75,
+          "issue": 1,
+          "pages": "21-32"
+        }
+      ]
+    },
+
+    "key_technical_characteristics": {
+      "network_type": "mobile ad hoc packet-radio network",
+      "switching": "packet switching",
+      "forwarding": "store-and-forward",
+      "wireless": true,
+      "multi_hop": true,
+      "central_station": false,
+      "routing": "distributed",
+      "radio": {
+        "initial_generation": "Experimental Packet Radio",
+        "band": "L-band",
+        "waveform": "spread-spectrum",
+        "duplex": "half-duplex",
+        "rates": [
+          "100 kbps",
+          "400 kbps"
+        ]
+      },
+      "network_services_by_1977": [
+        "routing control",
+        "gateway connectivity",
+        "network measurement",
+        "debugging",
+        "configuration"
+      ]
+    },
+
+    "historical_significance": {
+      "primary_significance": [
+        "Early experimental mobile ad hoc networking",
+        "Early multi-hop wireless packet networking",
+        "Experimental distributed routing over radio",
+        "Early heterogeneous internetworking"
+      ],
+      "internet_history_significance": {
+        "1977_demonstration": "PRNET participated in the November 22, 1977 demonstration connecting ARPANET, PRNET, and SATNET.",
+        "importance": "The demonstration showed that packet networks with substantially different communication environments could participate in a larger internetwork."
+      },
+      "technology_lineage": {
+        "early_packet_radio": true,
+        "mobile_ad_hoc_networking": true,
+        "distributed_routing": true,
+        "wireless_internetworking": true,
+        "survivable_networking_research": true
+      }
+    },
+
+    "source_reference_catalog": {
+      "primary_references": [
+        {
+          "id": "REF-001",
+          "authors": [
+            "Peter T. Kirstein"
+          ],
+          "year": 1999,
+          "title": "Early experiences with the Arpanet and Internet in the United Kingdom",
+          "publication": "IEEE Annals of the History of Computing",
+          "volume": 21,
+          "issue": 1,
+          "pages": "38-44",
+          "doi": "10.1109/85.759368",
+          "relevance": "Documents the early ARPANET/SATNET/internetworking environment and the 1977 demonstration."
+        },
+        {
+          "id": "REF-002",
+          "authors": [
+            "Jon Postel"
+          ],
+          "date": "1979-10-25",
+          "title": "Internet Meeting Notes - 10, 11, 12 & 13 September 1979",
+          "document_type": "Internet Experiment Note",
+          "identifier": "IEN 121",
+          "relevance": "Contains the September 1979 report concerning two San Francisco Bay Area PRNETs and the Fort Bragg network."
+        }
+      ],
+      "further_reading": [
+        {
+          "authors": [
+            "Robert E. Kahn"
+          ],
+          "year": 1975,
+          "title": "The organization of computer resources into a packet radio network",
+          "venue": "AFIPS '75 Proceedings",
+          "date_range": "May 19-22, 1975",
+          "pages": "177-186",
+          "relevance": "Foundational PRNET architecture and research goals."
+        },
+        {
+          "authors": [
+            "J. Burchfiel",
+            "R. Tomlinson",
+            "M. Beeler"
+          ],
+          "year": 1975,
+          "title": "Functions and Structure of a Packet Radio Station",
+          "venue": "AFIPS Conference Proceedings",
+          "volume": 44,
+          "publisher": "AFIPS Press",
+          "location": "Montvale, New Jersey",
+          "relevance": "Packet-radio station architecture."
+        },
+        {
+          "authors": [
+            "Darryl E. Rubin"
+          ],
+          "year": 1977,
+          "title": "Army Packet Radio Network Protocol Study",
+          "organization": "SRI International",
+          "month": "November",
+          "relevance": "Packet-radio protocol research."
+        },
+        {
+          "authors": [
+            "Robert E. Kahn",
+            "Steven A. Gronemeyer",
+            "Jerry Burchfiel",
+            "Ronald C. Kunzelman"
+          ],
+          "year": 1978,
+          "title": "Advances in Packet Radio Technology",
+          "publication": "Proceedings of the IEEE",
+          "volume": 66,
+          "issue": 11,
+          "pages": "1468-1498",
+          "relevance": "Detailed packet-radio technology research."
+        },
+        {
+          "authors": [
+            "John Schoch",
+            "Larry Stewart"
+          ],
+          "year": 1979,
+          "title": "Internetwork Experiments with the Bay Area Packet Radio Network",
+          "document_type": "Internet Experiment Note",
+          "identifier": "IEN 78",
+          "publisher": "IETF",
+          "month": "February",
+          "relevance": "Internetworking experiments involving the Bay Area packet-radio network."
+        },
+        {
+          "authors": [
+            "J. Jubin"
+          ],
+          "year": 1985,
+          "title": "Current packet radio network protocols",
+          "venue": "INFOCOM '85 Proceedings",
+          "month": "March",
+          "relevance": "Later packet-radio protocol research."
+        },
+        {
+          "authors": [
+            "J. Westcott",
+            "J. Jubin"
+          ],
+          "year": 1982,
+          "title": "A distributed routing design for a broadcast environment",
+          "venue": "MILCOM '82 Proceedings",
+          "relevance": "Distributed routing in broadcast packet-radio environments."
+        },
+        {
+          "authors": [
+            "John Jubin",
+            "Janet D. Tornow"
+          ],
+          "year": 1987,
+          "title": "The DARPA Packet Radio Network Protocols",
+          "publication": "Proceedings of the IEEE",
+          "volume": 75,
+          "issue": 1,
+          "pages": "21-32",
+          "relevance": "Consolidated documentation of DARPA packet-radio protocols."
+        }
+      ]
+    },
+
+    "images_and_historical_artifacts": {
+      "source_images": [
+        {
+          "caption": "Stanford Research Institute's Packet Radio Van",
+          "subject": "SRI Packet Radio Van",
+          "historical_role": "Site of the first three-way internetworked transmission."
+        },
+        {
+          "caption": "Internetworking demonstration, linking the ARPANET, PRNET, and SATNET on November 22, 1977",
+          "subject": "Three-way internetwork demonstration",
+          "date": "1977-11-22"
+        }
+      ]
+    },
+
+    "conceptual_network_flow": {
+      "mobile_vehicle": {
+        "connects_to": "packet radio node"
+      },
+      "packet_radio_node": {
+        "functions": [
+          "receive packets",
+          "store packets",
+          "forward packets",
+          "participate in distributed routing"
+        ]
+      },
+      "multi_hop_radio_network": {
+        "connects": "mobile nodes across the PRNET"
+      },
+      "gateway": {
+        "connects": [
+          "PRNET",
+          "other packet networks"
+        ]
+      },
+      "internetwork": {
+        "historical_example": [
+          "PRNET",
+          "ARPANET",
+          "SATNET"
+        ]
+      },
+      "london_endpoint": {
+        "organization": "University College London",
+        "research_group": "Peter Kirstein's research group"
+      }
+    },
+
+    "source_caveats": {
+      "citation_quality": {
+        "source_warning": true,
+        "description": "The supplied Wikipedia article explicitly carries a maintenance notice stating that it needs more citations."
+      },
+      "scope": [
+        "This record preserves the supplied article's content rather than independently validating every historical claim.",
+        "The source gives selected deployment counts rather than a complete inventory of PRNET nodes.",
+        "The source describes PRNET as experimental mobile ad hoc networking rather than a single fixed network with one immutable architecture.",
+        "The source does not provide a complete protocol specification.",
+        "The source does not provide a complete hardware inventory for every PRNET generation."
+      ],
+      "terminology": {
+        "repeater": "Bob Kahn's historical use of 'repeater' describes a radio device that can retransmit received packets; the article notes that in modern terminology this might be regarded as a router or packet switch."
+      },
+      "fort_bragg": {
+        "source_characterization": "The September 1979 deployment information is explicitly attributed to Ron Kunzelman's report as quoted in IEN 121."
+      },
+      "historical_relationships": {
+        "internet": "PRNET was one component of early internetworking experiments; it should not be treated as synonymous with the Internet itself."
+      }
+    },
+
+    "machine_readable_summary": {
+      "name": "PRNET",
+      "full_name": "Packet Radio Network",
+      "type": "experimental_mobile_ad_hoc_network",
+      "funded_by": "ARPA",
+      "initiated": 1973,
+      "first_packet_radios": "mid-1975",
+      "quasi_operational": "September 1976",
+      "first_major_internetwork_demo": "November 22, 1977",
+      "radio_generation": {
+        "initial": "Experimental Packet Radio",
+        "successor": "Upgraded Packet Radio",
+        "later": "Low-Cost Packet Radio"
+      },
+      "radio_characteristics": {
+        "band": "L-band",
+        "waveform": "spread-spectrum",
+        "duplex": "half-duplex",
+        "rates_kbps": [
+          100,
+          400
+        ]
+      },
+      "network_properties": [
+        "packet_switching",
+        "store_and_forward",
+        "mobile_nodes",
+        "multi_hop",
+        "distributed_routing",
+        "wireless",
+        "no_central_station"
+      ],
+      "major_organizations": [
+        "ARPA",
+        "BBN Technologies",
+        "Hazeltine Corporation",
+        "Rockwell International Collins division",
+        "SRI International"
+      ],
+      "connected_networks": [
+        "ARPANET",
+        "SATNET"
+      ],
+      "1977_demo_networks": [
+        "ARPANET",
+        "PRNET",
+        "SATNET"
+      ],
+      "known_deployments": [
+        "San Francisco Bay Area",
+        "BBN development/test network",
+        "Fort Bragg, North Carolina"
+      ],
+      "june_1978_radio_nodes": 25,
+      "september_1979": {
+        "bay_area_prnets": 2,
+        "fort_bragg_prnets": 1,
+        "fort_bragg_terminals": 8,
+        "fort_bragg_tius": 2,
+        "planned_terminals": 40
+      },
+      "follow_on_program": "SURAN"
+    },
+
+    "architectural_lineage": {
+      "predecessor_or_inspiration": [
+        "ALOHAnet"
+      ],
+      "direct_system": [
+        "PRNET"
+      ],
+      "hardware_evolution": [
+        "Experimental Packet Radio",
+        "Upgraded Packet Radio",
+        "Low-Cost Packet Radio"
+      ],
+      "follow_on_research": [
+        "SURAN"
+      ],
+      "research_domains": [
+        "packet radio",
+        "distributed routing",
+        "mobile ad hoc networking",
+        "wireless internetworking",
+        "survivable adaptive radio networking"
+      ]
+    },
+
+    "network_relationship_graph": {
+      "ARPA": {
+        "relationship": "funded",
+        "target": "PRNET"
+      },
+      "SRI_International": {
+        "relationship": "hosted",
+        "target": "first San Francisco Bay Area PRNET"
+      },
+      "BBN_Technologies": {
+        "relationship": [
+          "provided network technology",
+          "operated development/test environment",
+          "later accessed PRNET through ARPANET"
+        ]
+      },
+      "Rockwell_Collins": {
+        "relationship": "developed",
+        "target": "Experimental Packet Radios"
+      },
+      "ARPANET": {
+        "relationship": "internetworked_with",
+        "target": "PRNET"
+      },
+      "SATNET": {
+        "relationship": "internetworked_with",
+        "target": "PRNET"
+      },
+      "UCL": {
+        "relationship": "participated_in_1977_internetwork_demo",
+        "target": "PRNET"
+      },
+      "SURAN": {
+        "relationship": "follow_on_research",
+        "target": "PRNET technology lineage"
+      }
+    },
+
+    "record_integrity": {
+      "source_preservation": true,
+      "source_type": "user-supplied Wikipedia article",
+      "claims_reconstructed_from_source": true,
+      "unsupported_fields_invented": false,
+      "conflicting_information_silently_reconciled": false,
+      "citation_warning_preserved": true,
+      "historical_status": "PRNET is treated as a historical experimental networking project rather than a currently operating network.",
+      "important_distinction": "PRNET refers to a family/set of evolving experimental packet-radio networks and technologies rather than a single permanently fixed network configuration."
+    }
+  }
+}
