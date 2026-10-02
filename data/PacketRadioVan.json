@@ -1,0 +1,846 @@
+{
+  "Packet_Radio_Van": {
+    "record_metadata": {
+      "record_type": "historical_networking_artifact",
+      "canonical_name": "Packet Radio Van",
+      "alternate_names": [
+        "SRI Packet Radio Van",
+        "SRI Internet Van",
+        "SRI Van"
+      ],
+      "artifact_type": "mobile packet-radio laboratory and networking node",
+      "physical_platform": "GMC Value-Van",
+      "historical_context": [
+        "PRNET",
+        "ARPANET",
+        "SATNET",
+        "early Internet internetworking",
+        "early Voice over IP research"
+      ],
+      "institution": "SRI International",
+      "project_context": "DARPA PRNET",
+      "primary_design_and_refit": "Don Cone",
+      "historical_status": "preserved historical artifact",
+      "source_basis": "User-supplied Wikipedia article text",
+      "source_scope_note": "This record preserves and structures the supplied article rather than independently validating or expanding every claim."
+    },
+
+    "identity": {
+      "name": "Packet Radio Van",
+      "description": "A GMC Value-Van refitted at SRI International as a mobile packet-radio laboratory and PRNET network node.",
+      "primary_function": "Provide a mobile environment capable of operating as an ARPANET node through packet radio.",
+      "secondary_functions": [
+        "Mobile packet-radio experimentation",
+        "PRNET network-node experimentation",
+        "Internetworking demonstrations",
+        "Testing communications between disparate networks",
+        "Early speech-compression and Voice over IP experimentation"
+      ],
+      "institutional_home": "SRI International",
+      "designer": "Don Cone",
+      "network_project": "DARPA Packet Radio Network (PRNET)",
+      "physical_character": "Bread-van-like GMC vehicle containing computing, radio, power, environmental-control, and networking equipment."
+    },
+
+    "historical_significance": {
+      "primary_significance": [
+        "Participated in the first two-way internetworked transmission described by the source on August 27, 1976.",
+        "Participated in the first three-way internetworked transmission on November 22, 1977.",
+        "Served as a mobile PRNET radio node.",
+        "Provided a practical demonstration platform for connecting heterogeneous networks.",
+        "Was later used for early Voice over IP and speech-compression experiments."
+      ],
+      "internet_history_role": {
+        "1976": "The van participated in an early two-network transmission involving packet radio and the ARPANET.",
+        "1977": "The van participated in the three-network demonstration involving packet radio, satellite networking, and the ARPANET.",
+        "historical_interpretation": "The supplied source describes the November 22, 1977 demonstration as the first true Internet transmission and as the start of the Internet."
+      },
+      "important_caveat": "The characterization of November 22, 1977 as the 'start of the Internet' is a historical framing in the supplied source and should not be treated as the only possible definition of when the Internet began."
+    },
+
+    "physical_platform": {
+      "vehicle": {
+        "manufacturer": "GMC",
+        "model": "Value-Van",
+        "related_vehicle_description": "Chevrolet Step-Van",
+        "appearance": "Bread-van-like vehicle",
+        "modification": "Extensively refitted for mobile computing and packet-radio experimentation."
+      },
+      "designer_and_refitter": {
+        "name": "Don Cone",
+        "organization": "SRI International",
+        "role": [
+          "Designed the van",
+          "Refitted the vehicle",
+          "Integrated the equipment required for mobile packet-radio networking"
+        ],
+        "career_note": "The supplied source states that Cone was promoted to Research Engineer because of his contributions around this period."
+      },
+      "mobile_laboratory": {
+        "description": "The vehicle functioned as a mobile packet-radio laboratory.",
+        "purpose": "Simulate the requirements of military users operating in the field who needed to connect to the network."
+      }
+    },
+
+    "equipment": {
+      "computing": {
+        "manufacturer": "Digital Equipment Corporation",
+        "computer": "DEC LSI-11",
+        "architecture": "16-bit minicomputer",
+        "lineage": "PDP-11 family",
+        "role": "Provided computing capability for the mobile networking node."
+      },
+      "radio_networking": {
+        "role": "Provided the packet-radio communications required to operate as a PRNET node.",
+        "network": "PRNET",
+        "relationship": "The van housed one of the PRNET radio nodes."
+      },
+      "power": {
+        "generator": {
+          "type": "shielded generator",
+          "purpose": "Provide electrical power for mobile operation."
+        }
+      },
+      "equipment_mounting": {
+        "equipment_racks": {
+          "type": "flexible equipment racks",
+          "purpose": "Allow networking, computing, radio, and supporting equipment to be installed in the vehicle."
+        }
+      },
+      "environmental_control": {
+        "air_conditioning": true,
+        "purpose": "Maintain suitable environmental conditions for electronic equipment."
+      },
+      "communications": {
+        "telephone": {
+          "present": true,
+          "type": "Mickey Mouse phone",
+          "historical_context": "Used during the van's networking and experimental communications activities."
+        }
+      },
+      "equipment_summary": [
+        "DEC LSI-11 16-bit minicomputer",
+        "PRNET packet-radio equipment",
+        "Shielded generator",
+        "Flexible equipment racks",
+        "Air conditioning",
+        "Telephone"
+      ]
+    },
+
+    "network_architecture": {
+      "primary_network": "PRNET",
+      "network_role": "Mobile PRNET radio node",
+      "secondary_network_relationship": "Provided a gateway-like mobile endpoint through which PRNET could participate in internetworking experiments with ARPANET and SATNET.",
+      "operational_model": {
+        "mobile": true,
+        "packet_radio": true,
+        "internetworked": true,
+        "field_simulation": true
+      },
+      "purpose": "Demonstrate that a mobile computing platform could participate in packet-switched networking and communicate across heterogeneous networks."
+    },
+
+    "prnet_relationship": {
+      "project": "Packet Radio Network",
+      "abbreviation": "PRNET",
+      "agency": "DARPA",
+      "network_type": "mobile ad hoc network",
+      "van_role": "One of the PRNET radio nodes.",
+      "laboratory_function": "Mobile packet-radio laboratory.",
+      "simulation_target": "In-the-field military networking requirements.",
+      "technical_context": [
+        "Packet radio",
+        "Mobile networking",
+        "Ad hoc networking",
+        "Multi-network internetworking"
+      ],
+      "historical_relationship": "The van provided a physical demonstration platform for the mobile packet-radio technology being developed under PRNET."
+    },
+
+    "internetworking_context": {
+      "motivation": {
+        "darpa_goal": "Connect disparate computers at DARPA contractors and eventually support broader global connectivity.",
+        "technical_problem": "Different communications networks used different protocols and technologies.",
+        "research_direction": "Internetworking through common Internet protocols."
+      },
+      "internet_protocol_suite": {
+        "role": "The supplied source describes a push to test internetworking by connecting different communications protocols through the Internet protocol suite."
+      },
+      "heterogeneous_networks": {
+        "networks_involved": [
+          "PRNET packet radio",
+          "ARPANET",
+          "SATNET packet satellite"
+        ],
+        "significance": "The van was used to demonstrate communication across substantially different network technologies."
+      }
+    },
+
+    "transmissions": {
+      "august_27_1976": {
+        "event": "First two-network TCP/IP transmission described by the source",
+        "participants": [
+          "Packet Radio Van",
+          "ARPANET"
+        ],
+        "location": {
+          "van_location": "Adjacent to Rossotti's in Portola Valley, California",
+          "modern_name": "Alpine Inn",
+          "site_description": "Well-known Portola Valley biker bar at the time."
+        },
+        "physical_setup": {
+          "van": "Parked near the establishment.",
+          "wiring": "Wires were run to one of the picnic tables.",
+          "purpose": "Provide a practical remote test location for the packet-radio network."
+        },
+        "location_selection": {
+          "reason": [
+            "Far enough from SRI in Menlo Park to qualify as remote",
+            "Close enough to maintain good radio contact"
+          ]
+        },
+        "historical_importance": "Demonstrated networking between the mobile packet-radio platform and the ARPANET."
+      },
+
+      "november_22_1977": {
+        "event": "First three-way internetworked transmission described by the source",
+        "participants": [
+          "Packet Radio Van",
+          "PRNET",
+          "ARPANET",
+          "SATNET",
+          "University of Southern California",
+          "University College London research environment"
+        ],
+        "origin": "SRI",
+        "path_description": "Data flowed through the mobile van at SRI in Menlo Park, California, through the interconnected network environment to the University of Southern California in Los Angeles via London, England.",
+        "network_types": [
+          "Packet radio",
+          "Satellite network",
+          "ARPANET"
+        ],
+        "historical_significance": [
+          "Demonstrated three-way internetworking",
+          "Connected disparate network technologies",
+          "Provided an early practical demonstration of Internet-style internetworking"
+        ],
+        "source_characterization": "The supplied article calls this the first true Internet transmission and considers it the start of the Internet."
+      }
+    },
+
+    "1977_three_network_demonstration": {
+      "date": "1977-11-22",
+      "location_context": {
+        "origin": "SRI International, Menlo Park, California",
+        "mobile_component": "Packet Radio Van",
+        "destination_context": "University of Southern California in Los Angeles",
+        "intermediate_geographic_path": "London, England"
+      },
+      "network_stack": {
+        "mobile_wireless_segment": "PRNET packet radio",
+        "satellite_segment": "SATNET",
+        "terrestrial_packet_network": "ARPANET"
+      },
+      "conceptual_flow": [
+        "SRI / Packet Radio Van",
+        "PRNET",
+        "ARPANET/SATNET internetworking environment",
+        "London",
+        "Los Angeles / University of Southern California"
+      ],
+      "importance": "The demonstration showed that communications could pass across different network technologies without requiring the entire path to use one homogeneous physical network."
+    },
+
+    "early_voice_over_ip_research": {
+      "period": "approximately 1977-1978",
+      "program": "ARPA Network Speech Compression Program",
+      "location": "Packet Radio Van",
+      "researchers": [
+        {
+          "name": "Earl Craighill",
+          "role": "researcher associated with early experiments"
+        },
+        {
+          "name": "Tom Magill",
+          "role": "researcher associated with early experiments"
+        }
+      ],
+      "research_area": "Voice over IP",
+      "primary_problem": "Compress speech so that it continued to sound natural while also being transmitted in a timely manner.",
+      "research_objectives": [
+        "Speech compression",
+        "Natural-sounding reconstructed speech",
+        "Low enough delay for practical communication"
+      ],
+      "historical_significance": "The supplied source identifies these as early Voice over IP experiments conducted through the van.",
+      "telephone": {
+        "type": "Mickey Mouse phone",
+        "role": "Telephone interface used in the experimental environment."
+      },
+      "source_caveat": "The article provides a high-level description of the speech-compression experiments but does not provide the specific codecs, bit rates, algorithms, packetization methods, or voice-quality measurements."
+    },
+
+    "mobile_field_simulation": {
+      "purpose": "Simulate the communications requirements of military personnel or systems operating in the field.",
+      "problem_model": {
+        "environment": "mobile",
+        "network_access": "wireless packet radio",
+        "computing": "on-board computer",
+        "power": "self-contained generator",
+        "environmental_control": "air conditioning",
+        "network_role": "PRNET node"
+      },
+      "significance": "The vehicle allowed researchers to take the network technology out of a conventional fixed laboratory environment and test it as a mobile networking system."
+    },
+
+    "sri_international_role": {
+      "organization": "SRI International",
+      "historical_name": "Stanford Research Institute",
+      "roles": [
+        "Hosted the Packet Radio Van",
+        "Developed/refitted the mobile platform",
+        "Participated in PRNET",
+        "Participated in early internetworking experiments",
+        "Originated the 1977 three-network transmission described by the source"
+      ],
+      "personnel": {
+        "Don_Cone": {
+          "role": "Designed and refitted the van."
+        },
+        "Don_Alves": {
+          "role": "Later helped restore the van for the 1997 anniversary exhibition."
+        },
+        "Don_Nielson": {
+          "role": "Later helped restore the van and documented its history."
+        },
+        "Earl_Craighill": {
+          "role": "Participated in early Network Speech Compression/VoIP experiments."
+        },
+        "Tom_Magill": {
+          "role": "Participated in early Network Speech Compression/VoIP experiments."
+        }
+      }
+    },
+
+    "personnel_and_contributors": {
+      "Don_Cone": {
+        "full_name": "Virgil Donald 'Don' Cone",
+        "organization": "SRI International",
+        "contribution": [
+          "Designed the Packet Radio Van",
+          "Refitted the GMC vehicle",
+          "Integrated the mobile networking laboratory"
+        ],
+        "career_note": "The source states that he was promoted to Research Engineer because of contributions around this period."
+      },
+      "Don_Nielson": {
+        "contribution": [
+          "Documented the history of the SRI van",
+          "Helped clean and restore the van for the 1997 anniversary event",
+          "Helped prepare the vehicle for exhibition"
+        ]
+      },
+      "Don_Alves": {
+        "contribution": [
+          "Helped clean the van",
+          "Helped license the van",
+          "Helped replenish radio and Internet equipment for the 1997 exhibition"
+        ]
+      },
+      "Earl_Craighill": {
+        "contribution": "Early speech-compression and Voice over IP experiments."
+      },
+      "Tom_Magill": {
+        "contribution": "Early speech-compression and Voice over IP experiments."
+      }
+    },
+
+    "physical_and_logical_system_model": {
+      "vehicle_layer": {
+        "platform": "GMC Value-Van",
+        "purpose": "Mobile laboratory and field-test platform"
+      },
+      "power_layer": {
+        "component": "Shielded generator",
+        "purpose": "Independent electrical power"
+      },
+      "environment_layer": {
+        "component": "Air conditioning",
+        "purpose": "Environmental control for electronic equipment"
+      },
+      "compute_layer": {
+        "component": "DEC LSI-11",
+        "purpose": "Local computing and networking functions"
+      },
+      "radio_layer": {
+        "component": "PRNET packet-radio node",
+        "purpose": "Wireless network access"
+      },
+      "internetwork_layer": {
+        "components": [
+          "ARPANET",
+          "SATNET",
+          "PRNET"
+        ],
+        "purpose": "Demonstrate heterogeneous network interconnection"
+      },
+      "application_research_layer": {
+        "component": "Network Speech Compression Program",
+        "purpose": "Early voice-over-packet-network experimentation"
+      }
+    },
+
+    "legacy_and_preservation": {
+      "period_of_non_use": {
+        "duration": "approximately one decade",
+        "location": "Back lot of the SRI campus",
+        "status": "parked unused"
+      },
+      "1997_restoration": {
+        "occasion": "20th anniversary celebration of the Internet",
+        "event": "Internet Supercomputer Conference",
+        "location": "San Jose, California",
+        "restoration_team": [
+          "Don Alves",
+          "Don Nielson"
+        ],
+        "restoration_actions": [
+          "Cleaned the van",
+          "Licensed the vehicle",
+          "Replenished radio equipment",
+          "Replenished Internet equipment"
+        ],
+        "exhibition": {
+          "location": "Convention floor",
+          "audience_response": "The source states that the van was popular with attendees."
+        }
+      },
+      "computer_history_museum": {
+        "donation": true,
+        "donor": "SRI International",
+        "recipient": "Computer History Museum",
+        "purpose": "Prevent further deterioration and preserve the historical artifact."
+      },
+      "2007_anniversary": {
+        "event": "30th anniversary celebration of the 1977 demonstration",
+        "host": "Computer History Museum",
+        "year": 2007,
+        "participants": "Several participants from the 1977 event attended."
+      }
+    },
+
+    "historical_timeline": {
+      "pre_1976": {
+        "event": "SRI develops and equips the mobile packet-radio laboratory as part of PRNET research."
+      },
+      "1976": {
+        "date": "August 27, 1976",
+        "event": "Early two-network TCP/IP transmission involving the Packet Radio Van and ARPANET."
+      },
+      "1977": {
+        "date": "November 22, 1977",
+        "event": "First three-way internetworked transmission described by the source.",
+        "networks": [
+          "PRNET",
+          "ARPANET",
+          "SATNET"
+        ]
+      },
+      "1977_1978": {
+        "event": "Early Network Speech Compression Program experiments conducted using the van.",
+        "research": "Voice over IP and speech compression."
+      },
+      "approximately_1987": {
+        "event": "The van entered approximately a decade of unused storage.",
+        "caveat": "The supplied article states that it was parked unused for a decade but does not specify an exact starting year."
+      },
+      "1997": {
+        "event": "Van restored and displayed for the 20th anniversary celebration of the Internet."
+      },
+      "2007": {
+        "event": "Computer History Museum held a 30th anniversary celebration of the 1977 demonstration."
+      }
+    },
+
+    "geographic_history": {
+      "sri_menlo_park": {
+        "role": "Primary SRI location and origin point for the internetworking experiments."
+      },
+      "portola_valley_california": {
+        "role": "Location of the 1976 remote transmission test.",
+        "site": "Rossotti's / Alpine Inn",
+        "reason_for_selection": "Remote enough from SRI to test field-like conditions while maintaining reliable radio contact."
+      },
+      "london_england": {
+        "role": "Intermediate location in the 1977 three-network internetworking demonstration."
+      },
+      "los_angeles_california": {
+        "institution": "University of Southern California",
+        "role": "Destination context in the 1977 demonstration."
+      },
+      "san_jose_california": {
+        "event": "1997 Internet Supercomputer Conference",
+        "role": "Location of anniversary exhibition."
+      }
+    },
+
+    "network_relationship_graph": {
+      "Packet_Radio_Van": {
+        "part_of": "SRI PRNET research"
+      },
+      "SRI_International": {
+        "designed_refitted": "Packet Radio Van"
+      },
+      "DARPA": {
+        "funded": "PRNET"
+      },
+      "PRNET": {
+        "contained_node": "Packet Radio Van"
+      },
+      "ARPANET": {
+        "connected_with": "Packet Radio Van"
+      },
+      "SATNET": {
+        "participated_with": "Packet Radio Van in 1977 demonstration"
+      },
+      "University_of_Southern_California": {
+        "participated_in": "1977 three-network transmission"
+      },
+      "University_College_London_context": {
+        "role": "London research environment involved in the broader three-network demonstration"
+      },
+      "Computer_History_Museum": {
+        "preserves": "Packet Radio Van"
+      }
+    },
+
+    "technology_lineage": {
+      "packet_radio": {
+        "role": "Wireless networking technology used by the van."
+      },
+      "PRNET": {
+        "role": "Mobile ad hoc packet-radio networking environment."
+      },
+      "ARPANET": {
+        "role": "Terrestrial packet network connected to the van."
+      },
+      "SATNET": {
+        "role": "Packet-satellite network participating in the 1977 internetworking demonstration."
+      },
+      "internet_protocol_suite": {
+        "role": "Protocol framework used in the broader internetworking research."
+      },
+      "early_voice_over_ip": {
+        "role": "Application-level research performed through the van."
+      }
+    },
+
+    "historical_artifact_characteristics": {
+      "artifact_category": "mobile computing and networking laboratory",
+      "physical_object": true,
+      "network_node": true,
+      "laboratory": true,
+      "vehicle": true,
+      "communications_platform": true,
+      "preserved": true,
+      "museum_association": "Computer History Museum"
+    },
+
+    "research_domains": {
+      "primary": [
+        "Packet radio",
+        "Mobile ad hoc networking",
+        "Internetworking",
+        "Computer communications"
+      ],
+      "secondary": [
+        "TCP/IP",
+        "Speech compression",
+        "Voice over IP",
+        "Mobile computing",
+        "Distributed networking"
+      ],
+      "military_research_context": "The van simulated field networking requirements associated with DARPA's military-oriented mobile communications research."
+    },
+
+    "source_reference_catalog": {
+      "references": [
+        {
+          "id": "REF-001",
+          "author": "Andreu Veà Baró",
+          "year": 2013,
+          "title": "Como hicimos Internet",
+          "english_title": "How we did Internet",
+          "edition": "2nd",
+          "publisher": "ediciones Península",
+          "location": "Barcelona",
+          "page": 172,
+          "isbn": "978-84-9942-275-6",
+          "relevance": "Historical account of the development of the Internet and the van."
+        },
+        {
+          "id": "REF-002",
+          "author": "Don Nielson",
+          "date": "February 2002",
+          "title": "The SRI Van and Computer Internetworking",
+          "publication": "CORE",
+          "volume": 3,
+          "issue": 1,
+          "pages": "2-7",
+          "publisher": "Computer History Museum",
+          "document_type": "PDF",
+          "relevance": "Detailed historical account of the SRI van and its role in internetworking."
+        },
+        {
+          "id": "REF-003",
+          "author": "Don Nielson",
+          "date": "December 2010",
+          "title": "History Corner: SRI 'Internet Van' to Be on Display in Computer History Museum",
+          "publication": "SRI Alumni Association Newsletter",
+          "page": 6,
+          "relevance": "History and preservation of the van."
+        },
+        {
+          "id": "REF-004",
+          "title": "In Memoriam: Virgil Donald 'Don' Cone",
+          "publication": "SRI Alumni Association Newsletter",
+          "date": "August 2011",
+          "pages": "11-12",
+          "relevance": "Biographical information concerning Don Cone and his contribution to the van."
+        },
+        {
+          "id": "REF-005",
+          "author": "David Laws",
+          "title": "Alpine Inn & Beer Garden",
+          "publication": "Silicon Valley Roots & Shoots",
+          "archived": true,
+          "relevance": "Historical information concerning the location used for the 1976 transmission."
+        },
+        {
+          "id": "REF-006",
+          "author": "Linda Hubbard Gulker",
+          "date": "2019-12-30",
+          "title": "The saga of Alpine Inn aka Zott's over the years",
+          "publication": "InMenlo.com",
+          "relevance": "Historical context for the Portola Valley location."
+        },
+        {
+          "id": "REF-007",
+          "author": "Erica Ogg",
+          "date": "2007-11-08",
+          "title": "Internet van helped drive evolution of the Web",
+          "publication": "CNET",
+          "relevance": "Historical reporting on the van and its Internet significance."
+        },
+        {
+          "id": "REF-008",
+          "organization": "SRI International",
+          "date": "2007-11-17",
+          "title": "Timeline of innovations: Internetworking: The First Three-Network Transmission",
+          "relevance": "SRI historical account of the 1977 demonstration."
+        }
+      ]
+    },
+
+    "image_and_artifact_record": {
+      "primary_image": {
+        "subject": "SRI Packet Radio Van",
+        "description": "Photograph of the mobile networking van used in PRNET research and early internetworking demonstrations."
+      },
+      "historical_visual_significance": "The vehicle is a physical artifact representing the transition from fixed experimental computer networks toward mobile and heterogeneous internetworking."
+    },
+
+    "conceptual_system_flow": {
+      "field_vehicle": {
+        "component": "Packet Radio Van",
+        "function": "Mobile networking platform"
+      },
+      "local_compute": {
+        "component": "DEC LSI-11",
+        "function": "Local computer and networking processing"
+      },
+      "radio_access": {
+        "component": "PRNET radio node",
+        "function": "Wireless packet communication"
+      },
+      "packet_network": {
+        "component": "PRNET",
+        "function": "Mobile ad hoc packet network"
+      },
+      "internetworking": {
+        "components": [
+          "ARPANET",
+          "SATNET",
+          "PRNET"
+        ],
+        "function": "Connect heterogeneous packet networks"
+      },
+      "application_experiment": {
+        "component": "Network Speech Compression Program",
+        "function": "Early voice communication over packet networks"
+      }
+    },
+
+    "why_the_van_mattered": {
+      "engineering_significance": [
+        "Converted a conventional commercial vehicle into a complete mobile networking laboratory.",
+        "Integrated computation, packet radio, power, equipment mounting, and environmental control.",
+        "Allowed PRNET networking to be tested under mobile and field-like conditions.",
+        "Provided a physical node for demonstrating internetworking between heterogeneous network technologies.",
+        "Supported experiments extending packet networking beyond conventional fixed computer sites."
+      ],
+      "historical_significance": [
+        "Connected the physical world of mobile radio systems with the emerging world of interconnected computer networks.",
+        "Served as an unusually concrete demonstration platform for early Internet architecture research.",
+        "Later became a preserved museum artifact representing early Internet engineering."
+      ]
+    },
+
+    "important_distinctions": {
+      "packet_radio_van_vs_prnet": {
+        "packet_radio_van": "Physical mobile vehicle and networking laboratory/node.",
+        "prnet": "The broader experimental packet-radio network technology and deployments."
+      },
+      "packet_radio_van_vs_arpanet": {
+        "packet_radio_van": "Mobile packet-radio platform.",
+        "arpanet": "Fixed terrestrial packet-switched network with which the van interoperated."
+      },
+      "packet_radio_van_vs_satnet": {
+        "packet_radio_van": "Mobile packet-radio endpoint.",
+        "satnet": "Satellite packet network used as one segment of the 1977 internetworking demonstration."
+      },
+      "physical_vs_logical": {
+        "physical": [
+          "GMC Value-Van",
+          "DEC LSI-11",
+          "generator",
+          "equipment racks",
+          "air conditioning",
+          "radio equipment"
+        ],
+        "logical": [
+          "PRNET",
+          "ARPANET",
+          "SATNET",
+          "Internet protocol suite",
+          "Voice over IP research"
+        ]
+      }
+    },
+
+    "legacy": {
+      "technical": [
+        "Mobile packet-radio experimentation",
+        "Mobile ad hoc networking",
+        "Heterogeneous internetworking",
+        "Early packet voice research"
+      ],
+      "historical": [
+        "1976 two-network transmission",
+        "1977 three-network transmission",
+        "Preservation as an early Internet artifact"
+      ],
+      "institutional": [
+        "SRI International historical preservation",
+        "Computer History Museum preservation",
+        "Anniversary demonstrations and exhibitions"
+      ]
+    },
+
+    "source_caveats": {
+      "source_type": "Wikipedia article supplied by the user",
+      "independent_verification": false,
+      "interpretive_claims": [
+        {
+          "claim": "The November 22, 1977 transmission is the start of the Internet.",
+          "status": "source framing",
+          "note": "The supplied article presents this as a historical interpretation rather than providing a formal universal definition of the Internet's starting date."
+        }
+      ],
+      "technical_detail_limits": [
+        "The article does not provide complete radio specifications for the exact equipment installed in the van.",
+        "The article identifies the DEC LSI-11 but does not provide its memory configuration, storage devices, operating system, or specific networking software.",
+        "The article does not provide a complete diagram of the van's internal wiring or network architecture.",
+        "The article does not specify the exact packet-radio protocol stack used during every historical demonstration.",
+        "The article does not specify the exact speech-compression algorithm used during the 1977-1978 experiments.",
+        "The article does not provide complete measurements for the 1976 or 1977 transmissions."
+      ],
+      "chronology_limits": [
+        "The source states that the van was unused for a decade but does not specify the exact beginning and ending dates of that period.",
+        "The source provides specific anniversary events in 1997 and 2007 but does not provide a complete custody timeline between those events."
+      ]
+    },
+
+    "machine_readable_summary": {
+      "name": "Packet Radio Van",
+      "alternate_names": [
+        "SRI Packet Radio Van",
+        "SRI Internet Van",
+        "SRI Van"
+      ],
+      "vehicle": "GMC Value-Van",
+      "organization": "SRI International",
+      "designer": "Don Cone",
+      "project": "DARPA PRNET",
+      "function": "mobile packet-radio laboratory and PRNET network node",
+      "computer": "DEC LSI-11",
+      "computer_bits": 16,
+      "power": "shielded generator",
+      "environmental_control": "air conditioning",
+      "equipment_mounting": "flexible equipment racks",
+      "1976_event": {
+        "date": "1976-08-27",
+        "type": "two-network transmission",
+        "networks": [
+          "PRNET",
+          "ARPANET"
+        ],
+        "location": "Portola Valley, California"
+      },
+      "1977_event": {
+        "date": "1977-11-22",
+        "type": "three-network internetworking demonstration",
+        "networks": [
+          "PRNET",
+          "ARPANET",
+          "SATNET"
+        ]
+      },
+      "1977_1978_research": {
+        "program": "ARPA Network Speech Compression Program",
+        "topic": "Voice over IP / speech compression"
+      },
+      "1997_event": "Restored and exhibited at Internet Supercomputer Conference",
+      "preservation": "Donated by SRI International to Computer History Museum",
+      "2007_event": "30th anniversary celebration of 1977 demonstration"
+    },
+
+    "architectural_lineage": {
+      "vehicle_platform": "GMC Value-Van",
+      "networking_research": "DARPA PRNET",
+      "radio_network": "Packet Radio Network",
+      "internetworking": [
+        "ARPANET",
+        "SATNET"
+      ],
+      "protocol_research": "Internet protocol suite",
+      "application_research": "Network Speech Compression / early Voice over IP",
+      "preservation": "Computer History Museum"
+    },
+
+    "record_integrity": {
+      "source_preservation": true,
+      "source_type": "user-supplied Wikipedia article",
+      "source_content_restructured": true,
+      "major_source_claims_preserved": true,
+      "source_attributed_interpretations_preserved": true,
+      "unsupported_hardware_details_invented": false,
+      "unsupported_protocol_details_invented": false,
+      "historical_relationships_invented": false,
+      "source_caveats_preserved": true,
+      "artifact_status": "historical",
+      "core_identity": "Mobile GMC Value-Van converted by SRI into a packet-radio laboratory and network node used in landmark early internetworking demonstrations."
+    }
+  }
+}
