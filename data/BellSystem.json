@@ -1,0 +1,1580 @@
+{
+  "Bell_System": {
+    "record_metadata": {
+      "record_type": "historical_telecommunications_system",
+      "canonical_name": "Bell System",
+      "alternate_names": [
+        "Bell Telephone",
+        "Ma Bell",
+        "Bell Telephone System"
+      ],
+      "industry": "Telecommunications",
+      "founded": 1877,
+      "defunct": "January 8, 1984",
+      "founder": "Alexander Graham Bell",
+      "headquarters": "New York, New York, United States",
+      "employee_count_at_breakup": "More than 1,000,000",
+      "parentage": {
+        "1877_1885": "Bell Telephone Company",
+        "1885_1983": "American Telephone and Telegraph Company (AT&T)"
+      },
+      "successors": [
+        "Regional Bell Operating Companies",
+        "AT&T Corporation"
+      ],
+      "historical_status": "Defunct",
+      "source_type": "Wikipedia-derived historical article",
+      "source_scope": "Corporate history, telecommunications infrastructure, antitrust history, organizational structure, subsidiaries, breakup, successors, and legacy"
+    },
+
+    "identity": {
+      "entity_type": "telecommunications_corporate_system",
+      "description": "The Bell System was a system of telecommunications companies led initially by the Bell Telephone Company and later by the American Telephone and Telegraph Company that dominated telephone services in North America for more than a century.",
+      "common_name": "Bell System",
+      "colloquial_name": "Ma Bell",
+      "name_origin": "The expression Ma Bell, meaning Mother Bell, became a colloquial reference to the integrated Bell telecommunications system.",
+      "primary_industries": [
+        "Telephone service",
+        "Telecommunications",
+        "Long-distance communications",
+        "Telephone equipment manufacturing",
+        "Telecommunications research",
+        "Network engineering",
+        "International communications"
+      ],
+      "core_functions": [
+        "Local telephone exchange service",
+        "Long-distance telephone service",
+        "International telecommunications",
+        "Telephone equipment manufacturing",
+        "Telecommunications research and development",
+        "Network interconnection",
+        "Telecommunications infrastructure planning",
+        "Corporate telecommunications finance and administration"
+      ]
+    },
+
+    "historical_scope": {
+      "operational_period": "1877–1984",
+      "dominance_period": "More than 100 years",
+      "geographic_core": [
+        "United States",
+        "Canada"
+      ],
+      "international_reach": [
+        "Caribbean",
+        "Japan",
+        "Other international telecommunications relationships"
+      ],
+      "peak_scale": {
+        "assets": "$150 billion",
+        "assets_2025_equivalent": "$460 billion",
+        "employees": "More than 1 million"
+      },
+      "source_characterization": "The source describes the Bell System as holding a vertical monopoly over telecommunications products and services in most areas of the United States and Canada."
+    },
+
+    "foundational_telephone_history": {
+      "alexander_graham_bell": {
+        "event": "Received U.S. patent for invention of the telephone",
+        "date": "March 7, 1876"
+      },
+      "bell_telephone_company": {
+        "formation_year": 1877,
+        "founder": "Alexander Graham Bell",
+        "role": "Original Bell telecommunications company"
+      },
+      "american_bell_telephone_company": {
+        "role": "Successor and major Bell organization",
+        "first_exchange": {
+          "location": "New Haven, Connecticut",
+          "description": "The first telephone exchange was opened in New Haven."
+        }
+      },
+      "early_network_expansion": {
+        "description": "Within several years of the first exchange, local telephone exchange companies had been established in major cities throughout the United States.",
+        "organizational_evolution": "The Bell System name gradually expanded from early Bell telephone franchises to encompass the companies associated with AT&T."
+      }
+    },
+
+    "patent_and_competition_history": {
+      "original_bell_patent": {
+        "date": "March 7, 1876",
+        "holder": "Alexander Graham Bell"
+      },
+      "patent_expiration": {
+        "approximate_date": 1894,
+        "duration": "15 years according to the source"
+      },
+      "post_expiration_effect": {
+        "new_telephone_companies": 6000,
+        "market_effect": "The telephone market opened to substantial competition.",
+        "bell_company_effect": "The Bell Telephone Company experienced a significant financial downturn."
+      }
+    },
+
+    "AT_and_T_formation_and_control": {
+      "AT_and_T_creation": {
+        "year": 1885,
+        "full_name": "American Telephone and Telegraph Company",
+        "initial_purpose": "Provide long-distance telephone service between New York, Chicago, and beyond."
+      },
+      "1899_reorganization": {
+        "event": "AT&T acquired the assets of its parent, American Bell Telephone Company.",
+        "result": "AT&T became the parent of American Bell Telephone Company and the head of the Bell System.",
+        "reason_given_by_source": "Regulatory and tax rules were more favorable in New York than in Boston, where American Bell was headquartered."
+      },
+      "corporate_role": {
+        "position": "Parent company and central coordinating organization",
+        "functions": [
+          "Corporate planning",
+          "Finance",
+          "Long-distance telecommunications",
+          "Coordination of Bell operating companies"
+        ]
+      }
+    },
+
+    "theodore_newton_vail": {
+      "return_as_AT_and_T_president": "April 30, 1907",
+      "philosophy": "One Policy, One System, Universal Service",
+      "strategic_concept": "A unified national telephone system",
+      "long_term_effect": "The source states that this philosophy guided the company for approximately 70 years.",
+      "acquisition_strategy": {
+        "description": "AT&T began acquiring smaller telephone companies under Vail.",
+        "notable_target": "Western Union Telegraph Company"
+      }
+    },
+
+    "bell_system_operating_model": {
+      "overall_structure": "Vertically integrated telecommunications system",
+      "major_layers": [
+        "Corporate management",
+        "Long-distance telecommunications",
+        "Local telephone exchanges",
+        "Equipment manufacturing",
+        "Research and development",
+        "International telecommunications"
+      ],
+      "five_major_divisions": {
+        "AT_and_T_Long_Lines": {
+          "function": "Interconnect local telephone exchanges and provide long-distance communications.",
+          "services": [
+            "Long-distance telephone service",
+            "Inter-exchange connections",
+            "International telephone lines",
+            "Submarine cables"
+          ]
+        },
+        "Western_Electric": {
+          "function": "Bell System equipment manufacturing",
+          "ownership": "Wholly owned subsidiary of AT&T",
+          "products": [
+            "Telephones",
+            "Telephone network equipment",
+            "Telecommunications hardware",
+            "Other Bell System equipment"
+          ]
+        },
+        "Bell_Labs": {
+          "formal_role": "Research and development",
+          "customers": [
+            "AT&T",
+            "Western Electric"
+          ],
+          "historical_ownership": "Initially jointly owned by Western Electric and AT&T"
+        },
+        "Bell_Operating_Companies": {
+          "abbreviation": "BOCs",
+          "function": "Local exchange telephone services",
+          "geographic_role": "Operate local telephone networks and exchanges"
+        },
+        "AT_and_T_parent": {
+          "full_name": "American Telephone and Telegraph Company",
+          "functions": [
+            "Enterprise planning",
+            "Finance",
+            "Corporate coordination",
+            "Long-distance operations"
+          ]
+        }
+      }
+    },
+
+    "vertical_monopoly": {
+      "description": "The Bell System integrated local service, long-distance service, telecommunications equipment, and research under a coordinated corporate structure.",
+      "market_position": {
+        "by_1940": "The source states that the Bell System effectively owned most telephone service in the United States.",
+        "included": [
+          "Local telephone service",
+          "Long-distance telephone service",
+          "Telephone equipment"
+        ]
+      },
+      "equipment_control": {
+        "manufacturer": "Western Electric",
+        "policy": "Customers were generally restricted from connecting non-Bell equipment to the network without authorization or additional requirements.",
+        "example": {
+          "scenario": "Customer desired a telephone style not leased by the local Bell company.",
+          "requirements_described_by_source": [
+            "Purchase the telephone",
+            "Provide it to the telephone company for rewiring",
+            "Pay a service charge",
+            "Pay a monthly lease fee"
+          ]
+        }
+      },
+      "bell_labs_financing": {
+        "mechanism": "Member telephone companies paid a fixed fraction of revenues as a license fee to Bell Labs."
+      }
+    },
+
+    "kingsbury_commitment": {
+      "year": 1913,
+      "type": "Out-of-court antitrust agreement",
+      "parties": [
+        "AT&T",
+        "United States Department of Justice"
+      ],
+      "background": "The federal government challenged the Bell System's growing monopoly over the telephone system.",
+      "AT_and_T_commitments": [
+        {
+          "requirement": "Sell Western Union capital stock",
+          "amount": "$30 million"
+        },
+        {
+          "requirement": "Allow independent telephone companies to interconnect with the AT&T long-distance network"
+        },
+        {
+          "requirement": "Not acquire independent telephone companies without permission from the Interstate Commerce Commission"
+        }
+      ],
+      "strategic_effect": "The agreement allowed AT&T to avoid breakup or nationalization at that point in its history."
+    },
+
+    "federal_regulatory_history": {
+      "1934": {
+        "institution": "Federal Communications Commission",
+        "abbreviation": "FCC",
+        "role": "Assumed federal regulation of AT&T."
+      },
+      "regulatory_sequence": [
+        {
+          "year": 1913,
+          "event": "Kingsbury Commitment"
+        },
+        {
+          "year": 1934,
+          "event": "FCC assumed regulation of AT&T"
+        },
+        {
+          "year": 1949,
+          "event": "Department of Justice antitrust lawsuit"
+        },
+        {
+          "year": 1956,
+          "event": "Consent decree"
+        },
+        {
+          "year": 1974,
+          "event": "Department of Justice antitrust lawsuit"
+        },
+        {
+          "year": 1982,
+          "event": "AT&T consent decree"
+        },
+        {
+          "year": 1984,
+          "event": "Bell System breakup"
+        }
+      ]
+    },
+
+    "1956_consent_decree": {
+      "background": {
+        "lawsuit_year": 1949,
+        "plaintiff": "United States Department of Justice",
+        "defendants": [
+          "AT&T",
+          "Bell System operating companies"
+        ],
+        "allegation": "The Department of Justice alleged that AT&T and Bell operating companies were using their near-monopoly position in telecommunications to establish unfair advantages in related technologies."
+      },
+      "restrictions": {
+        "network_share": "AT&T was limited to 85% of the United States national telephone network according to the source.",
+        "government_contracts": "AT&T was restricted from certain government contracts.",
+        "international_holdings": "AT&T was restricted from continuing to hold interests in Canada and the Caribbean."
+      },
+      "international_divestitures": {
+        "Northern_Electric": {
+          "action": "Western Electric divested Northern Electric.",
+          "year": 1956
+        },
+        "Bell_Canada": {
+          "action": "AT&T divested itself of Bell Canada.",
+          "year": 1975
+        },
+        "Caribbean_operations": {
+          "buyer": "ITT Inc.",
+          "former_name": "International Telephone & Telegraph Co.",
+          "action": "Purchased Bell System Caribbean regional operating companies."
+        }
+      },
+      "patent_policy": {
+        "requirement": "Bell patents were made royalty-free.",
+        "reported_effect": [
+          "Substantial increase in innovation",
+          "Increased innovation in electronics",
+          "Increased innovation in computing"
+        ],
+        "secondary_interpretation": {
+          "author": "Steven Weber",
+          "work": "The Success of Open Source",
+          "claim": "The consent decree was important in fostering the open-source movement."
+        }
+      }
+    },
+
+    "international_bell_system": {
+      "canada": {
+        "bell_canada": {
+          "relationship": "Bell System regional operating company",
+          "divestiture_year": 1975
+        },
+        "northern_electric": {
+          "relationship": "Western Electric manufacturing subsidiary",
+          "divestiture_year": 1956
+        }
+      },
+      "caribbean": {
+        "regional_operating_companies": {
+          "status": "Part of the Bell System before divestiture",
+          "buyer": "ITT Inc."
+        }
+      },
+      "japan": {
+        "NEC": {
+          "type": "Equipment manufacturing company",
+          "source_reported_ownership": "54%"
+        },
+        "Nippon_Electric": {
+          "type": "Telecommunications equipment manufacturing company",
+          "ownership": "54% owned by Western Electric according to the source"
+        },
+        "NTT": {
+          "type": "Telecommunications company",
+          "historical_relationship": "Administered by AT&T during the post-World War II reconstruction period.",
+          "source_characterization": "Administrative adjunct to the North American Bell System."
+        }
+      },
+      "international_standardization": {
+        "description": "The source states that Bell System influence remained pervasive in U.S. communications and influential in telecommunications standardization throughout the industrialized world from 1956 to 1984."
+      }
+    },
+
+    "pre_1956_international_holdings": {
+      "description": "Before the 1956 restructuring, the Bell System's international corporate and technical reach was substantially broader.",
+      "entities": [
+        {
+          "name": "Northern Electric",
+          "role": "Telecommunications equipment manufacturing subsidiary of Western Electric"
+        },
+        {
+          "name": "Dominion Electric",
+          "role": "Recording equipment manufacturing company"
+        },
+        {
+          "name": "Caribbean regional operating companies",
+          "role": "Regional telephone operating companies",
+          "later_status": "Sold to ITT"
+        },
+        {
+          "name": "NEC",
+          "country": "Japan",
+          "role": "Equipment manufacturer"
+        },
+        {
+          "name": "Nippon Electric",
+          "country": "Japan",
+          "role": "Telecommunications equipment manufacturer",
+          "relationship": "Western Electric ownership"
+        },
+        {
+          "name": "NTT",
+          "country": "Japan",
+          "role": "Telecommunications company",
+          "relationship": "Administered by AT&T during postwar reconstruction"
+        }
+      ],
+      "technical_influence": {
+        "Nippon_Electric": "Through its own research and development, Nippon Electric adapted Western Electric telecommunications equipment designs for Japanese use.",
+        "standards_effect": "The source states that this contributed to Japanese telephone equipment and network characteristics resembling North American ANSI and iconectiv standards rather than European-origin ITU-T standards."
+      }
+    },
+
+    "1949_antitrust_case": {
+      "year": 1949,
+      "plaintiff": "United States Department of Justice",
+      "defendants": [
+        "AT&T",
+        "Bell System operating companies"
+      ],
+      "allegation": "Use of near-monopoly power in telecommunications to establish unfair advantages in related technologies.",
+      "outcome": "1956 consent decree"
+    },
+
+    "1974_antitrust_case": {
+      "year": 1974,
+      "plaintiff": "United States Department of Justice Antitrust Division",
+      "legal_basis": "Sherman Antitrust Act",
+      "target": "Bell System companies",
+      "allegation": "Illegal practices intended to stifle competition in telecommunications.",
+      "settlement": {
+        "date": "January 8, 1982",
+        "instrument": "Consent decree",
+        "principal_requirement": "AT&T was ordered to separate itself from its local telephone companies.",
+        "eventual_result": "Seven Regional Bell Operating Companies were created."
+      }
+    },
+
+    "pre_1984_corporate_structure": {
+      "parent_company": {
+        "name": "American Telephone and Telegraph Company",
+        "functions": [
+          "Parent holding company",
+          "Long-distance carrier"
+        ]
+      },
+      "local_operating_companies": [
+        "Bell of Pennsylvania",
+        "C&P Telephone",
+        "C&P Telephone of Maryland",
+        "C&P Telephone of West Virginia",
+        "C&P Telephone of Virginia",
+        "Diamond State Telephone Company",
+        "Illinois Bell",
+        "Indiana Bell",
+        "Michigan Bell",
+        "Mountain Bell",
+        "Malheur Bell",
+        "New England Telephone",
+        "New Jersey Bell",
+        "New York Telephone",
+        "Nevada Bell",
+        "Northwestern Bell",
+        "Ohio Bell",
+        "Pacific Telephone",
+        "Pacific Northwest Bell",
+        "South Central Bell",
+        "Southern Bell",
+        "Southwestern Bell",
+        "Wisconsin Bell"
+      ],
+      "partially_owned_local_companies": [
+        {
+          "name": "Cincinnati Bell",
+          "ownership_percentage": 22.7
+        },
+        {
+          "name": "Southern New England Telephone",
+          "ownership_percentage": 16.8
+        }
+      ],
+      "other_subsidiaries": [
+        {
+          "name": "Western Electric Co., Inc.",
+          "function": "Equipment manufacturing"
+        },
+        {
+          "name": "Bell Telephone Laboratories, Inc.",
+          "function": "Research and development",
+          "ownership": "Co-owned between AT&T and Western Electric"
+        },
+        {
+          "name": "Bellcomm, Inc.",
+          "years": "1963–1972",
+          "function": "Support for the Apollo program"
+        }
+      ]
+    },
+
+    "1984_breakup": {
+      "effective_date": "January 1, 1984",
+      "legal_context": "1982 AT&T/Department of Justice consent decree",
+      "result": "Former Bell System local operating companies were reorganized into seven Regional Bell Operating Companies.",
+      "nickname": "Baby Bells",
+      "system_effect": "The integrated Bell System ceased to exist.",
+      "remaining_AT_and_T_structure": [
+        "AT&T Communications, Inc.",
+        "AT&T Information Systems, Inc.",
+        "AT&T Technologies, Inc.",
+        "Bell Telephone Laboratories, Inc."
+      ]
+    },
+
+    "1984_regional_bell_operating_companies": {
+      "Ameritech": {
+        "holding_company": "American Information Technologies Corporation",
+        "operating_companies": [
+          "Illinois Bell Telephone Company",
+          "Indiana Bell Telephone Company, Incorporated",
+          "Michigan Bell Telephone Company",
+          "The Ohio Bell Telephone Company",
+          "Wisconsin Bell, Inc."
+        ]
+      },
+      "Bell_Atlantic": {
+        "holding_company": "Bell Atlantic Corporation",
+        "operating_companies": [
+          "New Jersey Bell Telephone Company",
+          "The Bell Telephone Company of Pennsylvania",
+          "The Chesapeake and Potomac Telephone Company",
+          "The Chesapeake and Potomac Telephone Company of Maryland",
+          "The Chesapeake and Potomac Telephone Company of West Virginia",
+          "The Chesapeake and Potomac Telephone Company of Virginia",
+          "The Diamond State Telephone Company"
+        ],
+        "additional_entity": "Bell Communications Research, Inc."
+      },
+      "BellSouth": {
+        "holding_company": "BellSouth Corporation",
+        "operating_companies": [
+          "Southern Bell Telephone and Telegraph Company",
+          "South Central Bell Telephone Company"
+        ],
+        "additional_entity": "Cincinnati Bell, Inc."
+      },
+      "NYNEX": {
+        "holding_company": "NYNEX Corporation",
+        "operating_companies": [
+          "New York Telephone Company",
+          "New England Telephone and Telegraph Company"
+        ]
+      },
+      "Pacific_Telesis": {
+        "holding_company": "Pacific Telesis Group",
+        "operating_companies": [
+          "Pacific Bell Telephone Company",
+          "Nevada Bell Telephone Company"
+        ]
+      },
+      "Southwestern_Bell": {
+        "holding_company": "Southwestern Bell Corporation",
+        "operating_companies": [
+          "Southwestern Bell Telephone Company",
+          "The Southern New England Telephone Company"
+        ]
+      },
+      "US_WEST": {
+        "holding_company": "U S WEST, Inc.",
+        "operating_companies": [
+          "Northwestern Bell Telephone Company",
+          "Pacific Northwest Bell Telephone Company",
+          "The Mountain States Telephone and Telegraph Company",
+          "Malheur Home Telephone Company"
+        ]
+      }
+    },
+
+    "bell_communications_research": {
+      "name": "Bell Communications Research",
+      "abbreviation": "Bellcore",
+      "ownership": "Owned equally by the Baby Bells following the breakup.",
+      "historical_role": "Research and telecommunications coordination organization created as part of the 1984 restructuring.",
+      "later_identity": "Telcordia",
+      "modern_identity": "iconectiv"
+    },
+
+    "post_1984_consolidation": {
+      "description": "Following the breakup, many former Bell System companies subsequently merged, were acquired, renamed, or reorganized.",
+      "telecommunications_act_1996": {
+        "effect": "Removed various restrictions placed on the Baby Bells as part of the breakup.",
+        "long_term_effect": "Facilitated subsequent consolidation and re-mergers."
+      },
+      "source_2026_characterization": "By 2026, the source states that most assets and geographical service areas of the former Bell System had been reassembled into two major Baby Bell descendants: AT&T and Verizon."
+    },
+
+    "current_successor_structure": {
+      "AT_and_T": {
+        "name": "AT&T Inc.",
+        "type": "Holding company",
+        "subsidiaries_and_successor_entities": [
+          "AT&T Corp.",
+          "AT&T Teleholdings, Inc.",
+          "Illinois Bell Telephone Company",
+          "Indiana Bell Telephone Company, Incorporated",
+          "Michigan Bell Telephone Company",
+          "Pacific Bell Telephone Company",
+          "Nevada Bell Telephone Company",
+          "The Ohio Bell Telephone Company",
+          "Wisconsin Bell, Inc.",
+          "BellSouth LLC",
+          "BellSouth Telecommunications, LLC",
+          "Southwestern Bell Telephone Company"
+        ],
+        "historical_lineage": [
+          "American Bell",
+          "AT&T",
+          "Bell System",
+          "Baby Bells",
+          "SBC",
+          "modern AT&T"
+        ]
+      },
+      "Verizon": {
+        "name": "Verizon Communications, Inc.",
+        "predecessor": "Bell Atlantic Corporation",
+        "related_lineage": [
+          "Bell Atlantic",
+          "NYNEX",
+          "Verizon"
+        ],
+        "regional_LECs": [
+          "Verizon New England, Inc.",
+          "Verizon New York, Inc.",
+          "Verizon Delaware LLC",
+          "Verizon Maryland, Inc.",
+          "Verizon New Jersey, Inc.",
+          "Verizon Pennsylvania, Inc.",
+          "Verizon Washington, D.C., Inc.",
+          "Verizon Virginia, Inc."
+        ]
+      },
+      "Frontier": {
+        "historical_status": "Independent LEC holding company with later acquisition of former Bell territories.",
+        "source_2026_event": "Frontier Communications Corporation was acquired by Verizon in 2026.",
+        "former_Bell_components": [
+          "Frontier West Virginia, Inc.",
+          "Southern New England Telephone Company"
+        ]
+      },
+      "Lumen": {
+        "name": "Lumen Technologies, Inc.",
+        "historical_predecessor": "CenturyLink",
+        "relationship_to_Bell_System": "Successor infrastructure owner associated with former U S WEST and Mountain Bell territories.",
+        "components": [
+          "Qwest Communications International, Inc.",
+          "Qwest Corporation",
+          "Former Mountain Bell territory",
+          "Former Northwestern Bell territory",
+          "Former Pacific Northwest Bell territory",
+          "Former Malheur Bell territory"
+        ]
+      }
+    },
+
+    "former_U_S_WEST_lineage": {
+      "U_S_WEST": {
+        "original_Bell_entities": [
+          "Northwestern Bell",
+          "Pacific Northwest Bell",
+          "Mountain States Telephone and Telegraph Company",
+          "Malheur Home Telephone Company"
+        ]
+      },
+      "Qwest": {
+        "acquisition_year": 2000,
+        "event": "Qwest acquired and merged U S WEST.",
+        "status": "Later acquired in 2011."
+      },
+      "Qwest_Corporation": {
+        "lineage": [
+          "Mountain Bell",
+          "Northwestern Bell",
+          "Pacific Northwest Bell",
+          "Malheur Bell"
+        ]
+      },
+      "Lumen": {
+        "2026_event": "Lumen Technologies sold its mass-market broadband connectivity business to AT&T Inc.",
+        "reported_effect": "The source states that the transaction brought most of the former U S WEST territory into AT&T's terrestrial service footprint."
+      }
+    },
+
+    "independent_bell_related_companies": {
+      "Cincinnati_Bell": {
+        "modern_name": "Altafiber",
+        "historical_status": "Independent of the Baby Bells",
+        "ownership": "Macquarie Infrastructure and Real Assets in 2021 according to the source.",
+        "rebranding": "Rebranded to Altafiber in 2022 while retaining Cincinnati Bell as its corporate name.",
+        "pre_1984_AT_and_T_ownership": "27.8%",
+        "breakup_status": "Left separate during the 1984 breakup."
+      },
+      "Consolidated_Communications": {
+        "type": "Independent LEC holding company",
+        "predecessor_or_related_companies": [
+          "FairPoint Communications",
+          "Consolidated Communications of Northern New England Company",
+          "Consolidated Communications of Vermont Company"
+        ]
+      },
+      "FairPoint": {
+        "type": "LEC holding company",
+        "acquisition": {
+          "year": 2017,
+          "buyer": "Consolidated Communications"
+        },
+        "former_Verizon_assets": [
+          "Maine",
+          "New Hampshire",
+          "Vermont"
+        ]
+      }
+    },
+
+    "divested_technology_and_research_lineage": {
+      "Lucent_Technologies": {
+        "spin_off_year": 1995,
+        "function": [
+          "Research",
+          "Telecommunications equipment manufacturing"
+        ],
+        "later_history": [
+          "Merged with Alcatel in 2006",
+          "Created Alcatel-Lucent",
+          "Alcatel-Lucent acquired by Nokia in 2016"
+        ]
+      },
+      "Western_Electric": {
+        "status_after_1984": "Ceased operating under the Western Electric name as of the Bell System breakup.",
+        "historical_role": "Telecommunications and recording equipment manufacturing."
+      },
+      "Alcatel_Lucent_Bell": {
+        "origin": "Founded in Antwerp, Belgium in 1882 by Western Electric.",
+        "later_lineage": [
+          "Western Electric",
+          "ITT",
+          "Alcatel",
+          "Alcatel-Lucent"
+        ]
+      },
+      "Bell_Labs": {
+        "historical_name": "Bell Telephone Laboratories",
+        "spin_off": "Lucent Technologies",
+        "modern_identity": "Nokia Bell Labs",
+        "modern_owner": "Nokia",
+        "transition_year": 2016
+      },
+      "Avaya": {
+        "spin_off_year": 2000,
+        "origin": "Lucent Technologies",
+        "function": "Telecommunications equipment"
+      },
+      "LSI_Corporation": {
+        "type": "Holding company",
+        "historical_relationship": "Part of the post-Lucent corporate lineage."
+      },
+      "Agere_Systems": {
+        "incorporated": 2000,
+        "origin": "Former Micro Electronics subsidiary of Lucent",
+        "spin_off_year": 2002,
+        "acquisition": {
+          "year": 2007,
+          "buyer": "LSI"
+        }
+      },
+      "Systimax_Solutions": {
+        "origin": "Western Electric structured cabling unit",
+        "intermediate_parent": "AT&T Network Systems",
+        "spin_off_year": 2002,
+        "later_owner": "CommScope",
+        "intermediate_company": "Avaya"
+      },
+      "iconectiv": {
+        "former_names": [
+          "Telcordia",
+          "Bell Communications Research",
+          "Bellcore"
+        ],
+        "origin": "Bell System breakup research and telecommunications coordination organization"
+      }
+    },
+
+    "post_breakup_brand_strategy": {
+      "early_period": {
+        "description": "Beginning in 1991, Baby Bells began consolidating operations and renaming operating companies under their parent-company brands."
+      },
+      "examples": {
+        "Bell_Atlantic": {
+          "renamed": "Verizon",
+          "year": 2000
+        },
+        "Southwestern_Bell": {
+          "later_brand": "SBC",
+          "year": 2002
+        },
+        "Pacific_Bell": {
+          "status": "Continued operating under the Pacific Bell/PacBell name until acquisition by SBC."
+        },
+        "BellSouth": {
+          "status": "Continued active use and promotion of the Bell name and logo until its reunion with AT&T in 2006."
+        }
+      }
+    },
+
+    "trademark_legacy": {
+      "bell_system_marks": [
+        "Bell",
+        "Bell System",
+        "Circled-bell logo"
+      ],
+      "saul_bass_logo": {
+        "year": 1969,
+        "description": "Major redesign of the Bell System logo by Saul Bass."
+      },
+      "historical_use": {
+        "period": "Before January 1, 1984",
+        "purpose": "Unified branding of AT&T and regional operating companies."
+      },
+      "post_breakup_holders": [
+        "AT&T",
+        "Verizon",
+        "Lumen Technologies",
+        "Altafiber"
+      ],
+      "international_rights": {
+        "exception": "Canada",
+        "holder": "Bell IP Holdings",
+        "structure": "Joint venture of the remaining companies according to the source",
+        "citation_status": "Source marks this claim as needing citation."
+      }
+    },
+
+    "bell_name_usage_after_breakup": {
+      "2022_status": "The source states that all Bell System operating-company names had disappeared from the United States business landscape by 2022, although Cincinnati Bell remained as a corporate name.",
+      "Cincinnati_Bell": {
+        "last_major_US_brand_use": "Cincinnati Bell",
+        "rebranding": "Altafiber",
+        "year": 2022,
+        "corporate_name": "Cincinnati Bell"
+      },
+      "Southwestern_Bell": {
+        "brand_change": "SBC",
+        "year": 2002
+      },
+      "Bell_Atlantic": {
+        "brand_change": "Verizon",
+        "year": 2000
+      },
+      "Pacific_Bell": {
+        "brand_status": "Continued use of Pacific Bell/PacBell until SBC acquisition."
+      },
+      "Verizon": {
+        "historical_logo_usage": "The source states that Verizon continued using the Bell logo on trucks and payphones until updating its own logo in 2015."
+      },
+      "Qwest": {
+        "Bell_name_licensing": "The source states that Qwest licensed Northwestern Bell and Mountain Bell names to Unical Enterprises for telephone products."
+      }
+    },
+
+    "canadian_legacy": {
+      "Bell_Canada": {
+        "divested_from_AT_and_T": 1975,
+        "current_status": "Continues to use the Bell name."
+      },
+      "Nortel": {
+        "historical_name": "Northern Telecom",
+        "research_arm": "Bell Northern Research"
+      },
+      "Bell_Canada_Enterprises": {
+        "status": "Continues to use the Bell name.",
+        "historical_logo": "Used variations of the circled-bell logo until 1977 according to the source."
+      }
+    },
+
+    "2026_telephone_network_transition": {
+      "event": "AT&T plans to begin retiring the nationwide copper-based landline telephone network.",
+      "year": 2026,
+      "historical_relationship": "The source describes this copper-based network as having been substantially installed by the Bell System.",
+      "technology_transition": [
+        "Copper landline network",
+        "Fixed broadband",
+        "Fiber",
+        "Mobile communications"
+      ],
+      "source": "Light Reading article cited by the source"
+    },
+
+    "historical_scale": {
+      "corporate_scale": {
+        "employees": "More than 1,000,000 at breakup",
+        "assets_at_breakup": "$150 billion",
+        "assets_2025_equivalent": "$460 billion"
+      },
+      "market_position": {
+        "description": "Dominant telecommunications system in North America for more than a century.",
+        "source_characterization": "The largest corporation in the world at one point."
+      },
+      "infrastructure_scope": [
+        "Local telephone exchanges",
+        "Long-distance lines",
+        "International lines",
+        "Submarine cables",
+        "Telephone equipment",
+        "Research facilities",
+        "Telecommunications standards"
+      ]
+    },
+
+    "technology_and_research_ecosystem": {
+      "Bell_Labs": {
+        "role": "Research and development organization serving AT&T and Western Electric.",
+        "importance": [
+          "Telecommunications research",
+          "Electronics research",
+          "Computing research",
+          "Network technology"
+        ]
+      },
+      "Western_Electric": {
+        "role": "Manufacturing arm",
+        "relationship": "Integrated equipment manufacturing into the Bell System."
+      },
+      "Bellcomm": {
+        "period": "1963–1972",
+        "role": "Apollo program support",
+        "parent_context": "Bell System"
+      },
+      "patent_policy_effect": {
+        "source_claim": "The 1956 consent decree's royalty-free patent requirement was associated with increased innovation in electronics and computing."
+      }
+    },
+
+    "organizational_architecture": {
+      "top_level": "AT&T",
+      "long_distance_layer": "AT&T Long Lines",
+      "local_service_layer": "Bell Operating Companies",
+      "equipment_layer": "Western Electric",
+      "research_layer": "Bell Labs",
+      "specialized_research_layer": "Bellcomm",
+      "international_layer": [
+        "Bell Canada",
+        "Caribbean Bell operating companies",
+        "Nippon Electric",
+        "NEC",
+        "NTT relationship"
+      ],
+      "control_model": "Vertically integrated corporate telecommunications system"
+    },
+
+    "network_architecture_analogy": {
+      "control_plane": [
+        "AT&T corporate planning",
+        "Regulatory relationships",
+        "Bell Labs research",
+        "Network standards"
+      ],
+      "service_plane": [
+        "Local telephone exchanges",
+        "Long-distance networks",
+        "International communications"
+      ],
+      "hardware_plane": [
+        "Western Electric equipment",
+        "Telephones",
+        "Switching equipment",
+        "Transmission infrastructure"
+      ],
+      "research_plane": [
+        "Bell Labs",
+        "Bellcomm"
+      ],
+      "financial_model": [
+        "Central corporate planning",
+        "Operating-company revenue",
+        "Equipment manufacturing",
+        "Research licensing"
+      ]
+    },
+
+    "breakup_lineage": {
+      "historical_system": "Bell System",
+      "1984_reorganization": "Seven Regional Bell Operating Companies plus a restructured AT&T",
+      "subsequent_consolidation": [
+        "Ameritech consolidation",
+        "SBC consolidation",
+        "Bell Atlantic + NYNEX",
+        "Verizon formation",
+        "Pacific Telesis consolidation",
+        "U S WEST/Qwest consolidation",
+        "BellSouth reunion with AT&T",
+        "AT&T consolidation of former Baby Bells"
+      ],
+      "modern_major_lineages": [
+        "AT&T",
+        "Verizon"
+      ],
+      "other_successor_lineages": [
+        "Lumen",
+        "Frontier",
+        "Altafiber",
+        "CommScope",
+        "Nokia Bell Labs",
+        "iconectiv"
+      ]
+    },
+
+    "historical_timeline": [
+      {
+        "date": "March 7, 1876",
+        "event": "Alexander Graham Bell received the U.S. telephone patent."
+      },
+      {
+        "date": "1877",
+        "event": "Bell Telephone Company formed."
+      },
+      {
+        "date": "1877",
+        "event": "American Bell Telephone Company opened the first telephone exchange in New Haven, Connecticut."
+      },
+      {
+        "date": "1885",
+        "event": "AT&T was created and became associated with long-distance service."
+      },
+      {
+        "date": "1894",
+        "event": "Bell's original telephone patent expired according to the source."
+      },
+      {
+        "date": "1894 onward",
+        "event": "Approximately 6,000 competing telephone companies entered the market."
+      },
+      {
+        "date": "1899",
+        "event": "AT&T acquired the assets of American Bell and became the head of the Bell System."
+      },
+      {
+        "date": "April 30, 1907",
+        "event": "Theodore Newton Vail returned as AT&T president."
+      },
+      {
+        "date": "1907 onward",
+        "event": "AT&T promoted the philosophy One Policy, One System, Universal Service."
+      },
+      {
+        "date": "1913",
+        "event": "Kingsbury Commitment established between AT&T and the Department of Justice."
+      },
+      {
+        "date": "1934",
+        "event": "FCC assumed regulation of AT&T."
+      },
+      {
+        "date": "1940",
+        "event": "Bell System effectively controlled most U.S. telephone service according to the source."
+      },
+      {
+        "date": "1949",
+        "event": "Department of Justice filed antitrust action against AT&T and Bell System operating companies."
+      },
+      {
+        "date": "1956",
+        "event": "Consent decree restricted AT&T and required major international and patent changes."
+      },
+      {
+        "date": "1956",
+        "event": "Western Electric divested Northern Electric."
+      },
+      {
+        "date": "1963–1972",
+        "event": "Bellcomm operated in support of the Apollo program."
+      },
+      {
+        "date": "1974",
+        "event": "Department of Justice filed another antitrust lawsuit against AT&T and Bell System companies."
+      },
+      {
+        "date": "1975",
+        "event": "AT&T divested Bell Canada."
+      },
+      {
+        "date": "January 8, 1982",
+        "event": "AT&T and the Department of Justice settled the 1974 antitrust lawsuit through a consent decree."
+      },
+      {
+        "date": "January 1, 1984",
+        "event": "Bell System breakup took effect and the seven Baby Bells were established."
+      },
+      {
+        "date": "1984",
+        "event": "Integrated Bell System ceased to exist."
+      },
+      {
+        "date": "1991 onward",
+        "event": "Baby Bells began consolidating operations and changing operating-company branding."
+      },
+      {
+        "date": "1995",
+        "event": "Lucent Technologies spun off from AT&T."
+      },
+      {
+        "date": "2000",
+        "event": "Bell Atlantic renamed itself Verizon."
+      },
+      {
+        "date": "2000",
+        "event": "Qwest acquired and merged U S WEST."
+      },
+      {
+        "date": "2002",
+        "event": "Southwestern Bell adopted the SBC corporate identity."
+      },
+      {
+        "date": "2006",
+        "event": "BellSouth reunited with the new AT&T."
+      },
+      {
+        "date": "2016",
+        "event": "Alcatel-Lucent was acquired by Nokia and Bell Labs became Nokia Bell Labs."
+      },
+      {
+        "date": "2022",
+        "event": "Cincinnati Bell rebranded to Altafiber."
+      },
+      {
+        "date": "2026",
+        "event": "Verizon acquired Frontier Communications according to the source."
+      },
+      {
+        "date": "2026",
+        "event": "Lumen sold its mass-market broadband connectivity business to AT&T."
+      },
+      {
+        "date": "2026",
+        "event": "AT&T planned retirement of the nationwide copper-based landline network substantially installed by the Bell System."
+      }
+    ],
+
+    "important_distinctions": {
+      "bell_system_vs_AT_and_T": "The Bell System was the broader integrated family of companies; AT&T was its central parent and long-distance carrier.",
+      "bell_system_vs_bell_labs": "Bell Labs was the research organization within the Bell System rather than the entire Bell System itself.",
+      "bell_system_vs_western_electric": "Western Electric was the equipment manufacturing arm of the larger Bell System.",
+      "bell_system_vs_baby_bells": "The Baby Bells were successor regional operating companies created by the 1984 breakup.",
+      "bell_system_vs_modern_AT_and_T": "Modern AT&T is a major successor to the Bell System but is not identical to the original Bell System.",
+      "bell_system_vs_verizon": "Verizon is another major successor lineage descended primarily from Bell Atlantic and NYNEX.",
+      "bell_system_vs_independent_LECs": "Not every telephone company associated with Bell branding became one of the seven Baby Bells."
+    },
+
+    "institutional_relationship_graph": {
+      "Alexander_Graham_Bell": {
+        "founded": [
+          "Bell Telephone Company"
+        ]
+      },
+      "Bell_Telephone_Company": {
+        "evolved_into": [
+          "American Bell",
+          "AT&T-associated Bell System"
+        ]
+      },
+      "American_Bell": {
+        "created": [
+          "AT&T"
+        ],
+        "acquired_by": [
+          "AT&T"
+        ]
+      },
+      "AT_and_T": {
+        "controlled": [
+          "Bell Operating Companies",
+          "Western Electric",
+          "Bell Labs"
+        ],
+        "operated": [
+          "AT&T Long Lines"
+        ],
+        "supported": [
+          "Bellcomm"
+        ]
+      },
+      "Western_Electric": {
+        "manufactured": [
+          "Bell System telecommunications equipment"
+        ],
+        "owned_or_related_to": [
+          "Northern Electric",
+          "Nippon Electric"
+        ]
+      },
+      "Bell_Labs": {
+        "provided": [
+          "Research",
+          "Development",
+          "Telecommunications technology"
+        ]
+      },
+      "Bell_System": {
+        "reorganized_into": [
+          "Ameritech",
+          "Bell Atlantic",
+          "BellSouth",
+          "NYNEX",
+          "Pacific Telesis",
+          "Southwestern Bell",
+          "U S WEST"
+        ]
+      },
+      "Baby_Bells": {
+        "later_consolidated_into_major_successors": [
+          "AT&T",
+          "Verizon",
+          "Lumen",
+          "Other successor companies"
+        ]
+      }
+    },
+
+    "legacy": {
+      "telecommunications": [
+        "Nationwide telephone infrastructure",
+        "Long-distance network architecture",
+        "Local exchange architecture",
+        "Telephone equipment ecosystem",
+        "Telecommunications standards"
+      ],
+      "corporate": [
+        "Creation of large vertically integrated telecommunications systems",
+        "Development of regional operating-company structures",
+        "Influence on telecommunications regulation",
+        "Major precedent for U.S. antitrust policy"
+      ],
+      "technical": [
+        "Bell Labs research legacy",
+        "Western Electric manufacturing legacy",
+        "Telecommunications engineering standards",
+        "Research contributions to electronics and computing"
+      ],
+      "infrastructure": [
+        "Copper telephone networks",
+        "Telephone exchanges",
+        "Long-distance infrastructure",
+        "International telecommunications infrastructure"
+      ],
+      "institutional": [
+        "AT&T",
+        "Verizon",
+        "Lumen",
+        "Frontier",
+        "Altafiber",
+        "Nokia Bell Labs",
+        "iconectiv"
+      ]
+    },
+
+    "source_attributed_claims_and_interpretations": {
+      "largest_corporation": {
+        "claim": "The source states that proliferation of telephone service allowed the Bell System to become the largest corporation in the world before its dismantling."
+      },
+      "patent_policy_and_innovation": {
+        "claim": "The source states that the 1956 consent decree's royalty-free patent requirement led to substantial increases in innovation, particularly in electronics and computing.",
+        "secondary_interpretation": "Steven Weber's work is cited as characterizing the decree as important to fostering the open-source movement."
+      },
+      "global_standardization": {
+        "claim": "The source states that Bell System influence remained important in telecommunications standardization throughout the industrialized world."
+      }
+    },
+
+    "source_caveats": {
+      "current_status": "The source includes information current through 2026 and contains some claims explicitly marked as needing citations.",
+      "time_sensitive_items": [
+        "Frontier acquisition by Verizon in 2026",
+        "Lumen sale of mass-market broadband business to AT&T in 2026",
+        "AT&T copper retirement plans in 2026"
+      ],
+      "citation_needed_claims": [
+        "International rights to Bell marks being held by Bell IP Holdings",
+        "Some post-breakup trademark usage details",
+        "Several historical branding statements"
+      ],
+      "structural_caveat": "The Bell System was not a single corporation in the conventional sense; it was an integrated system of affiliated and controlled telecommunications companies led by AT&T.",
+      "historical_ownership_caveat": "Ownership percentages and corporate relationships varied across periods, especially before and after the 1956 consent decree and 1984 breakup."
+    },
+
+    "reference_catalog": [
+      {
+        "id": 1,
+        "author": "John Windhausen",
+        "date": "February 11, 2026",
+        "title": "Revisiting the Themes Underlying the Telecommunications Act of 1996",
+        "publisher": "Benton Institute for Broadband & Society",
+        "retrieved": "September 12, 2026"
+      },
+      {
+        "id": 2,
+        "title": "AT&T History: The Bell System",
+        "publisher": "AT&T Corporation",
+        "retrieved": "December 22, 2008"
+      },
+      {
+        "id": 3,
+        "title": "Unnatural Monopoly: Critical Moments",
+        "publisher": "Cato Institute",
+        "retrieved": "September 17, 2008"
+      },
+      {
+        "id": 4,
+        "title": "Bell's Telephone",
+        "publisher": "Franklin Institute",
+        "retrieved": "September 17, 2008"
+      },
+      {
+        "id": 5,
+        "title": "AT&T Milestones in AT&T History",
+        "publisher": "AT&T",
+        "retrieved": "September 17, 2008"
+      },
+      {
+        "id": 6,
+        "author": "John Brooks",
+        "title": "Telephone: The First Hundred Years",
+        "publisher": "Harper & Row",
+        "year": 1976,
+        "isbn": "978-0-06-010540-2"
+      },
+      {
+        "id": 7,
+        "authors": [
+          "Martin Watzinger",
+          "Thomas A. Fackler",
+          "Markus Nagler",
+          "Monika Schnitzer"
+        ],
+        "year": 2020,
+        "title": "How Antitrust Enforcement Can Spur Innovation: Bell Labs and the 1956 Consent Decree",
+        "journal": "American Economic Journal: Economic Policy",
+        "volume": 12,
+        "issue": 4,
+        "pages": "328–359",
+        "doi": "10.1257/pol.20190086"
+      },
+      {
+        "id": 8,
+        "author": "Steven Weber",
+        "year": 2004,
+        "title": "The Success of Open Source",
+        "publisher": "Harvard University Press"
+      },
+      {
+        "id": 9,
+        "title": "Introducing Frontier, a Verizon Company",
+        "publisher": "Verizon",
+        "date": "January 20, 2026",
+        "retrieved": "January 26, 2026"
+      },
+      {
+        "id": 10,
+        "title": "AT&T to acquire most of Lumen's fiber business for $5.75B, expanding reach in major US cities",
+        "publisher": "Business Journals",
+        "date": "May 21, 2025",
+        "retrieved": "September 21, 2025"
+      },
+      {
+        "id": 11,
+        "title": "USPTO trademark record for Bell",
+        "identifier": "Trademark serial no. 73727728",
+        "description": "Example registration originally held by Pacific Telesis with restrictions concerning use alongside specified Bell-related modifiers."
+      },
+      {
+        "id": 12,
+        "author": "Jeff Baumgartner",
+        "date": "September 25, 2025",
+        "title": "AT&T's copper retirement plan plows ahead",
+        "publisher": "Light Reading"
+      }
+    ],
+
+    "further_reading": [
+      {
+        "author": "Rachel Baker and Bruce Yandle",
+        "title": "Financial Markets and the AT&T Antitrust Settlement",
+        "publication": "Eastern Economic Journal",
+        "volume": 20,
+        "issue": 4,
+        "pages": "429–440"
+      },
+      {
+        "author": "Jeffrey E. Cohen",
+        "title": "The Telephone Problem and the Road to Telephone Regulation in the United States, 1876–1917",
+        "publication": "Journal of Policy History",
+        "volume": 3,
+        "issue": 1,
+        "pages": "42–69"
+      },
+      {
+        "author": "Barry G. Cole",
+        "title": "After the Breakup: Assessing the New Post-AT&T Divestiture Era",
+        "publisher": "Columbia University Press",
+        "year": 1991
+      },
+      {
+        "author": "Steve Coll",
+        "title": "The Deal of the Century: The Breakup of AT&T",
+        "publisher": "Open Road Media",
+        "year": 2017
+      },
+      {
+        "authors": [
+          "Jerry Hausman",
+          "Timothy Tardiff",
+          "Alexander Belinfante"
+        ],
+        "title": "The Effects of the Breakup of AT&T on Telephone Penetration in the United States",
+        "publication": "American Economic Review",
+        "volume": 83,
+        "issue": 2,
+        "pages": "178–184",
+        "year": 1993
+      },
+      {
+        "author": "Paul L. Joskow",
+        "title": "Regulation of Natural Monopoly",
+        "publication": "Handbook of Law and Economics",
+        "volume": 2,
+        "pages": "1227–1348",
+        "year": 2007
+      },
+      {
+        "author": "M. Mueller",
+        "title": "Universal Service: Competition, Interconnection, and Monopoly in the Making of the American Telephone System",
+        "publisher": "MIT Press",
+        "year": 1997
+      },
+      {
+        "author": "Eli N. Noam",
+        "title": "The Fall of the Bell System: A Study in Prices and Politics",
+        "year": 1989
+      },
+      {
+        "author": "Michael Riordan",
+        "title": "The End of AT&T: Ma Bell May Be Gone, but Its Innovations Are Everywhere",
+        "publication": "IEEE Spectrum",
+        "volume": 42,
+        "issue": 7,
+        "pages": "46–51",
+        "year": 2005
+      },
+      {
+        "author": "Michael Riordan",
+        "title": "Universal Residential Telephone Service",
+        "publication": "Handbook of Telecommunications Economics",
+        "volume": 1,
+        "pages": "423–473",
+        "year": 2002
+      },
+      {
+        "authors": [
+          "Peter Temin",
+          "Louis Galambos"
+        ],
+        "title": "The Fall of the Bell System: A Study in Prices and Politics",
+        "year": 1987
+      },
+      {
+        "authors": [
+          "Martin Watzinger",
+          "Monika Schnitzer"
+        ],
+        "title": "The Breakup of the Bell System and Its Impact on US Innovation",
+        "year": 2022
+      },
+      {
+        "author": "Lawrence J. White",
+        "title": "US Telephone Deregulation: Lessons to Be Learned, Mistakes to Be Avoided",
+        "publication": "Japan and the World Economy",
+        "volume": 12,
+        "issue": 2,
+        "pages": "173–183",
+        "year": 2000
+      }
+    ],
+
+    "machine_readable_summary": {
+      "entity": "Bell System",
+      "type": "telecommunications_system",
+      "founded": 1877,
+      "ended": 1984,
+      "founder": "Alexander Graham Bell",
+      "central_parent": "AT&T",
+      "major_components": [
+        "AT&T Long Lines",
+        "Western Electric",
+        "Bell Labs",
+        "Bell Operating Companies",
+        "AT&T corporate organization"
+      ],
+      "primary_market": "North American telecommunications",
+      "organizational_model": "Vertically integrated telecommunications system",
+      "major_regulatory_events": [
+        "Kingsbury Commitment",
+        "1934 FCC regulation",
+        "1949 antitrust lawsuit",
+        "1956 consent decree",
+        "1974 antitrust lawsuit",
+        "1982 consent decree",
+        "1984 breakup"
+      ],
+      "1984_successors": [
+        "Ameritech",
+        "Bell Atlantic",
+        "BellSouth",
+        "NYNEX",
+        "Pacific Telesis",
+        "Southwestern Bell",
+        "U S WEST"
+      ],
+      "major_modern_successors": [
+        "AT&T",
+        "Verizon",
+        "Lumen",
+        "Frontier",
+        "Altafiber"
+      ],
+      "research_successors": [
+        "Nokia Bell Labs",
+        "iconectiv"
+      ]
+    },
+
+    "architectural_lineage": {
+      "telephone_invention": "Alexander Graham Bell",
+      "original_company": "Bell Telephone Company",
+      "national_system": "American Bell / AT&T",
+      "integrated_system": "Bell System",
+      "manufacturing": "Western Electric",
+      "research": "Bell Labs",
+      "local_operations": "Bell Operating Companies",
+      "long_distance": "AT&T Long Lines",
+      "international": [
+        "Bell Canada",
+        "Caribbean Bell companies",
+        "Japanese relationships"
+      ],
+      "1984_fragmentation": "Seven Regional Bell Operating Companies",
+      "post_1996_consolidation": "Large-scale reconsolidation into AT&T, Verizon, Lumen, Frontier, and other successor organizations",
+      "modern_research_lineage": [
+        "Lucent Technologies",
+        "Alcatel-Lucent",
+        "Nokia Bell Labs"
+      ]
+    },
+
+    "record_integrity": {
+      "source_basis": "Uploaded Bell System article",
+      "source_file_reference": "turn140file0",
+      "source_lines": "L29-L312",
+      "transformation_method": "Structured extraction and organization of the supplied source without intentionally replacing its historical framing with external information.",
+      "preservation_rules": [
+        "Preserve source chronology",
+        "Preserve corporate relationships",
+        "Preserve ownership percentages",
+        "Preserve successor relationships",
+        "Preserve source-attributed claims",
+        "Preserve citation-needed caveats",
+        "Preserve 2026 developments stated by the source",
+        "Distinguish the Bell System from individual successor corporations"
+      ],
+      "integrity_note": "The Bell System record represents the supplied article's description and should not be interpreted as an independently verified corporate genealogy beyond the source material."
+    }
+  }
+}
