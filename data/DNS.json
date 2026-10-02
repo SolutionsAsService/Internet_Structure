@@ -1,0 +1,1758 @@
+{
+  "Domain_Name_System_DNS": {
+    "record_metadata": {
+      "record_type": "technical_system_schema",
+      "record_name": "Domain Name System",
+      "abbreviation": "DNS",
+      "category": "Internet infrastructure / naming system / application-layer protocol",
+      "source_basis": "User-provided Domain Name System reference article",
+      "source_line_range": "L29-L542",
+      "status": "active",
+      "primary_purpose": "Resolve human-readable domain names into machine-readable network resource information, most prominently IP addresses",
+      "historical_introduction": "November 1983",
+      "essential_internet_functionality_since": "1985",
+      "developer": "Paul Mockapetris",
+      "historical_predecessor": "HOSTS.TXT",
+      "primary_protocol_specifications": [
+        "RFC 1034",
+        "RFC 1035"
+      ],
+      "osi_layer": "Application layer",
+      "default_transport_ports": {
+        "udp": 53,
+        "tcp": 53
+      },
+      "influenced_or_related_systems": [
+        "mDNS",
+        "DANE",
+        "DNSSEC"
+      ]
+    },
+
+    "identity": {
+      "full_name": "Domain Name System",
+      "short_name": "DNS",
+      "type": "hierarchical distributed naming system",
+      "protocol_class": "Internet application-layer protocol",
+      "primary_function": "Name resolution",
+      "secondary_functions": [
+        "Service discovery",
+        "Mail-server discovery",
+        "Reverse DNS",
+        "Distributed service steering",
+        "Administrative delegation",
+        "DNSSEC security data",
+        "Email anti-spam blocklists",
+        "Dynamic registration",
+        "Infrastructure metadata publication"
+      ],
+      "fundamental_design": {
+        "hierarchical": true,
+        "distributed": true,
+        "delegated": true,
+        "cached": true,
+        "fault_tolerant": true,
+        "client_server": true,
+        "globally_distributed": true
+      }
+    },
+
+    "core_concept": {
+      "simple_explanation": "DNS provides the naming layer that allows humans and applications to refer to network resources using names instead of remembering numerical network addresses.",
+      "classic_analogy": "Internet phone book",
+      "important_qualification": "DNS is more sophisticated than a simple phone book because the same domain name can resolve differently for different users, locations, networks, or circumstances.",
+      "fundamental_translation": {
+        "input": "Domain name",
+        "example": "www.example.com",
+        "output": [
+          "IPv4 address",
+          "IPv6 address",
+          "mail server",
+          "name server",
+          "canonical name",
+          "other DNS resource records"
+        ]
+      },
+      "architectural_goal": "Avoid maintaining one enormous centralized host table by distributing authority throughout a hierarchical namespace.",
+      "source_basis": {
+        "distributed_name_service": true,
+        "delegated_authority": true,
+        "avoid_single_central_database": true
+      }
+    },
+
+    "what_dns_actually_does": {
+      "primary_operation": {
+        "name": "forward_name_resolution",
+        "description": "Translate a domain name into one or more resource records, commonly IP addresses."
+      },
+      "other_operations": [
+        {
+          "operation": "reverse_resolution",
+          "description": "Translate an IP address into a domain name using PTR records."
+        },
+        {
+          "operation": "mail_server_discovery",
+          "record": "MX",
+          "description": "Identify mail exchangers responsible for receiving mail for a domain."
+        },
+        {
+          "operation": "aliasing",
+          "record": "CNAME",
+          "description": "Represent an alias from one DNS name to another."
+        },
+        {
+          "operation": "authority_discovery",
+          "record": "NS",
+          "description": "Identify authoritative name servers for a zone."
+        },
+        {
+          "operation": "zone_metadata",
+          "record": "SOA",
+          "description": "Provide start-of-authority and zone-management information."
+        },
+        {
+          "operation": "service_metadata",
+          "record": "SRV",
+          "description": "Publish service-location information where supported."
+        },
+        {
+          "operation": "security_metadata",
+          "description": "Publish DNSSEC and related security records."
+        },
+        {
+          "operation": "policy_or_metadata",
+          "record": "TXT",
+          "description": "Publish arbitrary textual data used by numerous applications and policies."
+        }
+      ]
+    },
+
+    "internet_naming_model": {
+      "two_principal_namespaces": [
+        {
+          "namespace": "domain_name_hierarchy",
+          "managed_by": "DNS"
+        },
+        {
+          "namespace": "IP_address_space",
+          "managed_by": "Internet addressing and routing systems"
+        }
+      ],
+      "dns_role": "DNS provides translation and association between domain names and Internet resource information.",
+      "important_distinction": {
+        "domain_name": "Human/application-oriented identifier",
+        "ip_address": "Network-layer locator/address",
+        "dns": "Naming and translation system",
+        "routing": "Mechanism that determines how packets reach IP destinations"
+      }
+    },
+
+    "architecture": {
+      "overview": {
+        "model": "distributed hierarchical database",
+        "database_nodes": "DNS name servers",
+        "clients": "DNS resolvers",
+        "authoritative_sources": "Authoritative name servers",
+        "intermediate_systems": "Recursive caching resolvers",
+        "root": "DNS root zone",
+        "delegated_levels": [
+          "Root",
+          "Top-level domain",
+          "Registered domain",
+          "Subdomain",
+          "Host/service name"
+        ]
+      },
+
+      "logical_flow": [
+        "Application requests a domain name",
+        "Local resolver determines whether the answer is already available",
+        "Cached answer is returned if valid",
+        "Otherwise the resolver performs upstream DNS resolution",
+        "Root hierarchy may identify the relevant TLD servers",
+        "TLD servers identify authoritative servers for the requested domain",
+        "Authoritative server returns the requested resource record",
+        "Recursive resolver caches the result according to TTL",
+        "Resolver returns the result to the client",
+        "Application uses the returned resource information to contact the destination"
+      ]
+    },
+
+    "domain_name_hierarchy": {
+      "structure": "tree",
+      "root": {
+        "representation": ".",
+        "position": "top of DNS hierarchy",
+        "function": "Delegates authority for top-level domains"
+      },
+
+      "top_level_domain": {
+        "description": "Rightmost meaningful label in an ordinary domain name",
+        "examples": [
+          "com",
+          "org",
+          "net",
+          "edu",
+          "country-code TLDs"
+        ]
+      },
+
+      "registered_domain": {
+        "description": "Domain delegated beneath a TLD",
+        "example": "example.com"
+      },
+
+      "subdomain": {
+        "description": "Delegated or locally administered subdivision",
+        "examples": [
+          "www.example.com",
+          "api.example.com",
+          "mail.example.com",
+          "dev.example.com"
+        ]
+      },
+
+      "hostname_or_service_name": {
+        "description": "Specific DNS name used to identify a host or service",
+        "example": "www.example.com"
+      },
+
+      "right_to_left_hierarchy": {
+        "example": "www.example.com",
+        "resolution_structure": [
+          ".",
+          "com",
+          "example.com",
+          "www.example.com"
+        ]
+      },
+
+      "tree_properties": {
+        "node": "DNS name",
+        "label": "Individual component between dots",
+        "resource_records": "Data associated with a DNS name",
+        "zone": "Administrative portion of the namespace",
+        "delegation": "Transfer of authority for a subtree"
+      }
+    },
+
+    "domain_name_syntax": {
+      "labels": {
+        "definition": "Individual components of a domain name",
+        "separator": ".",
+        "maximum_label_length_characters": 63
+      },
+
+      "full_name_limits": {
+        "maximum_textual_length": 253,
+        "maximum_with_trailing_root_dot": 254,
+        "internal_dns_wire_limit": 255
+      },
+
+      "hostname_preferred_character_set": {
+        "letters": "A-Z and a-z",
+        "digits": "0-9",
+        "hyphen": "-",
+        "rule": "LDH",
+        "case_sensitive": false,
+        "hyphen_restriction": "Labels may not start or end with a hyphen"
+      },
+
+      "example": {
+        "full_name": "api.example.com",
+        "labels": [
+          "api",
+          "example",
+          "com"
+        ],
+        "hierarchy": {
+          "root": ".",
+          "tld": "com",
+          "domain": "example.com",
+          "host": "api.example.com"
+        }
+      }
+    },
+
+    "internationalized_domain_names": {
+      "problem": "Traditional DNS hostname syntax is based around a restricted ASCII representation.",
+      "solution": "Internationalized Domain Names in Applications",
+      "abbreviation": "IDNA",
+      "unicode_support": true,
+      "encoding_mechanism": "Punycode",
+      "application_role": "Applications such as browsers convert user-facing Unicode domain names into DNS-compatible representations.",
+      "related_rfcs": [
+        "RFC 5890",
+        "RFC 5891",
+        "RFC 5892",
+        "RFC 5893"
+      ],
+      "security_consideration": "Internationalized names can create visually confusable strings and contribute to homograph phishing attacks."
+    },
+
+    "zones": {
+      "definition": "Administrative portion of the DNS namespace managed by an authority.",
+      "relationship_to_tree": "A zone represents a portion of the DNS tree beginning at some node.",
+      "zone_authority": "A designated set of authoritative name servers",
+      "delegation": {
+        "purpose": "Transfer authority over a subtree to another administrative entity",
+        "mechanism": "Parent zone publishes NS records identifying child authoritative servers"
+      },
+
+      "zone_file": {
+        "purpose": "Conventional structured representation of DNS resource records",
+        "contents": [
+          "SOA",
+          "NS",
+          "A",
+          "AAAA",
+          "MX",
+          "CNAME",
+          "TXT",
+          "PTR",
+          "DNSSEC records",
+          "Other supported resource records"
+        ]
+      }
+    },
+
+    "delegation": {
+      "definition": "Mechanism by which responsibility for a portion of the DNS namespace is assigned to another set of name servers.",
+      "parent_role": "Publishes delegation information.",
+      "child_role": "Provides authoritative information for the delegated zone.",
+      "primary_record": "NS",
+      "glue_required_when": "Authoritative name server hostname is itself located inside the delegated domain.",
+      "glue_function": "Provides the IP address needed to reach the child name server and breaks the circular dependency."
+    },
+
+    "dns_server_types": {
+      "root_name_servers": {
+        "role": "Top-level DNS referral infrastructure",
+        "function": "Direct resolvers toward authoritative servers for TLDs",
+        "direct_answer_behavior": "Normally provide referrals rather than final answers for ordinary domain records",
+        "global_distribution": "Root service is distributed globally, including via anycast instances."
+      },
+
+      "tld_name_servers": {
+        "role": "Authority for a top-level domain",
+        "function": "Direct resolvers toward authoritative servers for delegated domains beneath the TLD"
+      },
+
+      "authoritative_name_server": {
+        "role": "Definitive source for DNS records within a zone",
+        "data_source": "Configured zone data or authorized dynamic updates",
+        "authoritative_answer_bit": "AA",
+        "types": [
+          "Primary",
+          "Secondary"
+        ]
+      },
+
+      "primary_authoritative_server": {
+        "role": "Stores original authoritative zone records",
+        "function": "Source for authoritative data and zone synchronization"
+      },
+
+      "secondary_authoritative_server": {
+        "role": "Maintains a synchronized copy of authoritative zone data",
+        "purpose": [
+          "Redundancy",
+          "Fault tolerance",
+          "Geographic distribution",
+          "Load distribution"
+        ]
+      },
+
+      "recursive_resolver": {
+        "role": "Performs DNS resolution on behalf of clients",
+        "typical_behavior": [
+          "Receive recursive query",
+          "Check cache",
+          "Query upstream DNS infrastructure",
+          "Follow referrals",
+          "Obtain authoritative answer",
+          "Cache answer",
+          "Return result to client"
+        ]
+      },
+
+      "stub_resolver": {
+        "role": "Client-side DNS component",
+        "function": "Typically sends queries to a configured recursive resolver",
+        "possible_configuration_sources": [
+          "Operating-system configuration",
+          "DHCP",
+          "Manual configuration",
+          "Enterprise policy",
+          "VPN configuration"
+        ]
+      },
+
+      "caching_resolver": {
+        "function": "Stores DNS answers temporarily",
+        "primary_benefits": [
+          "Reduced latency",
+          "Reduced upstream traffic",
+          "Reduced root/TLD query load",
+          "Improved scalability"
+        ]
+      },
+
+      "forwarder": {
+        "description": "DNS server that forwards queries to another resolver instead of performing full recursion itself.",
+        "common_environment": [
+          "Enterprise networks",
+          "Home routers",
+          "Managed networks"
+        ]
+      }
+    },
+
+    "authoritative_dns": {
+      "definition": "DNS service that answers from authoritative zone data rather than merely returning cached information.",
+      "authoritative_answer_indicator": "AA bit",
+      "primary_server": {
+        "data": "Original zone records"
+      },
+      "secondary_servers": {
+        "data": "Replicated zone records"
+      },
+      "required_redundancy": {
+        "concept": "Multiple authoritative servers are normally deployed",
+        "reasons": [
+          "Failure tolerance",
+          "Network diversity",
+          "Geographic diversity",
+          "Load distribution"
+        ]
+      },
+
+      "lame_delegation": {
+        "description": "A delegation points toward a server that does not actually provide authoritative data for the delegated zone.",
+        "result": "Lame response or delegation failure"
+      }
+    },
+
+    "dns_resolution": {
+      "overview": "DNS resolution converts a requested domain name into resource-record information.",
+      "actors": [
+        "Application",
+        "Stub resolver",
+        "Recursive resolver",
+        "Root server",
+        "TLD server",
+        "Authoritative server"
+      ],
+
+      "normal_recursive_resolution": {
+        "step_1": "Application requests resolution of a domain name.",
+        "step_2": "Local resolver checks available caches.",
+        "step_3": "If no usable cached result exists, the resolver sends a query to its recursive DNS server.",
+        "step_4": "Recursive resolver checks its own cache.",
+        "step_5": "If necessary, recursive resolver queries a root server.",
+        "step_6": "Root server returns a referral toward the appropriate TLD servers.",
+        "step_7": "Recursive resolver queries a TLD server.",
+        "step_8": "TLD server returns a referral toward authoritative name servers for the requested domain.",
+        "step_9": "Recursive resolver queries an authoritative name server.",
+        "step_10": "Authoritative server returns the requested record.",
+        "step_11": "Recursive resolver caches the result according to applicable TTL rules.",
+        "step_12": "Recursive resolver returns the result to the client.",
+        "step_13": "Application uses the resulting IP address or other resource information."
+      },
+
+      "important": {
+        "root_not_required_for_every_query": true,
+        "reason": "Caching means recursive resolvers frequently already possess the necessary delegation or answer.",
+        "result": "Only a relatively small fraction of DNS requests need to reach root infrastructure."
+      }
+    },
+
+    "recursive_vs_iterative": {
+      "recursive_query": {
+        "meaning": "Requester asks a DNS server to obtain the complete answer.",
+        "typical_client": "Stub resolver",
+        "typical_server": "Recursive caching resolver",
+        "behavior": "Server performs additional DNS queries as necessary."
+      },
+
+      "iterative_query": {
+        "meaning": "DNS server provides the best information it currently has, potentially including a referral to another server.",
+        "typical_use": "Recursive resolver communicating with root, TLD, and authoritative infrastructure."
+      },
+
+      "non_recursive_query": {
+        "meaning": "Server responds using data already available to it without performing recursion on behalf of the requester.",
+        "possible_sources": [
+          "Authoritative zone",
+          "Cache",
+          "Referral information"
+        ]
+      }
+    },
+
+    "dns_cache": {
+      "purpose": "Temporarily store DNS results to avoid repeatedly traversing the hierarchy.",
+      "locations": [
+        "Operating system",
+        "Browser",
+        "Home router",
+        "Recursive resolver",
+        "Enterprise DNS infrastructure",
+        "Other intermediary DNS systems"
+      ],
+
+      "ttl": {
+        "name": "Time To Live",
+        "purpose": "Determines how long a cached DNS record can normally remain valid.",
+        "controlled_by": "Authoritative DNS configuration",
+        "effect": "Lower TTL generally allows changes to be observed sooner but increases query traffic.",
+        "high_ttl_effect": "Reduces query traffic but can cause old records to remain cached longer."
+      },
+
+      "negative_caching": {
+        "purpose": "Cache information that a requested record or name does not exist.",
+        "related_record": "SOA",
+        "result": "Reduces repeated queries for nonexistent names."
+      },
+
+      "propagation_model": {
+        "important_concept": "DNS changes are not necessarily visible everywhere immediately.",
+        "reason": "Existing cached responses remain valid until their TTL expires or are otherwise refreshed.",
+        "operational_implication": "Changing DNS records can produce a transition period where different resolvers have different answers."
+      }
+    },
+
+    "resource_records": {
+      "definition": "Structured pieces of information associated with DNS names.",
+      "general_fields": {
+        "NAME": "DNS name to which the record applies",
+        "TYPE": "Record type",
+        "CLASS": "DNS class",
+        "TTL": "Cache lifetime",
+        "RDLENGTH": "Length of record data",
+        "RDATA": "Type-specific record payload"
+      },
+
+      "common_records": {
+        "A": {
+          "purpose": "Maps a name to an IPv4 address",
+          "address_family": "IPv4"
+        },
+        "AAAA": {
+          "purpose": "Maps a name to an IPv6 address",
+          "address_family": "IPv6"
+        },
+        "CNAME": {
+          "purpose": "Alias from one DNS name to another canonical DNS name"
+        },
+        "MX": {
+          "purpose": "Specifies mail exchangers for a domain",
+          "important_field": "Priority"
+        },
+        "NS": {
+          "purpose": "Identifies authoritative name servers for a zone"
+        },
+        "SOA": {
+          "purpose": "Start of Authority information for a zone",
+          "importance": [
+            "Zone management",
+            "Authority metadata",
+            "Negative caching parameters",
+            "Zone synchronization metadata"
+          ]
+        },
+        "PTR": {
+          "purpose": "Reverse DNS pointer",
+          "used_for": "IP-to-name lookup"
+        },
+        "TXT": {
+          "purpose": "Textual DNS data",
+          "common_uses": [
+            "Application metadata",
+            "Email authentication policies",
+            "Verification",
+            "Security policies",
+            "Other application-defined information"
+          ]
+        },
+        "SRV": {
+          "purpose": "Service discovery and service endpoint information"
+        },
+        "CAA": {
+          "purpose": "Certificate authority authorization metadata"
+        }
+      },
+
+      "resource_record_set": {
+        "definition": "Set of records of the same name and type",
+        "ordering": "DNS does not inherently require a special ordering of records within an RRset",
+        "possible_load_distribution": "Servers may vary response ordering, including round-robin techniques."
+      }
+    },
+
+    "reverse_dns": {
+      "purpose": "Resolve an IP address back to a domain name.",
+      "record": "PTR",
+      "special_dns_domain": "arpa",
+
+      "ipv4": {
+        "namespace": "in-addr.arpa",
+        "representation": "Reverse-order octets",
+        "example": {
+          "ip": "208.80.152.2",
+          "reverse_name": "2.152.80.208.in-addr.arpa"
+        }
+      },
+
+      "ipv6": {
+        "namespace": "ip6.arpa",
+        "representation": "Reverse-order hexadecimal nibbles"
+      },
+
+      "important_property": "Multiple names may be associated with a single IP address, so reverse DNS does not necessarily provide a unique identity for an IP."
+    },
+
+    "glue_records": {
+      "problem": "A delegated zone can name an authoritative server whose own hostname exists inside the delegated zone.",
+      "circular_dependency": {
+        "example": "ns1.example.org is authoritative for example.org",
+        "problem": "Resolving example.org requires finding ns1.example.org, but ns1.example.org itself is inside example.org."
+      },
+      "solution": "Glue record",
+      "provided_by": "Parent/parent-side delegation infrastructure",
+      "purpose": "Provide the IP address of the child authoritative name server so resolution can proceed."
+    },
+
+    "dns_message_format": {
+      "message_types": [
+        "Query",
+        "Response"
+      ],
+
+      "common_structure": [
+        "Header",
+        "Question",
+        "Answer",
+        "Authority",
+        "Additional"
+      ],
+
+      "header": {
+        "transaction_id": {
+          "size_bits": 16,
+          "purpose": "Associate a response with a query"
+        },
+        "flags": {
+          "QR": {
+            "size_bits": 1,
+            "purpose": "Query or response indicator"
+          },
+          "OPCODE": {
+            "size_bits": 4,
+            "purpose": "Specifies operation type"
+          },
+          "AA": {
+            "size_bits": 1,
+            "purpose": "Authoritative Answer indicator"
+          },
+          "TC": {
+            "size_bits": 1,
+            "purpose": "Indicates truncation"
+          },
+          "RD": {
+            "size_bits": 1,
+            "purpose": "Recursion Desired"
+          },
+          "RA": {
+            "size_bits": 1,
+            "purpose": "Recursion Available"
+          },
+          "Z": {
+            "size_bits": 1,
+            "purpose": "Reserved"
+          },
+          "AD": {
+            "size_bits": 1,
+            "purpose": "Authentic Data indicator"
+          },
+          "CD": {
+            "size_bits": 1,
+            "purpose": "Checking Disabled indicator"
+          },
+          "RCODE": {
+            "size_bits": 4,
+            "purpose": "DNS response code"
+          }
+        },
+
+        "counters": {
+          "question_count": 16,
+          "answer_count": 16,
+          "authority_record_count": 16,
+          "additional_record_count": 16
+        }
+      },
+
+      "important_rcodes": {
+        "NOERROR": 0,
+        "FORMERR": 1,
+        "SERVFAIL": 2,
+        "NXDOMAIN": 3
+      }
+    },
+
+    "dns_transport": {
+      "traditional_dns": {
+        "udp": {
+          "port": 53,
+          "properties": [
+            "Low overhead",
+            "Connectionless",
+            "Traditional default transport",
+            "No inherent encryption"
+          ]
+        },
+
+        "tcp": {
+          "port": 53,
+          "properties": [
+            "Reliable transport",
+            "Connection-oriented",
+            "Supports larger responses",
+            "Used for zone transfers",
+            "Used when DNS transport requirements call for TCP"
+          ]
+        }
+      },
+
+      "dns_over_tls": {
+        "abbreviation": "DoT",
+        "transport": "TLS over TCP",
+        "port": 853,
+        "primary_goal": "Encrypt DNS traffic between client and resolver/server",
+        "standard": "RFC 7858"
+      },
+
+      "dns_over_https": {
+        "abbreviation": "DoH",
+        "transport": "HTTPS",
+        "port": 443,
+        "primary_goal": "Carry DNS queries through HTTPS/TLS",
+        "standard": "RFC 8484",
+        "important_property": "DNS traffic is transported using the HTTPS protocol stack."
+      },
+
+      "dns_over_quic": {
+        "abbreviation": "DoQ",
+        "transport": "QUIC",
+        "standard": "RFC 9250",
+        "design_goal": "Provide DNS privacy properties associated with encrypted transport while retaining latency characteristics associated with modern connectionless DNS transport."
+      },
+
+      "dns_over_coap": {
+        "abbreviation": "DoC",
+        "transport": "CoAP",
+        "standard": "RFC 9953",
+        "target_environment": "Constrained Internet of Things environments"
+      },
+
+      "dnscrypt": {
+        "description": "Non-IETF protocol for encrypted DNS communication",
+        "transport_ports": [
+          443
+        ],
+        "historical_role": "Provided encrypted DNS transport and influenced privacy-oriented DNS deployment."
+      }
+    },
+
+    "privacy": {
+      "traditional_dns": {
+        "confidentiality": false,
+        "typical_transport": "Unencrypted",
+        "observable_information": [
+          "Requested domain names",
+          "Resolver destination",
+          "Timing",
+          "Traffic metadata"
+        ]
+      },
+
+      "privacy_problem": "Traditional DNS was designed primarily for distributed naming and caching rather than confidentiality.",
+      "potential_observers": [
+        "Local network operators",
+        "Internet service providers",
+        "Network intermediaries",
+        "DNS resolver operators",
+        "Other parties able to observe DNS traffic"
+      ],
+
+      "privacy_technologies": {
+        "DoT": "Encrypts DNS transport using TLS.",
+        "DoH": "Carries DNS inside HTTPS.",
+        "DoQ": "Carries DNS using QUIC.",
+        "ODoH": "Separates knowledge of client identity from knowledge of the requested name through proxying architecture.",
+        "VPN": "Moves DNS resolution into or through the VPN's network path.",
+        "Tor": "Can route DNS-related activity through anonymity infrastructure."
+      },
+
+      "tradeoffs": {
+        "encrypted_dns": [
+          "Improves confidentiality from network observers",
+          "Changes who can observe DNS queries",
+          "Can complicate enterprise DNS policy enforcement",
+          "Can affect filtering and troubleshooting",
+          "Can shift resolver concentration toward large public providers"
+        ]
+      }
+    },
+
+    "dns_security": {
+      "original_design": {
+        "security_priority": "Limited in the original DNS design",
+        "historical_context": "DNS originated in an environment that was substantially different from today's public commercial Internet."
+      },
+
+      "major_threats": {
+        "cache_poisoning": {
+          "description": "False DNS data is inserted into a resolver cache so subsequent clients receive incorrect answers.",
+          "potential_effect": "Redirect users toward unintended destinations."
+        },
+
+        "dns_spoofing": {
+          "description": "Forged or misleading DNS responses are presented as legitimate.",
+          "potential_effects": [
+            "Traffic redirection",
+            "Phishing",
+            "Service interception"
+          ]
+        },
+
+        "dns_hijacking": {
+          "description": "DNS resolution behavior is redirected or altered by an unauthorized party or system."
+        },
+
+        "man_in_the_middle": {
+          "description": "An intermediary interferes with DNS communication.",
+          "risk": "Manipulation or observation of DNS queries and responses."
+        },
+
+        "dns_leak": {
+          "description": "DNS queries escape an intended privacy tunnel or security boundary.",
+          "example": "A VPN is active but DNS requests are still sent to an external resolver outside the VPN path."
+        },
+
+        "domain_hijacking": {
+          "description": "Unauthorized control over a registered domain or its management infrastructure."
+        },
+
+        "idn_homograph_attack": {
+          "description": "Visually similar Unicode characters are used to create deceptive domain names.",
+          "security_effect": "Users may mistake a malicious domain for a legitimate one."
+        },
+
+        "dns_covert_channel": {
+          "description": "DNS traffic is abused to transport commands or data unrelated to ordinary name resolution.",
+          "source_example": "DNSMessenger",
+          "potential_uses": [
+            "Command and control",
+            "Data exfiltration",
+            "Payload delivery"
+          ]
+        }
+      }
+    },
+
+    "dnssec": {
+      "full_name": "Domain Name System Security Extensions",
+      "purpose": "Provide cryptographic authentication of DNS data.",
+      "problem_addressed": "Traditional DNS responses do not inherently provide cryptographic proof that returned DNS data originated from the correct DNS authority.",
+      "security_properties": [
+        "Data-origin authentication",
+        "Data integrity",
+        "Authenticated denial of existence"
+      ],
+      "important_distinction": "DNSSEC authenticates DNS data; it is not the same thing as encrypting DNS traffic.",
+      "related_records": [
+        "DNSKEY",
+        "DS",
+        "RRSIG",
+        "NSEC",
+        "NSEC3"
+      ],
+      "related_rfcs": [
+        "RFC 4033",
+        "RFC 4034",
+        "RFC 4035",
+        "RFC 5155",
+        "RFC 5011"
+      ]
+    },
+
+    "edns": {
+      "full_name": "Extension Mechanisms for DNS",
+      "abbreviation": "EDNS",
+      "purpose": "Extend DNS protocol capabilities without redesigning the basic DNS message format.",
+      "important_mechanism": "OPT pseudo-resource record",
+      "capabilities": [
+        "Larger DNS message sizes over UDP",
+        "Protocol extensions",
+        "Additional metadata",
+        "Padding",
+        "DNSSEC-related signaling"
+      ],
+      "standard": "RFC 6891"
+    },
+
+    "dynamic_dns": {
+      "abbreviation": "DDNS",
+      "purpose": "Dynamically update DNS records as network addresses change.",
+      "use_cases": [
+        "Residential dynamic IP addresses",
+        "Mobile hotspots",
+        "Changing ISP connections",
+        "DHCP-assigned hosts",
+        "Dynamic infrastructure",
+        "Automatically registering network clients"
+      ],
+      "protocol_operation": "Uses the DNS UPDATE mechanism.",
+      "related_standard": "RFC 2136"
+    },
+
+    "zone_transfers": {
+      "purpose": "Synchronize DNS zone data between authoritative servers.",
+      "mechanisms": [
+        "AXFR",
+        "IXFR"
+      ],
+      "axfr": {
+        "description": "Full zone transfer"
+      },
+      "ixfr": {
+        "description": "Incremental zone transfer"
+      },
+      "security": {
+        "related": "TSIG and other authentication mechanisms can be used to authenticate trusted DNS operations."
+      }
+    },
+
+    "dns_load_distribution": {
+      "multi_ip_resolution": {
+        "description": "One hostname may resolve to multiple IP addresses.",
+        "purposes": [
+          "Load distribution",
+          "Fault tolerance",
+          "Geographic distribution",
+          "Service redundancy"
+        ]
+      },
+
+      "multi_hostname_single_ip": {
+        "description": "Multiple hostnames may resolve to the same IP address.",
+        "common_use": "Virtual hosting"
+      },
+
+      "cdn_integration": {
+        "description": "DNS can direct different users toward different service endpoints.",
+        "mechanism": "Different DNS responses can be returned depending on resolver context, geography, network, policy, or service architecture.",
+        "goal": [
+          "Lower latency",
+          "Load distribution",
+          "Fault tolerance",
+          "Traffic engineering"
+        ]
+      },
+
+      "anycast_relationship": {
+        "concept": "The same IP address can be announced from multiple network locations.",
+        "dns_role": "DNS can return an anycast address, after which Internet routing determines the network location reached."
+      }
+    },
+
+    "dns_and_cdn_architecture": {
+      "basic_flow": [
+        "User requests service.example.com",
+        "DNS resolver asks for the domain's address",
+        "DNS infrastructure determines an appropriate service endpoint",
+        "DNS returns one or more addresses",
+        "Client connects to the selected endpoint",
+        "CDN or edge infrastructure serves the content"
+      ],
+
+      "why_dns_matters": [
+        "DNS can distribute clients among service locations",
+        "DNS can provide multiple addresses",
+        "DNS allows services to change infrastructure without changing user-facing names",
+        "DNS enables geographically distributed service architectures"
+      ],
+
+      "important_limitation": "DNS does not itself transport the application data; it supplies the information needed for the application to locate the service."
+    },
+
+    "domain_registration_system": {
+      "participants": {
+        "registrant": {
+          "definition": "Person or organization requesting use of a domain name."
+        },
+        "registrar": {
+          "definition": "Organization authorized to register domain names within applicable registry systems."
+        },
+        "registry": {
+          "definition": "Operator responsible for the authoritative database for a domain namespace, particularly a TLD."
+        },
+        "tld_operator": {
+          "role": "Administrative and technical operation of a top-level domain."
+        }
+      },
+
+      "relationship": [
+        "Registrant selects domain",
+        "Registrar processes registration",
+        "Registry maintains the authoritative registration database",
+        "DNS delegation identifies authoritative name servers",
+        "Authoritative DNS servers publish operational records"
+      ],
+
+      "registration_vs_dns": {
+        "registration": "Establishes administrative control/use of a domain name.",
+        "dns": "Publishes resource records that make the domain operational on the network."
+      },
+
+      "registration_data_systems": [
+        "WHOIS",
+        "RDAP"
+      ]
+    },
+
+    "complete_dns_lookup_example": {
+      "requested_name": "www.example.com",
+      "scenario": "Client has no usable cached answer.",
+
+      "step_01_application": {
+        "actor": "Web browser or application",
+        "action": "Requests the IP address associated with www.example.com."
+      },
+
+      "step_02_stub_resolver": {
+        "actor": "Operating system resolver",
+        "action": "Checks local DNS information and configured resolver."
+      },
+
+      "step_03_recursive_resolver": {
+        "actor": "Recursive DNS server",
+        "action": "Checks its cache."
+      },
+
+      "step_04_root": {
+        "query": "www.example.com",
+        "root_response": "Referral toward the authoritative infrastructure for .com."
+      },
+
+      "step_05_tld": {
+        "query": "www.example.com",
+        "server": ".com authoritative infrastructure",
+        "response": "Referral toward authoritative name servers for example.com."
+      },
+
+      "step_06_authoritative": {
+        "query": "www.example.com",
+        "server": "Authoritative server for example.com",
+        "response": {
+          "possible_records": [
+            "A",
+            "AAAA",
+            "CNAME"
+          ]
+        }
+      },
+
+      "step_07_cache": {
+        "actor": "Recursive resolver",
+        "action": "Stores answer according to TTL."
+      },
+
+      "step_08_client_response": {
+        "actor": "Recursive resolver",
+        "action": "Returns result to the client."
+      },
+
+      "step_09_application_connection": {
+        "actor": "Application",
+        "action": "Uses returned IP address to initiate the actual network connection."
+      },
+
+      "critical_distinction": {
+        "dns": "Finds the resource.",
+        "ip": "Provides network-layer addressing.",
+        "routing": "Moves packets toward the destination.",
+        "tcp_or_quic": "Provides transport semantics.",
+        "tls": "Provides cryptographic protection where used.",
+        "http": "Carries web application requests and responses."
+      }
+    },
+
+    "packet_and_protocol_relationship": {
+      "dns_is_not_the_entire_internet": true,
+      "dns_position": {
+        "layer": "Application",
+        "below_dns": [
+          "UDP",
+          "TCP",
+          "QUIC",
+          "IP",
+          "Ethernet",
+          "Wi-Fi",
+          "Physical network"
+        ],
+        "above_dns": [
+          "Applications that invoke name resolution"
+        ]
+      },
+
+      "traditional_dns_stack": [
+        "Application",
+        "DNS",
+        "UDP/TCP",
+        "IP",
+        "Link layer",
+        "Physical network"
+      ],
+
+      "encrypted_dns_stack_examples": {
+        "DoT": [
+          "DNS",
+          "TLS",
+          "TCP",
+          "IP"
+        ],
+        "DoH": [
+          "DNS",
+          "HTTP",
+          "TLS",
+          "TCP",
+          "IP"
+        ],
+        "DoQ": [
+          "DNS",
+          "QUIC",
+          "UDP",
+          "IP"
+        ]
+      }
+    },
+
+    "dns_failure_modes": {
+      "nx_domain": {
+        "rcode": "NXDOMAIN",
+        "meaning": "Requested domain name does not exist according to the responding DNS authority."
+      },
+
+      "servfail": {
+        "rcode": "SERVFAIL",
+        "meaning": "Resolver/server was unable to successfully complete the requested operation."
+      },
+
+      "timeout": {
+        "meaning": "Expected DNS response does not arrive within the applicable timeout."
+      },
+
+      "lame_delegation": {
+        "meaning": "Delegated server does not provide the expected authoritative information."
+      },
+
+      "stale_cache": {
+        "meaning": "Client or intermediary continues using old information due to caching behavior."
+      },
+
+      "misconfiguration": {
+        "examples": [
+          "Incorrect A record",
+          "Incorrect AAAA record",
+          "Missing NS records",
+          "Incorrect glue",
+          "Incorrect MX records",
+          "Broken delegation",
+          "Incorrect DNSSEC configuration"
+        ]
+      },
+
+      "transport_failure": {
+        "examples": [
+          "UDP blocked",
+          "TCP fallback failure",
+          "TLS connection failure",
+          "HTTPS resolver unavailable",
+          "QUIC connection failure"
+        ]
+      }
+    },
+
+    "operational_dns_design": {
+      "high_availability": {
+        "principles": [
+          "Multiple authoritative servers",
+          "Geographic distribution",
+          "Network diversity",
+          "Redundant resolver infrastructure",
+          "Caching",
+          "Anycast where appropriate"
+        ]
+      },
+
+      "performance": {
+        "major_factors": [
+          "Cache hit rate",
+          "Resolver proximity",
+          "Network latency",
+          "Authoritative server latency",
+          "Packet loss",
+          "DNS response size",
+          "Transport protocol",
+          "Number of required hierarchy traversals"
+        ]
+      },
+
+      "scalability": {
+        "mechanisms": [
+          "Hierarchical delegation",
+          "Caching",
+          "Distributed authoritative servers",
+          "Recursive resolver infrastructure",
+          "Anycast",
+          "Load balancing",
+          "Multiple addresses"
+        ]
+      }
+    },
+
+    "dns_history": {
+      "arpanet_predecessor": {
+        "system": "HOSTS.TXT",
+        "maintainer": "Stanford Research Institute Network Information Center",
+        "function": "Map hostnames to numerical addresses",
+        "problem": "Manual centralized maintenance became increasingly difficult as the network expanded."
+      },
+
+      "elizabeth_feinler": {
+        "role": "Developed and maintained the early ARPANET directory",
+        "organization": "SRI Network Information Center",
+        "related_work": [
+          "Host Naming Registry",
+          "ARPANET directory",
+          "WHOIS directory",
+          "Domain concepts"
+        ],
+        "management_period": "1972-1989"
+      },
+
+      "jon_postel": {
+        "organization": "USC Information Sciences Institute",
+        "role": "Maintained numerical addressing coordination and helped direct the effort that resulted in DNS."
+      },
+
+      "paul_mockapetris": {
+        "organization": "USC Information Sciences Institute",
+        "role": "Created DNS in 1983",
+        "motivation": "Replace the increasingly unwieldy centralized host table with an automated hierarchical naming architecture."
+      },
+
+      "original_specifications": {
+        "year": 1983,
+        "rfcs": [
+          "RFC 882",
+          "RFC 883"
+        ]
+      },
+
+      "updated_specifications": {
+        "year": 1987,
+        "rfcs": [
+          "RFC 1034",
+          "RFC 1035"
+        ],
+        "significance": "These became the foundational DNS specifications."
+      },
+
+      "bind": {
+        "full_name": "Berkeley Internet Name Domain",
+        "origin": "UC Berkeley",
+        "initial_developers": [
+          "Douglas Terry",
+          "Mark Painter",
+          "David Riggle",
+          "Songnian Zhou"
+        ],
+        "initial_implementation_year": 1984,
+        "later_revisions": [
+          "Kevin Dunlap",
+          "Mike Karels",
+          "Phil Almquist",
+          "Paul Vixie"
+        ],
+        "isc": {
+          "founded": 1994,
+          "founders": [
+            "Rick Adams",
+            "Paul Vixie",
+            "Carl Malamud"
+          ],
+          "role": "Home for BIND development and maintenance"
+        }
+      }
+    },
+
+    "key_people": {
+      "Paul_Mockapetris": {
+        "role": "Creator of DNS",
+        "organization_at_creation": "USC Information Sciences Institute"
+      },
+      "Elizabeth_Feinler": {
+        "role": "Early ARPANET directory and host naming administration",
+        "organization": "SRI Network Information Center"
+      },
+      "Jon_Postel": {
+        "role": "Internet addressing coordination and DNS development leadership context",
+        "organization": "USC Information Sciences Institute"
+      },
+      "Douglas_Terry": {
+        "role": "Early BIND developer"
+      },
+      "Mark_Painter": {
+        "role": "Early BIND developer"
+      },
+      "David_Riggle": {
+        "role": "Early BIND developer"
+      },
+      "Songnian_Zhou": {
+        "role": "Early BIND developer"
+      },
+      "Kevin_Dunlap": {
+        "role": "Major early BIND reviser",
+        "organization": "DEC"
+      },
+      "Paul_Vixie": {
+        "roles": [
+          "BIND maintainer",
+          "BIND 8 developer",
+          "DNS protocol contributor"
+        ]
+      }
+    },
+
+    "key_organizations_and_institutions": {
+      "SRI": {
+        "role": "Early ARPANET host naming and directory administration"
+      },
+      "USC_ISI": {
+        "role": "Addressing coordination and DNS creation"
+      },
+      "IETF": {
+        "role": "Publishes DNS protocol specifications and extensions through RFCs"
+      },
+      "Internet_Systems_Consortium": {
+        "role": "BIND development and maintenance"
+      },
+      "ICANN": {
+        "role": "Internet domain-name and numbering coordination ecosystem",
+        "relationship_to_dns": "Domain registration and namespace administration"
+      },
+      "TLD_registries": {
+        "role": "Operate authoritative registration databases for TLD namespaces"
+      },
+      "registrars": {
+        "role": "Provide domain registration services to registrants"
+      }
+    },
+
+    "dns_in_the_modern_internet": {
+      "role": "Naming control plane for Internet applications",
+      "dependencies": [
+        "Web",
+        "Email",
+        "Cloud services",
+        "CDNs",
+        "APIs",
+        "Enterprise services",
+        "Distributed applications",
+        "Service discovery"
+      ],
+
+      "importance": {
+        "human_usability": "Users can access services through memorable names rather than numerical addresses.",
+        "infrastructure_flexibility": "Service IP addresses can change without requiring users to learn a new domain.",
+        "distribution": "Different DNS answers can support globally distributed service architectures.",
+        "fault_tolerance": "Multiple DNS records and servers can provide redundancy."
+      }
+    },
+
+    "dns_vs_ip_vs_url": {
+      "url": {
+        "purpose": "Application-level resource identifier/location",
+        "example": "https://www.example.com/path"
+      },
+
+      "domain_name": {
+        "purpose": "Human-readable DNS identifier",
+        "example": "www.example.com"
+      },
+
+      "ip_address": {
+        "purpose": "Network-layer address",
+        "example_ipv4": "93.184.216.34",
+        "example_ipv6": "2606:2800:220:1:248:1893:25c8:1946"
+      },
+
+      "dns": {
+        "purpose": "Associates domain names with IP addresses and other DNS resource information."
+      },
+
+      "routing": {
+        "purpose": "Determines how IP packets are forwarded through networks."
+      }
+    },
+
+    "complete_web_request_model": {
+      "example": "https://www.example.com/",
+      "sequence": [
+        {
+          "stage": 1,
+          "component": "URL parser",
+          "action": "Extract hostname www.example.com."
+        },
+        {
+          "stage": 2,
+          "component": "DNS resolver",
+          "action": "Resolve hostname."
+        },
+        {
+          "stage": 3,
+          "component": "DNS infrastructure",
+          "action": "Return A/AAAA/CNAME-related information."
+        },
+        {
+          "stage": 4,
+          "component": "IP routing",
+          "action": "Determine path toward destination IP."
+        },
+        {
+          "stage": 5,
+          "component": "Transport",
+          "action": "Establish TCP or QUIC transport."
+        },
+        {
+          "stage": 6,
+          "component": "TLS",
+          "action": "Authenticate/encrypt HTTPS connection."
+        },
+        {
+          "stage": 7,
+          "component": "HTTP",
+          "action": "Send application request."
+        },
+        {
+          "stage": 8,
+          "component": "Server/CDN",
+          "action": "Process request and return response."
+        }
+      ],
+
+      "key_insight": "DNS is normally one of the first network services involved in locating an Internet application, but DNS itself does not carry the application's content."
+    },
+
+    "advanced_dns_features": {
+      "wildcards": {
+        "syntax": "*.example.com",
+        "purpose": "Generate matching DNS records for otherwise unspecified names within a zone.",
+        "related_standard": "RFC 4592"
+      },
+
+      "dname": {
+        "purpose": "DNS subtree redirection",
+        "related_standard": "RFC 6672"
+      },
+
+      "query_name_minimization": {
+        "purpose": "Reduce unnecessary disclosure of the full requested domain name during iterative resolution.",
+        "related_standard": "RFC 9156"
+      },
+
+      "split_horizon_dns": {
+        "purpose": "Return different DNS answers depending on which client/network is querying.",
+        "common_uses": [
+          "Internal enterprise services",
+          "Private infrastructure",
+          "Security boundaries",
+          "Different public/private service views"
+        ]
+      },
+
+      "multicast_dns": {
+        "abbreviation": "mDNS",
+        "purpose": "Local-network name resolution without requiring conventional unicast DNS infrastructure.",
+        "relationship": "Related technology influenced by the DNS naming model."
+      }
+    },
+
+    "control_plane_model": {
+      "dns_control_plane": {
+        "purpose": "Determines where applications should attempt to connect.",
+        "components": [
+          "Domain registration",
+          "Delegation",
+          "Authoritative records",
+          "Recursive resolvers",
+          "Caching",
+          "DNSSEC",
+          "Traffic-steering policies"
+        ]
+      },
+
+      "data_plane_relationship": {
+        "dns": "Provides destination information.",
+        "ip": "Carries packets toward the destination.",
+        "transport": "Provides end-to-end transport.",
+        "application": "Carries user/service data."
+      },
+
+      "important_concept": "DNS can influence where traffic goes without being the mechanism that actually transports that traffic."
+    },
+
+    "mental_model": {
+      "simple": "Name -> DNS -> IP/resource information -> routing -> connection -> application",
+      "expanded": [
+        "Human/application chooses a domain name",
+        "Local resolver checks cache",
+        "Recursive resolver performs hierarchy traversal if needed",
+        "Root identifies TLD authority",
+        "TLD identifies domain authority",
+        "Authoritative DNS provides resource record",
+        "Resolver caches result",
+        "Client receives result",
+        "Client connects to resulting endpoint",
+        "Internet routing transports packets",
+        "Application protocol exchanges data"
+      ]
+    },
+
+    "important_distinctions": {
+      "dns_is_not": [
+        "The Internet itself",
+        "IP routing",
+        "A web server",
+        "An HTTP protocol",
+        "A database in the ordinary centralized sense",
+        "A single global server",
+        "A guarantee that an IP address represents a unique physical machine"
+      ],
+
+      "dns_is": [
+        "A distributed naming system",
+        "A hierarchical database-like service",
+        "A protocol",
+        "A delegation system",
+        "A service-discovery mechanism",
+        "A critical Internet control-plane component"
+      ]
+    },
+
+    "machine_readable_summary": {
+      "system": "DNS",
+      "layer": "Application",
+      "architecture": "Hierarchical distributed database",
+      "primary_input": "Domain name",
+      "primary_output": "Resource records",
+      "common_output": [
+        "IPv4 address",
+        "IPv6 address"
+      ],
+      "transport": [
+        "UDP/53",
+        "TCP/53",
+        "TLS/853",
+        "HTTPS/443",
+        "QUIC"
+      ],
+      "hierarchy": [
+        "Root",
+        "TLD",
+        "Domain",
+        "Subdomain",
+        "Host/service"
+      ],
+      "core_servers": [
+        "Root servers",
+        "TLD servers",
+        "Authoritative servers",
+        "Recursive resolvers"
+      ],
+      "core_records": [
+        "A",
+        "AAAA",
+        "CNAME",
+        "MX",
+        "NS",
+        "SOA",
+        "PTR",
+        "TXT",
+        "SRV"
+      ],
+      "security": [
+        "DNSSEC",
+        "TSIG",
+        "Encrypted DNS transports",
+        "Query minimization"
+      ],
+      "performance": [
+        "Caching",
+        "TTL",
+        "Anycast",
+        "Multiple authoritative servers",
+        "Multiple resource records"
+      ]
+    },
+
+    "architectural_lineage": {
+      "ARPANET_HOSTS_TXT": {
+        "function": "Centralized hostname-to-address mapping"
+      },
+      "DNS_1983": {
+        "function": "Distributed hierarchical naming"
+      },
+      "RFC_882_883": {
+        "year": 1983,
+        "role": "Original DNS specifications"
+      },
+      "RFC_1034_1035": {
+        "year": 1987,
+        "role": "Foundational DNS specifications"
+      },
+      "BIND": {
+        "year": 1984,
+        "role": "Major Unix DNS implementation"
+      },
+      "DNSSEC": {
+        "role": "Cryptographic DNS data authentication"
+      },
+      "DoT_DoH_DoQ": {
+        "role": "Modern encrypted DNS transports"
+      },
+      "modern_distributed_dns": {
+        "role": "Global service discovery, CDNs, cloud infrastructure, enterprise networking, and Internet applications"
+      }
+    },
+
+    "reference_catalog": {
+      "primary_protocol_references": [
+        {
+          "rfc": "RFC 1034",
+          "title": "Domain Names - Concepts and Facilities",
+          "role": "DNS concepts and architecture"
+        },
+        {
+          "rfc": "RFC 1035",
+          "title": "Domain Names - Implementation and Specification",
+          "role": "DNS protocol implementation and wire format"
+        },
+        {
+          "rfc": "RFC 1123",
+          "title": "Requirements for Internet Hosts",
+          "role": "Host requirements and DNS-related behavior"
+        },
+        {
+          "rfc": "RFC 2136",
+          "title": "Dynamic Updates in the Domain Name System",
+          "role": "Dynamic DNS updates"
+        },
+        {
+          "rfc": "RFC 6891",
+          "title": "Extension Mechanisms for DNS",
+          "role": "EDNS"
+        },
+        {
+          "rfc": "RFC 7858",
+          "title": "DNS over TLS",
+          "role": "Encrypted DNS transport"
+        },
+        {
+          "rfc": "RFC 8484",
+          "title": "DNS Queries over HTTPS",
+          "role": "DoH"
+        },
+        {
+          "rfc": "RFC 9250",
+          "title": "DNS over Dedicated QUIC Connections",
+          "role": "DoQ"
+        },
+        {
+          "rfc": "RFC 9953",
+          "title": "DNS over CoAP",
+          "role": "Constrained IoT DNS transport"
+        }
+      ],
+
+      "security_references": [
+        "RFC 4033",
+        "RFC 4034",
+        "RFC 4035",
+        "RFC 5452",
+        "RFC 5011",
+        "RFC 8945",
+        "RFC 9076",
+        "RFC 9156"
+      ],
+
+      "source_reference": {
+        "title": "Domain Name System",
+        "source_type": "Wikipedia-derived reference supplied by user",
+        "citation": ":chatgpt-content-reference{index="1"}"
+      }
+    },
+
+    "source_caveats": {
+      "scope": "This schema follows the supplied DNS article as the primary source and organizes its technical material into a machine-readable architecture.",
+      "historical_material": "Historical claims are represented according to the supplied source rather than independently reconciled.",
+      "protocol_evolution": "DNS has accumulated many extensions beyond the original 1983 protocol.",
+      "transport_distinction": "Traditional DNS commonly uses UDP/TCP port 53, while newer privacy transports such as DoT, DoH, DoQ, and DoC use different protocol stacks.",
+      "dns_vs_registration": "Domain registration and DNS operation are related but distinct systems.",
+      "dns_vs_routing": "DNS provides naming/resource information; IP routing determines how packets reach an IP destination.",
+      "caching": "DNS answers can differ temporarily across resolvers because of caching and TTL behavior.",
+      "security": "DNSSEC provides authentication/integrity for DNS data but should not be confused with encryption of DNS traffic."
+    },
+
+    "record_integrity": {
+      "schema_goal": "Represent DNS as an end-to-end Internet naming and resolution system.",
+      "coverage": [
+        "Identity",
+        "Architecture",
+        "Namespace hierarchy",
+        "Zones",
+        "Delegation",
+        "Name servers",
+        "Resolvers",
+        "Recursive resolution",
+        "Iterative resolution",
+        "Caching",
+        "Resource records",
+        "Reverse DNS",
+        "Glue",
+        "Wire format",
+        "Transport",
+        "Encrypted DNS",
+        "DNSSEC",
+        "EDNS",
+        "Dynamic DNS",
+        "Zone transfers",
+        "CDN integration",
+        "Registration",
+        "Security",
+        "Privacy",
+        "History",
+        "Operations",
+        "Failure modes",
+        "Modern Internet architecture"
+      ],
+      "conceptual_pipeline": "Domain Name -> Resolver -> Cache/Hierarchy -> Authoritative DNS -> Resource Record -> IP/Service Endpoint -> Internet Routing -> Application Connection",
+      "status": "structured technical reference"
+    }
+  }
+}
