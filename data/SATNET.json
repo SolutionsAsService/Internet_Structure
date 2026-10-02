@@ -1,0 +1,1190 @@
+{
+  "SATNET": {
+    "record_metadata": {
+      "canonical_name": "Atlantic Packet Satellite Network",
+      "short_name": "SATNET",
+      "alternate_names": [
+        "Atlantic Packet Satellite Network"
+      ],
+      "entity_type": "Historical computer network",
+      "network_category": [
+        "Packet-switched network",
+        "Satellite network",
+        "Internetworking research network",
+        "Early Internet infrastructure"
+      ],
+      "historical_period": {
+        "development_period": "1970s",
+        "major_demonstration": "1977-11-22",
+        "later_research_activity": "Late 1970s and 1980s"
+      },
+      "country_of_origin": "United States",
+      "international_scope": true,
+      "implementation": "BBN Technologies",
+      "directing_organization": "Advanced Research Projects Agency (ARPA)",
+      "historical_status": "Historical / predecessor Internet network",
+      "historical_significance": "SATNET formed an early satellite-based segment of the emerging Internet and played a central role in demonstrating internetworking between heterogeneous packet networks.",
+      "source_type": "Wikipedia-derived historical article supplied by user",
+      "scope": "Complete article transformation",
+      "source_integrity": {
+        "source_provided_directly": true,
+        "external_verification_requested": false,
+        "unsupported_details_added": false
+      }
+    },
+
+    "identity": {
+      "name": "SATNET",
+      "full_name": "Atlantic Packet Satellite Network",
+      "description": "SATNET was an early satellite network that formed an initial segment of the Internet.",
+      "implementation": {
+        "organization": "BBN Technologies",
+        "direction": "Advanced Research Projects Agency (ARPA)"
+      },
+      "historical_role": [
+        "Early satellite packet network",
+        "International packet-network interconnection",
+        "Internetworking research platform",
+        "Early component of the emerging Internet"
+      ],
+      "relationship_to_internet": {
+        "role": "Early Internet segment",
+        "importance": "SATNET was central to experiments that demonstrated communication between heterogeneous packet-switched networks."
+      }
+    },
+
+    "visual_and_documentation_context": {
+      "article_images": [
+        {
+          "title": "Trans-Atlantic link to NORSAR and University College London in September 1973",
+          "context": "Depicts the trans-Atlantic connectivity that existed before SATNET."
+        },
+        {
+          "title": "SATNET, from the Peter T. Kirstein report to DARPA, 1977",
+          "context": "Historical SATNET network documentation associated with Peter T. Kirstein's work."
+        },
+        {
+          "title": "First Internet demonstration, linking the ARPANET, SATNET, and PRNET on November 22, 1977",
+          "context": "Depicts the first three-network demonstration involving ARPANET, SATNET, and PRNET."
+        },
+        {
+          "title": "SATNET diagram, mid 1979",
+          "context": "Historical SATNET network diagram from the late 1970s."
+        }
+      ]
+    },
+
+    "historical_origins": {
+      "conceptual_background": {
+        "year": 1970,
+        "proposal_author": "Larry Roberts",
+        "proposal": "A link between the ARPANET and the National Physical Laboratory (NPL) network.",
+        "significance": "This proposal provided an early conceptual basis for connecting geographically separate packet-switched networks."
+      },
+      "national_physical_laboratory": {
+        "organization": "National Physical Laboratory",
+        "abbreviation": "NPL",
+        "network_developer": "Donald Davies",
+        "historical_significance": "The NPL network was developed by Donald Davies, identified in the article as one of two independent inventors of the concept of packet switching."
+      },
+      "existing_norsar_link": {
+        "organization": "NORSAR",
+        "purpose": "Seismic research",
+        "original_link_speed": "2.4 kilobits/second",
+        "relationship_to_ARPA": "ARPA already maintained the link.",
+        "original_route": {
+          "satellite_station": "United Kingdom",
+          "subsequent_connection": "Cable to Norway"
+        }
+      }
+    },
+
+    "ucl_connection_and_pre_satnet_development": {
+      "research_group": {
+        "institution": "University College London",
+        "abbreviation": "UCL",
+        "research_leader": "Peter T. Kirstein",
+        "selection": {
+          "year": 1971,
+          "selected_over": "National Physical Laboratory",
+          "purpose": "Connection of the ARPANET"
+        }
+      },
+      "funding": {
+        "approved": true,
+        "year": 1973
+      },
+      "trans_atlantic_connectivity_change": {
+        "description": "By the time funding was approved in 1973, the trans-Atlantic connectivity associated with the NORSAR link had changed.",
+        "new_route": {
+          "satellite_station": "Nordic satellite station in Tanum, Sweden",
+          "subsequent_route": "Cable to Norway"
+        }
+      },
+      "norwegian_ARPANET_connection": {
+        "ARPA_devices": {
+          "device_type": "ARPANET Terminal Interface Processor",
+          "abbreviation": "TIP",
+          "quantity": 2
+        },
+        "location": "Norway",
+        "connection_method": "Satellite",
+        "installation_dates": [
+          "June 1973",
+          "September 1973"
+        ]
+      },
+      "ucl_terrestrial_connection": {
+        "connection": "UCL to Norway",
+        "medium": "Terrestrial circuit",
+        "operational_date": "July 1973",
+        "speed": "9.6 kilobits/second"
+      },
+      "historical_result": {
+        "event": "UCL became connected to the ARPANET",
+        "significance": "The connection formed what the source describes as the first heterogeneous interconnected network in the world."
+      },
+      "later_UCL_gateway_role": {
+        "gateway": "UCL",
+        "interconnection": "SRCnet",
+        "SRCnet_significance": "Forerunner of the UK's JANET network"
+      }
+    },
+
+    "shared_satellite_concept": {
+      "year": 1973,
+      "proposal_author": "Larry Roberts",
+      "concept": "Use a satellite's 64 kilobit/second link as a shared medium for multiple satellite earth stations within the satellite beam footprint.",
+      "significance": "The proposal provided the conceptual foundation for the packet-satellite network that became SATNET."
+    },
+
+    "development": {
+      "implementation": {
+        "developer": "Bob Kahn",
+        "result": "SATNET",
+        "relationship_to_roberts_proposal": "Implemented the concept of using a shared satellite link for multiple earth stations."
+      },
+      "major_participants": [
+        {
+          "organization": "BBN Technologies",
+          "role": "Network implementation and engineering"
+        },
+        {
+          "organization": "COMSAT",
+          "role": "Participant in SATNET development"
+        },
+        {
+          "organization": "Linkabit Corporation",
+          "role": "Participant in SATNET development"
+        },
+        {
+          "organization": "University of California, Los Angeles",
+          "abbreviation": "UCLA",
+          "role": "Research participant"
+        },
+        {
+          "organization": "University College London",
+          "abbreviation": "UCL",
+          "role": "International research participant and ARPANET connection point"
+        },
+        {
+          "organization": "Norwegian Defence Research Establishment",
+          "role": "Norwegian research participant"
+        },
+        {
+          "organization": "Royal Signals and Radar Establishment",
+          "country": "United Kingdom",
+          "role": "British research participant"
+        }
+      ],
+      "geographic_expansion": {
+        "period": "Late 1970s",
+        "countries_connected": [
+          "United States",
+          "United Kingdom",
+          "Norway",
+          "Germany",
+          "Italy"
+        ]
+      }
+    },
+
+    "network_interconnection_problem": {
+      "year": 1973,
+      "initiator": "Bob Kahn",
+      "problem": "Interconnection of the ARPANET with other packet networks.",
+      "networks_involved": [
+        "ARPANET",
+        "SATNET",
+        "PRNET"
+      ],
+      "technical_heterogeneity": {
+        "different_interfaces": true,
+        "different_packet_sizes": true,
+        "different_labeling": true,
+        "different_conventions": true,
+        "different_transmission_rates": true
+      },
+      "difficulty": "The differences between the networks made direct interconnection very difficult.",
+      "response": {
+        "designers": [
+          "Bob Kahn",
+          "Vint Cerf"
+        ],
+        "objective": "Design a net-to-net connection protocol."
+      }
+    },
+
+    "international_network_working_group": {
+      "name": "International Network Working Group",
+      "abbreviation": "INWG",
+      "leadership": {
+        "chair_or_leader": "Vint Cerf"
+      },
+      "formation_context": "The INWG was formed in response to the need for interoperable network protocols.",
+      "first_transmission_control_program_paper": {
+        "year": 1973,
+        "location": "University of Sussex",
+        "country": "United Kingdom",
+        "event": "INWG meeting",
+        "authors": [
+          "Bob Kahn",
+          "Vint Cerf"
+        ],
+        "subject": "Transmission Control Program",
+        "historical_significance": "The presentation represented an early formal proposal for protocols capable of connecting heterogeneous packet networks."
+      },
+      "published_proposal": {
+        "publication_year": 1974,
+        "title": "A Protocol for Packet Network Intercommunication",
+        "authors": [
+          "Vinton Cerf",
+          "Robert Kahn"
+        ],
+        "incorporated_concepts_from": [
+          {
+            "person": "Louis Pouzin",
+            "contribution_context": "CYCLADES network design"
+          },
+          {
+            "person": "Hubert Zimmermann",
+            "contribution_context": "CYCLADES and international networking research"
+          }
+        ]
+      }
+    },
+
+    "first_internet_demonstration": {
+      "date": "1977-11-22",
+      "description": "First Transmission Control Program demonstration linking SATNET, ARPANET, and PRNET.",
+      "networks": [
+        "SATNET",
+        "ARPANET",
+        "PRNET"
+      ],
+      "protocol_context": "Transmission Control Program",
+      "historical_significance": [
+        "Demonstrated internetworking across heterogeneous packet networks",
+        "Connected satellite, wired packet, and radio-based packet networking environments",
+        "Provided an important demonstration in the development of the Internet protocol architecture"
+      ],
+      "internet_legacy": "The work surrounding SATNET played a central role in the creation of the Internet protocol suite."
+    },
+
+    "relationship_to_ARPANET": {
+      "network": "ARPANET",
+      "relationship_type": [
+        "Connected network",
+        "Predecessor Internet infrastructure",
+        "Internetworking research partner"
+      ],
+      "historical_sequence": [
+        {
+          "year": 1970,
+          "event": "Larry Roberts proposed a connection between ARPANET and the NPL network."
+        },
+        {
+          "year": 1973,
+          "event": "UCL became connected to ARPANET through the trans-Atlantic/Norwegian satellite-linked infrastructure."
+        },
+        {
+          "year": 1973,
+          "event": "Larry Roberts proposed using a 64 kilobit/second satellite link as a shared medium."
+        },
+        {
+          "year": "1970s",
+          "event": "Bob Kahn implemented the shared satellite networking concept, resulting in SATNET."
+        },
+        {
+          "year": 1977,
+          "event": "SATNET participated in the first three-network Transmission Control Program demonstration."
+        }
+      ]
+    },
+
+    "relationship_to_PRNET": {
+      "network": "PRNET",
+      "description": "Radio-based packet network",
+      "relationship": "PRNET was one of the heterogeneous networks interconnected with SATNET and ARPANET.",
+      "demonstration": {
+        "date": "1977-11-22",
+        "role": "Participated in the first Transmission Control Program demonstration linking three heterogeneous packet networks."
+      }
+    },
+
+    "relationship_to_CYCLADES": {
+      "network": "CYCLADES",
+      "designers": [
+        "Louis Pouzin",
+        "Hubert Zimmermann"
+      ],
+      "relationship": "The 1974 Cerf-Kahn packet-network intercommunication proposal incorporated concepts developed by CYCLADES designers.",
+      "significance": "The source identifies CYCLADES-related concepts as part of the intellectual development of the internetworking protocol work associated with SATNET."
+    },
+
+    "international_connectivity": {
+      "participating_countries_by_late_1970s": [
+        "United States",
+        "United Kingdom",
+        "Norway",
+        "Germany",
+        "Italy"
+      ],
+      "major_international_nodes_and_organizations": [
+        {
+          "entity": "University College London",
+          "country": "United Kingdom"
+        },
+        {
+          "entity": "NORSAR",
+          "country": "Norway",
+          "purpose": "Seismic research"
+        },
+        {
+          "entity": "Norwegian Defence Research Establishment",
+          "country": "Norway"
+        },
+        {
+          "entity": "Royal Signals and Radar Establishment",
+          "country": "United Kingdom"
+        }
+      ],
+      "international_significance": "SATNET provided an early mechanism for connecting research networks across national boundaries using packet satellite technology."
+    },
+
+    "technical_architecture": {
+      "network_type": "Packet satellite network",
+      "underlying_medium": "Satellite communication",
+      "satellite_link_speed_concept": "64 kilobits/second",
+      "shared_medium": true,
+      "earth_station_model": "Multiple satellite earth stations sharing a satellite beam footprint",
+      "networking_model": "Interconnection of heterogeneous packet-switched networks",
+      "heterogeneous_networks": [
+        "ARPANET",
+        "SATNET",
+        "PRNET"
+      ],
+      "technical_challenges": [
+        "Different network interfaces",
+        "Different packet sizes",
+        "Different labeling schemes",
+        "Different network conventions",
+        "Different transmission rates"
+      ],
+      "architectural_significance": "SATNET provided a real-world environment in which protocols had to operate across networks with substantially different technical characteristics."
+    },
+
+    "pre_satnet_transatlantic_architecture": {
+      "norsar_link": {
+        "original_speed": "2.4 kilobits/second",
+        "purpose": "Seismic research",
+        "early_route": [
+          "Satellite station in the United Kingdom",
+          "Cable to Norway"
+        ]
+      },
+      "1973_route": {
+        "satellite_station": "Tanum, Sweden",
+        "connection": "Satellite across the Atlantic",
+        "continuation": "Cable to Norway"
+      },
+      "UCL_route": {
+        "UCL_to_Norway": "Terrestrial circuit",
+        "speed": "9.6 kilobits/second",
+        "operational": "July 1973"
+      }
+    },
+
+    "network_evolution": {
+      "phase_1": {
+        "period": "1970",
+        "description": "Larry Roberts proposes an ARPANET-to-NPL connection."
+      },
+      "phase_2": {
+        "period": "1971",
+        "description": "Peter T. Kirstein's UCL research group selected to connect to ARPANET."
+      },
+      "phase_3": {
+        "period": "1973",
+        "description": "Funding approved and trans-Atlantic satellite connectivity reorganized through Tanum, Sweden."
+      },
+      "phase_4": {
+        "period": "June–September 1973",
+        "description": "Two ARPANET TIPs installed in Norway and connected through satellite links."
+      },
+      "phase_5": {
+        "period": "July 1973",
+        "description": "UCL terrestrial connection to Norway becomes operational at 9.6 kilobits/second."
+      },
+      "phase_6": {
+        "period": "1973",
+        "description": "Larry Roberts proposes shared 64 kilobit/second satellite networking."
+      },
+      "phase_7": {
+        "period": "1970s",
+        "description": "Bob Kahn implements the shared satellite concept, producing SATNET."
+      },
+      "phase_8": {
+        "period": "1973–1974",
+        "description": "Bob Kahn and Vint Cerf develop the Transmission Control Program concept for heterogeneous network interconnection."
+      },
+      "phase_9": {
+        "period": "1977",
+        "description": "SATNET becomes part of the first ARPANET/SATNET/PRNET internetworking demonstration."
+      },
+      "phase_10": {
+        "period": "Late 1970s",
+        "description": "SATNET connects research sites in the United States, United Kingdom, Norway, Germany, and Italy."
+      },
+      "phase_11": {
+        "period": "1979",
+        "description": "Peter Kirstein chairs the International Cooperation Board for packet-satellite research coordination."
+      },
+      "phase_12": {
+        "period": "1980s",
+        "description": "SATNET continues to appear in packet-satellite research and testing, including later technical measurement work."
+      }
+    },
+
+    "international_cooperation_board": {
+      "name": "International Cooperation Board",
+      "abbreviation": "ICB",
+      "formed": 1979,
+      "formed_by": "Vint Cerf",
+      "chair": "Peter T. Kirstein",
+      "purpose": "Coordinate activities to develop packet satellite research."
+    },
+
+    "IPv4_addressing": {
+      "assigned_range": "4.x.x.x/8",
+      "address_family": "IPv4",
+      "status": "SATNET was assigned the 4.x.x.x/8 IPv4 address range in the list of assigned /8 IPv4 address blocks.",
+      "historical_significance": "The allocation places SATNET within the historical development of early Internet addressing."
+    },
+
+    "key_people": {
+      "Larry_Roberts": {
+        "name": "Larry Roberts",
+        "roles": [
+          "ARPANET development figure",
+          "Proposer of early inter-network connections",
+          "Proposer of shared satellite networking"
+        ],
+        "contributions": [
+          "1970 proposal for an ARPANET-NPL connection",
+          "1973 proposal to use a 64 kilobit/second satellite link as a shared medium"
+        ]
+      },
+      "Bob_Kahn": {
+        "name": "Bob Kahn",
+        "roles": [
+          "Internetworking researcher",
+          "SATNET developer",
+          "Transmission Control Program co-designer"
+        ],
+        "contributions": [
+          "Implemented Larry Roberts' shared satellite-link concept",
+          "Helped develop the protocol architecture for connecting heterogeneous networks",
+          "Participated in the first Transmission Control Program demonstration"
+        ]
+      },
+      "Vint_Cerf": {
+        "name": "Vint Cerf",
+        "roles": [
+          "Internetworking researcher",
+          "Transmission Control Program co-designer",
+          "Leader of the International Network Working Group"
+        ],
+        "contributions": [
+          "Co-developed the Transmission Control Program with Bob Kahn",
+          "Led the INWG",
+          "Presented the early Transmission Control Program proposal",
+          "Later formed the International Cooperation Board"
+        ]
+      },
+      "Peter_T_Kirstein": {
+        "name": "Peter T. Kirstein",
+        "roles": [
+          "University College London researcher",
+          "Leader of UCL's ARPANET research group",
+          "Chair of International Cooperation Board"
+        ],
+        "contributions": [
+          "Led the UCL group selected to connect with ARPANET",
+          "Participated in early international networking",
+          "Chaired the ICB beginning in 1979"
+        ]
+      },
+      "Donald_Davies": {
+        "name": "Donald Davies",
+        "role": "NPL network developer",
+        "contribution": "Developed the NPL network and is identified by the source as one of two independent inventors of packet switching."
+      },
+      "Louis_Pouzin": {
+        "name": "Louis Pouzin",
+        "role": "CYCLADES network designer",
+        "contribution": "Developed concepts later incorporated into the Cerf-Kahn packet-network intercommunication proposal."
+      },
+      "Hubert_Zimmermann": {
+        "name": "Hubert Zimmermann",
+        "role": "CYCLADES network designer",
+        "contribution": "Developed concepts later incorporated into the Cerf-Kahn internetworking proposal."
+      },
+      "JCR_Licklider": {
+        "name": "J. C. R. Licklider",
+        "alternate_name": "Joseph Carl Robnett Licklider",
+        "role": "Former ARPA official and computing/networking pioneer",
+        "source_context": "Later oral-history recollection of difficulties arranging international satellite links.",
+        "ARPA_period_recalled": "1974–1975"
+      },
+      "R_Metcalfe": {
+        "name": "R. Metcalfe",
+        "source_role": "Acknowledged contributor to early discussions of international network protocols."
+      },
+      "D_Scantedbury": {
+        "name": "R. Scantlebury",
+        "source_role": "Acknowledged contributor to early discussions of international network protocols."
+      },
+      "D_Walden": {
+        "name": "D. Walden",
+        "source_role": "Acknowledged contributor to early discussions of international network protocols."
+      },
+      "S_Crocker": {
+        "name": "S. Crocker",
+        "source_role": "Commented on creation and destruction of associations in early protocol discussions."
+      }
+    },
+
+    "organizations": {
+      "ARPA": {
+        "full_name": "Advanced Research Projects Agency",
+        "role": [
+          "Directed SATNET implementation",
+          "Provided funding",
+          "Supported ARPANET and satellite networking research"
+        ]
+      },
+      "BBN_Technologies": {
+        "name": "BBN Technologies",
+        "role": "Implemented SATNET under ARPA direction."
+      },
+      "COMSAT": {
+        "name": "COMSAT",
+        "role": "Participant in SATNET development."
+      },
+      "Linkabit_Corporation": {
+        "name": "Linkabit Corporation",
+        "role": "Participant in SATNET development."
+      },
+      "UCLA": {
+        "name": "University of California, Los Angeles",
+        "role": "Participant in SATNET and broader ARPANET/internetworking research."
+      },
+      "UCL": {
+        "name": "University College London",
+        "role": [
+          "International ARPANET research participant",
+          "Early international connection point",
+          "SATNET research participant"
+        ]
+      },
+      "NORSAR": {
+        "name": "NORSAR",
+        "role": "Seismic research organization associated with the original ARPA 2.4 kilobit/second link."
+      },
+      "Norwegian_Defence_Research_Establishment": {
+        "name": "Norwegian Defence Research Establishment",
+        "role": "SATNET research participant."
+      },
+      "Royal_Signals_and_Radar_Establishment": {
+        "name": "Royal Signals and Radar Establishment",
+        "country": "United Kingdom",
+        "role": "SATNET research participant."
+      },
+      "International_Network_Working_Group": {
+        "name": "International Network Working Group",
+        "abbreviation": "INWG",
+        "role": "International coordination and protocol development for network interconnection."
+      },
+      "International_Cooperation_Board": {
+        "name": "International Cooperation Board",
+        "abbreviation": "ICB",
+        "role": "Coordination of packet-satellite research activities."
+      }
+    },
+
+    "network_relationship_graph": {
+      "SATNET": {
+        "connected_to": [
+          "ARPANET",
+          "PRNET",
+          "University College London",
+          "NORSAR",
+          "Norwegian Defence Research Establishment",
+          "Royal Signals and Radar Establishment",
+          "UCLA"
+        ],
+        "developed_by": [
+          "BBN Technologies",
+          "ARPA"
+        ],
+        "protocol_research_relationships": [
+          "Transmission Control Program",
+          "International Network Working Group",
+          "CYCLADES"
+        ]
+      },
+      "ARPANET": {
+        "relationship_to_SATNET": "Interconnected packet network and principal predecessor Internet network."
+      },
+      "PRNET": {
+        "relationship_to_SATNET": "Radio-based packet network interconnected with SATNET and ARPANET in the 1977 demonstration."
+      },
+      "UCL": {
+        "relationship_to_SATNET": "Major international research and connection site."
+      },
+      "NORSAR": {
+        "relationship_to_SATNET": "Existing seismic-research satellite connectivity formed part of the infrastructure from which the international packet-satellite connection evolved."
+      },
+      "CYCLADES": {
+        "relationship_to_SATNET": "Provided conceptual contributions incorporated into the Cerf-Kahn internetworking protocol proposal."
+      }
+    },
+
+    "protocol_development": {
+      "problem": "Different packet networks could not easily communicate because of differences in interfaces, packet sizes, labeling, conventions, and transmission rates.",
+      "solution_direction": "Net-to-net connection protocol",
+      "protocol": {
+        "name": "Transmission Control Program",
+        "developers": [
+          "Bob Kahn",
+          "Vint Cerf"
+        ],
+        "first_paper_presentation": {
+          "year": 1973,
+          "location": "University of Sussex",
+          "country": "United Kingdom"
+        },
+        "published": {
+          "year": 1974,
+          "title": "A Protocol for Packet Network Intercommunication"
+        }
+      },
+      "conceptual_influences": [
+        "CYCLADES",
+        "Louis Pouzin",
+        "Hubert Zimmermann",
+        "Donald Davies"
+      ],
+      "historical_result": "The SATNET/ARPANET/PRNET demonstration helped establish the feasibility and importance of interoperable network protocols."
+    },
+
+    "satellite_networking_model": {
+      "core_concept": "Shared satellite communication medium",
+      "proposed_bandwidth": "64 kilobits/second",
+      "participating_sites": "Multiple satellite earth stations",
+      "coverage_model": "Satellite beam footprint",
+      "networking_principle": "Multiple geographically separated packet-network sites could use a common satellite communication medium.",
+      "importance": "This architecture enabled international packet networking over satellite infrastructure."
+    },
+
+    "operational_and_research_context": {
+      "primary_context": "Research and development",
+      "organizations": [
+        "ARPA",
+        "BBN Technologies",
+        "COMSAT",
+        "Linkabit Corporation",
+        "UCLA",
+        "UCL",
+        "Norwegian Defence Research Establishment",
+        "Royal Signals and Radar Establishment"
+      ],
+      "research_domains": [
+        "Packet switching",
+        "Satellite networking",
+        "Internetworking",
+        "Network protocols",
+        "International networking",
+        "Network measurement",
+        "Distributed networking research"
+      ]
+    },
+
+    "licklider_oral_history": {
+      "person": "J. C. R. Licklider",
+      "recalled_period": "1974–1975",
+      "context": "Licklider described difficulties encountered while trying to establish satellite links with Britain.",
+      "issues_described": [
+        "Difficult negotiations with the British General Post Office",
+        "Insurance requirements related to equipment",
+        "Concerns about unauthorized use of British telephone infrastructure",
+        "Concerns about bypassing telecommunications tolls",
+        "Difficulty obtaining permission for an international research link"
+      ],
+      "intended_connectivity": {
+        "goal": "Extend an ARPANET link",
+        "desired_destination": "Stuttgart",
+        "additional_destination": "An American military base in Germany",
+        "exact_base": "Not identified in Licklider's recollection"
+      },
+      "historical_significance": "The recollection illustrates the administrative and telecommunications-policy difficulties involved in extending experimental packet networks across national telecommunications infrastructure.",
+      "source": {
+        "type": "Oral history",
+        "interviewer": "James Pelkey",
+        "institution": "Computer History Museum",
+        "date": "1988-06-28",
+        "page": 7
+      }
+    },
+
+    "timeline": [
+      {
+        "date": "1970",
+        "event": "Larry Roberts proposed a link between ARPANET and the National Physical Laboratory network."
+      },
+      {
+        "date": "1971",
+        "event": "Peter T. Kirstein's University College London research group was selected instead of NPL for ARPANET connection."
+      },
+      {
+        "date": "1973",
+        "event": "Funding for the UCL connection was approved."
+      },
+      {
+        "date": "June 1973",
+        "event": "One ARPANET Terminal Interface Processor was installed in Norway and connected via satellite."
+      },
+      {
+        "date": "July 1973",
+        "event": "UCL's terrestrial circuit to Norway became operational at 9.6 kilobits/second."
+      },
+      {
+        "date": "September 1973",
+        "event": "A second ARPANET TIP was installed in Norway and connected via satellite."
+      },
+      {
+        "date": "1973",
+        "event": "UCL became connected to ARPANET, forming what the source describes as the first heterogeneous interconnected network in the world."
+      },
+      {
+        "date": "1973",
+        "event": "Larry Roberts proposed using a 64 kilobit/second satellite link as a shared medium."
+      },
+      {
+        "date": "1973",
+        "event": "Bob Kahn considered interconnection between ARPANET and other networks and began work that resulted in SATNET."
+      },
+      {
+        "date": "September 1973",
+        "event": "Bob Kahn and Vint Cerf presented their first paper on the Transmission Control Program at an INWG meeting at the University of Sussex."
+      },
+      {
+        "date": "1974",
+        "event": "Cerf and Kahn published their protocol proposal for packet-network intercommunication."
+      },
+      {
+        "date": "Late 1970s",
+        "event": "SATNET connected research sites in the United States, United Kingdom, Norway, Germany, and Italy."
+      },
+      {
+        "date": "1977-11-22",
+        "event": "First Transmission Control Program demonstration linking SATNET, ARPANET, and PRNET."
+      },
+      {
+        "date": "1979",
+        "event": "Peter T. Kirstein chaired the International Cooperation Board formed by Vint Cerf."
+      },
+      {
+        "date": "1980s",
+        "event": "SATNET remained part of packet-satellite research and measurement work."
+      }
+    ],
+
+    "first_heterogeneous_interconnected_network": {
+      "date": "1973",
+      "participants": [
+        "ARPANET",
+        "University College London"
+      ],
+      "connection_path": {
+        "UCL": "Terrestrial circuit to Norway",
+        "Norway": "Satellite connection to ARPANET infrastructure"
+      },
+      "significance": "The article describes this as the first heterogeneous interconnected network in the world.",
+      "historical_transition": "This early international connection evolved into SATNET."
+    },
+
+    "first_three_network_internet_demonstration": {
+      "date": "1977-11-22",
+      "networks": {
+        "network_1": "ARPANET",
+        "network_2": "SATNET",
+        "network_3": "PRNET"
+      },
+      "protocol": "Transmission Control Program",
+      "demonstration_type": "Heterogeneous network interconnection",
+      "historical_significance": "The demonstration was an important step toward the Internet protocol suite."
+    },
+
+    "research_and_measurement": {
+      "documented_later_work": {
+        "title": "Distributed Testing and Measurement across the Atlantic Packet Satellite Network (SATNET)",
+        "date": "1988-06-06",
+        "type": "Technical report"
+      },
+      "significance": "Indicates continued technical research and measurement involving SATNET into the late 1980s."
+    },
+
+    "historical_significance": {
+      "primary_contributions": [
+        "Early satellite-based packet networking",
+        "International computer networking",
+        "Interconnection of heterogeneous packet networks",
+        "Development and demonstration of internetworking protocols",
+        "Contribution to the emergence of the Internet protocol suite"
+      ],
+      "internet_architecture_legacy": {
+        "heterogeneous_networking": "Demonstrated that networks with different interfaces, packet sizes, conventions, and transmission rates could be interconnected.",
+        "satellite_internet": "Provided an early example of satellite infrastructure being incorporated into packet-switched internetworking.",
+        "protocol_development": "Created a practical environment for the development and demonstration of network-to-network protocols.",
+        "international_networking": "Connected research institutions across the United States and Europe."
+      }
+    },
+
+    "terminology": {
+      "SATNET": "Atlantic Packet Satellite Network",
+      "ARPANET": "Advanced Research Projects Agency Network",
+      "PRNET": "Radio-based packet network referenced as a heterogeneous network peer during the 1977 demonstration.",
+      "NPL": "National Physical Laboratory network",
+      "UCL": "University College London",
+      "NORSAR": "Organization associated with seismic research and the early ARPA satellite link",
+      "TIP": "Terminal Interface Processor",
+      "INWG": "International Network Working Group",
+      "ICB": "International Cooperation Board",
+      "TCP": "Transmission Control Program in the historical terminology used by the article"
+    },
+
+    "reference_catalog": {
+      "primary_references": [
+        {
+          "authors": [
+            "Peter T. Kirstein"
+          ],
+          "year": 1999,
+          "title": "Early experiences with the Arpanet and Internet in the United Kingdom",
+          "publication": "IEEE Annals of the History of Computing",
+          "volume": 21,
+          "issue": 1,
+          "pages": "38–44",
+          "doi": "10.1109/85.759368",
+          "issn": "1934-1547",
+          "s2cid": "1558618"
+        },
+        {
+          "organization": "NORSAR",
+          "title": "ARPANET - NORSAR",
+          "archive_date": "2017-09-11",
+          "retrieved": "2020-02-17"
+        },
+        {
+          "source": "Stanford Oral History Collections",
+          "title": "Vinton G. Cerf : An Oral History",
+          "year": 2020,
+          "page": 97,
+          "retrieved": "2024-06-29"
+        },
+        {
+          "title": "Distributed Testing and Measurement across the Atlantic Packet Satellite Network (SATNET)",
+          "date": "1988-06-06",
+          "format": "PDF"
+        },
+        {
+          "authors": [
+            "Vinton Cerf",
+            "Robert Kahn"
+          ],
+          "year": 1974,
+          "title": "A Protocol for Packet Network Intercommunication",
+          "publication": "IEEE Transactions on Communications",
+          "volume": 22,
+          "issue": 5,
+          "pages": "637–648",
+          "doi": "10.1109/TCOM.1974.1092259",
+          "issn": "1558-0857"
+        },
+        {
+          "publication": "The Economist",
+          "date": "2013-12-13",
+          "title": "The internet's fifth man"
+        },
+        {
+          "organization": "Internet Society",
+          "year": 1997,
+          "title": "Brief History of the Internet",
+          "pages": [
+            8,
+            13
+          ]
+        },
+        {
+          "source": "Moschovitis 1999",
+          "page": 104
+        },
+        {
+          "author": "J. C. R. Licklider",
+          "interviewer": "James Pelkey",
+          "institution": "Computer History Museum",
+          "date": "1988-06-28",
+          "title": "Interview of Joseph Carl Robnett (J.C.R.) Licklider",
+          "page": 7
+        }
+      ],
+      "source_acknowledgements_in_Cerf_Kahn_paper": [
+        "R. Metcalfe",
+        "R. Scantlebury",
+        "D. Walden",
+        "H. Zimmerman",
+        "D. Davies",
+        "L. Pouzin",
+        "S. Crocker"
+      ]
+    },
+
+    "further_reading": [
+      {
+        "author": "L. G. Roberts",
+        "year": 1973,
+        "title": "Dynamic Allocation of Satellite Capacity through Packet Reservation",
+        "publication_context": "Proceedings of the NCCC",
+        "volume": 42,
+        "pages": "695–702"
+      },
+      {
+        "author": "Peter T. Kirstein",
+        "year": 1978,
+        "title": "University College London ARPANET Project, Annual Report 1977",
+        "date": "April 1978"
+      },
+      {
+        "organization": "Bolt Beranek and Newman Inc.",
+        "year": 1983,
+        "title": "Combined Quarterly Technical Report No. 29",
+        "date": "May 1983",
+        "prepared_for": "Defense Advanced Research Projects Agency"
+      },
+      {
+        "author": "Peter T. Kirstein",
+        "year": 1999,
+        "title": "Early Experiences With the Arpanet and Internet in the United Kingdom",
+        "publication": "IEEE Annals of the History of Computing",
+        "volume": 21,
+        "issue": 1,
+        "pages": "38–44"
+      },
+      {
+        "author": "Pål Spilling",
+        "year": 2010,
+        "title": "The Internet Development Process: Observations and Reflections",
+        "publication_context": "History of Nordic Computing 3",
+        "conference": "Third IFIP WG 9.7 Conference",
+        "location": "Stockholm, Sweden",
+        "dates": "October 18–20, 2010"
+      },
+      {
+        "authors": [
+          "Katie Hafner",
+          "Matthew Lyon"
+        ],
+        "year": 1998,
+        "title": "Where Wizards Stay Up Late: The Origins Of The Internet",
+        "publisher": "Simon and Schuster",
+        "pages": "221–226",
+        "isbn": "9780684832678"
+      }
+    ],
+
+    "source_caveats": {
+      "scope": "This record reflects the supplied SATNET article rather than an independently researched reconstruction.",
+      "terminology": {
+        "TCP": "The article uses the historical term 'Transmission Control Program'; this record preserves that terminology rather than silently replacing it with later TCP terminology."
+      },
+      "historical_claims": {
+        "first_heterogeneous_network": "The article explicitly describes the 1973 UCL/ARPANET connection as the first heterogeneous interconnected network in the world.",
+        "first_internet_demonstration": "The article describes the November 22, 1977 ARPANET/SATNET/PRNET demonstration as the first Transmission Control Program demonstration.",
+        "internet_protocol_suite": "The article states that SATNET played a central role in the creation of the Internet protocol suite."
+      },
+      "network_scope": {
+        "countries": "The article states that by the late 1970s SATNET connected research sites in the United States, United Kingdom, Norway, Germany, and Italy.",
+        "specific_site_counts": "The article does not provide a complete node-by-node SATNET inventory."
+      },
+      "technical_scope": {
+        "satellite_system_details": "The article gives the shared 64 kilobit/second concept but does not provide a complete engineering specification for the satellite system.",
+        "routing": "The article does not provide a complete SATNET routing algorithm or packet-forwarding specification.",
+        "hardware": "The article identifies ARPANET TIPs in Norway but does not provide a complete SATNET hardware inventory."
+      },
+      "IPv4": {
+        "address_range": "The source states that SATNET was assigned 4.x.x.x/8 but does not provide additional details about historical address utilization."
+      },
+      "licklider_recollection": {
+        "status": "Oral-history recollection",
+        "limitation": "The military-base destination is not identified in the recollection."
+      },
+      "source_boundary": "No unsupported claims about exact satellites, launch vehicles, frequencies, cryptographic systems, military missions, or operational lifespan have been added."
+    },
+
+    "machine_readable_summary": {
+      "entity": "SATNET",
+      "full_name": "Atlantic Packet Satellite Network",
+      "type": "Early packet satellite network",
+      "implemented_by": "BBN Technologies",
+      "directed_by": "ARPA",
+      "origin_period": "1970s",
+      "precursor_connectivity": {
+        "NORSAR": "2.4 kilobit/second ARPA seismic-research link",
+        "UCL": "Connected through Norway in 1973",
+        "transatlantic_satellite_station": "Tanum, Sweden"
+      },
+      "shared_satellite_concept": {
+        "proposer": "Larry Roberts",
+        "bandwidth": "64 kilobits/second",
+        "implementation": "Bob Kahn"
+      },
+      "major_participants": [
+        "BBN Technologies",
+        "COMSAT",
+        "Linkabit Corporation",
+        "UCLA",
+        "University College London",
+        "Norwegian Defence Research Establishment",
+        "Royal Signals and Radar Establishment"
+      ],
+      "connected_networks": [
+        "ARPANET",
+        "PRNET"
+      ],
+      "major_protocol": "Transmission Control Program",
+      "protocol_developers": [
+        "Bob Kahn",
+        "Vint Cerf"
+      ],
+      "first_three_network_demonstration": {
+        "date": "1977-11-22",
+        "networks": [
+          "ARPANET",
+          "SATNET",
+          "PRNET"
+        ]
+      },
+      "international_research_sites_by_late_1970s": [
+        "United States",
+        "United Kingdom",
+        "Norway",
+        "Germany",
+        "Italy"
+      ],
+      "ICB": {
+        "formed": 1979,
+        "formed_by": "Vint Cerf",
+        "chair": "Peter T. Kirstein"
+      },
+      "historical_legacy": [
+        "Satellite packet networking",
+        "International internetworking",
+        "Heterogeneous network interoperability",
+        "Early Internet protocol development"
+      ]
+    },
+
+    "architectural_lineage": {
+      "packet_switching_origins": [
+        {
+          "network": "NPL network",
+          "person": "Donald Davies",
+          "role": "Early packet-switching network"
+        },
+        {
+          "network": "ARPANET",
+          "role": "Major packet-switched research network"
+        }
+      ],
+      "international_link": {
+        "NORSAR": "Existing satellite-connected seismic research link",
+        "Norway": "Satellite-linked ARPANET infrastructure",
+        "UCL": "Terrestrial connection into the Norwegian infrastructure"
+      },
+      "SATNET": {
+        "origin": "Shared satellite-link concept",
+        "proposer": "Larry Roberts",
+        "implementer": "Bob Kahn"
+      },
+      "internetworking_protocols": {
+        "developers": [
+          "Bob Kahn",
+          "Vint Cerf"
+        ],
+        "influences": [
+          "CYCLADES",
+          "Louis Pouzin",
+          "Hubert Zimmermann"
+        ]
+      },
+      "demonstration": {
+        "date": "1977-11-22",
+        "network": [
+          "ARPANET",
+          "SATNET",
+          "PRNET"
+        ]
+      },
+      "internet": {
+        "legacy": "SATNET contributed to the development and demonstration of protocols for interconnecting heterogeneous networks."
+      }
+    },
+
+    "record_integrity": {
+      "canonical_entity_scope": "SATNET / Atlantic Packet Satellite Network",
+      "whole_entity_record": true,
+      "includes_history": true,
+      "includes_predecessor_connectivity": true,
+      "includes_UCL_connection": true,
+      "includes_NORSAR_context": true,
+      "includes_shared_satellite_concept": true,
+      "includes_development": true,
+      "includes_protocol_development": true,
+      "includes_1977_demonstration": true,
+      "includes_international_participants": true,
+      "includes_key_people": true,
+      "includes_organizations": true,
+      "includes_IPv4_allocation": true,
+      "includes_1979_ICB": true,
+      "includes_Licklider_oral_history": true,
+      "includes_references": true,
+      "includes_further_reading": true,
+      "includes_source_caveats": true,
+      "unsupported_details_invented": false,
+      "external_sources_substituted": false,
+      "source_terminology_preserved": true
+    }
+  }
+}
