@@ -1,0 +1,1123 @@
+{
+  "entity": {
+    "name": "AT&T Corporation",
+    "entity_type": "telecommunications_company",
+    "aliases": [
+      "American Telephone and Telegraph Company",
+      "AT&T Corp.",
+      "AT&T",
+      "Ma Bell"
+    ],
+    "status": "dissolved",
+    "founded": {
+      "date": "1885-03-03",
+      "location": {
+        "city": "New York City",
+        "state": "New York",
+        "country": "United States"
+      }
+    },
+    "dissolved": {
+      "date": "2024-05-01",
+      "method": "internal corporate merger",
+      "successor": "AT&T Inc."
+    },
+    "entity_history": {
+      "original_name": "American Telephone and Telegraph Company",
+      "original_name_period": "1885-1994",
+      "parent_relationships": [
+        {
+          "parent": "American Bell",
+          "period": "1885-1899"
+        },
+        {
+          "parent": "AT&T Inc.",
+          "period": "2005-2024"
+        }
+      ],
+      "predecessor": "American Bell",
+      "successor": "AT&T Inc.",
+      "fate": "Merged"
+    },
+    "corporate_classification": {
+      "type": "Subsidiary",
+      "industry": "Telecommunications",
+      "public_listing": {
+        "exchange": "NYSE",
+        "ticker": "T"
+      },
+      "index_memberships": {
+        "S&P_100": {
+          "until": 2024
+        },
+        "S&P_500": {
+          "until": 2024
+        },
+        "DJIA": {
+          "until": 2015
+        }
+      }
+    },
+    "headquarters": {
+      "location": "Bedminster, New Jersey, United States"
+    },
+    "area_served": [
+      "United States"
+    ],
+    "founder": {
+      "name": "Theodore Newton Vail"
+    },
+    "products_and_services": [
+      "Telephone services",
+      "Long-distance calling",
+      "Internet services",
+      "Voice telecommunications",
+      "Video telecommunications",
+      "Data telecommunications",
+      "Professional services"
+    ],
+    "customers": [
+      "Businesses",
+      "Consumers",
+      "Government agencies"
+    ],
+    "subsidiaries_and_related_entities": [
+      "AT&T Communications",
+      "AT&T Alascom",
+      "AT&T Laboratories",
+      "AT&T Long Lines",
+      "Western Electric",
+      "Transoceanic Cable Ship Company",
+      "AT&T Submarine Systems Inc."
+    ]
+  },
+
+  "historical_overview": {
+    "summary": "AT&T Corporation was an American telecommunications company that provided voice, video, data, Internet telecommunications, and professional services to businesses, consumers, and government agencies.",
+    "bell_system_role": {
+      "description": "AT&T became the central corporate entity associated with the Bell System and, for much of the twentieth century, operated a large regulated telecommunications monopoly in the United States.",
+      "peak_period": "1950s-1960s",
+      "employees_at_peak": 1000000,
+      "revenue_examples": [
+        {
+          "year": 1950,
+          "nominal_revenue_usd": 3000000000
+        },
+        {
+          "year": 1966,
+          "nominal_revenue_usd": 12000000000
+        }
+      ],
+      "nickname": "Ma Bell"
+    },
+    "acquisition_by_sbc": {
+      "announcement_date": "2005-01-31",
+      "acquirer": "SBC Communications",
+      "announced_value_usd": 16000000000,
+      "completion_year": 2005,
+      "post_merger_brand": "AT&T",
+      "corporate_effect": "SBC Communications adopted the AT&T name and ticker while AT&T Corporation continued temporarily as a separate long-distance subsidiary."
+    }
+  },
+
+  "origins": {
+    "bell_patent_association": {
+      "year": 1874,
+      "purpose": "Legal entity established to protect Alexander Graham Bell's telephone patents."
+    },
+    "bell_telephone_company": {
+      "year": 1875,
+      "description": "The original verbal agreement protecting Bell's telephone system was formalized as the Bell Telephone Company."
+    },
+    "american_bell": {
+      "role": "Parent organization from which AT&T's long-distance telecommunications operations developed."
+    },
+    "long_lines": {
+      "initial_development": {
+        "year": 1880,
+        "organization": "American Bell",
+        "purpose": "Development of a nationwide long-distance telephone network."
+      },
+      "incorporation": {
+        "date": "1885-03-03",
+        "company": "American Telephone and Telegraph Company",
+        "location": "New York",
+        "purpose": "Creation of a separate company to develop and operate long-distance telecommunications."
+      },
+      "network_expansion": [
+        {
+          "year": 1892,
+          "milestone": "Long-distance telephone network reached Chicago, Illinois."
+        },
+        {
+          "period": "late_19th_century",
+          "milestone": "Network continued expanding across the United States."
+        }
+      ]
+    },
+    "1899_reorganization": {
+      "date": "1899-12-30",
+      "event": "American Bell transferred its assets into American Telephone and Telegraph Company.",
+      "reason": "Massachusetts corporate law restricted American Bell's capitalization and limited its ability to expand.",
+      "result": "AT&T became the parent of American Bell and the Bell System."
+    }
+  },
+
+  "theodore_newton_vail": {
+    "presidency": [
+      {
+        "start": "1885",
+        "end": "1887",
+        "title": "President"
+      },
+      {
+        "start": "1907",
+        "end": "1919",
+        "title": "President"
+      }
+    ],
+    "second_presidency_start": "1907-04-30",
+    "corporate_philosophy": {
+      "principle": "One Policy, One System, Universal Service",
+      "belief": "Vail advocated the superiority of a unified telephone system."
+    },
+    "expansion_strategy": {
+      "description": "AT&T acquired smaller telephone companies and expanded its telecommunications footprint.",
+      "notable_target": "Western Union"
+    }
+  },
+
+  "kingsbury_commitment": {
+    "period": "early_20th_century",
+    "participants": [
+      "AT&T",
+      "United States federal government"
+    ],
+    "context": "AT&T's acquisition and expansion activities attracted antitrust scrutiny.",
+    "terms": [
+      "AT&T could continue operating under a regulated monopoly structure.",
+      "AT&T agreed to divest its interest in Western Union.",
+      "Government antitrust pressure was reduced through negotiated conditions."
+    ],
+    "long_term_effect": "The arrangement contributed to the regulatory structure surrounding AT&T and the Bell System until the 1984 breakup."
+  },
+
+  "radio_and_wireless_development": {
+    "early_radio_interest": {
+      "year": 1906,
+      "event": "AT&T sent observers to Reginald Fessenden's radiotelephone demonstration."
+    },
+    "vacuum_tube_development": {
+      "technology": "Vacuum-tube transmitters",
+      "purpose": "Long-distance land-line amplification and later radiotelephony."
+    },
+    "lee_de_forest": {
+      "relationship": "AT&T acquired commercial rights to Lee de Forest's vacuum-tube and radio patents."
+    },
+    "1915_radiotelephony_tests": {
+      "station": "NAA",
+      "location": "Arlington, Virginia",
+      "results": [
+        "Long-distance audio records",
+        "Reception as far west as Hawaii",
+        "Speech transmission heard in Paris, France"
+      ]
+    },
+    "RCA_relationship": {
+      "organization": "Radio Corporation of America",
+      "formed": 1919,
+      "cross_licensing": {
+        "effective_date": "1920-07-01",
+        "AT&T_rights": "Exclusive United States rights for Public Service Telephony."
+      }
+    },
+    "broadcasting": {
+      "1921_strategy": {
+        "engineers": [
+          "John F. Bratney",
+          "Harley C. Lauderback"
+        ],
+        "proposal": {
+          "stations": 38,
+          "networking_method": "Long-distance telephone lines",
+          "commercial_model": "Stations could be hired as toll stations."
+        }
+      },
+      "1922_operations": {
+        "stations_established": [
+          "WBAY / WEAF",
+          "WCAP"
+        ],
+        "primary_station": "WEAF",
+        "location": "New York City"
+      },
+      "WEAF_chain": {
+        "first_permanent_link_year": 1923,
+        "origin": "WEAF",
+        "destination": "WMAF",
+        "destination_location": "South Dartmouth, Massachusetts",
+        "description": "Network of radio stations interconnected through AT&T long-distance telephone lines."
+      }
+    }
+  },
+
+  "broadcasting_company_of_america": {
+    "abbreviation": "BCA",
+    "formation_date": "1926-05-11",
+    "purpose": "Consolidation of AT&T's radio broadcasting operations.",
+    "headquarters": "195 Broadway, New York City",
+    "network": {
+      "standard_WEAF_chain": {
+        "stations": 17,
+        "geographic_scope": [
+          "Northeastern United States",
+          "Kansas City, Missouri"
+        ]
+      }
+    },
+    "sale_to_RCA": {
+      "date": "1926-07-21",
+      "buyer": "RCA",
+      "sale_price_usd": 1000000,
+      "subsequent_use": "Assets contributed to the formation of the National Broadcasting Company."
+    },
+    "strategic_result": "AT&T exited direct broadcasting while retaining the profitable business of leasing long-distance telephone lines to radio networks."
+  },
+
+  "undersea_communications": {
+    "overview": "AT&T developed, installed, maintained, and supplied infrastructure for domestic and international submarine telecommunications networks.",
+    "military_context": {
+      "network": "Sound Surveillance System",
+      "abbreviation": "SOSUS",
+      "purpose": "Undersea surveillance and foreign submarine detection.",
+      "period": "1950s",
+      "AT&T_involvement": "The source states that AT&T was probably involved according to internal employees."
+    },
+    "commercial_cable_operations": {
+      "start_year": 1955,
+      "purpose": [
+        "Long-distance telephone communications",
+        "Data communications",
+        "International telecommunications"
+      ]
+    },
+    "organizational_components": {
+      "AT&T_Long_Lines": {
+        "responsibilities": [
+          "Cable laying",
+          "Cable maintenance",
+          "Long-distance telecommunications infrastructure"
+        ]
+      },
+      "Western_Electric": {
+        "responsibilities": [
+          "Manufacture of undersea coaxial equipment",
+          "Manufacture of later fiber-optic cable",
+          "Manufacture of repeaters"
+        ],
+        "manufacturing_locations": [
+          {
+            "location": "Clark, New Jersey",
+            "products": [
+              "Repeaters",
+              "Undersea equipment"
+            ]
+          },
+          {
+            "location": "Baltimore, Maryland",
+            "products": [
+              "Coaxial cable"
+            ]
+          }
+        ]
+      },
+      "Bell_Labs": {
+        "responsibilities": [
+          "Research",
+          "Development",
+          "Cable technology innovation",
+          "Transmission technology",
+          "Specifications",
+          "Inspection"
+        ]
+      }
+    }
+  },
+
+  "transatlantic_cable_network": {
+    "TAT_1": {
+      "year": 1955,
+      "route": [
+        "North America",
+        "Europe"
+      ],
+      "significance": "First trans-Atlantic telephone undersea cable.",
+      "capacity": {
+        "telephone_circuits": 48
+      }
+    },
+    "TAT_2": {
+      "technology": "Submarine telecommunications cable",
+      "international_partners": [
+        "Cables de Lyon",
+        "Felten & Guilleaume"
+      ],
+      "Bell_Labs_role": [
+        "Specifications",
+        "Inspection"
+      ]
+    },
+    "TAT_5": {
+      "year": 1970,
+      "technology": "Undersea telecommunications cable",
+      "capacity_channels": 720
+    },
+    "TAT_6": {
+      "year": 1975,
+      "technology": "Undersea telecommunications cable",
+      "capacity_channels": 4000
+    },
+    "fiber_transition": {
+      "first_deep_sea_trial": 1982,
+      "TAT_8": {
+        "year": 1988,
+        "technology": "Fiber-optic submarine cable",
+        "significance": "Developed following the deep-sea optical-fiber trial."
+      }
+    }
+  },
+
+  "cable_ship_operations": {
+    "oceanic_operations": {
+      "pre_1961": "AT&T chartered ocean-going vessels for submarine cable installation.",
+      "1961": {
+        "event": "AT&T purchased CS Long Lines."
+      },
+      "1963": {
+        "event": "CS Long Lines began cable-laying assignments."
+      }
+    },
+    "transoceanic_cable_ship_company": {
+      "role": "AT&T subsidiary responsible for cable-laying vessels and submarine cable operations."
+    },
+    "AT&T_submarine_systems": {
+      "location": "Morristown, New Jersey",
+      "period": "Post-Bell System breakup",
+      "role": "Operation of AT&T submarine cable ships."
+    },
+    "sale": {
+      "year": 1997,
+      "buyer": "Tyco International Ltd.",
+      "number_of_ships": 6,
+      "sale_value_usd": 850000000
+    }
+  },
+
+  "cable_ship_fleet": [
+    {
+      "name": "CS Lidiv",
+      "status": "Decommissioned",
+      "built_for": "AT&T Corp.",
+      "operator_context": "New York Telephone Company",
+      "decommissioned_year": 1955,
+      "replacement": "CS Cable Queen"
+    },
+    {
+      "name": "CS Cable Queen",
+      "built": "1951-1952",
+      "length_ft": 65,
+      "type": "Small-scale underwater telephone cable-laying vessel",
+      "operator": "New York Telephone Company / Bell System",
+      "decommissioned": "after 1989",
+      "cable_laid_miles": 100000
+    },
+    {
+      "name": "CS Salernum",
+      "built": 1954,
+      "built_in": "Italy",
+      "length_ft": 339.6,
+      "breadth_ft": 41.0,
+      "depth_ft": 18.5,
+      "gross_tonnage": 2789,
+      "acquired_by_AT&T": 1984,
+      "acquisition_vehicle": "Transoceanic Cableship Co.",
+      "sold": 1997,
+      "buyer": "Tyco International",
+      "later_status": "Wreck converted into an artificial reef",
+      "later_location": "Sint Eustatius, Dutch Caribbean"
+    },
+    {
+      "name": "CS Long Lines",
+      "built": "1961-1963",
+      "launch_year": 1961,
+      "operational_cable_assignments_start": 1963,
+      "length_ft": 511,
+      "tonnage": 11300,
+      "construction_cost_usd": 19000000,
+      "major_operations": [
+        {
+          "year": 1964,
+          "cable": "TRANSPAC-1 / TPC-1",
+          "significance": "First trans-Pacific telephone cable"
+        },
+        {
+          "cable": "TPC-3",
+          "technology": "Trans-Pacific fiber-optic cable"
+        }
+      ],
+      "sold": 1997,
+      "buyer": "Tyco International",
+      "scrapped": 2003
+    },
+    {
+      "name": "C.S. Link",
+      "built": "1990s",
+      "owner": "Transoceanic Cable Ship Co.",
+      "parent_context": "AT&T Corp."
+    },
+    {
+      "name": "CS Global Sentinel",
+      "built": 1992,
+      "maiden_voyage": "1992-02",
+      "length_ft": 479,
+      "features": [
+        "Bow thrusters",
+        "Cable-laying equipment"
+      ],
+      "operator": "Transoceanic Cable Ship Co."
+    },
+    {
+      "name": "CS Global Mariner",
+      "built": 1992,
+      "built_in": "Singapore",
+      "length_ft": 479,
+      "cable_storage_nautical_miles": 4100,
+      "maiden_seafaring": "1992-12",
+      "crew_context": "Seafarers International Union",
+      "operator": "Transoceanic Cable Ship Co.",
+      "fleet_role": "Sister ship to CS Global Sentinel"
+    }
+  ],
+
+  "cable_deployment_history": {
+    "operations_listed_1951_2000": 73,
+    "CS_Long_Lines_runs": {
+      "count": 23,
+      "period": "1963-1992"
+    },
+    "technology_transition": {
+      "1982": "First deep-sea trial of optical fiber cable",
+      "1988": "TAT-8 fiber cable implementation"
+    }
+  },
+
+  "bell_system_breakup": {
+    "antitrust_case": {
+      "name": "United States v. AT&T",
+      "opened": 1974,
+      "government_body": "United States Department of Justice",
+      "allegation_context": "AT&T was suspected of using monopoly profits from Western Electric to subsidize network costs.",
+      "settlement": {
+        "year": 1982,
+        "effect": "AT&T agreed to a restructuring that resulted in the breakup of the Bell System."
+      }
+    },
+    "breakup_date": "1984-01-01",
+    "result": {
+      "regional_bell_operating_companies": 7,
+      "nickname": "Baby Bells"
+    },
+    "baby_bells": [
+      {
+        "name": "Ameritech",
+        "later_history": "Acquired by SBC in 1999; subsequently became part of AT&T Inc."
+      },
+      {
+        "name": "Bell Atlantic",
+        "later_history": "Acquired GTE in 2000; became Verizon Communications."
+      },
+      {
+        "name": "BellSouth",
+        "later_history": "Merged with AT&T Inc. in 2006."
+      },
+      {
+        "name": "NYNEX",
+        "later_history": "Acquired by Bell Atlantic in 1996."
+      },
+      {
+        "name": "Pacific Telesis",
+        "later_history": "Acquired by SBC in 1997; subsequently became part of AT&T Inc."
+      },
+      {
+        "name": "Southwestern Bell",
+        "later_name": "SBC Communications",
+        "later_history": "Acquired AT&T Corp. in 2005."
+      },
+      {
+        "name": "US West",
+        "later_history": "Acquired by Qwest in 2000; Qwest later acquired by CenturyLink in 2011."
+      }
+    ]
+  },
+
+  "post_breakup_operations": {
+    "primary_business": "AT&T Communications Inc.",
+    "focus": [
+      "Long-distance telecommunications",
+      "Non-RBOC telecommunications activities"
+    ]
+  },
+
+  "NCR_and_lucent_restructuring": {
+    "NCR": {
+      "acquisition_year": 1991,
+      "company": "NCR Corporation"
+    },
+    "1995_restructuring_plan": {
+      "announced": 1995,
+      "planned_businesses": [
+        "Manufacturing and research/development",
+        "Computer business",
+        "Services business"
+      ]
+    },
+    "Lucent": {
+      "origin": "AT&T Technologies",
+      "Bell_Labs_relationship": "Bell Labs was included in the planned restructuring.",
+      "spin_off_year": 1996,
+      "status": "Completely spun off from AT&T."
+    }
+  },
+
+  "SBC_acquisition": {
+    "announcement_date": "2005-01-31",
+    "acquirer": "SBC Communications",
+    "target": "AT&T Corp.",
+    "announced_transaction_value_usd": 16000000000,
+    "approval_date": "2005-11-18",
+    "rebranding": {
+      "start": "2005-11-21",
+      "brand": "AT&T",
+      "ticker": "T",
+      "ticker_start": "2005-12-01"
+    },
+    "corporate_history_effect": "Present-day AT&T Inc. claims AT&T Corp.'s historical legacy while retaining SBC's pre-2005 stock-price history and corporate structure."
+  },
+
+  "headquarters_history": [
+    {
+      "period": "1885-1910",
+      "location": "125 Milk Street, Boston, Massachusetts"
+    },
+    {
+      "period": "1910s-1992",
+      "location": "195 Broadway, New York City",
+      "architectural_significance": "Major AT&T headquarters building designed by William Welles Bosworth."
+    },
+    {
+      "period": "1984-1993",
+      "location": "550 Madison Avenue, New York City",
+      "architect": "Philip Johnson",
+      "completion_year": 1984,
+      "architectural_style": "Postmodern"
+    },
+    {
+      "period": "1992-2002",
+      "location": "Basking Ridge, New Jersey",
+      "context": "AT&T corporate headquarters."
+    }
+  ],
+
+  "195_Broadway": {
+    "historical_context": "Major AT&T headquarters in New York City.",
+    "prior_owner_context": "Western Union",
+    "western_union_divestiture": {
+      "year": 1913,
+      "reason": "Kingsbury Commitment"
+    },
+    "architect": "William Welles Bosworth",
+    "design_features": [
+      "Steel structure",
+      "Greek-style exterior",
+      "Vermont granite Ionic columns",
+      "Doric base",
+      "Hypostyle hall",
+      "Classically modeled columns"
+    ]
+  },
+
+  "550_Madison_Avenue": {
+    "commissioned": 1978,
+    "architect": "Philip Johnson",
+    "completed": 1984,
+    "architectural_style": "Postmodern",
+    "corporate_context": "Completed during the same year as the Bell System divestiture.",
+    "later_history": [
+      {
+        "year": 1993,
+        "event": "AT&T leased the building to Sony."
+      },
+      {
+        "year": 2013,
+        "event": "Sony sold the building."
+      }
+    ]
+  },
+
+  "basking_ridge_campus": {
+    "planning_start": 1969,
+    "land_acquisition": "early 1970s",
+    "construction_start": 1974,
+    "completion": 1975,
+    "architect": "Vincent Kling",
+    "style": "Fordism-style Pagoda campus",
+    "location": "295 North Maple Avenue, Bernards Township, New Jersey",
+    "site_size_acres": 130,
+    "building_area_sq_ft": 2600000,
+    "parking_spaces": 3900,
+    "underground_parking_acres": 15,
+    "construction_cost_usd": 219000000,
+    "features": [
+      "Seven interconnected buildings",
+      "Class 1 licensed private helipad",
+      "Two-story cafeteria",
+      "Wood-burning fireplace",
+      "Indoor waterfall",
+      "Seven-acre created lake",
+      "Flood-control infrastructure"
+    ],
+    "employee_occupancy": {
+      "peak": 6000,
+      "before_sale": 3200
+    },
+    "learning_center": {
+      "address": "300 North Maple Avenue",
+      "established": 1985,
+      "conference_rooms": 171,
+      "award": "Somerset County Land Development Award"
+    },
+    "1992": {
+      "event": "Basking Ridge became a corporate headquarters location.",
+      "statue": "Golden Boy moved from former New York headquarters."
+    },
+    "1994_art_project": {
+      "artist": "Elyn Zimmerman",
+      "diameter_ft": 30,
+      "granite_boulder_weight_tons": 34,
+      "engineer": "Dr. Gerald Palevsky",
+      "features": [
+        "Fountain",
+        "Seating area",
+        "Granite boulders"
+      ]
+    },
+    "sale_history": [
+      {
+        "date": "2001-10",
+        "event": "Property placed for sale.",
+        "site_size_acres": 140,
+        "building_area_sq_ft": 2600000
+      },
+      {
+        "date": "2002-04",
+        "buyer": "Pharmacia Corporation",
+        "price_usd": 210000000,
+        "purpose": "Corporate headquarters"
+      },
+      {
+        "year": 2005,
+        "buyer": "Verizon",
+        "context": "Former AT&T campus used as Verizon Wireless headquarters."
+      },
+      {
+        "year": 2015,
+        "event": "Verizon sale-leaseback",
+        "value_usd": 650300000
+      }
+    ]
+  },
+
+  "dissolution": {
+    "announcement": {
+      "date": "2024-02-15",
+      "filing_body": "Kentucky Public Service Commission",
+      "action": "AT&T Inc. announced an internal structural change involving AT&T Corp."
+    },
+    "south_dakota_filing": {
+      "date": "2024-01-30",
+      "purpose": "Internal merger restructuring",
+      "reason": "New York state law did not allow AT&T Corp. to be directly converted into an LLC."
+    },
+    "merger": {
+      "effective_date": "2024-05-01",
+      "surviving_entity": "AT&T Enterprises, LLC",
+      "corporate_context": "AT&T Corp. was merged into AT&T Enterprises, ending the existence of the approximately 140-year-old entity."
+    }
+  },
+
+  "divisions_and_subsidiaries": {
+    "pre_SBC_core_companies": [
+      {
+        "name": "AT&T Alascom",
+        "function": "Telecommunications service in Alaska"
+      },
+      {
+        "name": "AT&T Communications",
+        "function": [
+          "Long-distance telephone service",
+          "CLEC operations outside Bell Operating Company territories"
+        ],
+        "later_name": "AT&T Communications – East, Inc."
+      },
+      {
+        "name": "AT&T Laboratories",
+        "function": [
+          "Research",
+          "Development"
+        ],
+        "later_status": "Integrated into AT&T Labs / SBC Laboratories."
+      }
+    ]
+  },
+
+  "branding": {
+    "nicknames": [
+      "Ma Bell",
+      "Mother"
+    ],
+    "bell_system": {
+      "consumer_recognition": "The Bell System name was historically more recognizable to consumers than AT&T in some periods."
+    },
+    "post_breakup_branding": {
+      "objective": "Increase recognition of the AT&T name after the Bell System breakup."
+    },
+    "AT&T_globe_symbol": {
+      "designer": "Saul Bass",
+      "year": 1983,
+      "original_context": "AT&T Information Systems",
+      "purpose": "Replacement branding following the United States v. AT&T settlement.",
+      "nickname": "Death Star",
+      "versions": [
+        {
+          "year": 1983,
+          "design": "12-line globe"
+        },
+        {
+          "year": 1999,
+          "design": "8-line globe"
+        },
+        {
+          "year": 2005,
+          "design": "3D transparent marble",
+          "designer": "Interbrand"
+        }
+      ]
+    }
+  },
+
+  "corporate_relationship_graph": {
+    "predecessors": [
+      "Bell Patent Association",
+      "Bell Telephone Company",
+      "American Bell"
+    ],
+    "historical_parent": "American Bell",
+    "primary_entity": "AT&T Corporation",
+    "major_subsidiaries": [
+      "AT&T Long Lines",
+      "AT&T Communications",
+      "AT&T Alascom",
+      "AT&T Laboratories",
+      "Transoceanic Cable Ship Company",
+      "AT&T Submarine Systems Inc.",
+      "Western Electric"
+    ],
+    "major_spinoffs": [
+      "Lucent Technologies"
+    ],
+    "regional_bell_operating_companies": [
+      "Ameritech",
+      "Bell Atlantic",
+      "BellSouth",
+      "NYNEX",
+      "Pacific Telesis",
+      "Southwestern Bell",
+      "US West"
+    ],
+    "acquirer": "SBC Communications",
+    "post_2005_parent": "AT&T Inc.",
+    "dissolution_successor": "AT&T Enterprises, LLC"
+  },
+
+  "leadership": [
+    {
+      "number": 1,
+      "name": "Theodore Newton Vail",
+      "years": "1885-1887",
+      "title": "President"
+    },
+    {
+      "number": 2,
+      "name": "John E. Hudson",
+      "years": "1887-1900",
+      "title": "President"
+    },
+    {
+      "number": 3,
+      "name": "Frederick Perry Fish",
+      "years": "1901-1907",
+      "title": "President"
+    },
+    {
+      "number": 4,
+      "name": "Theodore Newton Vail",
+      "years": "1907-1919",
+      "title": "President"
+    },
+    {
+      "number": 5,
+      "name": "Harry Bates Thayer",
+      "years": "1919-1925",
+      "title": "President"
+    },
+    {
+      "number": 6,
+      "name": "Walter Sherman Gifford",
+      "years": "1925-1948",
+      "title": "President"
+    },
+    {
+      "number": 7,
+      "name": "Leroy A. Wilson",
+      "years": "1948-1951",
+      "title": "President"
+    },
+    {
+      "number": 8,
+      "name": "Cleo F. Craig",
+      "years": "1951-1956",
+      "title": "President"
+    },
+    {
+      "number": 9,
+      "name": "Frederick Kappel",
+      "years": "1956-1967",
+      "title": [
+        "President",
+        "Chairman"
+      ]
+    },
+    {
+      "number": 10,
+      "name": "H. I. Romnes",
+      "years": "1967-1972",
+      "title": "Chairman"
+    },
+    {
+      "number": 11,
+      "name": "John D. deButts",
+      "years": "1972-1979",
+      "title": "Chairman"
+    },
+    {
+      "number": 12,
+      "name": "Charles L. Brown",
+      "years": "1979-1986",
+      "title": "Chairman"
+    },
+    {
+      "number": 13,
+      "name": "James E. Olson",
+      "years": "1986-1988",
+      "title": "Chairman"
+    },
+    {
+      "number": 14,
+      "name": "Robert Eugene Allen",
+      "years": "1988-1997",
+      "title": "Chairman"
+    },
+    {
+      "number": 15,
+      "name": "C. Michael Armstrong",
+      "years": "1997-2002",
+      "title": "Chairman"
+    },
+    {
+      "number": 16,
+      "name": "David Dorman",
+      "years": "2002-2005",
+      "title": "Chairman"
+    }
+  ],
+
+  "strategic_infrastructure_domains": [
+    "Long-distance telephone networks",
+    "Local telephone networks",
+    "Internet telecommunications",
+    "Radio transmission",
+    "Broadcast networking",
+    "Submarine telecommunications",
+    "Undersea cable installation",
+    "Undersea cable maintenance",
+    "Fiber-optic communications",
+    "Coaxial telecommunications",
+    "Telecommunications research",
+    "Telecommunications manufacturing",
+    "Cable-laying vessels",
+    "International telecommunications infrastructure"
+  ],
+
+  "major_historical_milestones": [
+    {
+      "year": 1874,
+      "event": "Bell Patent Association established."
+    },
+    {
+      "year": 1875,
+      "event": "Bell Telephone Company formalized."
+    },
+    {
+      "year": 1880,
+      "event": "American Bell began development of nationwide long-distance infrastructure."
+    },
+    {
+      "date": "1885-03-03",
+      "event": "American Telephone and Telegraph Company incorporated."
+    },
+    {
+      "date": "1899-12-30",
+      "event": "American Bell assets transferred to AT&T."
+    },
+    {
+      "year": 1907,
+      "event": "Theodore Newton Vail became president."
+    },
+    {
+      "year": 1913,
+      "event": "Western Union interest divested under Kingsbury Commitment."
+    },
+    {
+      "year": 1915,
+      "event": "AT&T conducted major radiotelephony tests."
+    },
+    {
+      "year": 1919,
+      "event": "RCA formed."
+    },
+    {
+      "year": 1920,
+      "event": "AT&T-RCA public-service-telephony cross-licensing arrangement became effective."
+    },
+    {
+      "year": 1923,
+      "event": "First permanent WEAF network link established."
+    },
+    {
+      "date": "1926-05-11",
+      "event": "Broadcasting Company of America established."
+    },
+    {
+      "date": "1926-07-21",
+      "event": "BCA sold to RCA for $1 million."
+    },
+    {
+      "year": 1955,
+      "event": "TAT-1 installed as first trans-Atlantic telephone undersea cable."
+    },
+    {
+      "year": 1961,
+      "event": "AT&T acquired CS Long Lines."
+    },
+    {
+      "year": 1964,
+      "event": "CS Long Lines participated in first trans-Pacific telephone cable deployment."
+    },
+    {
+      "year": 1974,
+      "event": "United States v. AT&T antitrust case opened."
+    },
+    {
+      "year": 1982,
+      "event": "Antitrust settlement finalized."
+    },
+    {
+      "date": "1984-01-01",
+      "event": "Bell System breakup took effect."
+    },
+    {
+      "year": 1991,
+      "event": "AT&T acquired NCR Corporation."
+    },
+    {
+      "year": 1996,
+      "event": "Lucent Technologies completely spun off."
+    },
+    {
+      "date": "2005-01-31",
+      "event": "SBC announced acquisition of AT&T Corp."
+    },
+    {
+      "date": "2005-11-18",
+      "event": "Merger approval completed."
+    },
+    {
+      "date": "2005-12-01",
+      "event": "New AT&T began trading under ticker T."
+    },
+    {
+      "date": "2024-05-01",
+      "event": "AT&T Corporation merged into AT&T Enterprises and ceased to exist as a separate entity."
+    }
+  ],
+
+  "historical_significance": {
+    "telecommunications": [
+      "Central participant in development of the United States telephone network.",
+      "Major developer and operator of long-distance telecommunications.",
+      "Major participant in submarine telecommunications infrastructure.",
+      "Participant in transition from coaxial submarine cables to fiber-optic systems.",
+      "Operator of specialized cable-laying ships."
+    ],
+    "corporate_history": [
+      "Central entity in the Bell System.",
+      "Subject of one of the most consequential U.S. telecommunications antitrust cases.",
+      "Parent structure behind the seven Regional Bell Operating Companies created in 1984.",
+      "Later acquired by one of the companies created from the Bell System breakup."
+    ],
+    "network_infrastructure": {
+      "model": "Integrated telecommunications infrastructure",
+      "components": [
+        "Local exchanges",
+        "Long-distance lines",
+        "Radio links",
+        "Submarine cables",
+        "Cable-laying ships",
+        "Manufacturing",
+        "Research laboratories",
+        "Network operations"
+      ]
+    }
+  },
+
+  "source_metadata": {
+    "source_type": "Wikipedia article",
+    "article_title": "AT&T Corporation",
+    "source_context": "Uploaded source text",
+    "source_lines": {
+      "core_company_information": "29-63",
+      "origins": "65-79",
+      "radio_development": "81-107",
+      "undersea_operations": "109-123",
+      "breakup": "125-158",
+      "SBC_acquisition": "160-164",
+      "headquarters": "166-181",
+      "dissolution": "183-185",
+      "divisions": "186-192",
+      "branding": "194-197",
+      "leadership": "199-220",
+      "references": "225-295"
+    },
+    "citation_note": "The uploaded source identifies Wikipedia as the article source and contains a mixture of primary, secondary, archival, corporate, academic, and other references."
+  }
+}
