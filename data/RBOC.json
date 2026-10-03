@@ -1,0 +1,884 @@
+{
+  "entity": {
+    "name": "Regional Bell Operating Company",
+    "abbreviation": "RBOC",
+    "plural": "Regional Bell Operating Companies",
+    "aliases": [
+      "RBOCs",
+      "Baby Bell",
+      "Baby Bells"
+    ],
+    "entity_type": "telecommunications_corporate_entity",
+    "historical_category": "local_exchange_carrier_holding_company",
+    "status": "historical_corporate_structure",
+    "origin": {
+      "parent_system": "Bell System",
+      "parent_company": "AT&T Corporation",
+      "creation_event": "Bell System divestiture",
+      "effective_date": "1984-01-01"
+    }
+  },
+
+  "definition": {
+    "description": "A Regional Bell Operating Company was a corporate entity created as a result of the antitrust litigation involving AT&T and the subsequent Modification of Final Judgment.",
+    "primary_function": "Operate local telephone exchange services within defined geographic regions of the United States.",
+    "common_name": "Baby Bell",
+    "carrier_classification": [
+      "ILEC",
+      "Incumbent Local Exchange Carrier"
+    ],
+    "historical_role": "The RBOCs inherited local telephone operating companies from the former Bell System following AT&T's divestiture."
+  },
+
+  "legal_and_regulatory_origin": {
+    "antitrust_history": [
+      {
+        "year": 1949,
+        "case_context": "United States Department of Justice antitrust lawsuit",
+        "targets": [
+          "Western Electric Company",
+          "American Telephone and Telegraph Company"
+        ]
+      },
+      {
+        "year": 1974,
+        "case": "United States v. AT&T",
+        "plaintiff": "United States Department of Justice",
+        "defendant": "AT&T"
+      }
+    ],
+    "settlement": {
+      "instrument": "Modification of Final Judgment",
+      "date": "1982-08",
+      "effect": "Required AT&T to divest its local exchange operating companies."
+    },
+    "divestiture": {
+      "effective_date": "1984-01-01",
+      "divested_asset_class": "Local exchange service operating companies",
+      "result": "Creation of seven independent Regional Bell Operating Companies."
+    }
+  },
+
+  "original_rboc_structure": {
+    "count": 7,
+    "companies": [
+      {
+        "name": "Ameritech",
+        "type": "RBOC",
+        "origin": "Bell System local operating companies",
+        "later_acquirer": "SBC Communications",
+        "later_year": 1999
+      },
+      {
+        "name": "Bell Atlantic",
+        "type": "RBOC",
+        "origin": "Bell System local operating companies",
+        "later_name": "Verizon Communications"
+      },
+      {
+        "name": "BellSouth",
+        "type": "RBOC",
+        "origin": "Bell System local operating companies",
+        "later_acquirer": "AT&T Inc.",
+        "acquisition_year": 2006
+      },
+      {
+        "name": "NYNEX",
+        "type": "RBOC",
+        "origin": "Bell System local operating companies",
+        "later_acquirer": "Bell Atlantic",
+        "acquisition_year": 1997
+      },
+      {
+        "name": "Pacific Telesis",
+        "type": "RBOC",
+        "origin": "Bell System local operating companies",
+        "later_acquirer": "SBC Communications",
+        "acquisition_year": 1997
+      },
+      {
+        "name": "Southwestern Bell Corporation",
+        "type": "RBOC",
+        "later_name": "SBC Communications",
+        "renamed_year": 1995,
+        "later_acquirer": "AT&T Corporation",
+        "acquisition_year": 2005
+      },
+      {
+        "name": "US West",
+        "type": "RBOC",
+        "later_acquirer": "Qwest",
+        "acquisition_year": 2000
+      }
+    ]
+  },
+
+  "associated_local_exchange_companies": {
+    "total_original_local_exchange_holding_companies": 9,
+    "additional_companies": [
+      {
+        "name": "Cincinnati Bell",
+        "classification": "Independent Bell System franchisee",
+        "RBOC_status": false,
+        "reason": "AT&T held only a minority stake prior to the breakup.",
+        "post_1984_status": "Independent"
+      },
+      {
+        "name": "Southern New England Telephone",
+        "abbreviation": "SNET",
+        "classification": "Independent Bell-related company",
+        "RBOC_status": false,
+        "reason": "AT&T held an investment rather than controlling it as an RBOC.",
+        "post_1984_status": "Independent"
+      }
+    ],
+    "trademark_rights": {
+      "description": "All nine local-exchange holding companies received a share of the rights to the Bell trademark."
+    }
+  },
+
+  "geographic_coverage": {
+    "scope": "Contiguous United States",
+    "post_divestiture_regions": [
+      "Ameritech territory",
+      "Bell Atlantic territory",
+      "BellSouth territory",
+      "NYNEX territory",
+      "Pacific Telesis territory",
+      "Southwestern Bell territory",
+      "US West territory"
+    ],
+    "related_independent_territories": [
+      "Cincinnati Bell",
+      "Southern New England Telephone"
+    ]
+  },
+
+  "baby_bell_definition": {
+    "term": "Baby Bell",
+    "meaning": "A local telephone company created or existing as part of the AT&T breakup and associated with the Regional Bell Operating Company structure.",
+    "service_type": "Local telephone exchange services",
+    "carrier_type": "ILEC",
+    "historical_parent_system": "Bell System"
+  },
+
+  "shared_trademarks": {
+    "bell_system_trademark": {
+      "name": "Bell",
+      "historical_owner_context": "Bell System / AT&T",
+      "post_divestiture_distribution": "Trademark rights were shared among the RBOCs and the two partially independent Bell companies."
+    },
+    "AT&T_restrictions": {
+      "restriction": "AT&T Corporation was prohibited from using the Bell name or Bell logo following divestiture.",
+      "exception": "Bell Laboratories"
+    },
+    "RBOC_usage": {
+      "description": "RBOCs and related local operating companies retained various Bell names and trademark rights."
+    },
+    "cincinnati_bell": {
+      "last_RBOC_related_company_using_bell_name": true,
+      "rebrand_date": "2022-03",
+      "new_name": "Altafiber"
+    },
+    "bell_canada": {
+      "company": "Bell Canada",
+      "historical_origin": "Bell Telephone Company of Canada",
+      "founded": 1880,
+      "separation_from_bell_system_started": 1956,
+      "separation_completed": 1975,
+      "trademark_status": "Owns Bell trademarks outright in Canada."
+    },
+    "verizon": {
+      "historical_bell_logo_usage": [
+        "Payphones",
+        "Hard hats",
+        "Trucks",
+        "Buildings"
+      ],
+      "logo_removal_context": {
+        "verizon_logo_update": 2015,
+        "effect": "Bell logo subsequently removed from reimaged Verizon trucks."
+      }
+    },
+    "malheur_bell": {
+      "owner": "Qwest",
+      "bell_name_usage_until": 2009,
+      "final_event": "Merged into Qwest."
+    },
+    "modern_AT&T": {
+      "active_bell_mark_usage": false,
+      "local_exchange_companies": {
+        "historical_bell_names": true,
+        "business_names_changed": true,
+        "name_change_period": "2002 onward"
+      }
+    }
+  },
+
+  "post_1984_corporate_evolution": {
+    "general_pattern": "The original seven RBOCs underwent mergers, acquisitions, divestitures, and corporate renamings.",
+    "year_2000_status": {
+      "original_baby_bells_remaining": 3
+    },
+    "major_surviving_lineages": [
+      "AT&T",
+      "Verizon",
+      "Lumen Technologies"
+    ],
+    "source_statement": "Three companies still exist that have an RBOC as a predecessor."
+  },
+
+  "bellcore": {
+    "origin": {
+      "year": 1984,
+      "parent": "Bell Labs",
+      "origin_event": "AT&T breakup"
+    },
+    "name": "Bell Communications Research",
+    "abbreviation": "Bellcore",
+    "function": [
+      "Research and development",
+      "Technical standards",
+      "Industry coordination"
+    ],
+    "customers": [
+      "Seven Baby Bells"
+    ],
+    "organizational_role": "Served as a shared R&D and standards organization for the RBOCs.",
+    "1997_acquisition": {
+      "buyer": "Science Applications International Corporation",
+      "abbreviation": "SAIC",
+      "year": 1997
+    },
+    "post_acquisition_name": "Telcordia",
+    "ownership": "Wholly owned subsidiary of SAIC"
+  },
+
+  "corporate_lineages": {
+    "AT&T_lineage": {
+      "root": "Southwestern Bell Corporation",
+      "renamed_to": "SBC Communications",
+      "renamed_year": 1995,
+      "acquisitions": [
+        {
+          "target": "Pacific Telesis",
+          "year": 1997
+        },
+        {
+          "target": "Southern New England Telephone",
+          "year": 1998
+        },
+        {
+          "target": "Ameritech",
+          "year": 1999
+        },
+        {
+          "target": "AT&T Corporation",
+          "year": 2005,
+          "transaction_value_usd": 16000000000,
+          "relationship": "Former parent company"
+        },
+        {
+          "target": "BellSouth",
+          "year": 2006
+        }
+      ],
+      "2005_brand_transition": {
+        "event": "SBC Communications acquired former parent AT&T Corp.",
+        "new_brand": "AT&T",
+        "merger_closure": "2005-11-18",
+        "rebranding_start": "2005-11-21",
+        "AT&T_Inc_trading_start": "2005-12-01"
+      },
+      "resulting_entity": "AT&T Inc."
+    },
+
+    "Verizon_lineage": {
+      "root": "Bell Atlantic",
+      "acquisitions": [
+        {
+          "target": "NYNEX",
+          "year": 1997,
+          "effect": "Bell Atlantic retained its name."
+        },
+        {
+          "target": "GTE",
+          "year": 2000,
+          "significance": "GTE was the largest independent telephone company."
+        }
+      ],
+      "renamed_to": "Verizon Communications",
+      "renamed_year": 2000,
+      "additional_acquisitions": [
+        {
+          "target": "MCI",
+          "announcement_year": 2005,
+          "completion_date": "2006-01-06",
+          "context": "Long-distance telecommunications company"
+        }
+      ],
+      "wireless_lineage": {
+        "bell_atlantic_mobile": {
+          "development_events": [
+            "Merger with NYNEX Mobile",
+            "Acquisition of Frontier Cellular",
+            "Merger with GTE Wireless",
+            "Joint venture with Vodafone",
+            "Consolidation of AirTouch business"
+          ],
+          "result": "Formation of Verizon Wireless."
+        },
+        "verizon_wireless": {
+          "ownership_history": {
+            "initial_structure": "Partnership between Verizon Communications and Vodafone",
+            "partnership_end_year": 2013
+          }
+        },
+        "later_wireless_acquisitions": [
+          "Alltel Wireless",
+          "TracFone"
+        ]
+      },
+      "wireline_divestitures": [
+        "Northern New England operations",
+        "Other former Bell and wireline territories"
+      ],
+      "resulting_entity": "Verizon Communications"
+    },
+
+    "lumen_lineage": {
+      "root": "US West",
+      "acquirer": "Qwest",
+      "acquisition_year": 2000,
+      "qwest_history": {
+        "headquarters": "Denver, Colorado",
+        "original_business": "Fiber-optic long-distance telecommunications",
+        "US_West_acquisition_year": 2000
+      },
+      "centurylink_lineage": {
+        "original_company": "Century Telephone",
+        "original_name": "CenturyTel",
+        "CenturyLink_name_start": 2009,
+        "Embarq_acquisition_context": "Former Sprint Nextel local operations including former Centel operations."
+      },
+      "CenturyTel_RBOC_relationship": {
+        "acquisition": "Wisconsin Bell lines from Ameritech",
+        "year": 1998
+      },
+      "CenturyLink_Qwest_transaction": {
+        "announcement": "2010-04",
+        "value_usd": 10600000000,
+        "completion": "2011-04"
+      },
+      "branding": {
+        "Qwest_retirement": "2011-08",
+        "CenturyLink_to_Lumen": "2020-09"
+      },
+      "resulting_entity": "Lumen Technologies"
+    }
+  },
+
+  "AT&T_lineage_detailed": {
+    "southwestern_bell": {
+      "original_name": "Southwestern Bell Corporation"
+    },
+    "SBC": {
+      "name": "SBC Communications",
+      "name_change_year": 1995
+    },
+    "major_acquisition_sequence": [
+      {
+        "sequence": 1,
+        "company": "Pacific Telesis",
+        "year": 1997
+      },
+      {
+        "sequence": 2,
+        "company": "Southern New England Telephone",
+        "year": 1998
+      },
+      {
+        "sequence": 3,
+        "company": "Ameritech",
+        "year": 1999
+      },
+      {
+        "sequence": 4,
+        "company": "AT&T Corporation",
+        "year": 2005
+      },
+      {
+        "sequence": 5,
+        "company": "BellSouth",
+        "year": 2006
+      }
+    ],
+    "corporate_result": "AT&T Inc."
+  },
+
+  "verizon_lineage_detailed": {
+    "bell_atlantic": {
+      "acquisition_1": {
+        "target": "NYNEX",
+        "year": 1997
+      },
+      "acquisition_2": {
+        "target": "GTE",
+        "year": 2000
+      },
+      "name_change": {
+        "new_name": "Verizon Communications",
+        "year": 2000
+      },
+      "MCI": {
+        "announcement_year": 2005,
+        "completion_date": "2006-01-06"
+      },
+      "wireless": {
+        "historical_components": [
+          "Bell Atlantic Mobile",
+          "NYNEX Mobile",
+          "Frontier Cellular",
+          "GTE Wireless",
+          "AirTouch",
+          "Vodafone"
+        ],
+        "result": "Verizon Wireless"
+      }
+    }
+  },
+
+  "lumen_lineage_detailed": {
+    "US_West": {
+      "acquired_by": "Qwest",
+      "year": 2000
+    },
+    "Qwest": {
+      "company_type": "Fiber-optic long-distance telecommunications company",
+      "headquarters": "Denver, Colorado"
+    },
+    "CenturyTel": {
+      "relationship": "Separate telecommunications lineage that later acquired Qwest."
+    },
+    "CenturyLink": {
+      "name_start": 2009,
+      "Qwest_acquisition": {
+        "announcement": "2010-04",
+        "transaction_value_usd": 10600000000,
+        "completion": "2011-04"
+      }
+    },
+    "Lumen": {
+      "name_start": "2020-09",
+      "full_name": "Lumen Technologies, Inc."
+    }
+  },
+
+  "other_related_companies": {
+    "Altafiber": {
+      "former_name": "Cincinnati Bell",
+      "RBOC": false,
+      "historical_relationship": "Independent Bell System franchisee",
+      "reason_not_RBOC": "AT&T held only a minority stake at the time of the 1984 divestiture.",
+      "2019_transaction": {
+        "announced_buyer": "Brookfield Infrastructure Partners",
+        "announced_value_usd": 2600000000
+      },
+      "2021_transaction": {
+        "completion_date": "2021-09-07",
+        "buyer": "Macquarie Infrastructure and Real Assets"
+      },
+      "rebrand": "Altafiber"
+    },
+
+    "Fidium_Fiber": {
+      "origin": "FairPoint Communications",
+      "historical_parent_operation": "Northern New England Telephone Operations",
+      "territory": [
+        "Maine",
+        "New Hampshire"
+      ],
+      "historical_transaction": {
+        "seller": "Verizon",
+        "buyer": "FairPoint Communications",
+        "closing_year": 2008
+      },
+      "2016_transaction": {
+        "buyer": "Consolidated Communications",
+        "seller": "FairPoint Communications"
+      },
+      "resulting_brand": "Fidium Fiber"
+    },
+
+    "Frontier_Communications": {
+      "RBOC_related_assets": {
+        "2010": {
+          "transaction": "Acquisition of Frontier West Virginia",
+          "origin": "Former Chesapeake and Potomac Telephone Company of West Virginia"
+        },
+        "2013": {
+          "transaction": "AT&T agreed to sell Southern New England Telephone to Frontier"
+        },
+        "2014": {
+          "event": "SNET sale completed"
+        }
+      },
+      "GTE_related_operations": {
+        "2016": {
+          "event": "Data conversions completed for California, Florida and Texas properties formerly associated with GTE."
+        }
+      },
+      "bankruptcy": {
+        "filing_date": "2020-04-14",
+        "chapter": 11
+      },
+      "northwest_divestiture": {
+        "date": "2020-05-01",
+        "buyer": "Ziply Fiber",
+        "territories": [
+          "Idaho",
+          "Montana",
+          "Oregon",
+          "Washington"
+        ]
+      },
+      "public_reemergence": {
+        "date": "2021-05-04",
+        "new_name": "Frontier Communications Parent",
+        "ticker": "FYBR",
+        "exchange": "NASDAQ"
+      },
+      "verizon_acquisition": {
+        "announced_year": 2024,
+        "announced_value_usd": 20000000000,
+        "FCC_approval": "2025-05",
+        "closing_date": "2026-01-20",
+        "buyer": "Verizon"
+      }
+    }
+  },
+
+  "corporate_relationship_graph": {
+    "Bell_System": {
+      "divestiture_date": "1984-01-01",
+      "children": [
+        "Ameritech",
+        "Bell Atlantic",
+        "BellSouth",
+        "NYNEX",
+        "Pacific Telesis",
+        "Southwestern Bell",
+        "US West"
+      ],
+      "related_independent_companies": [
+        "Cincinnati Bell",
+        "Southern New England Telephone"
+      ]
+    },
+    "AT&T_branch": {
+      "Southwestern_Bell": {
+        "renamed": "SBC Communications",
+        "acquired": [
+          "Pacific Telesis",
+          "SNET",
+          "Ameritech"
+        ],
+        "acquired_former_parent": "AT&T Corporation",
+        "later_acquired": [
+          "BellSouth"
+        ],
+        "result": "AT&T Inc."
+      }
+    },
+    "Verizon_branch": {
+      "Bell_Atlantic": {
+        "acquired": [
+          "NYNEX",
+          "GTE"
+        ],
+        "renamed": "Verizon Communications",
+        "acquired": [
+          "MCI"
+        ]
+      }
+    },
+    "Lumen_branch": {
+      "US_West": {
+        "acquired_by": "Qwest"
+      },
+      "Qwest": {
+        "acquired_by": "CenturyLink"
+      },
+      "CenturyLink": {
+        "renamed": "Lumen Technologies"
+      }
+    }
+  },
+
+  "network_role": {
+    "primary_service": "Local telephone exchange service",
+    "carrier_classification": "ILEC",
+    "infrastructure": [
+      "Local telephone exchanges",
+      "Access lines",
+      "Local loops",
+      "Regional switching infrastructure",
+      "Telephone numbering infrastructure",
+      "Local telecommunications networks"
+    ],
+    "relationship_to_AT&T": {
+      "pre_1984": "Local exchange companies were integrated within the AT&T/Bell System structure.",
+      "post_1984": "Local exchange operations were transferred to independent RBOCs."
+    }
+  },
+
+  "corporate_consolidation": {
+    "trend": "Progressive consolidation among the original Baby Bells and related telecommunications companies.",
+    "year_2000": {
+      "remaining_original_baby_bells": 3
+    },
+    "major_modern_lineages": [
+      {
+        "company": "AT&T",
+        "RBOC_roots": [
+          "Southwestern Bell",
+          "Pacific Telesis",
+          "Ameritech",
+          "BellSouth"
+        ]
+      },
+      {
+        "company": "Verizon",
+        "RBOC_roots": [
+          "Bell Atlantic",
+          "NYNEX"
+        ]
+      },
+      {
+        "company": "Lumen Technologies",
+        "RBOC_root": "US West"
+      }
+    ]
+  },
+
+  "important_dates": [
+    {
+      "date": "1949",
+      "event": "DOJ antitrust action involving Western Electric and AT&T."
+    },
+    {
+      "date": "1974",
+      "event": "United States v. AT&T antitrust case initiated."
+    },
+    {
+      "date": "1982-08",
+      "event": "Modification of Final Judgment settlement."
+    },
+    {
+      "date": "1984-01-01",
+      "event": "AT&T local exchange divestiture becomes effective."
+    },
+    {
+      "date": "1984",
+      "event": "Seven RBOCs/Baby Bells established."
+    },
+    {
+      "date": "1984",
+      "event": "Bellcore created from part of Bell Labs."
+    },
+    {
+      "date": "1995",
+      "event": "Southwestern Bell Corporation renamed SBC Communications."
+    },
+    {
+      "date": "1997",
+      "event": "Bell Atlantic acquired NYNEX."
+    },
+    {
+      "date": "1997",
+      "event": "SBC acquired Pacific Telesis."
+    },
+    {
+      "date": "1997",
+      "event": "SAIC acquired Bellcore and renamed it Telcordia."
+    },
+    {
+      "date": "1998",
+      "event": "SBC acquired Southern New England Telephone."
+    },
+    {
+      "date": "1999",
+      "event": "SBC acquired Ameritech."
+    },
+    {
+      "date": "2000",
+      "event": "Bell Atlantic acquired GTE."
+    },
+    {
+      "date": "2000",
+      "event": "Bell Atlantic became Verizon."
+    },
+    {
+      "date": "2000",
+      "event": "Qwest acquired US West."
+    },
+    {
+      "date": "2005-02",
+      "event": "SBC announced acquisition of AT&T Corp."
+    },
+    {
+      "date": "2005-11-18",
+      "event": "SBC/AT&T merger closed."
+    },
+    {
+      "date": "2005-12-01",
+      "event": "SBC began trading as AT&T Inc."
+    },
+    {
+      "date": "2006",
+      "event": "AT&T Inc. acquired BellSouth."
+    },
+    {
+      "date": "2006-01-06",
+      "event": "Verizon/MCI merger closed."
+    },
+    {
+      "date": "2009",
+      "event": "CenturyLink name adopted following Embarq acquisition."
+    },
+    {
+      "date": "2010",
+      "event": "CenturyLink announced Qwest acquisition."
+    },
+    {
+      "date": "2011",
+      "event": "CenturyLink/Qwest transaction completed."
+    },
+    {
+      "date": "2011-08",
+      "event": "Qwest branding retired."
+    },
+    {
+      "date": "2020-04-14",
+      "event": "Frontier Communications filed Chapter 11."
+    },
+    {
+      "date": "2020-05-01",
+      "event": "Frontier sold Northwest operations to Ziply Fiber."
+    },
+    {
+      "date": "2020-09",
+      "event": "CenturyLink rebranded as Lumen Technologies."
+    },
+    {
+      "date": "2021-05-04",
+      "event": "Frontier Communications Parent returned to public markets."
+    },
+    {
+      "date": "2021-09-07",
+      "event": "Macquarie completed acquisition of Cincinnati Bell."
+    },
+    {
+      "date": "2022-03",
+      "event": "Cincinnati Bell rebranded as Altafiber."
+    },
+    {
+      "date": "2024",
+      "event": "Verizon announced agreement to acquire Frontier Communications."
+    },
+    {
+      "date": "2025-05",
+      "event": "FCC approved Verizon's Frontier acquisition."
+    },
+    {
+      "date": "2026-01-20",
+      "event": "Verizon completed acquisition of Frontier Communications."
+    }
+  ],
+
+  "terminology": {
+    "RBOC": {
+      "expanded": "Regional Bell Operating Company",
+      "meaning": "Regional corporate entity created to operate local exchange services after the AT&T divestiture."
+    },
+    "Baby_Bell": {
+      "meaning": "Common name for the RBOCs created through the AT&T breakup."
+    },
+    "ILEC": {
+      "expanded": "Incumbent Local Exchange Carrier",
+      "meaning": "Existing local telephone carrier serving a geographic exchange area."
+    },
+    "CLEC": {
+      "expanded": "Competitive Local Exchange Carrier",
+      "meaning": "Carrier operating in competition with incumbent local exchange carriers."
+    },
+    "LATA": {
+      "expanded": "Local Access and Transport Area",
+      "meaning": "Telecommunications geographic service concept associated with the post-divestiture Bell System structure."
+    }
+  },
+
+  "modern_successor_entities": [
+    {
+      "name": "AT&T Inc.",
+      "RBOC_heritage": [
+        "Southwestern Bell",
+        "Pacific Telesis",
+        "Ameritech",
+        "BellSouth"
+      ]
+    },
+    {
+      "name": "Verizon Communications",
+      "RBOC_heritage": [
+        "Bell Atlantic",
+        "NYNEX"
+      ]
+    },
+    {
+      "name": "Lumen Technologies",
+      "RBOC_heritage": [
+        "US West"
+      ]
+    }
+  ],
+
+  "historical_significance": {
+    "telecommunications": [
+      "Separated local telephone exchange operations from AT&T's former integrated Bell System.",
+      "Created the major regional local telecommunications companies that shaped the post-1984 U.S. telecommunications market.",
+      "Established corporate lineages that ultimately became AT&T, Verizon, and Lumen."
+    ],
+    "regulatory": [
+      "Direct consequence of a major U.S. antitrust settlement.",
+      "Demonstrates the structural separation of local exchange and long-distance telecommunications."
+    ],
+    "corporate": [
+      "Produced one of the most significant waves of telecommunications mergers and acquisitions in U.S. corporate history.",
+      "Created the corporate ancestry of several major modern telecommunications providers."
+    ],
+    "technical": [
+      "Maintained and developed local exchange infrastructure.",
+      "Inherited Bell System switching, access-line, and local-network assets.",
+      "Supported telecommunications R&D through Bellcore/Telcordia."
+    ]
+  },
+
+  "source_metadata": {
+    "source_type": "Wikipedia article",
+    "article_title": "Regional Bell Operating Company",
+    "source_context": "Uploaded source text",
+    "source_lines": {
+      "definition_and_origin": "29-50",
+      "baby_bells": "52-64",
+      "trademarks": "66-77",
+      "mergers": "79-96",
+      "AT&T_lineage": "95-96",
+      "Verizon_lineage": "98-105",
+      "Lumen_lineage": "107-112",
+      "related_companies": "114-123",
+      "references": "124-148"
+    },
+    "source_warning": "The source article itself states that additional citations are needed and that some material may be challenged or removed."
+  }
+}
