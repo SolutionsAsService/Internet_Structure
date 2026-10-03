@@ -1,0 +1,2087 @@
+{
+  "entity": {
+    "name": "Verizon Communications Inc.",
+    "type": "telecommunications_company",
+    "entity_class": "corporation",
+    "status": "active",
+    "legal_name": "Verizon Communications Inc.",
+    "former_names": [
+      "Bell Atlantic Corporation"
+    ],
+    "former_name_period": {
+      "name": "Bell Atlantic Corporation",
+      "from": "1983",
+      "to": "2000"
+    },
+    "brand_name": "Verizon",
+    "ticker": "NYSE: VZ",
+    "indices": [
+      "S&P 100",
+      "S&P 500"
+    ],
+    "isin": "US92343V1044",
+    "industry": "Telecommunications",
+    "founded": "1983-10-07",
+    "legal_entity_continuity": {
+      "original_entity": "Bell Atlantic Corporation",
+      "legal_continuity": true,
+      "description": "According to the source's SEC and state-corporation-record discussion, Verizon uses the original legal entity that was previously named Bell Atlantic Corporation. Following the NYNEX and GTE transactions, Bell Atlantic legally changed its name to Verizon Communications Inc. in 2000 rather than creating an entirely new corporation.",
+      "important_distinction": "The corporate lineage therefore traces back to 1983 even though the Verizon name began in 2000."
+    },
+    "headquarters": {
+      "address": "1095 Avenue of the Americas",
+      "city": "New York City",
+      "state": "New York",
+      "country": "United States"
+    },
+    "original_headquarters": {
+      "city": "Philadelphia",
+      "state": "Pennsylvania",
+      "country": "United States"
+    },
+    "service_area": {
+      "consumer": "United States",
+      "business": "Worldwide"
+    },
+    "website": "verizon.com",
+    "logo_history": [
+      {
+        "period": "2000-06-30 to 2015-09-01",
+        "description": "First Verizon logo"
+      },
+      {
+        "period": "2015-09-02 to 2024-06-25",
+        "description": "Verizon logo introduced in 2015; retained as a secondary logo after the 2024 update"
+      },
+      {
+        "period": "2024-present",
+        "description": "Logo used since 2024"
+      }
+    ]
+  },
+
+  "identity_and_classification": {
+    "company_type": "Public corporation",
+    "industry": "Telecommunications",
+    "primary_domains": [
+      "Fixed telephony",
+      "Mobile telephony",
+      "Broadband",
+      "Fiber-optic communications",
+      "Digital television",
+      "Internet television",
+      "IPTV",
+      "Internet services",
+      "IoT",
+      "Enterprise telecommunications",
+      "Government communications",
+      "Cloud and IT services",
+      "Telematics",
+      "Wireless infrastructure"
+    ],
+    "historical_identity": [
+      "Original Regional Bell Operating Company",
+      "Baby Bell",
+      "Bell Atlantic",
+      "Post-divestiture telecommunications operator",
+      "National wireless carrier",
+      "Integrated telecommunications company"
+    ],
+    "modern_identity": "Large U.S. telecommunications company with consumer wireless, broadband, fiber, enterprise, business, IoT and communications infrastructure operations."
+  },
+
+  "predecessors": [
+    {
+      "name": "Bell Atlantic Corporation",
+      "relationship": "legal predecessor / original corporate identity",
+      "period": "1983-2000"
+    },
+    {
+      "name": "NYNEX Corporation",
+      "relationship": "merged into Bell Atlantic",
+      "year": 1997
+    },
+    {
+      "name": "GTE Corporation",
+      "relationship": "merged with Bell Atlantic; Bell Atlantic survived legally and adopted Verizon name",
+      "year": 2000
+    }
+  ],
+
+  "corporate_lineage": {
+    "root": {
+      "entity": "Bell System",
+      "event": "AT&T divestiture",
+      "year": 1984
+    },
+    "regional_bell_lineage": {
+      "entity": "Bell Atlantic",
+      "created": "1983",
+      "role": "Original Baby Bell / RBOC"
+    },
+    "major_merger_sequence": [
+      {
+        "entity": "Bell Atlantic",
+        "year": 1983,
+        "event": "Created as an original RBOC"
+      },
+      {
+        "entity": "NYNEX",
+        "year": 1997,
+        "event": "Acquired by Bell Atlantic"
+      },
+      {
+        "entity": "GTE",
+        "year": 2000,
+        "event": "Merged with Bell Atlantic"
+      },
+      {
+        "entity": "Verizon Communications",
+        "year": 2000,
+        "event": "Bell Atlantic legal name and brand changed to Verizon"
+      },
+      {
+        "entity": "MCI",
+        "year": 2006,
+        "event": "Acquired by Verizon"
+      },
+      {
+        "entity": "Vodafone",
+        "year": 2014,
+        "event": "Verizon acquired Vodafone's remaining Verizon Wireless stake"
+      },
+      {
+        "entity": "Frontier Communications",
+        "year": 2026,
+        "event": "Acquired by Verizon"
+      }
+    ]
+  },
+
+  "bell_atlantic_origin": {
+    "formation_context": "The U.S. Department of Justice settlement involving the original AT&T resulted in the breakup of the Bell System and creation of the Regional Bell Operating Companies.",
+    "year": 1983,
+    "role": "Original Baby Bell / RBOC",
+    "original_operating_companies": [
+      "The Bell Telephone Company of Pennsylvania",
+      "New Jersey Bell",
+      "Diamond State Telephone",
+      "C&P Telephone"
+    ],
+    "c_and_p_structure": {
+      "description": "C&P Telephone itself comprised four subsidiaries."
+    },
+    "original_operating_territory": [
+      "Pennsylvania",
+      "New Jersey",
+      "Delaware",
+      "Maryland",
+      "Virginia",
+      "West Virginia"
+    ],
+    "original_headquarters": "Philadelphia"
+  },
+
+  "nynex_merger": {
+    "year_announced": 1996,
+    "completion_period": 1997,
+    "bell_atlantic_leadership": "Raymond W. Smith",
+    "transaction": "Bell Atlantic merger with fellow Baby Bell NYNEX",
+    "surviving_name": "Bell Atlantic",
+    "corporate_effect": "NYNEX was consolidated into Bell Atlantic.",
+    "geographic_effect": [
+      "New York",
+      "New England"
+    ],
+    "headquarters_effect": {
+      "old": "Philadelphia",
+      "new": "New York City",
+      "reason": "Bell Atlantic moved its corporate headquarters to NYNEX's former headquarters."
+    },
+    "ny_nex_operating_heritage": [
+      "New York Telephone",
+      "New England Telephone"
+    ]
+  },
+
+  "gte_merger": {
+    "proposal": {
+      "year": 1998,
+      "month": "July"
+    },
+    "announcement": "2000-04-04",
+    "approval": "2000-06",
+    "counterparty": "GTE Corporation",
+    "result": "Bell Atlantic became Verizon Communications Inc.",
+    "regulatory_authority": "Federal Communications Commission",
+    "conditions": {
+      "number": 25,
+      "purpose": "Preserve competition between local telephone carriers",
+      "requirements_included": [
+        "Investment in new markets",
+        "Investment in broadband technologies"
+      ]
+    },
+    "leadership_at_close": [
+      {
+        "name": "Charles Lee",
+        "role": "Co-CEO",
+        "background": "Former GTE CEO"
+      },
+      {
+        "name": "Ivan Seidenberg",
+        "role": "Co-CEO",
+        "background": "Bell Atlantic CEO"
+      }
+    ],
+    "initial_scale_after_merger": {
+      "telephone_lines": 63000000,
+      "states": 40,
+      "mobile_customers": 25000000
+    },
+    "services": [
+      "Internet",
+      "Long-distance calling",
+      "Local telephone service",
+      "Mobile service"
+    ]
+  },
+
+  "verizon_name": {
+    "effective_date": "2000-06-30",
+    "origin": {
+      "components": [
+        "veritas",
+        "horizon"
+      ],
+      "meaning": "The name was described as a combination of the Latin word for truth, veritas, and horizon."
+    },
+    "corporate_status": "Legal name and brand change of Bell Atlantic rather than creation of a separate legal entity."
+  },
+
+  "verizon_wireless": {
+    "formation": "2000",
+    "joint_venture_partners": [
+      {
+        "company": "Bell Atlantic",
+        "ownership": "55%"
+      },
+      {
+        "company": "Vodafone",
+        "ownership": "45%"
+      }
+    ],
+    "formation_value": "Approximately $70 billion",
+    "initial_customers": 23000000,
+    "assets_combined": [
+      "Bell Atlantic wireless network",
+      "Vodafone AirTouch",
+      "PrimeCo holdings",
+      "GTE wireless division"
+    ],
+    "strategic_effect": "Created a large national wireless operator capable of competing beyond the regional footprint characteristic of many wireless carriers at the time.",
+    "ownership_history": {
+      "2000-2014": "Jointly owned by Verizon Communications and Vodafone",
+      "2014-present": "Solely owned by Verizon Communications"
+    },
+    "ipo_history": {
+      "planned": true,
+      "postponed": "2000",
+      "cancelled": "2003",
+      "reason_given": "Verizon Wireless generated sufficient profits that Verizon no longer needed the IPO to raise funds."
+    }
+  },
+
+  "early_verizon_operations": {
+    "telephone_lines": 63000000,
+    "states": 40,
+    "mobile_customers": 25000000,
+    "services": [
+      "Local telephone",
+      "Long-distance",
+      "Mobile",
+      "Internet"
+    ],
+    "initial_long_distance_markets": [
+      "New York"
+    ]
+  },
+
+  "labor_history": [
+    {
+      "year": 2000,
+      "event": "18-day labor strike",
+      "workers_affected": 85000,
+      "cause": "Union contracts expired",
+      "effects": [
+        "Affected quarterly revenues",
+        "Created repair backlog",
+        "Postponed Verizon Wireless IPO"
+      ],
+      "scope_note": "The strike did not involve every Verizon employee."
+    }
+  ],
+
+  "network_evolution": {
+    "3g": {
+      "launch": 2002,
+      "reported_speed": "144 kbps",
+      "effect": "Approximately doubled Internet speed relative to the previous service level described in the source."
+    },
+    "fios": {
+      "internet_launch": 2004,
+      "launch_location": "Keller, Texas",
+      "technology": "Fiber-optic cable",
+      "tv_launch": 2005,
+      "initial_tv_location": "Keller, Texas",
+      "early_adoption": "20% of qualified homes had signed up by the end of 2004",
+      "january_2006_scale": {
+        "channels": 350,
+        "states": 7,
+        "hd_channels": 20,
+        "video_on_demand": true
+      }
+    },
+    "4g_lte": {
+      "launch": "2010-12",
+      "initial_markets": 38,
+      "additional_airport_markets": 7,
+      "planned_expansion": "Three-year continuous expansion"
+    },
+    "5g": {
+      "rollout_start": "2019-04",
+      "cities_by_end_2019": 30,
+      "technology": "Millimeter-wave spectrum among other spectrum holdings",
+      "mmwave_characteristics": [
+        "Very high speeds",
+        "Limited range",
+        "Poor building penetration"
+      ]
+    },
+    "c_band": {
+      "year": 2021,
+      "spectrum_acquired": "Average of 161 MHz nationwide",
+      "purchase_value": "$52.9 billion",
+      "auction": "FCC C-Band auction",
+      "market_holdings": "140-200 MHz in every available market"
+    },
+    "aws_spectrum": {
+      "year": 2012,
+      "purchase_value": "$3.9 billion",
+      "seller_group": [
+        "Comcast",
+        "Time Warner Cable",
+        "Bright House Networks",
+        "Other cable-company consortium participants"
+      ],
+      "deployment": "LTE expansion beginning in 2013"
+    }
+  },
+
+  "major_acquisitions": [
+    {
+      "target": "MCI",
+      "announcement_year": 2005,
+      "initial_offer": "$6.75 billion",
+      "revised_offer": "$7.6 billion",
+      "approved_value": "$8.5 billion",
+      "fcc_approval": "2005-10-31",
+      "completion": "2006-01-06",
+      "strategic_effects": [
+        "Added approximately one million corporate clients",
+        "Expanded international holdings",
+        "Expanded global business presence",
+        "Created Verizon Business"
+      ]
+    },
+    {
+      "target": "CyberTrust",
+      "year": 2007,
+      "value": "$1.4 billion",
+      "type": "Information security services company"
+    },
+    {
+      "target": "Rural Cellular Corporation",
+      "year": 2008,
+      "value": "$2.7 billion",
+      "consideration": [
+        "Cash",
+        "Assumed debt"
+      ]
+    },
+    {
+      "target": "Alltel",
+      "year": 2008,
+      "value": "$28.1 billion",
+      "customers_added": 13000000,
+      "strategic_effect": [
+        "Expanded rural-market coverage",
+        "Increased Verizon Wireless customer base"
+      ]
+    },
+    {
+      "target": "Terremark",
+      "year": 2011,
+      "value": "$1.4 billion",
+      "industry": "Information technology services"
+    },
+    {
+      "target": "Hughes Telematics",
+      "year": 2012,
+      "value": "$612 million",
+      "industry": "Automotive wireless and telematics"
+    },
+    {
+      "target": "AOL",
+      "year": 2015,
+      "value": "$4.4 billion",
+      "transaction_basis": "$50 per share",
+      "strategic_area": "Internet and content"
+    },
+    {
+      "target": "Fleetmatics",
+      "year": 2016,
+      "value": "$2.4 billion",
+      "headquarters": "Dublin, Ireland",
+      "industry": "Fleet telematics"
+    },
+    {
+      "target": "Sensity",
+      "year": 2016,
+      "type": "Startup",
+      "technology": "LED sensors",
+      "strategic_area": "Internet of Things"
+    },
+    {
+      "target": "SocialRadar",
+      "year": 2016,
+      "type": "Mapping startup",
+      "integration_target": "MapQuest"
+    },
+    {
+      "target": "Yahoo",
+      "year": 2017,
+      "announced_value": "$4.83 billion",
+      "completed_value": "$4.48 billion",
+      "completion": "2017-06-13",
+      "excluded_assets": [
+        "Yahoo stake in Alibaba Group",
+        "Yahoo Japan stake"
+      ]
+    },
+    {
+      "target": "XO Communications fiber-optic network business",
+      "year": 2017,
+      "value": "$1.8 billion",
+      "strategic_area": [
+        "Fiber",
+        "5G infrastructure"
+      ]
+    },
+    {
+      "target": "WideOpenWest fiber assets",
+      "year": 2017,
+      "value": "$225 million",
+      "market": "Chicago"
+    },
+    {
+      "target": "BlueJeans",
+      "year": 2020,
+      "industry": "Videoconferencing",
+      "value": "Not disclosed; reported as below $500 million",
+      "strategic_area": "Unified communications"
+    },
+    {
+      "target": "TracFone Wireless",
+      "year_announced": 2020,
+      "seller": "América Móvil",
+      "value": "$6.25 billion",
+      "fcc_approval": "2021-11-22",
+      "completion": "2021-11-23"
+    },
+    {
+      "target": "Frontier Communications",
+      "announcement": "2024-09-05",
+      "transaction_type": "All-stock",
+      "announced_price_per_share": "$38.50",
+      "announced_value": "$20 billion",
+      "fcc_approval": "2025-05-16",
+      "california_approval": "2026-01",
+      "completion": "2026-01-20",
+      "strategic_reason_given": "Expansion of Verizon's fiber network"
+    }
+  ],
+
+  "wireline_asset_divestitures": [
+    {
+      "year": 2005,
+      "asset": "Hawaii wireline operations",
+      "lines_sold": 700000
+    },
+    {
+      "year": 2007,
+      "asset": "Maine, New Hampshire and Vermont lines",
+      "buyer": "FairPoint Communications",
+      "value": "$2.72 billion"
+    },
+    {
+      "year": 2006,
+      "asset": "Telephone directory business",
+      "action": "Divested"
+    },
+    {
+      "year": 2009,
+      "states": [
+        "Arizona",
+        "Idaho",
+        "Illinois",
+        "Indiana",
+        "Michigan",
+        "Nevada",
+        "North Carolina",
+        "Ohio",
+        "Oregon",
+        "South Carolina",
+        "Washington",
+        "West Virginia",
+        "Wisconsin"
+      ],
+      "action": "Wireline operations spun off",
+      "subsequent_transaction": "Merged with Frontier Communications",
+      "value": "$8.6 billion"
+    },
+    {
+      "year": 2016,
+      "states": [
+        "Texas",
+        "Florida",
+        "California"
+      ],
+      "buyer": "Frontier Communications"
+    }
+  ],
+
+  "international_divestitures": [
+    {
+      "assets": [
+        "Verizon Dominicana",
+        "Dominican Republic telecommunications operations",
+        "Puerto Rico telecommunications interests",
+        "Venezuela telecommunications interests"
+      ],
+      "buyer": "América Móvil"
+    }
+  ],
+
+  "wireless_infrastructure_transactions": [
+    {
+      "year": 2015,
+      "counterparty": "American Tower Corporation",
+      "transaction": "Exclusive rights to lease, acquire or operate/manage many Verizon wireless towers",
+      "upfront_payment": "$5.1 billion",
+      "included_asset_sale": "Approximately 165 towers",
+      "use_of_proceeds": "Supported Verizon's $10.4 billion purchase of AWS-3 spectrum licenses at FCC auction."
+    }
+  ],
+
+  "frontier_transaction": {
+    "target": "Frontier Communications",
+    "announced": "2024-09-05",
+    "transaction_type": "All-stock acquisition",
+    "price_per_share": "$38.50",
+    "announced_value": "$20 billion",
+    "fcc_approval": "2025-05-16",
+    "california_public_utilities_commission_approval": {
+      "year": 2026,
+      "conditions": [
+        "Affordability",
+        "Service quality",
+        "Infrastructure investment",
+        "Workforce diversity",
+        "Supplier diversity"
+      ]
+    },
+    "completed": "2026-01-20",
+    "strategic_rationale": "Expansion of fiber network",
+    "post_transaction_status": "Frontier became part of Verizon."
+  },
+
+  "media_strategy": {
+    "aol": {
+      "acquired": 2015,
+      "value": "$4.4 billion"
+    },
+    "yahoo": {
+      "acquired": 2017,
+      "value": "$4.48 billion completion value"
+    },
+    "combined_division": {
+      "original_name": "Oath Inc.",
+      "later_name": "Verizon Media",
+      "rebrand_date": "2019-01"
+    },
+    "sale": {
+      "buyer": "Apollo Global Management",
+      "year": 2021,
+      "value": "$5 billion",
+      "verizon_retained_stake": "10%"
+    },
+    "post_sale": "The operation was spun off and rebranded as Yahoo."
+  },
+
+  "business_divisions_and_operations": {
+    "consumer": [
+      "Wireless",
+      "Broadband",
+      "Fiber",
+      "Fixed telephony",
+      "Digital television",
+      "Internet television",
+      "Home security",
+      "Consumer Internet"
+    ],
+    "business": [
+      "Enterprise telecommunications",
+      "Government telecommunications",
+      "Global communications",
+      "IT services",
+      "Network services",
+      "IoT",
+      "Telematics"
+    ],
+    "media_history": [
+      "AOL",
+      "Yahoo",
+      "Oath",
+      "Verizon Media"
+    ],
+    "network_services": [
+      "Mobile communications",
+      "Fiber-optic broadband",
+      "LTE",
+      "5G",
+      "Traditional telephone",
+      "VoIP",
+      "Wholesale data"
+    ]
+  },
+
+  "telecommunications_services": {
+    "products": [
+      "Fixed telephony",
+      "Mobile telephony",
+      "Broadband",
+      "Digital television",
+      "Internet television",
+      "IPTV",
+      "IoT"
+    ],
+    "consumer_services": [
+      "Internet",
+      "Traditional landline phone",
+      "VoIP",
+      "Home security",
+      "Pay television",
+      "Web hosting",
+      "Wholesale data"
+    ]
+  },
+
+  "business_and_government": {
+    "verizon_business": {
+      "created": "2006",
+      "origin": "MCI acquisition",
+      "customers": [
+        "Businesses",
+        "Corporate customers",
+        "Government customers"
+      ],
+      "international_scope": true
+    },
+    "enterprise_focus": [
+      "Global connectivity",
+      "Telecommunications",
+      "Network infrastructure",
+      "IT services",
+      "Wireless",
+      "IoT",
+      "Telematics"
+    ]
+  },
+
+  "telematics_and_iot": {
+    "hughestelematics": {
+      "acquired": 2012,
+      "value": "$612 million"
+    },
+    "hum": {
+      "launched": 2015,
+      "purpose": [
+        "Vehicle diagnostics",
+        "Vehicle monitoring"
+      ]
+    },
+    "fleetmatics": {
+      "acquired": 2016,
+      "value": "$2.4 billion",
+      "purpose": "Fleet telematics and enterprise logistics/mobile workforce products"
+    },
+    "sensity": {
+      "acquired": 2016,
+      "technology": "LED sensors",
+      "purpose": "IoT expansion"
+    },
+    "verizon_connect": {
+      "created": 2018,
+      "combined_units": [
+        "Telematics",
+        "Fleetmatics",
+        "Telogis"
+      ]
+    }
+  },
+
+  "network_and_spectrum_assets": {
+    "fiber": [
+      "FiOS",
+      "XO Communications fiber assets",
+      "WideOpenWest Chicago fiber assets",
+      "Frontier fiber assets after 2026 acquisition"
+    ],
+    "wireless": [
+      "3G",
+      "4G LTE",
+      "5G",
+      "C-Band",
+      "AWS spectrum",
+      "Millimeter-wave spectrum"
+    ],
+    "tower_strategy": {
+      "american_tower_transaction": 2015,
+      "value": "$5.1 billion"
+    },
+    "spectrum_strategy": [
+      "700 MHz auction",
+      "AWS spectrum",
+      "AWS-3",
+      "C-Band",
+      "mmWave"
+    ]
+  },
+
+  "spectrum_transactions": [
+    {
+      "year": 2008,
+      "auction": "700 MHz FCC auction",
+      "bid": "$9.4 billion",
+      "result": "Bulk of national and local licenses",
+      "population_reach": "Approximately 469 million people",
+      "intended_use": "4G"
+    },
+    {
+      "year": 2012,
+      "transaction": "AWS spectrum purchase from cable-company consortium",
+      "value": "$3.9 billion",
+      "deployment": "LTE beginning in 2013"
+    },
+    {
+      "year": 2015,
+      "auction": "AWS-3",
+      "purchase": "$10.4 billion",
+      "funding_context": "Supported partly through wireless tower transaction"
+    },
+    {
+      "year": 2021,
+      "auction": "C-Band",
+      "purchase": "$52.9 billion",
+      "average_nationwide_holding": "161 MHz",
+      "range_by_market": "140-200 MHz"
+    }
+  ],
+
+  "major_technology_milestones": [
+    {
+      "year": 2002,
+      "event": "3G service launched"
+    },
+    {
+      "year": 2004,
+      "event": "FiOS Internet launched"
+    },
+    {
+      "year": 2005,
+      "event": "FiOS TV launched"
+    },
+    {
+      "year": 2010,
+      "event": "4G LTE launched"
+    },
+    {
+      "year": 2019,
+      "event": "5G mobile network rollout began"
+    },
+    {
+      "year": 2021,
+      "event": "Major C-Band spectrum acquisition"
+    },
+    {
+      "year": 2024,
+      "event": "Direct-to-cell partnership announced with AST SpaceMobile"
+    }
+  ],
+
+  "satellite_connectivity": {
+    "partner": "AST SpaceMobile",
+    "announced": "2024-05",
+    "technology": "Direct-to-cell",
+    "objective": "Improve cellular and broadband access in remote areas of the United States."
+  },
+
+  "international_operations": {
+    "business_services": "Worldwide",
+    "former_assets": [
+      "Dominican Republic",
+      "Puerto Rico",
+      "Venezuela"
+    ],
+    "former_asset_buyer": "América Móvil",
+    "ireland": {
+      "dublin": {
+        "existing_employees": 1000
+      },
+      "limerick": {
+        "announcement": "2023-12",
+        "planned_opening": "Early 2024",
+        "planned_jobs": 400,
+        "areas": [
+          "Technology",
+          "Communications",
+          "Financial operations",
+          "Network engineering"
+        ]
+      }
+    }
+  },
+
+  "geographic_operations": {
+    "eastern_us_service_states": [
+      "Delaware",
+      "Maryland",
+      "Massachusetts",
+      "New Jersey",
+      "New York",
+      "Pennsylvania",
+      "Rhode Island",
+      "Virginia",
+      "Washington, DC"
+    ],
+    "key_markets": {
+      "Delaware": [],
+      "Maryland": [
+        "Baltimore",
+        "Salisbury"
+      ],
+      "Massachusetts": [
+        "Boston"
+      ],
+      "New Jersey": [],
+      "New York": [
+        "Albany",
+        "Auburn",
+        "Binghamton",
+        "Buffalo",
+        "Glens Falls",
+        "Saratoga Springs",
+        "Long Island",
+        "New York City",
+        "Plattsburgh",
+        "Syracuse"
+      ],
+      "Pennsylvania": [
+        "Harrisburg",
+        "Philadelphia",
+        "Pittsburgh"
+      ],
+      "Rhode Island": [
+        "Providence"
+      ],
+      "Virginia": [
+        "Norfolk",
+        "Richmond"
+      ],
+      "Washington DC": [
+        "Washington, DC"
+      ]
+    }
+  },
+
+  "corporate_headquarters_history": [
+    {
+      "company": "Bell Atlantic",
+      "location": "Philadelphia, Pennsylvania",
+      "period": "1983-1997"
+    },
+    {
+      "company": "Bell Atlantic after NYNEX merger",
+      "location": "New York City",
+      "period": "1997-present"
+    },
+    {
+      "company": "Verizon Communications",
+      "location": "1095 Avenue of the Americas, New York City",
+      "current": true
+    }
+  ],
+
+  "leadership": {
+    "current_source_period": "2025",
+    "chairman": "Mark Bertolini",
+    "chief_executive_officer": "Dan Schulman",
+    "chief_financial_officer": "Tony Skiadas",
+    "consumer_head": "Sowmyanarayan Sampath",
+    "business_head": "Kyle Malady"
+  },
+
+  "ceo_history": [
+    {
+      "name": "Ivan Seidenberg",
+      "role": "Bell Atlantic CEO / Verizon co-CEO",
+      "period": "2000-2011"
+    },
+    {
+      "name": "Lowell McAdam",
+      "role": "CEO",
+      "period": "2011-2018"
+    },
+    {
+      "name": "Hans Vestberg",
+      "role": "CEO",
+      "start": "2018-08-01",
+      "strategic_focus": "5G"
+    },
+    {
+      "name": "Dan Schulman",
+      "role": "CEO",
+      "announced": "2025-10-06"
+    }
+  ],
+
+  "organizational_restructuring": [
+    {
+      "period": "2018-2019",
+      "changes": [
+        "Hans Vestberg succeeded Lowell McAdam",
+        "Company reorganized into Consumer, Business and Media divisions"
+      ]
+    },
+    {
+      "date": "2018-12-10",
+      "voluntary_separation_program": {
+        "eligible_employees": 44000,
+        "managers_accepting": 10400,
+        "workforce_reduction": "Approximately 7%"
+      },
+      "media_writeoff": "$4.6 billion",
+      "reason_given": "Increased competitive and market pressures and lower-than-expected media revenues and earnings."
+    },
+    {
+      "date": "2026-08-16",
+      "restructuring": {
+        "layoffs": 3000,
+        "stores_sold_to_independent_franchises": 274,
+        "expense_reduction_target": "$5 billion",
+        "context": [
+          "Ongoing customer losses",
+          "Operating-expense reduction",
+          "Replacement of routine roles with AI"
+        ]
+      }
+    }
+  ],
+
+  "financial_profile": {
+    "2025": {
+      "revenue": "$138.2 billion",
+      "operating_income": "$29.26 billion",
+      "net_income": "$17.61 billion",
+      "total_assets": "$404.3 billion",
+      "total_equity": "$105.7 billion",
+      "employees": 89900
+    },
+    "2024": {
+      "revenue": "$134.788 billion",
+      "net_income": "$17.949 billion",
+      "assets": "$374.711 billion",
+      "revenue_growth": "0.6%"
+    },
+    "2025_market_data": {
+      "market_capitalization": "More than $163.96 billion as of January 2025",
+      "share_price": "More than $45 as described in the source"
+    },
+    "fortune_rankings": {
+      "fortune_500": "#31 for 2023",
+      "fortune_global_500": "#68"
+    }
+  },
+
+  "financial_history": [
+    {
+      "year": 2005,
+      "revenue_millions": 69518,
+      "net_income_millions": 7397,
+      "assets_millions": 168130,
+      "share_price": 33.85
+    },
+    {
+      "year": 2006,
+      "revenue_millions": 88182,
+      "net_income_millions": 6197,
+      "assets_millions": 188804,
+      "share_price": 34.05
+    },
+    {
+      "year": 2007,
+      "revenue_millions": 93469,
+      "net_income_millions": 5521,
+      "assets_millions": 186959,
+      "share_price": 41.22
+    },
+    {
+      "year": 2008,
+      "revenue_millions": 97354,
+      "net_income_millions": -2193,
+      "assets_millions": 202352,
+      "share_price": 34.90
+    },
+    {
+      "year": 2009,
+      "revenue_millions": 107808,
+      "net_income_millions": 4894,
+      "assets_millions": 226907,
+      "share_price": 30.46
+    },
+    {
+      "year": 2010,
+      "revenue_millions": 106565,
+      "net_income_millions": 2549,
+      "assets_millions": 220005,
+      "share_price": 30.41
+    },
+    {
+      "year": 2011,
+      "revenue_millions": 110875,
+      "net_income_millions": 2404,
+      "assets_millions": 230461,
+      "share_price": 36.64
+    },
+    {
+      "year": 2012,
+      "revenue_millions": 115846,
+      "net_income_millions": 875,
+      "assets_millions": 225222,
+      "share_price": 42.00
+    },
+    {
+      "year": 2013,
+      "revenue_millions": 120550,
+      "net_income_millions": 11497,
+      "assets_millions": 274098,
+      "share_price": 48.66,
+      "employees": 176800
+    },
+    {
+      "year": 2014,
+      "revenue_millions": 127079,
+      "net_income_millions": 9625,
+      "assets_millions": 232616,
+      "share_price": 48.61,
+      "employees": 177300
+    },
+    {
+      "year": 2015,
+      "revenue_millions": 131620,
+      "net_income_millions": 17879,
+      "assets_millions": 244175,
+      "share_price": 47.17,
+      "employees": 177700
+    },
+    {
+      "year": 2016,
+      "revenue_millions": 125980,
+      "net_income_millions": 13127,
+      "assets_millions": 244180,
+      "share_price": 51.40,
+      "employees": 160900
+    },
+    {
+      "year": 2017,
+      "revenue_millions": 126034,
+      "net_income_millions": 30101,
+      "assets_millions": 257143,
+      "share_price": 48.24,
+      "employees": 155400
+    },
+    {
+      "year": 2018,
+      "revenue_millions": 130863,
+      "net_income_millions": 15528,
+      "assets_millions": 264829,
+      "share_price": 52.08,
+      "employees": 144500
+    },
+    {
+      "year": 2019,
+      "revenue_millions": 131868,
+      "net_income_millions": 19265,
+      "assets_millions": 291727,
+      "share_price": 58.06,
+      "employees": 135000
+    },
+    {
+      "year": 2020,
+      "revenue_millions": 128292,
+      "net_income_millions": 18348,
+      "assets_millions": 316481,
+      "share_price": 58.75,
+      "employees": 132200
+    },
+    {
+      "year": 2021,
+      "revenue_millions": 133613,
+      "net_income_millions": 22618,
+      "assets_millions": 366596,
+      "share_price": 52.25,
+      "employees": 118400
+    },
+    {
+      "year": 2022,
+      "revenue_millions": 136835,
+      "net_income_millions": 21748,
+      "assets_millions": 379680,
+      "share_price": 39.40,
+      "employees": 117100
+    },
+    {
+      "year": 2023,
+      "revenue_millions": 133974,
+      "net_income_millions": 12095,
+      "assets_millions": 380255,
+      "share_price": 40.15,
+      "employees": 105400
+    },
+    {
+      "year": 2024,
+      "revenue_millions": 134788,
+      "net_income_millions": 17949,
+      "assets_millions": 374711,
+      "share_price": 38.90,
+      "employees": 99600
+    }
+  ],
+
+  "employee_history": {
+    "2013": 176800,
+    "2014": 177300,
+    "2015": 177700,
+    "2016": 160900,
+    "2017": 155400,
+    "2018": 144500,
+    "2019": 135000,
+    "2020": 132200,
+    "2021": 118400,
+    "2022": 117100,
+    "2023": 105400,
+    "2024": 99600,
+    "2025": 89900
+  },
+
+  "stock_market_history": {
+    "dow_jones": {
+      "added": "2004-04",
+      "replaced": "AT&T",
+      "historical_context": "AT&T had been part of the Dow Jones Industrial Average since the Great Depression."
+    }
+  },
+
+  "privacy_and_surveillance_history": [
+    {
+      "period": "2005-2007",
+      "issue": "Government information requests",
+      "reported_activity": "Verizon acknowledged providing customer information to government agencies without court orders or warrants on 720 occasions.",
+      "company_position": "Verizon stated it fulfilled lawful demands for information."
+    },
+    {
+      "year": 2013,
+      "issue": "NSA telephone metadata",
+      "reported_source": "The Guardian",
+      "description": "A reported FBI/FISA Court order required Verizon to provide NSA telephone metadata for calls originating in the United States.",
+      "wireless_scope_note": "The source states Verizon Wireless was not part of the wireless collection because of foreign-ownership issues."
+    },
+    {
+      "year": 2024,
+      "issue": "Real-time location data",
+      "regulator": "FCC",
+      "penalty": "Nearly $47 million",
+      "allegation": "Illegal sharing of access to customers' real-time location data."
+    }
+  ],
+
+  "privacy_and_security_controversies": [
+    {
+      "year": 2004,
+      "issue": "European email connections",
+      "action": "Verizon.net mail servers were configured not to accept connections from Europe by default.",
+      "stated_reason": "Reduce spam originating from the region.",
+      "customer_response": "Criticism and class-action litigation.",
+      "settlement": "Proposed in 2006"
+    },
+    {
+      "year": 2006,
+      "issue": "NSA / customer records",
+      "reported_claim": "Verizon supplied landline phone records to the NSA following the September 11 attacks.",
+      "legal_response": "A $50 billion lawsuit was filed by two attorneys on behalf of Verizon subscribers."
+    },
+    {
+      "year": 2015,
+      "issue": "Security vulnerability",
+      "description": "A researcher disclosed a flaw that reportedly left millions of home Internet users vulnerable to account-information leaks."
+    },
+    {
+      "year": 2024,
+      "issue": "Salt Typhoon",
+      "description": "Verizon was reported to have been affected by a 2024 cyberattack attributed in the source to the Salt Typhoon advanced persistent threat linked to the Chinese government."
+    }
+  ],
+
+  "regulatory_and_legal_history": [
+    {
+      "year": 2007,
+      "case": "Vonage patent litigation",
+      "result": "Verizon won patent infringement litigation.",
+      "initial_damages": "$58 million",
+      "later_award": "$120 million",
+      "technology": "Conversion of IP addresses into telephone numbers"
+    },
+    {
+      "year": 2010,
+      "case": "Data-service overcharging",
+      "refunds_and_penalties": "$77.8 million",
+      "customers_affected": 15000000,
+      "company_statement": "Overcharges were accidental."
+    },
+    {
+      "year": 2012,
+      "case": "Tethering fees",
+      "regulator": "FCC",
+      "issue": "Fees for Wi-Fi hotspot use on 4G smartphones and tablets",
+      "settlement_payment": "$1.25 million"
+    },
+    {
+      "year": 2014,
+      "case": "FCC net neutrality rules",
+      "action": "Verizon sued the FCC.",
+      "court_result": "DC Circuit initially struck down portions of the rules.",
+      "later_development": "In 2016 the court upheld FCC net-neutrality rules in a 2-1 decision."
+    },
+    {
+      "year": 2015,
+      "case": "Premium text-message billing",
+      "settlement": "$90 million",
+      "description": "Federal and state investigations into alleged improper billing of mobile customers for premium text messages."
+    },
+    {
+      "year": 2017,
+      "case": "New York City fiber franchise",
+      "plaintiff": "New York City",
+      "issue": "Alleged violation of a cable-franchise requirement to pass fiber to all city households.",
+      "verizon_response": [
+        "Landlords had not always granted installation permission.",
+        "Verizon argued the fiber network could follow existing copper routes.",
+        "Verizon disputed the interpretation that fiber had to pass directly in front of every property."
+      ]
+    }
+  ],
+
+  "net_neutrality_history": {
+    "position_context": "The source describes Verizon and Comcast as lobbying around FCC rules concerning treatment of Internet traffic.",
+    "2010": {
+      "event": "Google and Verizon executives agreed on a proposal concerning definition and limitations of network neutrality."
+    },
+    "2014": {
+      "event": "Verizon unsuccessfully challenged FCC net-neutrality rules."
+    },
+    "2016": {
+      "event": "DC Circuit upheld the FCC's net-neutrality rules and treatment of broadband as a public utility."
+    },
+    "2017": {
+      "issue": "Reported video-streaming throttling",
+      "services_reported": [
+        "Netflix",
+        "YouTube"
+      ],
+      "reported_speed": "10 Mbit/s",
+      "company_position": "Verizon said it was testing a system to optimize video application performance and that video quality would not be affected."
+    }
+  },
+
+  "5g_advertising_controversy": {
+    "2019": {
+      "organization": "Better Business Bureau",
+      "issue": "5G advertising",
+      "description": "Verizon was cited over advertisements conveying that it had achieved deployment of the first mobile wireless 5G network before the service was actually available."
+    },
+    "2020": {
+      "organization": "Better Business Bureau",
+      "issue": "5G availability advertising",
+      "description": "The BBB criticized claims concerning Verizon's 5G experience and recommended clearer disclosure regarding limited availability."
+    }
+  },
+
+  "wireless_network_incidents": [
+    {
+      "year": 2010,
+      "issue": "4chan traffic blocking",
+      "description": "Verizon Wireless confirmed that 4chan.org traffic was explicitly blocked after security experts detected sweep attacks associated with an IP address tied to the network.",
+      "resolution": "Traffic restored several days later."
+    },
+    {
+      "year": 2012,
+      "issue": "E-911 outage",
+      "location": "Northern Virginia suburbs of Washington, D.C.",
+      "cause_context": "June 2012 derecho storm",
+      "duration": "Some problems lasted several days",
+      "regulatory_response": "FCC investigation",
+      "findings": [
+        "Generator failures",
+        "Backup-system issues",
+        "Monitoring-system centralization"
+      ],
+      "verizon_response": [
+        "Addressed generator issues",
+        "Conducted backup-system audits",
+        "Made monitoring systems less centralized"
+      ]
+    }
+  ],
+
+  "labor_and_workforce": {
+    "2000_strike": {
+      "employees": 85000,
+      "duration": "18 days"
+    },
+    "2018_voluntary_separation": {
+      "eligible": 44000,
+      "participants": 10400,
+      "workforce_reduction": "Approximately 7%"
+    },
+    "2026_restructuring": {
+      "layoffs": 3000,
+      "stores_franchised": 274,
+      "expense_reduction": "$5 billion",
+      "technology_strategy": "Replacement of routine roles with AI"
+    }
+  },
+
+  "corporate_responsibility": {
+    "philanthropic_arm": "The Verizon Foundation",
+    "programs": [
+      {
+        "name": "HopeLine",
+        "purpose": "Provided mobile phones to victims of domestic violence."
+      },
+      {
+        "name": "Verizon Innovative Learning Schools",
+        "purpose": "Provides children access to STEM education programs."
+      },
+      {
+        "name": "Citizen Verizon",
+        "launched": 2020,
+        "scope": [
+          "Social goals",
+          "Environmental goals",
+          "Digital-skills training"
+        ],
+        "carbon_neutrality_target": "2035"
+      }
+    ],
+    "green_bonds": {
+      "period": "2019-2023",
+      "number_issued": 5,
+      "total_value": "$5 billion",
+      "2023_proceeds": "Transition toward more environmentally friendly electrical grids."
+    }
+  },
+
+  "marketing_campaigns": [
+    {
+      "name": "Can you hear me now?",
+      "launch": 2001,
+      "end": 2010,
+      "brand": "Verizon Wireless",
+      "actor": "Paul Marcarelli",
+      "character": "Test Man",
+      "agency": "Bozell",
+      "concept": "A fictional network tester travels throughout the country asking whether the recipient can hear him.",
+      "reported_customer_growth": {
+        "2002": "32.5 million",
+        "2003": "37.5 million"
+      },
+      "reported_turnover": {
+        "2000": "2.5%",
+        "2001": "1.8%"
+      },
+      "actor_post_verizon": "Marcarelli later became a Sprint spokesperson in 2016."
+    },
+    {
+      "name": "There's a map for that",
+      "launch": "2009",
+      "purpose": "Compared Verizon and AT&T network coverage maps.",
+      "competitive_context": "Parody of AT&T's 'There's an app for that' campaign.",
+      "litigation": {
+        "plaintiff": "AT&T",
+        "claim": "Coverage maps were misleading.",
+        "venue": "Atlanta federal court",
+        "resolution": "Both sides dropped their lawsuits."
+      }
+    }
+  ],
+
+  "sponsorships": {
+    "national_hockey_league": {
+      "exclusive_marketing_rights": "2007",
+      "extension": "2012",
+      "additional_content": "Exclusive content through Verizon GameCenter app"
+    },
+    "motorsports": {
+      "nascar": [
+        {
+          "period": "2009-2010",
+          "driver": "Justin Allgaier",
+          "series": "NASCAR Nationwide Series"
+        },
+        {
+          "year": 2021,
+          "event": "Verizon 200 at the Brickyard",
+          "venue": "Indianapolis Motor Speedway"
+        }
+      ],
+      "indycar": {
+        "title_sponsor_start": 2014,
+        "through": 2018
+      }
+    },
+    "nfl": {
+      "partnership_start": 2010,
+      "partner": "Vodafone",
+      "role": "Official wireless telecommunications partner",
+      "initial_deal_value": "$720 million",
+      "extension": 2013,
+      "reported_extension_value": "$1 billion",
+      "rights": "Streaming of NFL regular-season and playoff games"
+    },
+    "usa_team_handball": {
+      "partnership_start": 2020,
+      "role": "Founding partner",
+      "teams_supported": [
+        "Men's national team",
+        "Women's national team",
+        "Men's beach handball team",
+        "Women's beach handball team"
+      ],
+      "college_nationals": "Presenter"
+    },
+    "fifa_world_cup_2026": {
+      "announcement": "2024-09",
+      "scope": [
+        "United States",
+        "Canada",
+        "Mexico"
+      ],
+      "role": "Sponsor",
+      "network_support": [
+        "Stadiums",
+        "Fan fests",
+        "Host-city metropolitan areas"
+      ]
+    }
+  },
+
+  "branded_venues": {
+    "current_or_named": [
+      {
+        "name": "Verizon Hall",
+        "location": "Kimmel Center for the Performing Arts",
+        "city": "Philadelphia",
+        "association": "Philadelphia Orchestra"
+      }
+    ],
+    "former_venues": [
+      {
+        "venue": "Simmons Bank Arena",
+        "former_name": "Verizon Arena",
+        "location": "North Little Rock, Arkansas"
+      },
+      {
+        "venue": "Mayo Clinic Health System Event Center",
+        "former_name": "Verizon Center",
+        "location": "Mankato, Minnesota"
+      },
+      {
+        "venue": "SNHU Arena",
+        "former_name": "Verizon Wireless Arena",
+        "location": "Manchester, New Hampshire",
+        "naming_rights_change": "2016"
+      },
+      {
+        "venue": "Verizon Wireless Amphitheatre",
+        "location": "Irvine, California"
+      },
+      {
+        "venue": "Verizon Wireless Amphitheatre",
+        "location": "Maryland Heights, Missouri"
+      },
+      {
+        "venue": "Verizon Wireless Amphitheatre",
+        "location": "Selma, Texas"
+      },
+      {
+        "venue": "Verizon Wireless Amphitheatre",
+        "location": "Alpharetta, Georgia"
+      },
+      {
+        "venue": "Capital One Arena",
+        "location": "Washington, DC",
+        "status": "Former Verizon sponsorship"
+      }
+    ]
+  },
+
+  "major_corporate_events": [
+    {
+      "date": "1983-10-07",
+      "event": "Bell Atlantic founded"
+    },
+    {
+      "date": "1996",
+      "event": "Bell Atlantic and NYNEX merger announced"
+    },
+    {
+      "date": "1997",
+      "event": "NYNEX consolidated into Bell Atlantic"
+    },
+    {
+      "date": "2000-04",
+      "event": "Verizon Wireless joint venture formed with Vodafone"
+    },
+    {
+      "date": "2000-06-30",
+      "event": "Bell Atlantic renamed Verizon Communications"
+    },
+    {
+      "date": "2000-08",
+      "event": "Major 18-day labor strike"
+    },
+    {
+      "date": "2002",
+      "event": "3G launched"
+    },
+    {
+      "date": "2004",
+      "event": "FiOS Internet launched"
+    },
+    {
+      "date": "2005",
+      "event": "MCI acquisition announced/completed in 2006"
+    },
+    {
+      "date": "2007",
+      "event": "CyberTrust acquired"
+    },
+    {
+      "date": "2008",
+      "event": "Rural Cellular and Alltel acquisitions"
+    },
+    {
+      "date": "2010",
+      "event": "4G LTE launched"
+    },
+    {
+      "date": "2011",
+      "event": "Terremark acquired; Lowell McAdam became CEO"
+    },
+    {
+      "date": "2012",
+      "event": "Hughes Telematics acquired"
+    },
+    {
+      "date": "2013",
+      "event": "Vodafone stake buyout announced"
+    },
+    {
+      "date": "2014-02-21",
+      "event": "Verizon obtained sole ownership of Verizon Wireless"
+    },
+    {
+      "date": "2015",
+      "event": "AOL acquired"
+    },
+    {
+      "date": "2016",
+      "event": "Fleetmatics, Sensity and SocialRadar acquired"
+    },
+    {
+      "date": "2017",
+      "event": "Yahoo acquired; XO fiber assets acquired"
+    },
+    {
+      "date": "2018",
+      "event": "Verizon Connect created"
+    },
+    {
+      "date": "2019",
+      "event": "5G rollout began"
+    },
+    {
+      "date": "2020",
+      "event": "BlueJeans acquired; TracFone acquisition announced"
+    },
+    {
+      "date": "2021",
+      "event": "TracFone acquisition completed; C-Band spectrum acquired; Verizon Media sold to Apollo"
+    },
+    {
+      "date": "2022",
+      "event": "5G deployment coordinated around aviation safety concerns"
+    },
+    {
+      "date": "2024",
+      "event": "AST SpaceMobile direct-to-cell partnership; Frontier acquisition announced"
+    },
+    {
+      "date": "2025",
+      "event": "FCC approved Frontier acquisition; Verizon announced changes to DEI programs; Dan Schulman named CEO"
+    },
+    {
+      "date": "2026-01-20",
+      "event": "Frontier acquisition completed"
+    },
+    {
+      "date": "2026-08-16",
+      "event": "Restructuring announced involving approximately 3,000 layoffs and 274 store conversions"
+    }
+  ],
+
+  "aviation_and_5g": {
+    "year": 2022,
+    "issue": "Potential interference between 5G wireless service and aircraft cockpit radio-altimeter systems.",
+    "companies_involved": [
+      "Verizon",
+      "AT&T"
+    ],
+    "deployment_response": [
+      "Temporary deployment delay",
+      "Restrictions around airports",
+      "Coordination with FAA",
+      "Identification of areas requiring signal attenuation"
+    ],
+    "faa_statement_in_source": {
+      "approved_aircraft_radio_altimeters": "Approximately 90% of U.S. commercial aircraft",
+      "purpose": "Allow operation in poor visibility with deployed 5G network"
+    }
+  },
+
+  "strategic_evolution": {
+    "phase_1": {
+      "period": "1983-1997",
+      "identity": "Regional Bell Operating Company",
+      "focus": [
+        "Local telephone service",
+        "Regional communications"
+      ]
+    },
+    "phase_2": {
+      "period": "1997-2000",
+      "identity": "Expanded Bell Atlantic",
+      "focus": [
+        "Multi-state wireline operations",
+        "Wireless expansion",
+        "NYNEX integration"
+      ]
+    },
+    "phase_3": {
+      "period": "2000-2010",
+      "identity": "National telecommunications company",
+      "focus": [
+        "Wireless",
+        "Broadband",
+        "FiOS",
+        "Enterprise communications",
+        "Long distance"
+      ]
+    },
+    "phase_4": {
+      "period": "2011-2021",
+      "identity": "Integrated communications and technology company",
+      "focus": [
+        "Wireless",
+        "Fiber",
+        "5G",
+        "Enterprise",
+        "IoT",
+        "Telematics",
+        "Media"
+      ]
+    },
+    "phase_5": {
+      "period": "2022-present",
+      "identity": "Wireless and fiber-centric telecommunications company",
+      "focus": [
+        "5G",
+        "Fiber",
+        "Consumer broadband",
+        "Enterprise networking",
+        "Direct-to-cell",
+        "Frontier integration",
+        "Operating-cost reduction"
+      ]
+    }
+  },
+
+  "corporate_relationship_graph": {
+    "bell_system": {
+      "parent": "AT&T / Bell System",
+      "divestiture_year": 1984,
+      "result": "Bell Atlantic became one of seven original RBOCs."
+    },
+    "bell_atlantic": {
+      "origin": "Original Baby Bell",
+      "merged_with": [
+        "NYNEX",
+        "GTE"
+      ],
+      "became": "Verizon Communications"
+    },
+    "nynex": {
+      "acquired_by": "Bell Atlantic",
+      "year": 1997,
+      "legacy_operations": [
+        "New York Telephone",
+        "New England Telephone"
+      ]
+    },
+    "gte": {
+      "merged_with": "Bell Atlantic",
+      "year": 2000,
+      "relationship": "Major independent telephone company predecessor"
+    },
+    "vodafone": {
+      "relationship": "45% Verizon Wireless joint-venture owner",
+      "period": "2000-2014",
+      "exit_transaction": "$130 billion"
+    },
+    "mci": {
+      "acquired_by": "Verizon",
+      "year": 2006,
+      "effect": "Verizon Business"
+    },
+    "aol": {
+      "acquired_by": "Verizon",
+      "year": 2015,
+      "later_status": "Integrated into Oath / Verizon Media; sold to Apollo"
+    },
+    "yahoo": {
+      "acquired_by": "Verizon",
+      "year": 2017,
+      "later_status": "Integrated into Oath / Verizon Media; sold to Apollo"
+    },
+    "apollo_global_management": {
+      "acquired": "Verizon Media",
+      "year": 2021,
+      "verizon_retained": "10%"
+    },
+    "frontier": {
+      "acquired_by": "Verizon",
+      "year": 2026,
+      "value": "$20 billion"
+    }
+  },
+
+  "baby_bell_legacy": {
+    "status_as_of_2026": "One of three major surviving corporate groups with roots in the original Baby Bells.",
+    "three_surviving_lineages": [
+      {
+        "company": "Verizon",
+        "origin": "Bell Atlantic / NYNEX / GTE"
+      },
+      {
+        "company": "AT&T Inc.",
+        "origin": "SBC Communications / Southwestern Bell and other former Baby Bells"
+      },
+      {
+        "company": "Lumen Technologies",
+        "origin": "US West / Qwest / CenturyLink lineage"
+      }
+    ],
+    "historical_significance": "The modern U.S. telecommunications landscape retains several major corporate lineages originating from the 1980s breakup of the Bell System."
+  },
+
+  "bell_brand_history": {
+    "legacy": "Bell Atlantic inherited Bell-system corporate heritage and trademarks.",
+    "verizon_use_of_bell_logo": [
+      "Payphones",
+      "Hard hats",
+      "Trucks",
+      "Buildings"
+    ],
+    "2015_effect": "Following the 2015 Verizon logo update and truck reimaging, the Bell logo was removed from these uses."
+  },
+
+  "competitive_context": {
+    "major_competitors_or_related_companies": [
+      "AT&T",
+      "T-Mobile",
+      "Sprint",
+      "Qwest",
+      "Charter Communications",
+      "Comcast",
+      "Frontier Communications",
+      "FairPoint Communications"
+    ],
+    "historical_wireless_position": "The source describes Verizon Wireless as becoming a very large national wireless operator through mergers, acquisitions and organic growth."
+  },
+
+  "major_disputes_and_controversies": {
+    "labor": [
+      "2000 strike",
+      "2016 copper-maintenance allegations",
+      "2018 voluntary separation",
+      "2026 restructuring and layoffs"
+    ],
+    "privacy": [
+      "NSA/customer-record controversy",
+      "National Security Letters",
+      "Real-time location-data sharing",
+      "EFF privacy rating"
+    ],
+    "network_neutrality": [
+      "FCC litigation",
+      "Reported video throttling/testing"
+    ],
+    "advertising": [
+      "5G advertising complaints"
+    ],
+    "infrastructure": [
+      "E-911 outage",
+      "New York City fiber-franchise dispute",
+      "Copper-network maintenance allegations"
+    ],
+    "security": [
+      "2015 account-information vulnerability",
+      "2024 Salt Typhoon incident"
+    ]
+  },
+
+  "2026_status": {
+    "company": "Verizon Communications Inc.",
+    "brand": "Verizon",
+    "headquarters": "New York City",
+    "frontier_acquisition": "Completed 2026-01-20",
+    "employees_2025": 89900,
+    "mobile_subscribers": 146800000,
+    "mobile_subscriber_date": "2026-03-31",
+    "latest_source_restructuring": {
+      "date": "2026-08-16",
+      "layoffs": 3000,
+      "stores": 274,
+      "expense_reduction_target": "$5 billion"
+    },
+    "ceo": "Dan Schulman",
+    "chairman": "Mark Bertolini",
+    "cfo": "Tony Skiadas"
+  },
+
+  "historical_significance": [
+    "One of the original seven Regional Bell Operating Companies created from the Bell System breakup.",
+    "Maintains a direct legal and corporate lineage to Bell Atlantic dating to 1983.",
+    "Expanded from a regional Bell operating company into a national telecommunications corporation.",
+    "Integrated NYNEX and GTE into the Bell Atlantic lineage.",
+    "Built one of the largest U.S. wireless businesses through Verizon Wireless.",
+    "Acquired and integrated MCI to create Verizon Business.",
+    "Expanded substantially into fiber through FiOS and later fiber acquisitions.",
+    "Developed major national wireless spectrum holdings across 700 MHz, AWS, AWS-3 and C-Band.",
+    "Expanded into Internet content through AOL and Yahoo before selling the media business.",
+    "Expanded into IoT and telematics through Hughes Telematics, Fleetmatics, Sensity and Verizon Connect.",
+    "Continued a strategic shift toward 5G and fiber infrastructure.",
+    "Acquired Frontier Communications in 2026, further expanding its fiber footprint.",
+    "Represents one of the principal surviving corporate lineages from the original Baby Bells."
+  ],
+
+  "timeline": [
+    {
+      "date": "1983-10-07",
+      "event": "Bell Atlantic Corporation founded as an original RBOC."
+    },
+    {
+      "date": "1996",
+      "event": "Bell Atlantic and NYNEX merger orchestrated by Raymond W. Smith."
+    },
+    {
+      "date": "1997",
+      "event": "NYNEX consolidated into Bell Atlantic; headquarters moved to New York."
+    },
+    {
+      "date": "1998-07",
+      "event": "Bell Atlantic-GTE merger proposed."
+    },
+    {
+      "date": "2000-04",
+      "event": "Bell Atlantic and Vodafone form Verizon Wireless."
+    },
+    {
+      "date": "2000-06-30",
+      "event": "Bell Atlantic legally changes name to Verizon Communications."
+    },
+    {
+      "date": "2000-08",
+      "event": "Approximately 85,000 workers participate in an 18-day strike."
+    },
+    {
+      "date": "2002",
+      "event": "Verizon launches 3G."
+    },
+    {
+      "date": "2004",
+      "event": "FiOS Internet launches."
+    },
+    {
+      "date": "2005",
+      "event": "FiOS TV launches; MCI acquisition process begins."
+    },
+    {
+      "date": "2006",
+      "event": "MCI becomes part of Verizon; Verizon Business established."
+    },
+    {
+      "date": "2007",
+      "event": "CyberTrust acquired."
+    },
+    {
+      "date": "2008",
+      "event": "Rural Cellular and Alltel acquisitions."
+    },
+    {
+      "date": "2009",
+      "event": "Major wireline assets transferred to Frontier."
+    },
+    {
+      "date": "2010",
+      "event": "4G LTE launched."
+    },
+    {
+      "date": "2011",
+      "event": "Terremark acquired; Lowell McAdam becomes CEO."
+    },
+    {
+      "date": "2012",
+      "event": "Hughes Telematics acquired."
+    },
+    {
+      "date": "2013",
+      "event": "Verizon agrees to buy Vodafone's 45% Verizon Wireless stake."
+    },
+    {
+      "date": "2014-02-21",
+      "event": "Verizon completes $130 billion Vodafone stake acquisition."
+    },
+    {
+      "date": "2015",
+      "event": "AOL acquired; American Tower wireless-tower transaction."
+    },
+    {
+      "date": "2016",
+      "event": "Fleetmatics, Sensity and SocialRadar acquisitions; additional wireline divestitures."
+    },
+    {
+      "date": "2017",
+      "event": "Yahoo acquired; XO fiber assets acquired."
+    },
+    {
+      "date": "2018",
+      "event": "Verizon Connect formed."
+    },
+    {
+      "date": "2019",
+      "event": "5G rollout begins."
+    },
+    {
+      "date": "2020",
+      "event": "BlueJeans acquired; TracFone transaction announced."
+    },
+    {
+      "date": "2021",
+      "event": "TracFone acquired; C-Band spectrum purchased; Verizon Media sold to Apollo."
+    },
+    {
+      "date": "2022",
+      "event": "5G deployment coordinated with aviation authorities."
+    },
+    {
+      "date": "2023",
+      "event": "Limerick global center announced."
+    },
+    {
+      "date": "2024",
+      "event": "AST SpaceMobile direct-to-cell partnership; Frontier acquisition announced."
+    },
+    {
+      "date": "2025",
+      "event": "FCC approves Frontier acquisition; Verizon announces DEI program changes; Dan Schulman selected as CEO."
+    },
+    {
+      "date": "2026-01-20",
+      "event": "Frontier acquisition completed."
+    },
+    {
+      "date": "2026-08-16",
+      "event": "Verizon announces approximately 3,000 layoffs and 274 store franchise conversions as part of $5 billion cost-reduction strategy."
+    }
+  ],
+
+  "source_metadata": {
+    "source_type": "Wikipedia-derived article text supplied by user",
+    "source_file": "Pasted text(20261003-003831).txt",
+    "file_reference": "turn2file0",
+    "source_scope": [
+      "Corporate identity",
+      "History",
+      "Mergers",
+      "Acquisitions",
+      "Divestitures",
+      "Wireless operations",
+      "Fiber operations",
+      "Spectrum",
+      "Financial history",
+      "Geographic markets",
+      "Marketing",
+      "Governance",
+      "Corporate responsibility",
+      "Criticism",
+      "Sponsorships",
+      "References"
+    ],
+    "important_source_note": "The source itself contains historical claims, cited references, current-period claims through 2026, and footnotes concerning Verizon's legal continuity with Bell Atlantic. This JSON preserves those claims as source-derived information rather than independently reconciling them with outside sources."
+  },
+
+  "source_citations": {
+    "corporate_identity_and_current_profile": ":chatgpt-content-reference{index="1"}",
+    "bell_atlantic_nynex_gte_history": ":chatgpt-content-reference{index="2"}",
+    "fios_and_wireline_strategy": ":chatgpt-content-reference{index="3"}",
+    "wireless_and_spectrum_history": ":chatgpt-content-reference{index="4"}",
+    "vodafone_and_net_neutrality": ":chatgpt-content-reference{index="5"}",
+    "frontier_and_2026_restructuring": ":chatgpt-content-reference{index="6"}",
+    "financial_history": ":chatgpt-content-reference{index="7"}",
+    "governance_and_corporate_responsibility": ":chatgpt-content-reference{index="8"}",
+    "criticism_and_privacy": ":chatgpt-content-reference{index="9"}",
+    "sponsorships_and_venues": ":chatgpt-content-reference{index="10"}"
+  }
+}
