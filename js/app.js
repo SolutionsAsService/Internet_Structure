@@ -5,12 +5,15 @@ app.js
 ============================================================
 */
 
+import * as d3 from "d3";
 import { createPhysics, createDragBehavior } from "./physics.js";
 import { COLORS, colorForType } from "./colors.js";
 
 const normalizedColorLookup = buildNormalizedColorLookup();
 
 const mapState = {
+  root: null,
+  controller: null,
   data: null,
   nodes: [],
   links: [],
@@ -27,30 +30,34 @@ const mapState = {
   simulation: null,
   width: 0,
   height: 0,
-  isInitializing: false,
-  hasInitialized: false
+  selectedNodeId: null,
+  hoveredNodeId: null,
+  activeLayer: "all",
+  searchTerm: "",
+  missingConnectionCount: 0
 };
 
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", startApplication, { once: true });
-} else {
-  startApplication();
-}
-
-function startApplication() {
-  if (mapState.isInitializing || mapState.hasInitialized) return;
-  mapState.isInitializing = true;
-  initializeMap().finally(() => {
-    mapState.isInitializing = false;
-  });
+export function mountAtlas(root) {
+  if (!root) return () => {};
+  mapState.root = root;
+  mapState.controller = new AbortController();
+  initializeMap().catch(error => handleMapError(error));
+  return () => {
+    mapState.controller?.abort();
+    mapState.simulation?.stop();
+    mapState.root?.querySelectorAll("svg").forEach(element => element.remove());
+    mapState.root = null;
+    mapState.simulation = null;
+  };
 }
 
 async function initializeMap() {
   try {
-    const network = document.querySelector("#network");
+    const network = mapState.root.querySelector("#network");
     if (!network) throw new Error("Map container #network was not found.");
 
-    const response = await fetch("data/internet.json", { cache: "no-store" });
+    setStatus("LOADING DATA");
+    const response = await fetch("/data/internet.json", { cache: "no-store", signal: mapState.controller.signal });
     if (!response.ok) throw new Error(`internet.json failed loading (${response.status})`);
 
     const data = await response.json();
@@ -59,8 +66,8 @@ async function initializeMap() {
 
     mapState.data = data;
     mapState.nodes = data.nodes;
-    mapState.width = Math.max(1200, network.clientWidth || 0);
-    mapState.height = Math.max(800, network.clientHeight || 0);
+    mapState.width = Math.max(1600, network.clientWidth || 0);
+    mapState.height = Math.max(1000, network.clientHeight || 0);
 
     buildNodeMap();
     buildLinks();
@@ -70,12 +77,15 @@ async function initializeMap() {
     renderLabels();
     setupZoom();
     setupSearch();
-    setupGlobalFunctions();
+    setupControls();
     initializePhysics();
     updateStatistics();
     resetView();
-    mapState.hasInitialized = true;
+    const loading = mapState.root.querySelector("#map-loading");
+    if (loading) loading.hidden = true;
+    setStatus("NETWORK READY", "ready");
   } catch (error) {
+    if (error.name === "AbortError") return;
     handleMapError(error);
   }
 }
@@ -91,10 +101,16 @@ function buildNodeMap() {
 function buildLinks() {
   const links = [];
   const duplicateCheck = new Set();
+  mapState.missingConnectionCount = 0;
   mapState.nodes.forEach(node => {
     if (!node?.id || !Array.isArray(node.connections)) return;
-    node.connections.forEach(connectionId => {
-      if (!connectionId || !mapState.nodeMap.has(connectionId) || node.id === connectionId) return;
+    node.connections.forEach(connection => {
+      const connectionId = typeof connection === "string" ? connection : connection?.target || connection?.id;
+      if (!connectionId || node.id === connectionId) return;
+      if (!mapState.nodeMap.has(connectionId)) {
+        mapState.missingConnectionCount += 1;
+        return;
+      }
       const key = [node.id, connectionId].sort().join("::");
       if (duplicateCheck.has(key)) return;
       duplicateCheck.add(key);
@@ -119,7 +135,24 @@ function renderLinks() {
 
 function renderNodes() {
   mapState.nodeElements = mapState.nodeLayer.selectAll("circle").data(mapState.nodes, d => d.id).enter().append("circle").attr("class", "network-node").attr("r", getNodeRadius).attr("fill", resolveNodeColor).attr("stroke", getNodeStrokeColor()).attr("stroke-width", 1.5).style("cursor", "pointer");
-  mapState.nodeElements.on("mouseenter", function() { d3.select(this).attr("stroke", getNodeHoverStrokeColor()).attr("stroke-width", 3); }).on("mouseleave", function() { d3.select(this).attr("stroke", getNodeStrokeColor()).attr("stroke-width", 1.5); }).on("click", function(event, node) { showDetails(event, node); });
+  mapState.nodeElements
+    .on("mouseenter", function(event, node) {
+      mapState.hoveredNodeId = node.id;
+      d3.select(this).attr("stroke", getNodeHoverStrokeColor()).attr("stroke-width", 3);
+      focusNode(node.id);
+    })
+    .on("mouseleave", function() {
+      mapState.hoveredNodeId = null;
+      d3.select(this).attr("stroke", getNodeStrokeColor()).attr("stroke-width", 1.5);
+      if (mapState.selectedNodeId) focusNode(mapState.selectedNodeId);
+      else showAllNodes();
+    })
+    .on("click", function(event, node) {
+      event.stopPropagation();
+      mapState.selectedNodeId = node.id;
+      showDetails(node);
+      focusNode(node.id);
+    });
 }
 
 function getNodeRadius(node) {
@@ -192,7 +225,11 @@ function normalizeCategory(type, layer) {
 function getNodeStrokeColor() { return COLORS.effects.selection; }
 function getNodeHoverStrokeColor() { return COLORS.effects.hover || COLORS.effects.selection; }
 function getLabelColor() { return COLORS.text; }
-function linkColor(link) { return COLORS.links[normalizeCategory(link?.source?.layer || link?.target?.layer || link?.source?.type || link?.target?.type || "default")] || COLORS.links.default; }
+function linkColor(link) {
+  const source = getNodeFromLink(link?.source);
+  const target = getNodeFromLink(link?.target);
+  return COLORS.links[normalizeCategory(source?.layer || target?.layer || source?.type || target?.type || "default")] || COLORS.links.default;
+}
 
 function resolveColorToken(token) {
   if (!token || typeof token !== "string") return null;
@@ -214,11 +251,15 @@ function buildNormalizedColorLookup() {
 }
 
 function renderLabels() {
-  mapState.labelElements = mapState.labelLayer.selectAll("text").data(mapState.nodes, d => d.id).enter().append("text").text(d => d.name || d.id).attr("class", "network-label").attr("fill", getLabelColor()).attr("font-size", d => Number(d.importance) >= 9 ? "14px" : "11px").attr("font-family", "monospace").attr("text-anchor", "middle").style("pointer-events", "none");
+  mapState.labelElements = mapState.labelLayer.selectAll("text").data(mapState.nodes, d => d.id).enter().append("text").text(d => d.name || d.id).attr("class", "network-label").attr("fill", getLabelColor()).attr("font-size", d => Number(d.importance) >= 9 ? "12px" : "10px").attr("font-family", "sans-serif").attr("text-anchor", "middle").attr("opacity", d => Number(d.importance) >= 9 ? 0.85 : 0).style("pointer-events", "none");
 }
 
 function setupZoom() {
-  mapState.zoom = d3.zoom().scaleExtent([0.12, 6]).on("zoom", event => { mapState.viewport.attr("transform", event.transform); });
+  mapState.zoom = d3.zoom().scaleExtent([0.18, 6]).on("zoom", event => {
+    mapState.viewport.attr("transform", event.transform);
+    mapState.zoomScale = event.transform.k;
+    updateGraphEmphasis();
+  });
   mapState.svg.call(mapState.zoom);
 }
 
@@ -243,26 +284,145 @@ function updateGraphPositions() {
 
 function getPosition(object, axis) { return object && Number.isFinite(object[axis]) ? object[axis] : axis === "x" ? mapState.width / 2 : mapState.height / 2; }
 
-function setupSearch() {
-  const searchBox = document.querySelector("#search");
-  if (!searchBox) return;
-  searchBox.addEventListener("input", () => {
-    const value = searchBox.value.trim().toLowerCase();
-    if (!value) return showAllNodes();
-    mapState.nodeElements.attr("opacity", node => nodeMatchesSearch(node, value) ? 1 : 0.12);
-    mapState.labelElements.attr("opacity", node => nodeMatchesSearch(node, value) ? 1 : 0.12);
-    mapState.linkElements.attr("opacity", link => nodeMatchesSearch(getNodeFromLink(link.source), value) || nodeMatchesSearch(getNodeFromLink(link.target), value) ? 0.65 : 0.04);
+function setupControls() {
+  const signal = mapState.controller.signal;
+  const searchBox = mapState.root.querySelector("#search");
+  searchBox?.addEventListener("input", () => {
+    mapState.searchTerm = searchBox.value.trim().toLowerCase();
+    updateGraphEmphasis();
+  }, { signal });
+
+  mapState.root.querySelectorAll("[data-layer]").forEach(button => {
+    button.setAttribute("aria-pressed", button.dataset.layer === "all" ? "true" : "false");
+    button.addEventListener("click", () => {
+      mapState.activeLayer = button.dataset.layer || "all";
+      mapState.root.querySelectorAll("[data-layer]").forEach(item => {
+        const selected = item.dataset.layer === mapState.activeLayer;
+        item.classList.toggle("active", selected);
+        item.setAttribute("aria-pressed", String(selected));
+      });
+      updateGraphEmphasis();
+    }, { signal });
+  });
+
+  mapState.root.querySelector("#reset-view")?.addEventListener("click", resetView, { signal });
+  mapState.root.addEventListener("keydown", event => {
+    if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "k") {
+      event.preventDefault();
+      searchBox?.focus();
+    }
+  }, { signal });
+}
+
+function nodeMatchesSearch(node, value) {
+  return !value || [node?.name, node?.id, node?.type, node?.layer].some(text => String(text || "").toLowerCase().includes(value));
+}
+
+function nodeMatchesLayer(node) {
+  return mapState.activeLayer === "all" || String(node?.layer || "").toLowerCase() === mapState.activeLayer;
+}
+
+function getNodeFromLink(value) {
+  if (!value) return null;
+  if (typeof value === "object" && value.id) return value;
+  return mapState.nodeMap.get(value) || null;
+}
+
+function getConnectedNodes(nodeOrId) {
+  const nodeId = typeof nodeOrId === "string" ? nodeOrId : nodeOrId?.id;
+  if (!nodeId) return [];
+  const results = new Map();
+  mapState.links.forEach(link => {
+    const source = getNodeFromLink(link.source);
+    const target = getNodeFromLink(link.target);
+    const other = source?.id === nodeId ? target : target?.id === nodeId ? source : null;
+    if (other) results.set(other.id, other);
+  });
+  return [...results.values()].sort((left, right) => (Number(right.importance) || 0) - (Number(left.importance) || 0));
+}
+
+function focusNode(nodeId) {
+  mapState.hoveredNodeId = nodeId;
+  updateGraphEmphasis();
+}
+
+function showAllNodes() {
+  mapState.hoveredNodeId = null;
+  updateGraphEmphasis();
+}
+
+function updateGraphEmphasis() {
+  if (!mapState.nodeElements) return;
+  const focusId = mapState.hoveredNodeId || mapState.selectedNodeId;
+  const neighborIds = new Set(getConnectedNodes(focusId).map(node => node.id));
+  const passes = node => nodeMatchesSearch(node, mapState.searchTerm) && nodeMatchesLayer(node);
+
+  mapState.nodeElements.attr("opacity", node => {
+    if (!passes(node)) return 0.055;
+    if (focusId && node.id !== focusId && !neighborIds.has(node.id)) return 0.2;
+    return 1;
+  });
+  mapState.labelElements.attr("opacity", node => {
+    if (!passes(node)) return 0;
+    if (mapState.searchTerm && nodeMatchesSearch(node, mapState.searchTerm)) return 0.95;
+    if (node.id === focusId || neighborIds.has(node.id)) return 0.95;
+    if (Number(node.importance) >= 9) return 0.72;
+    return mapState.zoomScale > 1.35 && Number(node.importance) >= 7 ? 0.8 : 0;
+  });
+  mapState.linkElements.attr("opacity", link => {
+    const source = getNodeFromLink(link.source);
+    const target = getNodeFromLink(link.target);
+    const matchesSearch = nodeMatchesSearch(source, mapState.searchTerm) || nodeMatchesSearch(target, mapState.searchTerm);
+    const matchesLayer = nodeMatchesLayer(source) || nodeMatchesLayer(target);
+    if (!matchesSearch || !matchesLayer) return 0.025;
+    return focusId && (source?.id === focusId || target?.id === focusId) ? 0.88 : focusId ? 0.055 : 0.42;
   });
 }
 
-function nodeMatchesSearch(node, value) { if (!node) return false; return [node.name, node.id, node.type, node.layer].some(v => String(v || "").toLowerCase().includes(value)); }
-function showAllNodes() { mapState.nodeElements.attr("opacity", 1); mapState.labelElements.attr("opacity", 1); mapState.linkElements.attr("opacity", 0.62); }
-function setupGlobalFunctions() { window.resetView = resetView; window.filterLayer = filterLayer; }
-function filterLayer(layer) { if (!layer || layer === "all") return showAllNodes(); const normalizedLayer = String(layer).trim().toLowerCase(); mapState.nodeElements.attr("opacity", node => String(node.layer || "").toLowerCase() === normalizedLayer ? 1 : 0.1); mapState.labelElements.attr("opacity", node => String(node.layer || "").toLowerCase() === normalizedLayer ? 1 : 0.1); mapState.linkElements.attr("opacity", link => { const source = getNodeFromLink(link.source); const target = getNodeFromLink(link.target); return [source?.layer, target?.layer].some(v => String(v || "").toLowerCase() === normalizedLayer) ? 0.75 : 0.04; }); }
-function getNodeFromLink(value) { if (!value) return null; if (typeof value === "object" && value.id) return value; return mapState.nodeMap.get(value) || null; }
-function showDetails(event, node) { const details = document.querySelector("#details"); if (!details || !node) return; const connectedNodes = getConnectedNodes(node); const connectionsHTML = connectedNodes.length ? connectedNodes.map(other => `<div class="connection"><strong>${escapeHTML(other.name || other.id)}</strong><span>${escapeHTML(other.layer || "unknown")}</span></div>`).join("") : `<div class="connection">No known connections</div>`; details.innerHTML = `<div class="node-details"><h2>${escapeHTML(node.name || node.id)}</h2><div><strong>Type</strong><br>${escapeHTML(node.type || "Unknown")}</div><div><strong>Layer</strong><br>${escapeHTML(node.layer || "Unknown")}</div><div><strong>Region</strong><br>${escapeHTML(node.region || "Global")}</div><div><strong>Importance</strong><br>${escapeHTML(String(node.importance ?? "Unknown"))}</div><div><strong>Network Role</strong><br>${escapeHTML(node.network_role || "")}</div><div><strong>Description</strong><br>${escapeHTML(node.description || "")}</div><div><strong>Connected Infrastructure</strong><div class="connections">${connectionsHTML}</div></div></div>`; }
-function getConnectedNodes(node) { const results = []; const seen = new Set(); mapState.links.forEach(link => { const source = getNodeFromLink(link.source); const target = getNodeFromLink(link.target); const other = source?.id === node.id ? target : target?.id === node.id ? source : null; if (other && !seen.has(other.id)) { seen.add(other.id); results.push(other); } }); return results; }
+function showDetails(node) {
+  const details = mapState.root.querySelector("#details");
+  if (!details || !node) return;
+  const connectedNodes = getConnectedNodes(node);
+  const connectionsHTML = connectedNodes.length
+    ? connectedNodes.slice(0, 18).map(other => `<div class="connection"><strong>${escapeHTML(other.name || other.id)}</strong><span>${escapeHTML(other.layer || "unknown")}</span></div>`).join("")
+    : `<div class="connection"><strong>No mapped connections</strong></div>`;
+  const moreConnections = connectedNodes.length > 18
+    ? `<div class="detail-field">${connectedNodes.length - 18} more connected systems are shown on the map.</div>`
+    : "";
+  details.innerHTML = `<div class="node-details"><h2>${escapeHTML(node.name || node.id)}</h2><div class="node-meta"><span>${escapeHTML(node.type || "Infrastructure")}</span><span>${escapeHTML(node.layer || "Unclassified layer")}</span></div><div class="detail-field"><strong>Region</strong>${escapeHTML(node.region || "Global / unspecified")}</div><div class="detail-field"><strong>Importance</strong>${escapeHTML(String(node.importance ?? "Not rated"))}</div>${node.network_role ? `<div class="detail-field"><strong>Network role</strong>${escapeHTML(node.network_role)}</div>` : ""}${node.description ? `<div class="detail-field"><strong>Description</strong>${escapeHTML(node.description)}</div>` : ""}<div class="detail-field"><strong>Connected systems · ${connectedNodes.length}</strong><div class="connections">${connectionsHTML}</div></div>${moreConnections}</div>`;
+}
+
 function escapeHTML(value) { return String(value).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;"); }
 function resetView() { if (!mapState.svg || !mapState.zoom) return; mapState.svg.transition().duration(500).call(mapState.zoom.transform, d3.zoomIdentity); }
-function updateStatistics() { const statsBox = document.querySelector("#stats"); if (!statsBox) return; const regions = new Set(mapState.nodes.map(node => node.region).filter(Boolean)); const critical = mapState.nodes.filter(node => Number(node.importance) >= 9).length; statsBox.innerHTML = `<div>NODES: ${mapState.nodes.length}</div><div>CONNECTIONS: ${mapState.links.length}</div><div>REGIONS: ${regions.size}</div><div>CRITICAL NODES: ${critical}</div>`; }
-function handleMapError(error) { const details = document.querySelector("#details"); if (details) details.innerHTML = `<div class="system-error"><h2>SYSTEM FAILURE</h2><p>${escapeHTML(error.message || String(error))}</p></div>`; }
+function updateStatistics() {
+  const statsBox = mapState.root.querySelector("#stats");
+  if (!statsBox) return;
+  const layers = new Set(mapState.nodes.map(node => node.layer).filter(Boolean));
+  const connected = new Set(mapState.links.flatMap(link => [getNodeFromLink(link.source)?.id, getNodeFromLink(link.target)?.id]).filter(Boolean));
+  const isolated = mapState.nodes.length - connected.size;
+  statsBox.innerHTML = `<div class="stat-card"><span>NODES</span><strong>${mapState.nodes.length.toLocaleString()}</strong></div><div class="stat-card"><span>LINKS</span><strong>${mapState.links.length.toLocaleString()}</strong></div><div class="stat-card"><span>LAYERS</span><strong>${layers.size.toLocaleString()}</strong></div><div class="stat-card"><span>ISOLATED</span><strong>${isolated.toLocaleString()}</strong></div>`;
+  mapState.root.querySelector("#network-summary").textContent = `${mapState.nodes.length.toLocaleString()} nodes · ${mapState.links.length.toLocaleString()} mapped connections`;
+  mapState.root.querySelector("#layer-summary").textContent = mapState.missingConnectionCount
+    ? `${mapState.missingConnectionCount.toLocaleString()} UNRESOLVED REFERENCES`
+    : "ALL REFERENCES MAPPED";
+  mapState.root.querySelector("#status-records").textContent = `${mapState.nodes.length.toLocaleString()} indexed systems`;
+}
+
+function setStatus(message, state = "") {
+  const pill = mapState.root?.querySelector("#runtime-state");
+  const label = mapState.root?.querySelector("#runtime-label");
+  if (label) label.textContent = message;
+  if (pill) pill.className = `runtime-pill ${state}`.trim();
+}
+
+function handleMapError(error) {
+  if (error.name === "AbortError") return;
+  const details = mapState.root?.querySelector("#details");
+  if (details) details.innerHTML = `<div class="system-error"><h2>NETWORK DATA UNAVAILABLE</h2><p>${escapeHTML(error.message || String(error))}</p></div>`;
+  const loading = mapState.root?.querySelector("#map-loading");
+  if (loading) {
+    loading.hidden = false;
+    loading.innerHTML = `<div class="system-error"><h2>MAP COULD NOT LOAD</h2><p>${escapeHTML(error.message || String(error))}</p></div>`;
+  }
+  setStatus("DATA LOAD ERROR", "error");
+}
