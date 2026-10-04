@@ -74,7 +74,7 @@ export default function Atlas() {
             <div id="network" aria-label="Interactive network map">
               <div id="map-loading" className="map-loading"><span className="spinner" /><strong>Preparing network map</strong><span>Loading repository connections…</span></div>
             </div>
-            <div className="map-hint"><span>DRAG TO EXPLORE</span><span>SCROLL TO ZOOM</span><span>SELECT A NODE FOR DETAILS</span></div>
+          <div className="map-hint"><span>DRAG TO EXPLORE</span><span>SCROLL TO ZOOM</span><span>SELECT A NODE FOR DETAILS</span><span>ESC · OVERVIEW</span></div>
           </div>
           <div className="map-footer"><span id="network-summary">Loading source data…</span><span id="layer-summary">SOURCE DATA ONLY</span></div>
         </section>

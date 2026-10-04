@@ -305,7 +305,13 @@ function setupControls() {
   });
 
   mapState.root.querySelector("#reset-view")?.addEventListener("click", resetView, { signal });
-  mapState.root.addEventListener("keydown", event => {
+  document.addEventListener("keydown", event => {
+    if (event.key === "Escape") {
+      event.preventDefault();
+      clearSelection();
+      searchBox?.blur();
+      return;
+    }
     if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "k") {
       event.preventDefault();
       searchBox?.focus();
@@ -348,6 +354,25 @@ function focusNode(nodeId) {
 function showAllNodes() {
   mapState.hoveredNodeId = null;
   updateGraphEmphasis();
+}
+
+function clearSelection() {
+  mapState.selectedNodeId = null;
+  mapState.hoveredNodeId = null;
+  mapState.searchTerm = "";
+  mapState.activeLayer = "all";
+  const searchBox = mapState.root.querySelector("#search");
+  if (searchBox) searchBox.value = "";
+  mapState.root.querySelectorAll("[data-layer]").forEach(button => {
+    const selected = button.dataset.layer === "all";
+    button.classList.toggle("active", selected);
+    button.setAttribute("aria-pressed", String(selected));
+  });
+  const details = mapState.root.querySelector("#details");
+  if (details) details.innerHTML = '<div class="empty-detail"><span class="empty-mark">IS</span><h3>Select a node</h3><p>Choose an infrastructure node to inspect its layer, role, and connected systems.</p></div>';
+  mapState.nodeElements.attr("stroke", getNodeStrokeColor()).attr("stroke-width", 1.5);
+  updateGraphEmphasis();
+  resetView();
 }
 
 function updateGraphEmphasis() {
