@@ -16,6 +16,10 @@ test('Next app uses a bundled client map and local network data', async () => {
   assert.match(layout, /globals\.css/);
   assert.match(app, /fetch\("\/data\/internet\.json"/);
   assert.match(app, /NETWORK DATA UNAVAILABLE/);
+  assert.match(app, /renderLabels\(\);\s*setupZoom\(\);\s*setupControls\(\);/);
+  assert.match(app, /searchBox\?\.addEventListener\("input"/);
+  assert.match(app, /mapState\.searchTerm = searchBox\.value\.trim\(\)\.toLowerCase\(\)/);
+  assert.doesNotMatch(app, /setupSearch\s*\(\s*\)/);
   assert.match(physics, /forceManyBody/);
   assert.equal(packageData.dependencies.next, '16.3.8');
   assert.equal(packageData.dependencies.d3, '^7.9.0');

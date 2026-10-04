@@ -76,7 +76,6 @@ async function initializeMap() {
     renderNodes();
     renderLabels();
     setupZoom();
-    setupSearch();
     setupControls();
     initializePhysics();
     updateStatistics();
