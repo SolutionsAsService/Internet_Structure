@@ -26,6 +26,7 @@ export default function Home() {
 
   return (
     <main>
+      <div className="night">
       <section className="hero" aria-labelledby="hero-title">
         <div className="hero-copy">
           <p className="kicker"><span className="red">■</span> An atlas of who holds the internet up</p>
@@ -59,6 +60,7 @@ export default function Home() {
           <Link className="button" href="/how-it-works">How a request travels</Link>
           <Link className="button" href="/about#gaps">What the data leaves out</Link>
         </div>
+      </div>
       </div>
 
       <div className="wrap">
@@ -102,7 +104,7 @@ export default function Home() {
           </ol>
         </section>
 
-        <section className="section" aria-labelledby="history-title">
+        <section className="section copper copper-block" aria-labelledby="history-title">
           <div className="section-head">
             <h2 id="history-title">Bedrock</h2>
             <p>

@@ -37,12 +37,14 @@ export default async function StratumPage({ params }) {
 
   return (
     <main className="wrap">
+      <p className="crumbs" style={{ marginTop: 32 }}><Link href="/">Home</Link> / <Link href="/strata">Strata</Link> / {stratum.name}</p>
+      <StratumStrip current={stratum.id} />
+      <div className={`stratum-hero st-${stratum.id}`}>
       <header className="page-head">
-        <p className="crumbs"><Link href="/">Home</Link> / <Link href="/strata">Strata</Link> / {stratum.name}</p>
-        <StratumStrip current={stratum.id} />
         <h1 className={`st-${stratum.id}`}><span className="stratum-num">{stratum.n}</span> · {stratum.name}</h1>
         <p className="lede"><strong>{stratum.title}.</strong> {stratum.blurb}</p>
       </header>
+      </div>
 
       <dl className="facts">
         <div><dt>Organisations</dt><dd>{stratum.count}</dd></div>

@@ -26,6 +26,7 @@ export default async function DossierPage({ params }) {
   const next = DOSSIERS[i + 1];
 
   return (
+    <div className="copper full-bleed">
     <main className="wrap">
       <header className="page-head">
         <p className="crumbs"><Link href="/">Home</Link> / <Link href="/history">History</Link> / {d.title}</p>
@@ -48,5 +49,6 @@ export default async function DossierPage({ params }) {
       </nav>
       <p className="muted" style={{ fontSize: 14 }}>Rendered from <code>data/{d.file}</code>; provenance fields are omitted here and kept in the source file.</p>
     </main>
+    </div>
   );
 }
