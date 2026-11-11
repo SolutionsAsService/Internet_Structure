@@ -17,13 +17,10 @@ export default function Home() {
   const noHub = hubStrata.filter(s => !s.n).map(s => s.name);
   const lede = (
     <p className="lede">
-      Every dot is one organisation in this dataset: a company, cable, exchange or standards body, filed by what it
-      does. The {hubs} filled dots are the fewest that together account for half of all connection ends in this dataset;
-      they touch {atlas.hubLinks} of its {atlas.links.length} recorded links. The bar under the headline splits them by
-      stratum{noHub.length ? `; none sit in ${noHub.join(' or ')}` : ''}. The
-      red line is one chain of those connections, picked to pass through every stratum: a {route[0].name} home,{' '}
-      {route[1].name}, the {route[2].name} cable, {route[3].name}, {route[4].name} and {route[5].name}, with{' '}
-      {branch.map(n => n.name).join(' and ')} underneath.
+      Every dot is one organisation in this dataset, filed by what it does. The {hubs} filled dots are the fewest that
+      together account for half of all connection ends; they touch {atlas.hubLinks} of {atlas.links.length} recorded
+      links. The bar under the headline splits them by stratum{noHub.length ? ` (none in ${noHub.join(' or ')})` : ''}.
+      The red line is one chain of recorded links, picked to pass through every stratum.
     </p>
   );
 
@@ -44,7 +41,7 @@ export default function Home() {
           <ul className="legend" aria-label="Key">
             <li><span className="key key--hub" aria-hidden="true" />hub (filled)</li>
             <li><span className="key key--other" aria-hidden="true" />other (ring)</li>
-            <li><span className="key key--strata fibre-ribbon" aria-hidden="true" />stratum, in fibre colours</li>
+            <li><span className="key key--strata fibre-ribbon" aria-hidden="true" />stratum, in fibre-cable colours (TIA-598)</li>
             <li><span className="key key--route" aria-hidden="true" />a chain of recorded links</li>
           </ul>
           <StrataFigure atlas={atlas} size="wide" id="fig-wide" />

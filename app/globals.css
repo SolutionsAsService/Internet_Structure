@@ -160,9 +160,9 @@ p { margin: 0 0 1em; }
 .dot--hub { fill: var(--ink); }
 .band:hover .dot { fill: var(--muted); }
 .band:hover .dot--hub { fill: var(--ink); }
-.route-line { fill: none; stroke: var(--signal); stroke-width: 3; stroke-linejoin: round; stroke-linecap: round; pointer-events: none; }
-.route-line--branch { stroke-dasharray: 6 4; stroke-width: 2.2; }
-.route-ring { fill: none; stroke: var(--signal); stroke-width: 2.4; pointer-events: none; }
+.route-line { fill: none; stroke: var(--signal); stroke-width: 4.2; stroke-linejoin: round; stroke-linecap: round; pointer-events: none; }
+.route-line--branch { stroke-dasharray: 7 4; stroke-width: 3; }
+.route-ring { fill: none; stroke: var(--signal); stroke-width: 3; pointer-events: none; }
 .route-badge { fill: var(--signal); pointer-events: none; }
 .route-badge-n { fill: var(--signal-ink); font-size: 11px; font-weight: 850; pointer-events: none; }
 .route-label {

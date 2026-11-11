@@ -70,7 +70,7 @@ export default function StrataFigure({ atlas, size, id }) {
         <line className="band-rule band-rule--heavy" x1="0" x2={s.width} y1={g.history.y0} y2={g.history.y0} />
         <text className="band-name" x="0" y={g.history.y0 + (wide ? 21 : 16)}>History<tspan className="band-arrow" dx="4">→</tspan></text>
         <text className="band-count" x="0" y={g.history.y0 + (wide ? 38 : 31)}>
-          {wide ? `${g.history.ticks.length} dossiers` : `${g.history.ticks.length} files`}
+          {`${g.history.ticks.length} dossiers`}
         </text>
         <line className="axis" x1={g.plotX} x2={s.width - s.pad} y1={g.history.axisY} y2={g.history.axisY} />
         {g.history.marks.map(m => (
