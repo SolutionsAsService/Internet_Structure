@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import AtlasView from '../../components/AtlasView.jsx';
 import { loadAtlas } from '../../lib/data.js';
 import { atlasLayout } from '../../lib/layout.js';
@@ -15,11 +16,15 @@ export default function AtlasPage() {
   const index = new Map(atlas.nodes.map((n, i) => [n.id, i]));
 
   // Compact data for the browser: names and neighbour indices only.
+  const nameCount = {};
+  for (const n of atlas.nodes) nameCount[n.name] = (nameCount[n.name] || 0) + 1;
   const meta = atlas.nodes.map(n => ({
     id: n.id,
-    name: n.name,
+    // Seven names belong to two separate records; show the type so the pair can be told apart.
+    name: nameCount[n.name] > 1 ? `${n.name} (${n.type})` : n.name,
     type: n.type,
     s: STRATUM_BY_ID[n.stratum].name,
+    hub: n.hub,
     nb: [...atlas.neighbours.get(n.id)].map(id => index.get(id)),
   }));
 
@@ -30,7 +35,11 @@ export default function AtlasPage() {
         <h1>The whole map</h1>
         <p className="lede">
           Height is stratum: each organisation stays inside its band. Left and right is only where its connections pull
-          it, so read the lines, not the distances. Select any dot, or search, to light up what it touches.
+          it, so read the lines, not the distances. Ink dots are the {atlas.hubs.size} hubs that hold half of all
+          connections. Select any dot, or search, to light up what it touches.
+        </p>
+        <p style={{ marginTop: 12 }}>
+          Prefer a list? <Link href="/organisations">All {atlas.nodes.length} organisations, A to Z</Link>, each with every connection.
         </p>
       </header>
       <AtlasView meta={meta}>
@@ -52,7 +61,7 @@ export default function AtlasPage() {
             <g>
               {atlas.nodes.map((n, i) => {
                 const p = pos.get(n.id);
-                return <circle key={n.id} className="a-node" data-i={i} cx={p.x} cy={p.y} r={p.r} tabIndex={-1}><title>{n.name}</title></circle>;
+                return <circle key={n.id} className={n.hub ? 'a-node a-node--hub' : 'a-node'} data-i={i} cx={p.x} cy={p.y} r={p.r} tabIndex={-1}><title>{n.name}</title></circle>;
               })}
             </g>
             <g>

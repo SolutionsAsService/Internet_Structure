@@ -42,7 +42,7 @@ export default async function OrganisationPage({ params }) {
         <div><dt>Stratum</dt><dd><Link href={`/strata/${stratum.id}`}>{stratum.n} {stratum.name}</Link></dd></div>
         <div><dt>Region</dt><dd>{n.region}</dd></div>
         <div><dt>Importance</dt><dd>{n.importance} / 10</dd></div>
-        <div><dt>Recorded connections</dt><dd>{neighbours.length}</dd></div>
+        <div><dt>Recorded connections</dt><dd>{neighbours.length}{n.hub ? ` · one of the ${atlas.hubs.size} hubs` : ''}</dd></div>
       </dl>
 
       <div className="two-col">

@@ -27,10 +27,24 @@ export default function About() {
         <div><dt>Recorded connections</dt><dd>{atlas.links.length}</dd></div>
         <div><dt>References repaired</dt><dd>{atlas.repaired.length}</dd></div>
         <div><dt>References unresolved</dt><dd>{atlas.unresolved.length}</dd></div>
+        <div><dt>Hubs holding half the links</dt><dd>{atlas.hubs.size}</dd></div>
         <div><dt>No recorded connection</dt><dd>{atlas.isolated}</dd></div>
       </dl>
 
       <div className="dossier">
+        <section id="counting">
+          <h2>How each number is counted</h2>
+          <dl>
+            <dt>{atlas.sourceRecords} source records</dt><dd>Entries in the <code>nodes</code> array of <code>data/internet.json</code>.</dd>
+            <dt>{atlas.nodes.length} organisations</dt><dd>Distinct <code>id</code> values after merging records that share one.</dd>
+            <dt>{atlas.links.length} recorded connections</dt><dd>Every <code>connections</code> entry that resolves to another organisation, treated as undirected and counted once per pair (A→B and B→A are one link). Self-references are dropped.</dd>
+            <dt>{atlas.repaired.length} references repaired</dt><dd>Connection entries, counted after merging, whose written id differs from the id they resolve to.</dd>
+            <dt>{atlas.unresolved.length} references unresolved</dt><dd>Connection entries, counted after merging, that resolve to nothing; one entry per occurrence.</dd>
+            <dt>{atlas.hubs.size} hubs</dt><dd>Rank organisations by recorded connections (ties: importance, then name) and take them from the top until their connections, counted at both ends, reach half of all link endpoints ({atlas.hubEndpoints} of {atlas.links.length * 2}). Together they touch {atlas.hubLinks} of the {atlas.links.length} links.</dd>
+            <dt>{atlas.isolated} with no connection</dt><dd>Organisations with no resolvable connection in either direction.</dd>
+          </dl>
+          <p>Reproduce them with <code>npm run validate:data</code>; the code is <code>lib/data.js</code>.</p>
+        </section>
         <section>
           <h2>Strata</h2>
           <p>
@@ -68,8 +82,9 @@ export default function About() {
         <section>
           <h2>The red line</h2>
           <p>
-            The landing graphic’s route is a chain of connections recorded in the data, chosen so that it touches all seven
-            strata. A test checks every step is a real link. It shows dependency, not a measured traceroute.
+            The landing graphic’s route is a chain of connections recorded in the data, picked by hand so that it passes
+            through all seven strata. A test checks every step is a real link. It shows dependency, not a measured
+            traceroute, and where each stop sits along its band is chosen for legibility, not measured.
           </p>
         </section>
         <section>

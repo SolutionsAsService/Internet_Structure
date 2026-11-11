@@ -217,3 +217,92 @@ Depends on: M3, M6, M7
 Anchors: `Ten Principles of Good Design (Dieter Rams)` ("as little design as possible": nothing runs that need not)
 Intent: every page is pre-rendered (`dynamicParams = false`); data is read at build time by server components; the only client component is the atlas interaction.
 Residual diff (measured): client JS 652,567 B raw (R0) to 469,118 B raw (176 KB gzip, the Next/React runtime only); landing HTML 8,828 B with a spinner to 154,591 B (23 KB gzip) containing the full figure; 1 route to 283 static pages; time to `load` locally 1,605 ms to 118 ms (networkidle and load are not identical measures; R0 waited for networkidle).
+
+## 4. Panel R1 (WHOLE, on M1-M9)
+
+### Panel, WHOLE, round R1 (artifact examined: build of commit 117e4fd; `design/shots/R1/`; evidence `design/panel/R1/evidence.md`, raw `design/panel/measure-R1.json`)
+
+All 8 seats filed (`collect_panel.py`: 8 of 8 REPORTED). Full texts: `design/panel/R1/<seat>.md`.
+
+| Critic | Anchor used | Observed in the work | Verdict PASS/OBJECT | Requested change |
+|---|---|---|---|---|
+| Critic: Evidence (Cairo) | The Truthful Art: each channel means one stated thing | re-ran counts from `data/` (274/253/21/52/691/181 match; repaired 50 vs 49 printed); route dots drawn larger than their importance; 224 of 253 score 8-10 so size barely varies; x = fill order, undisclosed on landing | OBJECT | true radius or drop size; key inside the figure; disclose x, the Verisign rule, the dataset's limits; counting rules on /about |
+| Critic: Evidence (Tufte) | Visual Display: lie factor, small multiples, data-ink | per-page bar scales on /strata/[id]; self-links set the scale; radius linear in score (lie factor ~0.4); ROUTE_X scripted; red history ticks unlabelled; atlas band labels faint | OBJECT | one shared scale; self-links apart; area-true size; ticks in ink with year marks; caption on route x; darker band labels; consider a crossings matrix |
+| Critic: Usability (Krug) | Don't Make Me Think: five-second test | legibility probe PASS at 1280; at 375 no first action above the fold; stratum numerals 1-7 and route steps 1-6 collide; history labels overlap at 375; bands not signed as links | OBJECT | button under the h1 at 375; badge the route numbers; fix the collision; link cue on bands |
+| Critic: Provocateur (Debord) | Society of the Spectacle: claim and prove | "No one owns" is unargued and contradicts "owners" kicker; 253 is a count, not a finding; dot size invisible; route authored; gaps hidden on /about | OBJECT | one claim the figure proves (show what concentrates); fix size caption; disclose chosen route and gaps beside the figure |
+| Critic: Provocateur (Shklovsky) | Art as Device: defamiliarization | uniform grey rows read as a familiar dot chart; inner pages are the stock template; atlas is the habitual hairball; headline is a cliché; 375 label collision | OBJECT | one device carried through every page (bands weighted by count, reused on subpages); fix collision |
+| Critic: Inclusion (Holmes) | Mismatch: recognize exclusion | probes clean; atlas nodes not focusable; Enter takes the first match only; selection by colour and opacity; 375 label collision | OBJECT | stagger labels; 14 px SVG floor; A-Z above the map; search results list with arrows; non-colour cue for connected nodes |
+| Critic: Inclusion (Mace) | Universal Design P2, P3, P5, P7 | real-Tab focus visible on links, buttons and bands; after choosing a neighbour focus drops to BODY; nodes unreachable by keyboard; history tick links 6 x 17 px; duplicate "Charter Spectrum" | OBJECT | move focus to the panel heading; listbox search; 24 px hit area or a list alternative for ticks; disambiguate duplicates |
+| Critic: Dionysian Excess (Nietzsche) | The Birth of Tragedy | the Apollonian is complete and the Dionysian is one red line; 253 dots are the palest marks; equal band heights flatten Carry (77) against Serve (11) | OBJECT | let the multitude swell: band height or density by count, darker dots, the red line cutting through a saturated field |
+
+Statements of meaning: the R1 site says "the internet is layered, and here is one path through the layers"; seats agree the path is legible and the data honest, and disagree on whether the figure argues anything.
+Artist questions: can a claim be found in the data that the figure itself proves? Is size worth keeping at all?
+Critic questions: what does x mean on the landing; why is the History band red; what does "no one owns" rest on?
+Opinions: 8 OBJECT. Sharpest disagreement: Krug and Holmes want quieter and clearer; Nietzsche and Shklovsky want louder and heavier. Resolved by one move that serves both (M10: weight comes from data, not ornament).
+Andon pulled: no.
+
+### Frame swap (Step 2d)
+
+Five seats (Cairo F1-F2, Tufte F3, Debord F3, Shklovsky F1, Nietzsche F2) objected to the same region: the uniform pale dot field and its "size = importance" encoding. That region is swapped: the size channel is SCRAPPED, every dot is one size, and the field's weight now comes from two data-driven sources, band height by number of rows (Nietzsche, Shklovsky) and ink for hubs (Debord's "show what concentrates"). Anchor: replaced `Make It Bigger (Paula Scher)`'s literal bigness of headline with bigness of mass in the figure, reached through the existing edge Make It Bigger -.->|contrasts with| The Vignelli Canon (system: one dot, one meaning).
+
+## Move M10: Measured claim and the hub device  (BREAK)
+Depends on: M3, M4 (REOPENED by R1)
+Anchors: Stance `Make It Bigger (Paula Scher)` | Counterpoint `The Vignelli Canon (Massimo Vignelli)` | Debord R1 F1-F2
+Intent: replace the slogan "No one owns the internet" with a figure computed from the data, "253 organisations hold the internet up. 43 of them hold half of it.", and make the figure prove it: the 43 hubs drawn in ink, the rest in grey, hubs packed first in each band.
+Formal argument: Claim: concentration is the structural fact the data supports. Grounds: ranked by recorded connections, the top 43 of 253 (17 %) account for 696 of 1,382 link endpoints and touch 594 of 691 links (`lib/data.js`, test-asserted as the minimal such set). Warrant: Debord's demand that the image prove a relation; Cairo's one channel, one meaning.
+Alternatives rejected: (a) keep "no one owns": unfalsifiable from this data (no ownership field); (b) "the internet has seven layers": true but a taxonomy, not a finding; (c) top-10 share: 10 hubs hold 35 %, a weaker and more arbitrary cut than "half".
+Consequence: the headline grows to two sentences; at 1280 it runs six lines in the left column. Checked against the fold: union bottom 656 px.
+Fence: none.
+Frontier effect: hub device reused in atlas (M12), stratum pages (hub tag, hub count), organisation pages, the stratum strip carries counts.
+Mode field: Advanced: the figure states a finding, ink against grey. Acceptable: a sentence a non-specialist can repeat.
+
+## Move M11: Figure honesty pass  (KEEP-THE-RULE)
+Depends on: M10
+Anchors: `Envisioning Information (Edward Tufte)` | Cairo R1 F1-F8 | Tufte R1 F1-F5
+Intent: uniform dots (size channel scrapped); band height = rows needed (Carry tallest, test-asserted); route marked by a red ring, not a bigger dot; route steps as red numbered badges (Krug F2); history ticks in ink with quarter-century year marks, labels clear of stacks; in-figure key above the SVG (hub / other / red chain); caption: "position along a band means nothing", "Verisign counts as Name by its type", link to About; /strata/[id] bars on one scale shared by all seven pages (max off-diagonal crossing = 122), self-links reported apart; /strata gains a 7 x 7 crossings table with one-scale bars; /about gains "How each number is counted".
+Alternatives rejected: area-true radius for importance (Tufte): with 224 of 253 scores at 8-10 the channel would still be near-invisible, so it was dropped rather than corrected; ticks as individual links with 24 px hit areas (Mace): eleven ticks within 123 years on a 255 px axis cannot each have 24 px without overlap, so the whole band links to the /history list instead (list alternative).
+Consequence: a reader loses importance on the landing; it remains on every organisation page.
+
+## Move M12: Atlas access and the hub device  (KEEP-THE-RULE)
+Depends on: M6, M10
+Anchors: `Progressive Disclosure` | Holmes R1 F3-F6 | Mace R1 F1-F5
+Intent: search is a combobox with an arrow-key listbox; choosing from the list or a neighbour moves focus to the panel heading; "Clear selection" control; A-Z list offered above the map; connected nodes gain an ink stroke (non-colour cue), the selected node a heavier one; hubs in ink; band labels in muted ink (not 16 % opacity); edges lighter; duplicate names disambiguated by type ("Charter Spectrum (ISP)").
+
+### Resolutions, R1
+
+| Finding | Resolution |
+|---|---|
+| Krug F3 + Holmes F1 + Shklovsky F6 + Nietzsche F5: history labels collide at 375 | ADAPT (M11): an earlier CSS fix had been inert (the rule was pasted outside its media query; measured: label still rendered). Fixed and re-measured; first-tick label hidden at <=760 px and the ARPANET label raised above the tick stacks |
+| Cairo F1 + Cairo F2 + Tufte F3 + Debord F3 + Shklovsky F1 + Nietzsche F2: size channel misdrawn or invisible; dot field inert | ADAPT (frame swap, M10-M11): size scrapped; hubs in ink; band height by rows |
+| Nietzsche F3 + Shklovsky (request): equal band heights | ADAPT (M11): Carry 81 px vs Serve 49 px at 1280 (test asserts Carry is tallest) |
+| Debord F1 + Shklovsky F4: slogan headline | ADAPT (M10): measured claim |
+| Debord F2: 253 is a count, not a finding | ADAPT (M10) |
+| Cairo F3 + Tufte F4 + Debord F4: route x scripted, undisclosed | ADAPT (M11): caption "position along a band means nothing"; /about "picked by hand ... chosen for legibility" |
+| Cairo F4 + Tufte F5: red used for ticks and route | ADAPT (M11): ticks in ink, red reserved for the chain and the arrows |
+| Cairo F5: Verisign rule only on /about | ADAPT (M11): in the caption |
+| Cairo F6 + Debord F5: dataset presented as the whole; gaps on /about only | ADAPT (M10-M11): lede says "in this dataset"; second CTA "What the data leaves out" links /about#gaps beside the hero |
+| Cairo F7: counting procedure missing | ADAPT (M11): /about#counting, one rule per number |
+| Cairo F8: years mean different things | ADAPT: /history lists what each year marks ("1969: established"); landing ticks carry no claim beyond position on the axis |
+| Tufte F1 + F2: per-page bar scales; self-links dominate | ADAPT (M11) |
+| Tufte F6: x inside band is fill order | ADAPT (M11): caption |
+| Tufte F7: atlas band labels faint; equal edges | ADAPT (M12) |
+| Tufte F8 [premise]: force layout a poor encoding; prefer matrix | ADAPT in part (M11): the 7 x 7 matrix added on /strata; OVERRULE for the atlas itself (Adaptive, acceptable pole): the stratified map is the one place a visitor can follow a single organisation's links, which a 253 x 253 matrix cannot offer on a phone |
+| Krug F1: no first action above the fold at 375 | ADAPT (M10): "Explore the atlas" button under the h1 at <=640 px |
+| Krug F2: two numbering systems | ADAPT (M11): route steps in red badges |
+| Krug F4 + Holmes F5: bands not signed as links | ADAPT (M11): red arrow after every band name |
+| Krug F5 [claim]: one-word stratum names need learning | OVERRULE (MAYA advanced pole): every name is paired with its plain subtitle at 1280 and on every stratum card; at 375 the count replaces it for space, and the names are verbs a visitor can guess |
+| Krug F6: dashed branch unexplained at 375 | ADAPT (M11): key "one chain of recorded links"; the lede below the figure names NVIDIA and TSMC |
+| Holmes F2: SVG text floor 14 px at 375 | ADAPT in part: route labels 12.5 px, counts and years 12 px at 375 (were 11-11.5); OVERRULE for 14 px: the 375 figure would no longer fit the first screen (First screen rule), and 12 px meets no failing criterion |
+| Holmes F3 + Mace F2: map nodes not keyboard-reachable | ADAPT (M12): listbox search, focus to panel, A-Z above the map; nodes themselves stay pointer targets (253 tab stops would be worse) |
+| Holmes F4: Enter takes only the first match | OVERRULE (premise partly refuted: the R1 panel already listed up to 12 matches as buttons when nothing is selected) and ADAPT anyway (M12): arrow-key listbox |
+| Holmes F6: selection by colour only | ADAPT (M12): ink stroke on connected nodes, heavier on the selected |
+| Mace F1: focus drops to BODY | ADAPT (M12) |
+| Mace F3: tick links 6 px wide | ADAPT (M11): ticks are no longer separate links; the whole band (720 x 76 px at 1280) links to the /history list |
+| Mace F5: duplicate "Charter Spectrum" | ADAPT (M12): disambiguated by type in the atlas (7 name pairs in the data) |
+| Shklovsky F2: inner pages are the stock template | ADAPT in part (M10-M11): the hub device and counts run through the stratum strip, stratum tables (hub tags) and organisation facts; OVERRULE for a new device per inner page (Adaptive: inner pages are reference, and Vignelli's counterpoint keeps them restrained) |
+| Shklovsky F3 + Nietzsche F6 + Debord F7: atlas x meaningless | OVERRULE (premise is disclosed, not hidden): the page states x is not a measurement; y is. The matrix now carries the measured view |
+| Shklovsky F5: palette is the tasteful kit | OVERRULE (Adaptive criterion): paper, ink and one red keep red meaning "the argument" everywhere; a louder palette would cost the single-signal rule |
+| Debord F6: History band unrelated to strata | OVERRULE (MAYA): it is labelled bedrock, sits below Make, and links to its own index; the relation is chronological, not structural, and the page does not claim otherwise |
+| Mace F4 [claim]: evidence's focus line was narrow | ADAPT: R2 evidence reports bands, buttons and atlas controls |
+
+Dependents REOPENED by R1: M3 (hero composition), M4 (route marks), M6 (atlas styling). All three re-rendered and re-measured before R2.

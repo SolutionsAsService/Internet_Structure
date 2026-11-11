@@ -9,11 +9,14 @@ export default function Home() {
   const route = ROUTE_IDS.map(id => atlas.nodeById.get(id));
   const branch = ROUTE_BRANCH_IDS.slice(1).map(id => atlas.nodeById.get(id));
   const total = atlas.nodes.length;
+  const hubs = atlas.hubs.size;
   const lede = (
     <p className="lede">
-      Each dot is one of the {total} companies, cables, exchanges and standards bodies in this atlas, filed by what it
-      does. The red line follows recorded connections through all seven strata: a {route[0].name} home, {route[1].name},
-      the {route[2].name} cable, {route[3].name}, {route[4].name} and {route[5].name}, with {branch.map(n => n.name).join(' and ')} underneath.
+      Every dot is one organisation in this dataset: a company, cable, exchange or standards body, filed by what it
+      does. The {hubs} in ink are the fewest that together hold half of all {atlas.links.length} recorded connections. The
+      red line is one chain of those connections, picked to pass through every stratum: a {route[0].name} home,{' '}
+      {route[1].name}, the {route[2].name} cable, {route[3].name}, {route[4].name} and {route[5].name}, with{' '}
+      {branch.map(n => n.name).join(' and ')} underneath.
     </p>
   );
 
@@ -21,8 +24,9 @@ export default function Home() {
     <main>
       <section className="hero" aria-labelledby="hero-title">
         <div className="hero-copy">
-          <p className="kicker"><span className="red">■</span> An atlas of the internet’s owners</p>
-          <h1 id="hero-title">No one owns the internet. <em>{total} organisations</em> hold it up.</h1>
+          <p className="kicker"><span className="red">■</span> An atlas of who holds the internet up</p>
+          <h1 id="hero-title">{total} organisations hold the internet up. <em>{hubs} of them hold half of it.</em></h1>
+          <p className="hero-mobile-cta"><Link className="button button--primary" href="/atlas">Explore the atlas →</Link></p>
           {lede}
           <div className="hero-ctas">
             <Link className="button button--primary" href="/atlas">Explore the atlas →</Link>
@@ -30,17 +34,25 @@ export default function Home() {
           </div>
         </div>
         <figure className="hero-figure">
+          <ul className="legend" aria-label="Key">
+            <li><span className="key key--hub" aria-hidden="true" />one of the {hubs} hubs</li>
+            <li><span className="key" aria-hidden="true" />other organisation</li>
+            <li><span className="key key--route" aria-hidden="true" />one chain of recorded links</li>
+          </ul>
           <StrataFigure atlas={atlas} size="wide" id="fig-wide" />
           <StrataFigure atlas={atlas} size="narrow" id="fig-narrow" />
-          <figcaption>Tap a stratum to open it. Dot size is the dataset’s importance score (1–10).</figcaption>
+          <figcaption>
+            Bands are strata, heaviest where most organisations sit; position along a band means nothing.
+            Verisign counts as Name by its type. <Link href="/about">About the data</Link>
+          </figcaption>
         </figure>
       </section>
 
       <div className="hero-after">
         {lede}
         <div className="hero-ctas">
-          <Link className="button button--primary" href="/atlas">Explore the atlas →</Link>
           <Link className="button" href="/how-it-works">How a request travels</Link>
+          <Link className="button" href="/about#gaps">What the data leaves out</Link>
         </div>
       </div>
 

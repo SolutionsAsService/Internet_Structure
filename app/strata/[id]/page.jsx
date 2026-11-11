@@ -28,7 +28,10 @@ export default async function StratumPage({ params }) {
     ...other,
     links: atlas.crossings[[stratum.id, other.id].sort().join('|')] || 0,
   }));
-  const maxReach = Math.max(1, ...reach.map(r => r.links));
+  // One scale for all seven stratum pages: the largest link count between two different strata.
+  const sharedMax = Math.max(1, ...Object.entries(atlas.crossings).filter(([k]) => { const [a, b] = k.split('|'); return a !== b; }).map(([, v]) => v));
+  const within = reach.find(r => r.id === stratum.id).links;
+  const others = reach.filter(r => r.id !== stratum.id);
   const tags = [...new Set(members.map(m => m.layer))];
   const regions = [...new Set(members.map(m => m.region))];
 
@@ -45,7 +48,8 @@ export default async function StratumPage({ params }) {
         <div><dt>Organisations</dt><dd>{stratum.count}</dd></div>
         <div><dt>Source layer tags</dt><dd>{tags.length}</dd></div>
         <div><dt>Regions named</dt><dd>{regions.length}</dd></div>
-        <div><dt>Links to other strata</dt><dd>{reach.filter(r => r.id !== stratum.id).reduce((a, r) => a + r.links, 0)}</dd></div>
+        <div><dt>Hubs</dt><dd>{members.filter(m => m.hub).length} of {atlas.hubs.size}</dd></div>
+        <div><dt>Links to other strata</dt><dd>{others.reduce((a, r) => a + r.links, 0)}</dd></div>
       </dl>
 
       <div className="two-col">
@@ -59,7 +63,7 @@ export default async function StratumPage({ params }) {
               <tbody>
                 {members.map(m => (
                   <tr key={m.id}>
-                    <td><Link href={`/organisations/${m.id}`}>{m.name}</Link></td>
+                    <td><Link href={`/organisations/${m.id}`}>{m.name}</Link>{m.hub && <span className="hub-tag">hub</span>}</td>
                     <td>{m.type}</td>
                     <td>{m.region}</td>
                     <td className="num">{m.degree}</td>
@@ -71,14 +75,18 @@ export default async function StratumPage({ params }) {
         </section>
         <aside aria-labelledby="reach">
           <h2 id="reach" className="kicker">Where its connections go</h2>
-          <p className="muted" style={{ fontSize: 14 }}>Recorded links from {stratum.name} to each stratum.</p>
-          {reach.map(r => (
+          <p className="muted" style={{ fontSize: 14 }}>
+            Recorded links from {stratum.name} to each other stratum. All seven stratum pages share one scale (full width = {sharedMax} links).
+          </p>
+          {others.map(r => (
             <div className="bar-row" key={r.id}>
               <Link href={`/strata/${r.id}`}>{r.n} {r.name}</Link>
-              <span className={r.id === stratum.id ? 'bar bar--self' : 'bar'} style={{ width: `${(r.links / maxReach) * 100}%` }} aria-hidden="true" />
+              <span className="bar-track"><span className="bar" style={{ width: `${(r.links / sharedMax) * 100}%` }} aria-hidden="true" /></span>
               <span className="n">{r.links}</span>
             </div>
           ))}
+          <p style={{ fontSize: 14, marginTop: 8 }}>Plus <strong>{within}</strong> links between organisations inside {stratum.name}.</p>
+          <p style={{ fontSize: 14 }}><Link href="/strata#matrix">All crossings as one table</Link></p>
           <p className="kicker" style={{ marginTop: 24 }}>Source tags folded in</p>
           <p style={{ fontSize: 14 }}>{tags.join(', ')}</p>
         </aside>

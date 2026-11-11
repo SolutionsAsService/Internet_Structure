@@ -74,7 +74,7 @@ test('landing figure: one dot per organisation, all inside the drawing', () => {
     for (const d of dots) {
       assert.ok(d.x - d.r >= g.plotX - 1 && d.x + d.r <= g.size.width, `${size} ${d.id} x`);
       const band = g.bands.find(b => b.dots.includes(d));
-      assert.ok(d.y - d.r >= band.y0 && d.y + d.r <= band.y0 + g.size.bandH, `${size} ${d.id} y`);
+      assert.ok(d.y - d.r >= band.y0 && d.y + d.r <= band.y0 + band.h, `${size} ${d.id} y`);
     }
   }
 });
@@ -89,4 +89,20 @@ test('atlas layout keeps every organisation inside its stratum band', () => {
   }
   // Deterministic: the same build gives the same picture.
   assert.deepEqual(atlasLayout(atlas).nodes, layout.nodes);
+});
+
+test('hubs are the fewest organisations holding half of all link endpoints', () => {
+  const hubs = atlas.nodes.filter(n => n.hub);
+  const endpoints = hubs.reduce((sum, n) => sum + n.degree, 0);
+  assert.ok(endpoints >= atlas.links.length, 'hubs reach half');
+  const weakest = Math.min(...hubs.map(n => n.degree));
+  assert.ok(endpoints - weakest < atlas.links.length, 'dropping the weakest hub falls short');
+});
+
+test('stratum bands grow with membership', () => {
+  for (const size of ['wide', 'narrow']) {
+    const g = figureGeometry(atlas, size);
+    const carry = g.bands.find(b => b.id === 'carry');
+    for (const b of g.bands) assert.ok(carry.h >= b.h, `${size}: carry is the tallest`);
+  }
 });

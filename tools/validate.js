@@ -13,6 +13,7 @@ if (unmapped.length) { failed = true; console.error('✗ layer tags with no stra
 
 console.log(`${atlas.sourceRecords} records → ${atlas.nodes.length} organisations (${atlas.duplicates.length} ids merged)`);
 console.log(`${atlas.links.length} connections; ${atlas.repaired.length} references repaired; ${atlas.unresolved.length} unresolved`);
+console.log(`${atlas.hubs.size} hubs hold ${atlas.hubEndpoints} of ${atlas.links.length * 2} link endpoints; ${atlas.isolated} organisations have no connection`);
 console.log('Most frequent unresolved references:');
 console.table(atlas.unresolvedByTarget.slice(0, 15).map(([target, count]) => ({ target, count })));
 process.exitCode = failed ? 1 : 0;

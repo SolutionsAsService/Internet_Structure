@@ -11,6 +11,8 @@ export default function AtlasView({ meta, children }) {
   const view = useRef({ k: 1, x: 0, y: 0 });
   const [selected, setSelected] = useState(null);
   const [query, setQuery] = useState('');
+  const [active, setActive] = useState(0);
+  const headingRef = useRef(null);
   const declutterRef = useRef(() => {});
 
   const matches = useMemo(() => {
@@ -21,6 +23,13 @@ export default function AtlasView({ meta, children }) {
       .filter(n => n.name.toLowerCase().includes(q) || n.type.toLowerCase().includes(q) || n.s.toLowerCase() === q)
       .slice(0, 12);
   }, [meta, query]);
+
+  // Choose an organisation from a list or the search, then move focus to its heading so a
+  // keyboard user continues from the panel instead of the top of the page.
+  const choose = i => {
+    setSelected(i);
+    requestAnimationFrame(() => headingRef.current?.focus());
+  };
 
   // Pan and zoom.
   useEffect(() => {
@@ -185,13 +194,24 @@ export default function AtlasView({ meta, children }) {
         <input
           id="atlas-q"
           type="search"
+          role="combobox"
+          aria-expanded={matches.length > 0 && selected === null}
+          aria-controls="atlas-results"
+          aria-activedescendant={matches[active] && selected === null ? `opt-${matches[active].id}` : undefined}
+          aria-describedby="atlas-q-hint"
           value={query}
           placeholder="e.g. Equinix, subsea, DNS"
           autoComplete="off"
-          onChange={e => setQuery(e.target.value)}
-          onKeyDown={e => { if (e.key === 'Enter' && matches[0]) setSelected(matches[0].i); }}
+          onChange={e => { setQuery(e.target.value); setActive(0); setSelected(null); }}
+          onKeyDown={e => {
+            if (e.key === 'ArrowDown') { e.preventDefault(); setActive(a => Math.min(a + 1, matches.length - 1)); }
+            else if (e.key === 'ArrowUp') { e.preventDefault(); setActive(a => Math.max(a - 1, 0)); }
+            else if (e.key === 'Enter' && matches[active]) { e.preventDefault(); choose(matches[active].i); }
+          }}
         />
+        <span id="atlas-q-hint" className="visually-hidden">Use the up and down arrows to move through matches, Enter to choose.</span>
         <button type="button" onClick={() => { setSelected(null); setQuery(''); stageRef.current.reset(); }}>Reset</button>
+        {node && <button type="button" onClick={() => setSelected(null)}>Clear selection</button>}
       </div>
       <div className="atlas">
         <div className="atlas-stage" ref={stageRef}>
@@ -204,14 +224,14 @@ export default function AtlasView({ meta, children }) {
         <aside className="atlas-panel" aria-live="polite">
           {node ? (
             <>
-              <p className="meta">{node.s} · {node.type}</p>
-              <h2>{node.name}</h2>
+              <p className="meta">{node.s} · {node.type}{node.hub ? ' · hub' : ''}</p>
+              <h2 ref={headingRef} tabIndex={-1}>{node.name}</h2>
               <p><Link href={`/organisations/${node.id}`}>Open the full profile →</Link></p>
               <p className="meta">{neighbours.length} recorded connections</p>
               <ul>
                 {neighbours.map(n => (
                   <li key={n.id}>
-                    <button type="button" onClick={() => setSelected(n.i)}>{n.name}</button>
+                    <button type="button" onClick={() => choose(n.i)}>{n.name}</button>
                     <small>{n.s}</small>
                   </li>
                 ))}
@@ -220,10 +240,10 @@ export default function AtlasView({ meta, children }) {
           ) : matches.length ? (
             <>
               <p className="meta">{matches.length === 12 ? 'First 12 matches' : `${matches.length} matches`}</p>
-              <ul>
-                {matches.map(n => (
-                  <li key={n.id}>
-                    <button type="button" onClick={() => setSelected(n.i)}>{n.name}</button>
+              <ul id="atlas-results" role="listbox" aria-label="Matches">
+                {matches.map((n, k) => (
+                  <li key={n.id} id={`opt-${n.id}`} role="option" aria-selected={k === active} className={k === active ? 'active' : undefined}>
+                    <button type="button" tabIndex={-1} onClick={() => choose(n.i)}>{n.name}</button>
                     <small>{n.s}</small>
                   </li>
                 ))}
@@ -237,7 +257,6 @@ export default function AtlasView({ meta, children }) {
                 Drag to pan, scroll or pinch to zoom, Escape to clear. Labels show the most-connected organisations
                 that fit without overlapping; zoom in or select a dot for the rest.
               </p>
-              <p className="atlas-hint">Prefer a list? <Link href="/organisations">Every organisation, A to Z</Link>.</p>
             </>
           )}
         </aside>

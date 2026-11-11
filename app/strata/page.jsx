@@ -9,6 +9,7 @@ export const metadata = {
 export default function StrataIndex() {
   const atlas = loadAtlas();
   const max = Math.max(...atlas.strata.map(s => s.count));
+  const maxCrossing = Math.max(...Object.values(atlas.crossings));
   return (
     <main className="wrap">
       <header className="page-head">
@@ -33,6 +34,35 @@ export default function StrataIndex() {
           </Link>
         ))}
       </div>
+
+      <section className="section" id="matrix" aria-labelledby="matrix-title">
+        <div className="section-head">
+          <h2 id="matrix-title">Who connects to whom</h2>
+          <p>
+            Recorded links between each pair of strata ({atlas.links.length} in all; each link counted once). The bar under each number is drawn to one scale
+            across the table. The diagonal is links inside one stratum.
+          </p>
+        </div>
+        <div className="table-wrap">
+          <table className="matrix">
+            <thead>
+              <tr><th scope="col"><span className="visually-hidden">From</span></th>{atlas.strata.map(s => <th key={s.id} scope="col" className="num">{s.n} {s.name}</th>)}</tr>
+            </thead>
+            <tbody>
+              {atlas.strata.map(a => (
+                <tr key={a.id}>
+                  <th scope="row"><Link href={`/strata/${a.id}`}>{a.n} {a.name}</Link></th>
+                  {atlas.strata.map(b => {
+                    const v = atlas.crossings[[a.id, b.id].sort().join('|')] || 0;
+                    const t = v / maxCrossing;
+                    return <td key={b.id} className={a.id === b.id ? 'num heat heat--self' : 'num heat'} style={{ '--t': t.toFixed(3) }}><span>{v}</span></td>;
+                  })}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
     </main>
   );
 }
