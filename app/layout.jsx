@@ -42,7 +42,7 @@ export default function RootLayout({ children }) {
         <a className="skip" href="#main">Skip to content</a>
         <header className="site-header">
           <Link href="/" className="wordmark" aria-label="Internet Structure, home">
-            <span className="wordmark-bar" aria-hidden="true" />
+            <span className="wordmark-bar fibre-ribbon" aria-hidden="true" />
             Internet<b>Structure</b>
           </Link>
           <nav aria-label="Sections" className="site-nav">

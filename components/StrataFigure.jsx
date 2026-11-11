@@ -26,13 +26,13 @@ export default function StrataFigure({ atlas, size, id }) {
       <title id={`${id}-title`}>The internet in seven strata</title>
       <desc id={`${id}-desc`}>
         {`${atlas.nodes.length} organisations, one dot each, filed into seven strata from Serve at the top to Make at the bottom. ` +
-          `${hubTotal} of them, drawn in ink, hold half of all recorded connections. ` +
+          `${hubTotal} of them, drawn as filled dots, together account for half of all recorded connection ends; the rest are rings. ` +
           `A red line traces recorded connections: ${g.route.map(d => d.name).join(', then ')}; a dashed branch runs from Google to ${g.branch.slice(1).map(d => d.name).join(' and ')}. ` +
           `Beneath, ${g.history.ticks.length} history dossiers from ${g.history.minYear} to ${g.history.maxYear}.`}
       </desc>
 
       {g.bands.map(b => (
-        <Link key={b.id} href={`/strata/${b.id}`} className="band" aria-label={`Stratum ${b.n}, ${b.name}: ${b.title}, ${b.count} organisations, ${b.hubs} hubs`}>
+        <Link key={b.id} href={`/strata/${b.id}`} className={`band st-${b.id}`} aria-label={`Stratum ${b.n}, ${b.name}: ${b.title}, ${b.count} organisations, ${b.hubs} hubs`}>
           <rect className="band-hit" x="0" y={b.y0} width={s.width} height={b.h} />
           <line className="band-rule" x1="0" x2={s.width} y1={b.y0} y2={b.y0} />
           <text className="band-n" x="0" y={b.y0 + b.h - (wide ? 9 : 7)}>{b.n}</text>

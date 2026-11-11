@@ -40,7 +40,7 @@ export default async function StratumPage({ params }) {
       <header className="page-head">
         <p className="crumbs"><Link href="/">Home</Link> / <Link href="/strata">Strata</Link> / {stratum.name}</p>
         <StratumStrip current={stratum.id} />
-        <h1>{stratum.n} · {stratum.name}</h1>
+        <h1 className={`st-${stratum.id}`}><span className="stratum-num">{stratum.n}</span> · {stratum.name}</h1>
         <p className="lede"><strong>{stratum.title}.</strong> {stratum.blurb}</p>
       </header>
 
@@ -79,7 +79,7 @@ export default async function StratumPage({ params }) {
             Recorded links from {stratum.name} to each other stratum. All seven stratum pages share one scale (full width = {sharedMax} links).
           </p>
           {others.map(r => (
-            <div className="bar-row" key={r.id}>
+            <div className={`bar-row st-${r.id}`} key={r.id}>
               <Link href={`/strata/${r.id}`}>{r.n} {r.name}</Link>
               <span className="bar-track"><span className="bar" style={{ width: `${(r.links / sharedMax) * 100}%` }} aria-hidden="true" /></span>
               <span className="n">{r.links}</span>

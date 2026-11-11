@@ -22,11 +22,11 @@ export default function StrataIndex() {
       </header>
       <div className="strata-grid">
         {atlas.strata.map(s => (
-          <Link key={s.id} href={`/strata/${s.id}`} className="stratum-card">
+          <Link key={s.id} href={`/strata/${s.id}`} className={`stratum-card st-${s.id}`}>
             <span className="num" aria-hidden="true">{s.n}</span>
             <h2 style={{ fontSize: 24, textTransform: 'uppercase' }}>{s.name} <span className="muted">· {s.title}</span></h2>
             <p className="q">{s.blurb}</p>
-            <div className="bar-row" style={{ gridTemplateColumns: 'minmax(0,1fr) 40px' }} aria-hidden="true">
+            <div className={`bar-row st-${s.id}`} style={{ gridTemplateColumns: 'minmax(0,1fr) 40px' }} aria-hidden="true">
               <span className="bar" style={{ width: `${(s.count / max) * 100}%` }} />
               <span className="n">{s.count}</span>
             </div>
@@ -50,7 +50,7 @@ export default function StrataIndex() {
             </thead>
             <tbody>
               {atlas.strata.map(a => (
-                <tr key={a.id}>
+                <tr key={a.id} className={`st-${a.id}`}>
                   <th scope="row"><Link href={`/strata/${a.id}`}>{a.n} {a.name}</Link></th>
                   {atlas.strata.map(b => {
                     const v = atlas.crossings[[a.id, b.id].sort().join('|')] || 0;

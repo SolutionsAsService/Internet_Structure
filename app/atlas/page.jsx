@@ -35,8 +35,8 @@ export default function AtlasPage() {
         <h1>The whole map</h1>
         <p className="lede">
           Height is stratum: each organisation stays inside its band. Left and right is only where its connections pull
-          it, so read the lines, not the distances. Ink dots are the {atlas.hubs.size} hubs that hold half of all
-          connections. Select any dot, or search, to light up what it touches.
+          it, so read the lines, not the distances. Filled dots are the {atlas.hubs.size} hubs that hold half of all
+          connections; colour is stratum. Select any dot, or search, to light up what it touches.
         </p>
         <p style={{ marginTop: 12 }}>
           Prefer a list? <Link href="/organisations">All {atlas.nodes.length} organisations, A to Z</Link>, each with every connection.
@@ -46,9 +46,10 @@ export default function AtlasPage() {
         <svg viewBox={`0 0 ${layout.width} ${layout.height}`} preserveAspectRatio="xMidYMid meet" role="img" aria-label={`Network of ${atlas.nodes.length} organisations in seven strata`}>
           <g data-viewport="">
             {layout.bands.map(b => (
-              <g key={b.id}>
+              <g key={b.id} className={`st-${b.id}`}>
                 <line className="atlas-band-rule" x1="0" x2={layout.width} y1={b.y0} y2={b.y0} />
-                <text className="atlas-band-label" x="8" y={b.y0 + 34}>{b.n} {b.name}</text>
+                <rect className="atlas-band-swatch" x="8" y={b.y0 + 12} width="10" height="26" />
+                <text className="atlas-band-label" x="26" y={b.y0 + 34}>{b.n} {b.name}</text>
               </g>
             ))}
             <g>
@@ -61,7 +62,7 @@ export default function AtlasPage() {
             <g>
               {atlas.nodes.map((n, i) => {
                 const p = pos.get(n.id);
-                return <circle key={n.id} className={n.hub ? 'a-node a-node--hub' : 'a-node'} data-i={i} cx={p.x} cy={p.y} r={p.r} tabIndex={-1}><title>{n.name}</title></circle>;
+                return <circle key={n.id} className={`a-node st-${n.stratum}${n.hub ? ' a-node--hub' : ''}`} data-i={i} cx={p.x} cy={p.y} r={p.r} tabIndex={-1}><title>{n.name}</title></circle>;
               })}
             </g>
             <g>

@@ -40,7 +40,7 @@ export default function About() {
             <dt>{atlas.links.length} recorded connections</dt><dd>Every <code>connections</code> entry that resolves to another organisation, treated as undirected and counted once per pair (A→B and B→A are one link). Self-references are dropped.</dd>
             <dt>{atlas.repaired.length} references repaired</dt><dd>Connection entries, counted after merging, whose written id differs from the id they resolve to.</dd>
             <dt>{atlas.unresolved.length} references unresolved</dt><dd>Connection entries, counted after merging, that resolve to nothing; one entry per occurrence.</dd>
-            <dt>{atlas.hubs.size} hubs</dt><dd>Rank organisations by recorded connections (ties: importance, then name) and take them from the top until their connections, counted at both ends, reach half of all link endpoints ({atlas.hubEndpoints} of {atlas.links.length * 2}). Together they touch {atlas.hubLinks} of the {atlas.links.length} links.</dd>
+            <dt>{atlas.hubs.size} hubs</dt><dd>Rank organisations by recorded connections (ties: importance, then name) and take them from the top until their connections, counted at both ends, reach half of all link endpoints ({atlas.hubEndpoints} of {atlas.links.length * 2}). Together they touch {atlas.hubLinks} of the {atlas.links.length} links. The count is stable, but the last hub ties with others on {Math.min(...atlas.nodes.filter(n => n.hub).map(n => n.degree))} connections; which of them is drawn in ink is decided by importance, then name. “Hold” here means connections recorded in this dataset, not traffic or ownership.</dd>
             <dt>{atlas.isolated} with no connection</dt><dd>Organisations with no resolvable connection in either direction.</dd>
           </dl>
           <p>Reproduce them with <code>npm run validate:data</code>; the code is <code>lib/data.js</code>.</p>
@@ -78,6 +78,15 @@ export default function About() {
           <ul style={{ columns: '3 180px', fontSize: 14 }}>
             {atlas.unresolvedByTarget.map(([t, c]) => <li key={t}><code>{t}</code> × {c}</li>)}
           </ul>
+        </section>
+        <section>
+          <h2>Colours</h2>
+          <p>
+            Each stratum takes a colour from the TIA-598 fibre-optic colour code, the code that tells strands apart inside
+            every fibre cable: brown for Make, blue for Wire, green for Meet, orange for Carry, yellow for Name, violet for
+            Govern and aqua for Serve. Red, fibre seven, is kept for the one chain of recorded links. Filled dots are hubs;
+            rings are every other organisation, so the difference does not depend on colour.
+          </p>
         </section>
         <section>
           <h2>The red line</h2>

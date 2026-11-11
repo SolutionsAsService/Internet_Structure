@@ -13,6 +13,14 @@
   --font: var(--font-archivo), 'Helvetica Neue', Arial, sans-serif;
   --gutter: clamp(16px, 3.2vw, 40px);
   --maxw: 1240px;
+  /* Strata take their colours from the TIA-598 fibre-optic colour code; red (fibre 7) is the route. */
+  --s-serve: #0d8f99;
+  --s-govern: #9b2fae;
+  --s-name: #9a8200;
+  --s-carry: #c96200;
+  --s-meet: #2f8a3a;
+  --s-wire: #2a55d0;
+  --s-make: #6e4526;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme='light']) {
@@ -25,6 +33,13 @@
     --signal: #ff5a4c;
     --signal-ink: #121110;
     --focus: #8ab4ff;
+    --s-serve: #3cc4cf;
+    --s-govern: #d07ae0;
+    --s-name: #e0c23a;
+    --s-carry: #ff9a3c;
+    --s-meet: #6fcf6a;
+    --s-wire: #7da2ff;
+    --s-make: #c99572;
   }
 }
 :root[data-theme='dark'] {
@@ -37,6 +52,13 @@
   --signal: #ff5a4c;
   --signal-ink: #121110;
   --focus: #8ab4ff;
+  --s-serve: #3cc4cf;
+  --s-govern: #d07ae0;
+  --s-name: #e0c23a;
+  --s-carry: #ff9a3c;
+  --s-meet: #6fcf6a;
+  --s-wire: #7da2ff;
+  --s-make: #c99572;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -75,7 +97,7 @@ p { margin: 0 0 1em; }
   font-variation-settings: 'wdth' 80;
 }
 .wordmark b { font-weight: 850; margin-left: 4px; }
-.wordmark-bar { width: 22px; height: 10px; background: var(--signal); transform: skewX(-24deg); }
+
 .site-nav { display: flex; gap: 4px 20px; flex-wrap: wrap; font-size: 15px; font-weight: 600; }
 .site-nav a { text-decoration: none; padding: 6px 0; }
 .site-nav a:hover { text-decoration: underline; }
@@ -118,8 +140,7 @@ p { margin: 0 0 1em; }
 .hero-mobile-cta { display: none; }
 .legend { list-style: none; display: flex; flex-wrap: wrap; gap: 4px 18px; margin: 0 0 8px; padding: 0; font-size: 13px; font-weight: 600; }
 .legend li { display: inline-flex; align-items: center; gap: 7px; }
-.key { width: 10px; height: 10px; border-radius: 50%; background: var(--dot); }
-.key--hub { background: var(--ink); }
+.key { width: 11px; height: 11px; border-radius: 50%; }
 .key--route { width: 22px; height: 3px; border-radius: 0; background: var(--signal); }
 .strata-figure { display: block; height: auto; overflow: visible; }
 .strata-figure--narrow { display: none; }
@@ -211,7 +232,7 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
 .strip a[aria-current='true'] { background: var(--signal); color: var(--signal-ink); }
 
 .bar-row { display: grid; grid-template-columns: 130px minmax(0, 1fr) 44px; gap: 10px; align-items: center; padding: 5px 0; font-size: 14px; }
-.bar-row .bar { height: 14px; background: var(--ink); }
+.bar-row .bar { display: block; height: 14px; background: var(--ink); }
 .bar-row .bar--self { background: var(--signal); }
 .bar-row .n { text-align: right; font-variant-numeric: tabular-nums; font-weight: 700; }
 
@@ -253,8 +274,7 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
 .atlas-band-rule { stroke: var(--hair); stroke-width: 1.2; vector-effect: non-scaling-stroke; }
 .a-link { stroke: var(--ink); stroke-opacity: 0.09; stroke-width: 1; vector-effect: non-scaling-stroke; }
 .a-node { fill: var(--dot); stroke: var(--paper); stroke-width: 1.2; vector-effect: non-scaling-stroke; cursor: pointer; }
-.a-node--hub { fill: var(--ink); }
-.a-node:hover { fill: var(--signal); }
+
 .a-label { display: none; fill: var(--ink); font-size: var(--fs, 11px); font-weight: 650; paint-order: stroke; stroke: var(--paper); stroke-width: calc(var(--fs, 11px) * 0.3); stroke-linejoin: round; pointer-events: none; }
 .a-label--key, .a-label.on { display: inline; }
 .a-node { transform-box: fill-box; transform-origin: center; transform: scale(var(--grow, 1)); }
@@ -272,7 +292,7 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
 .atlas-panel .meta { font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
 .atlas-panel ul { list-style: none; margin: 8px 0 0; padding: 0; }
 .atlas-panel li { padding: 6px 0; border-bottom: 1px solid var(--hair); font-size: 15px; }
-.atlas-panel li button { all: unset; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+.atlas-panel li button { all: unset; display: inline-block; min-height: 24px; line-height: 24px; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
 .atlas-panel li button:focus-visible { outline: 3px solid var(--focus); }
 .atlas-panel li.active { background: var(--paper-2); box-shadow: inset 4px 0 0 var(--signal); padding-left: 10px; }
 .atlas-panel h2:focus-visible { outline: 3px solid var(--focus); }
@@ -354,3 +374,42 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
 .heat { position: relative; }
 .heat::after { content: ''; position: absolute; right: 8px; bottom: 4px; height: 5px; width: calc(var(--t) * (100% - 16px)); background: var(--ink); }
 .heat--self::after { background: var(--muted); }
+
+/* ── Stratum colours ────────────────────────────────── */
+.st-serve { --c: var(--s-serve); }
+.st-govern { --c: var(--s-govern); }
+.st-name { --c: var(--s-name); }
+.st-carry { --c: var(--s-carry); }
+.st-meet { --c: var(--s-meet); }
+.st-wire { --c: var(--s-wire); }
+.st-make { --c: var(--s-make); }
+.band .dot { fill: var(--paper); stroke: var(--c); stroke-width: 1.6; }
+.band .dot--hub { fill: var(--c); stroke: none; }
+.band:hover .dot { fill: var(--paper); }
+.band:hover .dot--hub { fill: var(--c); }
+.strata-figure--narrow .band .dot { stroke-width: 1.2; }
+.band .band-n { fill: var(--c); }
+.band:hover .band-hit { fill: color-mix(in srgb, var(--c) 9%, var(--paper)); }
+.fibre-ribbon {
+  background-image: linear-gradient(90deg, var(--s-make) 0 14.28%, var(--s-wire) 0 28.57%, var(--s-meet) 0 42.85%, var(--s-carry) 0 57.14%, var(--s-name) 0 71.42%, var(--s-govern) 0 85.71%, var(--s-serve) 0);
+}
+.hero h1 em { color: var(--ink); background-color: transparent; background-repeat: no-repeat; background-size: 100% 0.14em; background-position: 0 92%; padding-bottom: 0.06em; }
+.wordmark-bar { width: 24px; height: 12px; transform: skewX(-24deg); }
+.key--hub { background: var(--s-carry); }
+.key--other { background: transparent; border: 2px solid var(--s-carry); }
+.key--strata { width: 42px; height: 10px; border-radius: 0; }
+.stratum-card { border-top: 6px solid var(--c); }
+.stratum-card .num { color: var(--c); }
+.strip a { border-bottom: 4px solid var(--c); }
+.strip a[aria-current='true'] { background: var(--paper-2); color: var(--ink); border-bottom-width: 8px; }
+.stratum-num { color: var(--c); }
+.bar-row.st-serve .bar, .bar-row.st-govern .bar, .bar-row.st-name .bar, .bar-row.st-carry .bar, .bar-row.st-meet .bar, .bar-row.st-wire .bar, .bar-row.st-make .bar { background: var(--c); }
+.matrix tr[class^='st-'] .heat::after { background: var(--c); }
+.atlas-band-label { fill: var(--ink); }
+.atlas-band-swatch { fill: var(--c); }
+.a-node { fill: var(--paper); stroke: var(--c); stroke-width: 1.4; }
+.a-node--hub { fill: var(--c); stroke: var(--paper); }
+.a-node:hover { fill: var(--c); }
+.has-focus .a-node.on { stroke: var(--c); stroke-width: 3; }
+.has-focus .a-node.sel { fill: var(--signal); }
+.kicker .swatch { display: inline-block; width: 12px; height: 12px; margin-right: 6px; vertical-align: -1px; background: var(--c); }

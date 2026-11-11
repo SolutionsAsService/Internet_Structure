@@ -10,10 +10,17 @@ export default function Home() {
   const branch = ROUTE_BRANCH_IDS.slice(1).map(id => atlas.nodeById.get(id));
   const total = atlas.nodes.length;
   const hubs = atlas.hubs.size;
+  // The headline underline is a stacked bar of the hubs by stratum, in stratum colours.
+  const hubStrata = atlas.strata.slice().reverse().map(s => ({ id: s.id, name: s.name, n: s.members.filter(id => atlas.nodeById.get(id).hub).length }));
+  let acc = 0;
+  const stops = hubStrata.filter(s => s.n).map(s => { const a = (acc / hubs) * 100; acc += s.n; return `var(--s-${s.id}) ${a.toFixed(2)}% ${((acc / hubs) * 100).toFixed(2)}%`; });
+  const noHub = hubStrata.filter(s => !s.n).map(s => s.name);
   const lede = (
     <p className="lede">
       Every dot is one organisation in this dataset: a company, cable, exchange or standards body, filed by what it
-      does. The {hubs} in ink are the fewest that together hold half of all {atlas.links.length} recorded connections. The
+      does. The {hubs} filled dots are the fewest that together account for half of all connection ends in this dataset;
+      they touch {atlas.hubLinks} of its {atlas.links.length} recorded links. The bar under the headline splits them by
+      stratum{noHub.length ? `; none sit in ${noHub.join(' or ')}` : ''}. The
       red line is one chain of those connections, picked to pass through every stratum: a {route[0].name} home,{' '}
       {route[1].name}, the {route[2].name} cable, {route[3].name}, {route[4].name} and {route[5].name}, with{' '}
       {branch.map(n => n.name).join(' and ')} underneath.
@@ -25,7 +32,7 @@ export default function Home() {
       <section className="hero" aria-labelledby="hero-title">
         <div className="hero-copy">
           <p className="kicker"><span className="red">■</span> An atlas of who holds the internet up</p>
-          <h1 id="hero-title">{total} organisations hold the internet up. <em>{hubs} of them hold half of it.</em></h1>
+          <h1 id="hero-title">{total} organisations hold the internet up. <em className="hub-bar" style={{ backgroundImage: `linear-gradient(90deg, ${stops.join(', ')})` }}>{hubs} of them hold half of it.</em></h1>
           <p className="hero-mobile-cta"><Link className="button button--primary" href="/atlas">Explore the atlas →</Link></p>
           {lede}
           <div className="hero-ctas">
@@ -35,9 +42,10 @@ export default function Home() {
         </div>
         <figure className="hero-figure">
           <ul className="legend" aria-label="Key">
-            <li><span className="key key--hub" aria-hidden="true" />one of the {hubs} hubs</li>
-            <li><span className="key" aria-hidden="true" />other organisation</li>
-            <li><span className="key key--route" aria-hidden="true" />one chain of recorded links</li>
+            <li><span className="key key--hub" aria-hidden="true" />hub (filled)</li>
+            <li><span className="key key--other" aria-hidden="true" />other (ring)</li>
+            <li><span className="key key--strata fibre-ribbon" aria-hidden="true" />stratum, in fibre colours</li>
+            <li><span className="key key--route" aria-hidden="true" />a chain of recorded links</li>
           </ul>
           <StrataFigure atlas={atlas} size="wide" id="fig-wide" />
           <StrataFigure atlas={atlas} size="narrow" id="fig-narrow" />
@@ -67,7 +75,7 @@ export default function Home() {
           </div>
           <div className="strata-grid">
             {atlas.strata.map(s => (
-              <Link key={s.id} href={`/strata/${s.id}`} className="stratum-card">
+              <Link key={s.id} href={`/strata/${s.id}`} className={`stratum-card st-${s.id}`}>
                 <span className="num" aria-hidden="true">{s.n}</span>
                 <h3>{s.name} <span className="muted">· {s.title}</span></h3>
                 <p className="q">{s.question}</p>
