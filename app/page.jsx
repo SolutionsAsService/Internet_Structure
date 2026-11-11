@@ -26,6 +26,7 @@ export default function Home() {
 
   return (
     <main>
+      <div className="night">
       <section className="hero" aria-labelledby="hero-title">
         <div className="hero-copy">
           <p className="kicker"><span className="red">■</span> An atlas of who holds the internet up</p>
@@ -60,6 +61,7 @@ export default function Home() {
           <Link className="button" href="/about#gaps">What the data leaves out</Link>
         </div>
       </div>
+      </div>
 
       <div className="wrap">
         <section className="section" aria-labelledby="strata-title">
@@ -72,7 +74,7 @@ export default function Home() {
           </div>
           <div className="strata-grid">
             {atlas.strata.map(s => (
-              <Link key={s.id} href={`/strata/${s.id}`} className={`stratum-card st-${s.id}`}>
+              <Link key={s.id} href={`/strata/${s.id}`} className={`stratum-card st-${s.id}${s.count >= 40 ? ' stratum-card--wide' : ''}`}>
                 <span className="num" aria-hidden="true">{s.n}</span>
                 <h3>{s.name} <span className="muted">· {s.title}</span></h3>
                 <p className="q">{s.question}</p>
@@ -102,7 +104,7 @@ export default function Home() {
           </ol>
         </section>
 
-        <section className="section" aria-labelledby="history-title">
+        <section className="section copper copper-block" aria-labelledby="history-title">
           <div className="section-head">
             <h2 id="history-title">Bedrock</h2>
             <p>

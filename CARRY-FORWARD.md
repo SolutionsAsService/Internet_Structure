@@ -10,3 +10,7 @@ Read before any later design run on Internet Structure.
 - **Hub/other by pale tint fails; by fill/ring passes.** 45 % tints measured 1.6-2.1:1 on paper; a full-colour ring keeps the stratum hue at 3.3:1+ and adds a shape cue. (M13)
 - **A gradient underline on inline text wraps with the text.** The hub bar splits across headline lines; segment widths still sum to the data (Cairo, Tufte R4), but readers must add two pieces. A block-level bar is the fix if the headline reflows. (M14, deferred)
 - **Next.js App Router ships ~176 KB gzip of runtime even for all-server pages.** The saving came from removing client d3, the runtime fetch and the simulation, and from rendering content into the HTML. (M9)
+- **`color-mix()` computes to `color(srgb r g b)` with 0-1 channels.** A probe that parsed digits as 0-255 read tinted cards as 1.11:1 (real ~6:1). `design/measure.cjs` now scales them. (M15)
+- **A bar inside a card scaled to the card's width lies when cards differ in width.** Double-width cards drew Name at 10x Serve for a 4.1x ratio. Use a fixed unit (3 px per organisation). (M15, Tufte R5)
+- **A skip link that floats over a dark header needs a ring that works on both grounds.** White outline plus blue shadow; a single #1d4ed8 ring measured 2.5:1 on #0e1117. (M15, Mace R5)
+- **`body:has(.night)` scopes a page-specific header theme with no client code;** a spread `box-shadow` plus `clip-path: inset(0 -100vmax)` makes the header background full-bleed. (M15)

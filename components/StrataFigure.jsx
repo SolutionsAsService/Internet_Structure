@@ -33,6 +33,7 @@ export default function StrataFigure({ atlas, size, id }) {
 
       {g.bands.map(b => (
         <Link key={b.id} href={`/strata/${b.id}`} className={`band st-${b.id}`} aria-label={`Stratum ${b.n}, ${b.name}: ${b.title}, ${b.count} organisations, ${b.hubs} hubs`}>
+          <rect className="band-wash" x={g.plotX - 6} y={b.y0 + 1} width={s.width - g.plotX + 6} height={b.h - 1} />
           <rect className="band-hit" x="0" y={b.y0} width={s.width} height={b.h} />
           <line className="band-rule" x1="0" x2={s.width} y1={b.y0} y2={b.y0} />
           <text className="band-n" x="0" y={b.y0 + b.h - (wide ? 9 : 7)}>{b.n}</text>

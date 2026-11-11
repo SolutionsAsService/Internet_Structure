@@ -413,3 +413,95 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
 .has-focus .a-node.on { stroke: var(--c); stroke-width: 3; }
 .has-focus .a-node.sel { fill: var(--signal); }
 .kicker .swatch { display: inline-block; width: 12px; height: 12px; margin-right: 6px; vertical-align: -1px; background: var(--c); }
+
+/* ── Themed zones ───────────────────────────────────────
+   Night: the inside of a cable jacket, where the fibre colours run at full strength.
+   Copper: the telephone era the history files come from. */
+.night {
+  --paper: #0e1117;
+  --paper-2: #1a1f29;
+  --ink: #f4f1ea;
+  --muted: #aeb4bf;
+  --hair: #2c323d;
+  --dot: #6b7280;
+  --signal: #ff5a4c;
+  --signal-ink: #0e1117;
+  --focus: #8ab4ff;
+  --s-serve: #3cc4cf;
+  --s-govern: #d07ae0;
+  --s-name: #e8c93a;
+  --s-carry: #ff9a3c;
+  --s-meet: #6fcf6a;
+  --s-wire: #7da2ff;
+  --s-make: #d9a074;
+  background:
+    radial-gradient(120% 80% at 75% 0%, #1a2233 0%, transparent 60%),
+    var(--paper);
+  color: var(--ink);
+  border-bottom: 6px solid transparent;
+  border-image: linear-gradient(90deg, var(--s-make) 0 14.28%, var(--s-wire) 0 28.57%, var(--s-meet) 0 42.85%, var(--s-carry) 0 57.14%, var(--s-name) 0 71.42%, var(--s-govern) 0 85.71%, var(--s-serve) 0) 1;
+}
+.night .hero { padding-top: 28px; }
+.night .button { border-color: var(--ink); color: var(--ink); }
+.night .button--primary { background: var(--ink); color: var(--paper); }
+.night .button--primary:hover { background: var(--signal); border-color: var(--signal); color: var(--signal-ink); }
+.night .hero-figure figcaption a, .night a { color: var(--ink); }
+.night a:hover { color: var(--signal); }
+.night .hero-after { padding-top: 8px; padding-bottom: 28px; }
+.band-wash { fill: var(--c); opacity: 0.08; pointer-events: none; }
+.band:hover .band-wash { opacity: 0.16; }
+.band:hover .band-hit { fill: transparent; }
+
+.stratum-card { background: color-mix(in srgb, var(--c) 9%, var(--paper)); }
+.stratum-card:hover { background: color-mix(in srgb, var(--c) 18%, var(--paper)); }
+
+.stratum-hero {
+  margin: 0 0 8px; padding: 24px 24px 28px; border-left: 12px solid var(--c);
+  background: linear-gradient(90deg, color-mix(in srgb, var(--c) 16%, var(--paper)), color-mix(in srgb, var(--c) 4%, var(--paper)));
+}
+.stratum-hero .page-head { padding: 12px 0 0; }
+
+.copper {
+  --paper: #f0e2cc;
+  --paper-2: #e6d3b6;
+  --ink: #2a1a10;
+  --muted: #6b4a32;
+  --hair: #d2b796;
+  --signal: #a8431a;
+  --signal-ink: #fff7ee;
+  background: var(--paper);
+  color: var(--ink);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) .copper {
+    --paper: #1d140d; --paper-2: #2a1d13; --ink: #f0e2cc; --muted: #c9a682; --hair: #4a3524; --signal: #e07a45; --signal-ink: #1d140d;
+  }
+}
+:root[data-theme='dark'] .copper { --paper: #1d140d; --paper-2: #2a1d13; --ink: #f0e2cc; --muted: #c9a682; --hair: #4a3524; --signal: #e07a45; --signal-ink: #1d140d; }
+.copper-block { padding: 40px 32px 48px; margin: 48px 0 0; border-top: 0; box-shadow: inset 0 8px 0 var(--signal); }
+.copper .timeline, .copper .section { border-color: var(--ink); }
+.full-bleed { padding-bottom: 48px; }
+.copper .timeline .year { color: var(--signal); }
+@media (max-width: 640px) {
+  .copper-block { padding: 28px 16px 32px; margin-left: calc(-1 * var(--gutter)); margin-right: calc(-1 * var(--gutter)); }
+  .stratum-hero { padding: 16px 14px 20px; border-left-width: 8px; }
+}
+/* On the landing the header joins the night slab: full-bleed via a spread shadow, clipped to the sides. */
+body:has(.night) .site-header {
+  --paper: #0e1117; --ink: #f4f1ea; --signal: #ff5a4c; --focus: #8ab4ff;
+  background: #0e1117; color: #f4f1ea;
+  box-shadow: 0 0 0 100vmax #0e1117; clip-path: inset(0 -100vmax);
+}
+body:has(.night) .site-header::after { border-bottom-color: #2c323d; }
+body:has(.night) .site-header a:hover { color: #ff5a4c; }
+@media (max-width: 640px) {
+  .night .hero { padding-top: 12px; }
+}
+.stratum-card .count span { color: var(--ink); }
+.stratum-card .num, .stratum-num { color: color-mix(in srgb, var(--c) 80%, var(--ink)); }
+.night .band-wash { opacity: 0.15; }
+.night .band:hover .band-wash { opacity: 0.26; }
+.stratum-card--wide { grid-column: span 2; }
+@media (max-width: 640px) { .stratum-card--wide { grid-column: auto; } }
+/* The skip link sits on light or dark headers: a white ring inside a blue one shows on both. */
+.skip:focus-visible { outline: 3px solid #ffffff; outline-offset: 0; box-shadow: 0 0 0 6px #1d4ed8; }

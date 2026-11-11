@@ -33,9 +33,11 @@ export default async function OrganisationPage({ params }) {
           <Link href="/">Home</Link> / <Link href={`/strata/${stratum.id}`}>{stratum.n} {stratum.name}</Link> / {n.name}
         </p>
         <StratumStrip current={stratum.id} />
-        <p className={`kicker st-${stratum.id}`}><span className="swatch" aria-hidden="true" />{n.type}</p>
-        <h1>{n.name}</h1>
-        <p className="lede">{n.description}</p>
+        <div className={`stratum-hero st-${stratum.id}`}>
+          <p className="kicker"><span className="swatch" aria-hidden="true" />{n.type}{n.hub ? ' · hub' : ''}</p>
+          <h1>{n.name}</h1>
+          <p className="lede">{n.description}</p>
+        </div>
       </header>
 
       <dl className="facts">

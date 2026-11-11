@@ -14,7 +14,11 @@ function ratio(a, b) { const [x, y] = [lum(a), lum(b)].sort((p, q) => q - p); re
 
 async function probe(page) {
   return page.evaluate(() => {
-    const parse = c => (c.match(/\d+(\.\d+)?/g) || []).slice(0, 4).map(Number);
+    const parse = c => {
+      const n = (c.match(/\d+(\.\d+)?/g) || []).slice(0, 4).map(Number);
+      // color(srgb r g b [/ a]) uses 0-1 channels (what color-mix() computes to)
+      return c.startsWith('color(') ? n.map((v, i) => (i < 3 ? v * 255 : v)) : n;
+    };
     const bgOf = el => {
       for (let e = el; e; e = e.parentElement) {
         const c = parse(getComputedStyle(e).backgroundColor);

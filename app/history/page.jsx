@@ -9,6 +9,7 @@ export const metadata = {
 export default function HistoryIndex() {
   const eras = [...new Set(DOSSIERS.map(d => d.era))];
   return (
+    <div className="copper full-bleed">
     <main className="wrap">
       <header className="page-head">
         <p className="crumbs"><Link href="/">Home</Link> / History</p>
@@ -39,5 +40,6 @@ export default function HistoryIndex() {
         Looking for the present-day picture instead? <Link href="/how-it-works">How the internet works</Link> walks one request end to end.
       </p>
     </main>
+    </div>
   );
 }
