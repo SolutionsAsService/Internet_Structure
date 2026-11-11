@@ -1,23 +1,18 @@
-import { readFile } from 'node:fs/promises';
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
+// Reports the state of data/internet.json as the site sees it. Exits non-zero only for
+// problems that break the build: a file that does not parse, or a layer with no stratum.
+import { readdirSync, readFileSync } from 'node:fs';
+import { loadAtlas } from '../lib/data.js';
 
-const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const data = JSON.parse(await readFile(path.join(root, 'data', 'internet.json'), 'utf8'));
-const ids = new Set(data.nodes.map(node => node.id));
-const missingReferences = [];
-
-for (const node of data.nodes) {
-  for (const connection of node.connections || []) {
-    const target = typeof connection === 'string' ? connection : connection?.target || connection?.id;
-    if (target && !ids.has(target)) missingReferences.push({ node: node.id, target });
-  }
+let failed = false;
+for (const file of readdirSync('data').filter(f => f.endsWith('.json'))) {
+  try { JSON.parse(readFileSync(`data/${file}`, 'utf8')); } catch (error) { failed = true; console.error(`✗ data/${file}: ${error.message}`); }
 }
+const atlas = loadAtlas();
+const unmapped = atlas.nodes.filter(n => !n.stratum);
+if (unmapped.length) { failed = true; console.error('✗ layer tags with no stratum:', [...new Set(unmapped.map(n => n.layer))].join(', ')); }
 
-console.log(`Indexed ${data.nodes.length} nodes; ${missingReferences.length} connection references do not resolve.`);
-if (missingReferences.length) {
-  console.table(missingReferences.slice(0, 25));
-  process.exitCode = 1;
-} else {
-  console.log('Internet dataset connections are valid.');
-}
+console.log(`${atlas.sourceRecords} records → ${atlas.nodes.length} organisations (${atlas.duplicates.length} ids merged)`);
+console.log(`${atlas.links.length} connections; ${atlas.repaired.length} references repaired; ${atlas.unresolved.length} unresolved`);
+console.log('Most frequent unresolved references:');
+console.table(atlas.unresolvedByTarget.slice(0, 15).map(([target, count]) => ({ target, count })));
+process.exitCode = failed ? 1 : 0;

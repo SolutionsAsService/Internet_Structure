@@ -62,7 +62,7 @@
         "distributed_network_node": true
       },
       "source_description": "BBN designed the IMP simply as a messenger that would store and forward messages.",
-      "source_citation": "The source identifies the IMP as the packet-switching node connecting participant networks to ARPANET and describes it as the first generation of gateways now known as routers. :chatgpt-content-reference{index="1"}"
+      "source_citation": "The source identifies the IMP as the packet-switching node connecting participant networks to ARPANET and describes it as the first generation of gateways now known as routers. :chatgpt-content-reference{index=\"1\"}"
     },
 
     "hardware": {
@@ -174,7 +174,7 @@
         "paul_baran": "RAND researcher whose distributed communications work influenced the broader packet-network environment",
         "BBN": "independently developed major internal ARPANET mechanisms"
       },
-      "source_caveat": "The source describes substantial technical interchange with the NPL team and Paul Baran while also emphasizing that BBN independently developed significant ARPANET internal mechanisms. :chatgpt-content-reference{index="2"}"
+      "source_caveat": "The source describes substantial technical interchange with the NPL team and Paul Baran while also emphasizing that BBN independently developed significant ARPANET internal mechanisms. :chatgpt-content-reference{index=\"2\"}"
     },
 
     "development_history": {
