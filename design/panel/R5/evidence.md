@@ -19,3 +19,6 @@ Screenshots: design/shots/R5/r5_<page>_<width>.png; atlas selected: r5_atlas_sel
 - HTML text below 4.5:1 (3:1 large): 0 on all 10 pages x 2 widths (after darkening the card counts and numerals, which first measured 4.47-4.49 and 2.99).
 - SVG: only the white/black badge numerals on red badges flag (probe measures against the page; badge contrast #0e1117 on #ff5a4c = 6.5:1).
 - Overflow 0; small targets 0; broken links 0 of 278; no-JS landing 253 dots; probe fixtures fire; tests 12/12.
+
+## Addendum (after the first three seats filed; remeasured 17:1x)
+Applied from Shklovsky R5: band washes on the night slab raised from 8 % to 15 % (26 % on hover), and the two largest strata (Name 45, Carry 77) now span two columns on the strata grid (landing and /strata; single column below 640 px), so card size carries membership. Screenshots in design/shots/R5/ were retaken after this change. Cairo, Holmes and Shklovsky judged the state before it.

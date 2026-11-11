@@ -74,7 +74,7 @@ export default function Home() {
           </div>
           <div className="strata-grid">
             {atlas.strata.map(s => (
-              <Link key={s.id} href={`/strata/${s.id}`} className={`stratum-card st-${s.id}`}>
+              <Link key={s.id} href={`/strata/${s.id}`} className={`stratum-card st-${s.id}${s.count >= 40 ? ' stratum-card--wide' : ''}`}>
                 <span className="num" aria-hidden="true">{s.n}</span>
                 <h3>{s.name} <span className="muted">· {s.title}</span></h3>
                 <p className="q">{s.question}</p>

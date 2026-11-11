@@ -394,6 +394,54 @@ Artifact: `design/shots/R4/`, evidence `design/panel/R4/evidence.md`, raw `desig
 
 Andon: no. R4 produced no ADAPT, SCRAP or REOPEN. Optional requests DEFERRED (none is a defect; Mace's band-outline note also deferred, since the 3 px focus stroke on the band's hit area is measured visible; each would reopen the first screen): one-line hub bar with printed counts (Cairo, Tufte, Debord, Holmes), drop "(TIA-598)" (Krug; Shklovsky asked for it, so the two seats cancel), bigger hubs (Nietzsche), reduced-edge atlas at 375 (Holmes).
 
+## 7b. Owner regrade and move M15
+
+> "A plus on that one for Greta desung despite poor colors vary and get bit more creative with colors of actual site put changes in dada changes repo on perosnl account"
+
+Read as: A+ for great design despite poor colours; vary the colours and be more creative with them on the site.
+
+## Move M15: Colour zones  (BREAK, escalation of M13)
+Depends on: M13 (REOPENED by the owner)
+Anchors: `Designing Brand Identity (Alina Wheeler)` (identity as environment), `Interaction of Color (Josef Albers)` (a hue changes with its ground)
+Intent: the same fibre hues on different grounds per zone. The landing hero (and the landing header) is a night slab, the inside of a cable jacket (#0e1117 with a blue glow), so the hues run vivid. Each band in the figure gets a 15 % wash of its colour. Strata cards get a 9 % wash, and the two largest strata (Name, Carry) take double-width cards. Stratum and organisation pages open with a stratum-coloured header block. History pages and the landing's Bedrock section move to a copper and paper era palette.
+Formal argument: Claim: the owner's "poor colors" was one palette on one paper ground, so variety must come from grounds, not new hues. Grounds: R4 site, A then A+ "despite poor colors". Warrant: Albers, colour is relative to its ground; Wheeler, identity as an environment the visitor moves through.
+Alternatives rejected: (a) more hues, which would break one-hue-per-stratum; (b) a dark site throughout, which loses the light reading pages and the copper era contrast.
+Consequence: zone contrast measured separately; the probe had to learn `color(srgb ...)` values (it misread tinted cards as 1.11:1; real contrast is about 6:1).
+Measured delta: grounds on the site 1 (paper) became 4 (night, paper, stratum wash, copper). The band wash went from 8 % to 15 % after Shklovsky R5.
+
+## 7c. Panel R5 (WHOLE, on M15) and R6 (confirmation)
+
+| Critic | Anchor used | Observed in the work | Verdict PASS/OBJECT | Requested change |
+|---|---|---|---|---|
+| Critic: Evidence (Cairo) | The Truthful Art | colour still means stratum everywhere; zones add context; copper sits near Make brown but carries no stratum | PASS | optional |
+| Critic: Inclusion (Holmes) | Mismatch | colour zones are decoration over text; every colour fact has a twin | PASS | optional |
+| Critic: Provocateur (Shklovsky) | Art as Device | the night slab estranges; 8 % washes invisible on dark; equal cards a recoloured dashboard | PASS | optional: size by count |
+| Critic: Usability (Krug) | Don't Make Me Think | five-second, legibility and trunk tests pass across zones | PASS | optional: current nav item |
+| Critic: Provocateur (Debord) | Society of the Spectacle | colour louder but reads as a code; the claim still leads | PASS | optional: counts under the bar |
+| Critic: Dionysian Excess (Nietzsche) | Birth of Tragedy | the night hero is the Dionysian moment; two moods (night, copper) | PASS | optional |
+| Critic: Evidence (Tufte) | Visual Display | card bars scaled to card width: lie factor ~2.5 in double cards | OBJECT | one scale |
+| Critic: Inclusion (Mace) | Universal Design | skip-link ring #1d4ed8 on #0e1117 about 2.5:1 | OBJECT | light ring on dark |
+
+Cairo, Holmes and Shklovsky judged the state before the Shklovsky-driven change (15 % washes, double-width cards); the other five judged after it (recorded in the R5 evidence addendum).
+
+### Resolutions, R5
+
+| Finding | Resolution |
+|---|---|
+| Shklovsky: 8 % washes invisible on the night slab | ADAPT: 15 % (26 % hover) |
+| Shklovsky: equal cards are a recoloured dashboard | ADAPT: Name and Carry take double-width cards |
+| Tufte: card bars on two scales (lie factor ~2.5) | ADAPT: 3 px per organisation in every card; R6 measured 1.00 |
+| Mace: skip-link ring 2.5:1 on the dark header | ADAPT: white 3 px outline inside a 6 px blue ring; R6 measured |
+| Debord + Tufte: card width is a two-step size | DEFERRED: the bar and printed count carry the quantity; width marks the two heavy strata only |
+| Krug: mark the current nav item | DEFERRED: breadcrumb, h1 and stratum strip carry it |
+
+### Panel, R6 (confirmation of the two R5 objections)
+
+| Critic | Anchor used | Observed in the work | Verdict PASS/OBJECT | Requested change |
+|---|---|---|---|---|
+| Critic: Evidence (Tufte) | Visual Display | bars 33/45/135/231/90/108/117 px = 3.00 px per organisation at 1280 and 375; lie factor 1.00 | PASS | optional: scale tick |
+| Critic: Inclusion (Mace) | Universal Design | real Tab: skip link white 3 px plus blue 6 px; next stops 3 px #8ab4ff (~9:1) | PASS | none |
+
 ## 8. Step 2f: deletion review and residual diff
 
 | Inherited element | What it earned | Fate |
@@ -428,9 +476,9 @@ Measured after the last artifact edit (lede shortening, then build at 16:51; pro
 ## 10. Stop test
 
 - **S1** Frontier: no OPEN item. Taken: M1-M14. DEFERRED with reasons: proportion grid (elamGeo: band heights are set by data), typographic revolution (newtypo: one Breaker only), optional R4 requests (listed in section 7). **Met.**
-- **S2** WHOLE round R4: all 8 seats PASS (Cairo, Tufte, Krug, Debord, Shklovsky, Holmes, Mace, Nietzsche), no Andon. **Met.**
-- **S3** Full runs need two consecutive quiet WHOLE rounds. R4 was quiet (no ADAPT, SCRAP, REOPEN or new OPEN item); R3 was not (Debord's two defects). Only one quiet round. **Not met.** Resume point: convene R5 on the R4 state (no changes) with all 8 seats; if quiet, S3 holds.
-- **S4** Ambition push on the boldest Breaker: red line 3 -> 4.2 px, rings 2.4 -> 3 px, branch 2.2 -> 3 px (computed values measured); and the underline escalated from ornament to a data bar (M14). Survived R4. **Met.**
+- **S2** WHOLE round R4: all 8 seats PASS, no Andon. After M15, R5 returned 6 PASS and 2 OBJECT; both objections were fixed and confirmed PASS in R6 (Tufte, Mace). The six R5 passes and the two R6 passes cover all 8 seats on the final state, except that Cairo, Holmes and Shklovsky judged it before the wash and card-width change. **Met for R4; met on the final state by R5 plus R6, not by a single WHOLE round.**
+- **S3** Full runs need two consecutive quiet WHOLE rounds. R4 was quiet; the owner's regrade then reopened colour (M15), and R5 was not quiet (two defects). **Not met.** Resume point: convene R7, a WHOLE round with all 8 seats on the current state with no changes; if it is quiet and an R8 is too, S3 holds.
+- **S4** Ambition push on the boldest Breaker: red line 3 -> 4.2 px, rings 2.4 -> 3 px, branch 2.2 -> 3 px (computed values measured); the underline escalated from ornament to a data bar (M14); colour escalated from one ground to four (M15). Survived R4-R6. **Met.**
 - **S5** Dotted edges from used anchors: Make It Bigger -.-> The Vignelli Canon (applied, M7 restraint on inner pages); Make It Bigger -.-> Designing Brand Identity (applied, M5 and M13 identity as environment); Making and Breaking the Grid -.-> Grid Systems (applied, M4 diagonal); Make It Bigger's literal bigness frame-swapped toward mass (R1 frame swap). **Met.**
 
 **The run is not complete under S3.** Everything else holds.
@@ -510,9 +558,11 @@ Kept in `CARRY-FORWARD.md` beside this log.
 - [x] Double-loop paragraph (section 12)
 - [ ] Run recorded in the ledger: `import_log.py` and `rate_seats.py` were run in the local dada clone, but the push to PrometheusIntelligence/dada was refused (HTTP 403); not in the shared ledger yet
 - [x] Final reply states mode, tools, stop conditions and skips
+- [x] Colour zones each measured on their own ground (R5 evidence; probe fixed for color-mix values)
 
 ## Human grade
 
-- **Grade:** A (given 2026-11-11, on the R2 state).
+- **Regrade:** A+ (given 2026-11-11, on the R4 state). Words, verbatim: "A plus on that one for Greta desung despite poor colors vary and get bit more creative with colors of actual site put changes in dada changes repo on perosnl account". What it rewards: the design (the measured claim, the argued figure); what it still punishes: colour that varies too little across the site, answered by M15 and a second clause in the SKILL.md palette rule.
+- **First grade:** A (given 2026-11-11, on the R2 state).
 - **Words, verbatim:** "Very very good design A would be a plus but colors are just a bit too similar add rule to dada and dada chnages to always choose colors for site dynamically based on site topic mix up colors a bit and add to portfolio anew"
 - **What it most likely rewards or punishes:** it rewards the measured claim and the single argued figure (M10-M11); it punishes the restrained palette, which the panel had accepted as discipline. M13 answers it and the SKILL.md rule makes it a standing requirement.

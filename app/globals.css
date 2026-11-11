@@ -499,3 +499,9 @@ body:has(.night) .site-header a:hover { color: #ff5a4c; }
 }
 .stratum-card .count span { color: var(--ink); }
 .stratum-card .num, .stratum-num { color: color-mix(in srgb, var(--c) 80%, var(--ink)); }
+.night .band-wash { opacity: 0.15; }
+.night .band:hover .band-wash { opacity: 0.26; }
+.stratum-card--wide { grid-column: span 2; }
+@media (max-width: 640px) { .stratum-card--wide { grid-column: auto; } }
+/* The skip link sits on light or dark headers: a white ring inside a blue one shows on both. */
+.skip:focus-visible { outline: 3px solid #ffffff; outline-offset: 0; box-shadow: 0 0 0 6px #1d4ed8; }

@@ -8,7 +8,6 @@ export const metadata = {
 
 export default function StrataIndex() {
   const atlas = loadAtlas();
-  const max = Math.max(...atlas.strata.map(s => s.count));
   const maxCrossing = Math.max(...Object.values(atlas.crossings));
   return (
     <main className="wrap">
@@ -17,17 +16,17 @@ export default function StrataIndex() {
         <h1>Seven strata</h1>
         <p className="lede">
           The dataset tags each organisation with one of {atlas.layerCount} layers. Those tags are folded here into seven
-          strata, top to bottom: from where the content lives down to what the hardware is made of.
+          strata, top to bottom: from where the content lives down to what the hardware is made of. Every card’s bar uses one scale, 3 px per organisation; the two largest strata take a double-width card.
         </p>
       </header>
       <div className="strata-grid">
         {atlas.strata.map(s => (
-          <Link key={s.id} href={`/strata/${s.id}`} className={`stratum-card st-${s.id}`}>
+          <Link key={s.id} href={`/strata/${s.id}`} className={`stratum-card st-${s.id}${s.count >= 40 ? ' stratum-card--wide' : ''}`}>
             <span className="num" aria-hidden="true">{s.n}</span>
             <h2 style={{ fontSize: 24, textTransform: 'uppercase' }}>{s.name} <span className="muted">· {s.title}</span></h2>
             <p className="q">{s.blurb}</p>
             <div className={`bar-row st-${s.id}`} style={{ gridTemplateColumns: 'minmax(0,1fr) 40px' }} aria-hidden="true">
-              <span className="bar" style={{ width: `${(s.count / max) * 100}%` }} />
+              <span className="bar" style={{ width: `${s.count * 3}px` }} />
               <span className="n">{s.count}</span>
             </div>
             <p className="count"><span>{s.count}</span> organisations · {s.layers.length} source layer tags</p>

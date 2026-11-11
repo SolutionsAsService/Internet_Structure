@@ -1,13 +1,13 @@
 {
- "measuredAt": "2026-11-11T17:07:26.061Z",
+ "measuredAt": "2026-11-11T17:09:27.267Z",
  "base": "http://localhost:3100",
  "pages": {
   "/ @1280": {
-   "loadMs": 196,
+   "loadMs": 137,
    "bytes": {
-    "html": 168382,
+    "html": 168458,
     "js": 469842,
-    "css": 23110,
+    "css": 23284,
     "font": 90104
    },
    "overflowX": 0,
@@ -41,11 +41,11 @@
    }
   },
   "/ @375": {
-   "loadMs": 152,
+   "loadMs": 138,
    "bytes": {
-    "html": 168382,
+    "html": 168458,
     "js": 469842,
-    "css": 23110,
+    "css": 23284,
     "font": 90104
    },
    "overflowX": 0,
@@ -79,11 +79,11 @@
    }
   },
   "/atlas @1280": {
-   "loadMs": 120,
+   "loadMs": 152,
    "bytes": {
     "html": 368127,
     "js": 469842,
-    "css": 23110,
+    "css": 23284,
     "font": 90104
    },
    "overflowX": 0,
@@ -103,11 +103,11 @@
    }
   },
   "/atlas @375": {
-   "loadMs": 123,
+   "loadMs": 116,
    "bytes": {
     "html": 368127,
     "js": 469842,
-    "css": 23110,
+    "css": 23284,
     "font": 90104
    },
    "overflowX": 0,
@@ -127,11 +127,11 @@
    }
   },
   "/strata @1280": {
-   "loadMs": 101,
+   "loadMs": 115,
    "bytes": {
-    "html": 38096,
+    "html": 38172,
     "js": 469842,
-    "css": 23110,
+    "css": 23284,
     "font": 90104
    },
    "overflowX": 0,
@@ -151,11 +151,11 @@
    }
   },
   "/strata @375": {
-   "loadMs": 92,
+   "loadMs": 106,
    "bytes": {
-    "html": 38096,
+    "html": 38172,
     "js": 469842,
-    "css": 23110,
+    "css": 23284,
     "font": 90104
    },
    "overflowX": 0,
@@ -175,11 +175,11 @@
    }
   },
   "/strata/carry @1280": {
-   "loadMs": 122,
+   "loadMs": 109,
    "bytes": {
     "html": 61522,
     "js": 469842,
-    "css": 23110,
+    "css": 23284,
     "font": 90104
    },
    "overflowX": 0,
@@ -199,11 +199,11 @@
    }
   },
   "/strata/carry @375": {
-   "loadMs": 124,
+   "loadMs": 105,
    "bytes": {
     "html": 61522,
     "js": 469842,
-    "css": 23110,
+    "css": 23284,
     "font": 90104
    },
    "overflowX": 0,
@@ -223,11 +223,11 @@
    }
   },
   "/organisations @1280": {
-   "loadMs": 134,
+   "loadMs": 106,
    "bytes": {
     "html": 122540,
     "js": 469842,
-    "css": 23110,
+    "css": 23284,
     "font": 90104
    },
    "overflowX": 0,
@@ -247,11 +247,11 @@
    }
   },
   "/organisations @375": {
-   "loadMs": 125,
+   "loadMs": 105,
    "bytes": {
     "html": 122540,
     "js": 469842,
-    "css": 23110,
+    "css": 23284,
     "font": 90104
    },
    "overflowX": 0,
@@ -271,11 +271,11 @@
    }
   },
   "/organisations/equinix @1280": {
-   "loadMs": 116,
+   "loadMs": 97,
    "bytes": {
     "html": 44557,
     "js": 469842,
-    "css": 23110,
+    "css": 23284,
     "font": 90104
    },
    "overflowX": 0,
@@ -295,11 +295,11 @@
    }
   },
   "/organisations/equinix @375": {
-   "loadMs": 121,
+   "loadMs": 109,
    "bytes": {
     "html": 44557,
     "js": 469842,
-    "css": 23110,
+    "css": 23284,
     "font": 90104
    },
    "overflowX": 0,
@@ -319,11 +319,11 @@
    }
   },
   "/history @1280": {
-   "loadMs": 102,
+   "loadMs": 96,
    "bytes": {
     "html": 22435,
     "js": 469842,
-    "css": 23110,
+    "css": 23284,
     "font": 90104
    },
    "overflowX": 0,
@@ -343,11 +343,11 @@
    }
   },
   "/history @375": {
-   "loadMs": 93,
+   "loadMs": 94,
    "bytes": {
     "html": 22435,
     "js": 469842,
-    "css": 23110,
+    "css": 23284,
     "font": 90104
    },
    "overflowX": 0,
@@ -367,11 +367,11 @@
    }
   },
   "/history/arpanet @1280": {
-   "loadMs": 151,
+   "loadMs": 127,
    "bytes": {
     "html": 279386,
     "js": 469842,
-    "css": 23110,
+    "css": 23284,
     "font": 90104
    },
    "overflowX": 0,
@@ -391,11 +391,11 @@
    }
   },
   "/history/arpanet @375": {
-   "loadMs": 153,
+   "loadMs": 133,
    "bytes": {
     "html": 279386,
     "js": 469842,
-    "css": 23110,
+    "css": 23284,
     "font": 90104
    },
    "overflowX": 0,
@@ -415,11 +415,11 @@
    }
   },
   "/how-it-works @1280": {
-   "loadMs": 106,
+   "loadMs": 179,
    "bytes": {
     "html": 356345,
     "js": 469842,
-    "css": 23110,
+    "css": 23284,
     "font": 90104
    },
    "overflowX": 0,
@@ -439,11 +439,11 @@
    }
   },
   "/how-it-works @375": {
-   "loadMs": 155,
+   "loadMs": 146,
    "bytes": {
     "html": 356345,
     "js": 469842,
-    "css": 23110,
+    "css": 23284,
     "font": 90104
    },
    "overflowX": 0,
@@ -463,11 +463,11 @@
    }
   },
   "/about @1280": {
-   "loadMs": 113,
+   "loadMs": 119,
    "bytes": {
     "html": 39084,
     "js": 469842,
-    "css": 23110,
+    "css": 23284,
     "font": 90104
    },
    "overflowX": 0,
@@ -487,11 +487,11 @@
    }
   },
   "/about @375": {
-   "loadMs": 93,
+   "loadMs": 97,
    "bytes": {
     "html": 39084,
     "js": 469842,
-    "css": 23110,
+    "css": 23284,
     "font": 90104
    },
    "overflowX": 0,
