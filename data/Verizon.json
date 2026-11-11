@@ -2073,15 +2073,15 @@
   },
 
   "source_citations": {
-    "corporate_identity_and_current_profile": ":chatgpt-content-reference{index="1"}",
-    "bell_atlantic_nynex_gte_history": ":chatgpt-content-reference{index="2"}",
-    "fios_and_wireline_strategy": ":chatgpt-content-reference{index="3"}",
-    "wireless_and_spectrum_history": ":chatgpt-content-reference{index="4"}",
-    "vodafone_and_net_neutrality": ":chatgpt-content-reference{index="5"}",
-    "frontier_and_2026_restructuring": ":chatgpt-content-reference{index="6"}",
-    "financial_history": ":chatgpt-content-reference{index="7"}",
-    "governance_and_corporate_responsibility": ":chatgpt-content-reference{index="8"}",
-    "criticism_and_privacy": ":chatgpt-content-reference{index="9"}",
-    "sponsorships_and_venues": ":chatgpt-content-reference{index="10"}"
+    "corporate_identity_and_current_profile": ":chatgpt-content-reference{index=\"1\"}",
+    "bell_atlantic_nynex_gte_history": ":chatgpt-content-reference{index=\"2\"}",
+    "fios_and_wireline_strategy": ":chatgpt-content-reference{index=\"3\"}",
+    "wireless_and_spectrum_history": ":chatgpt-content-reference{index=\"4\"}",
+    "vodafone_and_net_neutrality": ":chatgpt-content-reference{index=\"5\"}",
+    "frontier_and_2026_restructuring": ":chatgpt-content-reference{index=\"6\"}",
+    "financial_history": ":chatgpt-content-reference{index=\"7\"}",
+    "governance_and_corporate_responsibility": ":chatgpt-content-reference{index=\"8\"}",
+    "criticism_and_privacy": ":chatgpt-content-reference{index=\"9\"}",
+    "sponsorships_and_venues": ":chatgpt-content-reference{index=\"10\"}"
   }
 }

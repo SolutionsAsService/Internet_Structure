@@ -14,7 +14,7 @@
       "status": "foundational and actively used networking paradigm",
       "source_basis": "User-provided Wikipedia-derived source",
       "source_line_span": "L29-L226",
-      "source_citation": ":chatgpt-content-reference{index="0"}"
+      "source_citation": ":chatgpt-content-reference{index=\"0\"}"
     },
 
     "identity": {
@@ -121,7 +121,7 @@
           "function": "Provides the internal mechanism for moving packets between input and output ports."
         }
       ],
-      "source_citation": ":chatgpt-content-reference{index="1"}"
+      "source_citation": ":chatgpt-content-reference{index=\"1\"}"
     },
 
     "packet_switching_vs_circuit_switching": {
@@ -1328,7 +1328,7 @@
         {
           "author": "Lawrence Roberts",
           "title": "The ARPANET & Computer Networks",
-          "year": 1995"
+          "year": 1995
         }
       ]
     },
@@ -1468,7 +1468,7 @@
 
     "record_integrity": {
       "source_used": "Uploaded source file",
-      "source_reference": ":chatgpt-content-reference{index="2"}",
+      "source_reference": ":chatgpt-content-reference{index=\"2\"}",
       "source_scope": "Wikipedia-style article titled 'Packet switching' with historical, technical, and reference sections.",
       "transformation_policy": [
         "Preserved the source's historical chronology.",

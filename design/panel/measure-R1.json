@@ -1,0 +1,515 @@
+{
+ "measuredAt": "2026-11-11T16:32:01.226Z",
+ "base": "http://localhost:3100",
+ "pages": {
+  "/ @1280": {
+   "loadMs": 167,
+   "bytes": {
+    "html": 154591,
+    "js": 469118,
+    "css": 16379,
+    "font": 90104
+   },
+   "overflowX": 0,
+   "heroBox": {
+    "top": 84.5,
+    "bottom": 678,
+    "right": 1220,
+    "figScroll": [
+     0
+    ]
+   },
+   "viewport": [
+    1280,
+    800
+   ],
+   "lowContrast": [],
+   "svgLowContrast": [],
+   "smallestSvgTextPx": 14,
+   "smallTargets": [],
+   "hiddenLeak": 0,
+   "focus": {
+    "el": "A InternetStructure",
+    "outline": "solid 3px rgb(29, 78, 216)"
+   }
+  },
+  "/ @375": {
+   "loadMs": 125,
+   "bytes": {
+    "html": 154591,
+    "js": 469118,
+    "css": 16379,
+    "font": 90104
+   },
+   "overflowX": 0,
+   "heroBox": {
+    "top": 117,
+    "bottom": 684.828125,
+    "right": 359,
+    "figScroll": [
+     0
+    ]
+   },
+   "viewport": [
+    375,
+    812
+   ],
+   "lowContrast": [],
+   "svgLowContrast": [],
+   "smallestSvgTextPx": 12,
+   "smallTargets": [],
+   "hiddenLeak": 0,
+   "focus": {
+    "el": "A InternetStructure",
+    "outline": "solid 3px rgb(29, 78, 216)"
+   }
+  },
+  "/atlas @1280": {
+   "loadMs": 111,
+   "bytes": {
+    "html": 356354,
+    "js": 469118,
+    "css": 16379,
+    "font": 90104
+   },
+   "overflowX": 0,
+   "heroBox": null,
+   "viewport": [
+    1280,
+    800
+   ],
+   "lowContrast": [],
+   "svgLowContrast": [],
+   "smallestSvgTextPx": 14,
+   "smallTargets": [],
+   "hiddenLeak": 0,
+   "focus": {
+    "el": "A InternetStructure",
+    "outline": "solid 3px rgb(29, 78, 216)"
+   }
+  },
+  "/atlas @375": {
+   "loadMs": 122,
+   "bytes": {
+    "html": 356354,
+    "js": 469118,
+    "css": 16379,
+    "font": 90104
+   },
+   "overflowX": 0,
+   "heroBox": null,
+   "viewport": [
+    375,
+    812
+   ],
+   "lowContrast": [],
+   "svgLowContrast": [],
+   "smallestSvgTextPx": 13.99993896484375,
+   "smallTargets": [],
+   "hiddenLeak": 0,
+   "focus": {
+    "el": "A InternetStructure",
+    "outline": "solid 3px rgb(29, 78, 216)"
+   }
+  },
+  "/strata @1280": {
+   "loadMs": 88,
+   "bytes": {
+    "html": 23357,
+    "js": 469118,
+    "css": 16379,
+    "font": 90104
+   },
+   "overflowX": 0,
+   "heroBox": null,
+   "viewport": [
+    1280,
+    800
+   ],
+   "lowContrast": [],
+   "svgLowContrast": [],
+   "smallestSvgTextPx": null,
+   "smallTargets": [],
+   "hiddenLeak": 0,
+   "focus": {
+    "el": "A InternetStructure",
+    "outline": "solid 3px rgb(29, 78, 216)"
+   }
+  },
+  "/strata @375": {
+   "loadMs": 85,
+   "bytes": {
+    "html": 23357,
+    "js": 469118,
+    "css": 16379,
+    "font": 90104
+   },
+   "overflowX": 0,
+   "heroBox": null,
+   "viewport": [
+    375,
+    812
+   ],
+   "lowContrast": [],
+   "svgLowContrast": [],
+   "smallestSvgTextPx": null,
+   "smallTargets": [],
+   "hiddenLeak": 0,
+   "focus": {
+    "el": "A InternetStructure",
+    "outline": "solid 3px rgb(29, 78, 216)"
+   }
+  },
+  "/strata/carry @1280": {
+   "loadMs": 92,
+   "bytes": {
+    "html": 56882,
+    "js": 469118,
+    "css": 16379,
+    "font": 90104
+   },
+   "overflowX": 0,
+   "heroBox": null,
+   "viewport": [
+    1280,
+    800
+   ],
+   "lowContrast": [],
+   "svgLowContrast": [],
+   "smallestSvgTextPx": null,
+   "smallTargets": [],
+   "hiddenLeak": 0,
+   "focus": {
+    "el": "A InternetStructure",
+    "outline": "solid 3px rgb(29, 78, 216)"
+   }
+  },
+  "/strata/carry @375": {
+   "loadMs": 100,
+   "bytes": {
+    "html": 56882,
+    "js": 469118,
+    "css": 16379,
+    "font": 90104
+   },
+   "overflowX": 0,
+   "heroBox": null,
+   "viewport": [
+    375,
+    812
+   ],
+   "lowContrast": [],
+   "svgLowContrast": [],
+   "smallestSvgTextPx": null,
+   "smallTargets": [],
+   "hiddenLeak": 0,
+   "focus": {
+    "el": "A InternetStructure",
+    "outline": "solid 3px rgb(29, 78, 216)"
+   }
+  },
+  "/organisations @1280": {
+   "loadMs": 111,
+   "bytes": {
+    "html": 122514,
+    "js": 469118,
+    "css": 16379,
+    "font": 90104
+   },
+   "overflowX": 0,
+   "heroBox": null,
+   "viewport": [
+    1280,
+    800
+   ],
+   "lowContrast": [],
+   "svgLowContrast": [],
+   "smallestSvgTextPx": null,
+   "smallTargets": [],
+   "hiddenLeak": 0,
+   "focus": {
+    "el": "A InternetStructure",
+    "outline": "solid 3px rgb(29, 78, 216)"
+   }
+  },
+  "/organisations @375": {
+   "loadMs": 113,
+   "bytes": {
+    "html": 122514,
+    "js": 469118,
+    "css": 16379,
+    "font": 90104
+   },
+   "overflowX": 0,
+   "heroBox": null,
+   "viewport": [
+    375,
+    812
+   ],
+   "lowContrast": [],
+   "svgLowContrast": [],
+   "smallestSvgTextPx": null,
+   "smallTargets": [],
+   "hiddenLeak": 0,
+   "focus": {
+    "el": "A InternetStructure",
+    "outline": "solid 3px rgb(29, 78, 216)"
+   }
+  },
+  "/organisations/equinix @1280": {
+   "loadMs": 105,
+   "bytes": {
+    "html": 43037,
+    "js": 469118,
+    "css": 16379,
+    "font": 90104
+   },
+   "overflowX": 0,
+   "heroBox": null,
+   "viewport": [
+    1280,
+    800
+   ],
+   "lowContrast": [],
+   "svgLowContrast": [],
+   "smallestSvgTextPx": null,
+   "smallTargets": [],
+   "hiddenLeak": 0,
+   "focus": {
+    "el": "A InternetStructure",
+    "outline": "solid 3px rgb(29, 78, 216)"
+   }
+  },
+  "/organisations/equinix @375": {
+   "loadMs": 100,
+   "bytes": {
+    "html": 43037,
+    "js": 469118,
+    "css": 16379,
+    "font": 90104
+   },
+   "overflowX": 0,
+   "heroBox": null,
+   "viewport": [
+    375,
+    812
+   ],
+   "lowContrast": [],
+   "svgLowContrast": [],
+   "smallestSvgTextPx": null,
+   "smallTargets": [],
+   "hiddenLeak": 0,
+   "focus": {
+    "el": "A InternetStructure",
+    "outline": "solid 3px rgb(29, 78, 216)"
+   }
+  },
+  "/history @1280": {
+   "loadMs": 104,
+   "bytes": {
+    "html": 22313,
+    "js": 469118,
+    "css": 16379,
+    "font": 90104
+   },
+   "overflowX": 0,
+   "heroBox": null,
+   "viewport": [
+    1280,
+    800
+   ],
+   "lowContrast": [],
+   "svgLowContrast": [],
+   "smallestSvgTextPx": null,
+   "smallTargets": [],
+   "hiddenLeak": 0,
+   "focus": {
+    "el": "A InternetStructure",
+    "outline": "solid 3px rgb(29, 78, 216)"
+   }
+  },
+  "/history @375": {
+   "loadMs": 91,
+   "bytes": {
+    "html": 22313,
+    "js": 469118,
+    "css": 16379,
+    "font": 90104
+   },
+   "overflowX": 0,
+   "heroBox": null,
+   "viewport": [
+    375,
+    812
+   ],
+   "lowContrast": [],
+   "svgLowContrast": [],
+   "smallestSvgTextPx": null,
+   "smallTargets": [],
+   "hiddenLeak": 0,
+   "focus": {
+    "el": "A InternetStructure",
+    "outline": "solid 3px rgb(29, 78, 216)"
+   }
+  },
+  "/history/arpanet @1280": {
+   "loadMs": 122,
+   "bytes": {
+    "html": 279251,
+    "js": 469118,
+    "css": 16379,
+    "font": 90104
+   },
+   "overflowX": 0,
+   "heroBox": null,
+   "viewport": [
+    1280,
+    800
+   ],
+   "lowContrast": [],
+   "svgLowContrast": [],
+   "smallestSvgTextPx": null,
+   "smallTargets": [],
+   "hiddenLeak": 0,
+   "focus": {
+    "el": "A InternetStructure",
+    "outline": "solid 3px rgb(29, 78, 216)"
+   }
+  },
+  "/history/arpanet @375": {
+   "loadMs": 141,
+   "bytes": {
+    "html": 279251,
+    "js": 469118,
+    "css": 16379,
+    "font": 90104
+   },
+   "overflowX": 0,
+   "heroBox": null,
+   "viewport": [
+    418,
+    906
+   ],
+   "lowContrast": [],
+   "svgLowContrast": [],
+   "smallestSvgTextPx": null,
+   "smallTargets": [],
+   "hiddenLeak": 0,
+   "focus": {
+    "el": "A InternetStructure",
+    "outline": "solid 3px rgb(29, 78, 216)"
+   }
+  },
+  "/how-it-works @1280": {
+   "loadMs": 148,
+   "bytes": {
+    "html": 356319,
+    "js": 469118,
+    "css": 16379,
+    "font": 90104
+   },
+   "overflowX": 0,
+   "heroBox": null,
+   "viewport": [
+    1280,
+    800
+   ],
+   "lowContrast": [],
+   "svgLowContrast": [],
+   "smallestSvgTextPx": null,
+   "smallTargets": [],
+   "hiddenLeak": 0,
+   "focus": {
+    "el": "A InternetStructure",
+    "outline": "solid 3px rgb(29, 78, 216)"
+   }
+  },
+  "/how-it-works @375": {
+   "loadMs": 132,
+   "bytes": {
+    "html": 356319,
+    "js": 469118,
+    "css": 16379,
+    "font": 90104
+   },
+   "overflowX": 0,
+   "heroBox": null,
+   "viewport": [
+    379,
+    821
+   ],
+   "lowContrast": [],
+   "svgLowContrast": [],
+   "smallestSvgTextPx": null,
+   "smallTargets": [],
+   "hiddenLeak": 0,
+   "focus": {
+    "el": "A InternetStructure",
+    "outline": "solid 3px rgb(29, 78, 216)"
+   }
+  },
+  "/about @1280": {
+   "loadMs": 111,
+   "bytes": {
+    "html": 33608,
+    "js": 469118,
+    "css": 16379,
+    "font": 90104
+   },
+   "overflowX": 0,
+   "heroBox": null,
+   "viewport": [
+    1280,
+    800
+   ],
+   "lowContrast": [],
+   "svgLowContrast": [],
+   "smallestSvgTextPx": null,
+   "smallTargets": [],
+   "hiddenLeak": 0,
+   "focus": {
+    "el": "A InternetStructure",
+    "outline": "solid 3px rgb(29, 78, 216)"
+   }
+  },
+  "/about @375": {
+   "loadMs": 96,
+   "bytes": {
+    "html": 33608,
+    "js": 469118,
+    "css": 16379,
+    "font": 90104
+   },
+   "overflowX": 0,
+   "heroBox": null,
+   "viewport": [
+    375,
+    812
+   ],
+   "lowContrast": [],
+   "svgLowContrast": [],
+   "smallestSvgTextPx": null,
+   "smallTargets": [],
+   "hiddenLeak": 0,
+   "focus": {
+    "el": "A InternetStructure",
+    "outline": "solid 3px rgb(29, 78, 216)"
+   }
+  }
+ },
+ "noJsLanding": {
+  "dots": 253,
+  "h1": "No one owns the internet. 253 organisations hold it up."
+ },
+ "noJsAtlas": {
+  "nodes": 253,
+  "links": 691
+ },
+ "linksChecked": 278,
+ "brokenLinks": [],
+ "fixtures": {
+  "overflowFires": true,
+  "contrastFires": true,
+  "smallTargetFires": true
+ }
+}

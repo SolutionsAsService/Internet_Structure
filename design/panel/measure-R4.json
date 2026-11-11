@@ -1,0 +1,537 @@
+{
+ "measuredAt": "2026-11-11T16:52:42.287Z",
+ "base": "http://localhost:3100",
+ "pages": {
+  "/ @1280": {
+   "loadMs": 134,
+   "bytes": {
+    "html": 165770,
+    "js": 469842,
+    "css": 20250,
+    "font": 90104
+   },
+   "overflowX": 0,
+   "heroBox": {
+    "top": 112,
+    "bottom": 656,
+    "right": 1220,
+    "figScroll": [
+     0
+    ]
+   },
+   "viewport": [
+    1280,
+    800
+   ],
+   "lowContrast": [],
+   "svgLowContrast": [
+    "7 3.38",
+    "5 3.28",
+    "4 3.49",
+    "3 3.79",
+    "1 1.15",
+    "2 1.15",
+    "3 1.15",
+    "4 1.15",
+    "5 1.15",
+    "6 1.15"
+   ],
+   "smallestSvgTextPx": 12,
+   "smallTargets": [],
+   "hiddenLeak": 0,
+   "focus": {
+    "el": "A InternetStructure",
+    "outline": "solid 3px rgb(29, 78, 216)"
+   }
+  },
+  "/ @375": {
+   "loadMs": 117,
+   "bytes": {
+    "html": 165770,
+    "js": 469842,
+    "css": 20250,
+    "font": 90104
+   },
+   "overflowX": 0,
+   "heroBox": {
+    "top": 136.5,
+    "bottom": 801.234375,
+    "right": 359,
+    "figScroll": [
+     0
+    ]
+   },
+   "viewport": [
+    375,
+    812
+   ],
+   "lowContrast": [],
+   "svgLowContrast": [
+    "7 3.38",
+    "5 3.28",
+    "4 3.49",
+    "3 3.79",
+    "1 1.15",
+    "2 1.15",
+    "3 1.15",
+    "4 1.15",
+    "5 1.15",
+    "6 1.15"
+   ],
+   "smallestSvgTextPx": 12,
+   "smallTargets": [],
+   "hiddenLeak": 0,
+   "focus": {
+    "el": "A InternetStructure",
+    "outline": "solid 3px rgb(29, 78, 216)"
+   }
+  },
+  "/atlas @1280": {
+   "loadMs": 133,
+   "bytes": {
+    "html": 368127,
+    "js": 469842,
+    "css": 20250,
+    "font": 90104
+   },
+   "overflowX": 0,
+   "heroBox": null,
+   "viewport": [
+    1280,
+    800
+   ],
+   "lowContrast": [],
+   "svgLowContrast": [],
+   "smallestSvgTextPx": 13.99993896484375,
+   "smallTargets": [],
+   "hiddenLeak": 0,
+   "focus": {
+    "el": "A InternetStructure",
+    "outline": "solid 3px rgb(29, 78, 216)"
+   }
+  },
+  "/atlas @375": {
+   "loadMs": 121,
+   "bytes": {
+    "html": 368127,
+    "js": 469842,
+    "css": 20250,
+    "font": 90104
+   },
+   "overflowX": 0,
+   "heroBox": null,
+   "viewport": [
+    375,
+    812
+   ],
+   "lowContrast": [],
+   "svgLowContrast": [],
+   "smallestSvgTextPx": 13.99993896484375,
+   "smallTargets": [],
+   "hiddenLeak": 0,
+   "focus": {
+    "el": "A InternetStructure",
+    "outline": "solid 3px rgb(29, 78, 216)"
+   }
+  },
+  "/strata @1280": {
+   "loadMs": 102,
+   "bytes": {
+    "html": 38096,
+    "js": 469842,
+    "css": 20250,
+    "font": 90104
+   },
+   "overflowX": 0,
+   "heroBox": null,
+   "viewport": [
+    1280,
+    800
+   ],
+   "lowContrast": [],
+   "svgLowContrast": [],
+   "smallestSvgTextPx": null,
+   "smallTargets": [],
+   "hiddenLeak": 0,
+   "focus": {
+    "el": "A InternetStructure",
+    "outline": "solid 3px rgb(29, 78, 216)"
+   }
+  },
+  "/strata @375": {
+   "loadMs": 95,
+   "bytes": {
+    "html": 38096,
+    "js": 469842,
+    "css": 20250,
+    "font": 90104
+   },
+   "overflowX": 0,
+   "heroBox": null,
+   "viewport": [
+    375,
+    812
+   ],
+   "lowContrast": [],
+   "svgLowContrast": [],
+   "smallestSvgTextPx": null,
+   "smallTargets": [],
+   "hiddenLeak": 0,
+   "focus": {
+    "el": "A InternetStructure",
+    "outline": "solid 3px rgb(29, 78, 216)"
+   }
+  },
+  "/strata/carry @1280": {
+   "loadMs": 113,
+   "bytes": {
+    "html": 61378,
+    "js": 469842,
+    "css": 20250,
+    "font": 90104
+   },
+   "overflowX": 0,
+   "heroBox": null,
+   "viewport": [
+    1280,
+    800
+   ],
+   "lowContrast": [],
+   "svgLowContrast": [],
+   "smallestSvgTextPx": null,
+   "smallTargets": [],
+   "hiddenLeak": 0,
+   "focus": {
+    "el": "A InternetStructure",
+    "outline": "solid 3px rgb(29, 78, 216)"
+   }
+  },
+  "/strata/carry @375": {
+   "loadMs": 89,
+   "bytes": {
+    "html": 61378,
+    "js": 469842,
+    "css": 20250,
+    "font": 90104
+   },
+   "overflowX": 0,
+   "heroBox": null,
+   "viewport": [
+    375,
+    812
+   ],
+   "lowContrast": [],
+   "svgLowContrast": [],
+   "smallestSvgTextPx": null,
+   "smallTargets": [],
+   "hiddenLeak": 0,
+   "focus": {
+    "el": "A InternetStructure",
+    "outline": "solid 3px rgb(29, 78, 216)"
+   }
+  },
+  "/organisations @1280": {
+   "loadMs": 115,
+   "bytes": {
+    "html": 122540,
+    "js": 469842,
+    "css": 20250,
+    "font": 90104
+   },
+   "overflowX": 0,
+   "heroBox": null,
+   "viewport": [
+    1280,
+    800
+   ],
+   "lowContrast": [],
+   "svgLowContrast": [],
+   "smallestSvgTextPx": null,
+   "smallTargets": [],
+   "hiddenLeak": 0,
+   "focus": {
+    "el": "A InternetStructure",
+    "outline": "solid 3px rgb(29, 78, 216)"
+   }
+  },
+  "/organisations @375": {
+   "loadMs": 124,
+   "bytes": {
+    "html": 122540,
+    "js": 469842,
+    "css": 20250,
+    "font": 90104
+   },
+   "overflowX": 0,
+   "heroBox": null,
+   "viewport": [
+    375,
+    812
+   ],
+   "lowContrast": [],
+   "svgLowContrast": [],
+   "smallestSvgTextPx": null,
+   "smallTargets": [],
+   "hiddenLeak": 0,
+   "focus": {
+    "el": "A InternetStructure",
+    "outline": "solid 3px rgb(29, 78, 216)"
+   }
+  },
+  "/organisations/equinix @1280": {
+   "loadMs": 123,
+   "bytes": {
+    "html": 44442,
+    "js": 469842,
+    "css": 20250,
+    "font": 90104
+   },
+   "overflowX": 0,
+   "heroBox": null,
+   "viewport": [
+    1280,
+    800
+   ],
+   "lowContrast": [],
+   "svgLowContrast": [],
+   "smallestSvgTextPx": null,
+   "smallTargets": [],
+   "hiddenLeak": 0,
+   "focus": {
+    "el": "A InternetStructure",
+    "outline": "solid 3px rgb(29, 78, 216)"
+   }
+  },
+  "/organisations/equinix @375": {
+   "loadMs": 116,
+   "bytes": {
+    "html": 44442,
+    "js": 469842,
+    "css": 20250,
+    "font": 90104
+   },
+   "overflowX": 0,
+   "heroBox": null,
+   "viewport": [
+    375,
+    812
+   ],
+   "lowContrast": [],
+   "svgLowContrast": [],
+   "smallestSvgTextPx": null,
+   "smallTargets": [],
+   "hiddenLeak": 0,
+   "focus": {
+    "el": "A InternetStructure",
+    "outline": "solid 3px rgb(29, 78, 216)"
+   }
+  },
+  "/history @1280": {
+   "loadMs": 102,
+   "bytes": {
+    "html": 22339,
+    "js": 469842,
+    "css": 20250,
+    "font": 90104
+   },
+   "overflowX": 0,
+   "heroBox": null,
+   "viewport": [
+    1280,
+    800
+   ],
+   "lowContrast": [],
+   "svgLowContrast": [],
+   "smallestSvgTextPx": null,
+   "smallTargets": [],
+   "hiddenLeak": 0,
+   "focus": {
+    "el": "A InternetStructure",
+    "outline": "solid 3px rgb(29, 78, 216)"
+   }
+  },
+  "/history @375": {
+   "loadMs": 98,
+   "bytes": {
+    "html": 22339,
+    "js": 469842,
+    "css": 20250,
+    "font": 90104
+   },
+   "overflowX": 0,
+   "heroBox": null,
+   "viewport": [
+    375,
+    812
+   ],
+   "lowContrast": [],
+   "svgLowContrast": [],
+   "smallestSvgTextPx": null,
+   "smallTargets": [],
+   "hiddenLeak": 0,
+   "focus": {
+    "el": "A InternetStructure",
+    "outline": "solid 3px rgb(29, 78, 216)"
+   }
+  },
+  "/history/arpanet @1280": {
+   "loadMs": 152,
+   "bytes": {
+    "html": 279277,
+    "js": 469842,
+    "css": 20250,
+    "font": 90104
+   },
+   "overflowX": 0,
+   "heroBox": null,
+   "viewport": [
+    1280,
+    800
+   ],
+   "lowContrast": [],
+   "svgLowContrast": [],
+   "smallestSvgTextPx": null,
+   "smallTargets": [],
+   "hiddenLeak": 0,
+   "focus": {
+    "el": "A InternetStructure",
+    "outline": "solid 3px rgb(29, 78, 216)"
+   }
+  },
+  "/history/arpanet @375": {
+   "loadMs": 149,
+   "bytes": {
+    "html": 279277,
+    "js": 469842,
+    "css": 20250,
+    "font": 90104
+   },
+   "overflowX": 0,
+   "heroBox": null,
+   "viewport": [
+    418,
+    906
+   ],
+   "lowContrast": [],
+   "svgLowContrast": [],
+   "smallestSvgTextPx": null,
+   "smallTargets": [],
+   "hiddenLeak": 0,
+   "focus": {
+    "el": "A InternetStructure",
+    "outline": "solid 3px rgb(29, 78, 216)"
+   }
+  },
+  "/how-it-works @1280": {
+   "loadMs": 187,
+   "bytes": {
+    "html": 356345,
+    "js": 469842,
+    "css": 20250,
+    "font": 90104
+   },
+   "overflowX": 0,
+   "heroBox": null,
+   "viewport": [
+    1280,
+    800
+   ],
+   "lowContrast": [],
+   "svgLowContrast": [],
+   "smallestSvgTextPx": null,
+   "smallTargets": [],
+   "hiddenLeak": 0,
+   "focus": {
+    "el": "A InternetStructure",
+    "outline": "solid 3px rgb(29, 78, 216)"
+   }
+  },
+  "/how-it-works @375": {
+   "loadMs": 180,
+   "bytes": {
+    "html": 356345,
+    "js": 469842,
+    "css": 20250,
+    "font": 90104
+   },
+   "overflowX": 0,
+   "heroBox": null,
+   "viewport": [
+    379,
+    821
+   ],
+   "lowContrast": [],
+   "svgLowContrast": [],
+   "smallestSvgTextPx": null,
+   "smallTargets": [],
+   "hiddenLeak": 0,
+   "focus": {
+    "el": "A InternetStructure",
+    "outline": "solid 3px rgb(29, 78, 216)"
+   }
+  },
+  "/about @1280": {
+   "loadMs": 104,
+   "bytes": {
+    "html": 39084,
+    "js": 469842,
+    "css": 20250,
+    "font": 90104
+   },
+   "overflowX": 0,
+   "heroBox": null,
+   "viewport": [
+    1280,
+    800
+   ],
+   "lowContrast": [],
+   "svgLowContrast": [],
+   "smallestSvgTextPx": null,
+   "smallTargets": [],
+   "hiddenLeak": 0,
+   "focus": {
+    "el": "A InternetStructure",
+    "outline": "solid 3px rgb(29, 78, 216)"
+   }
+  },
+  "/about @375": {
+   "loadMs": 125,
+   "bytes": {
+    "html": 39084,
+    "js": 469842,
+    "css": 20250,
+    "font": 90104
+   },
+   "overflowX": 0,
+   "heroBox": null,
+   "viewport": [
+    375,
+    812
+   ],
+   "lowContrast": [],
+   "svgLowContrast": [],
+   "smallestSvgTextPx": null,
+   "smallTargets": [],
+   "hiddenLeak": 0,
+   "focus": {
+    "el": "A InternetStructure",
+    "outline": "solid 3px rgb(29, 78, 216)"
+   }
+  }
+ },
+ "noJsLanding": {
+  "dots": 253,
+  "h1": "253 organisations hold the internet up. 43 of them hold half of it."
+ },
+ "noJsAtlas": {
+  "nodes": 253,
+  "links": 691
+ },
+ "linksChecked": 278,
+ "brokenLinks": [],
+ "fixtures": {
+  "overflowFires": true,
+  "contrastFires": true,
+  "smallTargetFires": true
+ }
+}
