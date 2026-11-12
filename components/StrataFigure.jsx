@@ -20,7 +20,7 @@ export default function StrataFigure({ atlas, size, id }) {
       viewBox={`0 0 ${s.width} ${g.height}`}
       width={s.width}
       height={g.height}
-      role="img"
+      role="group"
       aria-labelledby={`${id}-title ${id}-desc`}
     >
       <title id={`${id}-title`}>The internet in seven strata</title>
